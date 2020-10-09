@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SM1_WalkState : WalkState
@@ -19,7 +20,6 @@ public class SM1_WalkState : WalkState
     public override void Enter()
     {
         base.Enter();
-        
     }
 
     public override void Exit()
@@ -35,8 +35,8 @@ public class SM1_WalkState : WalkState
             enemy.Flip();
         }
 
-        vectorWorkspace.Set(data.walkSpeed * enemy.facingDirection, 0);
-        enemy.rb.velocity = vectorWorkspace;
+        //vectorWorkspace.Set(data.walkSpeed * enemy.facingDirection, 0);
+        //enemy.rb.velocity = vectorWorkspace;
 
         if (detectPlayerInMinAgro)
         {

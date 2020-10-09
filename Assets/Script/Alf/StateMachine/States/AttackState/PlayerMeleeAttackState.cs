@@ -23,6 +23,7 @@ public class PlayerMeleeAttackState : PlayerAttackState
         combatData.stunDamage = data.MAS_stunAmount;
         combatData.knockbackDir = data.MAS_knockbackDirection;
         combatData.knockbackImpulse = data.MAS_knockbackImpulse;
+        combatData.from = player.gameObject;
 
         oldPosition = player.transform.position;
     }
@@ -86,12 +87,8 @@ public override void Exit()
         {
             if (collider.gameObject.tag == "Enemy")
             {
-                combatData.position = player.transform.position;
+                combatData.position = player.transform.position;                
                 collider.gameObject.SendMessage("Damage", combatData);
-
-                var particle = GameObject.Instantiate(data.MAS_meleeAttackParticle, hitbox.position, data.PS_particle.transform.rotation);
-                particle.gameObject.transform.Rotate(0, 0, Random.Range(0, 360));
-                particle.GetComponent<Animator>().Play(Random.Range(0, 3).ToString());
             }
         }
         // consuming MeleeAttack buffer

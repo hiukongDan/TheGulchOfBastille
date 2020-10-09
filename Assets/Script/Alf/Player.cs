@@ -251,7 +251,13 @@ public class Player : MonoBehaviour
             }
 
         }
+    }
 
+    public void ValidAttack()
+    {
+        var particle = GameObject.Instantiate(playerData.MAS_meleeAttackParticle, hitbox.position, playerData.PS_particle.transform.rotation);
+        particle.gameObject.transform.Rotate(0, 0, Random.Range(0, 360));
+        particle.GetComponent<Animator>().Play(Random.Range(0, 3).ToString());
     }
     #endregion
 

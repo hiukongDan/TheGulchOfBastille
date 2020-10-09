@@ -99,6 +99,10 @@ public class Entity : MonoBehaviour
 
     protected virtual void Damage(CombatData combatData)
     {
+        if (isDead)
+            return;
+
+        combatData.from.SendMessage("ValidAttack");
         currentHealth -= combatData.damage;
 
         if(currentHealth <= 0 && !isDead)
