@@ -19,11 +19,30 @@ public class PlayerState
 
     protected Vector2 workspace;
 
-    public PlayerState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data)
+    #region INPUT SUBSCRIPTION
+    protected Vector2 normMovementInput;
+    protected bool isJumpCanceled;
+    protected bool isJump;
+    protected bool isParry;
+    protected bool isRoll;
+    protected bool isMeleeAttack;
+    #endregion
+
+    #region PHYSICS STATUS SUBSCRIPTION
+    protected bool isGrounded;
+    protected bool isWalled;
+    #endregion
+
+    #region STATUS SUBSCRIPTION
+    protected bool shouldFlip;
+    protected Vector2 currentVelocity;
+    #endregion
+
+    public PlayerState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data)
     {
         this.stateMachine = stateMachine;
         this.player = player;
-        this.animCodeDefault = this.animCode = animCode;
+        this.animCodeDefault = this.animCode = defaultAnimCode;
         this.data = data;
     }
 
@@ -62,17 +81,24 @@ public class PlayerState
 
     protected virtual void UpdateInputSubscription()
     {
-
+        normMovementInput = player.InputHandler.NormMovementInput;
+        isJump = player.InputHandler.isJump;
+        isParry = player.InputHandler.isParry;
+        isRoll = player.InputHandler.isRoll;
+        isMeleeAttack = player.InputHandler.isMeleeAttack;
+        isJumpCanceled = player.InputHandler.isJumpCanceled;
     }
 
     protected virtual void UpdateStatusSubscription()
     {
-
+        shouldFlip = player.CheckFlip();
+        currentVelocity = player.Rb.velocity;
     }
 
     protected virtual void UpdatePhysicsStatusSubScription()
     {
-
+        isGrounded = player.CheckGrounded();
+        isWalled = player.CheckWalled();
     }
 
     protected void SetCanFlip(bool flip)

@@ -8,8 +8,6 @@ public class Entity : MonoBehaviour
 
     public int facingDirection { get; private set; }
 
-    public GameObject aliveGO { get; private set; }
-
     public Transform
         wallCheck,
         edgeCheck,
@@ -19,6 +17,7 @@ public class Entity : MonoBehaviour
 
     public EntityData entityData;
 
+    public GameObject aliveGO;
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
 
@@ -49,6 +48,9 @@ public class Entity : MonoBehaviour
 
         currentHealth = entityData.maxHealth;
         currentStunResistance = entityData.stunResistance;
+
+        isDead = false;
+        isStunned = false;
     }
 
     public bool DetectEdge()
@@ -77,23 +79,19 @@ public class Entity : MonoBehaviour
         facingDirection *= -1;
     }
 
-    public void ResetStunResistance()
-    {
-        currentStunResistance = entityData.stunResistance;
-    }
-
     protected void CheckDamageBox()
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(damageBox.position, new Vector2(entityData.damageBoxWidth, entityData.damageBoxHeight), entityData.whatIsPlayer);
         foreach(Collider2D collider in colliders)
         {
-            if (collider.gameObject.tag== "Player")
+            if (collider.gameObject.tag == "Player")
             {
                 combatData.damage = entityData.damage;
                 combatData.position = aliveGO.transform.position;
                 combatData.stunDamage = entityData.stunDamage;
-                combatData.knockbackDir = entityData.knockbackDir;
+                combatData.knockbackDir = entityData.knockbackDir.normalized;
                 combatData.knockbackImpulse = entityData.knockbackImpulse;
+                combatData.from = gameObject;
                 collider.gameObject.SendMessage("Damage", combatData);
             }
         }
@@ -103,20 +101,30 @@ public class Entity : MonoBehaviour
     {
         currentHealth -= combatData.damage;
 
-        knockback(rb, combatData.position.x, aliveGO.transform.position.x, combatData.knockbackDir, combatData.knockbackImpulse);
-
-        if(currentHealth <= 0)
+        if(currentHealth <= 0 && !isDead)
         {
             isDead = true;
         }
-        if(!isStunned && !isDead)
+        else if(!isStunned && !isDead)
         {
             currentStunResistance -= combatData.stunDamage;
             if(currentStunResistance <= 0)
             {
                 isStunned = true;
+                ResetStunResistance();
             }
         }
+    }
+
+    protected virtual void KnockBack(CombatData combatData)
+    {
+
+    }
+
+    public void ResetStunResistance()
+    {
+        isStunned = false;
+        currentStunResistance = entityData.stunResistance;
     }
 
     public void knockback(Rigidbody2D rb, float fromX, float thisX, Vector2 impulseDir, float impulse)
@@ -133,10 +141,10 @@ public class Entity : MonoBehaviour
         Gizmos.DrawLine(edgeCheck.position, edgeCheck.position + Vector3.down * entityData.edgeCheckDistance);
         Gizmos.DrawLine(groundCheck.position, groundCheck.position + Vector3.down * entityData.groundCheckDistance);
 
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(entityData.meleeAttackDistance, 0));
+        Gizmos.DrawLine(aliveGO.transform.position, aliveGO.transform.position + new Vector3(entityData.meleeAttackDistance, 0));
 
-        Gizmos.DrawWireSphere(transform.position + Vector3.right * entityData.detectPlayerAgroMaxDistance, 0.2f);
-        Gizmos.DrawWireSphere(transform.position + Vector3.right * entityData.detectPlayerAgroMinDistance, 0.2f);
+        Gizmos.DrawWireSphere(aliveGO.transform.position + Vector3.right * entityData.detectPlayerAgroMaxDistance, 0.2f);
+        Gizmos.DrawWireSphere(aliveGO.transform.position + Vector3.right * entityData.detectPlayerAgroMinDistance, 0.2f);
 
         Gizmos.DrawLine(new Vector2(damageBox.position.x - entityData.damageBoxWidth / 2, damageBox.position.y - entityData.damageBoxHeight / 2),
             new Vector2(damageBox.position.x + entityData.damageBoxWidth / 2, damageBox.position.y - entityData.damageBoxHeight / 2));

@@ -5,26 +5,13 @@ using UnityEngine;
 
 public class PlayerInAirState : PlayerState
 {
-    #region INPUT SUBSCRIPTION
-    protected Vector2 normMovementInput;
-    protected bool isJump;
-    protected bool isJumpCanceled;
-    #endregion
-
-    #region STATUS SUBSCRIPTION
-    protected bool shouldFlip;
-    protected Vector2 currentVelocity;
-    #endregion
-
-    #region PHYSICS STATUS SUBSCRIPTION
-    protected bool isGrounded;
-    #endregion
 
     #region CONTROL VARIABLES
     protected int jumpAmountLeft;
     protected float tryJumpTimer;
     protected bool isTryJump;
     protected bool isCoyoteTime;
+    protected bool C_isJumpCanceled;
     #endregion
 
     public PlayerInAirState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
@@ -35,6 +22,8 @@ public class PlayerInAirState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        ResetControlVariables();
     }
 
     public override void Exit()
@@ -54,23 +43,37 @@ public class PlayerInAirState : PlayerState
             player.Flip();
         }
 
-        workspace.Set(normMovementInput.x * player.playerData.JS_horizontalSpeed, currentVelocity.y);
-        player.SetVelocity(workspace);
-
         if (Time.time < data.GS_coyoteTime + startTime && isJump && isCoyoteTime)
         {
             isCoyoteTime = false;
             jumpAmountLeft--;
             SetPlayerInitialSpeed();
         }
-        // AIR JUMP
-        else if (jumpAmountLeft > 0 && isJump)
+        // DASH
+        else if(player.dashState.dashAmountLeft > 0 && isRoll && !isGrounded && !isWalled)
         {
-            jumpAmountLeft--;
-            SetPlayerInitialSpeed();
+            stateMachine.SwitchState(player.dashState);
+        }
+        // WALL JUMP
+        else if (player.wallState.wallJumpAmountLeft > 0 && isWalled && isJump && !isGrounded)
+        {
+            stateMachine.SwitchState(player.wallState);
         }
 
-        if (isGrounded && currentVelocity.y < 0.01f)
+        else if(currentVelocity.y > 0 && !C_isJumpCanceled && isJumpCanceled)
+        {
+            C_isJumpCanceled = true;
+
+            workspace.Set(currentVelocity.x, currentVelocity.y * data.JS_jumpCanceledMultiplier);
+            player.SetVelocity(workspace);
+        }
+        // AIR JUMP
+        else if (player.jumpState.jumpAmountLeft > 0 && isJump)
+        {
+            player.jumpState.jumpAmountLeft--;
+            SetPlayerInitialSpeed();
+        }
+        else if (isGrounded && Mathf.Abs(currentVelocity.y) < 0.01f)
         {
             if (isTryJump)
             {
@@ -86,7 +89,16 @@ public class PlayerInAirState : PlayerState
                 stateMachine.SwitchState(player.idleState);
             }
             player.InputHandler.ResetIsJump();
+            player.wallState.ResetWallJumpAmountLeft();
+            player.jumpState.ResetJumpAmountLeft();
+            player.dashState.ResetDashAmountLeft();
         }
+        else
+        {
+            workspace.Set(normMovementInput.x * player.playerData.JS_horizontalSpeed, currentVelocity.y);
+            player.SetVelocity(workspace);
+        }
+
     }
 
     public override void PhysicsUpdate()
@@ -103,23 +115,16 @@ public class PlayerInAirState : PlayerState
     protected override void UpdateInputSubscription()
     {
         base.UpdateInputSubscription();
-
-        normMovementInput = player.InputHandler.NormMovementInput;
-        isJump = player.InputHandler.isJump;
-        isJumpCanceled = player.InputHandler.isJumpCanceled;
     }
 
     protected override void UpdateStatusSubscription()
     {
         base.UpdateStatusSubscription();
-        currentVelocity = player.Rb.velocity;
-        shouldFlip = player.CheckFlip();
     }
 
     protected override void UpdatePhysicsStatusSubScription()
     {
         base.UpdatePhysicsStatusSubScription();
-        isGrounded = player.CheckGrounded();
     }
 
     protected override void ResetControlVariables()
@@ -127,6 +132,7 @@ public class PlayerInAirState : PlayerState
         base.ResetControlVariables();
         isTryJump = false;
         isCoyoteTime = true;
+        C_isJumpCanceled = false;
     }
 
     protected void ResetJumpAmountLeft() => jumpAmountLeft = data.IAS_jumpAmounts;

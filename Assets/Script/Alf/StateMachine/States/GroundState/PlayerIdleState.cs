@@ -34,10 +34,17 @@ public class PlayerIdleState : PlayerGroundState
         {
             player.Flip();
         }
-
-        if(normMovementInput.x != 0)
+        if (isJump)
+        {
+            player.stateMachine.SwitchState(player.jumpState);
+        }
+        else if(normMovementInput.x != 0)
         {
             stateMachine.SwitchState(player.walkState);
+        }
+        else if (Mathf.Abs(currentVelocity.y) > 0.1f)
+        {
+            stateMachine.SwitchState(player.inAirState);
         }
         // -----------------------------------------------------------------------
     }

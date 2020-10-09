@@ -30,26 +30,20 @@ public class SM1_FleeState : FleeState
     {
         base.LogicUpdate();
 
-
         // a mess here, clean up in future
-        if (detectPlayerInMeleeRange)
+        if (Time.time > startTime + data.fleeTime || isEdgeDetected || isWallDetected)
         {
-            stateMachine.SwitchState(enemy.meleeAttackState);
+            enemy.Flip();
+            stateMachine.SwitchState(enemy.walkState);
         }
         else if (detectPlayerInMinAgro)
         {
-            stateMachine.SwitchState(enemy.detectPlayerState);
-        }
-        if(Time.time > startTime + data.fleeTime)
-        {
-            entity.Flip();
-            stateMachine.SwitchState(enemy.idleState);
+            stateMachine.SwitchState(enemy.meleeAttackState);
         }
         else
         {
             enemy.rb.velocity = new Vector2(entity.facingDirection * data.fleeSpeed, enemy.rb.velocity.y);
         }
-        
     }
 
     public override void PhysicsUpdate()

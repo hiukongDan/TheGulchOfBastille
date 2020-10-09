@@ -10,4 +10,6 @@ public struct CombatData
 
     public Vector2 knockbackDir;
     public float knockbackImpulse;
+
+    public GameObject from;
 };

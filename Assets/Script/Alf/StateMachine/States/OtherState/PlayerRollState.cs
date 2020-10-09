@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerRollState : PlayerState
 {
-    #region INPUT SUBSCRIPTION
-    protected Vector2 normMovementInput;
-    #endregion
+
     public PlayerRollState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
 

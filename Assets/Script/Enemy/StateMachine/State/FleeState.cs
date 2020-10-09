@@ -36,5 +36,7 @@ public class FleeState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        DetectSurroundings();
     }
 }

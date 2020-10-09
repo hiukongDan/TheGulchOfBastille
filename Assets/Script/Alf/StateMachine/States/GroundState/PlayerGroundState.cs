@@ -4,22 +4,6 @@ using UnityEngine;
 
 public class PlayerGroundState : PlayerState
 {
-    #region INPUT SUBSCRIPTION
-    protected Vector2 normMovementInput;
-    protected bool isJump;
-    protected bool isParry;
-    protected bool isRoll;
-    protected bool isMeleeAttack;
-    #endregion
-
-    #region STATUS SUBSCRIPTION
-    protected bool shouldFlip;
-    protected Vector2 currentVelocity;
-    #endregion
-
-    #region PHYSICS SUBSCRIPTION
-    protected bool isGrounded;
-    #endregion
 
     #region CONTROL VARIABLES
     protected bool isAction;
@@ -81,12 +65,6 @@ public override void LogicUpdate()
     protected override void UpdateInputSubscription()
     {
         base.UpdateInputSubscription();
-
-        normMovementInput = player.InputHandler.NormMovementInput;
-        isJump = player.InputHandler.isJump;
-        isParry = player.InputHandler.isParry;
-        isRoll = player.InputHandler.isRoll;
-        isMeleeAttack = player.InputHandler.isMeleeAttack;
     }
 
     protected override void UpdateStatusSubscription()

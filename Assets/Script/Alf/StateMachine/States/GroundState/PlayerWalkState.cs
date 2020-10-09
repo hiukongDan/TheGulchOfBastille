@@ -50,7 +50,7 @@ public class PlayerWalkState : PlayerGroundState
                 workspace.Set(normMovementInput.x * data.WS_walkSpeed, 0f);
                 player.SetVelocity(workspace);
             }
-            else if (!isGrounded && !isJump && currentVelocity.y < 0.01f)
+            else if (!isGrounded)
             {
                 stateMachine.SwitchState(player.inAirState);
             }

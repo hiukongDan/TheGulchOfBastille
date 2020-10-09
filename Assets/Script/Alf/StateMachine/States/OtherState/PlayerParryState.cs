@@ -6,12 +6,6 @@ public class PlayerParryState : PlayerState
 {
     #region INPUT SUBSCRIPTION
     protected bool isParryCanceled;
-    protected Vector2 normMovementInput;
-    #endregion
-
-    #region STATUS SUBSCRIPTION
-    protected bool shouldFlip;
-    protected Vector2 currentVelocity;
     #endregion
 
     public PlayerParryState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
@@ -44,12 +38,14 @@ public class PlayerParryState : PlayerState
         {
             stateMachine.SwitchState(player.idleState);
         }
-
-        if (normMovementInput.x != 0)
+        else if (normMovementInput.x != 0)
         {
             player.SetVelocityX(normMovementInput.x * player.playerData.PS_horizontalSpeed);
         }
-
+        else
+        {
+            player.SetVelocityX(0);
+        }
     }
 
     public override void PhysicsUpdate()

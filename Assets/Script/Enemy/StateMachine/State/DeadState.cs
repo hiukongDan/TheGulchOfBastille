@@ -18,6 +18,7 @@ public class DeadState : State
     public override void Enter()
     {
         base.Enter();
+        entity.rb.velocity = new Vector2(0f, entity.rb.velocity.y);
     }
 
     public override void Exit()

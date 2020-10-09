@@ -7,6 +7,11 @@ public class PlayerMeleeAttackState : PlayerAttackState
     #region CONTROL VARIABLES
     private bool isFirstAttack;
     #endregion
+
+    #region MISC
+    private Vector2 oldPosition;
+    #endregion
+
     public PlayerMeleeAttackState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
     }
@@ -15,9 +20,11 @@ public class PlayerMeleeAttackState : PlayerAttackState
     {
         base.Enter();
         combatData.damage = data.MAS_damageAmount;
-        combatData.stunDamage = data.PD_maxStunPoint;
+        combatData.stunDamage = data.MAS_stunAmount;
         combatData.knockbackDir = data.MAS_knockbackDirection;
         combatData.knockbackImpulse = data.MAS_knockbackImpulse;
+
+        oldPosition = player.transform.position;
     }
 
 public override void Exit()
@@ -28,7 +35,6 @@ public override void Exit()
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
 
     }
 
@@ -82,6 +88,10 @@ public override void Exit()
             {
                 combatData.position = player.transform.position;
                 collider.gameObject.SendMessage("Damage", combatData);
+
+                var particle = GameObject.Instantiate(data.MAS_meleeAttackParticle, hitbox.position, data.PS_particle.transform.rotation);
+                particle.gameObject.transform.Rotate(0, 0, Random.Range(0, 360));
+                particle.GetComponent<Animator>().Play(Random.Range(0, 3).ToString());
             }
         }
         // consuming MeleeAttack buffer
@@ -93,18 +103,26 @@ public override void Exit()
     public override void CompleteAttack()
     {
         base.CompleteAttack();
+        RaycastHit2D hit = Physics2D.Raycast(player.wallCheck.position, player.transform.right, player.offsetCalculator.localPosition.x, data.GD_whatIsGround);
 
-        if (isFirstAttack)
+        if (!hit.collider)
         {
-            workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
+            if (isFirstAttack)
+            {
+                workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
+            }
+            else
+            {
+                workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
+            }
+            
         }
         else
         {
-            workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
+            workspace = oldPosition;
         }
-
+        
         player.SetPosition(workspace);
-
         stateMachine.SwitchState(player.idleState);
     }
 

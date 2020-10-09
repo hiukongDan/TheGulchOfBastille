@@ -11,23 +11,10 @@ public class PlayerAttackState : PlayerState
      * CAN BE CHANGED IN THE FUTURE
      */
 
-    #region INPUT SUBSCRIPTION
-    protected Vector2 normMovementInput;
-    protected bool isMeleeAttack;
-    #endregion
-
-    #region STATUS SUBSCRIPTION
-    protected bool shouldFlip;
-    protected Vector2 currentVelocity;
-    #endregion
-
-    #region PHYSICS STATUS SUBSCRIPTION
-    protected bool isGrounded;
-    #endregion
-
     #region CONTROL VARIABLES
-
+    protected bool isAction;
     #endregion
+
 
     #region REFERENCES
     protected Transform hitbox;
@@ -60,6 +47,30 @@ public class PlayerAttackState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (isRoll)
+        {
+            CompleteAttack();
+
+            if (shouldFlip)
+            {
+                player.Flip();
+            }
+
+            stateMachine.SwitchState(player.rollState);
+            isAction = true;
+        }
+        /*
+        else if (isParry)
+        {
+            CompleteAttack();
+            stateMachine.SwitchState(player.parryState);
+            isAction = true;
+            if (shouldFlip)
+            {
+                player.Flip();
+            }
+        }*/
     }
 
     public override void PhysicsUpdate()
@@ -76,7 +87,7 @@ public class PlayerAttackState : PlayerState
     {
         base.ResetControlVariables();
 
-
+        isAction = false;
     }
 
     protected override void UpdateInputSubscription()

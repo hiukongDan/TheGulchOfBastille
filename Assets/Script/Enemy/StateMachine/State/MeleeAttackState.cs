@@ -36,6 +36,7 @@ public class MeleeAttackState : State
         combatData.stunDamage = data.stunDamage;
         combatData.knockbackDir = data.knockbackDir;
         combatData.knockbackImpulse = data.knockbackImpulse;
+        combatData.from = entity.gameObject;
     }
 
     public override void Exit()
@@ -57,12 +58,17 @@ public class MeleeAttackState : State
 
     public virtual void DoMeleeAttack()
     {
-        Collider2D detectedTarget = Physics2D.OverlapCircle(hitBoxPoint.position, data.attackRadius, data.whatIsPlayer);
-        if (detectedTarget != null)
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(hitBoxPoint.position, data.attackRadius, data.whatIsPlayer);
+
+        foreach (Collider2D collider in colliders)
         {
-            combatData.position = entity.aliveGO.transform.position;
-            detectedTarget.SendMessage("Damage", combatData);
+            if (collider.gameObject.tag == "Player")
+            {
+                combatData.position = entity.aliveGO.transform.position;
+                collider.gameObject.SendMessage("Damage", combatData);
+            }
         }
+
     }
 
     public virtual void CompleteMeleeAttack()

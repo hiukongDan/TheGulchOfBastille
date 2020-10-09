@@ -6,6 +6,9 @@ using UnityEngine;
 public class ObjectToAlive : MonoBehaviour
 {
     public MeleeAttackState meleeAttackState;
+    public StunState stunState;
+    public TakeDamageState takeDamageState;
+
     private Entity entity;
 
     void Start()
@@ -28,5 +31,19 @@ public class ObjectToAlive : MonoBehaviour
     {
         if(meleeAttackState != null)
             meleeAttackState.CompleteMeleeAttack();
+    }
+
+    public void CompleteStun()
+    {
+        if (stunState != null)
+            stunState.CompleteStun();
+    }
+
+    public void CompleteTakeDamage()
+    {
+        if(takeDamageState != null)
+        {
+            takeDamageState.CompleteTakeDamage();
+        }
     }
 }

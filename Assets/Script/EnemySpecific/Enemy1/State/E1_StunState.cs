@@ -23,7 +23,6 @@ public class E1_StunState : StunState
     public override void Exit()
     {
         base.Exit();
-        enemy.ResetStunResistance();
     }
 
     public override void LogicUpdate()

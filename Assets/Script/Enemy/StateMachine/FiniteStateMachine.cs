@@ -5,7 +5,7 @@ using UnityEngine;
 public class FiniteStateMachine
 {
     protected Entity entity;
-    protected State currentState;
+    public State currentState { get; private set; }
 
     public FiniteStateMachine(Entity entity)
     {

@@ -33,24 +33,24 @@ public class SM1_DetectPlayerState : DetectPlayerState
 
         if (Time.time > startTime + data.detectStayTime)
         {
-            if (playerWithinMeleeRange)
+            if (playerWithinAgroMin)
             {
                 // TODO:
                 // if player attack => FLEE
                 // else WILD MELEEATTACK
-
-                // flee, for now
-                entity.Flip();
-                stateMachine.SwitchState(enemy.fleeState);
+                
+                stateMachine.SwitchState(enemy.meleeAttackState);
             }
-            else if (playerWithinAgroMin)
+            else if (playerWithinMeleeRange)
             {
                 // MELEEATTACK
+                enemy.Flip();
                 stateMachine.SwitchState(enemy.meleeAttackState);
             }
             else
             {
-                stateMachine.SwitchState(enemy.idleState);
+                enemy.Flip();
+                stateMachine.SwitchState(enemy.fleeState);
             }
         }
     }
