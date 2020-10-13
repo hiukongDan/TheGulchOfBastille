@@ -1,15 +1,15 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     /* TODO:
      * replace sphere ground check with something more creditable
      */
+
+    #region REFERENCES
+    private GameManager GM;
+    #endregion
+
     #region MISC VARIABLES
     public float pixelsPerUnits = 32;
     #endregion
@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
     #region PLAYER HITPOINTS
     public float currentHitPoints;
     public float currentStunPoints;
+    public float currentDecayPoints;
     #endregion
 
     #region TIMERS
@@ -83,6 +84,7 @@ public class Player : MonoBehaviour
     {
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         InputHandler = GetComponent<PlayerInputHandler>();
 
@@ -90,6 +92,8 @@ public class Player : MonoBehaviour
         stateMachine.InitializeState(idleState);
 
         InitializePlayerStatus();
+
+
     }
 
     void Update()
@@ -211,9 +215,10 @@ public class Player : MonoBehaviour
             if (combatData.from != null)
             {
                 UpdateCombatData();
-                combatData.from.SendMessage("Damage", combatData);
+                combatData.from.SendMessage("Damage", this.combatData);
                 // TODO: TO EXECUTION ANIMATION
                 stateMachine.SwitchState(idleState);
+
                 var particle = Instantiate(playerData.PS_particle, hitbox.position, playerData.PS_particle.transform.rotation);
                 particle.gameObject.transform.Rotate(0, 0, Random.Range(0, 360));
                 particle.GetComponent<Animator>().Play("3");
@@ -224,6 +229,7 @@ public class Player : MonoBehaviour
             damageImmuneTimer = Time.time;
 
             currentHitPoints -= combatData.damage;
+            UIEventManager.instance.OnHpChange(currentHitPoints, playerData.PD_maxHitPoint);
 
             int dir = (combatData.position.x - transform.position.x > 0 ? -1 : 1);
             workspace.Set(dir * combatData.knockbackDir.x * combatData.knockbackImpulse, combatData.knockbackDir.y * combatData.knockbackImpulse);
@@ -280,8 +286,11 @@ public class Player : MonoBehaviour
     public void InitializePlayerStatus()
     {
         // TODO: using a mutable data structure for status reading
-        currentHitPoints = playerData.PD_maxHitpoint;
+        currentHitPoints = playerData.PD_maxHitPoint;
         currentStunPoints = playerData.PD_maxStunPoint;
+        currentDecayPoints = GM.GetPlayerDecay();
+        // invoke
+
         facingDirection = 1;
         isDead = false;
         isStunned = false;

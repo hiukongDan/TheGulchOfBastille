@@ -16,8 +16,9 @@ public class D_PlayerStateMachine : ScriptableObject
     public LayerMask GD_whatIsEnemy;
 
     [Header("Player Data")]
-    public float PD_maxHitpoint = 100f;
+    public float PD_maxHitPoint = 100f;
     public float PD_maxStunPoint = 5f;
+    public float PD_maxDecayPoint = 20f;
 
     [Header("Ground State")]
     public float GS_coyoteTime = 0.2f;

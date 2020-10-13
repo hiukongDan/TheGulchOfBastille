@@ -14,7 +14,7 @@ public class PlayerDashState : PlayerState
     public PlayerDashState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
         ResetDashAmountLeft();
-        dashCoolDownTimer = Time.time;
+        dashCoolDownTimer = float.NegativeInfinity;
     }
 
     public override void Enter()

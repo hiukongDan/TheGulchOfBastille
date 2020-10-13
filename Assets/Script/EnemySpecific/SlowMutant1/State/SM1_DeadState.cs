@@ -19,7 +19,7 @@ public class SM1_DeadState : DeadState
     {
         base.Enter();
         
-        GameObject.Destroy(entity.gameObject,  data.disappearTime);
+        //GameObject.Destroy(entity.gameObject,  data.disappearTime);
     }
 
     public override void Exit()

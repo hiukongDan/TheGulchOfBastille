@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class SlowMutant1 : Entity
 {
@@ -29,6 +31,10 @@ public class SlowMutant1 : Entity
     public float idleStayTimeInLookup;
     public float idleStayTimeInLookfront;
     public Vector2 changeIdleAnimationTimeRange;
+
+    public Uilos uilos_pref;
+    public Transform UilosSpawnPos;
+    public int uilosAmount = 5;
 
     protected override void Start()
     {
@@ -68,7 +74,10 @@ public class SlowMutant1 : Entity
         if (isDead)
         {
             if(stateMachine.currentState != deadState)
+            {
+                BornUilos();
                 stateMachine.SwitchState(deadState);
+            }
         }
         else if (isStunned)
         {
@@ -86,5 +95,14 @@ public class SlowMutant1 : Entity
         base.OnDrawGizmos();
 
         Gizmos.DrawWireSphere(hitbox.position, meleeAttackStateData.attackRadius);
+    }
+
+    private void BornUilos()
+    {
+        for (int i = 0; i < uilosAmount; i++)
+        {
+            var uilos = Instantiate(uilos_pref);
+            uilos.transform.position = new Vector2(UilosSpawnPos.position.x + Random.Range(-0.2f, 0.2f), UilosSpawnPos.position.y + Random.Range(0, 1.5f));
+        }
     }
 }

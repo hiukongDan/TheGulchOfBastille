@@ -30,21 +30,25 @@ public class PlayerIdleState : PlayerGroundState
         base.LogicUpdate();
 
         // -- LOGIC BLOCK --------------------------------------------------------
-        if(shouldFlip && canFlip)
+        if (shouldFlip && canFlip)
         {
             player.Flip();
         }
-        if (isJump)
+
+        if (!isAction)
         {
-            player.stateMachine.SwitchState(player.jumpState);
-        }
-        else if(normMovementInput.x != 0)
-        {
-            stateMachine.SwitchState(player.walkState);
-        }
-        else if (Mathf.Abs(currentVelocity.y) > 0.1f)
-        {
-            stateMachine.SwitchState(player.inAirState);
+            if (isJump)
+            {
+                player.stateMachine.SwitchState(player.jumpState);
+            }
+            else if (normMovementInput.x != 0)
+            {
+                stateMachine.SwitchState(player.walkState);
+            }
+            else if (Mathf.Abs(currentVelocity.y) > 0.1f)
+            {
+                stateMachine.SwitchState(player.inAirState);
+            }
         }
         // -----------------------------------------------------------------------
     }

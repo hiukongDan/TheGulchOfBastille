@@ -46,11 +46,10 @@ public class PlayerInAirState : PlayerState
         if (Time.time < data.GS_coyoteTime + startTime && isJump && isCoyoteTime)
         {
             isCoyoteTime = false;
-            jumpAmountLeft--;
-            SetPlayerInitialSpeed();
+            stateMachine.SwitchState(player.jumpState);
         }
         // DASH
-        else if(player.dashState.dashAmountLeft > 0 && isRoll && !isGrounded && !isWalled)
+        else if(player.dashState.dashAmountLeft > 0 && player.dashState.IsDashCoolDownComplete() &&  isRoll && !isGrounded && !isWalled)
         {
             stateMachine.SwitchState(player.dashState);
         }
@@ -59,7 +58,12 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.SwitchState(player.wallState);
         }
-
+        // AIR JUMP
+        else if (player.jumpState.jumpAmountLeft > 0 && isJump)
+        {
+            stateMachine.SwitchState(player.jumpState);
+        }
+        // CANCEL JUMP
         else if(currentVelocity.y > 0 && !C_isJumpCanceled && isJumpCanceled)
         {
             C_isJumpCanceled = true;
@@ -67,18 +71,16 @@ public class PlayerInAirState : PlayerState
             workspace.Set(currentVelocity.x, currentVelocity.y * data.JS_jumpCanceledMultiplier);
             player.SetVelocity(workspace);
         }
-        // AIR JUMP
-        else if (player.jumpState.jumpAmountLeft > 0 && isJump)
-        {
-            player.jumpState.jumpAmountLeft--;
-            SetPlayerInitialSpeed();
-        }
         else if (isGrounded && Mathf.Abs(currentVelocity.y) < 0.01f)
         {
+            player.InputHandler.ResetIsJump();
+            player.jumpState.ResetJumpAmountLeft();
+            player.wallState.ResetWallJumpAmountLeft();
+            player.dashState.ResetDashAmountLeft();
+
             if (isTryJump)
             {
-                player.jumpState.ResetJumpAmountLeft();
-                SetPlayerInitialSpeed();
+                stateMachine.SwitchState(player.jumpState);
             }
             else if (normMovementInput.x != 0)
             {
@@ -88,15 +90,13 @@ public class PlayerInAirState : PlayerState
             {
                 stateMachine.SwitchState(player.idleState);
             }
-            player.InputHandler.ResetIsJump();
-            player.wallState.ResetWallJumpAmountLeft();
-            player.jumpState.ResetJumpAmountLeft();
-            player.dashState.ResetDashAmountLeft();
         }
         else
         {
             workspace.Set(normMovementInput.x * player.playerData.JS_horizontalSpeed, currentVelocity.y);
             player.SetVelocity(workspace);
+
+            player.InputHandler.ResetIsRoll();
         }
 
     }

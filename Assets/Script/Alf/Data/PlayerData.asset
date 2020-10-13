@@ -33,7 +33,7 @@ MonoBehaviour:
   DS_dashAmounts: 1
   DS_dashTime: 0.1
   DS_dashSpeed: 15
-  DS_dashCoolDownTime: 2
+  DS_dashCoolDownTime: 1
   WS_wallJumpAmounts: 1
   WS_wallJumpImpulse: {x: 6, y: 12}
   WS_wallJumpHoldTime: 0.2

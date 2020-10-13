@@ -19,7 +19,7 @@ TagManager:
   - Enemy
   - Projectile
   - Platform
-  - 
+  - Pickable
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1555364541
+    locked: 0
+  - name: Pickable
+    uniqueID: 3879419445
     locked: 0
   - name: Particle
     uniqueID: 612694419

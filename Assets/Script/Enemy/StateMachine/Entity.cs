@@ -102,7 +102,7 @@ public class Entity : MonoBehaviour
         if (isDead)
             return;
 
-        combatData.from.SendMessage("ValidAttack");
+        combatData.from.gameObject.SendMessage("ValidAttack");
         currentHealth -= combatData.damage;
 
         if(currentHealth <= 0 && !isDead)
