@@ -1,7 +1,133 @@
 fileFormatVersion: 2
 guid: f1493718a0bc4ae48aa0aa180bd8e4b9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4931765803764481085
+    second: Alf_Die_0_32x48_0
+  - first:
+      213: 3974711803027604270
+    second: Alf_Die_0_32x48_1
+  - first:
+      213: -6929227898734458689
+    second: Alf_Die_0_32x48_2
+  - first:
+      213: -4191487311120465042
+    second: Alf_Die_0_32x48_3
+  - first:
+      213: -850211841320614261
+    second: Alf_Die_0_32x48_4
+  - first:
+      213: -4532351558752281331
+    second: Alf_Die_0_32x48_5
+  - first:
+      213: -8685894252021459082
+    second: Alf_Die_0_32x48_6
+  - first:
+      213: 9210370795061721336
+    second: Alf_Die_0_32x48_7
+  - first:
+      213: 3418412517400903940
+    second: Alf_Die_0_32x48_8
+  - first:
+      213: -5849921385027148389
+    second: Alf_Die_0_32x48_9
+  - first:
+      213: 6526607499759385247
+    second: Alf_Die_0_32x48_10
+  - first:
+      213: -6787681643210681771
+    second: Alf_Die_0_32x48_11
+  - first:
+      213: 830983129775548312
+    second: Alf_Die_0_32x48_12
+  - first:
+      213: -805834691860476140
+    second: Alf_Die_0_32x48_13
+  - first:
+      213: 5104538639342812519
+    second: Alf_Die_0_32x48_14
+  - first:
+      213: -8464004080837292520
+    second: Alf_Die_0_32x48_15
+  - first:
+      213: 149742797953925175
+    second: Alf_Die_0_32x48_16
+  - first:
+      213: -6387328050474034730
+    second: Alf_Die_0_32x48_17
+  - first:
+      213: -6549973572060501722
+    second: Alf_Die_0_32x48_18
+  - first:
+      213: 291078312609245552
+    second: Alf_Die_0_32x48_19
+  - first:
+      213: -266583872537162320
+    second: Alf_Die_0_32x48_20
+  - first:
+      213: 4019700258325595856
+    second: Alf_Die_0_32x48_0
+  - first:
+      213: -7495487906887821140
+    second: Alf_Die_0_32x48_1
+  - first:
+      213: -5065560394725734647
+    second: Alf_Die_0_32x48_2
+  - first:
+      213: 5434712227047748532
+    second: Alf_Die_0_32x48_3
+  - first:
+      213: -8354431020179748332
+    second: Alf_Die_0_32x48_4
+  - first:
+      213: 575378132982772270
+    second: Alf_Die_0_32x48_5
+  - first:
+      213: -53290167705173435
+    second: Alf_Die_0_32x48_6
+  - first:
+      213: -6683362674934038824
+    second: Alf_Die_0_32x48_7
+  - first:
+      213: 486104914099336025
+    second: Alf_Die_0_32x48_8
+  - first:
+      213: 32544546001865769
+    second: Alf_Die_0_32x48_9
+  - first:
+      213: -1596912363303778514
+    second: Alf_Die_0_32x48_10
+  - first:
+      213: -8825369248460263736
+    second: Alf_Die_0_32x48_11
+  - first:
+      213: -8617172204603347633
+    second: Alf_Die_0_32x48_12
+  - first:
+      213: 5313358016979413660
+    second: Alf_Die_0_32x48_13
+  - first:
+      213: 2707943797650682125
+    second: Alf_Die_0_32x48_14
+  - first:
+      213: 4022712978937344636
+    second: Alf_Die_0_32x48_15
+  - first:
+      213: -973622671864152775
+    second: Alf_Die_0_32x48_16
+  - first:
+      213: -3807013235619310729
+    second: Alf_Die_0_32x48_17
+  - first:
+      213: -5913575542355249440
+    second: Alf_Die_0_32x48_18
+  - first:
+      213: 32447491800524280
+    second: Alf_Die_0_32x48_19
+  - first:
+      213: 3019711822451567700
+    second: Alf_Die_0_32x48_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,7 +211,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d60b017618d8c730800000000000000
+      internalID: 4019700258325595856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca817b3267daaf790800000000000000
+      internalID: -7495487906887821140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907c514d8a383b9b0800000000000000
+      internalID: -5065560394725734647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b337a5e9f9fb6b40800000000000000
+      internalID: 5434712227047748532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a8ea530491f0c80800000000000000
+      internalID: -8354431020179748332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2237fb0d572cf700800000000000000
+      internalID: 575378132982772270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54289e3ffdca24ff0800000000000000
+      internalID: -53290167705173435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8deb37f9e0def33a0800000000000000
+      internalID: -6683362674934038824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953767808ddfeb600800000000000000
+      internalID: 486104914099336025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c41d7971f937000800000000000000
+      internalID: 32544546001865769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2749d79aa0a6d9e0800000000000000
+      internalID: -1596912363303778514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ceaed56d6df58580800000000000000
+      internalID: -8825369248460263736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d6f302987a96880800000000000000
+      internalID: -8617172204603347633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a288e07f6dcb940800000000000000
+      internalID: 5313358016979413660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d01f0b2698c849520800000000000000
+      internalID: 2707943797650682125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72f9ee142c83d730800000000000000
+      internalID: 4022712978937344636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d3542a65ffc72f0800000000000000
+      internalID: -973622671864152775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_17
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77353b3f1a5ca2bc0800000000000000
+      internalID: -3807013235619310729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e63a7d2062ceeda0800000000000000
+      internalID: -5913575542355249440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_19
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f56f9662d6437000800000000000000
+      internalID: 32447491800524280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Die_0_32x48_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ce54547eb28e920800000000000000
+      internalID: 3019711822451567700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

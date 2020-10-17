@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: 53c4c64551156004a94e9c5900fcee75
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4954479244271662277
+    second: Alf_Parry_0_32x32_0
+  - first:
+      213: -7423053516330903800
+    second: Alf_Parry_0_32x32_1
+  - first:
+      213: -2427673075277934272
+    second: Alf_Parry_0_32x32_2
+  - first:
+      213: 614449588317346719
+    second: Alf_Parry_0_32x32_3
+  - first:
+      213: -8553726940546701275
+    second: Alf_Parry_0_32x32_4
+  - first:
+      213: -2424811957782758607
+    second: Alf_Parry_0_32x32_5
+  - first:
+      213: -7181420697310394930
+    second: Alf_Parry_0_32x32_6
+  - first:
+      213: 7410248290999753677
+    second: Alf_Parry_0_32x32_7
+  - first:
+      213: -886774617756646492
+    second: Alf_Parry_0_32x32_0
+  - first:
+      213: -7276947209368685177
+    second: Alf_Parry_0_32x32_1
+  - first:
+      213: 5383542978988660577
+    second: Alf_Parry_0_32x32_2
+  - first:
+      213: 5341563782479802638
+    second: Alf_Parry_0_32x32_3
+  - first:
+      213: 6390140071326181187
+    second: Alf_Parry_0_32x32_4
+  - first:
+      213: 2525855778543879017
+    second: Alf_Parry_0_32x32_5
+  - first:
+      213: -2653212785882971423
+    second: Alf_Parry_0_32x32_6
+  - first:
+      213: -5655555878378346710
+    second: Alf_Parry_0_32x32_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,7 +133,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Alf_Parry_0_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a348c8fe2b81b3f0800000000000000
+      internalID: -886774617756646492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Parry_0_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7853f486117130b90800000000000000
+      internalID: -7276947209368685177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Parry_0_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167daafe0df26ba40800000000000000
+      internalID: 5383542978988660577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Parry_0_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01fcc795fb012a40800000000000000
+      internalID: 5341563782479802638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Parry_0_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347e268d9865ea850800000000000000
+      internalID: 6390140071326181187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Parry_0_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963c9f1b274ad0320800000000000000
+      internalID: 2525855778543879017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Parry_0_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2cbef4705ed2bd0800000000000000
+      internalID: -2653212785882971423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Parry_0_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27e2ed94ed6381b0800000000000000
+      internalID: -5655555878378346710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

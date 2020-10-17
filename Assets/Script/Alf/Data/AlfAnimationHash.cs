@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AlfAnimationHash
 {
@@ -15,6 +13,7 @@ public class AlfAnimationHash
     public static int ROLL_0 = Animator.StringToHash("alf_roll_0");
     public static int DIE_0 = Animator.StringToHash("alf_die_0");
     public static int PARRY_0 = Animator.StringToHash("alf_parry_0");
+    public static int PARRY_1 = Animator.StringToHash("alf_parry_1");
     public static int STUN_0 = Animator.StringToHash("alf_stun_0");
     public static int DEAD_0 = Animator.StringToHash("alf_dead_0");
     public static int TAKEDAMAGE_0 = Animator.StringToHash("alf_takedamage_0");

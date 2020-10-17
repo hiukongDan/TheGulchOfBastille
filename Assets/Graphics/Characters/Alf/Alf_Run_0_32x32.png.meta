@@ -1,7 +1,103 @@
 fileFormatVersion: 2
 guid: 5bbef8e27bfd18a459072835862c6bd7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5536312105641926881
+    second: Alf_Run_0_32x32_0
+  - first:
+      213: -549104712463977356
+    second: Alf_Run_0_32x32_1
+  - first:
+      213: 7712297453089735655
+    second: Alf_Run_0_32x32_2
+  - first:
+      213: 6934233849043159240
+    second: Alf_Run_0_32x32_3
+  - first:
+      213: 439354393486515360
+    second: Alf_Run_0_32x32_4
+  - first:
+      213: 3044458518477847465
+    second: Alf_Run_0_32x32_5
+  - first:
+      213: 1090303449421459211
+    second: Alf_Run_0_32x32_6
+  - first:
+      213: -361727063746576099
+    second: Alf_Run_0_32x32_7
+  - first:
+      213: -5771665140211646034
+    second: Alf_Run_0_32x32_8
+  - first:
+      213: -4625469776055138788
+    second: Alf_Run_0_32x32_9
+  - first:
+      213: -6746184783093179398
+    second: Alf_Run_0_32x32_10
+  - first:
+      213: 2047743168672953101
+    second: Alf_Run_0_32x32_11
+  - first:
+      213: 4075430837513702162
+    second: Alf_Run_0_32x32_12
+  - first:
+      213: 6944143844588719361
+    second: Alf_Run_0_32x32_13
+  - first:
+      213: 6795366101457659793
+    second: Alf_Run_0_32x32_14
+  - first:
+      213: -6968904416219004078
+    second: Alf_Run_0_32x32_15
+  - first:
+      213: -3830957677381740064
+    second: Alf_Run_0_32x32_0
+  - first:
+      213: -7769695321252083034
+    second: Alf_Run_0_32x32_1
+  - first:
+      213: 272267537132044061
+    second: Alf_Run_0_32x32_2
+  - first:
+      213: 7617244254562047481
+    second: Alf_Run_0_32x32_3
+  - first:
+      213: 8139903440153077546
+    second: Alf_Run_0_32x32_4
+  - first:
+      213: -2475483447420296981
+    second: Alf_Run_0_32x32_5
+  - first:
+      213: 8411521803381900912
+    second: Alf_Run_0_32x32_6
+  - first:
+      213: 7907375980434216829
+    second: Alf_Run_0_32x32_7
+  - first:
+      213: 5463650415614418768
+    second: Alf_Run_0_32x32_8
+  - first:
+      213: -4410396756489809193
+    second: Alf_Run_0_32x32_9
+  - first:
+      213: -1506578948887672414
+    second: Alf_Run_0_32x32_10
+  - first:
+      213: 2798986285296079929
+    second: Alf_Run_0_32x32_11
+  - first:
+      213: 6434278120216137223
+    second: Alf_Run_0_32x32_12
+  - first:
+      213: 5242857848946741467
+    second: Alf_Run_0_32x32_13
+  - first:
+      213: -4270609039123020376
+    second: Alf_Run_0_32x32_14
+  - first:
+      213: -6228645931058415528
+    second: Alf_Run_0_32x32_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,7 +181,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e91b1a2a44b5dac0800000000000000
+      internalID: -3830957677381740064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa41cb554f7c2490800000000000000
+      internalID: -7769695321252083034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f30aae1e947c300800000000000000
+      internalID: 272267537132044061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f55e88aa43e5b960800000000000000
+      internalID: 7617244254562047481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27ed404d0fb6f070800000000000000
+      internalID: 8139903440153077546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be067259be055add0800000000000000
+      internalID: -2475483447420296981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0760807938abbb470800000000000000
+      internalID: 8411521803381900912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77dc332f84acbd60800000000000000
+      internalID: 7907375980434216829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fdc97fa19c2db40800000000000000
+      internalID: 5463650415614418768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2d3ea648f1bc2c0800000000000000
+      internalID: -4410396756489809193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9087d9d6e871be0800000000000000
+      internalID: -1506578948887672414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9345342623ff7d620800000000000000
+      internalID: 2798986285296079929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e0d8d2cd52b4950800000000000000
+      internalID: 6434278120216137223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0d65e8f6f52c840800000000000000
+      internalID: 5242857848946741467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a50080a4bfbbb4c0800000000000000
+      internalID: -4270609039123020376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Run_0_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858b497c6876f89a0800000000000000
+      internalID: -6228645931058415528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
