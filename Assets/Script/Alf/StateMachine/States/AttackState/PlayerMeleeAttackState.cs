@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class PlayerMeleeAttackState : PlayerAttackState
 {
-    #region CONTROL VARIABLES
+/*    #region CONTROL VARIABLES
     private bool isFirstAttack;
-    #endregion
-
-    #region MISC
-    private Vector2 oldPosition;
-    #endregion
+    #endregion*/
 
     public PlayerMeleeAttackState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
@@ -24,8 +20,6 @@ public class PlayerMeleeAttackState : PlayerAttackState
         combatData.knockbackDir = data.MAS_knockbackDirection;
         combatData.knockbackImpulse = data.MAS_knockbackImpulse;
         combatData.from = player.gameObject;
-
-        oldPosition = player.transform.position;
     }
 
 public override void Exit()
@@ -52,7 +46,7 @@ public override void Exit()
     protected override void ResetControlVariables()
     {
         base.ResetControlVariables();
-        isFirstAttack = false;
+        //isFirstAttack = false;
     }
 
     protected override void UpdateInputSubscription()
@@ -94,13 +88,13 @@ public override void Exit()
         // consuming MeleeAttack buffer
         player.InputHandler.ResetIsMeleeAttack();
 
-        isFirstAttack = !isFirstAttack;
+        //isFirstAttack = !isFirstAttack;
     }
 
     public override void CompleteAttack()
     {
         base.CompleteAttack();
-        RaycastHit2D hit = Physics2D.Raycast(player.wallCheck.position, player.transform.right, player.offsetCalculator.localPosition.x, data.GD_whatIsGround);
+/*        RaycastHit2D hit = Physics2D.Raycast(player.wallCheck.position, player.transform.right, player.offsetCalculator.localPosition.x, data.GD_whatIsGround);
 
         if (!hit.collider)
         {
@@ -119,7 +113,7 @@ public override void Exit()
             workspace = oldPosition;
         }
         
-        player.SetPosition(workspace);
+        player.SetPosition(workspace);*/
         stateMachine.SwitchState(player.idleState);
     }
 

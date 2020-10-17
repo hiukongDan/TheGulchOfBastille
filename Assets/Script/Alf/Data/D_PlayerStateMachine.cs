@@ -63,5 +63,8 @@ public class D_PlayerStateMachine : ScriptableObject
     public GameObject PS_particle;
 
     [Header("Stun State")]
-    public float stunDurationTime = 0.3f;
+    public float SS_stunDurationTime = 0.3f;
+
+    [Header("Roll State")]
+    public float RS_rollSpeed = 4f;
 }

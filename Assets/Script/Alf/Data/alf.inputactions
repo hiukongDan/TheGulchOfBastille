@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "pause",
+                    "type": "Button",
+                    "id": "bf8b8ebe-dadb-4f9c-a513-756eefda0459",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -341,6 +349,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1ca87f3-40fe-409f-ab5e-10cbb70dc388",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

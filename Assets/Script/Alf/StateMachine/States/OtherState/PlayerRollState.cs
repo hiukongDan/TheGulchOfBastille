@@ -11,7 +11,7 @@ public class PlayerRollState : PlayerState
     }
 
     public override void Enter()
-    {
+    { 
         base.Enter();
         player.InputHandler.ResetIsRoll();
     }
@@ -20,12 +20,16 @@ public class PlayerRollState : PlayerState
     {
         base.Exit();
         player.InputHandler.ResetAll();
+
+        player.SetVelocityX(0f);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         player.InputHandler.ResetIsParry();
+
+        player.SetVelocityX(player.facingDirection * data.RS_rollSpeed);
     }
 
     public override void PhysicsUpdate()
@@ -59,10 +63,11 @@ public class PlayerRollState : PlayerState
         base.UpdateStatusSubscription();
     }
 
+
     public void CompleteRoll()
     {
-        workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
-        player.SetPosition(workspace);
+/*        workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
+        player.SetPosition(workspace);*/
 
         stateMachine.SwitchState(player.idleState);
     }

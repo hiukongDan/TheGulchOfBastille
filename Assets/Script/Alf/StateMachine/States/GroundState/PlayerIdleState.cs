@@ -45,10 +45,10 @@ public class PlayerIdleState : PlayerGroundState
             {
                 stateMachine.SwitchState(player.walkState);
             }
-            else if (Mathf.Abs(currentVelocity.y) > 0.1f)
+/*            else if (Mathf.Abs(currentVelocity.y) > 0.01f)
             {
                 stateMachine.SwitchState(player.inAirState);
-            }
+            }*/
         }
         // -----------------------------------------------------------------------
     }

@@ -32,10 +32,6 @@ public class SlowMutant1 : Entity
     public float idleStayTimeInLookfront;
     public Vector2 changeIdleAnimationTimeRange;
 
-    public Uilos uilos_pref;
-    public Transform UilosSpawnPos;
-    public int uilosAmount = 5;
-
     protected override void Start()
     {
         base.Start();
@@ -60,11 +56,6 @@ public class SlowMutant1 : Entity
     private void FixedUpdate()
     {
         stateMachine.PhysicsUpdate();
-
-        if (!isStunned && !isDead)
-        {
-            CheckDamageBox();
-        }
     }
 
     protected override void Damage(CombatData combatData)
@@ -75,7 +66,6 @@ public class SlowMutant1 : Entity
         {
             if(stateMachine.currentState != deadState)
             {
-                BornUilos();
                 stateMachine.SwitchState(deadState);
             }
         }
@@ -97,12 +87,4 @@ public class SlowMutant1 : Entity
         Gizmos.DrawWireSphere(hitbox.position, meleeAttackStateData.attackRadius);
     }
 
-    private void BornUilos()
-    {
-        for (int i = 0; i < uilosAmount; i++)
-        {
-            var uilos = Instantiate(uilos_pref);
-            uilos.transform.position = new Vector2(UilosSpawnPos.position.x + Random.Range(-0.2f, 0.2f), UilosSpawnPos.position.y + Random.Range(0, 1.5f));
-        }
-    }
 }

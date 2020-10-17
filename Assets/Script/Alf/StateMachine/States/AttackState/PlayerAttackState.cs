@@ -60,17 +60,6 @@ public class PlayerAttackState : PlayerState
             stateMachine.SwitchState(player.rollState);
             isAction = true;
         }
-        /*
-        else if (isParry)
-        {
-            CompleteAttack();
-            stateMachine.SwitchState(player.parryState);
-            isAction = true;
-            if (shouldFlip)
-            {
-                player.Flip();
-            }
-        }*/
     }
 
     public override void PhysicsUpdate()

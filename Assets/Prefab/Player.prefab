@@ -28,36 +28,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9202549583387772988}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9202549582631835370
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9202549582631835371}
-  m_Layer: 0
-  m_Name: offsetCalculator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9202549582631835371
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9202549582631835370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 9202549583387772988}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9202549582959506072
@@ -126,7 +96,6 @@ Transform:
   m_Children:
   - {fileID: 9202549582959506073}
   - {fileID: 9202549584051426707}
-  - {fileID: 9202549582631835371}
   - {fileID: 505577554}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -244,6 +213,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 16bc1094-6d26-453a-9e82-d1ba1ceb8f35
     m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bf8b8ebe-dadb-4f9c-a513-756eefda0459
+    m_ActionName: Player/pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -383,9 +356,10 @@ MonoBehaviour:
   groundCheck: {fileID: 9202549582959506073}
   wallCheck: {fileID: 505577554}
   hitbox: {fileID: 9202549584051426707}
-  offsetCalculator: {fileID: 9202549582631835371}
+  offsetCalculator: {fileID: 0}
   currentHitPoints: 0
   currentStunPoints: 0
+  currentDecayPoints: 0
   damageImmuneTimer: 0
 --- !u!1 &9202549584051426706
 GameObject:

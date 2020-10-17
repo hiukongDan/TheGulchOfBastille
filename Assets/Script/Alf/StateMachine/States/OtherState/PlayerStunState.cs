@@ -33,7 +33,7 @@ public class PlayerStunState : PlayerState
     {
         base.LogicUpdate();
 
-        if(Time.time > startTime + data.stunDurationTime && isStun)
+        if(Time.time > startTime + data.SS_stunDurationTime && isStun)
         {
             CompleteStunHold();
             isStun = false;

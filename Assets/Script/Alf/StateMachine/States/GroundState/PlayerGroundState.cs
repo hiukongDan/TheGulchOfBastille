@@ -35,25 +35,26 @@ public override void LogicUpdate()
     {
         base.LogicUpdate();
 
+        isAction = true;
         if (isJump)
         {
             stateMachine.SwitchState(player.jumpState);
-            isAction = true;
         }
         else if (isMeleeAttack)
         {
             stateMachine.SwitchState(player.meleeAttackState);
-            isAction = true;
         }
         else if (isParry)
         {
             stateMachine.SwitchState(player.parryState);
-            isAction = true;
         }
         else if (isRoll)
         {
             stateMachine.SwitchState(player.rollState);
-            isAction = true;
+        }
+        else
+        {
+            isAction = false;
         }
     }
 

@@ -101,6 +101,16 @@ public class PlayerInputHandler : MonoBehaviour
 
     }
 
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                UIEventListener.Instance.OnPauseMenu();
+                break;
+        }
+    }
+
     public void ResetIsJump() => isJump = false;
 
     public void ResetIsMeleeAttack() => isMeleeAttack = false;

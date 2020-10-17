@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     public Transform wallCheck;
     public Transform hitbox;
-    public Transform offsetCalculator;
+    //public Transform offsetCalculator;
     #endregion
 
     #region HELPER VARIABLES
@@ -92,8 +92,6 @@ public class Player : MonoBehaviour
         stateMachine.InitializeState(idleState);
 
         InitializePlayerStatus();
-
-
     }
 
     void Update()
@@ -229,7 +227,7 @@ public class Player : MonoBehaviour
             damageImmuneTimer = Time.time;
 
             currentHitPoints -= combatData.damage;
-            UIEventManager.instance.OnHpChange(currentHitPoints, playerData.PD_maxHitPoint);
+            UIEventListener.Instance.OnHpChange(currentHitPoints, playerData.PD_maxHitPoint);
 
             int dir = (combatData.position.x - transform.position.x > 0 ? -1 : 1);
             workspace.Set(dir * combatData.knockbackDir.x * combatData.knockbackImpulse, combatData.knockbackDir.y * combatData.knockbackImpulse);
