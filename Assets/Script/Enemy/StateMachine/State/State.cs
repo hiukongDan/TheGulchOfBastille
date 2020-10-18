@@ -16,6 +16,7 @@ public class State
     protected bool isWallDetected;
     protected bool isEdgeDetected;
     protected bool isGroundDetected;
+    protected bool isPlatformDetected;
 
     protected float startTime;
 
@@ -102,5 +103,6 @@ public class State
         isEdgeDetected = entity.DetectEdge();
         isWallDetected = entity.DetectWall();
         isGroundDetected = entity.DetectGround();
+        isPlatformDetected = entity.DetectPlatform();
     }
 }

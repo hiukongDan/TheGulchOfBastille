@@ -56,6 +56,7 @@ public class D_PlayerStateMachine : ScriptableObject
     public float MAS_knockbackImpulse = 4f;
     public float MAS_damageTime = 0.2f;
     public GameObject MAS_meleeAttackParticle;
+    public float MAS_attackCooldownTimer = 1f;
 
     [Header("Parry State")]
     public float PS_maxTime = 1f;

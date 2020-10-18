@@ -37,6 +37,7 @@ public class PlayerStunState : PlayerState
         {
             CompleteStunHold();
             isStun = false;
+            player.SetVelocityX(0);
         }
 
         if (isGrounded && currentVelocity.y < 0.01f && isStun)

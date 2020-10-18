@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerParryState : PlayerState
 {
-    #region INPUT SUBSCRIPTION
-    protected bool isParryCanceled;
-    #endregion
+    public bool IsParryValid { get; private set; }
 
     public PlayerParryState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
@@ -17,6 +15,9 @@ public class PlayerParryState : PlayerState
     {
         base.Enter();
         player.InputHandler.ResetIsParry();
+
+        ResetControlVariables();
+        player.SetVelocityX(0f);
     }
 
     public override void Exit()
@@ -29,23 +30,6 @@ public class PlayerParryState : PlayerState
     {
         base.LogicUpdate();
 
-        if (shouldFlip && canFlip)
-        {
-            player.Flip();
-        }
-
-        if (isParryCanceled || Time.time > startTime + data.PS_maxTime)
-        {
-            stateMachine.SwitchState(player.idleState);
-        }
-        else if (normMovementInput.x != 0)
-        {
-            player.SetVelocityX(normMovementInput.x * player.playerData.PS_horizontalSpeed);
-        }
-        else
-        {
-            player.SetVelocityX(0);
-        }
     }
 
     public override void PhysicsUpdate()
@@ -61,13 +45,14 @@ public class PlayerParryState : PlayerState
     protected override void ResetControlVariables()
     {
         base.ResetControlVariables();
+
+        IsParryValid = false;
     }
 
     protected override void UpdateInputSubscription()
     {
         base.UpdateInputSubscription();
-        isParryCanceled = player.InputHandler.isParryCanceled;
-        normMovementInput = player.InputHandler.NormMovementInput;
+        //normMovementInput = player.InputHandler.NormMovementInput;
     }
 
     protected override void UpdatePhysicsStatusSubScription()
@@ -78,8 +63,17 @@ public class PlayerParryState : PlayerState
     protected override void UpdateStatusSubscription()
     {
         base.UpdateStatusSubscription();
-
+/*
         shouldFlip = player.CheckFlip();
-        currentVelocity = player.Rb.velocity;
+        currentVelocity = player.Rb.velocity;*/
     }
+
+    public void CompleteParry()
+    {
+        stateMachine.SwitchState(player.idleState);
+    }
+
+    public void EnterParryValid() => IsParryValid = true;
+    public void ExitParryValid() => IsParryValid = false;
+
 }

@@ -48,7 +48,7 @@ public class StunState : State
             CompleteStunHold();
         }
 
-        if(isGroundDetected && entity.rb.velocity.y < 0.01f)
+        if((isGroundDetected || isPlatformDetected) && entity.rb.velocity.y < 0.01f)
         {
             entity.rb.velocity = Vector2.zero;
         }

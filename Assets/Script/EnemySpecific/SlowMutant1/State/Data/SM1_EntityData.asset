@@ -24,6 +24,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  whatIsPlatform:
+    serializedVersion: 2
+    m_Bits: 4096
   damage: 10
   stunDamage: 1
   damageBoxWidth: 0.3

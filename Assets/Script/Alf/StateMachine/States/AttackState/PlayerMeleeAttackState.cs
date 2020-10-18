@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class PlayerMeleeAttackState : PlayerAttackState
 {
-/*    #region CONTROL VARIABLES
-    private bool isFirstAttack;
-    #endregion*/
+    /*    #region CONTROL VARIABLES
+        private bool isFirstAttack;
+        #endregion*/
+
+
+    public float attackCooldownTimer;
 
     public PlayerMeleeAttackState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
+        this.attackCooldownTimer = -1f;
     }
 
     public override void Enter()
@@ -94,28 +98,18 @@ public override void Exit()
     public override void CompleteAttack()
     {
         base.CompleteAttack();
-/*        RaycastHit2D hit = Physics2D.Raycast(player.wallCheck.position, player.transform.right, player.offsetCalculator.localPosition.x, data.GD_whatIsGround);
-
-        if (!hit.collider)
-        {
-            if (isFirstAttack)
-            {
-                workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
-            }
-            else
-            {
-                workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
-            }
-            
-        }
-        else
-        {
-            workspace = oldPosition;
-        }
-        
-        player.SetPosition(workspace);*/
+        ResetAttackCooldownTimer();
         stateMachine.SwitchState(player.idleState);
     }
 
     public override bool CheckEndAttack() => !isMeleeAttack;
+
+    public void ResetAttackCooldownTimer() => attackCooldownTimer = data.MAS_attackCooldownTimer;
+    public bool CanMeleeAttack() => attackCooldownTimer < 0;
+    public void UpdateAttackCooldownTimer()
+    {
+        if (attackCooldownTimer >= 0)
+            attackCooldownTimer -= Time.deltaTime;
+    }
+
 }

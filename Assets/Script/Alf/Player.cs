@@ -170,19 +170,14 @@ public class Player : MonoBehaviour
 
     public void CompleteAttack()
     {
-        if (attackState != null)
-        {
-            attackState.CompleteAttack();
-        }
+        attackState.CompleteAttack();
     }
 
     public void CompleteRoll()
     {
-        if(rollState != null)
-        {
-            rollState.CompleteRoll();
-        }
+        rollState?.CompleteRoll();
     }
+
 
     public void CompleteStun()
     {
@@ -195,10 +190,22 @@ public class Player : MonoBehaviour
 
     public void CompleteDead()
     {
-        if(deadState != null)
-        {
-            deadState.CompleteDead();
-        }
+        deadState?.CompleteDead();
+    }
+
+    public void CompleteParry()
+    {
+        parryState?.CompleteParry();
+    }
+
+    public void EnterParryValid()
+    {
+        parryState?.EnterParryValid();
+    }
+
+    public void ExitParryValid()
+    {
+        parryState?.ExitParryValid();
     }
     #endregion
 
@@ -208,7 +215,7 @@ public class Player : MonoBehaviour
         if (isDead || stateMachine.currentState == rollState)
             return;
 
-        if(stateMachine.currentState == parryState)
+        if(stateMachine.currentState == parryState && parryState.IsParryValid)
         {
             if (combatData.from != null)
             {
@@ -273,7 +280,7 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpState(stateMachine, this, AlfAnimationHash.JUMP_0, playerData);
         inAirState = new PlayerInAirState(stateMachine, this, AlfAnimationHash.INAIR_0, playerData);
         meleeAttackState = new PlayerMeleeAttackState(stateMachine, this, AlfAnimationHash.ATTACK_0, playerData);
-        parryState = new PlayerParryState(stateMachine, this, AlfAnimationHash.PARRY_0, playerData);
+        parryState = new PlayerParryState(stateMachine, this, AlfAnimationHash.PARRY_1, playerData);
         rollState = new PlayerRollState(stateMachine, this, AlfAnimationHash.ROLL_0, playerData);
         stunState = new PlayerStunState(stateMachine, this, AlfAnimationHash.STUN_0, playerData);
         deadState = new PlayerDeadState(stateMachine, this, AlfAnimationHash.DEAD_0, playerData);

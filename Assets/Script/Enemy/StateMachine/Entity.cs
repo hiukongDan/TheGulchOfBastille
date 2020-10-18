@@ -55,17 +55,22 @@ public class Entity : MonoBehaviour
 
     public bool DetectEdge()
     {
-        return Physics2D.Raycast(edgeCheck.position, Vector2.down, entityData.edgeCheckDistance, entityData.whatIsGround).collider == null;
+        return Physics2D.Raycast(edgeCheck.position, Vector2.down, entityData.edgeCheckDistance, entityData.whatIsGround | entityData.whatIsPlatform).collider == null;
     }
 
     public bool DetectWall()
     {
-        return Physics2D.Raycast(wallCheck.position, aliveGO.transform.right, entityData.wallCheckDistance, entityData.whatIsGround);
+        return Physics2D.Raycast(wallCheck.position, aliveGO.transform.right, entityData.wallCheckDistance, entityData.whatIsGround | entityData.whatIsPlatform);
     }
 
     public bool DetectGround()
     {
         return Physics2D.Raycast(groundCheck.position, Vector2.down, entityData.groundCheckDistance, entityData.whatIsGround);
+    }
+
+    public bool DetectPlatform()
+    {
+        return Physics2D.Raycast(groundCheck.position, Vector2.down, entityData.groundCheckDistance, entityData.whatIsPlatform);
     }
 
     public bool DetectPlayer()
@@ -115,7 +120,6 @@ public class Entity : MonoBehaviour
             if(currentStunResistance <= 0)
             {
                 isStunned = true;
-                ResetStunResistance();
             }
         }
     }

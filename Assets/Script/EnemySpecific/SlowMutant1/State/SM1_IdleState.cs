@@ -72,7 +72,7 @@ public class SM1_IdleState : IdleState
             stateMachine.SwitchState(enemy.detectPlayerState);
         }
         // TODO: A hotfix, should be move to another state later
-        else if (isGroundDetected && entity.rb.velocity.y < 0.01f)
+        else if ((isGroundDetected || isPlatformDetected) && entity.rb.velocity.y < 0.01f)
         {
             stateMachine.SwitchState(enemy.idleState);
         }

@@ -40,7 +40,7 @@ public override void LogicUpdate()
         {
             stateMachine.SwitchState(player.jumpState);
         }
-        else if (isMeleeAttack)
+        else if (isMeleeAttack && player.meleeAttackState.CanMeleeAttack())
         {
             stateMachine.SwitchState(player.meleeAttackState);
         }
@@ -55,6 +55,7 @@ public override void LogicUpdate()
         else
         {
             isAction = false;
+            player.meleeAttackState.UpdateAttackCooldownTimer();
         }
     }
 

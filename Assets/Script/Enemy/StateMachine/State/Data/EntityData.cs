@@ -16,6 +16,7 @@ public class EntityData : ScriptableObject
 
     public LayerMask whatIsPlayer;
     public LayerMask whatIsGround;
+    public LayerMask whatIsPlatform;
 
     public float damage = 5f;
     public float stunDamage = 1f;

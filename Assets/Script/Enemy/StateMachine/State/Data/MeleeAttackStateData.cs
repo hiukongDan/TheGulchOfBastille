@@ -11,4 +11,7 @@ public class MeleeAttackStateData : ScriptableObject
     public float knockbackImpulse = 5f;
     public float attackRadius = 1f;
     public LayerMask whatIsPlayer;
+
+    // attack + additional attack
+    public int heideAttackTimes = 4;
 }

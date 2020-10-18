@@ -39,7 +39,7 @@ public class SM1_DetectPlayerState : DetectPlayerState
                 // if player attack => FLEE
                 // else WILD MELEEATTACK
                 
-                stateMachine.SwitchState(enemy.meleeAttackState);
+                stateMachine.SwitchState(enemy.heideAttackState);
             }
             else if (playerWithinMeleeRange)
             {

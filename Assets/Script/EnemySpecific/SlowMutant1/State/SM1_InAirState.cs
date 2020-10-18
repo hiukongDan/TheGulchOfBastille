@@ -30,7 +30,7 @@ public class SM1_InAirState : InAirState
     {
         base.LogicUpdate();
 
-        if(isGroundDetected && enemy.rb.velocity.y < 0.01f)
+        if((isGroundDetected || isPlatformDetected) && enemy.rb.velocity.y < 0.01f)
         {
             stateMachine.SwitchState(enemy.meleeAttackState);
         }
