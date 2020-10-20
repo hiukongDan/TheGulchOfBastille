@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour
     // TODO: REMOVE STUN STATE
     public PlayerStunState stunState { get; private set; }
     public PlayerTakeDamageState takeDamageState { get; private set; }
-
+    public PlayerConverseState converseState { get; private set; }
 
 
     public D_PlayerStateMachine playerData;
@@ -225,7 +226,7 @@ public class Player : MonoBehaviour
                 stateMachine.SwitchState(idleState);
 
                 var particle = Instantiate(playerData.PS_particle, hitbox.position, playerData.PS_particle.transform.rotation);
-                particle.gameObject.transform.Rotate(0, 0, Random.Range(0, 360));
+                particle.gameObject.transform.Rotate(0, 0, UnityEngine.Random.Range(0, 360));
                 particle.GetComponent<Animator>().Play("3");
             }
         }
@@ -267,8 +268,8 @@ public class Player : MonoBehaviour
     public void ValidAttack()
     {
         var particle = GameObject.Instantiate(playerData.MAS_meleeAttackParticle, hitbox.position, playerData.PS_particle.transform.rotation);
-        particle.gameObject.transform.Rotate(0, 0, Random.Range(0, 360));
-        particle.GetComponent<Animator>().Play(Random.Range(0, 3).ToString());
+        particle.gameObject.transform.Rotate(0, 0, UnityEngine.Random.Range(0, 360));
+        particle.GetComponent<Animator>().Play(UnityEngine.Random.Range(0, 3).ToString());
     }
     #endregion
 
@@ -287,6 +288,7 @@ public class Player : MonoBehaviour
         takeDamageState = new PlayerTakeDamageState(stateMachine, this, AlfAnimationHash.TAKEDAMAGE_0, playerData);
         wallState = new PlayerWallState(stateMachine, this, AlfAnimationHash.WALL_0, playerData);
         dashState = new PlayerDashState(stateMachine, this, AlfAnimationHash.DASH_0, playerData);
+        converseState = new PlayerConverseState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
     }
     public void InitializePlayerStatus()
     {
@@ -317,7 +319,21 @@ public class Player : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    
+    #endregion
+
+    #region INTERFACE
+    private NPCEventHandler npcEventHandler;
+    public void SetNPCEventHandler(NPCEventHandler npcEventHandler) => this.npcEventHandler = npcEventHandler;
+    public NPCEventHandler GetNPCEventHandler() => npcEventHandler;
+    #endregion
+
+    #region EVENT
+    public event Action EndConversation;
+
+    public void OnEndConversation()
+    {
+        EndConversation?.Invoke();
+    }
     #endregion
 
     #region AUXILIARY FUNCTIONS

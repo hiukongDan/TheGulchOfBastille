@@ -20,8 +20,8 @@ TagManager:
   - Projectile
   - Platform
   - Pickable
-  - 
-  - 
+  - NPC
+  - Trigger
   - 
   - 
   - 
@@ -51,8 +51,14 @@ TagManager:
   - name: Enemy
     uniqueID: 2087037385
     locked: 0
+  - name: NPC
+    uniqueID: 3279275625
+    locked: 0
   - name: Player
     uniqueID: 1555364541
+    locked: 0
+  - name: Dialogue
+    uniqueID: 3416517545
     locked: 0
   - name: Pickable
     uniqueID: 3879419445

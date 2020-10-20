@@ -43,6 +43,10 @@ public class PlayerIdleState : PlayerGroundState
             }
             else if (normMovementInput.x != 0)
             {
+                if(animCode == AlfAnimationHash.IDLE_1)
+                {
+                    player.walkState.SetAnimationCode(AlfAnimationHash.RUN_1);
+                }
                 stateMachine.SwitchState(player.walkState);
             }
 /*            else if (Mathf.Abs(currentVelocity.y) > 0.01f)
@@ -50,7 +54,7 @@ public class PlayerIdleState : PlayerGroundState
                 stateMachine.SwitchState(player.inAirState);
             }*/
         }
-        // -----------------------------------------------------------------------
+
     }
 
     public override void PhysicsUpdate()

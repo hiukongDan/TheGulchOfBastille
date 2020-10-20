@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newPlayerStateMachineData", menuName = "Data/Player/State Machine Data")]
 public class D_PlayerStateMachine : ScriptableObject
 {
-    //[Header("Idle State")]
-
     [Header("General Data")]
     public float GD_groundCheckDistance = 0.3f;
     public float GD_wallCheckDistance = 0.3f;

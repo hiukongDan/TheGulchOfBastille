@@ -52,7 +52,6 @@ public class SM1_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
         if (isLookFront)
         {
             if (changeIdleAnimationTimer < 0)

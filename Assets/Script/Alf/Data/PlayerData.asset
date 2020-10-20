@@ -24,8 +24,9 @@ MonoBehaviour:
   GD_whatIsEnemy:
     serializedVersion: 2
     m_Bits: 1024
-  PD_maxHitpoint: 50
+  PD_maxHitPoint: 60
   PD_maxStunPoint: 5
+  PD_maxDecayPoint: 20
   GS_coyoteTime: 0.08
   WS_walkSpeed: 3
   IAS_jumpAmounts: 2
@@ -48,8 +49,10 @@ MonoBehaviour:
   MAS_damageTime: 0.2
   MAS_meleeAttackParticle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,
     type: 3}
+  MAS_attackCooldownTimer: 1
   PS_maxTime: 0.2
   PS_horizontalSpeed: 0.5
   PS_particle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,
     type: 3}
-  stunDurationTime: 0.5
+  SS_stunDurationTime: 0.3
+  RS_rollSpeed: 4

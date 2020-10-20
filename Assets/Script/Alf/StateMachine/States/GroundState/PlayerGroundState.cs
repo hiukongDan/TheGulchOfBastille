@@ -36,9 +36,19 @@ public override void LogicUpdate()
         base.LogicUpdate();
 
         isAction = true;
+
+        // NOTE: JUMP BUTTON SHARES WITH INTERACTION BUTTON
         if (isJump)
         {
-            stateMachine.SwitchState(player.jumpState);
+            if(player.GetNPCEventHandler() != null)
+            {
+                player.GetNPCEventHandler().OnNPCInteraction();
+                stateMachine.SwitchState(player.converseState);
+            }
+            else
+            {
+                stateMachine.SwitchState(player.jumpState);
+            }
         }
         else if (isMeleeAttack && player.meleeAttackState.CanMeleeAttack())
         {
