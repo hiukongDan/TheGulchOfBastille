@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     private string currentScene;
 
-
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(currentScene);

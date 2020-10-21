@@ -5,15 +5,19 @@ using UnityEngine;
 public class NPCPlayerDetect : MonoBehaviour
 {
     private NPCEventHandler npcEventHandler;
+    private NPC npc;
+
     void Start()
     {
         npcEventHandler = GetComponent<NPCEventHandler>();
+        npc = GetComponentInParent<NPC>();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Player")
         {
+            npc.npcConversationHandler.gameObject.SetActive(true);
             npcEventHandler.OnNPCEnterInteraction();
             collider.gameObject.GetComponent<Player>().SetNPCEventHandler(npcEventHandler);
         }
@@ -25,6 +29,7 @@ public class NPCPlayerDetect : MonoBehaviour
         {
             npcEventHandler.OnNPCExitInteraction();
             collider.gameObject.GetComponent<Player>().SetNPCEventHandler(null);
+            npc.npcConversationHandler.gameObject.SetActive(false);
         }
     }
 

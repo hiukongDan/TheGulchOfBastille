@@ -7,6 +7,9 @@ public class PFontLoader
 {
     private static Dictionary<PFontInfo, PFontLoader> pFontDict;
 
+    public float charWidthInPixel { get; private set; }
+    public float charHeightInPixel { get; private set; }
+
     public static Dictionary<PFontInfo, PFontLoader> PFontDict
     {
         get
@@ -31,6 +34,8 @@ public class PFontLoader
         if(pFontLoader != null)
         {
             chars = pFontLoader.chars;
+            charWidthInPixel = pFontLoader.charWidthInPixel;
+            charHeightInPixel = pFontLoader.charHeightInPixel;
         }
         else
         {
@@ -47,13 +52,19 @@ public class PFontLoader
         Char[] chs = pfontInfo.characters.ToCharArray();
         int i = 0;
 
+        float width = 0;
         foreach(char ch in chs)
         {
             CharInfo ci = new CharInfo(ch, sprites[i], sprites[i].rect.width);
             chars[ch] = ci;
 
+            if (sprites[i].rect.width > width)
+                width = sprites[i].rect.width;
             i++;
         }
+
+        charWidthInPixel = width;
+        charHeightInPixel = sprites[0].rect.height;
     }
 
     public class CharInfo

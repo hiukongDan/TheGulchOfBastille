@@ -4,6 +4,7 @@ using UnityEngine;
 public class NPCEventHandler : MonoBehaviour
 {
     public event Action NPCInteraction;
+    public event Action NPCEndInteraction;
     public event Action NPCEnterInteraction;
     public event Action NPCExitInteraction;
 
@@ -20,25 +21,45 @@ public class NPCEventHandler : MonoBehaviour
     #region HANDLER
     private void npcIntearctionHandler()
     {
-        NPCExitInteraction -= npcExitInteractionHandler;
         NPCInteraction -= npcIntearctionHandler;
 
+        Debug.Log("Called -");
         npc.npcConversationHandler.OnBeginInteraction();
 
         NPCInteraction += npc.npcConversationHandler.OnInteraction;
+
+        NPCEndInteraction += npc.npcConversationHandler.OnEndInteraction;
+        NPCEndInteraction += npcEndInteractionHandler;
+    }
+
+    private void npcEndInteractionHandler()
+    {
+        NPCEndInteraction -= npcEndInteractionHandler;
+        NPCEndInteraction -= npc.npcConversationHandler.OnInteraction;
+        NPCEndInteraction -= npc.npcConversationHandler.OnEndInteraction;
+
+        NPCInteraction -= npc.npcConversationHandler.OnInteraction;
+
+        NPCInteraction += npcIntearctionHandler;
+
+        var player = GameObject.Find("Player").GetComponent<Player>();
+        player.stateMachine.SwitchState(player.idleState);
     }
 
     private void npcEnterInteractionHandler()
     {
         NPCExitInteraction += npcExitInteractionHandler;
-
+        
         npc.npcConversationHandler.OnEnterInteractionArea();
     }
 
     private void npcExitInteractionHandler()
     {
+        NPCExitInteraction -= npcExitInteractionHandler;
+
         npc.npcConversationHandler.OnExitInteractionArea();
     }
+
     #endregion
 
 
@@ -47,6 +68,11 @@ public class NPCEventHandler : MonoBehaviour
     public void OnNPCInteraction()
     {
         NPCInteraction?.Invoke();
+    }
+
+    public void OnNPCEndInteraction()
+    {
+        NPCEndInteraction?.Invoke();
     }
 
     public void OnNPCEnterInteraction()
@@ -58,6 +84,7 @@ public class NPCEventHandler : MonoBehaviour
     {
         NPCExitInteraction?.Invoke();
     }
+
 
     #endregion
 }

@@ -8,7 +8,6 @@ public class PlayerConverseState : PlayerState
     {
 
     }
-
     public override void Enter()
     {
         base.Enter();

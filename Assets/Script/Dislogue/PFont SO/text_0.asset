@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4793f7d92f982c248b95d55cc805da54, type: 3}
   m_Name: text_0
   m_EditorClassIdentifier: 
-  characters: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?
+  characters: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!,.
   path: PFont/text_0

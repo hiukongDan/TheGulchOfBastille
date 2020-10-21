@@ -13,5 +13,7 @@ public class NPC : MonoBehaviour
         npcEventHandler = GetComponentInChildren<NPCEventHandler>();
         npcPlayerDetect = GetComponentInChildren<NPCPlayerDetect>();
         npcConversationHandler = GetComponentInChildren<NPCConversationHandler>();
+
+        npcConversationHandler.gameObject.SetActive(false);
     }
 }
