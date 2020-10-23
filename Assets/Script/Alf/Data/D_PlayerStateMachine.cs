@@ -66,4 +66,7 @@ public class D_PlayerStateMachine : ScriptableObject
 
     [Header("Roll State")]
     public float RS_rollSpeed = 4f;
+
+    [Header("Converse State")]
+    public float CS_selectionTimer = 0.2f;
 }

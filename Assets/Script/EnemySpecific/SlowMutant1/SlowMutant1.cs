@@ -72,7 +72,7 @@ public class SlowMutant1 : Entity
                 stateMachine.SwitchState(deadState);
             }
         }
-        else if (isStunned)
+        else if (isStunned || combatData.isParryDamage)
         {
             knockback(rb, combatData.position.x, aliveGO.transform.position.x, combatData.knockbackDir, combatData.knockbackImpulse);
             stateMachine.SwitchState(stunState);

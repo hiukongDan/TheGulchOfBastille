@@ -18,4 +18,9 @@ public class NPCConversation : ScriptableObject
     {
         return conversations[index++].ToList();
     }
+
+    public List<NPCSelection> GetSelections()
+    {
+        return selections.ToList();
+    }
 }

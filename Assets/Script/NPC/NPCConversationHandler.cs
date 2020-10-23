@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class NPCConversationHandler : MonoBehaviour
@@ -13,6 +11,7 @@ public class NPCConversationHandler : MonoBehaviour
     public Animator DialogueBoxAnim;
 
     public NPCConversation npcConversation;
+    private NPCConversation npcConversationOld;
 
     public float letterPerLine = 15f;
     public float pixelPerUnit = 32f;
@@ -22,8 +21,10 @@ public class NPCConversationHandler : MonoBehaviour
     public float textSpeed = 4f;
     
     private NPC npc;
+    private Player player;
 
     private Transform charOrigin;
+    private Transform selectionBox;
 
     private PFontLoader pFontLoader;
 
@@ -33,9 +34,12 @@ public class NPCConversationHandler : MonoBehaviour
     private ObjectPool OP;
 
     private Queue<char> nextSentence;
+    private List<NPCSelection> npcSelections;
 
     private float totalTime;
     private Vector2 lastPos;
+    private Vector2 selectionBoxSize;
+    private int currentSelection;
 
     private List<GameObject> recycleObject;
     private List<PFontLoader.CharInfo> wordObject;
@@ -43,14 +47,21 @@ public class NPCConversationHandler : MonoBehaviour
     void Start()
     {
         npc = GetComponentInParent<NPC>();
+        player = GameObject.Find("Player").GetComponent<Player>();
         pFontLoader = new PFontLoader(pFontInfo);
         OP = new ObjectPool();
         charOrigin = DialogueBoxAnim.gameObject.transform.GetChild(0);
+        selectionBox = DialogueBoxAnim.gameObject.transform.GetChild(1);
+
         recycleObject = new List<GameObject>();
         nextSentence = new Queue<char>();
         wordObject = new List<PFontLoader.CharInfo>();
+        npcSelections = new List<NPCSelection>();
+
+        npcConversationOld = npcConversation;
     }
 
+    // ----- DIALOGUBE BOX ---------------------------------------------------------------------------
     private void initBox() => initOriginPoint(initBoxSize());
 
     private Vector2 initBoxSize()
@@ -74,9 +85,94 @@ public class NPCConversationHandler : MonoBehaviour
         return originPoint;
     }
 
+    // --------------------------------------------------------------------------------
+
+
+
+    // ----- SELECTION BOX ------------------------------------------------------------
+    private bool initSelectionBox()
+    {
+        npcSelections = npcConversation.GetSelections();
+        if (npcSelections.Count == 0)
+            return false;
+
+        // calculate size
+        float length = 0;
+        float charCount = 0;
+
+        foreach(NPCSelection npcSelection in npcSelections)
+        {
+            if (length < pFontLoader.GetLengthInPixel(npcSelection.selection))
+            {
+                length = pFontLoader.GetLengthInPixel(npcSelection.selection);
+                charCount = npcSelection.selection.Length;
+            }
+        }
+
+        float height = npcSelections.Count;
+
+        selectionBoxSize = new Vector2((borderInPixel.x * 2 + (length + marginInPixel.x * charCount)) / pixelPerUnit,
+            (borderInPixel.y * 2 + height * pFontLoader.charHeightInPixel + (height - 1) * marginInPixel.y) / pixelPerUnit);
+
+        selectionBox.GetComponent<SpriteRenderer>().size = selectionBoxSize;
+
+        // calculate position
+        Vector2 boxPos = new Vector2(this.boxSize.x / 2 + selectionBoxSize.x / 2 + borderInPixel.x / pixelPerUnit,
+            0f);
+
+        selectionBox.localPosition = boxPos;
+
+        setSelectionIconPos(0, selectionBoxSize);
+
+        // collider
+        var oldSize = selectionBox.GetComponent<BoxCollider>().size;
+        selectionBox.GetComponent<BoxCollider>().size = new Vector3(selectionBoxSize.x, selectionBoxSize.y, oldSize.z);
+
+        // set active
+        selectionBox.gameObject.SetActive(true);
+
+        // set current selection
+        currentSelection = 0;
+
+        // reset selections items
+        Vector2 startPoint = new Vector2(-selectionBoxSize.x / 2 + borderInPixel.x / pixelPerUnit, selectionBoxSize.y / 2 - (borderInPixel.y + pFontLoader.charHeightInPixel/2) / pixelPerUnit);
+
+        lastPos = startPoint;
+
+        for (int i = 0; i < npcSelections.Count; i++)
+        {
+            List<char> chars = npcSelections[i].selection.ToList();
+
+            foreach(char ch in chars)
+            {
+                if (char.IsWhiteSpace(ch))
+                    lastPos.Set(lastPos.x + pFontLoader.charWidthInPixel / pixelPerUnit, lastPos.y);
+
+                ShowLetter(ch, lastPos, selectionBox.transform);
+            }
+            lastPos.Set(-selectionBoxSize.x / 2 + borderInPixel.x / pixelPerUnit, lastPos.y - (marginInPixel.y + pFontLoader.charHeightInPixel) / pixelPerUnit);
+        }
+
+        return true;
+    }
+
+    private int setSelectionIconPos(int index, Vector2 boxSize)
+    {
+        if (index < 0 || index >= npcSelections.Count)
+            return -1;
+
+        Vector2 iconPos = new Vector2(boxSize.x / 2 + (marginInPixel.x * 4) / pixelPerUnit, boxSize.y / 2 - (borderInPixel.y + pFontLoader.charHeightInPixel / 2 + (marginInPixel.y + pFontLoader.charHeightInPixel) * index) / pixelPerUnit);
+
+        selectionBox.GetChild(0).localPosition = iconPos;
+
+        return index;
+    }
+
+    // --------------------------------------------------------------------------------
+
     private enum ConversationStatus
     {
-        EMPTY, CONVERSE, QUESTION,
+        EMPTY, CONVERSE, SELECTION,
     }
 
     private ConversationStatus _currentConverseStatus = ConversationStatus.EMPTY;
@@ -90,8 +186,8 @@ public class NPCConversationHandler : MonoBehaviour
             case ConversationStatus.CONVERSE:
                 onConverse();
                 break;
-            case ConversationStatus.QUESTION:
-                onQuestion();
+            case ConversationStatus.SELECTION:
+                onSelection();
                 break;
             default:
                 break;
@@ -102,8 +198,15 @@ public class NPCConversationHandler : MonoBehaviour
     {
         if(nextSentence.Count == 0)
         {
-            _currentConverseStatus = ConversationStatus.EMPTY;
-            resetTotalTime();
+            if (!npcConversation.HasNext() && initSelectionBox())
+            {
+                _currentConverseStatus = ConversationStatus.SELECTION;
+            }
+            else
+            {
+                _currentConverseStatus = ConversationStatus.EMPTY;
+                resetTotalTime();
+            }
             return;
         }
 
@@ -112,17 +215,63 @@ public class NPCConversationHandler : MonoBehaviour
         {
             if (!digestNextLetter())
             {
-                _currentConverseStatus = ConversationStatus.EMPTY;
-                resetTotalTime();
+                if (!npcConversation.HasNext() && initSelectionBox())
+                {
+                    _currentConverseStatus = ConversationStatus.SELECTION;
+                }
+                else
+                {
+                    _currentConverseStatus = ConversationStatus.EMPTY;
+                    resetTotalTime();
+                }
                 break;
             }
         }
         totalTime += Time.deltaTime * textSpeed;
     }
 
-    private void onQuestion()
+    private void onSelection()
     {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(player.InputHandler.MousePosInput);
+        if(Physics.Raycast(ray, out hit, LayerMask.NameToLayer("Selectable")))
+        {
+            var localPos = selectionBox.InverseTransformPoint(hit.point);
+            int index = npcSelections.Count - Mathf.FloorToInt((localPos.y + selectionBoxSize.y / 2) / (selectionBoxSize.y / npcSelections.Count)) - 1;
+            if(currentSelection != index)
+            {
+                selectItem(index);
+            }
+        }
+    }
 
+    private void selectItem(int index)
+    {
+        if (index < 0 || index >= npcSelections.Count)
+            return;
+
+        if(index != currentSelection)
+        {
+            currentSelection = index;
+            setSelectionIconPos(index, selectionBoxSize);
+        }
+    }
+
+    private void confirmSelection()
+    {
+        if (_currentConverseStatus != ConversationStatus.SELECTION)
+            return;
+
+        NPCSelection selection = npcSelections[currentSelection];
+        npcConversation = selection.conversation;
+
+        if(npcConversation != null)
+            npcConversation.ResetIndex();
+
+        selectionBox.gameObject.SetActive(false);
+
+        _currentConverseStatus = ConversationStatus.EMPTY;
+        OnInteraction();
     }
 
     private void resetTotalTime() => totalTime = 0f;
@@ -131,6 +280,10 @@ public class NPCConversationHandler : MonoBehaviour
     public void OnEnterInteractionArea()
     {
         InfoSignAnim.Play(InfoSignAnimHash.INTRO);
+
+        selectionBox.gameObject.SetActive(false);
+
+        npcConversation = npcConversationOld;
     }
 
     public void OnExitInteractionArea()
@@ -140,14 +293,28 @@ public class NPCConversationHandler : MonoBehaviour
 
     public void OnBeginInteraction()
     {
+        npc.npcEventHandler.NPCSelection += DialogueSelectionHandler;
+
         InfoSignAnim.Play(InfoSignAnimHash.EMPTY);
         DialogueBoxAnim.Play(DialogueBoxAnimHash.IDLE);
         initBox();
-        npcConversation.ResetIndex();
-        getNextSentence();
-        resetTotalTime();
 
-        _currentConverseStatus = ConversationStatus.CONVERSE;
+        if (npcConversation == null)
+            npcConversation = npcConversationOld;
+
+        if(npcConversation != null)
+        {
+            npcConversation.ResetIndex();
+            getNextSentence();
+            resetTotalTime();
+
+            _currentConverseStatus = ConversationStatus.CONVERSE;
+        }
+        else
+        {
+            OnEndInteraction();
+        }
+
     }
 
     public void OnEndInteraction()
@@ -157,9 +324,27 @@ public class NPCConversationHandler : MonoBehaviour
         InfoSignAnim.Play(InfoSignAnimHash.INTRO);
 
         OP.DestroyGameObject();
+
+        npc.npcEventHandler.NPCSelection -= DialogueSelectionHandler;
+    }
+
+
+    // direction : positive - up, negative - down
+    public void DialogueSelectionHandler(int direction)
+    {
+        if (_currentConverseStatus != ConversationStatus.SELECTION)
+            return;
+
+        if(direction > 0)
+        {
+            selectItem(currentSelection - 1);
+        }
+        else if(direction < 0)
+        {
+            selectItem(currentSelection + 1);
+        }
     }
     // --------------------------------------------------
-
 
 
     public void OnInteraction()
@@ -168,13 +353,12 @@ public class NPCConversationHandler : MonoBehaviour
         {
             case ConversationStatus.EMPTY:
                 // seek next converse or question
-                if (npcConversation.HasNext())
+                if (npcConversation != null && npcConversation.HasNext())
                 {
                     getNextSentence();
                     cleanUpBox();
                     _currentConverseStatus = ConversationStatus.CONVERSE;
                 }
-                // TODO: else if selection:
                 else
                 {
                     npc.npcEventHandler.OnNPCEndInteraction();
@@ -184,8 +368,8 @@ public class NPCConversationHandler : MonoBehaviour
                 // skip converse
                 totalTime = 100f;
                 break;
-            case ConversationStatus.QUESTION:
-                // give next converse or return player control
+            case ConversationStatus.SELECTION:
+                confirmSelection();
                 break;
             default:
                 break;
@@ -219,12 +403,15 @@ public class NPCConversationHandler : MonoBehaviour
 
     private void getNextSentence() => nextSentence = new Queue<char>(npcConversation.GetNextSentence());
 
-    private PFontLoader.CharInfo ShowLetter(char ch)
+    // dialgoue box
+    private PFontLoader.CharInfo ShowLetter(char ch, Vector2 lastPos, Transform charOrigin)
     {
+        if (char.IsWhiteSpace(ch))
+            return null;
+
         PFontLoader.CharInfo ci = pFontLoader.chars[char.ToUpper(ch)];
         var go = OP.GetItem();
         var sr = go.GetComponent<SpriteRenderer>();
-        
 
         if(sr == null)
         {
@@ -240,7 +427,7 @@ public class NPCConversationHandler : MonoBehaviour
         recycleObject.Add(go);
         sr.sprite = ci.sprite;
 
-        lastPos.Set(lastPos.x + ci.width / 2 / pixelPerUnit, lastPos.y);
+        this.lastPos.Set(lastPos.x + ci.width / 2 / pixelPerUnit, lastPos.y);
 
         return ci;
     }
@@ -260,11 +447,11 @@ public class NPCConversationHandler : MonoBehaviour
         }
         else if (char.IsLetter(ch))
         {
-            ci = ShowLetter(ch);
+            ci = ShowLetter(ch, lastPos, charOrigin);
             isletter = true;
         }
         else if (pFontLoader.chars.Keys.Contains(ch)){
-            ci = ShowLetter(ch);
+            ci = ShowLetter(ch, lastPos, charOrigin);
         }
         else
         {

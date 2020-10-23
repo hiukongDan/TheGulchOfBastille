@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "mouse",
+                    "type": "Value",
+                    "id": "ba1b0fdc-4ea8-405e-8c10-a3f65060d8f1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -360,6 +368,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81ac0ced-a14d-49ac-9e80-86b37610cb2a",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "mouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

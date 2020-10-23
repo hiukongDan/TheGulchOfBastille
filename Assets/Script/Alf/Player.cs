@@ -221,6 +221,7 @@ public class Player : MonoBehaviour
             if (combatData.from != null)
             {
                 UpdateCombatData();
+                this.combatData.isParryDamage = true;
                 combatData.from.SendMessage("Damage", this.combatData);
                 // TODO: TO EXECUTION ANIMATION
                 stateMachine.SwitchState(idleState);

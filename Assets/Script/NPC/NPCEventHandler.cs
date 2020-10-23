@@ -7,8 +7,11 @@ public class NPCEventHandler : MonoBehaviour
     public event Action NPCEndInteraction;
     public event Action NPCEnterInteraction;
     public event Action NPCExitInteraction;
+    public event SelectionHandler NPCSelection;
 
     private NPC npc;
+
+    public delegate void SelectionHandler(int direction);
 
     void Start()
     {
@@ -23,7 +26,6 @@ public class NPCEventHandler : MonoBehaviour
     {
         NPCInteraction -= npcIntearctionHandler;
 
-        Debug.Log("Called -");
         npc.npcConversationHandler.OnBeginInteraction();
 
         NPCInteraction += npc.npcConversationHandler.OnInteraction;
@@ -83,6 +85,11 @@ public class NPCEventHandler : MonoBehaviour
     public void OnNPCExitInteraction()
     {
         NPCExitInteraction?.Invoke();
+    }
+
+    public void OnNPCSelection(int direction)
+    {
+        NPCSelection?.Invoke(direction);
     }
 
 

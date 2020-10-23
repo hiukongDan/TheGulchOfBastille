@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerConverseState : PlayerState
 {
+    private float selectionTimer;
     public PlayerConverseState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
 
@@ -21,6 +23,8 @@ public class PlayerConverseState : PlayerState
         }
 
         player.EndConversation += EndConversationHandler;
+
+        selectionTimer = data.CS_selectionTimer;
     }
 
     private bool detectShouldFlip()
@@ -54,6 +58,16 @@ public class PlayerConverseState : PlayerState
         {
             player.GetNPCEventHandler().OnNPCInteraction();
             player.InputHandler.ResetIsJump();
+        }
+
+        if(normMovementInput.y != 0 && selectionTimer < 0)
+        {
+            player.GetNPCEventHandler().OnNPCSelection((int)normMovementInput.y);
+            selectionTimer = data.CS_selectionTimer;
+        }
+        else if(selectionTimer >= 0)
+        {
+            selectionTimer -= Time.deltaTime;
         }
     }
 

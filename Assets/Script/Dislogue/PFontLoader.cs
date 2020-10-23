@@ -80,5 +80,28 @@ public class PFontLoader
             this.width = width;
         }
     }
+
+    public float GetLengthInPixel(string str)
+    {
+        float ret = 0f;
+        char[] chs = str.ToCharArray();
+        foreach(char ch in chs)
+        {
+            if (char.IsLetter(ch))
+            {
+                ret += chars[char.ToUpper(ch)].width;
+            }
+            else if (char.IsWhiteSpace(ch))
+            {
+                ret += charWidthInPixel;
+            }
+            else
+            {
+                ret += chars[ch].width;
+            }
+        }
+
+        return ret;
+    }
 }
 

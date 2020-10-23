@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName="newNPCSelection", menuName="Data/NPC Conversation/NPC Selection")]
+[CreateAssetMenu(fileName = "newNPCSelection", menuName = "Data/NPC Conversation/NPC Selection")]
 public class NPCSelection : ScriptableObject
 {
     public string selection = "Yes";

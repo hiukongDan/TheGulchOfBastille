@@ -24,6 +24,7 @@ public class PlayerMeleeAttackState : PlayerAttackState
         combatData.knockbackDir = data.MAS_knockbackDirection;
         combatData.knockbackImpulse = data.MAS_knockbackImpulse;
         combatData.from = player.gameObject;
+        combatData.isParryDamage = false;
     }
 
 public override void Exit()

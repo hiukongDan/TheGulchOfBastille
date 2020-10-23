@@ -20,6 +20,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public Vector2 RawMovementInput { get; private set; }
     public Vector2 NormMovementInput { get; private set; }
+    public Vector2 MousePosInput { get; private set; }
     public float NormMovementX { get; private set; }
     public float NormMovementY { get; private set; }
 
@@ -109,6 +110,12 @@ public class PlayerInputHandler : MonoBehaviour
                 UIEventListener.Instance.OnPauseMenu();
                 break;
         }
+    }
+
+    public void OnMouseMove(InputAction.CallbackContext context)
+    {
+        MousePosInput = context.ReadValue<Vector2>();
+        //Debug.Log(Camera.main.ScreenToWorldPoint(MousePosInput));
     }
 
     public void ResetIsJump() => isJump = false;
