@@ -26,6 +26,7 @@ public class PlayerState
     protected bool isParry;
     protected bool isRoll;
     protected bool isMeleeAttack;
+    protected bool isInteraction;
     #endregion
 
     #region PHYSICS STATUS SUBSCRIPTION
@@ -87,6 +88,7 @@ public class PlayerState
         isRoll = player.InputHandler.isRoll;
         isMeleeAttack = player.InputHandler.isMeleeAttack;
         isJumpCanceled = player.InputHandler.isJumpCanceled;
+        isInteraction = player.InputHandler.isInteraction;
     }
 
     protected virtual void UpdateStatusSubscription()

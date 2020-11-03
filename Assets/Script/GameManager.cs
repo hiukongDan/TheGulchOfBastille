@@ -13,16 +13,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(currentScene);
     }
 
+    void Awake()
+    {
+
+    }
+
     void Start()
     {
-        currentScene = SceneManager.GetActiveScene().name;
+        EnterScene();
+    }
 
-        Application.targetFrameRate = 60;
-
-        if (PlayerPrefs.GetFloat("DecayAmount", -1) == -1)
-        {
-            SetPlayerDecay(0);
-        }
+    void OnDisable()
+    {
+        ExitScene();
     }
 
     public void SetPlayerDecay(int amount)
@@ -32,4 +35,32 @@ public class GameManager : MonoBehaviour
 
     public float GetPlayerDecay() => PlayerPrefs.GetFloat("DecayAmount");
 
+    public void PerformAreaTransmission(SceneCode sceneCode)
+    {
+        if(currentScene != sceneCode.ToString())
+        {
+            SceneManager.LoadScene(sceneCode.ToString());
+        }
+    }
+
+    public void ExitScene()
+    {
+        // SceneManagement
+
+        AreaTransmissionHandler.Instance.performAreaTransmissionHandler -= PerformAreaTransmission;
+    }
+
+    public void EnterScene()
+    {
+        currentScene = SceneManager.GetActiveScene().name;
+
+        Application.targetFrameRate = 60;
+
+        if (PlayerPrefs.GetFloat("DecayAmount", -1) == -1)
+        {
+            SetPlayerDecay(0);
+        }
+
+        AreaTransmissionHandler.Instance.performAreaTransmissionHandler += PerformAreaTransmission;
+    }
 }

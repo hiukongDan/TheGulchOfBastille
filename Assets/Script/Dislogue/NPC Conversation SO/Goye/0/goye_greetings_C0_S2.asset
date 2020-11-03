@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe53d10822e9104a8026bfdbb4b90a7, type: 3}
-  m_Name: goye_greetings_C2
+  m_Script: {fileID: 11500000, guid: acbca11f4bc0ef14b9539ac52b8de946, type: 3}
+  m_Name: goye_greetings_C0_S2
   m_EditorClassIdentifier: 
-  conversations:
-  - Okay, then maybe you can do your own things.
-  selections: []
+  selection: Maybe later
+  conversation: {fileID: 0}

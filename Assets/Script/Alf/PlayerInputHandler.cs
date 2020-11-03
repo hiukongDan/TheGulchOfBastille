@@ -18,6 +18,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool isRoll { get; private set; }
     public bool isRollCanceled { get; private set; }
 
+    public bool isInteraction { get; private set; }
+
     public Vector2 RawMovementInput { get; private set; }
     public Vector2 NormMovementInput { get; private set; }
     public Vector2 MousePosInput { get; private set; }
@@ -102,6 +104,18 @@ public class PlayerInputHandler : MonoBehaviour
 
     }
 
+    public void OnInteraction(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                isInteraction = true;
+                break;
+            default:
+                break;
+        }
+    }
+
     public void OnPause(InputAction.CallbackContext context)
     {
         switch (context.phase)
@@ -115,7 +129,6 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnMouseMove(InputAction.CallbackContext context)
     {
         MousePosInput = context.ReadValue<Vector2>();
-        //Debug.Log(Camera.main.ScreenToWorldPoint(MousePosInput));
     }
 
     public void ResetIsJump() => isJump = false;
@@ -125,6 +138,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void ResetIsParry() => isParry = false;
 
     public void ResetIsRoll() => isRoll = false;
+    public void ResetIsInteraction() => isInteraction = false;
 
     public void ResetAll()
     {

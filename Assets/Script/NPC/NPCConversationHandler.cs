@@ -42,9 +42,9 @@ public class NPCConversationHandler : MonoBehaviour
     private int currentSelection;
 
     private List<GameObject> recycleObject;
-    private List<PFontLoader.CharInfo> wordObject;
+    private List<CharInfoWrapper> wordObject;
 
-    void Start()
+    void Awake()
     {
         npc = GetComponentInParent<NPC>();
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -55,10 +55,16 @@ public class NPCConversationHandler : MonoBehaviour
 
         recycleObject = new List<GameObject>();
         nextSentence = new Queue<char>();
-        wordObject = new List<PFontLoader.CharInfo>();
+        wordObject = new List<CharInfoWrapper>();
         npcSelections = new List<NPCSelection>();
 
         npcConversationOld = npcConversation;
+
+    }
+
+    void Start()
+    {
+        
     }
 
     // ----- DIALOGUBE BOX ---------------------------------------------------------------------------
@@ -404,7 +410,7 @@ public class NPCConversationHandler : MonoBehaviour
     private void getNextSentence() => nextSentence = new Queue<char>(npcConversation.GetNextSentence());
 
     // dialgoue box
-    private PFontLoader.CharInfo ShowLetter(char ch, Vector2 lastPos, Transform charOrigin)
+    private CharInfoWrapper ShowLetter(char ch, Vector2 lastPos, Transform charOrigin)
     {
         if (char.IsWhiteSpace(ch))
             return null;
@@ -412,6 +418,8 @@ public class NPCConversationHandler : MonoBehaviour
         PFontLoader.CharInfo ci = pFontLoader.chars[char.ToUpper(ch)];
         var go = OP.GetItem();
         var sr = go.GetComponent<SpriteRenderer>();
+
+        CharInfoWrapper ciw = new CharInfoWrapper(ci, go);
 
         if(sr == null)
         {
@@ -429,64 +437,26 @@ public class NPCConversationHandler : MonoBehaviour
 
         this.lastPos.Set(lastPos.x + ci.width / 2 / pixelPerUnit, lastPos.y);
 
-        return ci;
+        return ciw;
     }
 
-    // ---------- WORDS PARSER ----------------------------------------------------------------
-    public bool digestNextLetter()
-    {
-        if (nextSentence.Count == 0)
-            return false;
-
-        char ch = nextSentence.Dequeue();
-        bool isletter = false;
-        PFontLoader.CharInfo ci = null;
-        if (char.IsWhiteSpace(ch))
-        {
-            lastPos.Set(lastPos.x + pFontLoader.charWidthInPixel/pixelPerUnit, lastPos.y);
-        }
-        else if (char.IsLetter(ch))
-        {
-            ci = ShowLetter(ch, lastPos, charOrigin);
-            isletter = true;
-        }
-        else if (pFontLoader.chars.Keys.Contains(ch)){
-            ci = ShowLetter(ch, lastPos, charOrigin);
-        }
-        else
-        {
-            throw new InvalidDataException();
-        }
-
-        if (isletter)
-        {
-            if(ci != null)
-                wordObject.Add(ci);
-        }
-        else
-        {
-            wordObject.Clear();
-        }
-        
-        return true;
-    }
 
     private Vector2 getNextPos(Vector2 prevPos, PFontLoader.CharInfo ci)
     {
-        if (prevPos.x + (marginInPixel.x + ci.width) / pixelPerUnit > boxSize.x / 2 - (borderInPixel.x + marginInPixel.x) / pixelPerUnit)
+        if (prevPos.x + (marginInPixel.x + ci.width) / pixelPerUnit > boxSize.x / 2 - borderInPixel.x / pixelPerUnit)
         {
             IncreaseLine();
-            prevPos.Set(originPoint.x + ci.width/2/pixelPerUnit, prevPos.y - (marginInPixel.y + pFontLoader.charHeightInPixel) / pixelPerUnit);
+            prevPos.Set(originPoint.x - marginInPixel.x / pixelPerUnit, prevPos.y - (marginInPixel.y + pFontLoader.charHeightInPixel) / pixelPerUnit);
             int len = wordObject.Count;
-            for (int i = 0;i < len; i++)
+            for (int i = 0; i < len; i++)
             {
-                // TODO:
+                prevPos.Set(prevPos.x + (marginInPixel.x + wordObject[i].ci.width / 2) / pixelPerUnit, prevPos.y);
+                wordObject[i].GO.transform.localPosition = prevPos;
+                prevPos.Set(prevPos.x + wordObject[i].ci.width / 2 / pixelPerUnit, prevPos.y);
             }
         }
-        else
-        {
-            prevPos.Set(prevPos.x + (marginInPixel.x + ci.width/2) / pixelPerUnit, prevPos.y);
-        }
+        prevPos.Set(prevPos.x + (marginInPixel.x + ci.width / 2) / pixelPerUnit, prevPos.y);
+
         return prevPos;
     }
 
@@ -498,22 +468,57 @@ public class NPCConversationHandler : MonoBehaviour
         boxSize = sr.size = new Vector2(boxSize.x, boxSize.y + yOffset);
 
         // Reset dialogue box position
-        DialogueBoxAnim.transform.localPosition = new Vector2(DialogueBoxAnim.transform.localPosition.x, DialogueBoxAnim.transform.localPosition.y + yOffset/2);
+        DialogueBoxAnim.transform.localPosition = new Vector2(DialogueBoxAnim.transform.localPosition.x, DialogueBoxAnim.transform.localPosition.y + yOffset / 2);
 
         charOrigin.localPosition = new Vector2(charOrigin.localPosition.x, charOrigin.localPosition.y + yOffset / 2);
     }
 
-    // -------- DATA CLASS AND AUXILIARY FUNCTIONS ----------------------------
-    public class InfoSignAnimHash
+    // ---------- WORDS PARSER ----------------------------------------------------------------
+    public bool digestNextLetter()
     {
-        public static int IDLE = Animator.StringToHash("idle");
-        public static int INTRO = Animator.StringToHash("intro");
-        public static int OUTRO = Animator.StringToHash("outro");
-        public static int EMPTY = Animator.StringToHash("empty");
+        if (nextSentence.Count == 0)
+            return false;
+
+        char ch = nextSentence.Dequeue();
+        bool isletter = false;
+        CharInfoWrapper ciw = null;
+        if (char.IsWhiteSpace(ch))
+        {
+            lastPos.Set(lastPos.x + pFontLoader.charWidthInPixel/pixelPerUnit, lastPos.y);
+            wordObject.Clear();
+        }
+        else if (char.IsLetter(ch))
+        {
+            ciw = ShowLetter(ch, lastPos, charOrigin);
+            isletter = true;
+        }
+        else if (pFontLoader.chars.Keys.Contains(ch)){
+            ciw = ShowLetter(ch, lastPos, charOrigin);
+            isletter = true;
+        }
+        else
+        {
+            throw new InvalidDataException();
+        }
+
+        if (isletter)
+        {
+            wordObject.Add(ciw);
+        }
+        
+        return true;
     }
-    public class DialogueBoxAnimHash
+
+    private class CharInfoWrapper
     {
-        public static int IDLE = Animator.StringToHash("idle");
-        public static int EMPTY = Animator.StringToHash("empty");
+        public PFontLoader.CharInfo ci { get; private set; }
+        public GameObject GO { get; private set; }
+
+        public CharInfoWrapper(PFontLoader.CharInfo ci, GameObject GO)
+        {
+            this.ci = ci;
+            this.GO = GO;
+        }
     }
+
 }

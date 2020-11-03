@@ -11,7 +11,6 @@ public class NPCConversation : ScriptableObject
     public NPCSelection[] selections;
 
     private int index;
-
     public void ResetIndex() => index = 0;
     public bool HasNext() => index < conversations.Length;
     public List<char> GetNextSentence()

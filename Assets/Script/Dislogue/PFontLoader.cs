@@ -71,7 +71,7 @@ public class PFontLoader
     {
         public float width { get; private set; }
         public Sprite sprite { get; private set; }
-        public char ch;
+        public char ch { get; private set; }
 
         public CharInfo(char ch, Sprite sprite, float width)
         {

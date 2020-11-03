@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 79ca2a1169e581e4cb0216dc0c1845d6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - MatBlink: {fileID: 2100000, guid: 31f10825f51fef148b08bc9f70f44f49, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

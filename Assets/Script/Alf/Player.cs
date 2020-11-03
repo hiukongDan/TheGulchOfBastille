@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
     public PlayerTakeDamageState takeDamageState { get; private set; }
     public PlayerConverseState converseState { get; private set; }
 
-
     public D_PlayerStateMachine playerData;
     #endregion
 
@@ -79,16 +78,16 @@ public class Player : MonoBehaviour
     {
         stateMachine = new PlayerStateMachine();
         damageImmuneTimer = Time.time;
-    }
 
-    void Start()
-    {
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         InputHandler = GetComponent<PlayerInputHandler>();
+    }
 
+    void Start()
+    {
         InitializePlayerStateMachine();
         stateMachine.InitializeState(idleState);
 
@@ -326,6 +325,10 @@ public class Player : MonoBehaviour
     private NPCEventHandler npcEventHandler;
     public void SetNPCEventHandler(NPCEventHandler npcEventHandler) => this.npcEventHandler = npcEventHandler;
     public NPCEventHandler GetNPCEventHandler() => npcEventHandler;
+
+    private SubAreaHandler subAreaHandler;
+    public void SetSubAreaHandler(SubAreaHandler subAreaHandler) => this.subAreaHandler = subAreaHandler;
+    public SubAreaHandler GetSubAreaHandler() => subAreaHandler;
     #endregion
 
     #region EVENT

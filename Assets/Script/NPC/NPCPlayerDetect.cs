@@ -19,7 +19,8 @@ public class NPCPlayerDetect : MonoBehaviour
         {
             npc.npcConversationHandler.gameObject.SetActive(true);
             npcEventHandler.OnNPCEnterInteraction();
-            collider.gameObject.GetComponent<Player>().SetNPCEventHandler(npcEventHandler);
+            var player = collider.gameObject.GetComponent<Player>();
+            player.SetNPCEventHandler(npcEventHandler);
         }
     }
 

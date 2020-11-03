@@ -14,8 +14,8 @@ public class PlayerConverseState : PlayerState
     {
         base.Enter();
         player.SetVelocityX(0f);
-        isJump = false;
-        player.InputHandler.ResetIsJump();
+        isInteraction = false;
+        player.InputHandler.ResetIsInteraction();
 
         if (detectShouldFlip())
         {
@@ -54,10 +54,10 @@ public class PlayerConverseState : PlayerState
     {
         base.LogicUpdate();
 
-        if (isJump)
+        if (isInteraction)
         {
             player.GetNPCEventHandler().OnNPCInteraction();
-            player.InputHandler.ResetIsJump();
+            player.InputHandler.ResetIsInteraction();
         }
 
         if(normMovementInput.y != 0 && selectionTimer < 0)

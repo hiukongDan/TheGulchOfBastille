@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fe53d10822e9104a8026bfdbb4b90a7, type: 3}
-  m_Name: goye_greetings_C0
+  m_Name: belial_greetings_C0
   m_EditorClassIdentifier: 
   conversations:
-  - Greetings! Nice to see you here alf. How was your day?
-  - I am going to train some pupils at the exercise ground, will you join us?
-  selections:
-  - {fileID: 11400000, guid: f77abd36bed67294ebf3434a5579852b, type: 2}
-  - {fileID: 11400000, guid: 3c6e112b1bd084d4883649e6a3d4e718, type: 2}
-  - {fileID: 11400000, guid: ee4669af3a3f82b4fa91575e64bf2732, type: 2}
+  - Good day, Alf. Nice to see you so lively today.
+  - But now, I have some important issues to inform you.
+  - Before that, I am afraid that Master Goye have something to tell you either,
+  - So, go to him, then turn to my place.
+  - He is standing under the Sun Tower, I think you will not miss him if you go directly
+    east.
+  selections: []

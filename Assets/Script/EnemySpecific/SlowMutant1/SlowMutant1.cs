@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using Gulch;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,12 +66,13 @@ public class SlowMutant1 : Entity
     {
         base.Damage(combatData);
 
-        if (isDead)
+        if (stateMachine.currentState == deadState)
         {
-            if(stateMachine.currentState != deadState)
-            {
-                stateMachine.SwitchState(deadState);
-            }
+            return;
+        }
+        else if (isDead)
+        {
+            stateMachine.SwitchState(deadState);
         }
         else if (isStunned || combatData.isParryDamage)
         {
@@ -89,6 +91,9 @@ public class SlowMutant1 : Entity
 
             stateMachine.SwitchState(meleeAttackState);
         }
+
+        // Invoke
+        GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(aliveGO, Gulch.SpriteEffectType.Blink));
     }
 
     protected override void OnDrawGizmos()
