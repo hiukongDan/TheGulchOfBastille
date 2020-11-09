@@ -52,7 +52,6 @@ public class StunState : State
         {
             entity.rb.velocity = Vector2.zero;
         }
-
     }
 
     public override void PhysicsUpdate()

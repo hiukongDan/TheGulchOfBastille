@@ -21,3 +21,4 @@ MonoBehaviour:
     the other days there.
   - Slain them thus I can tell your mutual skills. Now, get in there.
   selections: []
+  nextConversation: {fileID: 11400000, guid: fbe11ff2869086743b2e46370550b522, type: 2}

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectToAlive : MonoBehaviour
 {
     public MeleeAttackState meleeAttackState;
     public StunState stunState;
     public TakeDamageState takeDamageState;
+    public FlipState flipState;
 
     private Entity entity;
 
@@ -19,6 +17,14 @@ public class ObjectToAlive : MonoBehaviour
     public void Damage(CombatData combatData)
     {
         entity.SendMessage("Damage", combatData);
+    }
+
+    public void CompleteFlip()
+    {
+        if (flipState != null)
+        {
+            flipState.CompleteFlip();
+        }
     }
 
     public void DoMeleeAttack()

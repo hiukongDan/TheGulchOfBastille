@@ -311,6 +311,7 @@ public class Player : MonoBehaviour
         combatData.knockbackImpulse = playerData.MAS_knockbackImpulse;
         combatData.position = transform.position;
         combatData.from = gameObject;
+        combatData.facingDirection = facingDirection;
     }
 
     public void Flip()

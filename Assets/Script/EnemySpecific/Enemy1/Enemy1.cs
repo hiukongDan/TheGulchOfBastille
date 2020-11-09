@@ -41,14 +41,14 @@ public class Enemy1 : Entity
         stateMachine.Initialize(walkState);
     }
 
-    private void Update()
+    protected override void Update()
     {
-        stateMachine.LogicUpdate();
+        base.Update();
     }
 
-    private void FixedUpdate()
+    protected override void FixedUpdate()
     {
-        stateMachine.PhysicsUpdate();
+        base.FixedUpdate();
 
         CheckDamageBox();
     }

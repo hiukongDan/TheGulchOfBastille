@@ -59,7 +59,6 @@ public class NPCConversationHandler : MonoBehaviour
         npcSelections = new List<NPCSelection>();
 
         npcConversationOld = npcConversation;
-
     }
 
     void Start()
@@ -331,6 +330,9 @@ public class NPCConversationHandler : MonoBehaviour
 
         OP.DestroyGameObject();
 
+        // Change conversation default to next conversation if presented
+        SetConversation(npcConversation.nextConversation);
+
         npc.npcEventHandler.NPCSelection -= DialogueSelectionHandler;
     }
 
@@ -518,6 +520,14 @@ public class NPCConversationHandler : MonoBehaviour
         {
             this.ci = ci;
             this.GO = GO;
+        }
+    }
+
+    public void SetConversation(NPCConversation npcConversation)
+    {
+        if(npcConversation != null)
+        {
+            this.npcConversation = this.npcConversationOld = npcConversation;
         }
     }
 

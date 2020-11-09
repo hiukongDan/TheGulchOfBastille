@@ -1,9 +1,5 @@
 ﻿using Gulch;
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 
 public class SlowMutant1 : Entity
 {
@@ -29,8 +25,6 @@ public class SlowMutant1 : Entity
     public SM1_StunState stunState { get; private set; }
     public SM1_TakeDamageState takeDamageState { get; private set; }
 
-    public Transform hitbox;
-
     public float idleStayTimeInLookup;
     public float idleStayTimeInLookfront;
     public Vector2 changeIdleAnimationTimeRange;
@@ -52,16 +46,6 @@ public class SlowMutant1 : Entity
         stateMachine.Initialize(walkState);
     }
 
-    private void Update()
-    {
-        stateMachine.LogicUpdate();
-    }
-
-    private void FixedUpdate()
-    {
-        stateMachine.PhysicsUpdate();
-    }
-
     protected override void Damage(CombatData combatData)
     {
         base.Damage(combatData);
@@ -72,6 +56,7 @@ public class SlowMutant1 : Entity
         }
         else if (isDead)
         {
+            entityEventHandler?.OnDead();
             stateMachine.SwitchState(deadState);
         }
         else if (isStunned || combatData.isParryDamage)

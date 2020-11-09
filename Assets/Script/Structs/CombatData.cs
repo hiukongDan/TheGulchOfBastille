@@ -12,6 +12,7 @@ public struct CombatData
     public float knockbackImpulse;
 
     public GameObject from;
+    public int facingDirection;
 
     public bool isParryDamage;
 };

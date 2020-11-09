@@ -9,6 +9,7 @@ public class NPCConversation : ScriptableObject
     [TextArea(3, 3)]
     public string[] conversations;
     public NPCSelection[] selections;
+    public NPCConversation nextConversation;
 
     private int index;
     public void ResetIndex() => index = 0;

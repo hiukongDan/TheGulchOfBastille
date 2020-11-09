@@ -22,6 +22,7 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
 
     public ObjectToAlive objectToAlive;
+    public EntityEventHandler entityEventHandler;
 
     protected CombatData combatData;
 
@@ -32,6 +33,8 @@ public class Entity : MonoBehaviour
     protected bool isStunned;
 
     protected Vector2 vectorWorkspace = new Vector2();
+
+    public Transform hitbox;
 
     protected virtual void Start()
     {
@@ -51,6 +54,16 @@ public class Entity : MonoBehaviour
 
         isDead = false;
         isStunned = false;
+    }
+
+    protected virtual void Update()
+    {
+        stateMachine.LogicUpdate();
+    }
+
+    protected virtual void FixedUpdate()
+    {
+        stateMachine.PhysicsUpdate();
     }
 
     public bool DetectEdge()
@@ -142,6 +155,8 @@ public class Entity : MonoBehaviour
         vectorWorkspace.Set(impulseDir.x * dir * impulse, impulseDir.y * impulse);
         rb.velocity = vectorWorkspace;
     }
+
+    protected void SetInitialFacintDirection(int newDirection) => facingDirection = newDirection;
 
     protected virtual void OnDrawGizmos()
     {
