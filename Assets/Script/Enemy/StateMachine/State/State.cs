@@ -58,7 +58,9 @@ public class State
     // SELECT NECESSARY FUNCTIONS IN CHILD CLASS' DOCHECKS FUNCTION
     public void DetectPlayerInMeleeAttackRange()
     {
-        Collider2D collider = Physics2D.Raycast(entity.aliveGO.transform.position, entity.aliveGO.transform.right, entity.entityData.meleeAttackDistance, entity.entityData.whatIsPlayer).collider;
+        //var pos = entity.detectCenter ? entity.detectCenter.position : entity.aliveGO.transform.position;
+        //Collider2D collider = Physics2D.OverlapBox(new Vector2(pos.x + entity.facingDirection * entity.entityData.meleeAttackDistance / 2, pos.y), new Vector2(entity.entityData.meleeAttackDistance, entity.entityData.meleeAttackDistance), 0, entity.entityData.whatIsPlayer);
+        Collider2D collider = Physics2D.Raycast(entity.detectCenter ? entity.detectCenter.position : entity.aliveGO.transform.position, new Vector2(entity.facingDirection, 0), entity.entityData.meleeAttackDistance, entity.entityData.whatIsPlayer).collider;
         if (collider != null)
         {
             detectPlayerInMeleeRange = true;
@@ -72,7 +74,9 @@ public class State
 
     public void DetectPlayerInMinAgro()
     {
-        Collider2D collider = Physics2D.Raycast(entity.aliveGO.transform.position, entity.aliveGO.transform.right, entity.entityData.detectPlayerAgroMinDistance, entity.entityData.whatIsPlayer).collider;
+        //var pos = entity.detectCenter ? entity.detectCenter.position : entity.aliveGO.transform.position;
+        //Collider2D collider = Physics2D.OverlapBox(new Vector2(pos.x + entity.facingDirection * entity.entityData.meleeAttackDistance / 2, pos.y), new Vector2(entity.entityData.meleeAttackDistance, entity.entityData.meleeAttackDistance), 0, entity.entityData.whatIsPlayer);
+        Collider2D collider = Physics2D.Raycast(entity.detectCenter?entity.detectCenter.position:entity.aliveGO.transform.position, new Vector2(entity.facingDirection, 0), entity.entityData.detectPlayerAgroMinDistance, entity.entityData.whatIsPlayer).collider;
         if (collider != null)
         {
             detectPlayerInMinAgro = true;
@@ -86,7 +90,9 @@ public class State
 
     public void DetectPlayerInMaxAgro()
     {
-        Collider2D collider = Physics2D.Raycast(entity.aliveGO.transform.position, entity.aliveGO.transform.right, entity.entityData.detectPlayerAgroMaxDistance, entity.entityData.whatIsPlayer).collider;
+        //var pos = entity.detectCenter ? entity.detectCenter.position : entity.aliveGO.transform.position;
+        //Collider2D collider = Physics2D.OverlapBox(new Vector2(pos.x + entity.facingDirection * entity.entityData.meleeAttackDistance / 2, pos.y), new Vector2(entity.entityData.meleeAttackDistance, entity.entityData.meleeAttackDistance), 0, entity.entityData.whatIsPlayer);
+        Collider2D collider = Physics2D.Raycast(entity.detectCenter ? entity.detectCenter.position : entity.aliveGO.transform.position, new Vector2(entity.facingDirection, 0), entity.entityData.detectPlayerAgroMaxDistance, entity.entityData.whatIsPlayer).collider;
         if (collider != null)
         {
             detectPlayerInMaxAgro = true;

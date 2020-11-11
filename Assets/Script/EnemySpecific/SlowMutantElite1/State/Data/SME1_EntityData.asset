@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18986275199a29c4ea1574308cdb1e1d, type: 3}
   m_Name: SME1_EntityData
   m_EditorClassIdentifier: 
-  wallCheckDistance: 0.3
+  wallCheckDistance: 0.5
   edgeCheckDistance: 0.3
   groundCheckDistance: 0.5
   detectPlayerAgroMinDistance: 3
-  detectPlayerAgroMaxDistance: 4
-  meleeAttackDistance: 0.8
+  detectPlayerAgroMaxDistance: 5
+  meleeAttackDistance: 1.2
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
@@ -29,8 +29,8 @@ MonoBehaviour:
     m_Bits: 4096
   damage: 5
   stunDamage: 1
-  damageBoxWidth: 2
-  damageBoxHeight: 1
+  damageBoxWidth: 1.2
+  damageBoxHeight: 1.5
   maxHealth: 200
   stunResistance: 5
   knockbackImpulse: 5

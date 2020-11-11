@@ -16,6 +16,17 @@ public class SME1_RecoverState : State
 
         var ota = (SME1_ObjectToAlive)enemy.objectToAlive;
         ota.recoverState = this;
+
+        enemy.SetIsDamageable(false);
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        enemy.SetIsDamageable(true);
+
+        var ota = (SME1_ObjectToAlive)enemy.objectToAlive;
+        ota.recoverState = null;
     }
 
     public void CompleteRecover()

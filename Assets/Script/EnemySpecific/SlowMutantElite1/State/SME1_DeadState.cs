@@ -18,6 +18,7 @@ public class SME1_DeadState : DeadState
     public override void Enter()
     {
         base.Enter();
+        enemy.SetIsDamageable(false);
     }
 
     public override void Exit()

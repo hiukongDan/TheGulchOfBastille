@@ -13,6 +13,7 @@ public class SM1_MeleeAttackState : MeleeAttackState
     public override void CompleteMeleeAttack()
     {
         base.CompleteMeleeAttack();
+        stateMachine.SwitchState(enemy.fleeState);
     }
 
     public override void DoChecks()
@@ -39,11 +40,11 @@ public class SM1_MeleeAttackState : MeleeAttackState
     {
         base.LogicUpdate();
 
-        if (!isAttacking)
+/*        if (!isAttacking)
         {
             //TODO: complicated options in future
             stateMachine.SwitchState(enemy.fleeState);
-        }
+        }*/
     }
 
     public override void PhysicsUpdate()

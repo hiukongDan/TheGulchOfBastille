@@ -20,11 +20,15 @@ public class SME1_StoneState : State
     {
         base.Enter();
         isRecover = false;
+
+        enemy.SetIsDamageable(false);
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        enemy.SetIsDamageable(true);
     }
 
     public override void LogicUpdate()

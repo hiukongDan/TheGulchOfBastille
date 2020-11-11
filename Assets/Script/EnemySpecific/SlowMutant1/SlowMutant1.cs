@@ -74,6 +74,7 @@ public class SlowMutant1 : Entity
                 Flip();
             }
 
+            Debug.Log("Facing Direction : " + facingDirection);
             stateMachine.SwitchState(meleeAttackState);
         }
 

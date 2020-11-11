@@ -13,6 +13,7 @@ public class SME1_WalkState : WalkState
     public override void DoChecks()
     {
         base.DoChecks();
+        DetectPlayerInMaxAgro();
     }
 
     public override void Enter()
@@ -32,11 +33,18 @@ public class SME1_WalkState : WalkState
         // if this.walkDuration has been exceeded to a threshold, switch to turn state / or find edge
         // else if find player, change to detect player state
         // else do nothing
-
-        if(walkDurationTime < 0)
+        if(isEdgeDetected || isWallDetected)
         {
-            stateMachine.SwitchState(enemy.heideAttackState);
-            //stateMachine.SwitchState(enemy.flipState);
+            stateMachine.SwitchState(enemy.flipState);
+        }
+        else if (detectPlayerInMaxAgro)
+        {
+            enemy.detectPlayerState.SetPlayerDetectedTrans(detectPlayerTrans);
+            stateMachine.SwitchState(enemy.detectPlayerState);
+        }
+        else if(walkDurationTime < 0)
+        {
+            stateMachine.SwitchState(enemy.flipState);
         }
         else
         {

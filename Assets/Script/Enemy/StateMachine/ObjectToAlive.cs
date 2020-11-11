@@ -6,6 +6,7 @@ public class ObjectToAlive : MonoBehaviour
     public StunState stunState;
     public TakeDamageState takeDamageState;
     public FlipState flipState;
+    public EvadeState evadeState;
 
     private Entity entity;
 
@@ -51,5 +52,10 @@ public class ObjectToAlive : MonoBehaviour
         {
             takeDamageState.CompleteTakeDamage();
         }
+    }
+
+    public void CompleteEvade()
+    {
+        evadeState?.CompleteEvade();
     }
 }

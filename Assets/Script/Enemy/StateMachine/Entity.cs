@@ -13,7 +13,8 @@ public class Entity : MonoBehaviour
         edgeCheck,
         groundCheck,
         damageBox,
-        meleeAttackCheck;
+        meleeAttackCheck,
+        detectCenter;
 
     public EntityData entityData;
 
@@ -36,6 +37,8 @@ public class Entity : MonoBehaviour
 
     public Transform hitbox;
 
+    public bool isDanmageable { get; private set; }
+
     protected virtual void Start()
     {
         aliveGO = transform.Find("Alive").gameObject;
@@ -54,6 +57,7 @@ public class Entity : MonoBehaviour
 
         isDead = false;
         isStunned = false;
+        isDanmageable = true;
     }
 
     protected virtual void Update()
@@ -73,7 +77,7 @@ public class Entity : MonoBehaviour
 
     public bool DetectWall()
     {
-        return Physics2D.Raycast(wallCheck.position, aliveGO.transform.right, entityData.wallCheckDistance, entityData.whatIsGround | entityData.whatIsPlatform);
+        return Physics2D.Raycast(wallCheck.position, new Vector2(facingDirection, 0), entityData.wallCheckDistance, entityData.whatIsGround | entityData.whatIsPlatform);
     }
 
     public bool DetectGround()
@@ -88,7 +92,7 @@ public class Entity : MonoBehaviour
 
     public bool DetectPlayer()
     {
-        return Physics2D.Raycast(meleeAttackCheck.position, aliveGO.transform.right, entityData.meleeAttackDistance, entityData.whatIsPlayer);
+        return Physics2D.Raycast(meleeAttackCheck.position, new Vector2(facingDirection, 0), entityData.meleeAttackDistance, entityData.whatIsPlayer);
     }
 
     public void Flip()
@@ -157,6 +161,11 @@ public class Entity : MonoBehaviour
     }
 
     protected void SetInitialFacintDirection(int newDirection) => facingDirection = newDirection;
+    public bool SetIsDamageable(bool newIsDamageable)
+    {
+        isDanmageable = newIsDamageable;
+        return isDanmageable;
+    }
 
     protected virtual void OnDrawGizmos()
     {
@@ -165,6 +174,8 @@ public class Entity : MonoBehaviour
         Gizmos.DrawLine(groundCheck.position, groundCheck.position + Vector3.down * entityData.groundCheckDistance);
 
         Gizmos.DrawLine(aliveGO.transform.position, aliveGO.transform.position + new Vector3(entityData.meleeAttackDistance, 0));
+        //var pos = detectCenter ? detectCenter.position : aliveGO.transform.position;
+        //Gizmos.DrawWireCube(new Vector3(pos.x + entityData.meleeAttackDistance / 2, pos.y), new Vector3(entityData.meleeAttackDistance, entityData.meleeAttackDistance));
 
         Gizmos.DrawWireSphere(aliveGO.transform.position + Vector3.right * entityData.detectPlayerAgroMaxDistance, 0.2f);
         Gizmos.DrawWireSphere(aliveGO.transform.position + Vector3.right * entityData.detectPlayerAgroMinDistance, 0.2f);
