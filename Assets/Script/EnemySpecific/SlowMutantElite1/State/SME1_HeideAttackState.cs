@@ -5,21 +5,36 @@ using UnityEngine;
 public class SME1_HeideAttackState : MeleeAttackState
 {
     protected SlowMutantElite1 enemy;
-    public int heideAttacktimes;
-    private bool isHeideAttack;
+    protected int heideAttacktimesRemain;
+    protected bool isHeideAttack;
+
+    protected float cooldownTimer;
+
     public SME1_HeideAttackState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, MeleeAttackStateData stateData, Transform hitBoxPoint, SlowMutantElite1 enemy) : base(stateMachine, entity, animBoolName, stateData, hitBoxPoint)
     {
         this.enemy = enemy;
+        cooldownTimer = -1f;
     }
 
     public override void CompleteMeleeAttack()
     {
         base.CompleteMeleeAttack();
-        
+
         if(!isHeideAttack)
         {
-            enemy.flipState.SetPrevState(enemy.walkState);
-            stateMachine.SwitchState(enemy.flipState);
+            DoChecks();
+
+            if (!detectPlayerInMaxAgro)
+            {
+                enemy.flipState.SetPrevState(enemy.walkState);
+                stateMachine.SwitchState(enemy.flipState);
+            }
+            else
+            {
+                stateMachine.SwitchState(enemy.walkState);
+            }
+
+            ResetTimer();
         }
     }
 
@@ -36,7 +51,7 @@ public class SME1_HeideAttackState : MeleeAttackState
     public override void Enter()
     {
         base.Enter();
-        heideAttacktimes = data.heideAttackTimes;
+        heideAttacktimesRemain = data.heideAttackTimes - 1;
         isHeideAttack = true;
         enemy.anim.SetBool("heideAttack", isHeideAttack);
         enemy.anim.Play(animName);
@@ -51,12 +66,12 @@ public class SME1_HeideAttackState : MeleeAttackState
     {
         base.LogicUpdate();
 
-        if(!isAttacking && heideAttacktimes > 0)
+        if(!isAttacking && heideAttacktimesRemain > 0)
         {
-            heideAttacktimes--;
+            heideAttacktimesRemain--;
             isAttacking = true;
         }
-        else if(!isAttacking && heideAttacktimes <= 0)
+        else if(!isAttacking && heideAttacktimesRemain <= 0)
         {
             isHeideAttack = false;
             enemy.anim.SetBool("heideAttack", isHeideAttack);
@@ -67,4 +82,16 @@ public class SME1_HeideAttackState : MeleeAttackState
     {
         base.PhysicsUpdate();
     }
+
+    public override void ResetTimer() => cooldownTimer = data.cooldownTimer;
+
+    public override void UpdateTimer()
+    {
+        if(cooldownTimer >= 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+    }
+
+    public override bool CanAction() => cooldownTimer < 0;
 }

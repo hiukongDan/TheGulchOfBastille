@@ -1,0 +1,27 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[ExecuteInEditMode]
+public class CascadeLayer : MonoBehaviour
+{
+    public float LayerSpeedRelativeToCameraX = 1f;
+    public float LayerSpeedRelativeToCameraY = 1f;
+
+    private Vector3 lastCamPos;
+    private Vector3 deltaCamPos;
+
+    void Start()
+    {
+        lastCamPos = Camera.main.transform.position;
+    }
+
+    void Update()
+    {
+        deltaCamPos = Camera.main.transform.position - lastCamPos;
+        lastCamPos = Camera.main.transform.position;
+        
+        transform.position = new Vector3(transform.position.x + LayerSpeedRelativeToCameraX * deltaCamPos.x,
+            transform.position.y + LayerSpeedRelativeToCameraY * deltaCamPos.y, transform.position.z);
+    }
+}

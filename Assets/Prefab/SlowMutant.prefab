@@ -79,9 +79,12 @@ MonoBehaviour:
   groundCheck: {fileID: 2802960883710391457}
   damageBox: {fileID: 2802960883707168186}
   meleeAttackCheck: {fileID: 2802960883555146464}
+  detectCenter: {fileID: 0}
   entityData: {fileID: 11400000, guid: 557a80eb383b5374da0a30687eb5f4b6, type: 2}
   aliveGO: {fileID: 2802960884028774257}
   objectToAlive: {fileID: 2802960884028774267}
+  entityEventHandler: {fileID: 0}
+  hitbox: {fileID: 2802960882990365977}
   idleStateData: {fileID: 11400000, guid: 8a56d87fcf1fda845879a4123ae361e2, type: 2}
   walkStateData: {fileID: 11400000, guid: e4a1eec436e14434694417013cde9abb, type: 2}
   meleeAttackStateData: {fileID: 11400000, guid: cd3210ebaff663440b8fd00e6f92c12f,
@@ -93,7 +96,6 @@ MonoBehaviour:
   inAirStateData: {fileID: 11400000, guid: c373908bbe065514ba7981c3fa70b518, type: 2}
   stunStateData: {fileID: 11400000, guid: c21c980fc6b2b1345bd98de061dc12e0, type: 2}
   takeDamageStateData: {fileID: 0}
-  hitbox: {fileID: 2802960882990365977}
   idleStayTimeInLookup: 7
   idleStayTimeInLookfront: 7
   changeIdleAnimationTimeRange: {x: 1, y: 2}
@@ -337,7 +339,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 74499e635fd531442bdccab909a9b72a, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 

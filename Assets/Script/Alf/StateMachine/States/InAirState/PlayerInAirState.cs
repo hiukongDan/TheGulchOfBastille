@@ -49,17 +49,17 @@ public class PlayerInAirState : PlayerState
             stateMachine.SwitchState(player.jumpState);
         }
         // DASH
-        else if(player.dashState.dashAmountLeft > 0 && player.dashState.IsDashCoolDownComplete() &&  isRoll && !isGrounded && !isWalled)
+        else if(player.dashState.CanAction() &&  isRoll && !isGrounded && !isWalled)
         {
             stateMachine.SwitchState(player.dashState);
         }
         // WALL JUMP
-        else if (player.wallState.wallJumpAmountLeft > 0 && isWalled && isJump && !isGrounded)
+        else if (player.wallState.CanWallJump() && isWalled && isJump && !isGrounded)
         {
             stateMachine.SwitchState(player.wallState);
         }
         // AIR JUMP
-        else if (player.jumpState.jumpAmountLeft > 0 && isJump)
+        else if (player.jumpState.CanDoubleJump() && isJump)
         {
             stateMachine.SwitchState(player.jumpState);
         }

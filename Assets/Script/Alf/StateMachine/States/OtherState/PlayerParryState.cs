@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerParryState : PlayerState
 {
     public bool IsParryValid { get; private set; }
+    protected float parryCoolDownTimer;
 
     public PlayerParryState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
-
+        parryCoolDownTimer = -1f;
     }
 
     public override void Enter()
@@ -68,8 +69,27 @@ public class PlayerParryState : PlayerState
         currentVelocity = player.Rb.velocity;*/
     }
 
+    public override bool CanAction() => parryCoolDownTimer < 0f;
+
+    public override void ResetTimer() => parryCoolDownTimer = data.PS_coolDownTimer;
+
+    public override void UpdateTimer()
+    {
+        UpdateParryCoolDownTimer();
+    }
+
+
+    protected void UpdateParryCoolDownTimer()
+    {
+        if(parryCoolDownTimer >= 0f)
+        {
+            parryCoolDownTimer -= Time.deltaTime;
+        }
+    }
+
     public void CompleteParry()
     {
+        ResetTimer();
         stateMachine.SwitchState(player.idleState);
     }
 

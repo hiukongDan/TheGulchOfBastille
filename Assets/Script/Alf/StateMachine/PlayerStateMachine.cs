@@ -6,9 +6,16 @@ public class PlayerStateMachine
 {
     public PlayerState currentState { get; private set; }
 
+    public PlayerStateCooldownTimer stateCooldownTimer { get; private set; }
+
     public PlayerStateMachine()
     {
         
+    }
+
+    public void SetStateCooldownTimer(PlayerStateCooldownTimer timer)
+    {
+        stateCooldownTimer = timer;
     }
 
     public void InitializeState(PlayerState startingState)
@@ -20,6 +27,8 @@ public class PlayerStateMachine
     public void LogicUpdate()
     {
         currentState.LogicUpdate();
+
+        stateCooldownTimer?.UpdateTimer();
     }
 
     public void PhysicsUpdate()

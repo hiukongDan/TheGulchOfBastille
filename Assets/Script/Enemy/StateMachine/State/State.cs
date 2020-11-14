@@ -20,7 +20,7 @@ public class State
 
     protected float startTime;
 
-    public State(FiniteStateMachine stateMachine, Entity entity, string animName)
+    public State(FiniteStateMachine stateMachine, Entity entity, string animName, State defaultNextState = null)
     {
         this.stateMachine = stateMachine;
         this.entity = entity;
@@ -54,9 +54,24 @@ public class State
 
     }
 
+    public virtual void UpdateTimer()
+    {
+
+    }
+
+    public virtual bool CanAction()
+    {
+        return true;
+    }
+
+    public virtual void ResetTimer()
+    {
+
+    }
+
     // -- DETECT FUNCTIONS -----------------------------
     // SELECT NECESSARY FUNCTIONS IN CHILD CLASS' DOCHECKS FUNCTION
-    public void DetectPlayerInMeleeAttackRange()
+    public bool DetectPlayerInMeleeAttackRange()
     {
         //var pos = entity.detectCenter ? entity.detectCenter.position : entity.aliveGO.transform.position;
         //Collider2D collider = Physics2D.OverlapBox(new Vector2(pos.x + entity.facingDirection * entity.entityData.meleeAttackDistance / 2, pos.y), new Vector2(entity.entityData.meleeAttackDistance, entity.entityData.meleeAttackDistance), 0, entity.entityData.whatIsPlayer);
@@ -70,9 +85,11 @@ public class State
         {
             detectPlayerInMeleeRange = false;
         }
+
+        return detectPlayerInMeleeRange;
     }
 
-    public void DetectPlayerInMinAgro()
+    public bool DetectPlayerInMinAgro()
     {
         //var pos = entity.detectCenter ? entity.detectCenter.position : entity.aliveGO.transform.position;
         //Collider2D collider = Physics2D.OverlapBox(new Vector2(pos.x + entity.facingDirection * entity.entityData.meleeAttackDistance / 2, pos.y), new Vector2(entity.entityData.meleeAttackDistance, entity.entityData.meleeAttackDistance), 0, entity.entityData.whatIsPlayer);
@@ -86,9 +103,11 @@ public class State
         {
             detectPlayerInMinAgro = false;
         }
+
+        return detectPlayerInMinAgro;
     }
 
-    public void DetectPlayerInMaxAgro()
+    public bool DetectPlayerInMaxAgro()
     {
         //var pos = entity.detectCenter ? entity.detectCenter.position : entity.aliveGO.transform.position;
         //Collider2D collider = Physics2D.OverlapBox(new Vector2(pos.x + entity.facingDirection * entity.entityData.meleeAttackDistance / 2, pos.y), new Vector2(entity.entityData.meleeAttackDistance, entity.entityData.meleeAttackDistance), 0, entity.entityData.whatIsPlayer);
@@ -102,6 +121,8 @@ public class State
         {
             detectPlayerInMaxAgro = false;
         }
+
+        return detectPlayerInMaxAgro;
     }
 
     public void DetectSurroundings()

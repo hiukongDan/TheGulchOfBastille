@@ -100,16 +100,21 @@ public override void Exit()
     public override void CompleteAttack()
     {
         base.CompleteAttack();
-        ResetAttackCooldownTimer();
+        ResetTimer();
         player.idleState.SetAnimationCode(AlfAnimationHash.IDLE_1);
         stateMachine.SwitchState(player.idleState);
     }
 
     public override bool CheckEndAttack() => !isMeleeAttack;
+    public override void ResetTimer() => attackCooldownTimer = data.MAS_attackCooldownTimer;
+    public override bool CanAction() => attackCooldownTimer < 0;
 
-    public void ResetAttackCooldownTimer() => attackCooldownTimer = data.MAS_attackCooldownTimer;
-    public bool CanMeleeAttack() => attackCooldownTimer < 0;
-    public void UpdateAttackCooldownTimer()
+    public override void UpdateTimer()
+    {
+        UpdateAttackCooldownTimer();
+    }
+
+    protected void UpdateAttackCooldownTimer()
     {
         if (attackCooldownTimer >= 0)
             attackCooldownTimer -= Time.deltaTime;

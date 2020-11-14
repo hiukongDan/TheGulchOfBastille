@@ -29,7 +29,10 @@ public class E1_DetectPlayerState : DetectPlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (playerWithinMeleeRange)
+
+        DoChecks();
+
+        if (detectPlayerInMeleeRange)
         {
             stateMachine.SwitchState(enemy.meleeAttackState);
         }

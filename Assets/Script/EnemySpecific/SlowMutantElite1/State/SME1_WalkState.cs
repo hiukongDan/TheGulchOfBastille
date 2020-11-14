@@ -30,14 +30,11 @@ public class SME1_WalkState : WalkState
     {
         base.LogicUpdate();
 
-        // if this.walkDuration has been exceeded to a threshold, switch to turn state / or find edge
-        // else if find player, change to detect player state
-        // else do nothing
         if(isEdgeDetected || isWallDetected)
         {
             stateMachine.SwitchState(enemy.flipState);
         }
-        else if (detectPlayerInMaxAgro)
+        else if (detectPlayerInMaxAgro && enemy.detectPlayerState.CanAction())
         {
             enemy.detectPlayerState.SetPlayerDetectedTrans(detectPlayerTrans);
             stateMachine.SwitchState(enemy.detectPlayerState);

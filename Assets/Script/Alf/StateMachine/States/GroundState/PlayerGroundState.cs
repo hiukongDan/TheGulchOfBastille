@@ -58,23 +58,24 @@ public override void LogicUpdate()
                 player.InputHandler.ResetIsInteraction();
             }
         }
-        else if (isMeleeAttack && player.meleeAttackState.CanMeleeAttack())
+        else if (isMeleeAttack && player.meleeAttackState.CanAction())
         {
             stateMachine.SwitchState(player.meleeAttackState);
         }
-        else if (isParry)
+        else if (isParry && player.parryState.CanAction())
         {
             stateMachine.SwitchState(player.parryState);
         }
-        else if (isRoll)
+        else if (isRoll && player.rollState.CanAction())
         {
             stateMachine.SwitchState(player.rollState);
         }
         else
         {
             isAction = false;
-            player.meleeAttackState.UpdateAttackCooldownTimer();
         }
+
+        player.InputHandler.ResetAll();
     }
 
     public override void PhysicsUpdate()

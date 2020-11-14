@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerRollState : PlayerState
 {
-
+    protected float rollCoolDownTimer;
     public PlayerRollState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
-
+        rollCoolDownTimer = -1f;
     }
 
     public override void Enter()
@@ -63,12 +63,24 @@ public class PlayerRollState : PlayerState
         base.UpdateStatusSubscription();
     }
 
+    public override void ResetTimer() => rollCoolDownTimer = data.RS_CoolDownTimer;
+    public override bool CanAction() => rollCoolDownTimer <= 0;
+    public override void UpdateTimer()
+    {
+        UpdateRollCoolDownTimer();
+    }
+    protected void UpdateRollCoolDownTimer()
+    {
+        if (rollCoolDownTimer >= 0)
+            rollCoolDownTimer -= Time.deltaTime;
+    }
 
     public void CompleteRoll()
     {
-/*        workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
-        player.SetPosition(workspace);*/
+        /*        workspace.Set(player.transform.position.x + player.offsetCalculator.localPosition.x * player.facingDirection, player.transform.position.y);
+                player.SetPosition(workspace);*/
 
+        ResetTimer();
         stateMachine.SwitchState(player.idleState);
     }
 }

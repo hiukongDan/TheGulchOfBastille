@@ -6,10 +6,12 @@ using UnityEngine;
 public class SME1_FlipState : FlipState
 {
     protected SlowMutantElite1 enemy;
-    private State prevState;
-    public SME1_FlipState(FiniteStateMachine stateMachine, Entity entity, string animName, SlowMutantElite1 enemy) : base(stateMachine, entity, animName)
+    protected State prevState;
+    protected State defaultPrevState;
+    public SME1_FlipState(FiniteStateMachine stateMachine, Entity entity, string animName, State defaultPrevState, SlowMutantElite1 enemy) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
+        this.defaultPrevState = defaultPrevState;
     }
 
     public override void DoChecks()
@@ -38,7 +40,7 @@ public class SME1_FlipState : FlipState
     }
 
     public void SetPrevState(State prevState) => this.prevState = prevState;
-
+    public void SetDefaultPrevState(State newDefaultPrevState) => defaultPrevState = newDefaultPrevState;
     public override void CompleteFlip()
     {
         enemy.Flip();
@@ -49,7 +51,7 @@ public class SME1_FlipState : FlipState
         }
         else
         {
-            stateMachine.SwitchState(enemy.walkState);
+            stateMachine.SwitchState(defaultPrevState);
         }
     }
 }

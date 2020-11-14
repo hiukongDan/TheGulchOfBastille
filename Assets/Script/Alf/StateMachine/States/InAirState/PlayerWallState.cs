@@ -76,4 +76,9 @@ public class PlayerWallState : PlayerState
         player.Rb.AddForce(workspace, ForceMode2D.Impulse);
         player.InputHandler.ResetIsJump();
     }
+
+    public bool CanWallJump()
+    {
+        return player.playerAbilityData.wallJump && wallJumpAmountLeft > 0;
+    }
 }

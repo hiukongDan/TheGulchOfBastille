@@ -58,4 +58,9 @@ public class PlayerJumpState : PlayerInAirState
         isCoyoteTime = false;
     }
 
+    public bool CanDoubleJump()
+    {
+        return player.playerAbilityData.doubleJump && jumpAmountLeft > 0;
+    }
+
 }

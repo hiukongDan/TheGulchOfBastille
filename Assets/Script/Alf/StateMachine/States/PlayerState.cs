@@ -118,6 +118,21 @@ public class PlayerState
         this.animCode = animCode;
     }
 
+    public virtual void UpdateTimer()
+    {
+
+    }
+
+    public virtual bool CanAction()
+    {
+        return true;
+    }
+
+    public virtual void ResetTimer()
+    {
+
+    }
+
     /* TODO:
      * FOR ANIMATION CALLBACKS
         public virtual void CompleteAction() 

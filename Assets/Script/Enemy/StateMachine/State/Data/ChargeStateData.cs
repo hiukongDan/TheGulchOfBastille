@@ -7,4 +7,5 @@ public class ChargeStateData : ScriptableObject
 {
     public float chargeSpeed = 5;
     public float chargeDuration = 1f;
+    public float chargeCoolDownTime = 5f;
 }

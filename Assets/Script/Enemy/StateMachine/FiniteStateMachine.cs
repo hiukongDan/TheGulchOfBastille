@@ -6,10 +6,16 @@ public class FiniteStateMachine
 {
     protected Entity entity;
     public State currentState { get; private set; }
+    public StateCooldownTimer stateCooldownTimer { get; private set; }
 
     public FiniteStateMachine(Entity entity)
     {
         this.entity = entity;
+    }
+
+    public void SetStateCooldownTimer(StateCooldownTimer stateCooldownTimer)
+    {
+        this.stateCooldownTimer = stateCooldownTimer;
     }
 
     public void Initialize(State startingState)
@@ -28,6 +34,8 @@ public class FiniteStateMachine
     public void LogicUpdate()
     {
         currentState.LogicUpdate();
+
+        stateCooldownTimer?.UpdateTimer();
     }
 
     public void PhysicsUpdate()

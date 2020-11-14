@@ -33,7 +33,9 @@ public class SM1_DetectPlayerState : DetectPlayerState
 
         if (Time.time > startTime + data.detectStayTime)
         {
-            if (playerWithinAgroMin)
+            DoChecks();
+
+            if (detectPlayerInMinAgro)
             {
                 // TODO:
                 // if player attack => FLEE
@@ -41,7 +43,7 @@ public class SM1_DetectPlayerState : DetectPlayerState
                 
                 stateMachine.SwitchState(enemy.heideAttackState);
             }
-            else if (playerWithinMeleeRange)
+            else if (detectPlayerInMeleeRange)
             {
                 // MELEEATTACK
                 enemy.Flip();

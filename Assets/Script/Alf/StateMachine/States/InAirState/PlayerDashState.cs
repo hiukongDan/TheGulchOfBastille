@@ -14,7 +14,7 @@ public class PlayerDashState : PlayerState
     public PlayerDashState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
         ResetDashAmountLeft();
-        dashCoolDownTimer = float.NegativeInfinity;
+        dashCoolDownTimer = -1;
     }
 
     public override void Enter()
@@ -28,18 +28,14 @@ public class PlayerDashState : PlayerState
         player.InputHandler.ResetIsRoll();
 
         player.SetVelocity(Vector2.zero);
-
-        if(dashAmountLeft <= 0)
-        {
-            dashCoolDownTimer = Time.time;
-        }
-
     }
 
     public override void Exit()
     {
         base.Exit();
         player.Rb.gravityScale = gravityOld;
+
+        ResetTimer();
     }
 
     public override void LogicUpdate()
@@ -90,6 +86,18 @@ public class PlayerDashState : PlayerState
 
     public void ResetDashAmountLeft() => dashAmountLeft = data.DS_dashAmounts;
 
-    public bool IsDashCoolDownComplete() => Time.time > dashCoolDownTimer + data.DS_dashCoolDownTime;
+    public override void ResetTimer() => dashCoolDownTimer = data.DS_dashCoolDownTime;
+    public override void UpdateTimer()
+    {
+        if(dashCoolDownTimer >= 0)
+        {
+            dashCoolDownTimer -= Time.deltaTime;
+        }
+    }
+
+    public override bool CanAction()
+    {
+        return player.playerAbilityData.dash && dashAmountLeft > 0 && dashCoolDownTimer < 0;
+    }
     
 }

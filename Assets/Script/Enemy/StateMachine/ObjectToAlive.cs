@@ -10,6 +10,8 @@ public class ObjectToAlive : MonoBehaviour
 
     private Entity entity;
 
+    public Vector2 DamageBoxSize;
+
     void Start()
     {
         entity = transform.parent.GetComponent<Entity>();

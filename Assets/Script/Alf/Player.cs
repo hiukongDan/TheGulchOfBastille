@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     #region STATEMACHINE
     public PlayerStateMachine stateMachine;
+    public PlayerStateCooldownTimer stateCooldownTimer;
 
     public PlayerGroundState groundState { get; private set; }
     public PlayerIdleState idleState { get; private set; }
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
     public PlayerConverseState converseState { get; private set; }
 
     public D_PlayerStateMachine playerData;
+    public D_PlayerAbility playerAbilityData;
     #endregion
 
     #region ATTACHED STATES
@@ -77,6 +79,10 @@ public class Player : MonoBehaviour
     void Awake()
     {
         stateMachine = new PlayerStateMachine();
+        stateCooldownTimer = new PlayerStateCooldownTimer();
+
+        stateMachine.SetStateCooldownTimer(stateCooldownTimer);
+
         damageImmuneTimer = Time.time;
 
         Anim = GetComponent<Animator>();
@@ -221,6 +227,7 @@ public class Player : MonoBehaviour
             {
                 UpdateCombatData();
                 this.combatData.isParryDamage = true;
+                this.combatData.damage = playerData.PS_damage;
                 combatData.from.SendMessage("Damage", this.combatData);
                 // TODO: TO EXECUTION ANIMATION
                 stateMachine.SwitchState(idleState);
@@ -239,6 +246,7 @@ public class Player : MonoBehaviour
 
             int dir = (combatData.position.x - transform.position.x > 0 ? -1 : 1);
             workspace.Set(dir * combatData.knockbackDir.x * combatData.knockbackImpulse, combatData.knockbackDir.y * combatData.knockbackImpulse);
+            Rb.velocity = Vector2.zero;
             Rb.AddForce(workspace, ForceMode2D.Impulse);
 
             if (!isStunned)
@@ -262,6 +270,7 @@ public class Player : MonoBehaviour
                 stateMachine.SwitchState(takeDamageState);
             }
 
+            Gulch.GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(gameObject, Gulch.SpriteEffectType.Blink));
         }
     }
 
@@ -289,7 +298,19 @@ public class Player : MonoBehaviour
         wallState = new PlayerWallState(stateMachine, this, AlfAnimationHash.WALL_0, playerData);
         dashState = new PlayerDashState(stateMachine, this, AlfAnimationHash.DASH_0, playerData);
         converseState = new PlayerConverseState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
+
+        InitializePlayerCooldownTimer();
     }
+
+    private void InitializePlayerCooldownTimer()
+    {
+        stateCooldownTimer.AddStateTimer(meleeAttackState);
+        stateCooldownTimer.AddStateTimer(parryState);
+        stateCooldownTimer.AddStateTimer(rollState);
+
+        stateCooldownTimer.AddStateTimer(dashState);
+    }
+
     public void InitializePlayerStatus()
     {
         // TODO: using a mutable data structure for status reading

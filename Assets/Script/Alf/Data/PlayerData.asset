@@ -54,5 +54,8 @@ MonoBehaviour:
   PS_horizontalSpeed: 0.5
   PS_particle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,
     type: 3}
+  PS_damage: 1
   SS_stunDurationTime: 0.3
   RS_rollSpeed: 4
+  RS_CoolDownTimer: 1
+  CS_selectionTimer: 0.2

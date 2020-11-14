@@ -5,8 +5,8 @@ using UnityEngine;
 public class SME1_DetectPlayerState : DetectPlayerState
 {
     private SlowMutantElite1 enemy;
-    private float minAgroAttackRate = 0.5f;
-    private float meleeRangeAttackRate = 0.2f;
+    private float maxAgroAttackRate = 0.2f;
+    private float meleeRangeAttackRate = 0.5f;
     public SME1_DetectPlayerState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, DetectPlayerStateData stateData, SlowMutantElite1 enemy) : base(stateMachine, entity, animBoolName, stateData)
     {
         this.enemy = enemy;
@@ -15,12 +15,11 @@ public class SME1_DetectPlayerState : DetectPlayerState
     public override void DoChecks()
     {
         base.DoChecks();
-        DetectPlayerInMaxAgro();
     }
 
     public override void Enter()
     {
-        //base.Enter();
+        base.Enter();
     }
 
     public override void Exit()
@@ -32,35 +31,77 @@ public class SME1_DetectPlayerState : DetectPlayerState
     {
         base.LogicUpdate();
 
-        if (playerWithinMeleeRange)
+        DoChecks();
+
+        switch (enemy.currentStage)
+        {
+            case 0:
+                StageOneLogicUpdate();
+                break;
+            case 1:
+                StageTwoLogicUpdate();
+                break;
+            default:
+                StageOneLogicUpdate();
+                break;
+        }
+    }
+
+    protected void StageOneLogicUpdate()
+    {
+        if (detectPlayerInMeleeRange)
         {
             // attack
-            if (Random.value < meleeRangeAttackRate)
+            if (Random.value < meleeRangeAttackRate && enemy.heideAttackState.CanAction())
                 stateMachine.SwitchState(enemy.heideAttackState);
-            else
+            else if (enemy.evadeState.CanAction())
                 stateMachine.SwitchState(enemy.evadeState);
+            else
+                stateMachine.SwitchState(enemy.flipState);
         }
-        else if (playerWithinAgroMin)
+        else if (detectPlayerInMaxAgro)
         {
-            if (Random.value < minAgroAttackRate)
+            if (Random.value < maxAgroAttackRate && enemy.heideAttackState.CanAction())
                 stateMachine.SwitchState(enemy.heideAttackState);
+            else if(enemy.chargeState.CanAction())
+                stateMachine.SwitchState(enemy.chargeState);
             else
-                stateMachine.SwitchState(enemy.evadeState);
-        }
-        else if (playerWithinAgroMax)
-        {
-            // TODO: charge
-            stateMachine.SwitchState(enemy.walkState);
+                stateMachine.SwitchState(enemy.flipState);
         }
         else
         {
-            // turn
             stateMachine.SwitchState(enemy.flipState);
+        }
+    }
+
+    protected void StageTwoLogicUpdate()
+    {
+        if (detectPlayerInMeleeRange && enemy.stageTwoHeideAttackState.CanAction())
+        {
+            stateMachine.SwitchState(enemy.stageTwoHeideAttackState);
+        }
+        else if(detectPlayerInMaxAgro && enemy.stageTwoTentacleAttackState.CanAction())
+        {
+            stateMachine.SwitchState(enemy.stageTwoTentacleAttackState);
+        }
+        else if(detectPlayerInMaxAgro)
+        {
+            stateMachine.SwitchState(enemy.stageTwoIdleState);
+        }
+        else
+        {
+            stateMachine.SwitchState(enemy.stageTwoFlipState);
         }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    public override bool CanAction()
+    {
+        return (enemy.currentStage == 0 && (enemy.evadeState.CanAction() || enemy.heideAttackState.CanAction() || enemy.chargeState.CanAction())) ||
+            (enemy.currentStage == 1 && (enemy.stageTwoHeideAttackState.CanAction() || enemy.stageTwoTentacleAttackState.CanAction()));
     }
 }

@@ -5,21 +5,30 @@ using UnityEngine;
 public class SME1_EvadeState : EvadeState
 {
     private SlowMutantElite1 enemy;
-    public SME1_EvadeState(FiniteStateMachine stateMachine, Entity entity, string animName, SlowMutantElite1 enemy) : base(stateMachine, entity, animName)
+
+    protected float cooldownTimer;
+
+    public SME1_EvadeState(FiniteStateMachine stateMachine, Entity entity, string animName, EvadeStateData stateData, SlowMutantElite1 enemy) : base(stateMachine, entity, animName, stateData)
     {
         this.enemy = enemy;
+        cooldownTimer = -1f;
     }
 
     public override void CompleteEvade()
     {
         base.CompleteEvade();
 
-        stateMachine.SwitchState(enemy.heideAttackState);
+        ResetTimer();
+
+        stateMachine.SwitchState(enemy.walkState);
     }
 
     public override void DoChecks()
     {
         base.DoChecks();
+
+        DetectPlayerInMeleeAttackRange();
+        DetectPlayerInMaxAgro();
     }
 
     public override void Enter()
@@ -43,4 +52,18 @@ public class SME1_EvadeState : EvadeState
     {
         base.PhysicsUpdate();
     }
+
+    public override void UpdateTimer()
+    {
+        if(cooldownTimer >= 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+    }
+
+    public override bool CanAction() => cooldownTimer < 0;
+
+    public override void ResetTimer() => cooldownTimer = data.cooldownTimer;
+
+
 }

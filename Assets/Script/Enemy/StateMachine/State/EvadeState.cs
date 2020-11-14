@@ -5,9 +5,10 @@ using UnityEngine;
 public class EvadeState : State
 {
     protected bool isEvade;
-    public EvadeState(FiniteStateMachine stateMachine, Entity entity, string animName) : base(stateMachine, entity, animName)
+    protected EvadeStateData data;
+    public EvadeState(FiniteStateMachine stateMachine, Entity entity, string animName, EvadeStateData stateData) : base(stateMachine, entity, animName)
     {
-
+        this.data = stateData;
     }
 
     public override void DoChecks()

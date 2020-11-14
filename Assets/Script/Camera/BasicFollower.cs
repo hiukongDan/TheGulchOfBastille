@@ -22,7 +22,9 @@ public class BasicFollower : MonoBehaviour
 
     private Vector2 fractions;
 
-    void Start()
+    public Vector3 deltaPos { get; private set; }
+
+    void Awake()
     {
         cam = Camera.main;
         workspace.Set(following.position.x, following.position.y, cam.transform.position.z);
@@ -31,6 +33,13 @@ public class BasicFollower : MonoBehaviour
         cam.transform.position = workspace;
 
         fractions = Vector2.zero;
+
+        deltaPos = Vector3.zero;
+    }
+
+    void Start()
+    {
+
     }
 
     void LateUpdate()
@@ -44,6 +53,8 @@ public class BasicFollower : MonoBehaviour
             workspace.x = Mathf.Clamp(workspace.x, cameraClamp.xMin, cameraClamp.xMax);
             workspace.y = Mathf.Clamp(workspace.y, cameraClamp.yMin, cameraClamp.yMax);
             workspace.z = defaultCamZ;
+
+            deltaPos = workspace - cam.transform.position;
 
             cam.transform.position = workspace;
         }

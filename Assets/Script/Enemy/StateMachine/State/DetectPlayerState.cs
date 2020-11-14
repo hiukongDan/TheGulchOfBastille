@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class DetectPlayerState : State
 {
-    protected bool playerWithinAgroMin;
-    protected bool playerWithinAgroMax;
-    protected bool playerWithinMeleeRange;
-
     protected DetectPlayerStateData data;
 
     public DetectPlayerState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, DetectPlayerStateData stateData):base(stateMachine, entity, animBoolName)
@@ -18,14 +14,17 @@ public class DetectPlayerState : State
     public override void DoChecks()
     {
         base.DoChecks();
+
+        detectPlayerTrans = null;
+
+        DetectPlayerInMaxAgro();
+        DetectPlayerInMinAgro();
+        DetectPlayerInMeleeAttackRange();
     }
 
     public override void Enter()
     {
         base.Enter();
-        playerWithinAgroMax = false;
-        playerWithinAgroMin = false;
-        playerWithinMeleeRange = false;
 
         entity.rb.velocity = Vector2.zero;
     }
@@ -38,18 +37,6 @@ public class DetectPlayerState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if(Mathf.Abs(detectPlayerTrans.position.x - entity.aliveGO.transform.position.x) < entity.entityData.meleeAttackDistance)
-        {
-            playerWithinMeleeRange = true;
-        }
-        else if (Mathf.Abs(detectPlayerTrans.position.x - entity.aliveGO.transform.position.x) < entity.entityData.detectPlayerAgroMinDistance)
-        {
-            playerWithinAgroMin = true;
-        }
-        else if (Mathf.Abs(detectPlayerTrans.position.x - entity.aliveGO.transform.position.x) < entity.entityData.detectPlayerAgroMaxDistance)
-        {
-            playerWithinAgroMax = true;
-        }
     }
 
     public override void PhysicsUpdate()

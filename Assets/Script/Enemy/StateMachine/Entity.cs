@@ -5,6 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     protected FiniteStateMachine stateMachine;
+    protected StateCooldownTimer stateCooldownTimer;
 
     public int facingDirection { get; private set; }
 
@@ -12,9 +13,26 @@ public class Entity : MonoBehaviour
         wallCheck,
         edgeCheck,
         groundCheck,
+        hitbox,
         damageBox,
         meleeAttackCheck,
         detectCenter;
+
+    public Vector2 DamageBoxSize
+    {
+        get
+        {
+            if(objectToAlive != null)
+            {
+                return objectToAlive.DamageBoxSize;
+            }
+            else if(entityData != null)
+            {
+                return new Vector2(entityData.damageBoxWidth, entityData.damageBoxHeight);
+            }
+            return Vector2.zero;
+        }
+    }
 
     public EntityData entityData;
 
@@ -34,8 +52,6 @@ public class Entity : MonoBehaviour
     protected bool isStunned;
 
     protected Vector2 vectorWorkspace = new Vector2();
-
-    public Transform hitbox;
 
     public bool isDanmageable { get; private set; }
 
@@ -180,13 +196,13 @@ public class Entity : MonoBehaviour
         Gizmos.DrawWireSphere(aliveGO.transform.position + Vector3.right * entityData.detectPlayerAgroMaxDistance, 0.2f);
         Gizmos.DrawWireSphere(aliveGO.transform.position + Vector3.right * entityData.detectPlayerAgroMinDistance, 0.2f);
 
-        Gizmos.DrawLine(new Vector2(damageBox.position.x - entityData.damageBoxWidth / 2, damageBox.position.y - entityData.damageBoxHeight / 2),
-            new Vector2(damageBox.position.x + entityData.damageBoxWidth / 2, damageBox.position.y - entityData.damageBoxHeight / 2));
-        Gizmos.DrawLine(new Vector2(damageBox.position.x + entityData.damageBoxWidth / 2, damageBox.position.y - entityData.damageBoxHeight / 2),
-            new Vector2(damageBox.position.x + entityData.damageBoxWidth / 2, damageBox.position.y + entityData.damageBoxHeight / 2));
-        Gizmos.DrawLine(new Vector2(damageBox.position.x + entityData.damageBoxWidth / 2, damageBox.position.y + entityData.damageBoxHeight / 2),
-            new Vector2(damageBox.position.x - entityData.damageBoxWidth / 2, damageBox.position.y + entityData.damageBoxHeight / 2));
-        Gizmos.DrawLine(new Vector2(damageBox.position.x - entityData.damageBoxWidth / 2, damageBox.position.y + entityData.damageBoxHeight / 2),
-            new Vector2(damageBox.position.x - entityData.damageBoxWidth / 2, damageBox.position.y - entityData.damageBoxHeight / 2));
+        Gizmos.DrawLine(new Vector2(damageBox.position.x - DamageBoxSize.x / 2, damageBox.position.y - DamageBoxSize.y / 2),
+            new Vector2(damageBox.position.x + DamageBoxSize.x / 2, damageBox.position.y - DamageBoxSize.y / 2));
+        Gizmos.DrawLine(new Vector2(damageBox.position.x + DamageBoxSize.x / 2, damageBox.position.y - DamageBoxSize.y / 2),
+            new Vector2(damageBox.position.x + DamageBoxSize.x / 2, damageBox.position.y + DamageBoxSize.y / 2));
+        Gizmos.DrawLine(new Vector2(damageBox.position.x + DamageBoxSize.x / 2, damageBox.position.y + DamageBoxSize.y / 2),
+            new Vector2(damageBox.position.x - DamageBoxSize.x / 2, damageBox.position.y + DamageBoxSize.y / 2));
+        Gizmos.DrawLine(new Vector2(damageBox.position.x - DamageBoxSize.x / 2, damageBox.position.y + DamageBoxSize.y / 2),
+            new Vector2(damageBox.position.x - DamageBoxSize.x  / 2, damageBox.position.y - DamageBoxSize.y / 2));
     }
 }
