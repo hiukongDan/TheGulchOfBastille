@@ -43,7 +43,7 @@ public class SME1_FlipState : FlipState
     public void SetDefaultPrevState(State newDefaultPrevState) => defaultPrevState = newDefaultPrevState;
     public override void CompleteFlip()
     {
-        enemy.Flip();
+        //enemy.Flip();
         if(prevState != null)
         {
             stateMachine.SwitchState(prevState);

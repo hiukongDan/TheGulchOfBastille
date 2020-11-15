@@ -102,7 +102,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        stateMachine.LogicUpdate();
+        if(GM.CanPlayerAction())
+            stateMachine.LogicUpdate();
     }
 
     void FixedUpdate()

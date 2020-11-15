@@ -26,16 +26,11 @@ public class SME1_ObjectToAlive : ObjectToAlive
     
     public void CompleteTransform1()
     {
-        SetSnakeHeadActive(true);
         transformState?.CompleteTransform();
     }
 
     public void SetHeadActive(bool active)
     {
         sme1_head?.gameObject.SetActive(active);
-    }
-    public void SetSnakeHeadActive(bool active)
-    {
-        sme1_snakeHead?.gameObject.SetActive(active);
     }
 }

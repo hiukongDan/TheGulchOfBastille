@@ -7,6 +7,13 @@ public class ButtonGroup : MonoBehaviour
 
     private Button[] btns;
 
+    private GameManager gm;
+
+    void Awake()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
+
     void OnEnable()
     {
         if(btns == null)
@@ -20,9 +27,8 @@ public class ButtonGroup : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SelectBtn(Button btn)
     {
-        
+
     }
 }

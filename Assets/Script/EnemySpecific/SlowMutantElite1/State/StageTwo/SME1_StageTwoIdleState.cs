@@ -19,6 +19,11 @@ public class SME1_StageTwoIdleState : IdleState
     public override void Enter()
     {
         base.Enter();
+
+        foreach (SME1_SnakeHead head in enemy.SnakeHeads)
+        {
+            head.Idle();
+        }
     }
 
     public override void Exit()

@@ -18,7 +18,10 @@ public class SME1_DeadState : DeadState
     public override void Enter()
     {
         base.Enter();
+        enemy.snakeHeadsParent.gameObject.SetActive(false);
         enemy.SetIsDamageable(false);
+
+        // TODO: Destroy Every Components
     }
 
     public override void Exit()

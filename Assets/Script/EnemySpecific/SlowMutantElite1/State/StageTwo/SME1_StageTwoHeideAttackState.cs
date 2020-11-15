@@ -10,18 +10,18 @@ public class SME1_StageTwoHeideAttackState : MeleeAttackState
 
     protected float cooldownTimer;
 
+    private string animLoopName;
+
     public SME1_StageTwoHeideAttackState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, MeleeAttackStateData stateData, Transform hitBoxPoint, SlowMutantElite1 enemy) : base(stateMachine, entity, animBoolName, stateData, hitBoxPoint)
     {
         this.enemy = enemy;
         cooldownTimer = -1f;
+        animLoopName = animBoolName + "_loop";
     }
 
     public override void CompleteMeleeAttack()
     {
         base.CompleteMeleeAttack();
-
-        Debug.Log("IsHeideAttacK : " + isHeideAttack);
-        Debug.Log("Attack Time Remains: " + heideAttacktimesRemain);
 
         if (!isHeideAttack)
         {
@@ -43,17 +43,20 @@ public class SME1_StageTwoHeideAttackState : MeleeAttackState
 
     public override void Enter()
     {
-        enemy.snakeHeadsParent.gameObject.SetActive(false);
+        foreach (SME1_SnakeHead head in enemy.SnakeHeads)
+        {
+            head.Hide();
+        }
+
         base.Enter();
         heideAttacktimesRemain = data.heideAttackTimes - 1;
         isHeideAttack = true;
-        enemy.anim.SetBool("s2_heideAttack", isHeideAttack);
+        enemy.anim.SetBool(animName, isHeideAttack);
         enemy.anim.Play(animName);
     }
 
     public override void Exit()
     {
-        enemy.snakeHeadsParent.gameObject.SetActive(true);
         base.Exit();
     }
 
@@ -65,11 +68,12 @@ public class SME1_StageTwoHeideAttackState : MeleeAttackState
         {
             heideAttacktimesRemain--;
             isAttacking = true;
+            enemy.anim.Play(animLoopName);
         }
-        else if (!isAttacking && heideAttacktimesRemain <= 0)
+        else if (!isAttacking && heideAttacktimesRemain <= 0 && isHeideAttack)
         {
             isHeideAttack = false;
-            enemy.anim.SetBool("s2_heideAttack", isHeideAttack);
+            enemy.anim.SetBool(animName, isHeideAttack);
         }
     }
 

@@ -19,7 +19,7 @@ public class SME1_DetectPlayerState : DetectPlayerState
 
     public override void Enter()
     {
-        base.Enter();
+        //base.Enter();
     }
 
     public override void Exit()
@@ -90,6 +90,7 @@ public class SME1_DetectPlayerState : DetectPlayerState
         }
         else
         {
+            enemy.stageTwoFlipState.SetPrevState(enemy.stageTwoIdleState);
             stateMachine.SwitchState(enemy.stageTwoFlipState);
         }
     }

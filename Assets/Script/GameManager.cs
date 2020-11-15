@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     private string currentScene;
 
+    private UIHandler uiHandler;
+
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(currentScene);
@@ -15,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        
+        uiHandler = GetComponent<UIHandler>();
     }
 
     void Start()
@@ -62,5 +64,20 @@ public class GameManager : MonoBehaviour
         }
 
         AreaTransmissionHandler.Instance.performAreaTransmissionHandler += PerformAreaTransmission;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public bool CanPlayerAction()
+    {
+        if(uiHandler != null)
+        {
+            return uiHandler.uiFSM.PeekState() == uiHandler.uiPlayState;
+        }
+
+        return true;
     }
 }

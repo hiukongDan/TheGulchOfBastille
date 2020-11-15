@@ -31,7 +31,7 @@ MonoBehaviour:
   stunDamage: 1
   damageBoxWidth: 1.2
   damageBoxHeight: 1.5
-  maxHealth: 50
+  maxHealth: 200
   stunResistance: 5
   knockbackImpulse: 5
   knockbackDir: {x: 1, y: 1}

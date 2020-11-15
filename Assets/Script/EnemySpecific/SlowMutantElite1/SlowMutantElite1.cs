@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SlowMutantElite1 : Entity
 {
+    // ===================== DATA ==========================
     public WalkStateData walkStateData;
     public DeadStateData deadStateData;
     public StunStateData stunStateData;
@@ -15,6 +16,7 @@ public class SlowMutantElite1 : Entity
     public EvadeStateData evadeStateData;
 
     public MeleeAttackStateData tentacleAttackStateData;
+    // ====================== DATA =========================
 
     public SME1_StoneState stoneState;
     public SME1_RecoverState recoverState;
@@ -28,7 +30,7 @@ public class SlowMutantElite1 : Entity
     public SME1_DetectPlayerState detectPlayerState;
     public SME1_TransformState transformState;
 
-    // temp
+    // Stage Two
     public SME1_StageTwoIdleState stageTwoIdleState;
     public SME1_StageTwoHeideAttackState stageTwoHeideAttackState;
     public SME1_StageTwoFlipState stageTwoFlipState;
@@ -79,7 +81,7 @@ public class SlowMutantElite1 : Entity
         heideAttackState = new SME1_HeideAttackState(stateMachine, this, "heideAttack", meleeAttackStateData, hitbox, this);
         chargeState = new SME1_ChargeState(stateMachine, this, "charge", meleeAttackStateData, chargeStateData, damageBox, this);
         evadeState = new SME1_EvadeState(stateMachine, this, "evade", evadeStateData, this);
-        detectPlayerState = new SME1_DetectPlayerState(stateMachine, this, null, detectPlayerStateData, this);
+        detectPlayerState = new SME1_DetectPlayerState(stateMachine, this, "empty", detectPlayerStateData, this);
         transformState = new SME1_TransformState(stateMachine, this, "transform", this);
 
         // ==== STAGE TWO ====
@@ -98,12 +100,12 @@ public class SlowMutantElite1 : Entity
         stateCooldownTimer.AddStateTimer(heideAttackState);
         stateCooldownTimer.AddStateTimer(evadeState);
 
-
         stateMachine.SetStateCooldownTimer(stateCooldownTimer);
 
         // init state
         currentStage = 0;
     }
+
     protected override void Damage(CombatData combatData)
     {
         if (!isDanmageable)
@@ -122,13 +124,11 @@ public class SlowMutantElite1 : Entity
             return;
         }
 
-
-
         switch (currentStage)
         {
             case 0:
                 {
-                    if (currentHealth < entityData.maxHealth / 2)
+                    if (currentHealth <= entityData.maxHealth / 2)
                     {
                         /* ========= Change to Stage Two ========= */
                         stateCooldownTimer.RemoveStateTimer(chargeState);
@@ -141,6 +141,10 @@ public class SlowMutantElite1 : Entity
                         currentStage = 1;
                         stateMachine.SwitchState(transformState);
                         /* ========= Change to Stage Two ========= */
+                    }
+                    else if(stateMachine.currentState == stunState)
+                    {
+                        break;
                     }
                     else if (isStunned || combatData.isParryDamage)
                     {

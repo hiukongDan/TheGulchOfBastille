@@ -49,12 +49,6 @@ public class SME1_StageTwoTentacleAttackState : State
             isTentacleAttack = false;
     }
 
-    public void CompleteTentacleAttack()
-    {
-        ResetTimer();
-        stateMachine.SwitchState(enemy.stageTwoIdleState);
-    }
-
     public void CheckDamageBox(int index, Vector2 attackCenter, Vector2 damageBox)
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(attackCenter, damageBox, 0, data.whatIsPlayer);
@@ -123,42 +117,11 @@ public class SME1_StageTwoTentacleAttackState : State
                 attackTentacles.Add(3);
                 break;
         }
-
-
-/*        if (rand < oneTentacleWeight)
-        {
-            attackTentacles.Add(Mathf.FloorToInt(Random.value * 4));
-        }
-        else if (rand < oneTentacleWeight + twoTentacleWeigth)
-        {
-            while (attackTentacles.Count < 2)
-            {
-                int val = Mathf.FloorToInt(Random.value * 4);
-                if (!attackTentacles.Contains(val))
-                {
-                    attackTentacles.Add(val);
-                }
-            }
-        }
-        else if (rand < oneTentacleWeight + twoTentacleWeigth + threeTentacleWeight)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                attackTentacles.Add(i);
-            }
-            attackTentacles.Remove(Mathf.FloorToInt(Random.value * 4));
-        }
-        else
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                attackTentacles.Add(i);
-            }
-        }*/
     }
 
     public override void Exit()
     {
+        ResetTimer();
         base.Exit();
     }
 
@@ -170,7 +133,6 @@ public class SME1_StageTwoTentacleAttackState : State
         {
             stateMachine.SwitchState(enemy.stageTwoIdleState);
         }
-
     }
 
     public override void PhysicsUpdate()

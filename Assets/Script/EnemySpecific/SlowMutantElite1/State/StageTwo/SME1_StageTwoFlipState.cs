@@ -16,14 +16,17 @@ public class SME1_StageTwoFlipState : SME1_FlipState
 
     public override void Enter()
     {
-        enemy.snakeHeadsParent.gameObject.SetActive(false);
         base.Enter();
+
+        foreach(SME1_SnakeHead head in enemy.SnakeHeads)
+        {
+            head.Hide();
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
-        enemy.snakeHeadsParent.gameObject.SetActive(true);
     }
 
     public override void LogicUpdate()

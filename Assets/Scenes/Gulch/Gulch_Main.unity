@@ -230,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59619092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.13, y: -15.48, z: 0}
+  m_LocalPosition: {x: 4.88, y: -16.263, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1729426030}
@@ -799,8 +799,7 @@ SpriteRenderer:
   m_SortingLayerID: 2087037385
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1014515694671518571, guid: dbf929066a1e1b84a92e13d6512fb802,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -808,7 +807,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &234047283
@@ -1476,7 +1475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &395809130
 Transform:
   m_ObjectHideFlags: 0
@@ -1565,7 +1564,7 @@ SpriteRenderer:
   m_SortingLayerID: -877835637
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 8ee9b4a7da1e7b44f94531677809d7cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cce6085e61e2ba44e80951a3a39de67d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1967,8 +1966,7 @@ SpriteRenderer:
   m_SortingLayerID: 2087037385
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3992133029909156810, guid: ce637f64fea8621498403f38ec876b47,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1976,7 +1974,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &655429848
@@ -2480,8 +2478,7 @@ SpriteRenderer:
   m_SortingLayerID: 2087037385
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4039006633773403379, guid: f3f64cd52bc8e3b498830c9ff00dc8e3,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2489,7 +2486,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &995685661
@@ -2600,8 +2597,7 @@ SpriteRenderer:
   m_SortingLayerID: 2087037385
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8248213726044681147, guid: 06342fa00a55a864b92f7e4dab7eca1e,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2609,7 +2605,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1003669290
@@ -2749,6 +2745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148951098}
   - component: {fileID: 1148951099}
+  - component: {fileID: 1148951100}
   m_Layer: 0
   m_Name: SlowMutantElite
   m_TagString: Untagged
@@ -2809,6 +2806,18 @@ MonoBehaviour:
     type: 2}
   DrawGizmos: 1
   snakeHeadsParent: {fileID: 395809130}
+--- !u!114 &1148951100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148951097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d95d5f7f7b1d4459f180791e303cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1179337764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3365,7 +3374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1567879754
 Transform:
   m_ObjectHideFlags: 0
@@ -3871,7 +3880,7 @@ SpriteRenderer:
   m_SortingLayerID: -877835637
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cce6085e61e2ba44e80951a3a39de67d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ee9b4a7da1e7b44f94531677809d7cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

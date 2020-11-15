@@ -10,10 +10,14 @@ public class SME1_HeideAttackState : MeleeAttackState
 
     protected float cooldownTimer;
 
+    private string animLoopName;
+
     public SME1_HeideAttackState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, MeleeAttackStateData stateData, Transform hitBoxPoint, SlowMutantElite1 enemy) : base(stateMachine, entity, animBoolName, stateData, hitBoxPoint)
     {
         this.enemy = enemy;
         cooldownTimer = -1f;
+
+        animLoopName = animBoolName + "_loop";
     }
 
     public override void CompleteMeleeAttack()
@@ -70,6 +74,7 @@ public class SME1_HeideAttackState : MeleeAttackState
         {
             heideAttacktimesRemain--;
             isAttacking = true;
+            enemy.anim.Play(animLoopName);
         }
         else if(!isAttacking && heideAttacktimesRemain <= 0)
         {

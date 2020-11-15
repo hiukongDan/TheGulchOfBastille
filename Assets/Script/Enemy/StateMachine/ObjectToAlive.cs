@@ -30,6 +30,11 @@ public class ObjectToAlive : MonoBehaviour
         }
     }
 
+    public void Flip()
+    {
+        entity.Flip();
+    }
+
     public void DoMeleeAttack()
     {
         if(meleeAttackState != null)
