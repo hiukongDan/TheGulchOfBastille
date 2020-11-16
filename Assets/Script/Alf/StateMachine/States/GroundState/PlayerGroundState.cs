@@ -73,9 +73,9 @@ public override void LogicUpdate()
         else
         {
             isAction = false;
+            player.InputHandler.ResetAll();
         }
-
-        player.InputHandler.ResetAll();
+            
     }
 
     public override void PhysicsUpdate()

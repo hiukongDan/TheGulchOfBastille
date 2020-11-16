@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
         if(attackState != null)
         {
             attackState.CheckHitbox();
-            attackState.ConsumeAttackBuffer();
+            // attackState.ConsumeAttackBuffer();
         }
     }
 

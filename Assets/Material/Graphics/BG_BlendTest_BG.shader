@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Sprites/BG BlendTest"
+Shader "Sprites/BG BlendTest BG"
 {
 	Properties
 	{
@@ -27,7 +27,7 @@ Shader "Sprites/BG BlendTest"
 			ZWrite Off
 			Stencil{
 				Ref 1
-				Comp notequal
+				Comp always
 				Pass replace
 			}
 			Blend One OneMinusSrcAlpha, One Zero
@@ -85,7 +85,6 @@ Shader "Sprites/BG BlendTest"
 
 			fixed4 frag(v2f IN) : SV_Target
 			{
-
 				fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
 				if(c.a == 0)
 					discard;
@@ -94,6 +93,5 @@ Shader "Sprites/BG BlendTest"
 			}
 		ENDCG
 		}
-
 	}
 }

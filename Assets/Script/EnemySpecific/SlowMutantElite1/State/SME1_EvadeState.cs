@@ -34,13 +34,11 @@ public class SME1_EvadeState : EvadeState
     public override void Enter()
     {
         base.Enter();
-        enemy.SetIsDamageable(false);
     }
 
     public override void Exit()
     {
         base.Exit();
-        enemy.SetIsDamageable(true);
     }
 
     public override void LogicUpdate()

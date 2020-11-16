@@ -15,7 +15,7 @@ MonoBehaviour:
   wallCheckDistance: 0.5
   edgeCheckDistance: 0.3
   groundCheckDistance: 0.5
-  detectPlayerAgroMinDistance: 3
+  detectPlayerAgroMinDistance: 2.3
   detectPlayerAgroMaxDistance: 5
   meleeAttackDistance: 1.2
   whatIsPlayer:

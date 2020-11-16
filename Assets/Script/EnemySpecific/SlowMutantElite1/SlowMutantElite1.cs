@@ -155,7 +155,7 @@ public class SlowMutantElite1 : Entity
                         stateMachine.SwitchState(stunState);
                         ResetStunResistance();
                     }
-                    else if (stateMachine.currentState != heideAttackState)
+                    else if (stateMachine.currentState != heideAttackState || stateMachine.currentState != evadeState)
                     {
                         bool damageFrom = combatData.position.x - transform.position.x > 0;
                         if (damageFrom != facingDirection > 0)

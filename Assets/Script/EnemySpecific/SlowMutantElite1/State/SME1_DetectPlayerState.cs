@@ -5,7 +5,7 @@ using UnityEngine;
 public class SME1_DetectPlayerState : DetectPlayerState
 {
     private SlowMutantElite1 enemy;
-    private float maxAgroAttackRate = 0.2f;
+    //private float maxAgroAttackRate = 0.2f;
     private float meleeRangeAttackRate = 0.5f;
     public SME1_DetectPlayerState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, DetectPlayerStateData stateData, SlowMutantElite1 enemy) : base(stateMachine, entity, animBoolName, stateData)
     {
@@ -59,11 +59,22 @@ public class SME1_DetectPlayerState : DetectPlayerState
             else
                 stateMachine.SwitchState(enemy.flipState);
         }
+        else if (detectPlayerInMinAgro)
+        {
+            if(enemy.heideAttackState.CanAction())
+                stateMachine.SwitchState(enemy.heideAttackState);
+            else if (enemy.evadeState.CanAction())
+            {
+                stateMachine.SwitchState(enemy.evadeState);
+            }
+            else
+            {
+                stateMachine.SwitchState(enemy.flipState);
+            }
+        }
         else if (detectPlayerInMaxAgro)
         {
-            if (Random.value < maxAgroAttackRate && enemy.heideAttackState.CanAction())
-                stateMachine.SwitchState(enemy.heideAttackState);
-            else if(enemy.chargeState.CanAction())
+            if(enemy.chargeState.CanAction())
                 stateMachine.SwitchState(enemy.chargeState);
             else
                 stateMachine.SwitchState(enemy.flipState);

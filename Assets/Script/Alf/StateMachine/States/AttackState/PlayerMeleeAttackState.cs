@@ -26,6 +26,8 @@ public class PlayerMeleeAttackState : PlayerAttackState
         combatData.from = player.gameObject;
         combatData.isParryDamage = false;
         combatData.facingDirection = player.facingDirection;
+
+        ConsumeAttackBuffer();
     }
 
 public override void Exit()
@@ -71,6 +73,7 @@ public override void Exit()
         base.UpdateStatusSubscription();
     }
 
+    
     public override void ConsumeAttackBuffer()
     {
         base.ConsumeAttackBuffer();
@@ -92,7 +95,7 @@ public override void Exit()
             }
         }
         // consuming MeleeAttack buffer
-        player.InputHandler.ResetIsMeleeAttack();
+        // player.InputHandler.ResetIsMeleeAttack();
 
         //isFirstAttack = !isFirstAttack;
     }
@@ -100,12 +103,13 @@ public override void Exit()
     public override void CompleteAttack()
     {
         base.CompleteAttack();
+
         ResetTimer();
         player.idleState.SetAnimationCode(AlfAnimationHash.IDLE_1);
         stateMachine.SwitchState(player.idleState);
     }
 
-    public override bool CheckEndAttack() => !isMeleeAttack;
+    //public override bool CheckEndAttack() => !isMeleeAttack;
     public override void ResetTimer() => attackCooldownTimer = data.MAS_attackCooldownTimer;
     public override bool CanAction() => attackCooldownTimer < 0;
 

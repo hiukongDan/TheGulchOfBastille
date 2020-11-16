@@ -102,6 +102,7 @@ public class PlayerAttackState : PlayerState
         currentVelocity = player.Rb.velocity;
     }
 
+    /* unwanted design */
     public virtual void ConsumeAttackBuffer()
     {
 
