@@ -20,4 +20,5 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
+  cooldownTimer: 0.5
   heideAttackTimes: 1

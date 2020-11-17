@@ -29,24 +29,27 @@ public class SME1_WalkState : WalkState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-        if(isEdgeDetected || isWallDetected)
+        DoChecks();
+/*        if (isEdgeDetected || isWallDetected)
         {
             stateMachine.SwitchState(enemy.flipState);
-        }
-        else if (detectPlayerInMaxAgro && enemy.detectPlayerState.CanAction())
+        }*/
+        if (detectPlayerInMaxAgro && enemy.detectPlayerState.CanAction())
         {
-            enemy.detectPlayerState.SetPlayerDetectedTrans(detectPlayerTrans);
+            //enemy.detectPlayerState.SetPlayerDetectedTrans(detectPlayerTrans);
             stateMachine.SwitchState(enemy.detectPlayerState);
+            //Debug.Log("Yes Yes Yes");
         }
-        else if(walkDurationTime < 0)
+        else if (walkDurationTime < 0)
         {
+            enemy.flipState.SetPrevState(enemy.walkState);
             stateMachine.SwitchState(enemy.flipState);
         }
         else
         {
             walkDurationTime -= Time.deltaTime;
         }
+        
     }
 
     public override void PhysicsUpdate()

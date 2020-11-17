@@ -63,5 +63,4 @@ public class SME1_EvadeState : EvadeState
 
     public override void ResetTimer() => cooldownTimer = data.cooldownTimer;
 
-
 }

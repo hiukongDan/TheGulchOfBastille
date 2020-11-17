@@ -120,6 +120,11 @@ public class SlowMutantElite1 : Entity
 
         if (isDead)
         {
+            //bool playerInRight = combatData.position.x - transform.position.x > 0;
+            if(combatData.facingDirection == facingDirection)
+            {
+                Flip();
+            }
             stateMachine.SwitchState(deadState);
             return;
         }
@@ -155,7 +160,7 @@ public class SlowMutantElite1 : Entity
                         stateMachine.SwitchState(stunState);
                         ResetStunResistance();
                     }
-                    else if (stateMachine.currentState != heideAttackState || stateMachine.currentState != evadeState)
+                    else if (stateMachine.currentState != heideAttackState && stateMachine.currentState != evadeState)
                     {
                         bool damageFrom = combatData.position.x - transform.position.x > 0;
                         if (damageFrom != facingDirection > 0)
@@ -183,6 +188,13 @@ public class SlowMutantElite1 : Entity
     {
         base.KnockBack(combatData);
     }
+
+/*    protected override void Update()
+    {
+        base.Update();
+
+        Debug.Log(stateMachine.currentState.ToString());
+    }*/
 
     [ExecuteInEditMode]
     protected override void OnDrawGizmos()

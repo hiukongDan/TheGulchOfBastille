@@ -16,7 +16,8 @@ MonoBehaviour:
   - Good day, Alf. Nice to see you so lively today.
   - But now, I have some important issues to inform you.
   - Before that, I am afraid that Master Goye have something to tell you either,
-  - So, go to him, then turn to my place.
   - He is standing under the Sun Tower, I think you will not miss him if you go directly
-    east.
+    west.
+  - So, I bet you would like to go to him first.
   selections: []
+  nextConversation: {fileID: 0}

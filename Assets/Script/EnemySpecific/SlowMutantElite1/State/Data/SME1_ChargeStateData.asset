@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SME1_ChargeStateData
   m_EditorClassIdentifier: 
   chargeSpeed: 5
-  chargeDuration: 1
+  chargeDuration: 0.5
   chargeCoolDownTime: 5

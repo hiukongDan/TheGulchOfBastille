@@ -42,7 +42,7 @@ public class SME1_DetectPlayerState : DetectPlayerState
                 StageTwoLogicUpdate();
                 break;
             default:
-                StageOneLogicUpdate();
+                stateMachine.SwitchState(enemy.walkState);
                 break;
         }
     }
@@ -57,7 +57,10 @@ public class SME1_DetectPlayerState : DetectPlayerState
             else if (enemy.evadeState.CanAction())
                 stateMachine.SwitchState(enemy.evadeState);
             else
+            {
+                enemy.flipState.SetPrevState(enemy.walkState);
                 stateMachine.SwitchState(enemy.flipState);
+            }
         }
         else if (detectPlayerInMinAgro)
         {
@@ -69,6 +72,7 @@ public class SME1_DetectPlayerState : DetectPlayerState
             }
             else
             {
+                enemy.flipState.SetPrevState(enemy.walkState);
                 stateMachine.SwitchState(enemy.flipState);
             }
         }
@@ -77,10 +81,14 @@ public class SME1_DetectPlayerState : DetectPlayerState
             if(enemy.chargeState.CanAction())
                 stateMachine.SwitchState(enemy.chargeState);
             else
+            {
+                enemy.flipState.SetPrevState(enemy.walkState);
                 stateMachine.SwitchState(enemy.flipState);
+            }
         }
         else
         {
+            enemy.flipState.SetPrevState(enemy.walkState);
             stateMachine.SwitchState(enemy.flipState);
         }
     }
@@ -95,13 +103,13 @@ public class SME1_DetectPlayerState : DetectPlayerState
         {
             stateMachine.SwitchState(enemy.stageTwoTentacleAttackState);
         }
-        else if(detectPlayerInMaxAgro)
+        else if(enemy.stageTwoTentacleAttackState.CanAction())
         {
-            stateMachine.SwitchState(enemy.stageTwoIdleState);
+            stateMachine.SwitchState(enemy.stageTwoTentacleAttackState);
         }
         else
         {
-            enemy.stageTwoFlipState.SetPrevState(enemy.stageTwoIdleState);
+            enemy.stageTwoFlipState.SetPrevState(enemy.stageTwoTentacleAttackState);
             stateMachine.SwitchState(enemy.stageTwoFlipState);
         }
     }

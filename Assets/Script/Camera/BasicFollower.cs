@@ -35,8 +35,6 @@ public class BasicFollower : MonoBehaviour
         fractions = Vector2.zero;
 
         deltaPos = Vector3.zero;
-
-
     }
 
     void Start()

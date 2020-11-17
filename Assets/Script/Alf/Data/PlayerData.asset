@@ -34,7 +34,7 @@ MonoBehaviour:
   DS_dashAmounts: 1
   DS_dashTime: 0.1
   DS_dashSpeed: 15
-  DS_dashCoolDownTime: 0.5
+  DS_dashCoolDownTime: 0.2
   WS_wallJumpAmounts: 1
   WS_wallJumpImpulse: {x: 6, y: 12}
   WS_wallJumpHoldTime: 0.2
@@ -49,14 +49,14 @@ MonoBehaviour:
   MAS_damageTime: 0.2
   MAS_meleeAttackParticle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,
     type: 3}
-  MAS_attackCooldownTimer: 0.5
+  MAS_attackCooldownTimer: 0.2
   PS_maxTime: 0.2
   PS_horizontalSpeed: 0.5
   PS_particle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,
     type: 3}
   PS_damage: 1
-  PS_coolDownTimer: 0.5
+  PS_coolDownTimer: 0.2
   SS_stunDurationTime: 0.3
   RS_rollSpeed: 4
-  RS_CoolDownTimer: 0.5
+  RS_CoolDownTimer: 0.2
   CS_selectionTimer: 0.2

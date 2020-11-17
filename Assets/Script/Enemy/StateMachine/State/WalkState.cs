@@ -30,7 +30,6 @@ public class WalkState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
     }
 
     public override void PhysicsUpdate()

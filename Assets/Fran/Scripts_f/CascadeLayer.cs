@@ -14,6 +14,9 @@ public class CascadeLayer : MonoBehaviour
     void Start()
     {
         lastCamPos = Camera.main.transform.position;
+
+        transform.position = new Vector3(transform.position.x + LayerSpeedRelativeToCameraX * lastCamPos.x,
+            transform.position.y, transform.position.z);
     }
 
     void Update()

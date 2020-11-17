@@ -85,22 +85,26 @@ public class SME1_StageTwoTentacleAttackState : State
         switch (rand)
         {
             case 0:
-                // mode 0 = 2,3
+                // mode 0 = 1,2,3
+                attackTentacles.Add(1);
                 attackTentacles.Add(2);
                 attackTentacles.Add(3);
                 break;
             case 1:
-                // mode 1 = 0,1
+                // mode 1 = 0,1,2
                 attackTentacles.Add(0);
                 attackTentacles.Add(1);
-                break;
-            case 2:
-                // mode 2 = 0, 2
-                attackTentacles.Add(0);
                 attackTentacles.Add(2);
                 break;
+            case 2:
+                // mode 2 = 0,2,3
+                attackTentacles.Add(0);
+                attackTentacles.Add(2);
+                attackTentacles.Add(3);
+                break;
             case 3:
-                // mode 3 = 1, 3
+                // mode 3 = 0,1,3
+                attackTentacles.Add(0);
                 attackTentacles.Add(1);
                 attackTentacles.Add(3);
                 break;
@@ -112,7 +116,9 @@ public class SME1_StageTwoTentacleAttackState : State
                 attackTentacles.Add(3);
                 break;
             default:
-                // default mode 0
+                // default mode 4
+                attackTentacles.Add(0);
+                attackTentacles.Add(1);
                 attackTentacles.Add(2);
                 attackTentacles.Add(3);
                 break;
