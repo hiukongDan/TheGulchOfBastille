@@ -45,8 +45,11 @@ TagManager:
   - name: Background
     uniqueID: 3417131659
     locked: 0
-  - name: Ground
+  - name: Main
     uniqueID: 466044673
+    locked: 0
+  - name: Foreground
+    uniqueID: 2887293493
     locked: 0
   - name: Enemy
     uniqueID: 2087037385

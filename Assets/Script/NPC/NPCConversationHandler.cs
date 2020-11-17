@@ -331,7 +331,10 @@ public class NPCConversationHandler : MonoBehaviour
         OP.DestroyGameObject();
 
         // Change conversation default to next conversation if presented
-        SetConversation(npcConversation.nextConversation);
+        if(npcConversation != null && npcConversation.nextConversation != null)
+        {
+            SetConversation(npcConversation.nextConversation);
+        }
 
         npc.npcEventHandler.NPCSelection -= DialogueSelectionHandler;
     }

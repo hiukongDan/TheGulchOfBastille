@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class CascadeLayer : MonoBehaviour
 {
     public float LayerSpeedRelativeToCameraX = 1f;
