@@ -95,7 +95,7 @@ public class SME1_DetectPlayerState : DetectPlayerState
 
     protected void StageTwoLogicUpdate()
     {
-        if (detectPlayerInMeleeRange && enemy.stageTwoHeideAttackState.CanAction())
+        if (detectPlayerInMinAgro && enemy.stageTwoHeideAttackState.CanAction())
         {
             stateMachine.SwitchState(enemy.stageTwoHeideAttackState);
         }
@@ -103,13 +103,9 @@ public class SME1_DetectPlayerState : DetectPlayerState
         {
             stateMachine.SwitchState(enemy.stageTwoTentacleAttackState);
         }
-        else if(enemy.stageTwoTentacleAttackState.CanAction())
-        {
-            stateMachine.SwitchState(enemy.stageTwoTentacleAttackState);
-        }
         else
         {
-            enemy.stageTwoFlipState.SetPrevState(enemy.stageTwoTentacleAttackState);
+            enemy.stageTwoFlipState.SetPrevState(enemy.stageTwoIdleState);
             stateMachine.SwitchState(enemy.stageTwoFlipState);
         }
     }

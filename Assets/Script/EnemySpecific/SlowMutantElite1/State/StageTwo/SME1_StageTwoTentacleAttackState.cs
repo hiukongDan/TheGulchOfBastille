@@ -86,15 +86,21 @@ public class SME1_StageTwoTentacleAttackState : State
         {
             case 0:
                 // mode 0 = 1,2,3
-                attackTentacles.Add(1);
+                /*                attackTentacles.Add(1);
+                                attackTentacles.Add(2);
+                                attackTentacles.Add(3);*/
+                attackTentacles.Add(0);
                 attackTentacles.Add(2);
                 attackTentacles.Add(3);
                 break;
             case 1:
                 // mode 1 = 0,1,2
+                /*                attackTentacles.Add(0);
+                                attackTentacles.Add(1);
+                                attackTentacles.Add(2);*/
                 attackTentacles.Add(0);
                 attackTentacles.Add(1);
-                attackTentacles.Add(2);
+                attackTentacles.Add(3);
                 break;
             case 2:
                 // mode 2 = 0,2,3
