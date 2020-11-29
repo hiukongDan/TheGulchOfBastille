@@ -1,43 +1,31 @@
 fileFormatVersion: 2
-guid: 2150239a00e02154e9874c1f69049a45
+guid: bad7c311b0541a94aa9005ceb51d1c00
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5247611915491599452
-    second: Goye_Idle_0_32x32_0
+      213: 7886649507930848255
+    second: Goye_Run_0_40x32_0
   - first:
-      213: -2323691100204752579
-    second: Goye_Idle_0_32x32_1
+      213: -842344993605097258
+    second: Goye_Run_0_40x32_1
   - first:
-      213: 6226744444579132373
-    second: Goye_Idle_0_32x32_2
+      213: -8115140429879114609
+    second: Goye_Run_0_40x32_2
   - first:
-      213: -2785914373602762406
-    second: Goye_Idle_0_32x32_3
+      213: 390094970536701701
+    second: Goye_Run_0_40x32_3
   - first:
-      213: -3516313285103069829
-    second: Goye_Idle_0_32x32_0
+      213: -1446266346847543953
+    second: Goye_Run_0_40x32_4
   - first:
-      213: -1054117214120710920
-    second: Goye_Idle_0_32x32_1
+      213: 110740354771935497
+    second: Goye_Run_0_40x32_5
   - first:
-      213: -4192676307012669137
-    second: Goye_Idle_0_32x32_2
+      213: -3633397575952181318
+    second: Goye_Run_0_40x32_6
   - first:
-      213: -2310353337006942901
-    second: Goye_Idle_0_32x32_3
-  - first:
-      213: -2045326271992259203
-    second: Goye_Idle_0_32x32_f_0
-  - first:
-      213: 5821180183609197759
-    second: Goye_Idle_0_32x32_f_1
-  - first:
-      213: 3816665515382084617
-    second: Goye_Idle_0_32x32_f_2
-  - first:
-      213: -538128313263352252
-    second: Goye_Idle_0_32x32_f_3
+      213: 7321888666244066522
+    second: Goye_Run_0_40x32_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,12 +111,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_0
+      name: Goye_Run_0_40x32_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 40
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -137,19 +125,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7d902c979a8d93e0800000000000000
-      internalID: -2045326271992259203
+      spriteID: ffb3a3431f1037d60800000000000000
+      internalID: 7886649507930848255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_1
+      name: Goye_Run_0_40x32_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 40
         y: 0
-        width: 32
+        width: 40
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -158,19 +146,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb4c199f88cf8c050800000000000000
-      internalID: 5821180183609197759
+      spriteID: 6d8e6d5f0b36f44f0800000000000000
+      internalID: -842344993605097258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_2
+      name: Goye_Run_0_40x32_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 80
         y: 0
-        width: 32
+        width: 40
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,19 +167,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90415de801587f430800000000000000
-      internalID: 3816665515382084617
+      spriteID: f8405ae56ca316f80800000000000000
+      internalID: -8115140429879114609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_3
+      name: Goye_Run_0_40x32_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 120
         y: 0
-        width: 32
+        width: 40
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -200,8 +188,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4469b54762f2888f0800000000000000
-      internalID: -538128313263352252
+      spriteID: 50fa1831f45e96500800000000000000
+      internalID: 390094970536701701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goye_Run_0_40x32_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ddc819b64ddebe0800000000000000
+      internalID: -1446266346847543953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goye_Run_0_40x32_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9016b7414cd698100800000000000000
+      internalID: 110740354771935497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goye_Run_0_40x32_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7da9db724939dc0800000000000000
+      internalID: -3633397575952181318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goye_Run_0_40x32_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcaf6ce2f29c9560800000000000000
+      internalID: 7321888666244066522
       vertices: []
       indices: 
       edges: []

@@ -1,43 +1,25 @@
 fileFormatVersion: 2
-guid: 2150239a00e02154e9874c1f69049a45
+guid: 8ab0e13083925e243bec115bc44e31fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5247611915491599452
-    second: Goye_Idle_0_32x32_0
+      213: -1373468092340799609
+    second: Goye_DefenseWalk_0_32x32_0
   - first:
-      213: -2323691100204752579
-    second: Goye_Idle_0_32x32_1
+      213: -1039359662013878908
+    second: Goye_DefenseWalk_0_32x32_1
   - first:
-      213: 6226744444579132373
-    second: Goye_Idle_0_32x32_2
+      213: -1815394505247577201
+    second: Goye_DefenseWalk_0_32x32_2
   - first:
-      213: -2785914373602762406
-    second: Goye_Idle_0_32x32_3
+      213: -899496829282750596
+    second: Goye_DefenseWalk_0_32x32_3
   - first:
-      213: -3516313285103069829
-    second: Goye_Idle_0_32x32_0
+      213: 4730923798261025583
+    second: Goye_DefenseWalk_0_32x32_4
   - first:
-      213: -1054117214120710920
-    second: Goye_Idle_0_32x32_1
-  - first:
-      213: -4192676307012669137
-    second: Goye_Idle_0_32x32_2
-  - first:
-      213: -2310353337006942901
-    second: Goye_Idle_0_32x32_3
-  - first:
-      213: -2045326271992259203
-    second: Goye_Idle_0_32x32_f_0
-  - first:
-      213: 5821180183609197759
-    second: Goye_Idle_0_32x32_f_1
-  - first:
-      213: 3816665515382084617
-    second: Goye_Idle_0_32x32_f_2
-  - first:
-      213: -538128313263352252
-    second: Goye_Idle_0_32x32_f_3
+      213: -3502257742569991675
+    second: Goye_DefenseWalk_0_32x32_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_0
+      name: Goye_DefenseWalk_0_32x32_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7d902c979a8d93e0800000000000000
-      internalID: -2045326271992259203
+      spriteID: 78771b50c0670fce0800000000000000
+      internalID: -1373468092340799609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_1
+      name: Goye_DefenseWalk_0_32x32_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb4c199f88cf8c050800000000000000
-      internalID: 5821180183609197759
+      spriteID: 48deac7e4e37391f0800000000000000
+      internalID: -1039359662013878908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_2
+      name: Goye_DefenseWalk_0_32x32_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90415de801587f430800000000000000
-      internalID: 3816665515382084617
+      spriteID: f8ba58bd05c6ec6e0800000000000000
+      internalID: -1815394505247577201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_3
+      name: Goye_DefenseWalk_0_32x32_3
       rect:
         serializedVersion: 2
         x: 96
@@ -200,8 +182,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4469b54762f2888f0800000000000000
-      internalID: -538128313263352252
+      spriteID: c7fe20646685483f0800000000000000
+      internalID: -899496829282750596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goye_DefenseWalk_0_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b4ac6012e97a140800000000000000
+      internalID: 4730923798261025583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goye_DefenseWalk_0_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502114e832b756fc0800000000000000
+      internalID: -3502257742569991675
       vertices: []
       indices: 
       edges: []

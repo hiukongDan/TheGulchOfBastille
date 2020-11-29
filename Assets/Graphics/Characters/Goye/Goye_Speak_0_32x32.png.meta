@@ -1,43 +1,19 @@
 fileFormatVersion: 2
-guid: 2150239a00e02154e9874c1f69049a45
+guid: faf6a368abc890249a1a4facd3dae34b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5247611915491599452
-    second: Goye_Idle_0_32x32_0
+      213: 4178591998816021884
+    second: Goye_Speak_0_32x32_0
   - first:
-      213: -2323691100204752579
-    second: Goye_Idle_0_32x32_1
+      213: -4457812853210264732
+    second: Goye_Speak_0_32x32_1
   - first:
-      213: 6226744444579132373
-    second: Goye_Idle_0_32x32_2
+      213: 6453556388698222368
+    second: Goye_Speak_0_32x32_0
   - first:
-      213: -2785914373602762406
-    second: Goye_Idle_0_32x32_3
-  - first:
-      213: -3516313285103069829
-    second: Goye_Idle_0_32x32_0
-  - first:
-      213: -1054117214120710920
-    second: Goye_Idle_0_32x32_1
-  - first:
-      213: -4192676307012669137
-    second: Goye_Idle_0_32x32_2
-  - first:
-      213: -2310353337006942901
-    second: Goye_Idle_0_32x32_3
-  - first:
-      213: -2045326271992259203
-    second: Goye_Idle_0_32x32_f_0
-  - first:
-      213: 5821180183609197759
-    second: Goye_Idle_0_32x32_f_1
-  - first:
-      213: 3816665515382084617
-    second: Goye_Idle_0_32x32_f_2
-  - first:
-      213: -538128313263352252
-    second: Goye_Idle_0_32x32_f_3
+      213: 1169366539504903820
+    second: Goye_Speak_0_32x32_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,7 +99,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_0
+      name: Goye_Speak_0_32x32_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +113,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7d902c979a8d93e0800000000000000
-      internalID: -2045326271992259203
+      spriteID: 02f6f46d753af8950800000000000000
+      internalID: 6453556388698222368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_1
+      name: Goye_Speak_0_32x32_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,50 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb4c199f88cf8c050800000000000000
-      internalID: 5821180183609197759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90415de801587f430800000000000000
-      internalID: 3816665515382084617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goye_Idle_0_32x32_f_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4469b54762f2888f0800000000000000
-      internalID: -538128313263352252
+      spriteID: c86ea6f0cac6a3010800000000000000
+      internalID: 1169366539504903820
       vertices: []
       indices: 
       edges: []
