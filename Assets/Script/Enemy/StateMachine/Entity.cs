@@ -176,7 +176,7 @@ public class Entity : MonoBehaviour
         rb.velocity = vectorWorkspace;
     }
 
-    protected void SetInitialFacintDirection(int newDirection) => facingDirection = newDirection;
+    protected void SetInitialFacingDirection(int newDirection) => facingDirection = newDirection;
     public bool SetIsDamageable(bool newIsDamageable)
     {
         isDanmageable = newIsDamageable;

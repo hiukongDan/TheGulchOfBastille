@@ -5,15 +5,14 @@ using UnityEngine;
 public class GC1_EvadeState : EvadeState
 {
     protected GoyeCombat1 enemy;
+    protected float cooldownTimer;
     public GC1_EvadeState(FiniteStateMachine stateMachine, Entity entity, string animName, EvadeStateData stateData, GoyeCombat1 enemy) : base(stateMachine, entity, animName, stateData)
     {
         this.enemy = enemy;
+        cooldownTimer = -1f;
     }
 
-    public override bool CanAction()
-    {
-        return base.CanAction();
-    }
+    public override bool CanAction() => cooldownTimer < 0f;
 
     public override void CompleteEvade()
     {
@@ -45,13 +44,13 @@ public class GC1_EvadeState : EvadeState
         base.PhysicsUpdate();
     }
 
-    public override void ResetTimer()
-    {
-        base.ResetTimer();
-    }
+    public override void ResetTimer() => cooldownTimer = data.cooldownTimer;
 
     public override void UpdateTimer()
     {
-        base.UpdateTimer();
+        if(cooldownTimer >= 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
     }
 }

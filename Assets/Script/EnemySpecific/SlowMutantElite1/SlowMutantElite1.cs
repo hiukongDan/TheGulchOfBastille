@@ -70,7 +70,7 @@ public class SlowMutantElite1 : Entity
     protected override void Start()
     {
         base.Start();
-        SetInitialFacintDirection(-1);
+        SetInitialFacingDirection(-1);
 
         stoneState = new SME1_StoneState(stateMachine, this, "stone", this);
         recoverState = new SME1_RecoverState(stateMachine, this, "recover", this);

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ParryState : State
 {
-    public ParryState(FiniteStateMachine stateMachine, Entity entity, string animName) : base(stateMachine, entity, animName)
+    protected ParryStateData data;
+    public ParryState(FiniteStateMachine stateMachine, Entity entity, string animName, ParryStateData data) : base(stateMachine, entity, animName)
     {
+        this.data = data;
     }
 
     public override bool CanAction()
