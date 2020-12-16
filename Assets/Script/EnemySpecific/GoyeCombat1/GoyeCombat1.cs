@@ -18,6 +18,7 @@ public class GoyeCombat1 : Entity
     public GC1_ParryState parryState;
     public GC1_RunState runState;
     public GC1_StunState stunState;
+    public GC1_MeleeAttackState meleeAttackState;
     #endregion
 
     #region STATE_DATA
@@ -29,6 +30,7 @@ public class GoyeCombat1 : Entity
     public WalkStateData runStateData;
     public StunStateData stunStateData;
     public ParryStateData parryStateData;
+    public MeleeAttackStateData meleeAttackStateData;
     #endregion
 
     protected override void Damage(CombatData combatData)
@@ -71,24 +73,29 @@ public class GoyeCombat1 : Entity
         parryState = new GC1_ParryState(stateMachine, this, "parry", parryStateData, this);
         runState = new GC1_RunState(stateMachine, this, "run", runStateData, this);
         stunState = new GC1_StunState(stateMachine, this, "stun", stunStateData, this);
+        meleeAttackState = new GC1_MeleeAttackState(stateMachine, this, "meleeAttack", meleeAttackStateData, hitbox, this);
 
         stateMachine.Initialize(idleState);
 
-        /*
+        
         stateCooldownTimer = new StateCooldownTimer();
-        //stateCooldownTimer.AddStateTimer(meleeAttackState);
+        stateCooldownTimer.AddStateTimer(meleeAttackState);
         stateCooldownTimer.AddStateTimer(evadeState);
         stateCooldownTimer.AddStateTimer(chargeState);
         stateCooldownTimer.AddStateTimer(defenceState);
         stateCooldownTimer.AddStateTimer(parryState);
 
         stateMachine.SetStateCooldownTimer(stateCooldownTimer);
-        */
-
 }
 
     protected override void Update()
     {
         base.Update();
     }
+
+    // ===========================  HELPER ===========================
+
+    public bool IsPlayerWithinMeleeAttackRange() => Mathf.Abs(refPlayer.position.x - aliveGO.transform.position.x) < entityData.meleeAttackDistance;
+
+    // ===============================================================
 }

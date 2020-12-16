@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GC1_IdleStateData
   m_EditorClassIdentifier: 
   idleTimeMin: 1
-  idleTimeMax: 4
+  idleTimeMax: 2

@@ -6,8 +6,11 @@ using UnityEngine.U2D;
 public class BasicFollower : MonoBehaviour
 {
     public Transform following;
+    private Transform oldFollowing;
 
     public Rect cameraClamp;
+
+    //public Rect OldCameraClamp;
 
     public float camSpeed = 5f;
     public float startFollowingDistanceX = 2f;
@@ -39,7 +42,29 @@ public class BasicFollower : MonoBehaviour
 
     void Start()
     {
+        oldFollowing = following;
+    }
 
+/*    public void UpdateCameraClampArea(Rect newClamp)
+    {
+        OldCameraClamp = cameraClamp;
+        cameraClamp = newClamp;
+    }
+
+    public void RestoreCameraClampArea()
+    {
+        cameraClamp = OldCameraClamp;
+    }*/
+
+    public void UpdateCameraFollowing(Transform following)
+    {
+        oldFollowing = this.following;
+        this.following = following;
+    }
+
+    public void RestoreCameraFollowing()
+    {
+        this.following = oldFollowing;
     }
 
     void LateUpdate()
@@ -50,6 +75,7 @@ public class BasicFollower : MonoBehaviour
         {
             workspace = Vector2.Lerp(cam.transform.position, new Vector3(following.position.x, following.position.y), camSpeed * Time.deltaTime);
 
+            // clamp camera's central point
             workspace.x = Mathf.Clamp(workspace.x, cameraClamp.xMin, cameraClamp.xMax);
             workspace.y = Mathf.Clamp(workspace.y, cameraClamp.yMin, cameraClamp.yMax);
             workspace.z = defaultCamZ;

@@ -12,7 +12,7 @@ public class GC1_DetectPlayerState : DetectPlayerState
 
     public override bool CanAction()
     {
-        return base.CanAction();
+        return enemy.evadeState.CanAction() || enemy.chargeState.CanAction() || enemy.defenceState.CanAction(); // || enemy.meleeAttackState.CanAction();
     }
 
     public override void DoChecks()
@@ -38,15 +38,5 @@ public class GC1_DetectPlayerState : DetectPlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-    }
-
-    public override void ResetTimer()
-    {
-        base.ResetTimer();
-    }
-
-    public override void UpdateTimer()
-    {
-        base.UpdateTimer();
     }
 }

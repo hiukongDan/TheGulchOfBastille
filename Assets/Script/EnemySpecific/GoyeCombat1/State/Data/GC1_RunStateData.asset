@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GC1_RunStateData
   m_EditorClassIdentifier: 
   walkSpeed: 3
-  walkTimeMax: 10
-  walkTimeMin: 5
+  walkTimeMax: 3
+  walkTimeMin: 2

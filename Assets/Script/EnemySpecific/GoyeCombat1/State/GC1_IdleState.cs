@@ -33,6 +33,18 @@ public class GC1_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if(Time.time > idleDurationTime + startTime)
+        {
+            if (!enemy.IsPlayerWithinMeleeAttackRange())
+            {
+                stateMachine.SwitchState(enemy.runState);
+            }
+            else
+            {
+                idleDurationTime = Random.Range(data.idleTimeMin, data.idleTimeMax);
+                startTime = Time.time;
+            }    
+        }
     }
 
     public override void PhysicsUpdate()
