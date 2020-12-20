@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GC1_IdleState : IdleState
+public class GC1_CombatIdleState : IdleState
 {
     protected GoyeCombat1 enemy;
-    public GC1_IdleState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, IdleStateData idleData, GoyeCombat1 enemy) : base(stateMachine, entity, animBoolName, idleData)
+    public GC1_CombatIdleState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, IdleStateData idleData, GoyeCombat1 enemy) : base(stateMachine, entity, animBoolName, idleData)
     {
         this.enemy = enemy;
     }
@@ -33,6 +33,18 @@ public class GC1_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if(Time.time > idleDurationTime + startTime)
+        {
+            if (!enemy.IsPlayerWithinMeleeAttackRange())
+            {
+                stateMachine.SwitchState(enemy.runState);
+            }
+            else
+            {
+                idleDurationTime = Random.Range(data.idleTimeMin, data.idleTimeMax);
+                startTime = Time.time;
+            }    
+        }
     }
 
     public override void PhysicsUpdate()

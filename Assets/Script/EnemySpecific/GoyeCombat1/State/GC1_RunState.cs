@@ -42,7 +42,7 @@ public class GC1_RunState : WalkState
         // run near player or wait till time up
         if(Time.time > walkDurationTime + startTime || enemy.IsPlayerWithinMeleeAttackRange())
         {
-            stateMachine.SwitchState(enemy.idleState);
+            stateMachine.SwitchState(enemy.combatIdleState);
         }
     }
 

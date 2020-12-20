@@ -530,6 +530,16 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.35296535
       objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.03125
+      objectReference: {fileID: 0}
     - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
       propertyPath: m_Sprite
@@ -539,6 +549,21 @@ PrefabInstance:
     - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
       propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.03125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4243730513651453996, guid: a17705a686161614fa7fe9d7cd3b6b09,
@@ -2185,8 +2210,8 @@ GameObject:
   m_Component:
   - component: {fileID: 603307346}
   - component: {fileID: 603307347}
-  - component: {fileID: 603307348}
   - component: {fileID: 603307349}
+  - component: {fileID: 603307348}
   m_Layer: 15
   m_Name: Combat Trigger
   m_TagString: Untagged
@@ -5419,12 +5444,37 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.46916294
       objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.03125
+      objectReference: {fileID: 0}
     - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5527661196443274707, guid: a25cd655e9afb2a44a64c8565e684d40,
         type: 3}
+    - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.03125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4243730513651453996, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -5539,7 +5589,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.5, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -5611,7 +5661,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6475,7 +6525,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021273367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

@@ -15,6 +15,7 @@ public class GoyeCombat1 : Entity
     public GC1_DetectPlayerState detectPlayerState;
     public GC1_EvadeState evadeState;
     public GC1_IdleState idleState;
+    public GC1_CombatIdleState combatIdleState;
     public GC1_ParryState parryState;
     public GC1_RunState runState;
     public GC1_StunState stunState;
@@ -70,6 +71,7 @@ public class GoyeCombat1 : Entity
         detectPlayerState = new GC1_DetectPlayerState(stateMachine, this, null, detectPlayerStateData, this);
         evadeState = new GC1_EvadeState(stateMachine, this, "evade", evadeStateData, this);
         idleState = new GC1_IdleState(stateMachine, this, "idle", idleStateData, this);
+        combatIdleState = new GC1_CombatIdleState(stateMachine, this, "combatIdle", idleStateData, this);
         parryState = new GC1_ParryState(stateMachine, this, "parry", parryStateData, this);
         runState = new GC1_RunState(stateMachine, this, "run", runStateData, this);
         stunState = new GC1_StunState(stateMachine, this, "stun", stunStateData, this);
@@ -77,7 +79,6 @@ public class GoyeCombat1 : Entity
 
         stateMachine.Initialize(idleState);
 
-        
         stateCooldownTimer = new StateCooldownTimer();
         stateCooldownTimer.AddStateTimer(meleeAttackState);
         stateCooldownTimer.AddStateTimer(evadeState);
@@ -93,9 +94,18 @@ public class GoyeCombat1 : Entity
         base.Update();
     }
 
-    // ===========================  HELPER ===========================
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>> MESSAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<
+    public void CombatTriggered()
+    {
+        stateMachine.SwitchState(combatIdleState);
+    }
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>> MESSAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>  HELPER <<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     public bool IsPlayerWithinMeleeAttackRange() => Mathf.Abs(refPlayer.position.x - aliveGO.transform.position.x) < entityData.meleeAttackDistance;
 
-    // ===============================================================
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>  HELPER <<<<<<<<<<<<<<<<<<<<<<<<<<<
 }

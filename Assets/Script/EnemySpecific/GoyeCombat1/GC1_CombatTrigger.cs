@@ -13,6 +13,7 @@ public class GC1_CombatTrigger : MonoBehaviour
             foreach(Transform trans in enableOnTriggered)
             {
                 trans.gameObject.SetActive(true);
+                transform.parent.parent.SendMessage("CombatTriggered");
             }
 
             GameObject.Destroy(this);
