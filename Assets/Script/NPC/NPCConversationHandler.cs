@@ -319,7 +319,6 @@ public class NPCConversationHandler : MonoBehaviour
         {
             OnEndInteraction();
         }
-
     }
 
     public void OnEndInteraction()

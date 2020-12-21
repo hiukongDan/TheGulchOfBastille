@@ -69,6 +69,13 @@ public class State
 
     }
 
+
+    // Complete this state, usually used for setting control boolean
+    public virtual void Complete()
+    {
+
+    }
+
     // -- DETECT FUNCTIONS -----------------------------
     // SELECT NECESSARY FUNCTIONS IN CHILD CLASS' DOCHECKS FUNCTION
     public bool DetectPlayerInMeleeAttackRange()

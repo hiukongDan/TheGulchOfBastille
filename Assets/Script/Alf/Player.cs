@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     #region STATEMACHINE
     public PlayerStateMachine stateMachine;
     public PlayerStateCooldownTimer stateCooldownTimer;
-
     public PlayerGroundState groundState { get; private set; }
     public PlayerIdleState idleState { get; private set; }
     public PlayerWalkState walkState { get; private set; }
@@ -341,7 +340,6 @@ public class Player : MonoBehaviour
         facingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
     }
-
     #endregion
 
     #region INTERFACE

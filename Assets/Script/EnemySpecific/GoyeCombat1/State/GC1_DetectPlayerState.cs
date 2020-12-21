@@ -12,7 +12,7 @@ public class GC1_DetectPlayerState : DetectPlayerState
 
     public override bool CanAction()
     {
-        return enemy.evadeState.CanAction() || enemy.chargeState.CanAction() || enemy.defenceState.CanAction(); // || enemy.meleeAttackState.CanAction();
+        return enemy.evadeState.CanAction() || enemy.chargeState.CanAction() || enemy.defenceState.CanAction() || enemy.meleeAttackState.CanAction();
     }
 
     public override void DoChecks()
@@ -22,7 +22,7 @@ public class GC1_DetectPlayerState : DetectPlayerState
 
     public override void Enter()
     {
-        base.Enter();
+        //base.Enter();
     }
 
     public override void Exit()
@@ -33,6 +33,31 @@ public class GC1_DetectPlayerState : DetectPlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        DoChecks();
+
+        // TODO: if enemy.IsPlayerWithinMeleeRange: defence
+        if (detectPlayerInMeleeRange)
+        {
+            // attack | defence | evade
+        }
+
+        // maybe not this condition
+        else if (detectPlayerInMinAgro)
+        {
+
+        }
+
+        // Charge
+        else if (detectPlayerInMaxAgro)
+        {
+            
+        }
+
+        // else
+        // Run and Attack
+
+        stateMachine.SwitchState(enemy.combatIdleState);
     }
 
     public override void PhysicsUpdate()

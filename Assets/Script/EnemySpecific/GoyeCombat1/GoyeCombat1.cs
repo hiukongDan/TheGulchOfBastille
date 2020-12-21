@@ -6,15 +6,16 @@ public class GoyeCombat1 : Entity
 {
     #region REFERENCES
     public Transform refPlayer {get; private set; }
+    public GC1_ObjectToAlive gc1_ota { get; private set; }
     #endregion
 
     #region STATE
+    public GC1_BattleBeginState battleBeginState;
     public GC1_ChargeState chargeState;
     public GC1_DefeatState defeatState;
     public GC1_DefenceState defenceState;
     public GC1_DetectPlayerState detectPlayerState;
     public GC1_EvadeState evadeState;
-    public GC1_IdleState idleState;
     public GC1_CombatIdleState combatIdleState;
     public GC1_ParryState parryState;
     public GC1_RunState runState;
@@ -64,20 +65,21 @@ public class GoyeCombat1 : Entity
     protected override void Start()
     {
         base.Start();
+        gc1_ota = (GC1_ObjectToAlive)objectToAlive;
 
-        chargeState = new GC1_ChargeState(stateMachine, this, "charge", chargeStateData, this);
+        battleBeginState = new GC1_BattleBeginState(stateMachine, this, "battleBegin", this);
+        chargeState = new GC1_ChargeState(stateMachine, this, "charge", chargeStateData, this); // not ready
         defeatState = new GC1_DefeatState(stateMachine, this, "defeat", this);
         defenceState = new GC1_DefenceState(stateMachine, this, "defence", defenceStateData, this);
         detectPlayerState = new GC1_DetectPlayerState(stateMachine, this, null, detectPlayerStateData, this);
         evadeState = new GC1_EvadeState(stateMachine, this, "evade", evadeStateData, this);
-        idleState = new GC1_IdleState(stateMachine, this, "idle", idleStateData, this);
         combatIdleState = new GC1_CombatIdleState(stateMachine, this, "combatIdle", idleStateData, this);
         parryState = new GC1_ParryState(stateMachine, this, "parry", parryStateData, this);
         runState = new GC1_RunState(stateMachine, this, "run", runStateData, this);
         stunState = new GC1_StunState(stateMachine, this, "stun", stunStateData, this);
         meleeAttackState = new GC1_MeleeAttackState(stateMachine, this, "meleeAttack", meleeAttackStateData, hitbox, this);
 
-        stateMachine.Initialize(idleState);
+        stateMachine.Initialize(battleBeginState);
 
         stateCooldownTimer = new StateCooldownTimer();
         stateCooldownTimer.AddStateTimer(meleeAttackState);
@@ -97,7 +99,7 @@ public class GoyeCombat1 : Entity
     // >>>>>>>>>>>>>>>>>>>>>>>>>>> MESSAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<
     public void CombatTriggered()
     {
-        stateMachine.SwitchState(combatIdleState);
+        StartCoroutine(battleBeginState.BattleBegin());
     }
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>> MESSAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<

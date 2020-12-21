@@ -91,7 +91,5 @@ public class NPCEventHandler : MonoBehaviour
     {
         NPCSelection?.Invoke(direction);
     }
-
-
     #endregion
 }

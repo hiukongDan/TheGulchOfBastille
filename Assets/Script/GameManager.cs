@@ -70,9 +70,10 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    private bool _canPlayerAction;
     public bool CanPlayerAction()
     {
-        if(uiHandler != null)
+        if (uiHandler != null)
         {
             return uiHandler.uiFSM.PeekState() == uiHandler.uiPlayState;
         }

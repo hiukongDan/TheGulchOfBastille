@@ -35,5 +35,4 @@ public class UIHandler : MonoBehaviour
     {
         uiFSM.Update();
     }
-
 }
