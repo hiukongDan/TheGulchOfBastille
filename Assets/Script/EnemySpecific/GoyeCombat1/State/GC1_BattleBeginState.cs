@@ -9,13 +9,10 @@ public class GC1_BattleBeginState : State
 
     protected bool isBattleBegin;
 
-    private Player player;
-
     public GC1_BattleBeginState(FiniteStateMachine stateMachine, Entity entity, string animName, GoyeCombat1 enemy) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
         isBattleBegin = false;
-        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     public override void DoChecks()
@@ -44,7 +41,7 @@ public class GC1_BattleBeginState : State
         {
             stateMachine.SwitchState(enemy.runState);
             // set playerCanMove true: use EndConverse
-            player.OnEndConversation();
+            enemy.refPlayer.OnEndConversation();
         }
     }
 
@@ -56,7 +53,7 @@ public class GC1_BattleBeginState : State
     public IEnumerator BattleBegin()
     {
         // set playerCanMove false: use converseState
-        player.stateMachine.SwitchState(player.converseState);
+        enemy.refPlayer.stateMachine.SwitchState(enemy.refPlayer.converseState);
 
         yield return new WaitForSeconds(battleBeginDelay);
         enemy.anim.SetBool("isBattleBegin", true);

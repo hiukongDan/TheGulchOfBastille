@@ -35,6 +35,16 @@ public class GC1_CombatIdleState : IdleState
         base.LogicUpdate();
         if(Time.time > idleDurationTime + startTime)
         {
+            // detect player state
+            if (enemy.detectPlayerState.CanAction())
+            {
+                stateMachine.SwitchState(enemy.detectPlayerState);
+            }
+            else{
+                idleDurationTime = Random.Range(data.idleTimeMin, data.idleTimeMax);
+                startTime = Time.time;
+            }
+            /*
             if (!enemy.IsPlayerWithinMeleeAttackRange())
             {
                 stateMachine.SwitchState(enemy.runState);
@@ -43,7 +53,8 @@ public class GC1_CombatIdleState : IdleState
             {
                 idleDurationTime = Random.Range(data.idleTimeMin, data.idleTimeMax);
                 startTime = Time.time;
-            }    
+            } 
+            */
         }
     }
 

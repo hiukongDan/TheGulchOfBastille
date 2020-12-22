@@ -12,7 +12,8 @@ public class GC1_DetectPlayerState : DetectPlayerState
 
     public override bool CanAction()
     {
-        return enemy.evadeState.CanAction() || enemy.chargeState.CanAction() || enemy.defenceState.CanAction() || enemy.meleeAttackState.CanAction();
+        return enemy.evadeState.CanAction() || enemy.meleeAttackState.CanAction();
+        //enemy.chargeState.CanAction() || enemy.defenceState.CanAction() ||
     }
 
     public override void DoChecks()
@@ -36,28 +37,52 @@ public class GC1_DetectPlayerState : DetectPlayerState
 
         DoChecks();
 
+        enemy.FaceToPlayer();
+        
         // TODO: if enemy.IsPlayerWithinMeleeRange: defence
         if (detectPlayerInMeleeRange)
         {
-            // attack | defence | evade
+            // attack | evade
+            if(Random.value > 0.4 && enemy.meleeAttackState.CanAction())
+            {
+                stateMachine.SwitchState(enemy.meleeAttackState);
+            }
+            else if(enemy.evadeState.CanAction())
+            {
+                stateMachine.SwitchState(enemy.evadeState);
+            }
         }
-
-        // maybe not this condition
         else if (detectPlayerInMinAgro)
         {
-
+            // defence
+            if (enemy.defenceState.CanAction())
+            {
+                if(Random.value > 0.5)
+                {
+                    enemy.defenceState.SetIsDefenceForward(true);
+                }
+                else
+                {
+                    enemy.defenceState.SetIsDefenceForward(false);
+                }
+                stateMachine.SwitchState(enemy.defenceState);
+            }
         }
 
+        /*
         // Charge
         else if (detectPlayerInMaxAgro)
         {
             
         }
-
+        */
         // else
         // Run and Attack
-
-        stateMachine.SwitchState(enemy.combatIdleState);
+        else
+        {
+            stateMachine.SwitchState(enemy.runState);
+        }
+        
     }
 
     public override void PhysicsUpdate()

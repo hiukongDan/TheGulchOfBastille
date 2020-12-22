@@ -17,6 +17,8 @@ public class GC1_EvadeState : EvadeState
     public override void CompleteEvade()
     {
         base.CompleteEvade();
+
+        stateMachine.SwitchState(enemy.combatIdleState);
     }
 
     public override void DoChecks()
@@ -32,6 +34,7 @@ public class GC1_EvadeState : EvadeState
     public override void Exit()
     {
         base.Exit();
+        ResetTimer();
     }
 
     public override void LogicUpdate()

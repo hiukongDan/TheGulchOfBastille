@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoyeCombat1 : Entity
 {
     #region REFERENCES
-    public Transform refPlayer {get; private set; }
+    public Player refPlayer {get; private set; }
     public GC1_ObjectToAlive gc1_ota { get; private set; }
     #endregion
 
@@ -37,7 +37,36 @@ public class GoyeCombat1 : Entity
 
     protected override void Damage(CombatData combatData)
     {
+        if (!isDanmageable)
+        {
+            return;
+        }
+
+        if(stateMachine.currentState == defeatState)
+        {
+            return;
+        }
+
         base.Damage(combatData);
+
+        if(isDead)
+        {
+            stateMachine.SwitchState(defeatState);
+        }
+        else if(stateMachine.currentState == stunState)
+        {
+            return;
+        }
+        else if (isStunned)
+        {
+            if(facingDirection == combatData.facingDirection)
+            {
+                Flip();
+            }
+
+            stateMachine.SwitchState(stunState);
+            ResetStunResistance();
+        }
     }
 
     protected override void FixedUpdate()
@@ -53,13 +82,14 @@ public class GoyeCombat1 : Entity
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
+
+        Gizmos.DrawWireSphere(hitbox.position, meleeAttackStateData.attackRadius);
     }
 
     private void Awake()
     {
         /* --------- ASIGN REFERENCEs HERE --------------*/
-
-        refPlayer = GameObject.FindGameObjectWithTag("Player").transform;
+        refPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     protected override void Start()
@@ -107,7 +137,15 @@ public class GoyeCombat1 : Entity
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>  HELPER <<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    public bool IsPlayerWithinMeleeAttackRange() => Mathf.Abs(refPlayer.position.x - aliveGO.transform.position.x) < entityData.meleeAttackDistance;
+    public bool IsPlayerWithinMeleeAttackRange() => Mathf.Abs(refPlayer.transform.position.x - aliveGO.transform.position.x) < entityData.meleeAttackDistance;
+
+    public void FaceToPlayer()
+    {
+        if (refPlayer.transform.position.x - aliveGO.transform.position.x > 0 != facingDirection > 0)
+        {
+            Flip();
+        }
+    }
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>  HELPER <<<<<<<<<<<<<<<<<<<<<<<<<<<
 }

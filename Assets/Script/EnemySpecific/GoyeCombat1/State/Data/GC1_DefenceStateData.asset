@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b848aecf1b81b144fa9cdf47d2190d46, type: 3}
   m_Name: GC1_DefenceStateData
   m_EditorClassIdentifier: 
-  defenceDuration: 1
+  defenceDuration: 2
   defenceCooldown: 3

@@ -22,11 +22,7 @@ public class GC1_RunState : WalkState
 
     public override void Enter()
     {
-        if(enemy.refPlayer.position.x - enemy.aliveGO.transform.position.x > 0 != enemy.facingDirection > 0)
-        {
-            enemy.Flip();
-        }
-
+        enemy.FaceToPlayer();
         base.Enter();
     }
 
@@ -40,7 +36,18 @@ public class GC1_RunState : WalkState
         base.LogicUpdate();
 
         // run near player or wait till time up
-        if(Time.time > walkDurationTime + startTime || enemy.IsPlayerWithinMeleeAttackRange())
+
+        enemy.FaceToPlayer();
+
+        /* if (enemy.IsPlayerWithinMeleeAttackRange() && enemy.meleeAttackState.CanAction())
+         {
+             stateMachine.SwitchState(enemy.meleeAttackState);
+         }*/
+        if (enemy.detectPlayerState.CanAction())
+        {
+            stateMachine.SwitchState(enemy.detectPlayerState);
+        }
+        else if(Time.time > walkDurationTime + startTime)
         {
             stateMachine.SwitchState(enemy.combatIdleState);
         }

@@ -8,6 +8,7 @@ public class GC1_MeleeAttackState : MeleeAttackState
     protected float cooldownTimer;
     public GC1_MeleeAttackState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, MeleeAttackStateData stateData, Transform hitBoxPoint, GoyeCombat1 enemy) : base(stateMachine, entity, animBoolName, stateData, hitBoxPoint)
     {
+        this.enemy = enemy;
         cooldownTimer = -1f;
     }
 
@@ -15,7 +16,8 @@ public class GC1_MeleeAttackState : MeleeAttackState
 
     public override void CompleteMeleeAttack()
     {
-        base.CompleteMeleeAttack();
+        //base.CompleteMeleeAttack();
+        stateMachine.SwitchState(enemy.combatIdleState);
     }
 
     public override void DoChecks()
@@ -36,6 +38,7 @@ public class GC1_MeleeAttackState : MeleeAttackState
     public override void Exit()
     {
         base.Exit();
+        ResetTimer();
     }
 
     public override void LogicUpdate()

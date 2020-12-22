@@ -17,7 +17,8 @@ public class GC1_StunState : StunState
 
     public override void CompleteStun()
     {
-        base.CompleteStun();
+        //base.CompleteStun();
+        stateMachine.SwitchState(enemy.combatIdleState);
     }
 
     public override void DoChecks()

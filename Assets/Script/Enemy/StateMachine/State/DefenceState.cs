@@ -5,6 +5,9 @@ using UnityEngine;
 public class DefenceState : State
 {
     protected DefenceStateData data;
+
+    protected float defenceTimer;
+
     public DefenceState(FiniteStateMachine stateMachine, Entity entity, string animName, DefenceStateData data, State defaultNextState = null) : base(stateMachine, entity, animName, defaultNextState)
     {
         this.data = data;
@@ -23,6 +26,7 @@ public class DefenceState : State
     public override void Enter()
     {
         base.Enter();
+        defenceTimer = data.defenceDuration;
     }
 
     public override void Exit()
@@ -33,6 +37,11 @@ public class DefenceState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(defenceTimer >= 0f)
+        {
+            defenceTimer -= Time.deltaTime;
+        }
     }
 
     public override void PhysicsUpdate()

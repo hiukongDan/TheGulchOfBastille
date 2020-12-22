@@ -16,7 +16,7 @@ MonoBehaviour:
   stunDamage: 1
   knockbackDir: {x: 1, y: 1}
   knockbackImpulse: 5
-  attackRadius: 1
+  attackRadius: 0.5
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512

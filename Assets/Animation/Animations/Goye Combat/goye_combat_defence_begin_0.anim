@@ -22,20 +22,20 @@ AnimationClip:
     - time: 0
       value: {fileID: -6426178227033438232, guid: 3ef5fafa5daa45e4cb9e055ecbdcd8c8,
         type: 3}
-    - time: 0.1
+    - time: 0.125
       value: {fileID: 2609721886946369648, guid: 3ef5fafa5daa45e4cb9e055ecbdcd8c8,
         type: 3}
-    - time: 0.2
+    - time: 0.25
       value: {fileID: 2732561993681277524, guid: 3ef5fafa5daa45e4cb9e055ecbdcd8c8,
         type: 3}
-    - time: 0.3
+    - time: 0.375
       value: {fileID: -678168064240411662, guid: 3ef5fafa5daa45e4cb9e055ecbdcd8c8,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 10
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -78,4 +78,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: ActiveDefenceCounterAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

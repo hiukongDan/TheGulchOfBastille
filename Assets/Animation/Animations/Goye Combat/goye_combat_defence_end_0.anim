@@ -22,19 +22,19 @@ AnimationClip:
     - time: 0
       value: {fileID: 2604174596279768230, guid: 77e9a156a0098b9418270809918d34b8,
         type: 3}
-    - time: 0.083333336
+    - time: 0.125
       value: {fileID: -514053729299341243, guid: 77e9a156a0098b9418270809918d34b8,
         type: 3}
-    - time: 0.16666667
+    - time: 0.25
       value: {fileID: 4488896308874859560, guid: 77e9a156a0098b9418270809918d34b8,
         type: 3}
-    - time: 0.25
+    - time: 0.375
       value: {fileID: 63305375377162257, guid: 77e9a156a0098b9418270809918d34b8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 12
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -58,7 +58,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -77,4 +77,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: CompleteDefence
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
