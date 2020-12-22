@@ -5,9 +5,14 @@ using UnityEngine;
 public class ParryState : State
 {
     protected ParryStateData data;
+    protected CombatData cbData;
     public ParryState(FiniteStateMachine stateMachine, Entity entity, string animName, ParryStateData data) : base(stateMachine, entity, animName)
     {
         this.data = data;
+    }
+
+    protected virtual void InitCombatData()
+    {
     }
 
     public override bool CanAction()
@@ -23,6 +28,8 @@ public class ParryState : State
     public override void Enter()
     {
         base.Enter();
+
+        InitCombatData();
     }
 
     public override void Exit()
@@ -49,4 +56,10 @@ public class ParryState : State
     {
         base.UpdateTimer();
     }
+
+    public virtual void DoParry()
+    {
+
+    }
+
 }

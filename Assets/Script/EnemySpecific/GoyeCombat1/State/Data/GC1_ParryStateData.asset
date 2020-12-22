@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbef2cc9bf82704a8a3d8c13b8a62a5, type: 3}
   m_Name: GC1_ParryStateData
   m_EditorClassIdentifier: 
-  cooldownTimer: 2
+  cooldownTimer: 7
+  damage: 5

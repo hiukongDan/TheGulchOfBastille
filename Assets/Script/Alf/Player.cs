@@ -221,13 +221,6 @@ public class Player : MonoBehaviour
         if (isDead || stateMachine.currentState == rollState)
             return;
 
-        if (combatData.isParryDamage)
-        {
-            var particle = Instantiate(playerData.PS_particle, combatData.position, playerData.PS_particle.transform.rotation);
-            particle.gameObject.transform.Rotate(0, 0, UnityEngine.Random.Range(0, 360));
-            particle.GetComponent<Animator>().Play("3");
-        }
-
         if(stateMachine.currentState == parryState && parryState.IsParryValid)
         {
             if (combatData.from != null)
@@ -255,6 +248,13 @@ public class Player : MonoBehaviour
             workspace.Set(dir * combatData.knockbackDir.x * combatData.knockbackImpulse, combatData.knockbackDir.y * combatData.knockbackImpulse);
             Rb.velocity = Vector2.zero;
             Rb.AddForce(workspace, ForceMode2D.Impulse);
+
+            if (combatData.isParryDamage)
+            {
+                var particle = Instantiate(playerData.PS_particle, combatData.position, playerData.PS_particle.transform.rotation);
+                particle.gameObject.transform.Rotate(0, 0, UnityEngine.Random.Range(0, 360));
+                particle.GetComponent<Animator>().Play("3");
+            }
 
             if (!isStunned)
             {

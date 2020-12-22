@@ -7,7 +7,7 @@ public class GC1_DefenceState : DefenceState
     protected GoyeCombat1 enemy;
     protected float cooldownTimer;
 
-    protected bool isDefenceForward, isDefence;
+    protected bool isDefence;
     public bool isCounterAttack { get; protected set; }
 
     public GC1_DefenceState(FiniteStateMachine stateMachine, Entity entity, string animName, DefenceStateData stateData, GoyeCombat1 enemy, State defaultNextState = null) : base(stateMachine, entity, animName, stateData, defaultNextState)
@@ -30,13 +30,18 @@ public class GC1_DefenceState : DefenceState
     public override void DoChecks()
     {
         base.DoChecks();
+
+        detectPlayerTrans = null;
+
+        DetectPlayerInMaxAgro();
+        DetectPlayerInMinAgro();
+        DetectPlayerInMeleeAttackRange();
     }
 
     public override void Enter()
     {
         enemy.gc1_ota.defenceState = this;
 
-        enemy.anim.SetBool("isDefenceForward", isDefenceForward);
         enemy.anim.SetBool("isDefence", true);
         isCounterAttack = false;
 
@@ -56,7 +61,39 @@ public class GC1_DefenceState : DefenceState
     {
         base.LogicUpdate();
 
-        if(defenceTimer < 0)
+        enemy.FaceToPlayer(false);
+
+        DoChecks();
+
+        if (detectPlayerInMeleeRange)
+        {
+            if(enemy.refPlayer.stateMachine.currentState == enemy.refPlayer.attackState)
+            {
+                CounterAttack();
+            }
+            else if (enemy.meleeAttackState.CanAction())
+            {
+                stateMachine.SwitchState(enemy.meleeAttackState);
+            }
+            else
+            {
+                SetIsDefenceForward(false);
+            }
+        }
+        /*
+        else if(detectPlayerInMaxAgro && !detectPlayerInMinAgro)
+        {
+            if (enemy.chargeState.CanAction())
+            {
+                stateMachine.SwitchState(enemy.chargeState);
+            }
+            else
+            {
+                SetIsDefenceForward(true);
+            }
+        }
+        */
+        else if (defenceTimer < 0)
         {
             enemy.anim.SetBool("isDefence", false);
             isCounterAttack = false;
@@ -84,5 +121,8 @@ public class GC1_DefenceState : DefenceState
         }
     }
 
-    public void SetIsDefenceForward(bool isDefenceForward) => this.isDefenceForward = isDefenceForward;
+    public void SetIsDefenceForward(bool isDefenceForward)
+    {
+        enemy.anim.SetBool("isDefenceForward", isDefenceForward);
+    }
 }

@@ -41,6 +41,8 @@ public class GC1_CombatIdleState : IdleState
                 stateMachine.SwitchState(enemy.detectPlayerState);
             }
             else{
+                //enemy.runState.SetIsFacingToPlayer(false);
+                //stateMachine.SwitchState(enemy.runState);
                 idleDurationTime = Random.Range(data.idleTimeMin, data.idleTimeMax);
                 startTime = Time.time;
             }

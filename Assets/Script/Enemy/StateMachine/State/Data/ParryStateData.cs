@@ -6,4 +6,5 @@ using UnityEngine;
 public class ParryStateData : ScriptableObject
 {
     public float cooldownTimer = 2f;
+    public float damage = 5f;
 }

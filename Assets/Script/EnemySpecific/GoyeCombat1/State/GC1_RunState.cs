@@ -5,10 +5,15 @@ using UnityEngine;
 public class GC1_RunState : WalkState
 {
     protected GoyeCombat1 enemy;
+
+    //protected bool isFacingToPlayer;
     public GC1_RunState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, WalkStateData walkData, GoyeCombat1 enemy) : base(stateMachine, entity, animBoolName, walkData)
     {
         this.enemy = enemy;
+        //isFacingToPlayer = true;
     }
+
+    //public void SetIsFacingToPlayer(bool value) => isFacingToPlayer = value;
 
     public override bool CanAction()
     {
@@ -22,13 +27,17 @@ public class GC1_RunState : WalkState
 
     public override void Enter()
     {
+        //if(isFacingToPlayer)
         enemy.FaceToPlayer();
+
         base.Enter();
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        //isFacingToPlayer = true;
     }
 
     public override void LogicUpdate()
@@ -37,7 +46,8 @@ public class GC1_RunState : WalkState
 
         // run near player or wait till time up
 
-        enemy.FaceToPlayer();
+        //if(isFacingToPlayer)
+        enemy.FaceToPlayer(false);
 
         /* if (enemy.IsPlayerWithinMeleeAttackRange() && enemy.meleeAttackState.CanAction())
          {

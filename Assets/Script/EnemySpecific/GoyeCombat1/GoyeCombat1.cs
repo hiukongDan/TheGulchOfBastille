@@ -21,6 +21,8 @@ public class GoyeCombat1 : Entity
     public GC1_RunState runState;
     public GC1_StunState stunState;
     public GC1_MeleeAttackState meleeAttackState;
+    // used for flip times limitation
+    private GC1_FlipState flipState;
     #endregion
 
     #region STATE_DATA
@@ -43,6 +45,11 @@ public class GoyeCombat1 : Entity
         }
 
         if(stateMachine.currentState == defeatState)
+        {
+            return;
+        }
+
+        if(stateMachine.currentState == defenceState && defenceState.isCounterAttack)
         {
             return;
         }
@@ -108,6 +115,7 @@ public class GoyeCombat1 : Entity
         runState = new GC1_RunState(stateMachine, this, "run", runStateData, this);
         stunState = new GC1_StunState(stateMachine, this, "stun", stunStateData, this);
         meleeAttackState = new GC1_MeleeAttackState(stateMachine, this, "meleeAttack", meleeAttackStateData, hitbox, this);
+        flipState = new GC1_FlipState(stateMachine, this, null);
 
         stateMachine.Initialize(battleBeginState);
 
@@ -117,6 +125,7 @@ public class GoyeCombat1 : Entity
         stateCooldownTimer.AddStateTimer(chargeState);
         stateCooldownTimer.AddStateTimer(defenceState);
         stateCooldownTimer.AddStateTimer(parryState);
+        stateCooldownTimer.AddStateTimer(flipState);
 
         stateMachine.SetStateCooldownTimer(stateCooldownTimer);
 }
@@ -139,11 +148,17 @@ public class GoyeCombat1 : Entity
 
     public bool IsPlayerWithinMeleeAttackRange() => Mathf.Abs(refPlayer.transform.position.x - aliveGO.transform.position.x) < entityData.meleeAttackDistance;
 
-    public void FaceToPlayer()
+    protected bool faceToPlayerTimer;
+    public void FaceToPlayer(bool immediate = true)
     {
-        if (refPlayer.transform.position.x - aliveGO.transform.position.x > 0 != facingDirection > 0)
+        if (immediate || flipState.CanAction())
         {
-            Flip();
+            if (refPlayer.transform.position.x - aliveGO.transform.position.x > 0 != facingDirection > 0)
+            {
+                Flip();
+            }
+
+            flipState.ResetTimer();
         }
     }
 

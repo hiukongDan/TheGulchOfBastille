@@ -12,8 +12,7 @@ public class GC1_DetectPlayerState : DetectPlayerState
 
     public override bool CanAction()
     {
-        return enemy.evadeState.CanAction() || enemy.meleeAttackState.CanAction();
-        //enemy.chargeState.CanAction() || enemy.defenceState.CanAction() ||
+        return enemy.evadeState.CanAction() || enemy.meleeAttackState.CanAction() || enemy.chargeState.CanAction() || enemy.defenceState.CanAction();
     }
 
     public override void DoChecks()
@@ -36,14 +35,12 @@ public class GC1_DetectPlayerState : DetectPlayerState
         base.LogicUpdate();
 
         DoChecks();
-
-        enemy.FaceToPlayer();
         
         // TODO: if enemy.IsPlayerWithinMeleeRange: defence
         if (detectPlayerInMeleeRange)
         {
             // attack | evade
-            if(Random.value > 0.4 && enemy.meleeAttackState.CanAction())
+            if(Random.value > 0.5 && enemy.meleeAttackState.CanAction())
             {
                 stateMachine.SwitchState(enemy.meleeAttackState);
             }
