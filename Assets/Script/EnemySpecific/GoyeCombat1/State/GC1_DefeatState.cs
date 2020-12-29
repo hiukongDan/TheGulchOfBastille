@@ -23,6 +23,8 @@ public class GC1_DefeatState : State
 
     public override void Enter()
     {
+        enemy.entityEventHandler.OnDead();
+
         base.Enter();
     }
 

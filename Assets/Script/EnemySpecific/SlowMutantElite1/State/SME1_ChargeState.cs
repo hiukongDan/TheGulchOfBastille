@@ -24,7 +24,6 @@ public class SME1_ChargeState : MeleeAttackState
         ResetTimer();
 
         stateMachine.SwitchState(enemy.walkState);
-
     }
 
     public override void DoChecks()

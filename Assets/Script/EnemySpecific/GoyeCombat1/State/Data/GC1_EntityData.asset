@@ -16,7 +16,7 @@ MonoBehaviour:
   edgeCheckDistance: 0.3
   groundCheckDistance: 0.5
   detectPlayerAgroMinDistance: 2.04
-  detectPlayerAgroMaxDistance: 3.53
+  detectPlayerAgroMaxDistance: 3
   meleeAttackDistance: 0.88
   whatIsPlayer:
     serializedVersion: 2
@@ -29,9 +29,9 @@ MonoBehaviour:
     m_Bits: 4096
   damage: 5
   stunDamage: 1
-  damageBoxWidth: 2
-  damageBoxHeight: 1
-  maxHealth: 200
+  damageBoxWidth: 3.2
+  damageBoxHeight: 0.5
+  maxHealth: 120
   stunResistance: 5
   knockbackImpulse: 5
   knockbackDir: {x: 1, y: 1}

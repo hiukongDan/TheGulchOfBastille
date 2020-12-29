@@ -4199,8 +4199,7 @@ MonoBehaviour:
   entityData: {fileID: 11400000, guid: aae8a79d93c69d14cb33aadde1a13a7e, type: 2}
   aliveGO: {fileID: 1405043933}
   objectToAlive: {fileID: 1405043939}
-  entityEventHandler: {fileID: 0}
-  chargeStateData: {fileID: 11400000, guid: b53fd4155bf3ffa4cb5497ee68cb0971, type: 2}
+  entityEventHandler: {fileID: 1405043940}
   defenceStateData: {fileID: 11400000, guid: 7c296b482985f7b468d2008f7c23cb5d, type: 2}
   detectPlayerStateData: {fileID: 11400000, guid: eb0ce2cfc6cf4334ca7ae0c228d7c535,
     type: 2}
@@ -4211,6 +4210,7 @@ MonoBehaviour:
   parryStateData: {fileID: 11400000, guid: 1927f5284a2faac4ea15851b555bd68c, type: 2}
   meleeAttackStateData: {fileID: 11400000, guid: 2a601ece155e024499fa0f17b383d986,
     type: 2}
+  chargeStateData: {fileID: 11400000, guid: 57dd53836f029dc43910e3110d18d905, type: 2}
 --- !u!1001 &886865082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5522,6 +5522,7 @@ GameObject:
   - component: {fileID: 1405043936}
   - component: {fileID: 1405043935}
   - component: {fileID: 1405043939}
+  - component: {fileID: 1405043940}
   m_Layer: 10
   m_Name: Alive
   m_TagString: Enemy
@@ -5680,6 +5681,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageBoxSize: {x: 0, y: 0}
+--- !u!114 &1405043940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405043933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e00fc79cc60e8b46b95448d2a38e76f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1435543256
 GameObject:
   m_ObjectHideFlags: 0

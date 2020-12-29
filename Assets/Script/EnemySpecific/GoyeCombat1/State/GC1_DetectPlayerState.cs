@@ -65,16 +65,21 @@ public class GC1_DetectPlayerState : DetectPlayerState
                 stateMachine.SwitchState(enemy.defenceState);
             }
         }
-
-        /*
-        // Charge
         else if (detectPlayerInMaxAgro)
         {
-            
+            // charge
+            if (enemy.chargeState.CanAction())
+            {
+                if (Random.value > 0.2)
+                {
+                    stateMachine.SwitchState(enemy.chargeState);
+                }
+                else
+                {
+                    stateMachine.SwitchState(enemy.runState);
+                }
+            }
         }
-        */
-        // else
-        // Run and Attack
         else
         {
             stateMachine.SwitchState(enemy.runState);

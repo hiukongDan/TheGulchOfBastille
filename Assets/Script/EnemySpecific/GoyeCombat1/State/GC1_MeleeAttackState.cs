@@ -33,6 +33,8 @@ public class GC1_MeleeAttackState : MeleeAttackState
     public override void Enter()
     {
         base.Enter();
+
+        combatData.isParryDamage = false;
     }
 
     public override void Exit()

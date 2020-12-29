@@ -9,9 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b52738c3f983114f9fa8d547c496f34, type: 3}
+  m_Script: {fileID: 11500000, guid: 19c86423bfd31724e9d29ed7471d3f31, type: 3}
   m_Name: GC1_ChargeStateData
   m_EditorClassIdentifier: 
-  chargeSpeed: 5
-  chargeDuration: 1
-  chargeCoolDownTime: 5
+  damage: 10
+  stunDamage: 1
+  knockbackDir: {x: 1, y: 1}
+  knockbackImpulse: 5
+  attackRadius: 1
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 512
+  cooldownTimer: 5
+  heideAttackTimes: 4

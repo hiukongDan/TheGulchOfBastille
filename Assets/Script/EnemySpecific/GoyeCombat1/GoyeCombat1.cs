@@ -26,7 +26,6 @@ public class GoyeCombat1 : Entity
     #endregion
 
     #region STATE_DATA
-    public ChargeStateData chargeStateData;
     public DefenceStateData defenceStateData;
     public DetectPlayerStateData detectPlayerStateData;
     public EvadeStateData evadeStateData;
@@ -35,6 +34,7 @@ public class GoyeCombat1 : Entity
     public StunStateData stunStateData;
     public ParryStateData parryStateData;
     public MeleeAttackStateData meleeAttackStateData;
+    public MeleeAttackStateData chargeStateData;
     #endregion
 
     protected override void Damage(CombatData combatData)
@@ -105,7 +105,7 @@ public class GoyeCombat1 : Entity
         gc1_ota = (GC1_ObjectToAlive)objectToAlive;
 
         battleBeginState = new GC1_BattleBeginState(stateMachine, this, "battleBegin", this);
-        chargeState = new GC1_ChargeState(stateMachine, this, "charge", chargeStateData, this); // not ready
+        chargeState = new GC1_ChargeState(stateMachine, this, "charge", chargeStateData, damageBox,  this);
         defeatState = new GC1_DefeatState(stateMachine, this, "defeat", this);
         defenceState = new GC1_DefenceState(stateMachine, this, "defence", defenceStateData, this);
         detectPlayerState = new GC1_DetectPlayerState(stateMachine, this, null, detectPlayerStateData, this);
