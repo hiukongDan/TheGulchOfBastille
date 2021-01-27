@@ -357,6 +357,10 @@ public class Player : MonoBehaviour
     private SubAreaHandler subAreaHandler;
     public void SetSubAreaHandler(SubAreaHandler subAreaHandler) => this.subAreaHandler = subAreaHandler;
     public SubAreaHandler GetSubAreaHandler() => subAreaHandler;
+
+    private LittleSunHandler littleSunHandler;
+    public void SetLittleSunHandler(LittleSunHandler littleSunHandler) => this.littleSunHandler = littleSunHandler;
+    public LittleSunHandler GetLittleSunHandler() => littleSunHandler;
     #endregion
 
     #region EVENT

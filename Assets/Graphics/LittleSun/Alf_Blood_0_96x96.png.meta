@@ -86,6 +86,12 @@ TextureImporter:
   - first:
       213: 8051982705854337990
     second: Alf_Blood_0_96x96_13
+  - first:
+      213: 2612572713279222942
+    second: Alf_Blood_0_96x96_14
+  - first:
+      213: -7615633312290044923
+    second: Alf_Blood_0_96x96_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -279,7 +285,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_5
       rect:
         serializedVersion: 2
-        x: 576
+        x: 480
         y: 0
         width: 96
         height: 96
@@ -300,7 +306,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_6
       rect:
         serializedVersion: 2
-        x: 672
+        x: 576
         y: 0
         width: 96
         height: 96
@@ -321,7 +327,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_7
       rect:
         serializedVersion: 2
-        x: 768
+        x: 672
         y: 0
         width: 96
         height: 96
@@ -342,7 +348,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_8
       rect:
         serializedVersion: 2
-        x: 864
+        x: 768
         y: 0
         width: 96
         height: 96
@@ -363,7 +369,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_9
       rect:
         serializedVersion: 2
-        x: 960
+        x: 864
         y: 0
         width: 96
         height: 96
@@ -384,7 +390,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_10
       rect:
         serializedVersion: 2
-        x: 1056
+        x: 960
         y: 0
         width: 96
         height: 96
@@ -405,7 +411,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_11
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 1056
         y: 0
         width: 96
         height: 96
@@ -426,7 +432,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_12
       rect:
         serializedVersion: 2
-        x: 1248
+        x: 1152
         y: 0
         width: 96
         height: 96
@@ -447,7 +453,7 @@ TextureImporter:
       name: Alf_Blood_0_96x96_13
       rect:
         serializedVersion: 2
-        x: 1344
+        x: 1248
         y: 0
         width: 96
         height: 96
@@ -460,6 +466,48 @@ TextureImporter:
       bones: []
       spriteID: 6c359081c936ebf60800000000000000
       internalID: 8051982705854337990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Blood_0_96x96_14
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94f2ec6a09b14420800000000000000
+      internalID: 2612572713279222942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alf_Blood_0_96x96_15
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50402511ad5df4690800000000000000
+      internalID: -7615633312290044923
       vertices: []
       indices: 
       edges: []
