@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LittleSunData_0
   m_EditorClassIdentifier: 
   LittleSunID: 0
-  isActive: 0
+  isActive: 1

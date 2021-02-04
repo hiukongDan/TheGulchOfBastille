@@ -5,13 +5,13 @@ using UnityEngine;
 public class LittleSunHandler : MonoBehaviour
 {
     public LittleSunData littleSunData;
-    private Animator infoSignAnim;
+    public Animator InfoSignAnim;
     public Animator LittleSunAnim;
     public Animator BloodAnim;
 
     void Start()
     {
-        infoSignAnim = transform.Find("InfoSign Parent").GetComponentInChildren<Animator>();
+        InfoSignAnim = transform.Find("InfoSign Parent").GetComponentInChildren<Animator>();
         LittleSunAnim = transform.Find("Alive").GetComponent<Animator>();
         BloodAnim = transform.Find("Blood").GetComponent<Animator>();
 
@@ -29,7 +29,6 @@ public class LittleSunHandler : MonoBehaviour
             LittleSunAnim.Play(LittleSunAnimHash.IDLE_0);
         }
     }
-
 
     public void OnLittleSunInteraction()
     {
@@ -49,18 +48,17 @@ public class LittleSunHandler : MonoBehaviour
         if (isEnter)
         {
             player?.SetLittleSunHandler(this);
-            infoSignAnim.Play(InfoSignAnimHash.INTRO);
+            InfoSignAnim.Play(InfoSignAnimHash.INTRO);
         }
         else
         {
             player?.SetLittleSunHandler(null);
-            if(infoSignAnim.GetCurrentAnimatorStateInfo(0).shortNameHash != InfoSignAnimHash.EMPTY)
+            if(InfoSignAnim.GetCurrentAnimatorStateInfo(0).shortNameHash != InfoSignAnimHash.EMPTY)
             {
-                infoSignAnim.Play(InfoSignAnimHash.OUTRO);
+                InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
             }
         }
     }
-
 
     public bool IsSunActive() => littleSunData.IsActive();
 }

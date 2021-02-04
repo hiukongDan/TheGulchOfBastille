@@ -26,16 +26,23 @@ public class PlayerCinemaMovement : MonoBehaviour
         Vector2 targetPos = new Vector2(littleSunPos.x + playerLittleSunOffset, littleSunPos.y);
         // the same hack here as the combat freeze of Goye
         player.stateMachine.SwitchState(player.cinemaState);
-        // face towards the targetpos
-        player.FaceTo(targetPos);
-        // walk towards it
-        player.Anim.Play(AlfAnimationHash.RUN_0);
-        player.SetVelocity(new Vector2(player.facingDirection * player.playerData.WS_walkSpeed / 5, 0));
+
+        littleSunHandler.InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
         // yield return new WaitUntil(player at target pos);
-        yield return new WaitWhile(() => Mathf.Abs(player.transform.position.x - targetPos.x) > 0.001f);
-        player.SetVelocity(Vector2.zero);
+        if(Mathf.Abs(player.transform.position.x - targetPos.x) >= 1/32f)
+        {
+            // face towards the targetpos
+            player.FaceTo(targetPos);
+            // walk towards it
+            player.Anim.Play(AlfAnimationHash.RUN_0);
+            player.SetVelocity(new Vector2(player.facingDirection * player.playerData.WS_walkSpeed / 5, 0));
+
+            yield return new WaitUntil(() => Mathf.Abs(player.transform.position.x - targetPos.x) <= 1/32f);
+        }
+
         // face towards little sun
         player.FaceTo(littleSunPos);
+        player.SetVelocity(Vector2.zero);
         // player.Anim.Play()
         player.Anim.Play(AlfAnimationHash.LIGHT_LITTLE_SUN_0);
         
@@ -49,7 +56,9 @@ public class PlayerCinemaMovement : MonoBehaviour
 
         // player.stateMachine.switchstate(player.idleState);
         player.stateMachine.SwitchState(player.idleState);
-        
+
+        littleSunHandler.InfoSignAnim.Play(InfoSignAnimHash.INTRO);
+
     }
 
 
