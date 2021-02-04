@@ -148,17 +148,14 @@ public class GoyeCombat1 : Entity
 
     public bool IsPlayerWithinMeleeAttackRange() => Mathf.Abs(refPlayer.transform.position.x - aliveGO.transform.position.x) < entityData.meleeAttackDistance;
 
-    protected bool faceToPlayerTimer;
     public void FaceToPlayer(bool immediate = true)
     {
         if (immediate || flipState.CanAction())
         {
-            if (refPlayer.transform.position.x - aliveGO.transform.position.x > 0 != facingDirection > 0)
+            if (FaceTo(refPlayer.transform.position))
             {
-                Flip();
+                flipState.ResetTimer();
             }
-
-            flipState.ResetTimer();
         }
     }
 

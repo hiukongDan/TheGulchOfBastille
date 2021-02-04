@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerCinemaMovement playerCinemaMovement { get; private set; }
 
+    public bool IsDebug = true;
+
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(currentScene);

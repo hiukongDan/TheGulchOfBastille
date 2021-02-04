@@ -146,6 +146,7 @@ public class PlayerInputHandler : MonoBehaviour
         ResetIsMeleeAttack();
         ResetIsParry();
         ResetIsRoll();
+        ResetIsInteraction();
     }
 
     

@@ -41,7 +41,7 @@ public class GC1_BattleBeginState : State
         {
             stateMachine.SwitchState(enemy.runState);
             // set playerCanMove true: use EndConverse
-            enemy.refPlayer.OnEndConversation();
+            enemy.refPlayer.stateMachine.SwitchState(enemy.refPlayer.idleState);
         }
     }
 
@@ -53,7 +53,7 @@ public class GC1_BattleBeginState : State
     public IEnumerator BattleBegin()
     {
         // set playerCanMove false: use converseState
-        enemy.refPlayer.stateMachine.SwitchState(enemy.refPlayer.converseState);
+        enemy.refPlayer.stateMachine.SwitchState(enemy.refPlayer.cinemaState);
 
         yield return new WaitForSeconds(battleBeginDelay);
         enemy.anim.SetBool("isBattleBegin", true);

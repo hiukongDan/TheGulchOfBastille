@@ -19,4 +19,6 @@ public class AlfAnimationHash
     public static int TAKEDAMAGE_0 = Animator.StringToHash("alf_takedamage_0");
     public static int WALL_0 = Animator.StringToHash("alf_wall_0");
     public static int DASH_0 = Animator.StringToHash("alf_dash_0");
+    public static int LIGHT_LITTLE_SUN_0 = Animator.StringToHash("alf_light_little_sun_0");
+    public static int FINISH_LIGHT_LITTLE_SUN_0 = Animator.StringToHash("alf_finish_light_little_sun_0");
 }

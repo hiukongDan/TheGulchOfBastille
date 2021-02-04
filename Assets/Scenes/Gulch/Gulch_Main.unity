@@ -287,7 +287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59619092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.579, y: 0.38, z: 0}
+  m_LocalPosition: {x: 23.376, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1729426030}
@@ -659,6 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ab41d4040c19f45a57cc516e0715ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDebug: 1
 --- !u!114 &196687051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4306,7 +4307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &886694877
 Transform:
   m_ObjectHideFlags: 0
@@ -5319,13 +5320,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1555364541
   m_SortingLayer: 6
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 1.40625, y: 1.40625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -5513,7 +5514,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1346856642}
   - component: {fileID: 1346856643}
-  - component: {fileID: 1346856645}
   - component: {fileID: 1346856644}
   m_Layer: 15
   m_Name: Trigger
@@ -5549,7 +5549,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.099999994}
+  m_Offset: {x: 0.0037956238, y: -0.28290522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5560,7 +5560,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6146431, y: 0.6}
+  m_Size: {x: 0.89551926, y: 0.23418963}
   m_EdgeRadius: 0
 --- !u!114 &1346856644
 MonoBehaviour:
@@ -5574,19 +5574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5169083b2b6b8854dbdbe7cdabc04dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1346856645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346856641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b543b98d59f133459afd67adc3d5c23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  littleSunID: 0
 --- !u!1 &1356095310
 GameObject:
   m_ObjectHideFlags: 0
@@ -6362,6 +6349,7 @@ GameObject:
   - component: {fileID: 1575146087}
   - component: {fileID: 1575146089}
   - component: {fileID: 1575146088}
+  - component: {fileID: 1575146090}
   m_Layer: 0
   m_Name: Blood
   m_TagString: Player
@@ -6421,9 +6409,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1555364541
   m_SortingLayer: 6
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 8848046823959809771, guid: f40a4b8ee320df34085646d45c48a410,
-    type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6431,7 +6418,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1575146089
@@ -6453,6 +6440,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1575146090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575146086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c5698c19c988d45854b6ed1e36daa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1618937523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4243730512992597131, guid: a17705a686161614fa7fe9d7cd3b6b09,
@@ -6990,8 +6989,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2092410241}
+  - component: {fileID: 2092410242}
   m_Layer: 0
-  m_Name: LittleSun
+  m_Name: LittleSun_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7015,6 +7015,21 @@ Transform:
   m_Father: {fileID: 885781242}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2092410242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092410240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b543b98d59f133459afd67adc3d5c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  littleSunData: {fileID: 11400000, guid: 8edfa065072c9cf4188dc881fb7c7f2c, type: 2}
+  LittleSunAnim: {fileID: 0}
+  BloodAnim: {fileID: 0}
 --- !u!1 &2109776474
 GameObject:
   m_ObjectHideFlags: 0
@@ -7711,6 +7726,11 @@ PrefabInstance:
     - target: {fileID: 9202549583387772988, guid: 5922e34b2a564744bad2a50f449d3315,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202549583387772989, guid: 5922e34b2a564744bad2a50f449d3315,
+        type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9202549583387772991, guid: 5922e34b2a564744bad2a50f449d3315,
