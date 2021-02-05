@@ -48,10 +48,14 @@ public override void LogicUpdate()
             {
                 player.GetSubAreaHandler().OnPerformAction();
             }
-            if (player.GetNPCEventHandler() != null)
+            else if (player.GetNPCEventHandler() != null)
             {
                 player.GetNPCEventHandler().OnNPCInteraction();
                 stateMachine.SwitchState(player.converseState);
+            }
+            else if(player.GetLittleSunHandler() != null)
+            {
+                player.GetLittleSunHandler().OnLittleSunInteraction();
             }
             else
             {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GC1_FlipState : FlipState
 {
     protected float timer;
-    protected float minTimer = 0.2f;
+    protected float minTimer = 0.5f;
     public GC1_FlipState(FiniteStateMachine stateMachine, Entity entity, string animName) : base(stateMachine, entity, animName)
     {
         timer = -1;

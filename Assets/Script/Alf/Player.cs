@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public PlayerDeadState deadState { get; private set; }
     public PlayerWallState wallState { get; private set; }
     public PlayerDashState dashState { get; private set; }
+    public PlayerCinemaState cinemaState { get; private set; }
 
     // TODO: REMOVE STUN STATE
     public PlayerStunState stunState { get; private set; }
@@ -213,6 +214,16 @@ public class Player : MonoBehaviour
     {
         parryState?.ExitParryValid();
     }
+
+    public bool lightingLittleSunToken = false;
+    public void StartLightingLittleSun()
+    {
+        lightingLittleSunToken = false;
+    }
+    public void FinishLightingLittleSun()
+    {
+        lightingLittleSunToken = true;
+    }
     #endregion
 
     #region MESSAGE FUNCTIONS
@@ -305,6 +316,7 @@ public class Player : MonoBehaviour
         wallState = new PlayerWallState(stateMachine, this, AlfAnimationHash.WALL_0, playerData);
         dashState = new PlayerDashState(stateMachine, this, AlfAnimationHash.DASH_0, playerData);
         converseState = new PlayerConverseState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
+        cinemaState = new PlayerCinemaState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
 
         InitializePlayerCooldownTimer();
     }
@@ -342,6 +354,17 @@ public class Player : MonoBehaviour
         combatData.facingDirection = facingDirection;
     }
 
+    // RETURN: true if actually flipped
+    public bool FaceTo(Vector2 targetPos)
+    {
+        if (targetPos.x - transform.position.x > 0 != facingDirection > 0)
+        {
+            Flip();
+            return true;
+        }
+        return false;
+    }
+
     public void Flip()
     {
         facingDirection *= -1;
@@ -357,6 +380,10 @@ public class Player : MonoBehaviour
     private SubAreaHandler subAreaHandler;
     public void SetSubAreaHandler(SubAreaHandler subAreaHandler) => this.subAreaHandler = subAreaHandler;
     public SubAreaHandler GetSubAreaHandler() => subAreaHandler;
+
+    private LittleSunHandler littleSunHandler;
+    public void SetLittleSunHandler(LittleSunHandler littleSunHandler) => this.littleSunHandler = littleSunHandler;
+    public LittleSunHandler GetLittleSunHandler() => littleSunHandler;
     #endregion
 
     #region EVENT

@@ -135,6 +135,17 @@ public class Entity : MonoBehaviour
         }
     }
 
+    // RETURN: true if actually flipped
+    protected virtual bool FaceTo(Vector2 targetPos)
+    {
+        if (targetPos.x - aliveGO.transform.position.x > 0 != facingDirection > 0)
+        {
+            Flip();
+            return true;
+        }
+        return false;
+    }
+
     protected virtual void Damage(CombatData combatData)
     {
         if (isDead)

@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
 
     private UIHandler uiHandler;
 
+    public PlayerCinemaMovement playerCinemaMovement { get; private set; }
+
+    public bool IsDebug = true;
+
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(currentScene);
@@ -17,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         uiHandler = GetComponent<UIHandler>();
+        playerCinemaMovement = GetComponent<PlayerCinemaMovement>();
     }
 
     void Start()
