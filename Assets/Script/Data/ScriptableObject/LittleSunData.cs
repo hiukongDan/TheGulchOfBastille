@@ -8,25 +8,25 @@ public class LittleSunData:ScriptableObject
     public static Dictionary<int, bool> LittleSuns = new Dictionary<int, bool>();
 
     public int LittleSunID;
-    public bool isActive = false;
+
     public LittleSunData()
     {
-        if (LittleSuns.ContainsKey(LittleSunID))
-        {
-            isActive = LittleSuns[LittleSunID];
-        }
-        else         // else use default value
-        {
-            LittleSuns.Add(LittleSunID, isActive);
-        }
+        if(!LittleSuns.ContainsKey(LittleSunID))
+            LittleSuns.Add(LittleSunID, false);
     }
 
-    public bool IsActive() => isActive;
+    public bool IsActive() => LittleSuns.ContainsKey(LittleSunID) ? LittleSuns[LittleSunID] : false;
 
     public void OnLightLittleSun()
     {
-        isActive = true;
-        LittleSuns[LittleSunID] = true;
+        if(!LittleSuns.ContainsKey(LittleSunID))
+        {
+            LittleSuns.Add(LittleSunID, true);
+        }
+        else
+        {
+            LittleSuns[LittleSunID] = true;
+        }
     }
     
 }

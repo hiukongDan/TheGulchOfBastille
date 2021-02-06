@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 973aea7cb21fcbc4181f273c2095d3d1, type: 3}
-  m_Name: PlayerAbilityData
+  m_Script: {fileID: 11500000, guid: ce6416ae19e90224ca674030e414debe, type: 3}
+  m_Name: LittleSunData_1
   m_EditorClassIdentifier: 
-  doubleJump: 0
-  wallJump: 0
-  dash: 1
+  LittleSunID: 1
