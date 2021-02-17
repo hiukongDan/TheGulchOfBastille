@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: goye_greetings_C1
   m_EditorClassIdentifier: 
   conversations:
-  - Excellent! Meet Master Grey at the training ground to the east of the village,
+  - Excellent! Meet Master Grey at the training ground to the west of the village,
     just close to the Scaffold.
   selections: []
+  nextConversation: {fileID: 0}
