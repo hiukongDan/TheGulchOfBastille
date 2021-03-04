@@ -5,20 +5,19 @@ using UnityEngine;
 public class PlayerCinemaMovement : MonoBehaviour
 {
     private Player player;
+    private GameManager gm;
     
     void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     #region CINEMA FUNCTIONS
 
-    public void LightLittleSun(LittleSunHandler littleSunHandler)
-    {
-        StartCoroutine(lightLittleSun(littleSunHandler));
-    }
+    public void LightLittleSun(LittleSunHandler littleSunHandler) => StartCoroutine(lightLittleSun(littleSunHandler));
+    public void TransitToScene(UIEffect uiEffect, SceneCode sceneCode) => StartCoroutine(transitToScene(uiEffect, sceneCode));
 
-    // set sun's position to fit player's
     IEnumerator lightLittleSun(LittleSunHandler littleSunHandler)
     {
         float playerLittleSunOffset = 0.25f;
@@ -61,6 +60,13 @@ public class PlayerCinemaMovement : MonoBehaviour
 
     }
 
-
+    IEnumerator transitToScene(UIEffect useUIEffect, SceneCode sceneCode)
+    {
+        // TODO:
+        /* startEffect */
+        /* loading/enable scene prefab */
+        /* endEffect */
+        yield return null;
+    }
     #endregion
 }

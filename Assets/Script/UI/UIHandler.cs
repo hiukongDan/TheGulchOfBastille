@@ -6,12 +6,13 @@ public class UIHandler : MonoBehaviour
 {
     public UIFiniteStateMachine uiFSM { get; private set; }
 
+    public UIEffectHandler uiEffectHandler;
+
     public GameObject uiPlayGO;
     public GameObject uiPauseGO;
 
     public UIPlayState uiPlayState { get; private set; }
     public UIPauseState uiPauseState { get; private set; }
-
 
     void Awake()
     {

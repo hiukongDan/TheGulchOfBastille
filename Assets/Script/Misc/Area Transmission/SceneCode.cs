@@ -1,9 +1,9 @@
 ﻿public enum SceneCode
 {
     Gulch_Main,
-    Gulch_Alf_House,
+    Gulch_AlfHouse,
     Gulch_Graveyard,
     Gulch_Church,
-    Gulch_Sun_Tower,
+    Gulch_SunTower,
     Gulch_Tunnel,
-}
+};
