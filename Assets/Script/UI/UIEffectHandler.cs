@@ -8,6 +8,11 @@ public enum UIEffect
     Transition_CrossFade,
 };
 
+public enum UIEffectAnimationClip
+{
+    start,
+};
+
 public class UIEffectHandler : MonoBehaviour
 {
     void Start()
@@ -21,11 +26,11 @@ public class UIEffectHandler : MonoBehaviour
     }
 
     #region PUBLIC INTERFACE
-    public void OnPlayUIEffect(UIEffect uiEffect, string animName="start")
+    public void OnPlayUIEffect(UIEffect uiEffect, UIEffectAnimationClip clipName)
     {
         string path = string.Join("/", uiEffect.ToString().Split('~'));
         Animator anim = transform.Find(path)?.GetComponentInChildren<Animator>();
-        anim?.Play(animName);
+        anim?.Play(clipName.ToString());
     }
 
     #endregion

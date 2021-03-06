@@ -5,9 +5,13 @@ using System.IO;
 
 public class GameSaver : MonoBehaviour
 {
+    public bool IsNewSaving = false;
     private GameManager gm;
     void Awake()
     {
+        if (IsNewSaving)
+            return;
+
         FileStream fs = null;
         if (File.Exists(Application.persistentDataPath + "/default.tgb"))
         {
@@ -20,6 +24,10 @@ public class GameSaver : MonoBehaviour
                 LittleSunData.LittleSuns = littleSuns;
                 var ability = (D_PlayerAbility.PlayerAbility)bf.Deserialize(fs);
                 GameObject.Find("Player").GetComponent<Player>().playerAbilityData.SetPlayerAbility(ability);
+                var enemyAliveRevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
+                EnemySaveData.EnemyAliveRevivable = enemyAliveRevivable;
+                var enemyAliveUnrevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
+                EnemySaveData.EnemyAliveUnrevivable = enemyAliveUnrevivable;
             }
             catch (FileNotFoundException ex)
             {
@@ -42,8 +50,9 @@ public class GameSaver : MonoBehaviour
                 BinaryFormatter bf = new BinaryFormatter();
 
                 bf.Serialize(fs, LittleSunData.LittleSuns);
-
                 bf.Serialize(fs, GameObject.Find("Player").GetComponent<Player>().playerAbilityData.GetPlayerAbility());
+                bf.Serialize(fs, EnemySaveData.EnemyAliveRevivable);
+                bf.Serialize(fs, EnemySaveData.EnemyAliveUnrevivable);
 
                 fs.Close();
             }

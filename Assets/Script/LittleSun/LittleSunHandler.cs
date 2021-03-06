@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class LittleSunHandler : MonoBehaviour
 {
-    public LittleSunData littleSunData;
     public Animator InfoSignAnim;
     public Animator LittleSunAnim;
     public Animator BloodAnim;
+
+    private LittleSunData littleSunData;
+
+    void Awake()
+    {
+        littleSunData = GetComponent<LittleSunData>();
+    }
 
     void Start()
     {

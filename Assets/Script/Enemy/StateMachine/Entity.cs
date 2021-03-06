@@ -55,6 +55,11 @@ public class Entity : MonoBehaviour
 
     public bool isDanmageable { get; private set; }
 
+    protected virtual void Awake()
+    {
+
+    }
+
     protected virtual void Start()
     {
         aliveGO = transform.Find("Alive").gameObject;
@@ -74,6 +79,16 @@ public class Entity : MonoBehaviour
         isDead = false;
         isStunned = false;
         isDanmageable = true;
+
+        InitEntity();
+    }
+
+    protected virtual void InitEntity()
+    {
+        if (!GetComponent<EnemySaveData>().IsAlive())
+        {
+            Destroy(gameObject);
+        }
     }
 
     protected virtual void Update()

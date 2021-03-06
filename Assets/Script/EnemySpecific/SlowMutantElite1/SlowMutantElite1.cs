@@ -48,8 +48,9 @@ public class SlowMutantElite1 : Entity
 
     public List<SME1_SnakeHead> SnakeHeads { get; private set; }
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         InitSnakeHead();
     }
 

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="newLittleSunData", menuName ="Data/Other/LittleSunData")]
-public class LittleSunData:ScriptableObject
+//[CreateAssetMenu(fileName ="newLittleSunData", menuName ="Data/Other/LittleSunData")]
+public class LittleSunData:MonoBehaviour
 {
     public static Dictionary<int, bool> LittleSuns = new Dictionary<int, bool>();
 

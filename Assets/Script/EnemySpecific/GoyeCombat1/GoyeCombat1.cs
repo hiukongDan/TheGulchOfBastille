@@ -93,8 +93,9 @@ public class GoyeCombat1 : Entity
         Gizmos.DrawWireSphere(hitbox.position, meleeAttackStateData.attackRadius);
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         /* --------- ASIGN REFERENCEs HERE --------------*/
         refPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }

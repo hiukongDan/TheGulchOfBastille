@@ -19,6 +19,7 @@ public class DeadState : State
     {
         base.Enter();
         entity.rb.velocity = new Vector2(0f, entity.rb.velocity.y);
+        entity.GetComponent<EnemySaveData>().Save(false);
     }
 
     public override void Exit()
