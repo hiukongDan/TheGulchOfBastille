@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBaseData
   GD_groundCheckDistance: 0.136
   GD_wallCheckDistance: 0.3
+  GD_ladderCheckDistance: 0.3
   GD_damageImmuneTime: 0.5
   GD_whatIsGround:
     serializedVersion: 2
@@ -24,6 +25,9 @@ MonoBehaviour:
   GD_whatIsEnemy:
     serializedVersion: 2
     m_Bits: 1024
+  GD_whatIsLadder:
+    serializedVersion: 2
+    m_Bits: 131072
   PD_maxHitPoint: 60
   PD_maxStunPoint: 5
   PD_maxDecayPoint: 20
@@ -60,3 +64,4 @@ MonoBehaviour:
   RS_rollSpeed: 4
   RS_CoolDownTimer: 0.2
   CS_selectionTimer: 0.2
+  LS_climbSpeed: 1

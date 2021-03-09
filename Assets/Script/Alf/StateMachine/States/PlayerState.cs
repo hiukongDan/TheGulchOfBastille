@@ -32,6 +32,7 @@ public class PlayerState
     #region PHYSICS STATUS SUBSCRIPTION
     protected bool isGrounded;
     protected bool isWalled;
+    protected bool isLadder;
     #endregion
 
     #region STATUS SUBSCRIPTION
@@ -101,6 +102,7 @@ public class PlayerState
     {
         isGrounded = player.CheckGrounded();
         isWalled = player.CheckWalled();
+        isLadder = player.CheckLadder();
     }
 
     protected void SetCanFlip(bool flip)

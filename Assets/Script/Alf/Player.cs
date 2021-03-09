@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     public PlayerWallState wallState { get; private set; }
     public PlayerDashState dashState { get; private set; }
     public PlayerCinemaState cinemaState { get; private set; }
+    public PlayerLadderState ladderState{get; private set;}
 
     // TODO: REMOVE STUN STATE
     public PlayerStunState stunState { get; private set; }
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     public Transform wallCheck;
     public Transform hitbox;
+    public Transform ladderCheck;
     //public Transform offsetCalculator;
     #endregion
 
@@ -123,6 +125,11 @@ public class Player : MonoBehaviour
     public bool CheckWalled()
     {
         return Physics2D.Raycast(wallCheck.position, transform.right, playerData.GD_wallCheckDistance, playerData.GD_whatIsGround | playerData.GD_whatIsPlatform);
+    }
+
+    public bool CheckLadder()
+    {
+        return Physics2D.Raycast(ladderCheck.position, transform.up, playerData.GD_ladderCheckDistance, playerData.GD_whatIsLadder);
     }
 
     public bool CheckFlip() => InputHandler.NormMovementX != 0 && InputHandler.NormMovementX != facingDirection;
@@ -317,6 +324,7 @@ public class Player : MonoBehaviour
         dashState = new PlayerDashState(stateMachine, this, AlfAnimationHash.DASH_0, playerData);
         converseState = new PlayerConverseState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
         cinemaState = new PlayerCinemaState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
+        ladderState = new PlayerLadderState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
 
         InitializePlayerCooldownTimer();
     }
@@ -400,7 +408,9 @@ public class Player : MonoBehaviour
     {
         Gizmos.DrawWireSphere(groundCheck.position, playerData.GD_groundCheckDistance);
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + transform.right * playerData.GD_wallCheckDistance);
+        Gizmos.DrawLine(ladderCheck.position, ladderCheck.position + transform.up * playerData.GD_ladderCheckDistance);
         Gizmos.DrawWireSphere(hitbox.position, playerData.MAS_hitboxRadius);
+
     }
     #endregion
 

@@ -91,6 +91,9 @@ public class PlayerInAirState : PlayerState
                 stateMachine.SwitchState(player.idleState);
             }
         }
+        else if(player.ladderState.HasValidLadder() && isLadder && normMovementInput.y > 0 && currentVelocity.y < 0.2f){
+            stateMachine.SwitchState(player.ladderState);
+        }
         else
         {
             workspace.Set(normMovementInput.x * player.playerData.JS_horizontalSpeed, currentVelocity.y);
