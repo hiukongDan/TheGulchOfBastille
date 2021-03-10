@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
-    public enum LadderPart
-    {
-        TOP,
-        BODY,
-        BUTTOM,
-    };
 
     /* TODO
         fix ladder top and buttom inform player script
@@ -17,40 +11,29 @@ public class Ladder : MonoBehaviour
         player exit ladder automaticly when reach top or buttom
     */
     
-    public LadderPart ladderPart = LadderPart.BODY;
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Player"){
-            switch(ladderPart){
-                case LadderPart.BODY:
-                    other.gameObject.GetComponent<Player>()?.ladderState.SetLadder(this);
-                break;
-                case LadderPart.TOP:
+    public LadderPart currentLadderPart;
 
-                break;
-                case LadderPart.BUTTOM:
-
-                break;
-                default:
-                break;
-            }
-        }
+    private void Awake(){
+        currentLadderPart = null;
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if(other.gameObject.tag == "Player"){
-            switch(ladderPart){
-                case LadderPart.BODY:
-
-                break;
-                case LadderPart.TOP:
-
-                break;
-                case LadderPart.BUTTOM:
-                
-                break;
-                default:
-                break;
-            }
-        }
+    #region INTERFACE
+    public void OnStartClimbLadder(){
+        currentLadderPart.infoSignAnim.Play(InfoSignAnimHash.EMPTY);
     }
+
+    public void OnEndClimbLadder(){
+
+    }
+
+    public void OnEnterLadderPart(LadderPart ladderPart){
+        currentLadderPart = ladderPart;
+    }
+
+    public void OnExitLadderPart() => currentLadderPart = null;
+
+    public LadderPart.Part GetLadderPart() => currentLadderPart!=null?currentLadderPart.ladderPart:LadderPart.Part.BODY;
+    #endregion
+
+
 }

@@ -57,6 +57,9 @@ public override void LogicUpdate()
             {
                 player.GetLittleSunHandler().OnLittleSunInteraction();
             }
+            else if(player.ladderState.HasValidLadder()){
+                stateMachine.SwitchState(player.ladderState);
+            }
             else
             {
                 player.InputHandler.ResetIsInteraction();
@@ -73,10 +76,6 @@ public override void LogicUpdate()
         else if (isRoll && player.rollState.CanAction())
         {
             stateMachine.SwitchState(player.rollState);
-        }
-        else if(normMovementInput.y != 0 && isLadder)
-        {
-            stateMachine.SwitchState(player.ladderState);
         }
         else
         {

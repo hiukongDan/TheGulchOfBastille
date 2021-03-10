@@ -8,7 +8,7 @@ public class D_PlayerStateMachine : ScriptableObject
     [Header("General Data")]
     public float GD_groundCheckDistance = 0.3f;
     public float GD_wallCheckDistance = 0.3f;
-    public float GD_ladderCheckDistance = 0.3f;
+    public float GD_ladderEndCheckRadius = 0.1f;
     public float GD_damageImmuneTime = 0.5f;
     public LayerMask GD_whatIsGround;
     public LayerMask GD_whatIsPlatform;
@@ -77,6 +77,5 @@ public class D_PlayerStateMachine : ScriptableObject
 
     [Header("Ladder State")]
     public float LS_climbSpeed = 2f;
-    public float LS_leaveHorizontalImpulse = 0.2f;
-    public float LS_leaveVerticalImpulse = 3f;
+    public float LS_jumpOffSpeed = 5f;
 }

@@ -6040,6 +6040,36 @@ Transform:
   m_Father: {fileID: 995685659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1566542462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1566542463}
+  m_Layer: 9
+  m_Name: Ladder End Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1566542463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566542462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1729426030}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567879753
 GameObject:
   m_ObjectHideFlags: 0
@@ -7479,6 +7509,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c79b1fc1274ebc74f9c8985b8f22e15a,
         type: 2}
+    - target: {fileID: 9202549583387772967, guid: 5922e34b2a564744bad2a50f449d3315,
+        type: 3}
+      propertyPath: LadderEndCheck
+      value: 
+      objectReference: {fileID: 1566542463}
     - target: {fileID: 9202549583387772988, guid: 5922e34b2a564744bad2a50f449d3315,
         type: 3}
       propertyPath: m_LocalPosition.x

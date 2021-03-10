@@ -1,37 +1,55 @@
 fileFormatVersion: 2
-guid: f2e7848a929570a4880036ebc44a0426
+guid: 892db33ad0282004aa47d13ae9d8a33c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -564352566823032200
-    second: Alf_Jump_0_32x32_0
+      213: 3791638776895669528
+    second: alf_jump_0_32x33_0
   - first:
-      213: -923639967323708513
-    second: Alf_Jump_0_32x32_1
+      213: 7073421658204744007
+    second: alf_jump_0_32x33_1
   - first:
-      213: -931225348168518060
-    second: Alf_Jump_0_32x32_2
+      213: -108162275959134377
+    second: alf_jump_0_32x33_2
   - first:
-      213: -8366398674537913190
-    second: Alf_Jump_0_32x32_3
+      213: -4702177554186917528
+    second: alf_jump_0_32x33_3
   - first:
-      213: -2457137267843897113
-    second: Alf_Jump_0_32x32_4
+      213: 7597759696429985999
+    second: alf_jump_0_32x33_4
   - first:
-      213: -1577692642222047041
-    second: Alf_Jump_0_32x32_5
+      213: -1444216652850016716
+    second: alf_jump_0_32x33_5
   - first:
-      213: 7416679468560391818
-    second: Alf_Jump_0_32x32_6
+      213: 2006934140256881615
+    second: alf_jump_0_32x33_6
   - first:
-      213: -4127236206014372035
-    second: Alf_Jump_0_32x32_7
+      213: 1005348102724962959
+    second: alf_jump_0_32x33_7
   - first:
-      213: 5121381546579408002
-    second: Alf_Jump_0_32x32_8
+      213: 5906462707516028077
+    second: Alf_Jump_0_32x33_0
   - first:
-      213: -110022447075936144
-    second: Alf_Jump_0_32x32_9
+      213: -8804367213861586656
+    second: Alf_Jump_0_32x33_1
+  - first:
+      213: -9124251402735562535
+    second: Alf_Jump_0_32x33_2
+  - first:
+      213: 8224584173034431433
+    second: Alf_Jump_0_32x33_3
+  - first:
+      213: 491092938906354998
+    second: Alf_Jump_0_32x33_4
+  - first:
+      213: -6504748094229063342
+    second: Alf_Jump_0_32x33_5
+  - first:
+      213: 1278031782265827196
+    second: Alf_Jump_0_32x33_6
+  - first:
+      213: 8348015475099649680
+    second: Alf_Jump_0_32x33_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,11 +135,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Alf_Jump_0_32x32_0
+      name: Alf_Jump_0_32x33_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -131,18 +149,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87aee6e94540b28f0800000000000000
-      internalID: -564352566823032200
+      spriteID: da4b598e988f7f150800000000000000
+      internalID: 5906462707516028077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x32_1
+      name: Alf_Jump_0_32x33_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -152,18 +170,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f932157e7529e23f0800000000000000
-      internalID: -923639967323708513
+      spriteID: 0293fa1aaaa90d580800000000000000
+      internalID: -8804367213861586656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x32_2
+      name: Alf_Jump_0_32x33_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -173,18 +191,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 456739cca7f9313f0800000000000000
-      internalID: -931225348168518060
+      spriteID: 9d0569a01b5206180800000000000000
+      internalID: -9124251402735562535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x32_3
+      name: Alf_Jump_0_32x33_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -194,18 +212,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a946eda8bb494eb80800000000000000
-      internalID: -8366398674537913190
+      spriteID: 9c3640bcab7932270800000000000000
+      internalID: 8224584173034431433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x32_4
+      name: Alf_Jump_0_32x33_4
       rect:
         serializedVersion: 2
         x: 128
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -215,18 +233,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e86ac16cae76edd0800000000000000
-      internalID: -2457137267843897113
+      spriteID: 635473f0d66b0d600800000000000000
+      internalID: 491092938906354998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x32_5
+      name: Alf_Jump_0_32x33_5
       rect:
         serializedVersion: 2
         x: 160
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -236,18 +254,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb08b9f96e8ea1ae0800000000000000
-      internalID: -1577692642222047041
+      spriteID: 259d31a621e7ab5a0800000000000000
+      internalID: -6504748094229063342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x32_6
+      name: Alf_Jump_0_32x33_6
       rect:
         serializedVersion: 2
         x: 192
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -257,38 +275,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8e99707ea65de660800000000000000
-      internalID: 7416679468560391818
+      spriteID: c7f2d99722b7cb110800000000000000
+      internalID: 1278031782265827196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x32_7
+      name: Alf_Jump_0_32x33_7
       rect:
         serializedVersion: 2
         x: 224
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d37e164a98c19b6c0800000000000000
-      internalID: -4127236206014372035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alf_Jump_0_32x32_8
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 0
         width: 32
         height: 32
@@ -299,29 +296,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2843b13e16dc21740800000000000000
-      internalID: 5121381546579408002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alf_Jump_0_32x32_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07838b4da2f197ef0800000000000000
-      internalID: -110022447075936144
+      spriteID: 09647cc48db1ad370800000000000000
+      internalID: 8348015475099649680
       vertices: []
       indices: 
       edges: []

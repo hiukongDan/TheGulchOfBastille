@@ -12,6 +12,7 @@ public class PlayerInAirState : PlayerState
     protected bool isTryJump;
     protected bool isCoyoteTime;
     protected bool C_isJumpCanceled;
+    protected bool isLanded;
     #endregion
 
     public PlayerInAirState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
@@ -73,21 +74,21 @@ public class PlayerInAirState : PlayerState
         }
         else if (isGrounded && Mathf.Abs(currentVelocity.y) < 0.01f)
         {
-            player.InputHandler.ResetIsJump();
-            player.jumpState.ResetJumpAmountLeft();
-            player.wallState.ResetWallJumpAmountLeft();
-            player.dashState.ResetDashAmountLeft();
-
             if (isTryJump)
             {
+                player.ResetGrounded();
                 stateMachine.SwitchState(player.jumpState);
             }
-            else if (normMovementInput.x != 0)
-            {
-                stateMachine.SwitchState(player.walkState);
+            else if(!isLanded){
+                if(!player.Anim.GetBool("landing")){
+                    player.ResetGrounded();
+                    player.Anim.SetBool("landing", true);
+                    player.Anim.Play(AlfAnimationHash.LANDING_0);
+                }
+                workspace.Set(normMovementInput.x * player.playerData.JS_horizontalSpeed, currentVelocity.y);
+                player.SetVelocity(workspace);
             }
-            else
-            {
+            else{
                 stateMachine.SwitchState(player.idleState);
             }
         }
@@ -133,9 +134,11 @@ public class PlayerInAirState : PlayerState
         isTryJump = false;
         isCoyoteTime = true;
         C_isJumpCanceled = false;
+        isLanded = false;
+        player.Anim.SetBool("landing", false);
     }
 
-    protected void ResetJumpAmountLeft() => jumpAmountLeft = data.IAS_jumpAmounts;
+    public void ResetJumpAmountLeft() => jumpAmountLeft = data.IAS_jumpAmounts;
 
     protected virtual void CheckJumpBuffer()
     {
@@ -167,5 +170,9 @@ public class PlayerInAirState : PlayerState
     {
         this.jumpAmountLeft = jumpAmount;
     }
+
+    #region ANIMATION_CALLBACK
+    public void CompleteLanding() => isLanded = true;
+    #endregion
 
 }

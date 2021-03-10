@@ -6,7 +6,11 @@ public class Player : MonoBehaviour
     /* TODO:
      * replace sphere ground check with something more creditable
      */
-
+    #region ENUM
+    public enum AC_TYPE{
+        NORMAL, ROOT_MOTION,
+    };
+    #endregion
     #region REFERENCES
     private GameManager GM;
     #endregion
@@ -46,13 +50,15 @@ public class Player : MonoBehaviour
     #endregion
 
     #region COMPONENTS
+    public RuntimeAnimatorController ACRootmotion;
+    public RuntimeAnimatorController ACNormal{get; private set;}
     public Animator Anim { get; private set; }
     public Rigidbody2D Rb { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
     public Transform groundCheck;
     public Transform wallCheck;
     public Transform hitbox;
-    public Transform ladderCheck;
+    public Transform LadderEndCheck;
     //public Transform offsetCalculator;
     #endregion
 
@@ -86,10 +92,12 @@ public class Player : MonoBehaviour
         stateMachine.SetStateCooldownTimer(stateCooldownTimer);
 
         damageImmuneTimer = Time.time;
-
+        
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
+        ACNormal = Anim.runtimeAnimatorController;
 
         InputHandler = GetComponent<PlayerInputHandler>();
     }
@@ -117,23 +125,19 @@ public class Player : MonoBehaviour
 
     #region CHECK FUNCTIONS
 
-    public bool CheckGrounded()
-    {
+    public bool CheckGrounded(){
         return Physics2D.OverlapCircle(groundCheck.position, playerData.GD_groundCheckDistance, playerData.GD_whatIsGround | playerData.GD_whatIsPlatform);
     }
 
-    public bool CheckWalled()
-    {
+    public bool CheckWalled(){
         return Physics2D.Raycast(wallCheck.position, transform.right, playerData.GD_wallCheckDistance, playerData.GD_whatIsGround | playerData.GD_whatIsPlatform);
     }
 
-    public bool CheckLadder()
-    {
-        return Physics2D.Raycast(ladderCheck.position, transform.up, playerData.GD_ladderCheckDistance, playerData.GD_whatIsLadder);
+    public bool CheckLadderEnd(){
+        return Physics2D.OverlapCircle(LadderEndCheck.position, playerData.GD_ladderEndCheckRadius, playerData.GD_whatIsLadder);
     }
 
     public bool CheckFlip() => InputHandler.NormMovementX != 0 && InputHandler.NormMovementX != facingDirection;
-
     #endregion
 
     #region SET FUNCTIONS
@@ -231,6 +235,18 @@ public class Player : MonoBehaviour
     {
         lightingLittleSunToken = true;
     }
+
+    public void CompleteStartClimbLadder(){
+        ladderState?.CompleteStartClimbLadder();
+    }
+
+    public void CompleteClimbLadder(){
+        ladderState?.CompleteClimbLadder();
+    }
+    public void CompleteLanding(){
+        inAirState?.CompleteLanding();
+    }
+
     #endregion
 
     #region MESSAGE FUNCTIONS
@@ -350,6 +366,12 @@ public class Player : MonoBehaviour
         isDead = false;
         isStunned = false;
     }
+    public void ResetGrounded(){
+        InputHandler.ResetIsJump();
+        jumpState.ResetJumpAmountLeft();
+        wallState.ResetWallJumpAmountLeft();
+        dashState.ResetDashAmountLeft();
+    }
 
     public void UpdateCombatData()
     {
@@ -377,6 +399,20 @@ public class Player : MonoBehaviour
     {
         facingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
+    }
+    public void SwitchAC(AC_TYPE type){
+        if(type == AC_TYPE.NORMAL){
+            if(Anim.runtimeAnimatorController != ACNormal){
+                Anim.runtimeAnimatorController = ACNormal;
+                Anim.applyRootMotion = false;
+            }
+        }
+        else if(type == AC_TYPE.ROOT_MOTION){
+            if(Anim.runtimeAnimatorController != ACRootmotion){
+                Anim.runtimeAnimatorController = ACRootmotion;
+                Anim.applyRootMotion = true;
+            }
+        }
     }
     #endregion
 
@@ -408,9 +444,8 @@ public class Player : MonoBehaviour
     {
         Gizmos.DrawWireSphere(groundCheck.position, playerData.GD_groundCheckDistance);
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + transform.right * playerData.GD_wallCheckDistance);
-        Gizmos.DrawLine(ladderCheck.position, ladderCheck.position + transform.up * playerData.GD_ladderCheckDistance);
         Gizmos.DrawWireSphere(hitbox.position, playerData.MAS_hitboxRadius);
-
+        Gizmos.DrawWireSphere(LadderEndCheck.position, playerData.GD_ladderEndCheckRadius);
     }
     #endregion
 
