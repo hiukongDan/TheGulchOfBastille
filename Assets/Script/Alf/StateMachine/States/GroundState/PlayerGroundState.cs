@@ -74,7 +74,7 @@ public override void LogicUpdate()
         {
             stateMachine.SwitchState(player.rollState);
         }
-        else if(normMovementInput.y != 0 && player.ladderState.HasValidLadder())
+        else if(normMovementInput.y != 0 && isLadder)
         {
             stateMachine.SwitchState(player.ladderState);
         }
