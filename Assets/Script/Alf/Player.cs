@@ -51,9 +51,10 @@ public class Player : MonoBehaviour
 
     #region COMPONENTS
     public RuntimeAnimatorController ACRootmotion;
-    public RuntimeAnimatorController ACNormal{get; private set;}
+    public RuntimeAnimatorController ACNormal;
     public Animator Anim { get; private set; }
     public Rigidbody2D Rb { get; private set; }
+    public BoxCollider2D Bc {get; private set;}
     public PlayerInputHandler InputHandler { get; private set; }
     public Transform groundCheck;
     public Transform wallCheck;
@@ -95,9 +96,10 @@ public class Player : MonoBehaviour
         
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
+        Bc = GetComponent<BoxCollider2D>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         
-        ACNormal = Anim.runtimeAnimatorController;
+        Anim.runtimeAnimatorController = ACNormal;
 
         InputHandler = GetComponent<PlayerInputHandler>();
     }
@@ -120,6 +122,13 @@ public class Player : MonoBehaviour
     {
         stateMachine.PhysicsUpdate();
     }
+
+    void OnAnimatorMove(){
+        if(Anim.runtimeAnimatorController == ACRootmotion && Anim.applyRootMotion){
+            Rb.velocity = Anim.deltaPosition / Time.deltaTime;
+        }
+    }
+    
 
     #endregion
 
@@ -405,12 +414,16 @@ public class Player : MonoBehaviour
             if(Anim.runtimeAnimatorController != ACNormal){
                 Anim.runtimeAnimatorController = ACNormal;
                 Anim.applyRootMotion = false;
+
+                //Rb.bodyType = RigidbodyType2D.Dynamic;
             }
         }
         else if(type == AC_TYPE.ROOT_MOTION){
             if(Anim.runtimeAnimatorController != ACRootmotion){
                 Anim.runtimeAnimatorController = ACRootmotion;
                 Anim.applyRootMotion = true;
+
+                //Rb.bodyType = RigidbodyType2D.Kinematic;
             }
         }
     }

@@ -11,7 +11,7 @@ public class PlayerLadderState : PlayerState
     private bool isClimbing = false;
 
     private bool isReachLadderEnd = false;
-
+    private BoxCollider2D boxCollider2D;
     public PlayerLadderState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data):
         base(stateMachine, player, defaultAnimCode, data)
     {
@@ -43,6 +43,8 @@ public class PlayerLadderState : PlayerState
         else if(ladder.GetLadderPart() == LadderPart.Part.BUTTOM){
             player.Anim.Play(AlfAnimationHash.LADDER_BUTTOM_START_0);
         }
+
+        player.Bc.enabled = false;
     }
 
     public override void Exit()
@@ -54,21 +56,26 @@ public class PlayerLadderState : PlayerState
 
         isJumpOff = false;
         isClimbing = false;
+
+        player.InputHandler.ResetAll();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         if(isClimbing){
-            if (isJumpOff){
+            if(isReachLadderEnd){
+                OnReachOneEnd();
+                player.Anim.applyRootMotion = true;
+            }
+            else if (isJumpOff){
                 workspace.Set(0, -data.LS_jumpOffSpeed);
                 player.SetVelocity(workspace);
             }
             else if(isJump){
                 isJumpOff = true;
-            }
-            else if(isReachLadderEnd){
-                OnReachOneEnd();
+                player.Anim.applyRootMotion = false;
+                player.Anim.Play(AlfAnimationHash.LADDER_SLIDE_0);
             }
             else{
                 player.Anim.SetFloat("ladderClimbDirection", normMovementInput.y);
@@ -94,14 +101,16 @@ public class PlayerLadderState : PlayerState
         else if(ladder.GetLadderPart() == LadderPart.Part.BUTTOM){
             player.Anim.Play(AlfAnimationHash.LADDER_BUTTOM_FINISH_0);
         }
+        player.Bc.enabled = false;
     }
     public void CompleteStartClimbLadder(){
         isClimbing = true;
-        Debug.Log("start");
+        player.Bc.enabled = true;
     } 
     public void CompleteClimbLadder(){
+        player.Bc.enabled = true;
         stateMachine.SwitchState(player.idleState);
-        Debug.Log("called complete");
+        ladder?.OnEndClimbLadder();
     }
 #endregion
 

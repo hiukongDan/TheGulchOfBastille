@@ -27,4 +27,5 @@ public class AlfAnimationHash
     public static int LADDER_BUTTOM_FINISH_0 = Animator.StringToHash("alf_ladder_buttom_end_0");
     public static int LADDER_TOP_FINISH_0 = Animator.StringToHash("alf_ladder_top_end_0");
     public static int LADDER_CLIMB_0 = Animator.StringToHash("alf_ladder_climb_0");
+    public static int LADDER_SLIDE_0 = Animator.StringToHash("alf_ladder_slide_0");
 }
