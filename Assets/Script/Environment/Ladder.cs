@@ -5,7 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class Ladder : MonoBehaviour
 {
-    public int LadderLength = 1;
+    public float LadderLength = 1f;
     void Update(){
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.size = new Vector2(sr.size.x, LadderLength);

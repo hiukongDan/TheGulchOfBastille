@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 9202549583387772988}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1566542462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1566542463}
+  m_Layer: 9
+  m_Name: Ladder End Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1566542463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566542462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.178, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9202549583387772988}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9202549582959506072
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +127,7 @@ Transform:
   - {fileID: 9202549582959506073}
   - {fileID: 9202549584051426707}
   - {fileID: 505577554}
+  - {fileID: 1566542463}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -347,7 +378,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1555364541
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -5688575899509060094, guid: 25c83ecd596f0404f923521bb5375b91,
     type: 3}
@@ -394,13 +425,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pixelsPerUnits: 32
   playerData: {fileID: 11400000, guid: ac6a7290c41198147b046efd6fccaebe, type: 2}
+  playerAbilityData: {fileID: 11400000, guid: c79b1fc1274ebc74f9c8985b8f22e15a, type: 2}
+  ACRootmotion: {fileID: 9100000, guid: 0225ed58e92888544804d92e6a304dcf, type: 2}
+  ACNormal: {fileID: 9100000, guid: 3c11d06ad45558a4a92b76d6c58e4a12, type: 2}
   groundCheck: {fileID: 9202549582959506073}
   wallCheck: {fileID: 505577554}
   hitbox: {fileID: 9202549584051426707}
+  LadderEndCheck: {fileID: 1566542463}
   currentHitPoints: 0
   currentStunPoints: 0
   currentDecayPoints: 0
   damageImmuneTimer: 0
+  lightingLittleSunToken: 0
 --- !u!1 &9202549584051426706
 GameObject:
   m_ObjectHideFlags: 0

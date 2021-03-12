@@ -139,7 +139,7 @@ public class Player : MonoBehaviour
     }
 
     public bool CheckWalled(){
-        return Physics2D.Raycast(wallCheck.position, transform.right, playerData.GD_wallCheckDistance, playerData.GD_whatIsGround | playerData.GD_whatIsPlatform);
+        return Physics2D.Raycast(wallCheck.position, transform.right, playerData.GD_wallCheckDistance, playerData.GD_whatIsGround);
     }
 
     public bool CheckLadderEnd(){

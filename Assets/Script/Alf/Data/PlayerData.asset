@@ -65,4 +65,4 @@ MonoBehaviour:
   RS_CoolDownTimer: 0.2
   CS_selectionTimer: 0.2
   LS_climbSpeed: 1
-  LS_jumpOffSpeed: 5
+  LS_jumpOffSpeed: 3

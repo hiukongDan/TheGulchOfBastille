@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973aea7cb21fcbc4181f273c2095d3d1, type: 3}
   m_Name: PlayerAbilityData
   m_EditorClassIdentifier: 
-  doubleJump: 0
-  wallJump: 0
+  doubleJump: 1
+  wallJump: 1
   dash: 1
