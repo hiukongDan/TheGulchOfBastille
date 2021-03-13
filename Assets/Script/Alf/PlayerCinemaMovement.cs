@@ -13,10 +13,14 @@ public class PlayerCinemaMovement : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    void OnEnable(){
+        AreaTransmissionHandler.Instance.performAreaTransmissionHandler += TransitToScene;
+    }
+
     #region CINEMA FUNCTIONS
 
     public void LightLittleSun(LittleSunHandler littleSunHandler) => StartCoroutine(lightLittleSun(littleSunHandler));
-    public void TransitToScene(UIEffect uiEffect, SceneCode sceneCode) => StartCoroutine(transitToScene(uiEffect, sceneCode));
+    public void TransitToScene(SubAreaHandler subAreaHandler) => StartCoroutine(transitToScene(subAreaHandler));
 
     IEnumerator lightLittleSun(LittleSunHandler littleSunHandler)
     {
@@ -59,14 +63,37 @@ public class PlayerCinemaMovement : MonoBehaviour
         littleSunHandler.InfoSignAnim.Play(InfoSignAnimHash.INTRO);
 
     }
-
-    IEnumerator transitToScene(UIEffect useUIEffect, SceneCode sceneCode)
+    IEnumerator transitToScene(SubAreaHandler subAreaHandler)
     {
+        Door door = subAreaHandler.gameObject.GetComponentInChildren<Door>();
+        player.stateMachine.SwitchState(player.cinemaState);
+        if(door != null){
+            // Open Door
+            Animator doorAnim = door.GetComponent<Animator>();
+            door.Open();
+            yield return new WaitForSeconds(2 * doorAnim.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+        }
+        // Play Transition UI Effect
+        yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.start));
         // TODO:
         /* startEffect */
         /* loading/enable scene prefab */
         /* endEffect */
-        yield return null;
+        
+        // Enable and Disable scenes
+        // move player to new position
+        if(subAreaHandler.targetSceneInitPos != null){
+            player.transform.position = subAreaHandler.targetSceneInitPos.position;
+        }
+        door?.Close();
+        
+
+        yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY);
+        
+        yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.end));
+
+
+        player.stateMachine.SwitchState(player.idleState);
     }
     #endregion
 }

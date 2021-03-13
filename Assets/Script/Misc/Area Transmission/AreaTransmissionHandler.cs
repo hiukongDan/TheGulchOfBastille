@@ -19,13 +19,13 @@ public class AreaTransmissionHandler
         }
     }
 
-    public delegate void PerformAreaTransmissionAction(SceneCode sceneCode);
+    public delegate void PerformAreaTransmissionAction(SubAreaHandler subAreaHandler);
 
     public event PerformAreaTransmissionAction performAreaTransmissionHandler;
 
-    public void OnPerformAreaTransmission(SceneCode sceneCode)
+    public void OnPerformAreaTransmission(SubAreaHandler subAreaHandler)
     {
-        performAreaTransmissionHandler?.Invoke(sceneCode);
+        performAreaTransmissionHandler?.Invoke(subAreaHandler);
     }
 
 }

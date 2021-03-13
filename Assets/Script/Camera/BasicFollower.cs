@@ -12,6 +12,8 @@ public class BasicFollower : MonoBehaviour
 
     //public Rect OldCameraClamp;
 
+    public static Dictionary<SceneCode, Rect> cameraClamps = new Dictionary<SceneCode, Rect>();
+
     public float camSpeed = 5f;
     public float startFollowingDistanceX = 2f;
     public float startFollowingDistanceY = 0.1f;
@@ -27,6 +29,8 @@ public class BasicFollower : MonoBehaviour
 
     public Vector3 deltaPos { get; private set; }
 
+    private Vector2 viewportWorldSize = new Vector2(10, 7);
+
     void Awake()
     {
         cam = Camera.main;
@@ -35,14 +39,16 @@ public class BasicFollower : MonoBehaviour
         workspace.y = Mathf.Clamp(workspace.y, cameraClamp.yMin, cameraClamp.yMax);
         cam.transform.position = workspace;
 
-        fractions = Vector2.zero;
-
         deltaPos = Vector3.zero;
     }
 
     void Start()
     {
         oldFollowing = following;
+        // Vector2 center = cam.ViewportToWorldPoint(Vector2.zero);
+        // Vector2 topright = cam.ViewportToWorldPoint(Vector2.one);
+
+        // viewportWorldSize = new Vector2(2*(topright.x - center.x), 2*(topright.y - center.y));
     }
 
 /*    public void UpdateCameraClampArea(Rect newClamp)
@@ -84,5 +90,20 @@ public class BasicFollower : MonoBehaviour
 
             cam.transform.position = workspace;
         }
+    }
+
+    void OnDrawGizmos(){
+        // left border
+        Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
+            new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
+        // top border
+        Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2), 
+            new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
+        // right border
+        Gizmos.DrawLine(new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
+            new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
+        // buttom border
+        Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
+            new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMin -  viewportWorldSize.y/2));
     }
 }

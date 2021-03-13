@@ -312,4 +312,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4b877963a548348b1fef37bb641223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipName: lamp_idle_0
+  clipName: light_idle_0

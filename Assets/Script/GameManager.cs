@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private string currentScene;
+     private string currentScene;
 
-    private UIHandler uiHandler;
+    public UIHandler uiHandler{get; private set;}
 
     public PlayerCinemaMovement playerCinemaMovement { get; private set; }
 
@@ -26,12 +26,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        EnterScene();
+         EnterScene();
     }
 
     void OnDisable()
     {
-        ExitScene();
+         ExitScene();
     }
 
     public void SetPlayerDecay(int amount)
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         // SceneManagement
 
-        AreaTransmissionHandler.Instance.performAreaTransmissionHandler -= PerformAreaTransmission;
+        //AreaTransmissionHandler.Instance.performAreaTransmissionHandler -= PerformAreaTransmission;
     }
 
     public void EnterScene()
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
             SetPlayerDecay(0);
         }
 
-        AreaTransmissionHandler.Instance.performAreaTransmissionHandler += PerformAreaTransmission;
+        //AreaTransmissionHandler.Instance.performAreaTransmissionHandler += PerformAreaTransmission;
     }
 
     public void QuitGame()

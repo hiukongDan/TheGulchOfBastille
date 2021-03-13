@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class SubAreaHandler : MonoBehaviour
 {
-    public SceneCode sceneCode;
+    public SceneCode currentSceneCode;
+    public SceneCode transitionSceneCode;
+    public UIEffect uIEffect;
+
+    public Transform targetSceneInitPos;
+
     public void OnPerformAction()
     {
-        AreaTransmissionHandler.Instance.OnPerformAreaTransmission(sceneCode);
+        AreaTransmissionHandler.Instance.OnPerformAreaTransmission(this);
     }
 }

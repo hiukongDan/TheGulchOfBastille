@@ -10,27 +10,23 @@ public enum UIEffect
 
 public enum UIEffectAnimationClip
 {
-    start,
+    // aliases in animator tab
+    start, end, empty
 };
 
 public class UIEffectHandler : MonoBehaviour
 {
-    void Start()
-    {
-
-    }
-    
-    void Update()
-    {
-        
-    }
-
     #region PUBLIC INTERFACE
-    public void OnPlayUIEffect(UIEffect uiEffect, UIEffectAnimationClip clipName)
+
+    /// <returns>
+    /// The length of the effect animation clip
+    /// </returns>
+    public float OnPlayUIEffect(UIEffect uiEffect, UIEffectAnimationClip clipName)
     {
-        string path = string.Join("/", uiEffect.ToString().Split('~'));
+        string path = string.Join("/", uiEffect.ToString().Split('_'));
         Animator anim = transform.Find(path)?.GetComponentInChildren<Animator>();
         anim?.Play(clipName.ToString());
+        return anim.GetCurrentAnimatorClipInfo(0)[0].clip.length;
     }
 
     #endregion

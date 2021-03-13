@@ -8,7 +8,7 @@ public class SubAreaPlayerDetect : MonoBehaviour
     private Animator InfoSignAnim;
     void Start()
     {
-        subAreaHandler = GetComponent<SubAreaHandler>();
+        subAreaHandler = transform.parent.GetComponent<SubAreaHandler>();
         InfoSignAnim = transform.parent.GetComponentInChildren<Animator>();
     }
 
@@ -18,7 +18,7 @@ public class SubAreaPlayerDetect : MonoBehaviour
         {
             collider.gameObject.GetComponent<Player>().SetSubAreaHandler(subAreaHandler);
             InfoSignAnim.Play(InfoSignAnimHash.INTRO);
-        }   
+        }
     }
 
     void OnTriggerExit2D(Collider2D collider)
