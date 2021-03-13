@@ -49,6 +49,8 @@ public class BasicFollower : MonoBehaviour
         // Vector2 topright = cam.ViewportToWorldPoint(Vector2.one);
 
         // viewportWorldSize = new Vector2(2*(topright.x - center.x), 2*(topright.y - center.y));
+
+        
     }
 
 /*    public void UpdateCameraClampArea(Rect newClamp)

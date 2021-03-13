@@ -7,11 +7,13 @@ public class SceneCodeUtil : MonoBehaviour
 {
     public SceneCode sceneCode;
     public Rect CameraClamp;
-    public bool bRecordCameraClamp;
+    public bool isRecordCameraClamp;
+    void Start(){
+        transform.name = sceneCode.ToString();
+    }
     void Update()
     {
-        transform.name = sceneCode.ToString();
-        if(bRecordCameraClamp){
+        if(isRecordCameraClamp){
             BasicFollower bf = Camera.main.GetComponent<BasicFollower>();
             if(BasicFollower.cameraClamps.ContainsKey(sceneCode)){
                 BasicFollower.cameraClamps[sceneCode] = bf.cameraClamp;
@@ -19,6 +21,7 @@ public class SceneCodeUtil : MonoBehaviour
             else{
                 BasicFollower.cameraClamps.Add(sceneCode, bf.cameraClamp);
             }
+            CameraClamp = bf.cameraClamp;
         }
     }
 }

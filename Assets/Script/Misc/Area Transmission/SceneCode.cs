@@ -6,4 +6,5 @@
     Gulch_Church,
     Gulch_SunTower,
     Gulch_Tunnel,
+    Gulch_Goye,
 };
