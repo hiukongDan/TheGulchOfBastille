@@ -8,7 +8,7 @@ public class NPC : MonoBehaviour
     public NPCPlayerDetect npcPlayerDetect { get; private set; }
     public NPCConversationHandler npcConversationHandler { get; private set; }
 
-    void Start()
+    void Awake()
     {
         npcEventHandler = GetComponentInChildren<NPCEventHandler>();
         npcPlayerDetect = GetComponentInChildren<NPCPlayerDetect>();

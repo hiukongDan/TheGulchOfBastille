@@ -7,7 +7,7 @@ public class NPCPlayerDetect : MonoBehaviour
     private NPCEventHandler npcEventHandler;
     private NPC npc;
 
-    void Start()
+    void Awake()
     {
         npcEventHandler = GetComponent<NPCEventHandler>();
         npc = GetComponentInParent<NPC>();
@@ -19,8 +19,7 @@ public class NPCPlayerDetect : MonoBehaviour
         {
             npc.npcConversationHandler.gameObject.SetActive(true);
             npcEventHandler.OnNPCEnterInteraction();
-            var player = collider.gameObject.GetComponent<Player>();
-            player.SetNPCEventHandler(npcEventHandler);
+            collider.gameObject.GetComponent<Player>()?.SetNPCEventHandler(npcEventHandler);
         }
     }
 
@@ -29,7 +28,7 @@ public class NPCPlayerDetect : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             npcEventHandler.OnNPCExitInteraction();
-            collider.gameObject.GetComponent<Player>().SetNPCEventHandler(null);
+            collider.gameObject.GetComponent<Player>()?.SetNPCEventHandler(null);
             npc.npcConversationHandler.gameObject.SetActive(false);
         }
     }

@@ -6,7 +6,7 @@ public class SubAreaPlayerDetect : MonoBehaviour
 {
     private SubAreaHandler subAreaHandler;
     private Animator InfoSignAnim;
-    void Start()
+    void Awake()
     {
         subAreaHandler = transform.parent.GetComponent<SubAreaHandler>();
         InfoSignAnim = transform.parent.GetComponentInChildren<Animator>();
@@ -20,7 +20,7 @@ public class SubAreaPlayerDetect : MonoBehaviour
                 subAreaHandler.OnPerformAction();
             }
             else{
-                collider.gameObject.GetComponent<Player>().SetSubAreaHandler(subAreaHandler);
+                collider.gameObject.GetComponent<Player>()?.SetSubAreaHandler(subAreaHandler);
                 InfoSignAnim.Play(InfoSignAnimHash.INTRO);
             }
 
@@ -32,7 +32,7 @@ public class SubAreaPlayerDetect : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             Player player = collider.gameObject.GetComponent<Player>();
-            if(!subAreaHandler.IsTransitionAutomatically && player.stateMachine.currentState != player.cinemaState){
+            if(!subAreaHandler.IsTransitionAutomatically && player?.stateMachine.currentState != player?.cinemaState){
                 player.SetSubAreaHandler(null);
                 InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
             }

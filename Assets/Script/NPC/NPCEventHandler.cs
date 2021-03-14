@@ -13,7 +13,7 @@ public class NPCEventHandler : MonoBehaviour
 
     public delegate void SelectionHandler(int direction);
 
-    void Start()
+    void Awake()
     {
         NPCInteraction += npcIntearctionHandler;
         NPCEnterInteraction += npcEnterInteractionHandler;
