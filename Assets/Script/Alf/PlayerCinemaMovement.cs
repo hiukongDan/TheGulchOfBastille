@@ -74,6 +74,7 @@ public class PlayerCinemaMovement : MonoBehaviour
             yield return new WaitForSeconds(2 * doorAnim.GetCurrentAnimatorClipInfo(0)[0].clip.length);
         }
         // Play Transition UI Effect
+        // float time = gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.start);
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.start));
         // TODO:
         /* startEffect */
@@ -82,13 +83,18 @@ public class PlayerCinemaMovement : MonoBehaviour
         
         // Enable and Disable scenes
         // move player to new position
+        yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY/2);
+
         if(subAreaHandler.targetSceneInitPos != null){
             player.transform.position = subAreaHandler.targetSceneInitPos.position;
         }
         door?.Close();
-        
+        gm.LoadSceneCode(subAreaHandler.transitionSceneCode);
+        Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
 
-        yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY);
+        yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY/2);
+
+        //yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY);
         
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.end));
 

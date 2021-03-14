@@ -10,6 +10,7 @@ public class SubAreaHandler : MonoBehaviour
 
     public Transform targetSceneInitPos;
 
+    public bool IsTransitionAutomatically = false;
     public void OnPerformAction()
     {
         AreaTransmissionHandler.Instance.OnPerformAreaTransmission(this);

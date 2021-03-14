@@ -7,23 +7,40 @@ public class GameSaver : MonoBehaviour
 {
     public bool IsNewSaving = false;
     private GameManager gm;
+
+    public enum SaveSlot{
+        First, Second, Third,
+    }
+
+    public SaveSlot currentSaveSlot = SaveSlot.First;
+
     void Awake()
     {
-        if (IsNewSaving)
+        if(IsNewSaving)
             return;
+        Load(currentSaveSlot);
+    }
 
+    void OnApplicationQuit() {
+        Save(currentSaveSlot);
+    }
+    public void Load(SaveSlot saveSlot){
         FileStream fs = null;
-        if (File.Exists(Application.persistentDataPath + "/default.tgb"))
+        string path = Application.persistentDataPath + "/" + saveSlot.ToString() + ".tgb";
+        if (File.Exists(path))
         {
             try
             {
-                fs = new FileStream(Application.persistentDataPath + "/default.tgb", FileMode.Open);
+                fs = new FileStream(path, FileMode.Open);
                 BinaryFormatter bf = new BinaryFormatter();
 
                 var littleSuns = (Dictionary<int, bool>)bf.Deserialize(fs);
                 LittleSunData.LittleSuns = littleSuns;
                 var ability = (D_PlayerAbility.PlayerAbility)bf.Deserialize(fs);
-                GameObject.Find("Player").GetComponent<Player>().playerAbilityData.SetPlayerAbility(ability);
+                Player player = GameObject.Find("Player").GetComponent<Player>();
+                player.playerAbilityData.SetPlayerAbility(ability);
+                var runtimeData = (PlayerRuntimeData.PlayerRuntimeSaveData)bf.Deserialize(fs);
+                player.playerRuntimeData.SetPlayerRuntimeSaveData(runtimeData);
                 var enemyAliveRevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
                 EnemySaveData.EnemyAliveRevivable = enemyAliveRevivable;
                 var enemyAliveUnrevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
@@ -38,19 +55,19 @@ public class GameSaver : MonoBehaviour
                 fs?.Close();
             }
         }
-
     }
-
-    void OnApplicationQuit()
-    {
+    public void Save(SaveSlot saveSlot){
         try
         {
-            using(FileStream fs = new FileStream(Application.persistentDataPath + "/default.tgb", FileMode.OpenOrCreate))
+            using(FileStream fs = new FileStream(Application.persistentDataPath + "/" + saveSlot.ToString() + ".tgb", FileMode.OpenOrCreate))
             {
                 BinaryFormatter bf = new BinaryFormatter();
 
                 bf.Serialize(fs, LittleSunData.LittleSuns);
-                bf.Serialize(fs, GameObject.Find("Player").GetComponent<Player>().playerAbilityData.GetPlayerAbility());
+                Player player = transform.Find("/Player/Player").GetComponent<Player>();
+                //Player player = GameObject.Find("Player").GetComponent<Player>();
+                bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
+                bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());
                 bf.Serialize(fs, EnemySaveData.EnemyAliveRevivable);
                 bf.Serialize(fs, EnemySaveData.EnemyAliveUnrevivable);
 

@@ -5,77 +5,61 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-     private string currentScene;
-
     public UIHandler uiHandler{get; private set;}
 
     public PlayerCinemaMovement playerCinemaMovement { get; private set; }
-
     public bool IsDebug = true;
 
-    public void ReloadCurrentScene()
+#region REFERNECES
+    private Player player;
+#endregion
+
+#region INTERNAL VARIABLES
+    private string gameScene;
+    private SceneCode currentSceneCode = SceneCode.Gulch_Main;
+#endregion
+
+    public void ReloadGame()
     {
-        SceneManager.LoadScene(currentScene);
+        SceneManager.LoadScene(gameScene);
     }
 
-    void Awake()
-    {
+    void Awake(){
         uiHandler = GetComponent<UIHandler>();
         playerCinemaMovement = GetComponent<PlayerCinemaMovement>();
+
+        player = GameObject.Find("Player").GetComponent<Player>();
+        
+        gameScene = SceneManager.GetActiveScene().name;
     }
 
-    void Start()
-    {
-         EnterScene();
+    
+
+    void Start(){
+        LoadSceneCode(player.playerRuntimeData.currentSceneCode);
+        currentSceneCode = player.playerRuntimeData.currentSceneCode;
     }
 
-    void OnDisable()
-    {
-         ExitScene();
+    public void LoadSceneCode(SceneCode sceneCode){
+        // TODO:
+        // player last position
+        // Disable
+        GameObject oldSceneGO = GameObject.Find("/Scenes").transform.Find(currentSceneCode.ToString()).gameObject;
+        oldSceneGO?.SetActive(false);
+
+        // Enable
+        GameObject currentSceneGO = GameObject.Find("/Scenes").transform.Find(sceneCode.ToString()).gameObject;
+        currentSceneGO?.SetActive(true);
+        currentSceneCode = sceneCode;
+        Camera.main.GetComponent<BasicFollower>().cameraClamp = currentSceneGO.GetComponent<SceneCodeUtil>().CameraClamp;
     }
 
-    public void SetPlayerDecay(int amount)
-    {
-        PlayerPrefs.SetFloat("DecayAmount", amount);
-    }
-
-    public float GetPlayerDecay() => PlayerPrefs.GetFloat("DecayAmount");
-
-    public void PerformAreaTransmission(SceneCode sceneCode)
-    {
-        if(currentScene != sceneCode.ToString())
-        {
-            SceneManager.LoadScene(sceneCode.ToString());
-        }
-    }
-
-    public void ExitScene()
-    {
-        // SceneManagement
-
-        //AreaTransmissionHandler.Instance.performAreaTransmissionHandler -= PerformAreaTransmission;
-    }
-
-    public void EnterScene()
-    {
-        currentScene = SceneManager.GetActiveScene().name;
-
-        Application.targetFrameRate = 60;
-
-        if (PlayerPrefs.GetFloat("DecayAmount", -1) == -1)
-        {
-            SetPlayerDecay(0);
-        }
-
-        //AreaTransmissionHandler.Instance.performAreaTransmissionHandler += PerformAreaTransmission;
-    }
 
     public void QuitGame()
     {
         Application.Quit();
     }
 
-    private bool _canPlayerAction;
     public bool CanPlayerAction()
     {
         if (uiHandler != null)

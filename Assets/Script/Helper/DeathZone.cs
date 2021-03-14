@@ -11,8 +11,7 @@ public class DeathZone : MonoBehaviour
 
         if (collision.collider.tag == "Player")
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().ReloadCurrentScene();
-            Debug.Log("Enter");
+            GameObject.Find("GameManager").GetComponent<GameManager>().ReloadGame();
         }
         else
         {

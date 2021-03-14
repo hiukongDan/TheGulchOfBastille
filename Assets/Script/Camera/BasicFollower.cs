@@ -31,6 +31,10 @@ public class BasicFollower : MonoBehaviour
 
     private Vector2 viewportWorldSize = new Vector2(10, 7);
 
+    public bool isDebug = true;
+
+    public SceneCode sceneCode;
+
     void Awake()
     {
         cam = Camera.main;
@@ -75,6 +79,14 @@ public class BasicFollower : MonoBehaviour
         this.following = oldFollowing;
     }
 
+    public void ClampCamera(Vector2 pos){
+            workspace.x = Mathf.Clamp(pos.x, cameraClamp.xMin, cameraClamp.xMax);
+            workspace.y = Mathf.Clamp(pos.y, cameraClamp.yMin, cameraClamp.yMax);
+            workspace.z = defaultCamZ;
+
+            cam.transform.position = workspace;
+    }
+
     void LateUpdate()
     {
         float offsetX = transform.position.x - following.position.x;
@@ -94,18 +106,36 @@ public class BasicFollower : MonoBehaviour
         }
     }
 
+
     void OnDrawGizmos(){
-        // left border
-        Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
-            new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
-        // top border
-        Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2), 
-            new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
-        // right border
-        Gizmos.DrawLine(new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
-            new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
-        // buttom border
-        Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
-            new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMin -  viewportWorldSize.y/2));
+        if(isDebug){
+            var rect = GameObject.Find("/Scenes").transform.Find(sceneCode.ToString()).GetComponent<SceneCodeUtil>().CameraClamp;
+            Gizmos.DrawLine(new Vector2(rect.xMin - viewportWorldSize.x/2, rect.yMin - viewportWorldSize.y/2), 
+                new Vector2(rect.xMin - viewportWorldSize.x/2, rect.yMax + viewportWorldSize.y/2));
+            // top border
+            Gizmos.DrawLine(new Vector2(rect.xMin - viewportWorldSize.x/2, rect.yMax + viewportWorldSize.y/2), 
+                new Vector2(rect.xMax + viewportWorldSize.x/2, rect.yMax + viewportWorldSize.y/2));
+            // right border
+            Gizmos.DrawLine(new Vector2(rect.xMax + viewportWorldSize.x/2, rect.yMin - viewportWorldSize.y/2), 
+                new Vector2(rect.xMax + viewportWorldSize.x/2, rect.yMax + viewportWorldSize.y/2));
+            // buttom border
+            Gizmos.DrawLine(new Vector2(rect.xMin - viewportWorldSize.x/2, rect.yMin - viewportWorldSize.y/2), 
+                new Vector2(rect.xMax + viewportWorldSize.x/2, rect.yMin -  viewportWorldSize.y/2));
+        }
+        else{
+            // left border
+            Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
+                new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
+            // top border
+            Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2), 
+                new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
+            // right border
+            Gizmos.DrawLine(new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
+                new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMax + viewportWorldSize.y/2));
+            // buttom border
+            Gizmos.DrawLine(new Vector2(cameraClamp.xMin - viewportWorldSize.x/2, cameraClamp.yMin - viewportWorldSize.y/2), 
+                new Vector2(cameraClamp.xMax + viewportWorldSize.x/2, cameraClamp.yMin -  viewportWorldSize.y/2));
+        }
+
     }
 }

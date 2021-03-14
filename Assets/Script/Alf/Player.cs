@@ -6,10 +6,12 @@ public class Player : MonoBehaviour
     /* TODO:
      * replace sphere ground check with something more creditable
      */
+
     #region ENUM
     public enum AC_TYPE{
         NORMAL, ROOT_MOTION,
     };
+
     #endregion
     #region REFERENCES
     private GameManager GM;
@@ -72,16 +74,17 @@ public class Player : MonoBehaviour
     public int facingDirection { get; private set; }
     public bool isDead { get; private set; }
     public bool isStunned { get; private set; }
+    public PlayerRuntimeData playerRuntimeData = new PlayerRuntimeData();
     #endregion
 
-    #region PLAYER HITPOINTS
-    public float currentHitPoints;
-    public float currentStunPoints;
-    public float currentDecayPoints;
-    #endregion
 
     #region TIMERS
     public float damageImmuneTimer;
+    #endregion
+
+    #region CONVENIENT VARIABLES
+    public int FACE_LEFT = -1;
+    public int FACE_RIGHT = 1;
     #endregion
 
     #region UNITY FUNCTIONS
@@ -102,6 +105,8 @@ public class Player : MonoBehaviour
         Anim.runtimeAnimatorController = ACNormal;
 
         InputHandler = GetComponent<PlayerInputHandler>();
+
+        playerRuntimeData.InitPlayerRuntimeData(playerData);
     }
 
     void Start()
@@ -121,12 +126,24 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         stateMachine.PhysicsUpdate();
+
+        playerRuntimeData.lastPosition = transform.position;
     }
 
     void OnAnimatorMove(){
         if(Anim.runtimeAnimatorController == ACRootmotion && Anim.applyRootMotion){
             Rb.velocity = Anim.deltaPosition / Time.deltaTime;
         }
+    }
+    void OnApplicationQuit(){
+        
+    }
+    void OnDisable() {
+        
+    }
+
+    void OnDestroy() {
+        
     }
     
 
@@ -284,8 +301,8 @@ public class Player : MonoBehaviour
         {
             damageImmuneTimer = Time.time;
 
-            currentHitPoints -= combatData.damage;
-            UIEventListener.Instance.OnHpChange(currentHitPoints, playerData.PD_maxHitPoint);
+            playerRuntimeData.currentHitPoints -= combatData.damage;
+            UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
 
             int dir = (combatData.position.x - transform.position.x > 0 ? -1 : 1);
             workspace.Set(dir * combatData.knockbackDir.x * combatData.knockbackImpulse, combatData.knockbackDir.y * combatData.knockbackImpulse);
@@ -301,19 +318,19 @@ public class Player : MonoBehaviour
 
             if (!isStunned)
             {
-                currentStunPoints -= combatData.stunDamage;
+                playerRuntimeData.currentStunPoints -= combatData.stunDamage;
             }
 
-            if (!isDead && currentHitPoints <= 0)
+            if (!isDead && playerRuntimeData.currentHitPoints <= 0)
             {
                 isDead = true;
                 stateMachine.SwitchState(deadState);
             }
-            else if (!isStunned && currentStunPoints <= 0)
+            else if (!isStunned && playerRuntimeData.currentStunPoints <= 0)
             {
                 isStunned = true;
                 stateMachine.SwitchState(stunState);
-                currentStunPoints = playerData.PD_maxStunPoint;
+                playerRuntimeData.currentStunPoints = playerData.PD_maxStunPoint;
             }
             else
             {
@@ -365,15 +382,13 @@ public class Player : MonoBehaviour
 
     public void InitializePlayerStatus()
     {
-        // TODO: using a mutable data structure for status reading
-        currentHitPoints = playerData.PD_maxHitPoint;
-        currentStunPoints = playerData.PD_maxStunPoint;
-        currentDecayPoints = GM.GetPlayerDecay();
-        // invoke
-
-        facingDirection = 1;
+        facingDirection = FACE_RIGHT;
         isDead = false;
         isStunned = false;
+
+        if(playerRuntimeData.isLoaded){
+            transform.position = playerRuntimeData.lastPosition;
+        }
     }
     public void ResetGrounded(){
         InputHandler.ResetIsJump();
@@ -409,6 +424,10 @@ public class Player : MonoBehaviour
         facingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
     }
+
+    /// <Summary>
+    /// Switch Animator from rootMotion enabled one to rootMotion disabled one, or vice versa.
+    /// </Summary>
     public void SwitchAC(AC_TYPE type){
         if(type == AC_TYPE.NORMAL){
             if(Anim.runtimeAnimatorController != ACNormal){

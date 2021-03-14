@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "newPlayerStateMachineData", menuName = "Data/Player/State Machine Data")]
 public class D_PlayerStateMachine : ScriptableObject
@@ -78,4 +77,36 @@ public class D_PlayerStateMachine : ScriptableObject
     [Header("Ladder State")]
     public float LS_climbSpeed = 2f;
     public float LS_jumpOffSpeed = 5f;
+
+    [Serializable]
+    public struct PlayerSaveData{
+        public float PD_maxHitPoint;
+        public float PD_maxStunPoint;
+        public float PD_maxDecayPoint;
+        public float MAS_damageAmount;
+        public float MAS_stunAmount;
+        public float PS_damage;
+
+        public PlayerSaveData(float PD_maxHitPoint, float PD_maxStunPoint, float PD_maxDecayPoint, float MAS_damageAmount, float MAS_stunAmount, float PS_damage){
+            this.PD_maxHitPoint = PD_maxHitPoint;
+            this.PD_maxStunPoint = PD_maxStunPoint;
+            this.PD_maxDecayPoint = PD_maxDecayPoint;
+            this.MAS_damageAmount = MAS_damageAmount;
+            this.MAS_stunAmount = MAS_stunAmount;
+            this.PS_damage = PS_damage;
+        }
+    };
+
+    public void SetPlayerSaveData(PlayerSaveData playerSaveData){
+            this.PD_maxHitPoint = playerSaveData.PD_maxHitPoint;
+            this.PD_maxStunPoint = playerSaveData.PD_maxStunPoint;
+            this.PD_maxDecayPoint = playerSaveData.PD_maxDecayPoint;
+            this.MAS_damageAmount = playerSaveData.MAS_damageAmount;
+            this.MAS_stunAmount = playerSaveData.MAS_stunAmount;
+            this.PS_damage = playerSaveData.PS_damage;
+    }
+
+    public PlayerSaveData GetPlayerSaveData(){
+        return new PlayerSaveData(PD_maxHitPoint, PD_maxStunPoint, PD_maxDecayPoint, MAS_damageAmount, MAS_stunAmount, PS_damage);
+    }
 }

@@ -66,6 +66,6 @@ public class PlayerDeadState : PlayerState
 
     public void CompleteDead()
     {
-        GM.ReloadCurrentScene();
+        GM.ReloadGame();
     }
 }

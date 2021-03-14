@@ -16,8 +16,14 @@ public class SubAreaPlayerDetect : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
-            collider.gameObject.GetComponent<Player>().SetSubAreaHandler(subAreaHandler);
-            InfoSignAnim.Play(InfoSignAnimHash.INTRO);
+            if(subAreaHandler.IsTransitionAutomatically){
+                subAreaHandler.OnPerformAction();
+            }
+            else{
+                collider.gameObject.GetComponent<Player>().SetSubAreaHandler(subAreaHandler);
+                InfoSignAnim.Play(InfoSignAnimHash.INTRO);
+            }
+
         }
     }
 
@@ -25,8 +31,11 @@ public class SubAreaPlayerDetect : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            collider.gameObject.GetComponent<Player>().SetSubAreaHandler(null);
-            InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
+            Player player = collider.gameObject.GetComponent<Player>();
+            if(!subAreaHandler.IsTransitionAutomatically && player.stateMachine.currentState != player.cinemaState){
+                player.SetSubAreaHandler(null);
+                InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
+            }
         }
     }
 }
