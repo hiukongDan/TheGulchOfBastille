@@ -1702,6 +1702,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 999079386}
     m_Modifications:
+    - target: {fileID: 4243730512420650758, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.844
+      objectReference: {fileID: 0}
     - target: {fileID: 4243730512420650759, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
       propertyPath: npcConversation
@@ -1721,7 +1726,7 @@ PrefabInstance:
     - target: {fileID: 4243730512992597128, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.241
+      value: 0.219
       objectReference: {fileID: 0}
     - target: {fileID: 4243730512992597128, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
@@ -1783,11 +1788,51 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.71116304
       objectReference: {fileID: 0}
+    - target: {fileID: 4243730513020973873, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.07044613
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.03125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453994, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.0252032
+      objectReference: {fileID: 0}
     - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2495014906627460004, guid: a25cd655e9afb2a44a64c8565e684d40,
+      objectReference: {fileID: -6444942597475370199, guid: b826dbdee05ef1b4e91cd0423cae9df9,
         type: 3}
     - target: {fileID: 4243730513651453995, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
@@ -1804,10 +1849,20 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453996, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243730513651453996, guid: a17705a686161614fa7fe9d7cd3b6b09,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6920871241000204990, guid: a17705a686161614fa7fe9d7cd3b6b09,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.759
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a17705a686161614fa7fe9d7cd3b6b09, type: 3}
@@ -6357,7 +6412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &999079386
 Transform:
   m_ObjectHideFlags: 0
