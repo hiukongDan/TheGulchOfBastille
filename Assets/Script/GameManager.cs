@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     void Start(){
         LoadSceneCode(player.playerRuntimeData.currentSceneCode);
         currentSceneCode = player.playerRuntimeData.currentSceneCode;
+
+        playerCinemaMovement.StartGameScene();
     }
 
     public void LoadSceneCode(SceneCode sceneCode){
