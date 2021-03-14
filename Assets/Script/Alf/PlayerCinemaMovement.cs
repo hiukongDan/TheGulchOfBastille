@@ -108,10 +108,7 @@ public class PlayerCinemaMovement : MonoBehaviour
     }
 
     IEnumerator StartGame(){
-        player.stateMachine.SwitchState(player.cinemaState);
-        //yield return new WaitForSeconds(gameBeginWaitForSec);
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
-        player.stateMachine.SwitchState(player.idleState);
     }
     #endregion
 }
