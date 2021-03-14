@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     public Animator Anim { get; private set; }
     public Rigidbody2D Rb { get; private set; }
     public BoxCollider2D Bc {get; private set;}
+    public SpriteRenderer Sr{get; private set;}
     public PlayerInputHandler InputHandler { get; private set; }
     public Transform groundCheck;
     public Transform wallCheck;
@@ -100,6 +101,7 @@ public class Player : MonoBehaviour
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
         Bc = GetComponent<BoxCollider2D>();
+        Sr = GetComponent<SpriteRenderer>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         
         Anim.runtimeAnimatorController = ACNormal;
@@ -422,7 +424,8 @@ public class Player : MonoBehaviour
     public void Flip()
     {
         facingDirection *= -1;
-        transform.Rotate(0f, 180f, 0f);
+        // transform.Rotate(0f, 180f, 0f);
+        Sr.flipX = !Sr.flipX;
     }
 
     /// <Summary>
