@@ -1279,6 +1279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849f55296cc922a438bf6b69608fdbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameBeginWaitForSec: 2
 --- !u!114 &196687054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,7 +1292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e9b0106b4644d4f94a5fe754b6524e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsNewSaving: 0
+  IsNewSaving: 1
   currentSaveSlot: 0
 --- !u!1 &198616488
 GameObject:
@@ -6357,7 +6358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &999079386
 Transform:
   m_ObjectHideFlags: 0

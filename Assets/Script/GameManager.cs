@@ -33,11 +33,11 @@ public class GameManager : MonoBehaviour
         gameScene = SceneManager.GetActiveScene().name;
     }
 
-    
-
     void Start(){
         LoadSceneCode(player.playerRuntimeData.currentSceneCode);
         currentSceneCode = player.playerRuntimeData.currentSceneCode;
+
+        playerCinemaMovement.StartGameScene();
     }
 
     public void LoadSceneCode(SceneCode sceneCode){
