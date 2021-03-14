@@ -92,6 +92,8 @@ public class PlayerCinemaMovement : MonoBehaviour
         gm.LoadSceneCode(subAreaHandler.transitionSceneCode);
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
 
+        player.ResetGrounded();
+
         yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY/2);
 
         //yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY);
