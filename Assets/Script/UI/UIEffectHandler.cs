@@ -11,7 +11,7 @@ public enum UIEffect
 public enum UIEffectAnimationClip
 {
     // aliases in animator tab
-    start, end, empty
+    start, end, empty, dark,
 };
 
 public class UIEffectHandler : MonoBehaviour

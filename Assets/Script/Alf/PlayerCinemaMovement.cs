@@ -6,6 +6,8 @@ public class PlayerCinemaMovement : MonoBehaviour
 {
     private Player player;
     private GameManager gm;
+
+    public float gameBeginWaitForSec = 2f;
     
     void Awake()
     {
@@ -21,6 +23,8 @@ public class PlayerCinemaMovement : MonoBehaviour
 
     public void LightLittleSun(LittleSunHandler littleSunHandler) => StartCoroutine(lightLittleSun(littleSunHandler));
     public void TransitToScene(SubAreaHandler subAreaHandler) => StartCoroutine(transitToScene(subAreaHandler));
+
+    public void StartGameScene() => StartCoroutine(StartGame());
 
     IEnumerator lightLittleSun(LittleSunHandler littleSunHandler)
     {
@@ -92,13 +96,21 @@ public class PlayerCinemaMovement : MonoBehaviour
         gm.LoadSceneCode(subAreaHandler.transitionSceneCode);
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
 
+        player.ResetGrounded();
+
         yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY/2);
 
         //yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY);
         
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.end));
 
+        player.stateMachine.SwitchState(player.idleState);
+    }
 
+    IEnumerator StartGame(){
+        player.stateMachine.SwitchState(player.cinemaState);
+        //yield return new WaitForSeconds(gameBeginWaitForSec);
+        yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
         player.stateMachine.SwitchState(player.idleState);
     }
     #endregion

@@ -33,11 +33,11 @@ public class GameManager : MonoBehaviour
         gameScene = SceneManager.GetActiveScene().name;
     }
 
-    
-
     void Start(){
         LoadSceneCode(player.playerRuntimeData.currentSceneCode);
         currentSceneCode = player.playerRuntimeData.currentSceneCode;
+
+        playerCinemaMovement.StartGameScene();
     }
 
     public void LoadSceneCode(SceneCode sceneCode){
@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
         currentSceneGO?.SetActive(true);
         currentSceneCode = sceneCode;
         Camera.main.GetComponent<BasicFollower>().cameraClamp = currentSceneGO.GetComponent<SceneCodeUtil>().CameraClamp;
+
+        player.playerRuntimeData.currentSceneCode = sceneCode;
     }
 
 
