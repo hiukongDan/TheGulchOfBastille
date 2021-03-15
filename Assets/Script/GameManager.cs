@@ -28,12 +28,16 @@ public class GameManager : MonoBehaviour
         uiHandler = GetComponent<UIHandler>();
         playerCinemaMovement = GetComponent<PlayerCinemaMovement>();
 
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
         
         gameScene = SceneManager.GetActiveScene().name;
     }
 
     void Start(){
+
+    }
+
+    void StartGame(){
         LoadSceneCode(player.playerRuntimeData.currentSceneCode);
         currentSceneCode = player.playerRuntimeData.currentSceneCode;
 

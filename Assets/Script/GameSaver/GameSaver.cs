@@ -20,7 +20,6 @@ public class GameSaver : MonoBehaviour
             return;
         Load(currentSaveSlot);
     }
-
     void OnApplicationQuit() {
         Save(currentSaveSlot);
     }
@@ -64,7 +63,7 @@ public class GameSaver : MonoBehaviour
                 BinaryFormatter bf = new BinaryFormatter();
 
                 bf.Serialize(fs, LittleSunData.LittleSuns);
-                Player player = transform.Find("/Player/Player").GetComponent<Player>();
+                Player player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
                 //Player player = GameObject.Find("Player").GetComponent<Player>();
                 bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
                 bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());

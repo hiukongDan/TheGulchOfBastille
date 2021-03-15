@@ -10,7 +10,9 @@ public class UIHandler : MonoBehaviour
 
     public GameObject uiPlayGO;
     public GameObject uiPauseGO;
-
+    public GameObject uiMainMenuGO;
+    public GameObject uiSaveLoadGO;
+    
     public UIPlayState uiPlayState { get; private set; }
     public UIPauseState uiPauseState { get; private set; }
 
