@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4793f7d92f982c248b95d55cc805da54, type: 3}
   m_Name: UIFonts_Mono
   m_EditorClassIdentifier: 
-  characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!? '
+  characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.,!? '
   path: PFont/UIFonts_0

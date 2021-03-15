@@ -6,6 +6,8 @@ public class ObjectPool
     private Queue<GameObject> queue;
     private int _increaseSize = 10;
 
+    private GameObject objectPoolParent;
+
     public ObjectPool()
     {
         if (queue == null)
@@ -16,6 +18,8 @@ public class ObjectPool
         {
             queue.Clear();
         }
+        objectPoolParent = new GameObject("Object Pool Parent");
+
         IncreaseItem();
     }
     public ObjectPool(int initSize)
@@ -51,6 +55,7 @@ public class ObjectPool
         for (int i = 0; i < _increaseSize; i++)
         {
             GameObject GO = new GameObject();
+            GO.transform.parent = objectPoolParent.transform;
             queue.Enqueue(GO);
         }
     }
