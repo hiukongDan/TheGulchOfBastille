@@ -50,9 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2950061e14c7c45851148dbd4ae112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pFontInfo: {fileID: 11400000, guid: fe23bf0ed4dde3341b31a4d5b0d9ce6b, type: 2}
+  pFontInfo: {fileID: 11400000, guid: 7f8470851bf47624c84642518feec22e, type: 2}
   pixelPerUnit: 16
-  text: 200 *
+  text: ' RANDOM SHIT'
   marginPixel: 0
 --- !u!222 &6978310429258491627
 CanvasRenderer:

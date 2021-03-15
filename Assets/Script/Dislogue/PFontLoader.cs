@@ -48,6 +48,7 @@ public class PFontLoader
     {
         chars = new Dictionary<char, CharInfo>();
         Sprite[] sprites = Resources.LoadAll<Sprite>(pfontInfo.path);
+        //Debug.Log("" + pfontInfo.path + " " + sprites.Length);
 
         Char[] chs = pfontInfo.characters.ToCharArray();
         int i = 0;

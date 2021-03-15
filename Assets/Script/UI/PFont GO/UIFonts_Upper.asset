@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UIFonts_Upper
   m_EditorClassIdentifier: 
   characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ '
-  path: PFont/UIFonts_2
+  path: PFont/UIfonts_2

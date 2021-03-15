@@ -61,7 +61,8 @@ public class PFontText : MonoBehaviour
 
         // Set all pixels alpha to transparent
         for(int i = 0; i < cols.Length; ++i){
-            cols[i].a = 0f;
+            //cols[i].a = 0f;
+            cols[i] = Color.white;
         }
         
         for(int i = 0; i < text.Length; ++i){
