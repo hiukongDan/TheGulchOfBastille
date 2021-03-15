@@ -52,4 +52,11 @@ public class UIFiniteStateMachine
     {
         uiStateStack.Peek()?.Update();
     }
+
+    /// <summary>
+    /// Return current size of uiStack
+    /// </summary>
+    public int Count(){
+        return uiStateStack.Count;
+    }
 }

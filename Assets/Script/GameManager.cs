@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 #region INTERNAL VARIABLES
     private string gameScene;
     private SceneCode currentSceneCode = SceneCode.Gulch_Main;
+    public GameSaver gameSaver{get; private set;}
 #endregion
 
     public void ReloadGame()
@@ -31,16 +32,13 @@ public class GameManager : MonoBehaviour
         player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
         
         gameScene = SceneManager.GetActiveScene().name;
-    }
 
-    void Start(){
-        // StartGame();
+        gameSaver = GetComponent<GameSaver>();
     }
 
     void StartGame(){
         LoadSceneCode(player.playerRuntimeData.currentSceneCode);
         currentSceneCode = player.playerRuntimeData.currentSceneCode;
-
         playerCinemaMovement.StartGameScene();
     }
 

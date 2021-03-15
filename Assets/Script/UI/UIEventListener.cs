@@ -3,6 +3,7 @@ using System;
 
 public class UIEventListener
 {
+    
     private static UIEventListener _instance;
 
     public static UIEventListener Instance
@@ -24,7 +25,7 @@ public class UIEventListener
     #region EVENTS
     public event StatusBarChangeHandler hpChangeHandler;
     public event StatusBarChangeHandler dpChangeHandler;
-    public event Action pauseMenuHandler;
+    // public event Action pauseMenuHandler;
     #endregion
 
     #region INTERFACE TO OUTER SCRIPTS
@@ -38,9 +39,9 @@ public class UIEventListener
         dpChangeHandler?.Invoke(current, total);
     }
 
-    public void OnPauseMenu()
-    {
-        pauseMenuHandler?.Invoke();
-    }
+    // public void OnPauseMenu()
+    // {
+    //     pauseMenuHandler?.Invoke();
+    // }
     #endregion
 }

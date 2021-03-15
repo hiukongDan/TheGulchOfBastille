@@ -14,18 +14,9 @@ public class PFontText : MonoBehaviour
     private PFontLoader pFontLoader;
     private Image displayImage;
 
-    void Awake(){
-
-    }
-    void Start()
-    {
-        //OnTextChange();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //OnTextChange();
+    public void SetText(string text){
+        this.text = text;
+        OnTextChange();
     }
 
     public int GetTotalPixelWidth(string str){
@@ -36,9 +27,9 @@ public class PFontText : MonoBehaviour
         return res;
     }
 
-    void OnValidate(){
-        OnTextChange();
-    }
+    // void OnValidate(){
+    //     OnTextChange();
+    // }
 
     public void OnTextChange(){
         if(text.Length == 0)
@@ -85,7 +76,7 @@ public class PFontText : MonoBehaviour
 
         Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), pixelPerUnit);
         displayImage.sprite = sprite;
-        //displayImage.SetNativeSize();
+        displayImage.SetNativeSize();
         //GetComponent<RectTransform>().sizeDelta = new Vector2(sprite.rect.width, sprite.rect.height);
     }
 }

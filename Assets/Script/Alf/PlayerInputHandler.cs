@@ -27,6 +27,10 @@ public class PlayerInputHandler : MonoBehaviour
     public float NormMovementY { get; private set; }
 
     private Vector2 workspace;
+    private GameManager gameManager;
+    void Awake(){
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -110,6 +114,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             case InputActionPhase.Started:
                 isInteraction = true;
+                gameManager.uiHandler.OnInteraction();
                 break;
             default:
                 break;
@@ -121,7 +126,7 @@ public class PlayerInputHandler : MonoBehaviour
         switch (context.phase)
         {
             case InputActionPhase.Started:
-                UIEventListener.Instance.OnPauseMenu();
+                gameManager.uiHandler.OnPause();
                 break;
         }
     }

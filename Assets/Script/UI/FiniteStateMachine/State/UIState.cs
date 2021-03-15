@@ -27,4 +27,15 @@ public abstract class UIState
     {
 
     }
+
+    public virtual void OnInteraction(){
+        
+    }
+
+    public virtual void OnClick(UIStateEventData eventData){
+
+    }
+    public struct UIStateEventData{
+        public int index;
+    }
 }

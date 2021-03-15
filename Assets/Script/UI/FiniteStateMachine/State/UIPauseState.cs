@@ -15,7 +15,7 @@ public class UIPauseState : UIState
         Time.timeScale = 0f;
 
         // On entering Pause Menu State, hook handler to this script's function
-        UIEventListener.Instance.pauseMenuHandler += OnExitPauseMenu;
+        // UIEventListener.Instance.pauseMenuHandler += OnExitPauseMenu;
     }
 
     public override void Exit()
@@ -24,19 +24,19 @@ public class UIPauseState : UIState
         Time.timeScale = 1;
 
         // On entering Pause Menu State, unhook handler from this script's function
-        UIEventListener.Instance.pauseMenuHandler -= OnExitPauseMenu;
+        // UIEventListener.Instance.pauseMenuHandler -= OnExitPauseMenu;
     }
 
     public override void Update()
     {
-        
+        base.Update();
     }
 
     
-    public void OnExitPauseMenu()
-    {
-        uiHandler.uiFSM.PopState();
-    }
+    // public void OnExitPauseMenu()
+    // {
+    //     uiHandler.uiFSM.PopState();
+    // }
     
 
 }

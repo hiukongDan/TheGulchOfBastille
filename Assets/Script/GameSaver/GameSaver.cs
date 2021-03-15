@@ -5,24 +5,13 @@ using System.IO;
 
 public class GameSaver : MonoBehaviour
 {
-    public bool IsNewSaving = false;
     private GameManager gm;
-
     public enum SaveSlot{
         First, Second, Third,
     }
-
     public SaveSlot currentSaveSlot = SaveSlot.First;
+    public float autoSaveInterval = 600f;
 
-    void Awake()
-    {
-        if(IsNewSaving)
-            return;
-        Load(currentSaveSlot);
-    }
-    void OnApplicationQuit() {
-        Save(currentSaveSlot);
-    }
     public void Load(SaveSlot saveSlot){
         FileStream fs = null;
         string path = Application.persistentDataPath + "/" + saveSlot.ToString() + ".tgb";
@@ -77,5 +66,19 @@ public class GameSaver : MonoBehaviour
         {
             Debug.Log("On GameSaver::OnApplicationQuit, " + ex.StackTrace);
         }
+    }
+
+    public bool HasValidSaving(SaveSlot slot){
+        string path = Application.persistentDataPath + "/" + slot.ToString() + ".tgb";
+        return File.Exists(path);
+    }
+
+    public bool HasValidSaving(){
+        return HasValidSaving(SaveSlot.First) && HasValidSaving(SaveSlot.Second) && HasValidSaving(SaveSlot.Third);
+    }
+
+    public void AutoSave(){
+        Invoke("AutoSave", autoSaveInterval);
+        Save(currentSaveSlot);
     }
 }
