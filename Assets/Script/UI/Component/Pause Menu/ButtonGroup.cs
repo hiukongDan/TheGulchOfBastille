@@ -23,12 +23,15 @@ public class ButtonGroup : MonoBehaviour
 
         if(btns != null)
         {
-            btns[0].Select();
+            // btns[0].Select();
         }
     }
 
-    public void SelectBtn(Button btn)
+    public void OnClick(Button btn)
     {
         
     }
+
+    
+
 }
