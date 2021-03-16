@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public PlayerCinemaMovement playerCinemaMovement { get; private set; }
     public bool IsDebug = true;
 
+    public float demonSceneCodeInterval = 10f;
+
+    public SceneCode[] demonScenes = {SceneCode.Gulch_Main, SceneCode.Gulch_Church, SceneCode.Gulch_Goye};
+
 #region REFERNECES
     private Player player;
 #endregion
@@ -20,6 +24,8 @@ public class GameManager : MonoBehaviour
     public GameSaver gameSaver{get; private set;}
     public float elapsedMinutes = 0f;
     private float elapsedSeconds = 0f;
+
+
 #endregion
 
     public void ReloadGame()
@@ -38,13 +44,14 @@ public class GameManager : MonoBehaviour
         gameSaver = GetComponent<GameSaver>();
 
         currentSceneCode = SceneCode.Gulch_Main;
+
+        StartCoroutine(DemonRandomSceneCode());
     }
 
     public void StartGame(){
-        GameObject sceneGO = GameObject.Find("/Scenes");
-        foreach(SceneCodeUtil util in sceneGO.GetComponentsInChildren<SceneCodeUtil>()){
-            util.gameObject.SetActive(false);
-        }
+        StopAllCoroutines();
+        ResetAllSceneCode();
+        Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
 
         if(gameSaver.isNewGame){
             LoadSceneCode(SceneCode.Gulch_Main);
@@ -118,6 +125,28 @@ public class GameManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    IEnumerator DemonRandomSceneCode(){
+        int index = Random.Range(0, demonScenes.Length);
+        while(true){
+            yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
+            ResetAllSceneCode();
+            index = (index + 1) % demonScenes.Length;
+            EnterSceneCode(demonScenes[index]);
+            Transform centerPoint = GameObject.Find("/Scenes").transform.Find(demonScenes[index].ToString()).Find("CenterPoint");
+            Camera.main.transform.position = new Vector3(centerPoint.position.x, centerPoint.position.y, Camera.main.transform.position.z);
+            Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(centerPoint);
+            yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
+            yield return new WaitForSeconds(demonSceneCodeInterval);
+        }
+    }
+
+    public void ResetAllSceneCode(){
+        GameObject sceneGO = GameObject.Find("/Scenes");
+        foreach(SceneCodeUtil util in sceneGO.GetComponentsInChildren<SceneCodeUtil>()){
+            util.gameObject.SetActive(false);
+        }
     }
 
     void Update(){

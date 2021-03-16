@@ -55,7 +55,7 @@ public class ButtonGroup : MonoBehaviour
             selectedButton = button;
         }
         selectedButton.Select();
-        Debug.Log("catch");
+        // Debug.Log("catch");
     }
 
     public void OnClick(){

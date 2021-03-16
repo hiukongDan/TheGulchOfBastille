@@ -7,4 +7,5 @@
     Gulch_SunTower,
     Gulch_Tunnel,
     Gulch_Goye,
+    Count,
 };
