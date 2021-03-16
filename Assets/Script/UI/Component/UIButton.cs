@@ -14,6 +14,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler, IPo
     }
 
     void ISelectHandler.OnSelect(BaseEventData eventData){
+        // Debug.Log("button");
         buttonGroup.OnSelect(button);
     }
 
@@ -27,6 +28,4 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler, IPo
         // Debug.Log("hello");
         buttonGroup.OnClick();
     }
-
-    
 }

@@ -56,15 +56,4 @@ public class UIPauseState : UIState
 
     }
 
-
-
-
-
-
-
-
-
-
-    
-
 }

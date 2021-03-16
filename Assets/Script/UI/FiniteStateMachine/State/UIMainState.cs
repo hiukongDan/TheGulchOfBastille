@@ -18,7 +18,7 @@ public class UIMainState : UIState
         base.Enter();
         if(!uiHandler.GM.gameSaver.HasValidSaving()){
             buttonGroup.DisableButton((int)Selection.Load);
-            Debug.Log("disable");
+            // Debug.Log("disable");
         }
     }
 
@@ -29,7 +29,9 @@ public class UIMainState : UIState
 
     public override void OnInteraction()
     {
-        buttonGroup.OnClick();
+        UIStateEventData data;
+        data.index = buttonGroup.GetIndexOfCurrentSelected();
+        OnClick(data);
     }
 
     public override void OnClick(UIStateEventData eventData)

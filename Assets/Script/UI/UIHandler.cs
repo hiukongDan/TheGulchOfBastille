@@ -59,7 +59,7 @@ public class UIHandler : MonoBehaviour
     /// </summary>
     public void OnPause(){
         if(uiFSM.PeekState() == uiPlayState){
-            uiFSM.SwtichState(uiPauseState);
+            uiFSM.PushState(uiPauseState);
         }
         else if(uiFSM.Count() > 1){
             uiFSM.PopState();

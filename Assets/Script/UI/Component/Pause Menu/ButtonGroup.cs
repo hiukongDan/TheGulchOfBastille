@@ -8,10 +8,12 @@ public class ButtonGroup : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public List<Button> buttons;
+    public List<Button> buttons = null;
     private GameManager gm;
 
-    public Button selectedButton;
+    public Button selectedButton = null;
+
+    public bool IsUsingInvokeToAutoSelect = true;
 
     void Awake()
     {
@@ -24,18 +26,28 @@ public class ButtonGroup : MonoBehaviour
         {
             buttons = new List<Button>();
         }
-        else{
-            buttons.Clear();
-        }
+        buttons.Clear();
         foreach(Button button in GetComponentsInChildren<Button>()){
             buttons.Add(button);
         }
 
-        if(buttons.Count != 0)
-        {
-            EventSystem.current.firstSelectedGameObject = buttons[0].gameObject;
-            OnSelect(buttons[0]);
+        // Debug.Log(buttons.Count);
+        // EventSystem.current.firstSelectedGameObject = buttons[0].gameObject;
+        if(IsUsingInvokeToAutoSelect){
+            Invoke("Select", Time.deltaTime);
         }
+        else{
+            selectedButton = buttons[0];
+            selectedButton.Select();
+        }
+    }
+
+    void OnDisable() {
+        selectedButton = null;    
+    }
+
+    private void Select(){
+        OnSelect(buttons[0]);
     }
 
     public void OnSelect(Button button){
@@ -43,6 +55,7 @@ public class ButtonGroup : MonoBehaviour
             selectedButton = button;
         }
         selectedButton.Select();
+        Debug.Log("catch");
     }
 
     public void OnClick(){
@@ -69,12 +82,6 @@ public class ButtonGroup : MonoBehaviour
 
     public void DisableButton(Button button){
         button.interactable = false;
-    }
-
-    void Update(){
-        if(EventSystem.current.currentSelectedGameObject == null){
-            OnSelect(selectedButton);
-        }
     }
 
     public int GetIndexOfCurrentSelected() => buttons.IndexOf(selectedButton);

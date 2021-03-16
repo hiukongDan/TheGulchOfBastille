@@ -42,12 +42,13 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(){
         GameObject sceneGO = GameObject.Find("/Scenes");
-        for(int i = 0; i < sceneGO.transform.childCount; ++i){
-            sceneGO.transform.GetChild(i).gameObject?.SetActive(false);
+        foreach(SceneCodeUtil util in sceneGO.GetComponentsInChildren<SceneCodeUtil>()){
+            util.gameObject.SetActive(false);
         }
 
         if(gameSaver.isNewGame){
-            LoadSceneCode();
+            LoadSceneCode(SceneCode.Gulch_Main);
+            currentSceneCode = SceneCode.Gulch_Main;
             player.gameObject.SetActive(true);
         }
         else{
@@ -103,8 +104,10 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(false);
 
         ExitSceneCode(currentSceneCode);
+        LoadSceneCode(SceneCode.Gulch_SunTower);
 
         uiHandler.uiFSM.InitStateMachine(uiHandler.uiMainState);
+        
     }
 
     public bool CanPlayerAction()
