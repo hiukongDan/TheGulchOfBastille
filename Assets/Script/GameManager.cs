@@ -41,6 +41,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartGame(){
+        GameObject sceneGO = GameObject.Find("/Scenes");
+        for(int i = 0; i < sceneGO.transform.childCount; ++i){
+            sceneGO.transform.GetChild(i).gameObject?.SetActive(false);
+        }
+
         if(gameSaver.isNewGame){
             LoadSceneCode();
             player.gameObject.SetActive(true);
