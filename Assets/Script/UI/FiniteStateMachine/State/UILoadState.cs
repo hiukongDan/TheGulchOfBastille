@@ -47,7 +47,8 @@ public class UILoadState : UIState
             if(gameSaver.HasValidSaving((GameSaver.SaveSlot)i)){
                 GameSaver.SaveSlotMeta meta = gameSaver.GetSaveSlotMeta((GameSaver.SaveSlot)i);
                 string sceneCodeName = ((SceneCode)(meta.SceneCode)).ToString();
-                string res = string.Join(" ", sceneCodeName.Split('_'));
+                string[] words = sceneCodeName.Split('_');
+                string res = words[0] + " " + words[1];
                 // string res = sceneCodeName.Split('_')[0];
                 float hours = meta.elapsedMinutes / 60;
                 float minutes = meta.elapsedMinutes % 60;

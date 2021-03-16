@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SplashWindow/Intro_Vedio.unity
     guid: e90e66e01aec3b344aec8e6835bc22ee
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu/Main_Menu.unity
     guid: 3fe67c6a0e51db24bbd275574f249ecd
   - enabled: 1

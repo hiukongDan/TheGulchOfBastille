@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public float demonSceneCodeInterval = 10f;
 
-    public SceneCode[] demonScenes = {SceneCode.Gulch_Main, SceneCode.Gulch_Church, SceneCode.Gulch_Goye};
+    public SceneCode[] demonScenes = {SceneCode.Gulch_Main, SceneCode.Gulch_SunTower, SceneCode.Gulch_Goye};
 
 #region REFERNECES
     private Player player;
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         currentSceneCode = SceneCode.Gulch_Main;
 
         StartCoroutine(DemonRandomSceneCode());
+        // DemonSceneCode(demonScenes[Mathf.FloorToInt(Random.Range(0, demonScenes.Length))]);
     }
 
     public void StartGame(){
@@ -131,15 +132,26 @@ public class GameManager : MonoBehaviour
         int index = Random.Range(0, demonScenes.Length);
         while(true){
             yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
-            ResetAllSceneCode();
             index = (index + 1) % demonScenes.Length;
-            EnterSceneCode(demonScenes[index]);
-            Transform centerPoint = GameObject.Find("/Scenes").transform.Find(demonScenes[index].ToString()).Find("CenterPoint");
-            Camera.main.transform.position = new Vector3(centerPoint.position.x, centerPoint.position.y, Camera.main.transform.position.z);
-            Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(centerPoint);
+            DemonSceneCode(demonScenes[index]);
             yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
             yield return new WaitForSeconds(demonSceneCodeInterval);
         }
+    }
+
+    private void DemonSceneCode(SceneCode sceneCode){
+        ResetAllSceneCode();
+        Transform centerPoint = GameObject.Find("/Scenes").transform.Find(sceneCode.ToString()).Find("CenterPoint");
+        if(centerPoint == null){
+            centerPoint = new GameObject("CenterPoint").transform;
+            centerPoint.position = Vector3.zero;
+            centerPoint.transform.parent = GameObject.Find("/Scenes").transform.Find(sceneCode.ToString());
+        }
+
+        EnterSceneCode(sceneCode);
+        //Debug.Log(demonScenes[index].ToString());
+        Camera.main.transform.position = new Vector3(centerPoint.position.x, centerPoint.position.y, Camera.main.transform.position.z);
+        Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(centerPoint);
     }
 
     public void ResetAllSceneCode(){
