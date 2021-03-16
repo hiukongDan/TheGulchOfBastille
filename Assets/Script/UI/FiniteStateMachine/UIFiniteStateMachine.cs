@@ -13,6 +13,9 @@ public class UIFiniteStateMachine
 
     public void InitStateMachine(UIState initState)
     {
+        foreach(UIState uiState in uiStateStack){
+            uiState.Exit();
+        }
         uiStateStack.Clear();
         uiStateStack.Push(initState);
         uiStateStack.Peek().Enter();

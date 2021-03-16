@@ -34,8 +34,7 @@ public class ButtonGroup : MonoBehaviour
         if(buttons.Count != 0)
         {
             EventSystem.current.firstSelectedGameObject = buttons[0].gameObject;
-            // buttons[0].Select();
-            // selectedButton = buttons[0];
+            OnSelect(buttons[0]);
         }
     }
 
@@ -77,5 +76,6 @@ public class ButtonGroup : MonoBehaviour
             OnSelect(selectedButton);
         }
     }
+
 
 }

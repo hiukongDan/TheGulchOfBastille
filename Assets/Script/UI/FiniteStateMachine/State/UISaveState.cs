@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class UISaveState : UIState
 {
+    private ButtonGroup buttonGroup;
     private enum Selection{
         First, Second, Third,
     };
-    public UISaveState(UIHandler uiHandler, GameObject parentNode):base(uiHandler, parentNode)
+    public UISaveState(UIHandler uiHandler, GameObject parentNode, ButtonGroup buttonGroup):base(uiHandler, parentNode)
     {
-
+        this.buttonGroup = buttonGroup;
     }
 
     public override void Enter(){
@@ -25,19 +26,25 @@ public class UISaveState : UIState
     }
 
     public override void OnInteraction(){
-        
+        buttonGroup.OnClick();
     }
 
     public override void OnClick(UIStateEventData eventData){
         switch((Selection)eventData.index){
             case Selection.First:
+            uiHandler.GM.gameSaver.currentSaveSlot = GameSaver.SaveSlot.First;
             break;
             case Selection.Second:
+            uiHandler.GM.gameSaver.currentSaveSlot = GameSaver.SaveSlot.Second;
             break;
             case Selection.Third:
+            uiHandler.GM.gameSaver.currentSaveSlot = GameSaver.SaveSlot.Third;
             break;
             default:
             break;
         }
+
+        uiHandler.GM.gameSaver.isNewGame = true;
+        uiHandler.GM.StartGame();
     }
 }

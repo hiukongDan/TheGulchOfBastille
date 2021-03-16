@@ -18,6 +18,7 @@ public class UIMainState : UIState
         base.Enter();
         if(!uiHandler.GM.gameSaver.HasValidSaving()){
             buttonGroup.DisableButton((int)Selection.Load);
+            Debug.Log("disable");
         }
     }
 
@@ -35,10 +36,10 @@ public class UIMainState : UIState
     {
         switch((Selection)eventData.index){
             case Selection.NewGame:
-                
-                //uiHandler.GM
+            uiHandler.uiFSM.PushState(uiHandler.uiSaveState);
             break;
             case Selection.Load:
+            uiHandler.uiFSM.PushState(uiHandler.uiLoadState);
             break;
             case Selection.Options:
             break;
@@ -51,7 +52,4 @@ public class UIMainState : UIState
         }
     }
 
-
-
-    
 }

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
 #region INTERNAL VARIABLES
     private string gameScene;
-    private SceneCode currentSceneCode = SceneCode.Gulch_Main;
+    public SceneCode currentSceneCode{get; private set;}
     public GameSaver gameSaver{get; private set;}
 #endregion
 
@@ -34,14 +34,28 @@ public class GameManager : MonoBehaviour
         gameScene = SceneManager.GetActiveScene().name;
 
         gameSaver = GetComponent<GameSaver>();
+
+        currentSceneCode = SceneCode.Gulch_Main;
     }
 
-    void StartGame(){
-        LoadSceneCode(player.playerRuntimeData.currentSceneCode);
-        currentSceneCode = player.playerRuntimeData.currentSceneCode;
+    public void StartGame(){
+        if(gameSaver.isNewGame){
+            
+        }
+        else{
+            gameSaver.Load();
+            LoadSceneCode(player.playerRuntimeData.currentSceneCode);
+            currentSceneCode = player.playerRuntimeData.currentSceneCode;
+        }
+        LoadSceneCode();
+        uiHandler.StartGame();
         playerCinemaMovement.StartGameScene();
+        player.gameObject.SetActive(true);
     }
 
+    public void LoadSceneCode(){
+        LoadSceneCode(currentSceneCode);
+    }
     public void LoadSceneCode(SceneCode sceneCode){
         // TODO:
         // player last position
@@ -58,6 +72,9 @@ public class GameManager : MonoBehaviour
         player.playerRuntimeData.currentSceneCode = sceneCode;
     }
 
+    public void OnApplicationQuit(){
+        gameSaver.SaveAll();
+    }
 
     public void QuitGame()
     {

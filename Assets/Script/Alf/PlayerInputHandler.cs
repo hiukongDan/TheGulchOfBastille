@@ -27,10 +27,7 @@ public class PlayerInputHandler : MonoBehaviour
     public float NormMovementY { get; private set; }
 
     private Vector2 workspace;
-    private GameManager gameManager;
-    void Awake(){
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
+    // private GameManager gameManager;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -114,7 +111,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             case InputActionPhase.Started:
                 isInteraction = true;
-                gameManager.uiHandler.OnInteraction();
+                GameObject.Find("GameManager").GetComponent<GameManager>()?.uiHandler.OnInteraction();
                 break;
             default:
                 break;
@@ -126,7 +123,7 @@ public class PlayerInputHandler : MonoBehaviour
         switch (context.phase)
         {
             case InputActionPhase.Started:
-                gameManager.uiHandler.OnPause();
+                GameObject.Find("GameManager").GetComponent<GameManager>()?.uiHandler.OnPause();
                 break;
         }
     }

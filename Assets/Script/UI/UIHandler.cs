@@ -8,18 +8,18 @@ public class UIHandler : MonoBehaviour
         Main, Play, Pause, Load, Save
     };
     public UIFiniteStateMachine uiFSM { get; private set; }
-
     public UIEffectHandler uiEffectHandler;
-
     public GameObject uiPlayGO;
     public GameObject uiPauseGO;
     public GameObject uiMainGO;
-    public GameObject uiSaveLoadGO;
+    public GameObject uiLoadGO;
+    public GameObject uiSaveGO;
     public UIPlayState uiPlayState { get; private set; }
     public UIPauseState uiPauseState { get; private set; }
-    public UIMainState uiMainState{get; private set;}
-
-    public GameManager GM;
+    public UIMainState uiMainState {get; private set;}
+    public UISaveState uiSaveState {get; private set;}
+    public UILoadState uiLoadState {get; private set;}
+    public GameManager GM{get; private set;}
 
     void Awake()
     {
@@ -27,6 +27,8 @@ public class UIHandler : MonoBehaviour
         uiPauseState = new UIPauseState(this, uiPauseGO);
         uiPlayState = new UIPlayState(this, uiPlayGO);
         uiMainState = new UIMainState(this, uiMainGO, uiMainGO.GetComponentInChildren<ButtonGroup>());
+        uiSaveState = new UISaveState(this, uiSaveGO, uiSaveGO.GetComponentInChildren<ButtonGroup>());
+        uiLoadState = new UILoadState(this, uiLoadGO, uiLoadGO.GetComponentInChildren<ButtonGroup>());
 
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -34,6 +36,10 @@ public class UIHandler : MonoBehaviour
     void Start()
     {
         uiFSM.InitStateMachine(uiMainState);
+    }
+
+    public void StartGame(){
+        uiFSM.InitStateMachine(uiPlayState);
     }
 
     void Update()

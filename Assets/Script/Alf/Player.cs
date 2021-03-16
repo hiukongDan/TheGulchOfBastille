@@ -109,8 +109,10 @@ public class Player : MonoBehaviour
         InputHandler = GetComponent<PlayerInputHandler>();
 
         playerRuntimeData.InitPlayerRuntimeData(playerData);
+    }
 
-        Bc.enabled = false;
+    void OnEnable() {
+       InputHandler.ResetAll();
     }
 
     void Start()
@@ -119,8 +121,6 @@ public class Player : MonoBehaviour
         stateMachine.InitializeState(idleState);
 
         InitializePlayerStatus();
-
-        Bc.enabled = true;
     }
 
     void Update()
