@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private string gameScene;
     public SceneCode currentSceneCode{get; private set;}
     public GameSaver gameSaver{get; private set;}
+    public float elapsedMinutes = 0f;
+    private float elapsedSeconds = 0f;
 #endregion
 
     public void ReloadGame()
@@ -40,35 +42,45 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(){
         if(gameSaver.isNewGame){
-            
+            LoadSceneCode();
+            player.gameObject.SetActive(true);
         }
         else{
+            player.gameObject.SetActive(true);
             gameSaver.Load();
-            LoadSceneCode(player.playerRuntimeData.currentSceneCode);
             currentSceneCode = player.playerRuntimeData.currentSceneCode;
+            elapsedMinutes = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedMinutes;
+            LoadSceneCode();
+            // Debug.Log("load");
         }
-        LoadSceneCode();
+        
         uiHandler.StartGame();
         playerCinemaMovement.StartGameScene();
-        player.gameObject.SetActive(true);
+
+        player.InputHandler.ResetAll();
     }
 
     public void LoadSceneCode(){
         LoadSceneCode(currentSceneCode);
     }
+
+    public void ExitSceneCode(SceneCode sceneCode){
+        GameObject sceneGO = GameObject.Find("/Scenes").transform.Find(sceneCode.ToString()).gameObject;
+        sceneGO?.SetActive(false);
+    }
+
+    public void EnterSceneCode(SceneCode sceneCode){
+        GameObject sceneGO = GameObject.Find("/Scenes").transform.Find(sceneCode.ToString()).gameObject;
+        sceneGO?.SetActive(true);
+
+        Camera.main.GetComponent<BasicFollower>().cameraClamp = sceneGO.GetComponent<SceneCodeUtil>().CameraClamp;
+    }
+
     public void LoadSceneCode(SceneCode sceneCode){
-        // TODO:
-        // player last position
-        // Disable
-        GameObject oldSceneGO = GameObject.Find("/Scenes").transform.Find(currentSceneCode.ToString()).gameObject;
-        oldSceneGO?.SetActive(false);
-
-        // Enable
-        GameObject currentSceneGO = GameObject.Find("/Scenes").transform.Find(sceneCode.ToString()).gameObject;
-        currentSceneGO?.SetActive(true);
+        ExitSceneCode(currentSceneCode);
+        EnterSceneCode(sceneCode);
         currentSceneCode = sceneCode;
-        Camera.main.GetComponent<BasicFollower>().cameraClamp = currentSceneGO.GetComponent<SceneCodeUtil>().CameraClamp;
-
+        
         player.playerRuntimeData.currentSceneCode = sceneCode;
     }
 
@@ -81,6 +93,15 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void ExitGame(){
+        gameSaver.SaveAll();
+        player.gameObject.SetActive(false);
+
+        ExitSceneCode(currentSceneCode);
+
+        uiHandler.uiFSM.InitStateMachine(uiHandler.uiMainState);
+    }
+
     public bool CanPlayerAction()
     {
         if (uiHandler != null)
@@ -91,4 +112,13 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    void Update(){
+        if(CanPlayerAction()){
+            elapsedSeconds += Time.deltaTime;
+            if(elapsedSeconds >= 60f){
+                elapsedSeconds = 0f;
+                elapsedMinutes += 1;
+            }
+        }
+    }
 }

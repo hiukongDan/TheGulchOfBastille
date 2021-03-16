@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SplashWindow/Intro_Vedio.unity
     guid: e90e66e01aec3b344aec8e6835bc22ee
   - enabled: 1

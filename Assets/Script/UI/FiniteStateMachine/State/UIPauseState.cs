@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class UIPauseState : UIState
 {
-    public UIPauseState(UIHandler uiHandler, GameObject parentNode): base(uiHandler, parentNode)
+    private ButtonGroup buttonGroup;
+    private enum Selection{
+        Equipment, Inventory, PlayerStatus, Options, Exit,
+    };
+    public UIPauseState(UIHandler uiHandler, GameObject parentNode, ButtonGroup buttonGroup): base(uiHandler, parentNode)
     {
-        
+        this.buttonGroup = buttonGroup;
     }
 
     public override void Enter()
     {
         base.Enter();
         Time.timeScale = 0f;
-
-        // On entering Pause Menu State, hook handler to this script's function
-        // UIEventListener.Instance.pauseMenuHandler += OnExitPauseMenu;
     }
 
     public override void Exit()
     {
         base.Exit();
         Time.timeScale = 1;
-
-        // On entering Pause Menu State, unhook handler from this script's function
-        // UIEventListener.Instance.pauseMenuHandler -= OnExitPauseMenu;
     }
 
     public override void Update()
@@ -32,11 +30,41 @@ public class UIPauseState : UIState
         base.Update();
     }
 
-    
-    // public void OnExitPauseMenu()
-    // {
-    //     uiHandler.uiFSM.PopState();
-    // }
+    public override void OnInteraction()
+    {
+        UIStateEventData data;
+        data.index = buttonGroup.GetIndexOfCurrentSelected();
+        OnClick(data);
+    }
+
+    public override void OnClick(UIStateEventData eventData){
+        switch((Selection)eventData.index){
+            case Selection.Equipment:
+            break;
+            case Selection.Inventory:
+            break;
+            case Selection.PlayerStatus:
+            break;
+            case Selection.Options:
+            break;
+            case Selection.Exit:
+                uiHandler.GM.ExitGame();
+            break;
+            default:
+            break;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
     
 
 }

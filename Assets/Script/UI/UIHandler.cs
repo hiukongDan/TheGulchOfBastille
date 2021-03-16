@@ -24,7 +24,7 @@ public class UIHandler : MonoBehaviour
     void Awake()
     {
         uiFSM = new UIFiniteStateMachine();
-        uiPauseState = new UIPauseState(this, uiPauseGO);
+        uiPauseState = new UIPauseState(this, uiPauseGO, uiPauseGO.GetComponentInChildren<ButtonGroup>());
         uiPlayState = new UIPlayState(this, uiPlayGO);
         uiMainState = new UIMainState(this, uiMainGO, uiMainGO.GetComponentInChildren<ButtonGroup>());
         uiSaveState = new UISaveState(this, uiSaveGO, uiSaveGO.GetComponentInChildren<ButtonGroup>());

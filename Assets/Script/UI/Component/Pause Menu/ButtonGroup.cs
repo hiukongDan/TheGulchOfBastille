@@ -47,7 +47,7 @@ public class ButtonGroup : MonoBehaviour
 
     public void OnClick(){
         UIState.UIStateEventData data;
-        data.index = buttons.IndexOf(selectedButton);
+        data.index = GetIndexOfCurrentSelected();
         gm.uiHandler.uiFSM.PeekState()?.OnClick(data);
     }
 
@@ -76,6 +76,8 @@ public class ButtonGroup : MonoBehaviour
             OnSelect(selectedButton);
         }
     }
+
+    public int GetIndexOfCurrentSelected() => buttons.IndexOf(selectedButton);
 
 
 }

@@ -23,7 +23,7 @@ public class GameSaver : MonoBehaviour
     [Serializable]
     public struct SaveSlotMeta{
         public int SceneCode;
-        public float gameTime;
+        public float elapsedMinutes;
     };
 
     public SaveSlot currentSaveSlot = SaveSlot.First;
@@ -34,7 +34,6 @@ public class GameSaver : MonoBehaviour
     void Awake(){
         gm = GetComponent<GameManager>();
     }
-
 
     private void LoadMeta(){
         string path = Application.persistentDataPath + "/meta.tgb";
@@ -64,7 +63,7 @@ public class GameSaver : MonoBehaviour
         for(int i = 0; i < (int)SaveSlot.SlotNum; ++i){
             SaveSlotMeta meta = new SaveSlotMeta();
             meta.SceneCode = (int)gm.currentSceneCode;
-            meta.gameTime = 0f;
+            meta.elapsedMinutes = 0f;
 
             saveSlotMetas.Add(i, meta);
         }
@@ -80,7 +79,7 @@ public class GameSaver : MonoBehaviour
     private void SaveMeta(){
         SaveSlotMeta meta = new SaveSlotMeta();
         meta.SceneCode = (int)gm.currentSceneCode;
-        // play time and so on
+        meta.elapsedMinutes = gm.elapsedMinutes;
         UpdateMeta(currentSaveSlot, meta);
         try{
             using(FileStream fs = new FileStream(Application.persistentDataPath + "/meta.tgb", FileMode.OpenOrCreate)){

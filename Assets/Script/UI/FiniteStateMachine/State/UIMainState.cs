@@ -36,16 +36,17 @@ public class UIMainState : UIState
     {
         switch((Selection)eventData.index){
             case Selection.NewGame:
-            uiHandler.uiFSM.PushState(uiHandler.uiSaveState);
+                uiHandler.uiFSM.PushState(uiHandler.uiSaveState);
             break;
             case Selection.Load:
-            uiHandler.uiFSM.PushState(uiHandler.uiLoadState);
+                uiHandler.uiFSM.PushState(uiHandler.uiLoadState);
             break;
             case Selection.Options:
             break;
             case Selection.Credit:
             break;
             case Selection.Exit:
+                uiHandler.GM.QuitGame();
             break;
             default:
             break;

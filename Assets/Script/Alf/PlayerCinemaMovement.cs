@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerCinemaMovement : MonoBehaviour
 {
-    private Player player;
+    public Player player;
     private GameManager gm;
 
     public float gameBeginWaitForSec = 2f;
-    
-    void Awake()
-    {
-        player = GameObject.Find("Player").GetComponent<Player>();
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+    void Awake(){
+        gm = GetComponent<GameManager>();
     }
 
     void OnEnable(){

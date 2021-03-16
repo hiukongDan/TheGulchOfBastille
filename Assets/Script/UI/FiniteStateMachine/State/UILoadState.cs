@@ -5,12 +5,20 @@ using UnityEngine;
 public class UILoadState : UIState
 {
     private ButtonGroup buttonGroup;
+    private List<Transform> positions;
+    private List<Transform> emptys;
     private enum Selection{
         First, Second, Third,
     };
     public UILoadState(UIHandler uiHandler, GameObject parentNode, ButtonGroup buttonGroup): base(uiHandler, parentNode)
     {
         this.buttonGroup = buttonGroup;
+        positions = new List<Transform>(3);
+        emptys = new List<Transform>(3);
+        for(int i = 0; i < 3; ++i){
+            positions.Add(null);
+            emptys.Add(null);
+        }
     }
 
     public override void Enter()
@@ -18,13 +26,35 @@ public class UILoadState : UIState
         base.Enter();
         for(int i = 0; i < (int)GameSaver.SaveSlot.SlotNum; ++i){
             GameSaver gameSaver = uiHandler.GM.gameSaver;
-            PFontText pFontText = buttonGroup.buttons[i].GetComponentInChildren<PFontText>();
+            PFontText pFontText = null;
+            if(positions[i] == null){
+                pFontText = buttonGroup.buttons[i].GetComponentInChildren<PFontText>();
+                positions[i] = pFontText.transform;
+            }
+            else{
+                positions[i].gameObject.SetActive(true);
+                pFontText = buttonGroup.buttons[i].GetComponentInChildren<PFontText>();
+            }
+
+            if(emptys[i] == null){
+                emptys[i] = positions[i].parent.Find("Empty");
+                emptys[i].gameObject.SetActive(true);
+            }
+            else{
+                emptys[i].gameObject.SetActive(true);
+            }
+            
             if(gameSaver.HasValidSaving((GameSaver.SaveSlot)i)){
-                string sceneCodeName = ((SceneCode)(gameSaver.GetSaveSlotMeta((GameSaver.SaveSlot)i).SceneCode)).ToString();
+                GameSaver.SaveSlotMeta meta = gameSaver.GetSaveSlotMeta((GameSaver.SaveSlot)i);
+                string sceneCodeName = ((SceneCode)(meta.SceneCode)).ToString();
                 string res = string.Join(" ", sceneCodeName.Split('_'));
-                res += " 1h 25m";
-                // Debug.Log(res);
-                pFontText.transform.parent.Find("Empty").gameObject.SetActive(false);
+                // string res = sceneCodeName.Split('_')[0];
+                float hours = meta.elapsedMinutes / 60;
+                float minutes = meta.elapsedMinutes % 60;
+                res += " " + (int)hours + "H " + (int)minutes + "M";
+
+                emptys[i].gameObject.SetActive(false);
+                
                 pFontText.SetText(res);
             }
             else{
@@ -44,7 +74,9 @@ public class UILoadState : UIState
     }
 
     public override void OnInteraction(){
-        buttonGroup.OnClick();
+        UIStateEventData data;
+        data.index = buttonGroup.GetIndexOfCurrentSelected();
+        OnClick(data);
     }
 
     public override void OnClick(UIStateEventData eventData){
@@ -61,5 +93,8 @@ public class UILoadState : UIState
             default:
             break;
         }
+
+        uiHandler.GM.gameSaver.isNewGame = false;
+        uiHandler.GM.StartGame();
     }
 }

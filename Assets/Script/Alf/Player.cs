@@ -111,10 +111,6 @@ public class Player : MonoBehaviour
         playerRuntimeData.InitPlayerRuntimeData(playerData);
     }
 
-    void OnEnable() {
-       InputHandler.ResetAll();
-    }
-
     void Start()
     {
         InitializePlayerStateMachine();
