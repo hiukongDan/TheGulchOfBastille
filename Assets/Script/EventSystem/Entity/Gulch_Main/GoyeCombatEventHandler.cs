@@ -9,5 +9,6 @@ public class GoyeCombatEventHandler : EntityEventHandler
         GoyeCombat1 goye = transform.parent.GetComponent<GoyeCombat1>();
         Destroy(goye.transform.Find("Combat Field").gameObject);
         Camera.main.GetComponent<BasicFollower>().RestoreCameraFollowing();
+        goye.GetComponent<EnemySaveData>().Save(false);
     }
 }

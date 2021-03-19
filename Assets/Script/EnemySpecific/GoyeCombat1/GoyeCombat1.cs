@@ -97,7 +97,7 @@ public class GoyeCombat1 : Entity
     {
         base.Awake();
         /* --------- ASIGN REFERENCEs HERE --------------*/
-        refPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        refPlayer = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
     }
 
     protected override void Start()
@@ -129,7 +129,17 @@ public class GoyeCombat1 : Entity
         stateCooldownTimer.AddStateTimer(flipState);
 
         stateMachine.SetStateCooldownTimer(stateCooldownTimer);
-}
+
+        // set rigidbody to static
+        gc1_ota.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+    }
+
+    protected void OnEnable(){
+        if(!GetComponent<EnemySaveData>().IsAlive()){
+            Destroy(gameObject);
+        }
+    }
+
 
     protected override void Update()
     {

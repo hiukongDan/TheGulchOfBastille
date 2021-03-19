@@ -8,7 +8,6 @@ public class EnemySaveData : MonoBehaviour
     public static Dictionary<int, bool> EnemyAliveRevivable = new Dictionary<int, bool>();
     public static Dictionary<int, bool> EnemyAliveUnrevivable = new Dictionary<int, bool>();
 
-
     public bool isRevivable = true;
     public bool defaultAlive = true;
 

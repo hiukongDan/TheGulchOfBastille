@@ -22,18 +22,14 @@ public class GameManager : MonoBehaviour
     private string gameScene;
     public SceneCode currentSceneCode{get; private set;}
     public GameSaver gameSaver{get; private set;}
-    public float elapsedMinutes = 0f;
-    private float elapsedSeconds = 0f;
-
-
+    public float elapsedSeconds{get; private set;}
 #endregion
 
     public void ReloadGame()
     {
         SceneManager.LoadScene(gameScene);
     }
-
-    void Awake(){
+    void OnEnable(){
         uiHandler = GetComponent<UIHandler>();
         playerCinemaMovement = GetComponent<PlayerCinemaMovement>();
 
@@ -46,6 +42,7 @@ public class GameManager : MonoBehaviour
         currentSceneCode = SceneCode.Gulch_Main;
 
         StartCoroutine(DemonRandomSceneCode());
+        elapsedSeconds = 0.0f;
         // DemonSceneCode(demonScenes[Mathf.FloorToInt(Random.Range(0, demonScenes.Length))]);
     }
 
@@ -63,7 +60,7 @@ public class GameManager : MonoBehaviour
             player.gameObject.SetActive(true);
             gameSaver.Load();
             currentSceneCode = player.playerRuntimeData.currentSceneCode;
-            elapsedMinutes = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedMinutes;
+            elapsedSeconds = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedSeconds;
             LoadSceneCode();
             // Debug.Log("load");
         }
@@ -164,10 +161,6 @@ public class GameManager : MonoBehaviour
     void Update(){
         if(CanPlayerAction()){
             elapsedSeconds += Time.deltaTime;
-            if(elapsedSeconds >= 60f){
-                elapsedSeconds = 0f;
-                elapsedMinutes += 1;
-            }
         }
     }
 }

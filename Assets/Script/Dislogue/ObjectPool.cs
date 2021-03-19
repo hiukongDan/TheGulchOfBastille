@@ -18,9 +18,14 @@ public class ObjectPool
         {
             queue.Clear();
         }
-        objectPoolParent = new GameObject("Object Pool Parent");
 
-        IncreaseItem();
+        var go = GameObject.Find("Object Pool Parent");
+        if(go != null){
+            objectPoolParent = go;   
+        }
+        else{
+            objectPoolParent = new GameObject("Object Pool Parent");
+        }
     }
     public ObjectPool(int initSize)
     {

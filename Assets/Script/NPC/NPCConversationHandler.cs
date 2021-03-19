@@ -61,6 +61,14 @@ public class NPCConversationHandler : MonoBehaviour
         npcConversationOld = npcConversation;
     }
 
+    void OnEnable(){
+        
+    }
+
+    void OnDisable() {
+        OP.DestroyGameObject();    
+    }
+
     void Start()
     {
         

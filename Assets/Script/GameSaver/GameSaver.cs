@@ -11,6 +11,8 @@ public class GameSaver : MonoBehaviour
         First, Second, Third, SlotNum
     }
 
+    private static string saveDirectory;
+
     Dictionary<int, SaveSlotMeta> saveSlotMetas;
     Dictionary<int, SaveSlotMeta> SaveSlotMetas{
         get{
@@ -23,7 +25,7 @@ public class GameSaver : MonoBehaviour
     [Serializable]
     public struct SaveSlotMeta{
         public int SceneCode;
-        public float elapsedMinutes;
+        public float elapsedSeconds;
     };
 
     public SaveSlot currentSaveSlot = SaveSlot.First;
@@ -33,10 +35,11 @@ public class GameSaver : MonoBehaviour
 
     void Awake(){
         gm = GetComponent<GameManager>();
+        GameSaver.saveDirectory = Application.persistentDataPath;
     }
 
     private void LoadMeta(){
-        string path = Application.persistentDataPath + "/meta.tgb";
+        string path = saveDirectory + "/meta.tgb";
         FileStream fs = null;
         if(File.Exists(path)){
             try{
@@ -63,7 +66,7 @@ public class GameSaver : MonoBehaviour
         for(int i = 0; i < (int)SaveSlot.SlotNum; ++i){
             SaveSlotMeta meta = new SaveSlotMeta();
             meta.SceneCode = (int)gm.currentSceneCode;
-            meta.elapsedMinutes = 0f;
+            meta.elapsedSeconds = 0f;
 
             saveSlotMetas.Add(i, meta);
         }
@@ -79,10 +82,10 @@ public class GameSaver : MonoBehaviour
     private void SaveMeta(){
         SaveSlotMeta meta = new SaveSlotMeta();
         meta.SceneCode = (int)gm.currentSceneCode;
-        meta.elapsedMinutes = gm.elapsedMinutes;
+        meta.elapsedSeconds = gm.elapsedSeconds;
         UpdateMeta(currentSaveSlot, meta);
         try{
-            using(FileStream fs = new FileStream(Application.persistentDataPath + "/meta.tgb", FileMode.OpenOrCreate)){
+            using(FileStream fs = new FileStream(saveDirectory + "/meta.tgb", FileMode.OpenOrCreate)){
                 var bf = new BinaryFormatter();
                 bf.Serialize(fs, saveSlotMetas);
 
@@ -100,7 +103,7 @@ public class GameSaver : MonoBehaviour
     
     public void Load(SaveSlot saveSlot){
         FileStream fs = null;
-        string path = Application.persistentDataPath + "/" + saveSlot.ToString() + ".tgb";
+        string path = saveDirectory + "/" + saveSlot.ToString() + ".tgb";
         if (File.Exists(path))
         {
             try
@@ -141,7 +144,7 @@ public class GameSaver : MonoBehaviour
     public void Save(SaveSlot saveSlot){
         try
         {
-            using(FileStream fs = new FileStream(Application.persistentDataPath + "/" + saveSlot.ToString() + ".tgb", FileMode.OpenOrCreate))
+            using(FileStream fs = new FileStream(saveDirectory + "/" + saveSlot.ToString() + ".tgb", FileMode.OpenOrCreate))
             {
                 BinaryFormatter bf = new BinaryFormatter();
 
@@ -168,7 +171,7 @@ public class GameSaver : MonoBehaviour
     }
 
     public bool HasValidSaving(SaveSlot slot){
-        string path = Application.persistentDataPath + "/" + slot.ToString() + ".tgb";
+        string path = saveDirectory + "/" + slot.ToString() + ".tgb";
         return File.Exists(path);
     }
 

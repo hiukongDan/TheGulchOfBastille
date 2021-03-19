@@ -50,8 +50,8 @@ public class UISaveState : UIState
                 string[] words = sceneCodeName.Split('_');
                 string res = words[0] + " " + words[1];
                 // string res = sceneCodeName.Split('_')[0];
-                float hours = meta.elapsedMinutes / 60;
-                float minutes = meta.elapsedMinutes % 60;
+                float hours = meta.elapsedSeconds / 3600;
+                float minutes = meta.elapsedSeconds / 60 % 60;
                 res += " " + (int)hours + "H " + (int)minutes + "M";
 
                 emptys[i].gameObject.SetActive(false);
