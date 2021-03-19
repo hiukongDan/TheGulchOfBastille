@@ -6,7 +6,7 @@ public class UIPauseState : UIState
 {
     private ButtonGroup buttonGroup;
     private enum Selection{
-        Equipment, Inventory, PlayerStatus, Options, Exit,
+        Save, Equipment, Inventory, Options, Exit,
     };
     public UIPauseState(UIHandler uiHandler, GameObject parentNode, ButtonGroup buttonGroup): base(uiHandler, parentNode)
     {
@@ -39,11 +39,12 @@ public class UIPauseState : UIState
 
     public override void OnClick(UIStateEventData eventData){
         switch((Selection)eventData.index){
+            case Selection.Save:
+                uiHandler.uiFSM.PushState(uiHandler.uiSaveState);
+                break;
             case Selection.Equipment:
             break;
             case Selection.Inventory:
-            break;
-            case Selection.PlayerStatus:
             break;
             case Selection.Options:
             break;

@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 2ae83604d22534b4c90bfa665a4c9617
+guid: b44bb65f1b6963642ad5fe13b4c523c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4863336276314997047
-    second: inventory_0
+      213: 820998524307830649
+    second: chosen2_white_0
   - first:
-      213: -3860515135949180240
-    second: inventory_1
+      213: 3071551517534358851
+    second: chosen2_white_1
   - first:
-      213: -6734734834790175173
-    second: inventory_2
+      213: -4502370082530428411
+    second: chosen2_white_2
   - first:
-      213: -6618134905481563395
-    second: inventory_3
+      213: 2521699912674617596
+    second: chosen2_white_3
   - first:
-      213: -3913403896141990040
-    second: inventory_4
-  - first:
-      213: -1393458340566893849
-    second: inventory_5
-  - first:
-      213: -3571245019227250870
-    second: inventory_6
+      213: -6531421748234708848
+    second: chosen2_white_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -108,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventory_0
+      name: chosen2_white_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 98
-        width: 8
-        height: 8
+        x: 0
+        y: 15
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,20 +116,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ce39fa7c65f18cb0800000000000000
-      internalID: -4863336276314997047
+      spriteID: 977fc7adec5c46b00800000000000000
+      internalID: 820998524307830649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventory_1
+      name: chosen2_white_1
       rect:
         serializedVersion: 2
-        x: 29
-        y: 98
-        width: 7
-        height: 9
+        x: 15
+        y: 15
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,104 +137,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b2fabf00f1bc6ac0800000000000000
-      internalID: -3860515135949180240
+      spriteID: 34d82f7d4d750aa20800000000000000
+      internalID: 3071551517534358851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventory_2
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 98
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3ee1e3995a6982a0800000000000000
-      internalID: -6734734834790175173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventory_3
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 98
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df2782b2e59a724a0800000000000000
-      internalID: -6618134905481563395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventory_4
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 98
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 867b3dbf3ebc0b9c0800000000000000
-      internalID: -3913403896141990040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventory_5
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 98
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ea7439a50179ace0800000000000000
-      internalID: -1393458340566893849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventory_6
+      name: chosen2_white_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 151
-        height: 129
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a7d67b34e5481c0800000000000000
+      internalID: -4502370082530428411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chosen2_white_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8aa15c5b0eef220800000000000000
+      internalID: 2521699912674617596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chosen2_white_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4f93178393607ec0800000000000000
-      internalID: -3571245019227250870
+      spriteID: 0989532668abb55a0800000000000000
+      internalID: -6531421748234708848
       vertices: []
       indices: 
       edges: []

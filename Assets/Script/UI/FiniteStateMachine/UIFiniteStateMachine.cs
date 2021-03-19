@@ -10,7 +10,6 @@ public class UIFiniteStateMachine
     {
         uiStateStack = new Stack<UIState>();
     }
-
     public void InitStateMachine(UIState initState)
     {
         foreach(UIState uiState in uiStateStack){
@@ -49,6 +48,13 @@ public class UIFiniteStateMachine
     public UIState PeekState()
     {
         return uiStateStack.Peek();
+    }
+
+    public UIState PeekPrevState(){
+        var curr = uiStateStack.Pop();
+        var prev = uiStateStack.Peek();
+        uiStateStack.Push(curr);
+        return prev;
     }
 
     public void Update()

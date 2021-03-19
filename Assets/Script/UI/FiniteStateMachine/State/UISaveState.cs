@@ -92,8 +92,15 @@ public class UISaveState : UIState
             default:
             break;
         }
+        
+        if(uiHandler.uiFSM.PeekPrevState() == uiHandler.uiMainState){
+            uiHandler.GM.gameSaver.isNewGame = true;
+            uiHandler.GM.StartGame();
+        }
+        else{
+            uiHandler.GM.gameSaver.SaveAll();
+            uiHandler.uiFSM.PopState();
+        }
 
-        uiHandler.GM.gameSaver.isNewGame = true;
-        uiHandler.GM.StartGame();
     }
 }
