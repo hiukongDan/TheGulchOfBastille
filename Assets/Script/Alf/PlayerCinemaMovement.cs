@@ -22,8 +22,6 @@ public class PlayerCinemaMovement : MonoBehaviour
     public void LightLittleSun(LittleSunHandler littleSunHandler) => StartCoroutine(lightLittleSun(littleSunHandler));
     public void TransitToScene(SubAreaHandler subAreaHandler) => StartCoroutine(transitToScene(subAreaHandler));
 
-    public void StartGameScene() => StartCoroutine(StartGame());
-
     IEnumerator lightLittleSun(LittleSunHandler littleSunHandler)
     {
         float playerLittleSunOffset = 0.25f;
@@ -103,10 +101,6 @@ public class PlayerCinemaMovement : MonoBehaviour
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.end));
 
         player.stateMachine.SwitchState(player.idleState);
-    }
-
-    IEnumerator StartGame(){
-        yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
     }
     #endregion
 }

@@ -46,30 +46,7 @@ public class GameManager : MonoBehaviour
         // DemonSceneCode(demonScenes[Mathf.FloorToInt(Random.Range(0, demonScenes.Length))]);
     }
 
-    public void StartGame(){
-        StopAllCoroutines();
-        ResetAllSceneCode();
-        Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
-
-        if(gameSaver.isNewGame){
-            LoadSceneCode(SceneCode.Gulch_Main);
-            currentSceneCode = SceneCode.Gulch_Main;
-            player.gameObject.SetActive(true);
-        }
-        else{
-            player.gameObject.SetActive(true);
-            gameSaver.Load();
-            currentSceneCode = player.playerRuntimeData.currentSceneCode;
-            elapsedSeconds = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedSeconds;
-            LoadSceneCode();
-            // Debug.Log("load");
-        }
-        
-        uiHandler.StartGame();
-        playerCinemaMovement.StartGameScene();
-
-        player.InputHandler.ResetAll();
-    }
+    public void StartGame() => StartCoroutine(StartGame(gameSaver.isNewGame));
 
     public void LoadSceneCode(){
         LoadSceneCode(currentSceneCode);
@@ -123,6 +100,36 @@ public class GameManager : MonoBehaviour
         }
 
         return true;
+    }
+    IEnumerator StartGame(bool isNewGame){
+        StopAllCoroutines();
+        ResetAllSceneCode();
+
+        // uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.dark);
+
+        if(isNewGame){
+            player.gameObject.SetActive(true);
+            var startTrans = GameObject.Find("/Scenes").transform.Find("Gulch_Main/GameStartPoint");
+            if(startTrans){
+                player.SetPosition(startTrans.position);
+            }
+            currentSceneCode = SceneCode.Gulch_Main;
+        }
+        else{
+            player.gameObject.SetActive(true);
+            gameSaver.Load();
+            currentSceneCode = player.playerRuntimeData.currentSceneCode;
+            elapsedSeconds = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedSeconds;
+        }
+
+        Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
+        Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
+        LoadSceneCode();
+        
+        uiHandler.StartGame();
+
+        player.InputHandler.ResetAll();
+        yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
     }
 
     IEnumerator DemonRandomSceneCode(){

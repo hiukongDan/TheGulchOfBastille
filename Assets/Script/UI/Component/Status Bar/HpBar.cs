@@ -15,6 +15,8 @@ public class HpBar : StatusBar
 
     protected override void OnDisable()
     {
+        base.OnDisable();
+        
         UIEventListener.Instance.hpChangeHandler -= OnBarValueChange;
     }
 }

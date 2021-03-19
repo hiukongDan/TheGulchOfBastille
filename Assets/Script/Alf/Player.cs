@@ -390,6 +390,8 @@ public class Player : MonoBehaviour
 
         if(playerRuntimeData.isLoaded){
             transform.position = playerRuntimeData.lastPosition;
+            UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+            UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
         }
     }
     public void ResetGrounded(){
