@@ -72,7 +72,7 @@ public class GameSaver : MonoBehaviour
         }
     }
 
-    private void UpdateMeta(SaveSlot saveSlot, SaveSlotMeta meta){
+    public void UpdateMeta(SaveSlot saveSlot, SaveSlotMeta meta){
         SaveSlotMetas[(int)saveSlot] = meta;
     }
 
@@ -97,8 +97,9 @@ public class GameSaver : MonoBehaviour
         }
     }
 
-    public void Load(){
+    public void LoadAll(){
         Load(currentSaveSlot);
+        LoadMeta();
     }
     
     public void Load(SaveSlot saveSlot){

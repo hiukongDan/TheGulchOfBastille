@@ -15,12 +15,5 @@ public class ItemApplyer : MonoBehaviour
     public void CancelWearable(ItemData.Wearable  wearable){
 
     }
-
-    public void ApplyKeyItem(ItemData.KeyItem keyItem){
-
-    }
-
-    public void CancelKeyItem(ItemData.KeyItem keyItem){
-
-    }
+    
 }

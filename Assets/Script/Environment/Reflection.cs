@@ -21,7 +21,7 @@ public class Reflection : MonoBehaviour
     private Transform reflectionCenter;
     private SpriteRenderer sr;
     private SpriteRenderer srSource;
-
+    private bool isEnabled = false;
     void Awake(){
         reflectionCenter = transform.Find("Reflection Center");
         sr = transform.Find("Reflection Sprite").GetComponent<SpriteRenderer>();
@@ -35,8 +35,12 @@ public class Reflection : MonoBehaviour
         }
     }
 
+    void OnEnable(){
+        isEnabled = reflectionSource.gameObject.activeSelf;
+    }
+
     void Update() {
-        if(srSource){
+        if(srSource && isEnabled){
             sr.sprite = srSource.sprite;
             //Debug.Log(sr.sprite);
 

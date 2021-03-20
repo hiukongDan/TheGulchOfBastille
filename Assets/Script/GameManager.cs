@@ -68,12 +68,12 @@ public class GameManager : MonoBehaviour
         ExitSceneCode(currentSceneCode);
         EnterSceneCode(sceneCode);
         currentSceneCode = sceneCode;
-        
+
         player.playerRuntimeData.currentSceneCode = sceneCode;
     }
 
     public void OnApplicationQuit(){
-        gameSaver.SaveAll();
+        // gameSaver.SaveAll();
     }
 
     public void QuitGame()
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
         }
         else{
             player.gameObject.SetActive(true);
-            gameSaver.Load();
+            gameSaver.LoadAll();
             currentSceneCode = player.playerRuntimeData.currentSceneCode;
             elapsedSeconds = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedSeconds;
         }

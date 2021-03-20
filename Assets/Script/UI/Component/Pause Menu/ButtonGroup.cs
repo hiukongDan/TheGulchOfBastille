@@ -33,12 +33,15 @@ public class ButtonGroup : MonoBehaviour
 
         // Debug.Log(buttons.Count);
         // EventSystem.current.firstSelectedGameObject = buttons[0].gameObject;
-        if(IsUsingInvokeToAutoSelect){
-            Invoke("Select", Time.deltaTime);
-        }
-        else{
-            selectedButton = buttons[0];
-            selectedButton.Select();
+        TrySelectingButton();
+    }
+
+    
+
+    void Update(){
+        if(EventSystem.current.currentSelectedGameObject == null){
+            // try selecting button if there is no currently selected ont
+            TrySelectingButton();
         }
     }
 
@@ -86,5 +89,14 @@ public class ButtonGroup : MonoBehaviour
 
     public int GetIndexOfCurrentSelected() => buttons.IndexOf(selectedButton);
 
+    private void TrySelectingButton(){
+        if(IsUsingInvokeToAutoSelect){
+            Invoke("Select", Time.deltaTime);
+        }
+        else{
+            selectedButton = buttons[0];
+            selectedButton.Select();
+        }
+    }
 
 }
