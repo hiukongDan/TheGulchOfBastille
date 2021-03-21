@@ -18,6 +18,8 @@ public class PFontText : MonoBehaviour
     [Range(0, 10)]
     public int marginPixelVert = 0;
 
+    // public bool isUsingSetNativeSize = true;
+
     private PFontLoader pFontLoader;
     private Image displayImage;
 
@@ -34,9 +36,13 @@ public class PFontText : MonoBehaviour
         return res;
     }
 
-    //  void OnValidate(){
-    //     OnTextChange();
-    //  }
+     void OnValidate(){
+        OnTextChange();
+     }
+
+    void OnEnable() {
+        OnTextChange();
+    }
 
     public void OnTextChange(){
         if(text.Length == 0)
@@ -117,8 +123,14 @@ public class PFontText : MonoBehaviour
 
         Sprite sprite = Sprite.Create(finalTex, new Rect(0, 0, finalTex.width, finalTex.height), new Vector2(0.5f, 0.5f), pixelPerUnit);
         displayImage.sprite = sprite;
+        //displayImage.SetNativeSize();
+        //Debug.Log(displayImage.sprite.rect);
         displayImage.SetNativeSize();
-        //GetComponent<RectTransform>().sizeDelta = new Vector2(sprite.rect.width, sprite.rect.height);
+        
+        // else{
+        //     GetComponent<RectTransform>().sizeDelta = new Vector2(sprite.rect.width, sprite.rect.height);
+        // }
+        
     }
 
     private int getLongestPixelStringWidth(string[] strs){

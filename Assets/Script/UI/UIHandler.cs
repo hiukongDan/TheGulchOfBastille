@@ -14,11 +14,15 @@ public class UIHandler : MonoBehaviour
     public GameObject uiMainGO;
     public GameObject uiLoadGO;
     public GameObject uiSaveGO;
+    public GameObject uiEquipmentGO;
+    public GameObject uiInventoryGO;
     public UIPlayState uiPlayState { get; private set; }
     public UIPauseState uiPauseState { get; private set; }
     public UIMainState uiMainState {get; private set;}
     public UISaveState uiSaveState {get; private set;}
     public UILoadState uiLoadState {get; private set;}
+    public UIEquipmentState uiEquipmentState{get; private set;}
+    public UIInventoryState uiInventoryState{get; private set;}
     public GameManager GM{get; private set;}
 
     void Awake()
@@ -29,6 +33,8 @@ public class UIHandler : MonoBehaviour
         uiMainState = new UIMainState(this, uiMainGO, uiMainGO.GetComponentInChildren<ButtonGroup>());
         uiSaveState = new UISaveState(this, uiSaveGO, uiSaveGO.GetComponentInChildren<ButtonGroup>());
         uiLoadState = new UILoadState(this, uiLoadGO, uiLoadGO.GetComponentInChildren<ButtonGroup>());
+        uiEquipmentState = new UIEquipmentState(this, uiEquipmentGO);
+        uiInventoryState = new UIInventoryState(this, uiInventoryGO);
 
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }

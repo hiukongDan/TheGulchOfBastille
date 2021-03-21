@@ -43,8 +43,10 @@ public class UIPauseState : UIState
                 uiHandler.uiFSM.PushState(uiHandler.uiSaveState);
                 break;
             case Selection.Equipment:
-            break;
+                uiHandler.uiFSM.PushState(uiHandler.uiEquipmentState);
+                break;
             case Selection.Inventory:
+                uiHandler.uiFSM.PushState(uiHandler.uiInventoryState);
             break;
             case Selection.Options:
             break;
