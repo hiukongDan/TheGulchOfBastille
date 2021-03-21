@@ -47,6 +47,31 @@ public class ItemData
         Royal_Pass,
         Count,
     };
+
+public static Dictionary<int , string> WeaponDescription = new Dictionary<int, string>(){
+    {(int)Weapon.Iron_Sword, ""},
+    {(int)Weapon.Claymore, ""},
+    {(int)Weapon.Dragon_Slayer_Sword, ""},
+    {(int)Weapon.Wood_Bow, ""},
+    {(int)Weapon.Elf_Bow, ""},
+    {(int)Weapon.Long_Bow, ""},
+    {(int)Weapon.Apprentice_Stick, ""},
+    {(int)Weapon.Master_Stick, ""},
+    {(int)Weapon.Sunlight_Stick, ""}
+};
+
+public static Dictionary<int, string> WearableDescription = new Dictionary<int, string>(){
+
+};
+
+public static Dictionary<int, string> ConsumableDescription = new Dictionary<int, string>(){
+
+};
+
+public static Dictionary<int, string> KeyItemDescription = new Dictionary<int, string>(){
+
+};
+
 public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, WeaponData>(){
     {(int)Weapon.Iron_Sword, new WeaponData(new int[3]{5,7,9}, true, false, true)},
     {(int)Weapon.Claymore, new WeaponData(new int[3]{10,12,14}, true, false, true)},

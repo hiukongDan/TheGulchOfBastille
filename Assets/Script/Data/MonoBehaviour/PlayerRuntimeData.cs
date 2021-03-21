@@ -12,6 +12,7 @@ public class PlayerRuntimeData
     public int lastLittleSunID;
     public Vector2 lastPosition;
     public bool isLoaded = false;
+    
 
     public void InitPlayerRuntimeData(D_PlayerStateMachine playerData){
         currentHitPoints = playerData.PD_maxHitPoint;
