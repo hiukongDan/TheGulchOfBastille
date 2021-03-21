@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
+using UnityEngine.Events;
 
 public class UIEventListener
 {
-    
     private static UIEventListener _instance;
 
     public static UIEventListener Instance
@@ -20,11 +19,13 @@ public class UIEventListener
 
     #region DELEGATE
     public delegate void StatusBarChangeHandler(float current, float total);
+    public delegate void SimpleEventHandler();
     #endregion
 
     #region EVENTS
     public event StatusBarChangeHandler hpChangeHandler;
     public event StatusBarChangeHandler dpChangeHandler;
+    public event SimpleEventHandler fullscreenSwitchHandler;
     // public event Action pauseMenuHandler;
     #endregion
 
@@ -37,6 +38,10 @@ public class UIEventListener
     public void OnDpChange(float current, float total)
     {
         dpChangeHandler?.Invoke(current, total);
+    }
+
+    public void OnFullscreenSwitch(){
+        fullscreenSwitchHandler.Invoke();
     }
 
     // public void OnPauseMenu()

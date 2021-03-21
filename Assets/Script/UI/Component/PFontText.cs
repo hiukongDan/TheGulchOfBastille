@@ -42,6 +42,21 @@ public class PFontText : MonoBehaviour
 
     void OnEnable() {
         OnTextChange();
+        SetNativeSize();
+
+        UIEventListener.Instance.fullscreenSwitchHandler += OnFullscreenSwitch;
+    }
+
+    void OnDisable() {
+        
+    }
+
+    public void OnFullscreenSwitch(){
+        SetNativeSize();
+    }
+
+    public void SetNativeSize(){
+        displayImage?.SetNativeSize();
     }
 
     public void OnTextChange(){
@@ -125,7 +140,7 @@ public class PFontText : MonoBehaviour
         displayImage.sprite = sprite;
         //displayImage.SetNativeSize();
         //Debug.Log(displayImage.sprite.rect);
-        displayImage.SetNativeSize();
+        
         
         // else{
         //     GetComponent<RectTransform>().sizeDelta = new Vector2(sprite.rect.width, sprite.rect.height);
