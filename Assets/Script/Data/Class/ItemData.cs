@@ -13,8 +13,8 @@ public class ItemData
         Apprentice_Stick,
         Master_Stick,
         Sunlight_Stick,
+        Count,
     };
-
     public enum Wearable{
         Moonstone_Ring,
         Fools_Gold_Pendant,
@@ -26,8 +26,8 @@ public class ItemData
         Magic_Pendant,
         Belials_Magic_Compass,
         Goye_Ring,
+        Count
     };
-
     public enum Consumable{
         Uilos_Candy,
         Uilos_Potion,
@@ -38,15 +38,15 @@ public class ItemData
         Uilos_Stick,
         Uilos_Bunch,
         Neon_Potion,
+        Count,
     };
-
     public enum KeyItem{
         Dash_Stone,
         Double_Jump_Stone,
         Wall_Jump_Stone,
         Royal_Pass,
+        Count,
     };
-
 public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, WeaponData>(){
     {(int)Weapon.Iron_Sword, new WeaponData(new int[3]{5,7,9}, true, false, true)},
     {(int)Weapon.Claymore, new WeaponData(new int[3]{10,12,14}, true, false, true)},

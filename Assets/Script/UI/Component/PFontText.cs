@@ -26,6 +26,7 @@ public class PFontText : MonoBehaviour
     public void SetText(string text){
         this.text = text;
         OnTextChange();
+        displayImage.SetNativeSize();
     }
 
     public int GetTotalPixelWidth(string str){
@@ -42,21 +43,17 @@ public class PFontText : MonoBehaviour
 
     void OnEnable() {
         OnTextChange();
-        SetNativeSize();
+        displayImage.SetNativeSize();
 
         UIEventListener.Instance.fullscreenSwitchHandler += OnFullscreenSwitch;
     }
 
     void OnDisable() {
-        
+        UIEventListener.Instance.fullscreenSwitchHandler -= OnFullscreenSwitch;
     }
 
     public void OnFullscreenSwitch(){
-        SetNativeSize();
-    }
-
-    public void SetNativeSize(){
-        displayImage?.SetNativeSize();
+        displayImage.SetNativeSize();
     }
 
     public void OnTextChange(){
