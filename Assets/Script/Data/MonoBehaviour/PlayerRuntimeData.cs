@@ -67,13 +67,22 @@ public class PlayerRuntimeData
         lastLittleSunID = -1;
         playerStock = new PlayerStock(new List<ItemData.WeaponRuntimeData>(), new List<ItemData.WearableRuntimeData>(), 
             new List<ItemData.ConsumableRuntimeData>(), new List<ItemData.KeyItemRuntimeData>());
-        playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Iron_Sword, 1));
-        playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Wood_Bow, 1));
-        playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Apprentice_Stick, 0));
-        playerStock.Pick(new ItemData.WearableRuntimeData(ItemData.Wearable.Amber_Ring));
-        playerStock.Pick(new ItemData.ConsumableRuntimeData(ItemData.Consumable.Holy_Sun_Water, 10));
-        playerStock.Pick(new ItemData.KeyItemRuntimeData(ItemData.KeyItem.Dash_Stone));
-        
+
+        for(int i = 0; i < (int)ItemData.Weapon.Count; ++i){
+            playerStock.Pick(new ItemData.WeaponRuntimeData((ItemData.Weapon)i, i%3));
+        }
+
+        for(int i = 0; i < (int)ItemData.Wearable.Count; ++i){
+            playerStock.Pick(new ItemData.WearableRuntimeData((ItemData.Wearable)i));
+        }
+
+        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99));
+        }
+
+        for(int i = 0; i < (int)ItemData.KeyItem.Count; ++i){
+            playerStock.Pick(new ItemData.KeyItemRuntimeData((ItemData.KeyItem)i));
+        }
     }
 
     [Serializable]

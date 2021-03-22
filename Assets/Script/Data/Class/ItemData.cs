@@ -19,7 +19,7 @@ public class ItemData
     public enum Wearable{
         Moonstone_Ring,
         Fools_Gold_Pendant,
-        Sunlight_Protection_Stone,
+        Sun_Protection_Stone,
         Amber_Ring,
         Drawf_Ring,
         Sunstone_Ring,
@@ -89,47 +89,47 @@ public class ItemData
     
 
 public static Dictionary<int , string> WeaponDescription = new Dictionary<int, string>(){
-    {(int)Weapon.Iron_Sword, ""},
-    {(int)Weapon.Claymore, ""},
-    {(int)Weapon.Dragon_Slayer_Sword, ""},
-    {(int)Weapon.Wood_Bow, ""},
-    {(int)Weapon.Elf_Bow, ""},
-    {(int)Weapon.Long_Bow, ""},
-    {(int)Weapon.Apprentice_Stick, ""},
-    {(int)Weapon.Master_Stick, ""},
-    {(int)Weapon.Sunlight_Stick, ""},
+    {(int)Weapon.Iron_Sword, "A slightly rusty\n sword, maintaining\n basic functionality."},
+    {(int)Weapon.Claymore, "Strong hold for a\n warrior, contains\n unimaginable possibilities."},
+    {(int)Weapon.Dragon_Slayer_Sword, "The most powerful weapon\n forged by the legendary\n drawf master."},
+    {(int)Weapon.Wood_Bow, "A basic long\n ranged weapon."},
+    {(int)Weapon.Elf_Bow, "Swifness as the name\n indicates, made by\n an experienced Elf hunter."},
+    {(int)Weapon.Long_Bow, "Incomparable long ranged\n weapon, as deadly as\n the realm of assassination."},
+    {(int)Weapon.Apprentice_Stick, "A simple designed magic\n stick, used by Belial\n for teaching."},
+    {(int)Weapon.Master_Stick, "Advanced magic tool,\n should be used with care."},
+    {(int)Weapon.Sunlight_Stick, "Unprecendented magic\n stick, with potential\n to defeat the Abyss."},
 };
 
 public static Dictionary<int, string> WearableDescription = new Dictionary<int, string>(){
-    {(int)Wearable.Moonstone_Ring, ""},
-    {(int)Wearable.Fools_Gold_Pendant, ""},
-    {(int)Wearable.Sunlight_Protection_Stone, ""},
-    {(int)Wearable.Amber_Ring, ""},
-    {(int)Wearable.Drawf_Ring, ""},
-    {(int)Wearable.Sunstone_Ring, ""},
-    {(int)Wearable.Coldblue_Ring, ""},
-    {(int)Wearable.Magic_Pendant, ""},
-    {(int)Wearable.Belials_Magic_Compass, ""},
-    {(int)Wearable.Goye_Ring, ""},
+    {(int)Wearable.Moonstone_Ring, "Reduce hp capacity,\n increase Rotten bar capacity."},
+    {(int)Wearable.Fools_Gold_Pendant, "Automatically collect uilos."},
+    {(int)Wearable.Sun_Protection_Stone, "Reduce rotten point got."},
+    {(int)Wearable.Amber_Ring, "Slightly increase hp."},
+    {(int)Wearable.Drawf_Ring, "increase uilos output\n from dead enemy."},
+    {(int)Wearable.Sunstone_Ring, "Reduce rotten bar,\n increase hp."},
+    {(int)Wearable.Coldblue_Ring, "Reduce attack cooldown."},
+    {(int)Wearable.Magic_Pendant, "Increase attack power."},
+    {(int)Wearable.Belials_Magic_Compass, "Teleport to last lit\n little sun\n or to the Gulch."},
+    {(int)Wearable.Goye_Ring, "Extend roll distance."},
 };
 
 public static Dictionary<int, string> ConsumableDescription = new Dictionary<int, string>(){
-    {(int)Consumable.Uilos_Candy, ""},
-    {(int)Consumable.Uilos_Potion, ""},
-    {(int)Consumable.Uilos_Cake, ""},
-    {(int)Consumable.Holy_Sun_Water, ""},
-    {(int)Consumable.Uilos_Pedal, ""},
-    {(int)Consumable.Uilos_Flower, ""},
-    {(int)Consumable.Uilos_Stick, ""},
-    {(int)Consumable.Uilos_Bunch, ""},
-    {(int)Consumable.Neon_Potion, ""},
+    {(int)Consumable.Uilos_Candy, "Restore little hp."},
+    {(int)Consumable.Uilos_Potion, "Restore large amount of hp."},
+    {(int)Consumable.Uilos_Cake, "Fully restore hp."},
+    {(int)Consumable.Holy_Sun_Water, "Reduce rotten points\n by 20 percent."},
+    {(int)Consumable.Uilos_Pedal, "Gain a little\n uilos."},
+    {(int)Consumable.Uilos_Flower, "Gain large amount\n of uilos."},
+    {(int)Consumable.Uilos_Stick, "Gain great amout\n of uilos."},
+    {(int)Consumable.Uilos_Bunch, "Gain huge amount\n of uilos"},
+    {(int)Consumable.Neon_Potion, "Increase speed but\n alter Alf color randomly."},
 };
 
 public static Dictionary<int, string> KeyItemDescription = new Dictionary<int, string>(){
-    {(int)KeyItem.Dash_Stone, ""},
-    {(int)KeyItem.Double_Jump_Stone, ""},
-    {(int)KeyItem.Wall_Jump_Stone, ""},
-    {(int)KeyItem.Royal_Pass, ""},
+    {(int)KeyItem.Dash_Stone, "a powerful stone carved\n with shape, can be\n used in the Sun Tower."},
+    {(int)KeyItem.Double_Jump_Stone, "a powerful stone carved\n with shape, can be\n used in the Sun Tower."},
+    {(int)KeyItem.Wall_Jump_Stone, "a powerful stone carved\n with shape, can be\n used in the Sun Tower."},
+    {(int)KeyItem.Royal_Pass, "Used to open the\n gate protected by\n the dragon"},
 };
 
 public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, WeaponData>(){

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public interface ITabGroup{
     void SelectTab(IUITab uiTab);
@@ -18,6 +19,8 @@ public class TabGroup : MonoBehaviour, ITabGroup
 
     public UITab selectedTab;
 
+    private Color transparent = new Color(1,1,1,0);
+
     void Awake(){
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -33,12 +36,6 @@ public class TabGroup : MonoBehaviour, ITabGroup
         foreach(UITab uiTab in transform.GetComponentsInChildren<UITab>()){
             tabs.Add(uiTab);
         }
-    }
-
-    void OnDisable() {
-        foreach(UITab tab in tabs){
-            tab.gameObject.SetActive(true);
-        }    
     }
 
     public void OnClick(){
@@ -59,7 +56,7 @@ public class TabGroup : MonoBehaviour, ITabGroup
             UITab tab = (UITab)uiTab;
             if(selectedTab != tab){
                 ClearTab();
-                tab.gameObject.SetActive(false);
+                tab.GetComponent<Image>().color = transparent;
                 selectedTab = tab;
             }
         }
@@ -71,7 +68,7 @@ public class TabGroup : MonoBehaviour, ITabGroup
     public void UnselectTab(IUITab uiTab){
         try{
             UITab tab = (UITab)uiTab;
-            tab.gameObject.SetActive(true);
+            tab.GetComponent<Image>().color = Color.white;
         }
         catch(UnityException ex){
             Debug.Log(ex.StackTrace);
@@ -112,7 +109,7 @@ public class TabGroup : MonoBehaviour, ITabGroup
         try{
             foreach(UITab tab in tabs){
                 // set all tabs to silhouette
-                tab.gameObject.SetActive(true);
+                tab.GetComponent<Image>().color = Color.white;
             }
             selectedTab = null;
         }

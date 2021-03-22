@@ -15,6 +15,10 @@ public class UIInventoryState : UIState
 
     private bool isFirstEnter = true;
 
+    private Vector2 normMoveInput;
+    private float normMoveInputTimer;
+    private float normMoveInputTimerMax = 0.3f;
+
     protected enum TabSelection{
         Weapon, Wearable, Consumable, KeyItem,
     };
@@ -26,7 +30,7 @@ public class UIInventoryState : UIState
         Transform description = parentNode.transform.Find("Description");
         title = description.Find("Title").GetComponent<PFontText>();
         content = description.Find("Content").GetComponent<PFontText>();
-    
+        
     }
 
     public override void Enter()
@@ -52,6 +56,8 @@ public class UIInventoryState : UIState
             tabGroup.SelectTab(tabGroup.tabs[(int)currentTab]);
             OnClickTab((int)currentTab);
         }
+
+        normMoveInputTimer = -1f;
     }
 
     public override void Exit()
@@ -63,12 +69,51 @@ public class UIInventoryState : UIState
     public override void Update()
     {
         base.Update();
+        if(normMoveInputTimer >= 0.0f){
+            normMoveInputTimer -= Time.unscaledDeltaTime;
+        }
 
-        
+        if(normMoveInputTimer < 0.0f && normMoveInput != Vector2.zero){
+            // first consider y axis, then x asix
+            if(normMoveInput.x != 0){
+                if(normMoveInput.x > 0){
+                    OnDirectionMove(UIState.Direction.RIGHT);
+                }
+                else{
+                    OnDirectionMove(UIState.Direction.LEFT);
+                }
+                normMoveInputTimer = normMoveInputTimerMax;
+            }
+            else if(normMoveInput.y != 0){
+                if(normMoveInput.y > 0){
+                    OnDirectionMove(UIState.Direction.UP);
+                }
+                else{
+                    OnDirectionMove(UIState.Direction.DOWN);
+                }
+                normMoveInputTimer = normMoveInputTimerMax;
+            }
+        }
+        normMoveInput = uiHandler.GM.player.InputHandler.NormMovementInput;
     }
     public override void OnInteraction()
     {
         
+    }
+
+    public override void OnDirectionMove(UIState.Direction direction){
+        switch(direction){
+            case UIState.Direction.UP:
+            break;
+            case UIState.Direction.LEFT:
+            break;
+            case UIState.Direction.DOWN:
+            break;
+            case UIState.Direction.RIGHT:
+            break;
+            default:
+            break;
+        }
     }
 
     public override void OnMenuPrev()
@@ -172,8 +217,6 @@ public class UIInventoryState : UIState
         }
     }
 
-
-
     protected void DisplayWearable(){
         viewGroup.ClearViewGroup();
         List<ItemData.WearableRuntimeData> wearables = uiHandler.GM.player.playerRuntimeData.playerStock.wearableStock;
@@ -250,13 +293,15 @@ public class UIInventoryState : UIState
 
     protected string ParsingTitle(string str){
         string[] words = str.Split('_');
-        int count = 0;
-        string res = "";
-        foreach(string word in words){
-            res += word + (count++<2?" ":"\n");
-            count %= 2;
-        }
-        res = res.TrimEnd();
-        return res;
+        // int count = 0;
+        // string res = "";
+        // foreach(string word in words){
+        //     count++;
+        //     res += word + (count<2?" ":"\n");
+        //     count %= 2;
+        // }
+        // res = res.TrimEnd();
+        // return res;
+        return string.Join(" ", words);
     }
 }

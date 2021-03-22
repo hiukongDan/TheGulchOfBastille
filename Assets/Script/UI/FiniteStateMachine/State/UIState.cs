@@ -48,8 +48,16 @@ public abstract class UIState
         
     }
 
+    public virtual void OnDirectionMove(Direction direction){
+        
+    }
+
     public enum WidgetType{
         Tab, Button, View,
+    };
+
+    public enum Direction{
+        LEFT, UP, RIGHT, DOWN,
     };
 
     public struct UIStateEventData{
