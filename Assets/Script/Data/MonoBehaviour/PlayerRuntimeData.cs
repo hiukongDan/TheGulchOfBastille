@@ -37,7 +37,7 @@ public class PlayerRuntimeData
             wearableStock.Add(wearable);
         }
 
-        public void PicK(ItemData.ConsumableRuntimeData consumable){
+        public void Pick(ItemData.ConsumableRuntimeData consumable){
             consumableStock.Add(consumable);
         }
 
@@ -56,9 +56,7 @@ public class PlayerRuntimeData
             this.weapon = weapon;
             this.wearableSlotOne = wearableOne;
             this.wearableSlotTwo = wearableTwo;
-        }
-
-        
+        }        
     };
     
     public void InitPlayerRuntimeData(D_PlayerStateMachine playerData){
@@ -72,6 +70,10 @@ public class PlayerRuntimeData
         playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Iron_Sword, 1));
         playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Wood_Bow, 1));
         playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Apprentice_Stick, 0));
+        playerStock.Pick(new ItemData.WearableRuntimeData(ItemData.Wearable.Amber_Ring));
+        playerStock.Pick(new ItemData.ConsumableRuntimeData(ItemData.Consumable.Holy_Sun_Water, 10));
+        playerStock.Pick(new ItemData.KeyItemRuntimeData(ItemData.KeyItem.Dash_Stone));
+        
     }
 
     [Serializable]

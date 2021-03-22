@@ -97,19 +97,39 @@ public static Dictionary<int , string> WeaponDescription = new Dictionary<int, s
     {(int)Weapon.Long_Bow, ""},
     {(int)Weapon.Apprentice_Stick, ""},
     {(int)Weapon.Master_Stick, ""},
-    {(int)Weapon.Sunlight_Stick, ""}
+    {(int)Weapon.Sunlight_Stick, ""},
 };
 
 public static Dictionary<int, string> WearableDescription = new Dictionary<int, string>(){
-
+    {(int)Wearable.Moonstone_Ring, ""},
+    {(int)Wearable.Fools_Gold_Pendant, ""},
+    {(int)Wearable.Sunlight_Protection_Stone, ""},
+    {(int)Wearable.Amber_Ring, ""},
+    {(int)Wearable.Drawf_Ring, ""},
+    {(int)Wearable.Sunstone_Ring, ""},
+    {(int)Wearable.Coldblue_Ring, ""},
+    {(int)Wearable.Magic_Pendant, ""},
+    {(int)Wearable.Belials_Magic_Compass, ""},
+    {(int)Wearable.Goye_Ring, ""},
 };
 
 public static Dictionary<int, string> ConsumableDescription = new Dictionary<int, string>(){
-
+    {(int)Consumable.Uilos_Candy, ""},
+    {(int)Consumable.Uilos_Potion, ""},
+    {(int)Consumable.Uilos_Cake, ""},
+    {(int)Consumable.Holy_Sun_Water, ""},
+    {(int)Consumable.Uilos_Pedal, ""},
+    {(int)Consumable.Uilos_Flower, ""},
+    {(int)Consumable.Uilos_Stick, ""},
+    {(int)Consumable.Uilos_Bunch, ""},
+    {(int)Consumable.Neon_Potion, ""},
 };
 
 public static Dictionary<int, string> KeyItemDescription = new Dictionary<int, string>(){
-
+    {(int)KeyItem.Dash_Stone, ""},
+    {(int)KeyItem.Double_Jump_Stone, ""},
+    {(int)KeyItem.Wall_Jump_Stone, ""},
+    {(int)KeyItem.Royal_Pass, ""},
 };
 
 public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, WeaponData>(){

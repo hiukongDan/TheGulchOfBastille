@@ -9,10 +9,13 @@ public class UIInventoryState : UIState
     protected PFontText title;
     protected PFontText content;
 
-    protected int selectedIndex = -1;
-    protected int currentPage = 0;
+    protected TabSelection currentTab = TabSelection.Weapon;
+    protected int selectedViewIndex = -1;
+    protected int currentViewPage = 0;
 
-    private enum TabSelection{
+    private bool isFirstEnter = true;
+
+    protected enum TabSelection{
         Weapon, Wearable, Consumable, KeyItem,
     };
 
@@ -29,14 +32,32 @@ public class UIInventoryState : UIState
     public override void Enter()
     {
         base.Enter();
+        Time.timeScale = 0.0f;
 
-        OnClickTab(0);
+        if(isFirstEnter){
+            isFirstEnter = false;
+
+            currentTab = TabSelection.Weapon;
+            currentViewPage = 0;
+            // TODO: selection
+            DisplayWeapon();
+            tabGroup.SelectTab(tabGroup.tabs[0]);
+
+            selectedViewIndex = -1;
+
+            title.SetText("");
+            content.SetText("");
+        }
+        else{
+            tabGroup.SelectTab(tabGroup.tabs[(int)currentTab]);
+            OnClickTab((int)currentTab);
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
-
+        Time.timeScale = 1.0f;
     }
 
     public override void Update()
@@ -45,7 +66,6 @@ public class UIInventoryState : UIState
 
         
     }
-
     public override void OnInteraction()
     {
         
@@ -76,7 +96,9 @@ public class UIInventoryState : UIState
     }
 
     protected void OnClickTab(int index){
-        switch((TabSelection)index){
+        currentTab = (TabSelection)index;
+
+        switch(currentTab){
             case TabSelection.Weapon:
                 DisplayWeapon();
                 break;
@@ -84,9 +106,10 @@ public class UIInventoryState : UIState
                 DisplayWearable();
                 break;
             case TabSelection.Consumable:
-                
+                DisplayConsumable();
                 break;
             case TabSelection.KeyItem:
+                DisplayKeyItem();
                 break;
             default:
                 break;
@@ -94,8 +117,30 @@ public class UIInventoryState : UIState
     }
 
     protected void OnClickView(int index){
+        if(selectedViewIndex != index){
+            selectedViewIndex = index;
+        }
+        viewGroup.ClearChosen();
+        viewGroup.views[index].chosen.SetActive(true);
+        title.SetText("");
+        content.SetText("");
         
-
+        switch((TabSelection)currentTab){
+            case TabSelection.Weapon:
+                SelectWeapon(index);
+                break;
+            case TabSelection.Wearable:
+                SelectWearable(index);
+                break;
+            case TabSelection.Consumable:
+                SelectConsumable(index);
+                break;
+            case TabSelection.KeyItem:
+                SelectKeyItem(index);
+                break;
+            default:
+                break;
+        }
     }
 
     protected void DisplayWeapon(){
@@ -118,36 +163,100 @@ public class UIInventoryState : UIState
     }
 
     protected void SelectWeapon(int index){
-        if(selectedIndex != index){
-            selectedIndex = index;
+        List<ItemData.WeaponRuntimeData> stock = uiHandler.GM.player.playerRuntimeData.playerStock.weaponStock;
+        index = currentViewPage*viewGroup.views.Count + index;
+        if(index < stock.Count){
+            var data = stock[index];
+            title.SetText(ParsingTitle(data.weapon.ToString()));
+            content.SetText(ItemData.WeaponDescription[(int)data.weapon]);
         }
-        
     }
+
+
 
     protected void DisplayWearable(){
         viewGroup.ClearViewGroup();
         List<ItemData.WearableRuntimeData> wearables = uiHandler.GM.player.playerRuntimeData.playerStock.wearableStock;
+        int numToDisplay = Mathf.Min(wearables.Count, viewGroup.views.Count);
+        for(int i = 0; i < numToDisplay; ++i){
+            DisplayWearable(viewGroup.views[i], wearables[i]);
+        }
+    }
+
+    protected void DisplayWearable(UIView view, ItemData.WearableRuntimeData wearableRuntimeData){
+        view.image.gameObject.SetActive(true);
+        view.image.sprite = UIIconLoader.WearableIcons[(int)wearableRuntimeData.wearable];
     }
 
     protected void SelectWearable(int index){
-
+        List<ItemData.WearableRuntimeData> stock = uiHandler.GM.player.playerRuntimeData.playerStock.wearableStock;
+        index = currentViewPage*viewGroup.views.Count + index;
+        if(index < stock.Count){
+            var data = stock[index];
+            title.SetText(ParsingTitle(data.wearable.ToString()));
+            content.SetText(ItemData.WearableDescription[(int)data.wearable]);
+        }
     }
 
     protected void DisplayConsumable(){
         viewGroup.ClearViewGroup();
-        List<ItemData.ConsumableRuntimeData> weapons = uiHandler.GM.player.playerRuntimeData.playerStock.consumableStock;
+        List<ItemData.ConsumableRuntimeData> consumables = uiHandler.GM.player.playerRuntimeData.playerStock.consumableStock;
+        int numToDisplay = Mathf.Min(consumables.Count, viewGroup.views.Count);
+        for(int i = 0; i < numToDisplay; ++i){
+            DisplayConsumable(viewGroup.views[i], consumables[i]);
+        }
+    }
+
+    protected void DisplayConsumable(UIView view, ItemData.ConsumableRuntimeData consumableRuntimeData){
+        view.image.gameObject.SetActive(true);
+        view.image.sprite = UIIconLoader.ConsumableIcons[(int)consumableRuntimeData.consumable];
+        view.text.gameObject.SetActive(true);
+        view.text.SetText(consumableRuntimeData.count.ToString());
     }
 
     protected void SelectConsumable(int index){
-
+        List<ItemData.ConsumableRuntimeData> stock = uiHandler.GM.player.playerRuntimeData.playerStock.consumableStock;
+        index = currentViewPage*viewGroup.views.Count + index;
+        if(index < stock.Count){
+            var data = stock[index];
+            title.SetText(ParsingTitle(data.consumable.ToString()));
+            content.SetText(ItemData.ConsumableDescription[(int)data.consumable]);
+        }
     }
 
     protected void DisplayKeyItem(){
         viewGroup.ClearViewGroup();
         List<ItemData.KeyItemRuntimeData> keyItems = uiHandler.GM.player.playerRuntimeData.playerStock.keyItemStock;
+        int numToDisplay = Mathf.Min(keyItems.Count, viewGroup.views.Count);
+        for(int i = 0; i < numToDisplay; ++i){
+            DisplayKeyItem(viewGroup.views[i], keyItems[i]);
+        }
+    }
+
+    protected void DisplayKeyItem(UIView view, ItemData.KeyItemRuntimeData keyItemRuntimeData){
+        view.image.gameObject.SetActive(true);
+        view.image.sprite = UIIconLoader.KeyItemIcons[(int)keyItemRuntimeData.keyItem];
     }
 
     protected void SelectKeyItem(int index){
+        List<ItemData.KeyItemRuntimeData> stock = uiHandler.GM.player.playerRuntimeData.playerStock.keyItemStock;
+        index = currentViewPage*viewGroup.views.Count + index;
+        if(index < stock.Count){
+            var data = stock[index];
+            title.SetText(ParsingTitle(data.keyItem.ToString()));
+            content.SetText(ItemData.KeyItemDescription[(int)data.keyItem]);
+        }
+    }
 
+    protected string ParsingTitle(string str){
+        string[] words = str.Split('_');
+        int count = 0;
+        string res = "";
+        foreach(string word in words){
+            res += word + (count++<2?" ":"\n");
+            count %= 2;
+        }
+        res = res.TrimEnd();
+        return res;
     }
 }

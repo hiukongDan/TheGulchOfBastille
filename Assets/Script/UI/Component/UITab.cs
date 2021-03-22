@@ -16,6 +16,6 @@ public class UITab : MonoBehaviour, IUITab, IPointerClickHandler
     }
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData){
         tabGroup.SelectTab(this);
-        // Debug.Log("click");
+        tabGroup.OnClick();
     }
 }

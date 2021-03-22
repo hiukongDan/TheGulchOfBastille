@@ -32,4 +32,8 @@ public class UIView : MonoBehaviour, IPointerClickHandler
         image.sprite = UIIconLoader.EmptySprite;
     }
 
+    public void ClearChosen(){
+        chosen.gameObject?.SetActive(false);
+    }
+
 }

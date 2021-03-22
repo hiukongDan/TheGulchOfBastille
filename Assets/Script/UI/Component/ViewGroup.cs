@@ -37,5 +37,12 @@ public class ViewGroup : MonoBehaviour
             view.ClearView();
         }
     }
+
+    public void ClearChosen(){
+        foreach(UIView view in views){
+            view.ClearChosen();
+        }
+    }
+    
     int GetIndexOfView(UIView view) => views.IndexOf(view);
 }

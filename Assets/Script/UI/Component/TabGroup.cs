@@ -16,7 +16,7 @@ public class TabGroup : MonoBehaviour, ITabGroup
 
     private GameManager gameManager;
 
-    private UITab selectedTab;
+    public UITab selectedTab;
 
     void Awake(){
         gameManager = FindObjectOfType<GameManager>();
@@ -30,18 +30,15 @@ public class TabGroup : MonoBehaviour, ITabGroup
             tabs.Clear();
         }
 
-        foreach(UITab uiTab in GetComponentsInChildren<UITab>()){
+        foreach(UITab uiTab in transform.GetComponentsInChildren<UITab>()){
             tabs.Add(uiTab);
         }
-
-        ClearTab();
-        SelectTab(tabs[0]);
     }
 
-    void Update(){
-        if(selectedTab == null){
-            SelectNext();
-        }
+    void OnDisable() {
+        foreach(UITab tab in tabs){
+            tab.gameObject.SetActive(true);
+        }    
     }
 
     public void OnClick(){
@@ -51,12 +48,16 @@ public class TabGroup : MonoBehaviour, ITabGroup
         gameManager.uiHandler.uiFSM.PeekState()?.OnClick(data);
     }
 
-    int GetIndexOfTab(UITab uiTab) => tabs.IndexOf(uiTab);
+    public int GetIndexOfTab(UITab uiTab) => tabs.IndexOf(uiTab);
 
     public void SelectTab(IUITab uiTab){
+        if(uiTab == null){
+            return;
+        }
+
         try{
             UITab tab = (UITab)uiTab;
-            if(selectedTab != tab || selectedTab == null){
+            if(selectedTab != tab){
                 ClearTab();
                 tab.gameObject.SetActive(false);
                 selectedTab = tab;
@@ -113,6 +114,7 @@ public class TabGroup : MonoBehaviour, ITabGroup
                 // set all tabs to silhouette
                 tab.gameObject.SetActive(true);
             }
+            selectedTab = null;
         }
         catch(UnityException ex){
             Debug.Log(ex.StackTrace);
