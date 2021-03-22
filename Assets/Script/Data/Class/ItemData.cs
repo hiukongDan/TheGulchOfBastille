@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class ItemData
 {
@@ -48,7 +49,7 @@ public class ItemData
         Count,
     };
 
-
+    [Serializable]
     public struct WeaponRuntimeData{
         public Weapon weapon;
         public int level;
@@ -59,6 +60,7 @@ public class ItemData
         
     };
 
+    [Serializable]
     public struct WearableRuntimeData{
         public Wearable wearable;
         public WearableRuntimeData(Wearable wearable){
@@ -66,6 +68,7 @@ public class ItemData
         }
     };
 
+    [Serializable]
     public struct ConsumableRuntimeData{
         public Consumable consumable;
         public int count;
@@ -75,6 +78,7 @@ public class ItemData
         }
     };
 
+    [Serializable]
     public struct KeyItemRuntimeData{
         public KeyItem keyItem;
         public KeyItemRuntimeData(KeyItem keyItem){
