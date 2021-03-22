@@ -23,6 +23,11 @@ public class PFontText : MonoBehaviour
     private PFontLoader pFontLoader;
     private Image displayImage;
 
+    private Color transparent_color = new Color(1f,1f,1f,0f);
+
+    void Awake(){
+        displayImage = GetComponent<Image>();
+    }
     public void SetText(string text){
         this.text = text;
         OnTextChange();
@@ -57,11 +62,17 @@ public class PFontText : MonoBehaviour
     }
 
     public void OnTextChange(){
-        if(text.Length == 0)
+        displayImage = GetComponent<Image>();
+
+        if(text.Length == 0){
+            displayImage.color = transparent_color;
             return;
+        }
+        else{
+            displayImage.color = Color.white;
+        }
 
         pFontLoader = new PFontLoader(pFontInfo);
-        displayImage = GetComponent<Image>();
 
         text = text.ToUpper();
         string[] sentences = text.Split('\n');

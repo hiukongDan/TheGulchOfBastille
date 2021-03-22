@@ -70,6 +70,8 @@ public class PlayerRuntimeData
         playerStock = new PlayerStock(new List<ItemData.WeaponRuntimeData>(), new List<ItemData.WearableRuntimeData>(), 
             new List<ItemData.ConsumableRuntimeData>(), new List<ItemData.KeyItemRuntimeData>());
         playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Iron_Sword, 1));
+        playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Wood_Bow, 1));
+        playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Apprentice_Stick, 0));
     }
 
     [Serializable]

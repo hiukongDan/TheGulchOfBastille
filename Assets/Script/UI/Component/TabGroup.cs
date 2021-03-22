@@ -5,8 +5,8 @@ using UnityEngine;
 public interface ITabGroup{
     void SelectTab(IUITab uiTab);
     void UnselectTab(IUITab uiTab);
-    void SelectNext();
-    void SelectPrevious();
+    int SelectNext();
+    int SelectPrevious();
     void ClearTab();
 }
 
@@ -77,26 +77,34 @@ public class TabGroup : MonoBehaviour, ITabGroup
         }
     }
 
-    public void SelectNext(){
+    /// <Returns>
+    /// The index of the selected tab
+    /// </Returns>
+    public int SelectNext(){
         if(selectedTab == null){
             ClearTab();
             SelectTab(tabs[0]);
-            return;
+            return 0;
         }
 
         int nextIndex = (GetIndexOfTab(selectedTab)+1) % tabs.Count;
         SelectTab(tabs[nextIndex]);
+        return nextIndex;
     }
 
-    public void SelectPrevious(){
+    /// <Returns>
+    /// The index of the selected tab
+    /// </Returns>
+    public int SelectPrevious(){
         if(selectedTab == null){
             ClearTab();
             SelectTab(tabs[0]);
-            return;
+            return 0;
         }
 
         int prevIndex = (tabs.Count + GetIndexOfTab(selectedTab)-1) % tabs.Count;
         SelectTab(tabs[prevIndex]);
+        return prevIndex;
     }
 
     public void ClearTab(){

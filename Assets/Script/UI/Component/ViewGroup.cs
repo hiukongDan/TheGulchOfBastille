@@ -11,7 +11,6 @@ public class ViewGroup : MonoBehaviour
     void Awake(){
         gameManager = FindObjectOfType<GameManager>();
     }
-
     void OnEnable() {
         if(views == null){
             views = new List<UIView>();
@@ -23,8 +22,6 @@ public class ViewGroup : MonoBehaviour
         foreach(UIView view in transform.GetComponentsInChildren<UIView>()){
             views.Add(view);
         }
-
-        
     }
     public void OnClick(UIView view){
         int index = GetIndexOfView(view);
