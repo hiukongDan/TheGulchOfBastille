@@ -8,5 +8,6 @@
     Gulch_SunTower,
     Gulch_Tunnel,
     Gulch_Goye,
+    Abandoned_Door,
     Count,
 };
