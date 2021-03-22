@@ -5,6 +5,13 @@ using UnityEngine;
 public class ViewGroup : MonoBehaviour
 {
     public List<UIView> views;
+
+    public GameManager gameManager;
+
+    void Awake(){
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
     void OnEnable() {
         if(views == null){
             views = new List<UIView>();
@@ -16,13 +23,22 @@ public class ViewGroup : MonoBehaviour
         foreach(UIView view in transform.GetComponentsInChildren<UIView>()){
             views.Add(view);
         }
-    }
-
-    public void OnClick(UIView view){
-        int index = GetIndexOfView(view);
 
         
     }
+    public void OnClick(UIView view){
+        int index = GetIndexOfView(view);
 
+        UIState.UIStateEventData data = new UIState.UIStateEventData();
+        data.index = GetIndexOfView(view);
+        data.widgetType = UIState.WidgetType.View;
+        gameManager.uiHandler.uiFSM.PeekState()?.OnClick(data);
+    }
+
+    public void ClearViewGroup(){
+        foreach(UIView view in views){
+            view.ClearView();
+        }
+    }
     int GetIndexOfView(UIView view) => views.IndexOf(view);
 }

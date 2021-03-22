@@ -49,7 +49,7 @@ public abstract class UIState
     }
 
     public enum WidgetType{
-        Tab, Button,
+        Tab, Button, View,
     };
 
     public struct UIStateEventData{
