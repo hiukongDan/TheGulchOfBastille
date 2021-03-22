@@ -1,0 +1,440 @@
+fileFormatVersion: 2
+guid: e6fbe7a279006904a83b3ee5a0cc5c17
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1627529405905076813
+    second: AbandonedDoor_51x171_0
+  - first:
+      213: 4945201808523829475
+    second: AbandonedDoor_51x171_1
+  - first:
+      213: 2448265025683669203
+    second: AbandonedDoor_51x171_2
+  - first:
+      213: -3540262807280984519
+    second: AbandonedDoor_51x171_3
+  - first:
+      213: 66522963713177787
+    second: AbandonedDoor_51x171_4
+  - first:
+      213: -594267497273614413
+    second: AbandonedDoor_51x171_5
+  - first:
+      213: 559565851388406351
+    second: AbandonedDoor_51x171_6
+  - first:
+      213: 2361120002114687439
+    second: AbandonedDoor_51x171_7
+  - first:
+      213: -1190762445391990254
+    second: AbandonedDoor_51x171_8
+  - first:
+      213: -597686695674120262
+    second: AbandonedDoor_51x171_9
+  - first:
+      213: -7408220359131579787
+    second: AbandonedDoor_51x171_10
+  - first:
+      213: 8710928421322141661
+    second: AbandonedDoor_51x171_11
+  - first:
+      213: 5898103234262025149
+    second: AbandonedDoor_51x171_12
+  - first:
+      213: -8774109583067940841
+    second: AbandonedDoor_51x171_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd768bd0aad969e0800000000000000
+      internalID: -1627529405905076813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0aea318d2e0a440800000000000000
+      internalID: 4945201808523829475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d043e3c11cf9f120800000000000000
+      internalID: 2448265025683669203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e5d70ebb57edec0800000000000000
+      internalID: -3540262807280984519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8b78578465ce000800000000000000
+      internalID: 66522963713177787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf127b1cdcb0c7f0800000000000000
+      internalID: -594267497273614413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_6
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ae1785d2af3c700800000000000000
+      internalID: 559565851388406351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_7
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc19d16d12264c020800000000000000
+      internalID: 2361120002114687439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_8
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212f8866ddf897fe0800000000000000
+      internalID: -1190762445391990254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_9
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7fd51fd1794b7f0800000000000000
+      internalID: -597686695674120262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_10
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a352475d6b03990800000000000000
+      internalID: -7408220359131579787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_11
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddfa2c82f3f63e870800000000000000
+      internalID: 8710928421322141661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_12
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db345ce54a54ad150800000000000000
+      internalID: 5898103234262025149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedDoor_51x171_13
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 0
+        width: 51
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71872e842d91c3680800000000000000
+      internalID: -8774109583067940841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

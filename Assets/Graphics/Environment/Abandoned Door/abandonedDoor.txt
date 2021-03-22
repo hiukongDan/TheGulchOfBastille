@@ -1,0 +1,13 @@
+0,   default door+ivy_0
+1,   default door+ivy_1
+      *earth quake begin*
+2,   less than 1 sec
+3,   *earth quake end*
+      *ivy fall and fade*
+4,   2 or 3 sec?
+5,  *play door anim* 
+    *earth quake begin*
+    *generate dust particle*(3 types of dust. bigger the sprite be, faster it falls)(dust only exists in the door)
+6,   *finish door anim*
+     *earth quake end*
+     *stop generating particle*
