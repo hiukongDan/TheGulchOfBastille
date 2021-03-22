@@ -32,10 +32,24 @@ public abstract class UIState
         
     }
 
+    public virtual void onMenuNext(){
+
+    }
+
+    public virtual void OnMenuPrev(){
+        
+    }
+
     public virtual void OnClick(UIStateEventData eventData){
 
     }
+
+    public enum WidgetType{
+        Tab, Button,
+    };
+
     public struct UIStateEventData{
         public int index;
+        public WidgetType widgetType;
     }
 }

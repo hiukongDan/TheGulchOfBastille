@@ -5,8 +5,9 @@ using UnityEngine;
 public class UIHandler : MonoBehaviour
 {
     public enum UIMenu{
-        Main, Play, Pause, Load, Save
+        Main, Play, Pause, Load, Save, Inventory, Equipment, 
     };
+
     public UIFiniteStateMachine uiFSM { get; private set; }
     public UIEffectHandler uiEffectHandler;
     public GameObject uiPlayGO;
@@ -34,7 +35,7 @@ public class UIHandler : MonoBehaviour
         uiSaveState = new UISaveState(this, uiSaveGO, uiSaveGO.GetComponentInChildren<ButtonGroup>());
         uiLoadState = new UILoadState(this, uiLoadGO, uiLoadGO.GetComponentInChildren<ButtonGroup>());
         uiEquipmentState = new UIEquipmentState(this, uiEquipmentGO);
-        uiInventoryState = new UIInventoryState(this, uiInventoryGO);
+        uiInventoryState = new UIInventoryState(this, uiInventoryGO, uiInventoryGO.GetComponentInChildren<TabGroup>());
 
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -58,6 +59,14 @@ public class UIHandler : MonoBehaviour
     /// </summary>
     public void OnInteraction(){
         uiFSM.PeekState().OnInteraction();
+    }
+
+    public void OnMenuPrev(){
+        uiFSM.PeekState().OnMenuPrev();
+    }
+
+    public void OnMenuNext(){
+        uiFSM.PeekState().onMenuNext();
     }
 
     /// <summary>

@@ -34,6 +34,7 @@ public class UIPauseState : UIState
     {
         UIStateEventData data;
         data.index = buttonGroup.GetIndexOfCurrentSelected();
+        data.widgetType = UIState.WidgetType.Button;
         OnClick(data);
     }
 

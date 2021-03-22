@@ -47,10 +47,10 @@ public class UIIconLoader : MonoBehaviour
             KeyItemIcons.Add(i, Resources.Load<Sprite>(path));
         }
 
-        Debug.Log("Weapon: " + WeaponIcons.Count + " loaded");
-        Debug.Log("Wearable: " + WearableIcons.Count + " loaded");
-        Debug.Log("Consumable: " + ConsumableIcons.Count + " loaded");
-        Debug.Log("KeyItem: " + KeyItemIcons.Count + " loaded");
+        // Debug.Log("Weapon: " + WeaponIcons.Count + " loaded");
+        // Debug.Log("Wearable: " + WearableIcons.Count + " loaded");
+        // Debug.Log("Consumable: " + ConsumableIcons.Count + " loaded");
+        // Debug.Log("KeyItem: " + KeyItemIcons.Count + " loaded");
     }
 
 

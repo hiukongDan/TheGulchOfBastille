@@ -128,6 +128,25 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnMenuPrev(InputAction.CallbackContext context){
+        switch(context.phase){
+            case InputActionPhase.Started:
+                GameObject.Find("GameManager").GetComponent<GameManager>()?.uiHandler.OnMenuPrev();
+                break;
+            default:
+                break;
+        }
+    }
+    public void OnMenuNext(InputAction.CallbackContext context){
+        switch(context.phase){
+            case InputActionPhase.Started:
+                GameObject.Find("GameManager").GetComponent<GameManager>()?.uiHandler.OnMenuNext();
+                break;
+            default:
+                break;
+        }
+    }
+
     public void OnMouseMove(InputAction.CallbackContext context)
     {
         MousePosInput = context.ReadValue<Vector2>();

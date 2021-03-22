@@ -48,6 +48,42 @@ public class ItemData
         Count,
     };
 
+
+    public struct WeaponRuntimeData{
+        public WeaponData weapon;
+        public int level;
+        public WeaponRuntimeData(WeaponData weapon, int level){
+            this.weapon = weapon;
+            this.level = level;
+        }
+        
+    };
+
+    public struct WearableRuntimeData{
+        public Wearable wearable;
+        public WearableRuntimeData(Wearable wearable){
+            this.wearable = wearable;
+        }
+    };
+
+    public struct ConsumableRuntimeData{
+        public Consumable consumable;
+        public int count;
+        public ConsumableRuntimeData(Consumable consumable, int count){
+            this.consumable = consumable;
+            this.count = count;
+        }
+    };
+
+    public struct KeyItemRuntimeData{
+        public KeyItem keyItem;
+        public KeyItemRuntimeData(KeyItem keyItem){
+            this.keyItem = keyItem;
+        }
+    };
+
+    
+
 public static Dictionary<int , string> WeaponDescription = new Dictionary<int, string>(){
     {(int)Weapon.Iron_Sword, ""},
     {(int)Weapon.Claymore, ""},
@@ -83,7 +119,6 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
     {(int)Weapon.Master_Stick, new WeaponData(new int[3]{8,10,12}, false, true, false)},
     {(int)Weapon.Sunlight_Stick, new WeaponData(new int[3]{15,17,19}, false ,true, false)},
 };
-
 
     public struct WeaponData{
         int[] Attack;

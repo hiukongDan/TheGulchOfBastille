@@ -68,6 +68,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "menuNext",
+                    "type": "Button",
+                    "id": "37e95db6-fcef-486e-8176-499997e53a6a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MenuPrev",
+                    "type": "Button",
+                    "id": "f20b037b-6532-4585-963d-791e27cac16c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -431,6 +447,39 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33873a03-b339-47a1-ada7-584e13834139",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "menuNext",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6d37b000-91da-4d35-8112-66de30582ae8",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "menuNext",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0fc1599b-584f-40da-a0c5-f8e0502da3d8",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuPrev",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,8 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UITab : MonoBehaviour
+public interface IUITab{
+
+}
+
+public class UITab : MonoBehaviour, IUITab, IPointerClickHandler
 {
-    
+    private TabGroup tabGroup;
+
+    void Awake(){
+        tabGroup = GetComponentInParent<TabGroup>();
+    }
+    void IPointerClickHandler.OnPointerClick(PointerEventData eventData){
+        tabGroup.SelectTab(this);
+        // Debug.Log("click");
+    }
 }

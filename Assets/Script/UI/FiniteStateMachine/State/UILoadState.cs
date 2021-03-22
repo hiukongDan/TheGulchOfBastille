@@ -77,6 +77,7 @@ public class UILoadState : UIState
     public override void OnInteraction(){
         UIStateEventData data;
         data.index = buttonGroup.GetIndexOfCurrentSelected();
+        data.widgetType = UIState.WidgetType.Button;
         OnClick(data);
     }
 

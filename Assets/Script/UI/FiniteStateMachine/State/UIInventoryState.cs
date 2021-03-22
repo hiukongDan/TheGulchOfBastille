@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class UIInventoryState : UIState
 {
-    public UIInventoryState(UIHandler uiHandler, GameObject parentNode): base(uiHandler, parentNode)
+    protected TabGroup tabGroup;
+    public UIInventoryState(UIHandler uiHandler, GameObject parentNode, TabGroup tabGroup): base(uiHandler, parentNode)
     {
-
+        this.tabGroup = tabGroup;
     }
 
     public override void Enter()
@@ -31,6 +32,16 @@ public class UIInventoryState : UIState
         // UIStateEventData data;
         // data.index = buttonGroup.GetIndexOfCurrentSelected();
         // OnClick(data);
+    }
+
+    public override void OnMenuPrev()
+    {
+        tabGroup.SelectPrevious();
+    }
+
+    public override void onMenuNext()
+    {
+        tabGroup.SelectNext();
     }
 
     public override void OnClick(UIStateEventData eventData){

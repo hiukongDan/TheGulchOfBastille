@@ -64,6 +64,7 @@ public class ButtonGroup : MonoBehaviour
     public void OnClick(){
         UIState.UIStateEventData data;
         data.index = GetIndexOfCurrentSelected();
+        data.widgetType = UIState.WidgetType.Button;
         gm.uiHandler.uiFSM.PeekState()?.OnClick(data);
     }
 
