@@ -114,8 +114,10 @@ public class GameSaver : MonoBehaviour
 
                 var littleSuns = (Dictionary<int, bool>)bf.Deserialize(fs);
                 LittleSunData.LittleSuns = littleSuns;
+                var playerSaveData = (D_PlayerStateMachine.PlayerSaveData)bf.Deserialize(fs);
                 var ability = (D_PlayerAbility.PlayerAbility)bf.Deserialize(fs);
                 Player player = GameObject.Find("Player").GetComponent<Player>();
+                player.playerData.SetPlayerSaveData(playerSaveData);
                 player.playerAbilityData.SetPlayerAbility(ability);
                 var runtimeData = (PlayerRuntimeData.PlayerRuntimeSaveData)bf.Deserialize(fs);
                 player.playerRuntimeData.SetPlayerRuntimeSaveData(runtimeData);
@@ -152,6 +154,7 @@ public class GameSaver : MonoBehaviour
                 bf.Serialize(fs, LittleSunData.LittleSuns);
                 Player player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
                 //Player player = GameObject.Find("Player").GetComponent<Player>();
+                bf.Serialize(fs, player.playerData.GetPlayerSaveData());
                 bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
                 bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());
                 bf.Serialize(fs, EnemySaveData.EnemyAliveRevivable);

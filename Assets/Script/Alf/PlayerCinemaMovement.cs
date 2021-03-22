@@ -17,6 +17,10 @@ public class PlayerCinemaMovement : MonoBehaviour
         AreaTransmissionHandler.Instance.performAreaTransmissionHandler += TransitToScene;
     }
 
+    void OnDisable() {
+        AreaTransmissionHandler.Instance.performAreaTransmissionHandler -= TransitToScene;
+    }
+
     #region CINEMA FUNCTIONS
 
     public void LightLittleSun(LittleSunHandler littleSunHandler) => StartCoroutine(lightLittleSun(littleSunHandler));

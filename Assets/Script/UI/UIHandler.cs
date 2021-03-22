@@ -35,7 +35,7 @@ public class UIHandler : MonoBehaviour
         uiSaveState = new UISaveState(this, uiSaveGO, uiSaveGO.GetComponentInChildren<ButtonGroup>());
         uiLoadState = new UILoadState(this, uiLoadGO, uiLoadGO.GetComponentInChildren<ButtonGroup>());
         uiEquipmentState = new UIEquipmentState(this, uiEquipmentGO);
-        uiInventoryState = new UIInventoryState(this, uiInventoryGO, uiInventoryGO.GetComponentInChildren<TabGroup>());
+        uiInventoryState = new UIInventoryState(this, uiInventoryGO);
 
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }

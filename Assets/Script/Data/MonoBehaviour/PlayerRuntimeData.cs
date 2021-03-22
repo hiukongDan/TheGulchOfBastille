@@ -21,7 +21,6 @@ public class PlayerRuntimeData
         public List<ItemData.WearableRuntimeData> wearableStock;
         public List<ItemData.ConsumableRuntimeData> consumableStock;
         public List<ItemData.KeyItemRuntimeData> keyItemStock;
-
         public PlayerStock(List<ItemData.WeaponRuntimeData> weaponStock, List<ItemData.WearableRuntimeData> wearableStock, 
                 List<ItemData.ConsumableRuntimeData> consumableStock, List<ItemData.KeyItemRuntimeData> keyItemStock){
             this.weaponStock = weaponStock;
@@ -46,6 +45,21 @@ public class PlayerRuntimeData
             keyItemStock.Add(keyItem);
         }
     };
+
+    [Serializable]
+    public struct PlayerEquipment{
+        public ItemData.WeaponRuntimeData weapon;
+        public ItemData.WearableRuntimeData wearableSlotOne;
+        public ItemData.WearableRuntimeData wearableSlotTwo;
+
+        public PlayerEquipment(ItemData.WeaponRuntimeData weapon, ItemData.WearableRuntimeData wearableOne, ItemData.WearableRuntimeData wearableTwo){
+            this.weapon = weapon;
+            this.wearableSlotOne = wearableOne;
+            this.wearableSlotTwo = wearableTwo;
+        }
+
+        
+    };
     
     public void InitPlayerRuntimeData(D_PlayerStateMachine playerData){
         currentHitPoints = playerData.PD_maxHitPoint;
@@ -55,6 +69,7 @@ public class PlayerRuntimeData
         lastLittleSunID = -1;
         playerStock = new PlayerStock(new List<ItemData.WeaponRuntimeData>(), new List<ItemData.WearableRuntimeData>(), 
             new List<ItemData.ConsumableRuntimeData>(), new List<ItemData.KeyItemRuntimeData>());
+        playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Iron_Sword, 1));
     }
 
     [Serializable]

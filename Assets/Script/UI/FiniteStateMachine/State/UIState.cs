@@ -37,11 +37,15 @@ public abstract class UIState
     }
 
     public virtual void OnMenuPrev(){
-        
+
     }
 
     public virtual void OnClick(UIStateEventData eventData){
 
+    }
+
+    public virtual void ShowView(){
+        
     }
 
     public enum WidgetType{

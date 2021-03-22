@@ -50,9 +50,9 @@ public class ItemData
 
 
     public struct WeaponRuntimeData{
-        public WeaponData weapon;
+        public Weapon weapon;
         public int level;
-        public WeaponRuntimeData(WeaponData weapon, int level){
+        public WeaponRuntimeData(Weapon weapon, int level){
             this.weapon = weapon;
             this.level = level;
         }

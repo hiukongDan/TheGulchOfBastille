@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public SceneCode[] demonScenes = {SceneCode.Gulch_Main, SceneCode.Gulch_SunTower, SceneCode.Gulch_Goye};
 
 #region REFERNECES
-    private Player player;
+    public Player player;
 #endregion
 
 #region INTERNAL VARIABLES
