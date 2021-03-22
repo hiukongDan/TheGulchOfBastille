@@ -77,7 +77,15 @@ public class PlayerRuntimeData
         }
 
         for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
-            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99));
+            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
+        }
+
+        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
+        }
+
+        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
         }
 
         for(int i = 0; i < (int)ItemData.KeyItem.Count; ++i){

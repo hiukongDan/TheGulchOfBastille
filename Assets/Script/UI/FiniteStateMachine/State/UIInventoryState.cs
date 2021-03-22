@@ -17,7 +17,7 @@ public class UIInventoryState : UIState
 
     private Vector2 normMoveInput;
     private float normMoveInputTimer;
-    private float normMoveInputTimerMax = 0.3f;
+    private float normMoveInputTimerMax = 0.15f;
 
     protected enum TabSelection{
         Weapon, Wearable, Consumable, KeyItem,
@@ -47,7 +47,7 @@ public class UIInventoryState : UIState
             DisplayWeapon();
             tabGroup.SelectTab(tabGroup.tabs[0]);
 
-            selectedViewIndex = -1;
+            selectedViewIndex = 0;
 
             title.SetText("");
             content.SetText("");
@@ -56,6 +56,8 @@ public class UIInventoryState : UIState
             tabGroup.SelectTab(tabGroup.tabs[(int)currentTab]);
             OnClickTab((int)currentTab);
         }
+        
+        OnClickView(selectedViewIndex);
 
         normMoveInputTimer = -1f;
     }
@@ -69,22 +71,15 @@ public class UIInventoryState : UIState
     public override void Update()
     {
         base.Update();
+        normMoveInput = uiHandler.GM.player.InputHandler.NormMovementInput;
+
         if(normMoveInputTimer >= 0.0f){
             normMoveInputTimer -= Time.unscaledDeltaTime;
         }
 
         if(normMoveInputTimer < 0.0f && normMoveInput != Vector2.zero){
             // first consider y axis, then x asix
-            if(normMoveInput.x != 0){
-                if(normMoveInput.x > 0){
-                    OnDirectionMove(UIState.Direction.RIGHT);
-                }
-                else{
-                    OnDirectionMove(UIState.Direction.LEFT);
-                }
-                normMoveInputTimer = normMoveInputTimerMax;
-            }
-            else if(normMoveInput.y != 0){
+            if(normMoveInput.y != 0){
                 if(normMoveInput.y > 0){
                     OnDirectionMove(UIState.Direction.UP);
                 }
@@ -93,8 +88,17 @@ public class UIInventoryState : UIState
                 }
                 normMoveInputTimer = normMoveInputTimerMax;
             }
+            else if(normMoveInput.x != 0){
+                if(normMoveInput.x > 0){
+                    OnDirectionMove(UIState.Direction.RIGHT);
+                }
+                else{
+                    OnDirectionMove(UIState.Direction.LEFT);
+                }
+                normMoveInputTimer = normMoveInputTimerMax;
+            }
         }
-        normMoveInput = uiHandler.GM.player.InputHandler.NormMovementInput;
+        
     }
     public override void OnInteraction()
     {
@@ -102,14 +106,50 @@ public class UIInventoryState : UIState
     }
 
     public override void OnDirectionMove(UIState.Direction direction){
+        if(selectedViewIndex == -1){
+            OnClickView(0);
+        }
+
+        int currentRow = selectedViewIndex / viewGroup.Row;
+        int currentColumn = selectedViewIndex % viewGroup.Row;
+
+        int upRow = (currentRow - 1 + viewGroup.Row) % viewGroup.Row;
+        int downRow = (currentRow + 1) % viewGroup.Row;
+        int leftColumn = (currentColumn - 1 + viewGroup.Column) % viewGroup.Column;
+        int rightColumn = (currentColumn + 1) % viewGroup.Column;
+
+        int upIndex = upRow * viewGroup.Column + currentColumn;
+        int downIndex = downRow * viewGroup.Column + currentColumn;
+        int leftIndex = currentRow * viewGroup.Column + leftColumn;
+        int rightIndex = currentRow * viewGroup.Column + rightColumn;
+
+        int totalItems = CountTotalItemsOfTab(currentTab);
+
+        int currentSelectionPos = currentViewPage * viewGroup.views.Count + selectedViewIndex;
+
         switch(direction){
             case UIState.Direction.UP:
+                // if needed, refresh page
+                if(currentViewPage > 0 && currentRow == 0){
+                    currentViewPage--;
+                    OnClickTab((int)currentTab);
+                }
+                OnClickView(upIndex);
             break;
-            case UIState.Direction.LEFT:
+            case UIState.Direction.LEFT:                
+                OnClickView(leftIndex);
             break;
             case UIState.Direction.DOWN:
+                if(currentRow == viewGroup.Row-1){
+                    if(CountTotalItemsOfTab(currentTab) > (currentViewPage+1) * viewGroup.views.Count){
+                        currentViewPage++;
+                        OnClickTab((int)currentTab);
+                    }
+                }
+                OnClickView(downIndex);
             break;
             case UIState.Direction.RIGHT:
+                OnClickView(rightIndex);
             break;
             default:
             break;
@@ -159,6 +199,8 @@ public class UIInventoryState : UIState
             default:
                 break;
         }
+
+        OnClickView(selectedViewIndex);
     }
 
     protected void OnClickView(int index){
@@ -191,9 +233,10 @@ public class UIInventoryState : UIState
     protected void DisplayWeapon(){
         viewGroup.ClearViewGroup();
         List<ItemData.WeaponRuntimeData> weapons = uiHandler.GM.player.playerRuntimeData.playerStock.weaponStock;
-        int numToDisplay = Mathf.Min(weapons.Count, viewGroup.views.Count);
+        int pageOffset = currentViewPage * viewGroup.views.Count;
+        int numToDisplay = Mathf.Min(weapons.Count - pageOffset, viewGroup.views.Count);
         for(int i = 0; i < numToDisplay; ++i){
-            DisplayWeapon(viewGroup.views[i], weapons[i]);
+            DisplayWeapon(viewGroup.views[i], weapons[pageOffset+i]);
         }
     }
 
@@ -220,9 +263,10 @@ public class UIInventoryState : UIState
     protected void DisplayWearable(){
         viewGroup.ClearViewGroup();
         List<ItemData.WearableRuntimeData> wearables = uiHandler.GM.player.playerRuntimeData.playerStock.wearableStock;
-        int numToDisplay = Mathf.Min(wearables.Count, viewGroup.views.Count);
+        int pageOffset = currentViewPage * viewGroup.views.Count;
+        int numToDisplay = Mathf.Min(wearables.Count-pageOffset, viewGroup.views.Count);
         for(int i = 0; i < numToDisplay; ++i){
-            DisplayWearable(viewGroup.views[i], wearables[i]);
+            DisplayWearable(viewGroup.views[i], wearables[pageOffset+i]);
         }
     }
 
@@ -244,9 +288,10 @@ public class UIInventoryState : UIState
     protected void DisplayConsumable(){
         viewGroup.ClearViewGroup();
         List<ItemData.ConsumableRuntimeData> consumables = uiHandler.GM.player.playerRuntimeData.playerStock.consumableStock;
-        int numToDisplay = Mathf.Min(consumables.Count, viewGroup.views.Count);
+        int pageOffset = currentViewPage * viewGroup.views.Count;
+        int numToDisplay = Mathf.Min(consumables.Count-pageOffset, viewGroup.views.Count);
         for(int i = 0; i < numToDisplay; ++i){
-            DisplayConsumable(viewGroup.views[i], consumables[i]);
+            DisplayConsumable(viewGroup.views[i], consumables[pageOffset+i]);
         }
     }
 
@@ -270,9 +315,10 @@ public class UIInventoryState : UIState
     protected void DisplayKeyItem(){
         viewGroup.ClearViewGroup();
         List<ItemData.KeyItemRuntimeData> keyItems = uiHandler.GM.player.playerRuntimeData.playerStock.keyItemStock;
-        int numToDisplay = Mathf.Min(keyItems.Count, viewGroup.views.Count);
+        int pageOffset = currentViewPage * viewGroup.views.Count;
+        int numToDisplay = Mathf.Min(keyItems.Count-pageOffset, viewGroup.views.Count);
         for(int i = 0; i < numToDisplay; ++i){
-            DisplayKeyItem(viewGroup.views[i], keyItems[i]);
+            DisplayKeyItem(viewGroup.views[i], keyItems[pageOffset+i]);
         }
     }
 
@@ -303,5 +349,27 @@ public class UIInventoryState : UIState
         // res = res.TrimEnd();
         // return res;
         return string.Join(" ", words);
+    }
+
+    protected int CountTotalItemsOfTab(TabSelection tab){
+        int res = 0;
+        switch(tab){
+            case TabSelection.Weapon:
+                res = uiHandler.GM.player.playerRuntimeData.playerStock.weaponStock.Count;
+                break;
+            case TabSelection.Wearable:
+                res = uiHandler.GM.player.playerRuntimeData.playerStock.wearableStock.Count;
+                break;
+            case TabSelection.Consumable:
+                res = uiHandler.GM.player.playerRuntimeData.playerStock.consumableStock.Count;
+                break;
+            case TabSelection.KeyItem:
+                res = uiHandler.GM.player.playerRuntimeData.playerStock.keyItemStock.Count;
+                break;
+            default:
+                break;
+        }
+
+        return res;
     }
 }

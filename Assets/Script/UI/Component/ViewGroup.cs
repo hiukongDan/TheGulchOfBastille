@@ -8,6 +8,9 @@ public class ViewGroup : MonoBehaviour
 
     public GameManager gameManager;
 
+    public int Row;
+    public int Column;
+
     void Awake(){
         gameManager = FindObjectOfType<GameManager>();
     }
