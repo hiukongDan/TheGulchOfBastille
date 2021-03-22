@@ -438,6 +438,7 @@ public class Player : MonoBehaviour
             if(Anim.runtimeAnimatorController != ACNormal){
                 Anim.runtimeAnimatorController = ACNormal;
                 Anim.applyRootMotion = false;
+                Anim.updateMode = AnimatorUpdateMode.Normal;
 
                 //Rb.bodyType = RigidbodyType2D.Dynamic;
             }
@@ -446,6 +447,7 @@ public class Player : MonoBehaviour
             if(Anim.runtimeAnimatorController != ACRootmotion){
                 Anim.runtimeAnimatorController = ACRootmotion;
                 Anim.applyRootMotion = true;
+                Anim.updateMode = AnimatorUpdateMode.AnimatePhysics;
 
                 //Rb.bodyType = RigidbodyType2D.Kinematic;
             }

@@ -13,22 +13,19 @@ public class CascadeLayer : MonoBehaviour
     private Vector3 lastCamPos;
     private Vector3 deltaCamPos;
 	
-	void Awake()
-	{
-		if(followCamera == null){
-			followCamera = Camera.main;
-		}
-	}
 
     void Start()
     {
-        lastCamPos = followCamera.transform.position;
+        lastCamPos = Camera.main.transform.position;
+
+        transform.position = new Vector3(transform.position.x + LayerSpeedRelativeToCameraX * lastCamPos.x,
+            transform.position.y, transform.position.z);
     }
 
     void Update()
     {
-        deltaCamPos = followCamera.transform.position - lastCamPos;
-        lastCamPos = followCamera.transform.position;
+        deltaCamPos = Camera.main.transform.position - lastCamPos;
+        lastCamPos = Camera.main.transform.position;
         
         transform.position = new Vector3(transform.position.x + LayerSpeedRelativeToCameraX * deltaCamPos.x,
             transform.position.y + LayerSpeedRelativeToCameraY * deltaCamPos.y, transform.position.z);
