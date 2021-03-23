@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
         Rb = GetComponent<Rigidbody2D>();
         Bc = GetComponent<BoxCollider2D>();
         Sr = GetComponent<SpriteRenderer>();
-        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GM = GameObject.Find("GameManager")?.GetComponent<GameManager>();
         
         Anim.runtimeAnimatorController = ACNormal;
 
@@ -121,8 +121,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(GM.CanPlayerAction())
+        if(GM){
+            if(GM.CanPlayerAction()){
+                stateMachine.LogicUpdate();
+            }
+        }
+        else{
             stateMachine.LogicUpdate();
+        }
     }
 
     void FixedUpdate()

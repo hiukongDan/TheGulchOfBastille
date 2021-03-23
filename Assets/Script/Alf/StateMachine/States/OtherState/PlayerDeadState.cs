@@ -14,7 +14,7 @@ public class PlayerDeadState : PlayerState
 
     public PlayerDeadState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
-        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GM = GameObject.Find("GameManager")?.GetComponent<GameManager>();
     }
 
     public override void Enter()
@@ -66,6 +66,6 @@ public class PlayerDeadState : PlayerState
 
     public void CompleteDead()
     {
-        GM.ReloadGame();
+        GM?.ReloadGame();
     }
 }

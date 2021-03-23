@@ -111,7 +111,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             case InputActionPhase.Started:
                 isInteraction = true;
-                GameObject.Find("GameManager").GetComponent<GameManager>()?.uiHandler.OnInteraction();
+                GameObject.Find("GameManager")?.GetComponent<GameManager>()?.uiHandler.OnInteraction();
                 break;
             default:
                 break;
@@ -123,7 +123,7 @@ public class PlayerInputHandler : MonoBehaviour
         switch (context.phase)
         {
             case InputActionPhase.Started:
-                GameObject.Find("GameManager").GetComponent<GameManager>()?.uiHandler.OnPause();
+                GameObject.Find("GameManager")?.GetComponent<GameManager>()?.uiHandler.OnPause();
                 break;
         }
     }
@@ -131,7 +131,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnMenuPrev(InputAction.CallbackContext context){
         switch(context.phase){
             case InputActionPhase.Started:
-                GameObject.Find("GameManager").GetComponent<GameManager>()?.uiHandler.OnMenuPrev();
+                GameObject.Find("GameManager")?.GetComponent<GameManager>()?.uiHandler.OnMenuPrev();
                 break;
             default:
                 break;
