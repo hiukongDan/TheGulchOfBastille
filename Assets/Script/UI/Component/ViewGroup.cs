@@ -8,7 +8,9 @@ public class ViewGroup : MonoBehaviour
 
     public GameManager gameManager;
 
+    [Tooltip("Used in square views")]
     public int Row;
+    [Tooltip("Used in square views")]
     public int Column;
 
     void Awake(){
@@ -40,12 +42,10 @@ public class ViewGroup : MonoBehaviour
             view.ClearView();
         }
     }
-
     public void ClearChosen(){
         foreach(UIView view in views){
             view.ClearChosen();
         }
     }
-    
     int GetIndexOfView(UIView view) => views.IndexOf(view);
 }
