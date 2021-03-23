@@ -23,6 +23,7 @@ public class UIView : MonoBehaviour, IPointerClickHandler
     }
 
     public void OnPointerClick(PointerEventData data){
+        
         viewGroup.OnClick(this);
     }
 
@@ -34,6 +35,14 @@ public class UIView : MonoBehaviour, IPointerClickHandler
 
     public void ClearChosen(){
         chosen.gameObject?.SetActive(false);
+    }
+
+    public void Choose(){
+        chosen.gameObject?.SetActive(true);
+    }
+
+    public void SetClickable(bool clickable){
+        image.raycastTarget = clickable;
     }
 
 }

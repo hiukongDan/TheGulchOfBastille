@@ -110,8 +110,8 @@ public class UIInventoryState : UIState
             OnClickView(0);
         }
 
-        int currentRow = selectedViewIndex / viewGroup.Row;
-        int currentColumn = selectedViewIndex % viewGroup.Row;
+        int currentRow = selectedViewIndex / viewGroup.Column;
+        int currentColumn = selectedViewIndex % viewGroup.Column;
 
         int upRow = (currentRow - 1 + viewGroup.Row) % viewGroup.Row;
         int downRow = (currentRow + 1) % viewGroup.Row;
@@ -158,11 +158,13 @@ public class UIInventoryState : UIState
 
     public override void OnMenuPrev()
     {
+        currentViewPage = 0;
         OnClickTab(tabGroup.SelectPrevious());
     }
 
     public override void onMenuNext()
     {
+        currentViewPage = 0;
         OnClickTab(tabGroup.SelectNext());
     }
 
@@ -240,7 +242,7 @@ public class UIInventoryState : UIState
         }
     }
 
-    protected void DisplayWeapon(UIView view, ItemData.WeaponRuntimeData weaponRuntimeData){
+    public static void DisplayWeapon(UIView view, ItemData.WeaponRuntimeData weaponRuntimeData){
         if(weaponRuntimeData.level > 0){
             view.text.gameObject.SetActive(true);
             view.text.SetText("*"+weaponRuntimeData.level);
@@ -270,7 +272,7 @@ public class UIInventoryState : UIState
         }
     }
 
-    protected void DisplayWearable(UIView view, ItemData.WearableRuntimeData wearableRuntimeData){
+    public static void DisplayWearable(UIView view, ItemData.WearableRuntimeData wearableRuntimeData){
         view.image.gameObject.SetActive(true);
         view.image.sprite = UIIconLoader.WearableIcons[(int)wearableRuntimeData.wearable];
     }
@@ -295,7 +297,7 @@ public class UIInventoryState : UIState
         }
     }
 
-    protected void DisplayConsumable(UIView view, ItemData.ConsumableRuntimeData consumableRuntimeData){
+    public static void DisplayConsumable(UIView view, ItemData.ConsumableRuntimeData consumableRuntimeData){
         view.image.gameObject.SetActive(true);
         view.image.sprite = UIIconLoader.ConsumableIcons[(int)consumableRuntimeData.consumable];
         view.text.gameObject.SetActive(true);
@@ -322,7 +324,7 @@ public class UIInventoryState : UIState
         }
     }
 
-    protected void DisplayKeyItem(UIView view, ItemData.KeyItemRuntimeData keyItemRuntimeData){
+    public static void DisplayKeyItem(UIView view, ItemData.KeyItemRuntimeData keyItemRuntimeData){
         view.image.gameObject.SetActive(true);
         view.image.sprite = UIIconLoader.KeyItemIcons[(int)keyItemRuntimeData.keyItem];
     }
@@ -337,7 +339,7 @@ public class UIInventoryState : UIState
         }
     }
 
-    protected string ParsingTitle(string str){
+    public static string ParsingTitle(string str){
         string[] words = str.Split('_');
         // int count = 0;
         // string res = "";

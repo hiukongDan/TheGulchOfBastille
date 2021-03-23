@@ -42,6 +42,7 @@ public class UIPauseState : UIState
         switch((Selection)eventData.index){
             case Selection.Save:
                 uiHandler.uiFSM.PushState(uiHandler.uiSaveState);
+                Time.timeScale = 0.0f;
                 break;
             case Selection.Equipment:
                 uiHandler.uiFSM.PushState(uiHandler.uiEquipmentState);

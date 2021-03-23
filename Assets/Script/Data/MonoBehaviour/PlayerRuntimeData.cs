@@ -13,6 +13,28 @@ public class PlayerRuntimeData
     public Vector2 lastPosition;
     public bool isLoaded = false;
     public PlayerStock playerStock;
+    public PlayerSlot playerSlot;
+
+    [Serializable]
+    public struct PlayerSlot{
+        public int weaponIndex;
+        public int wearableOneIndex;
+        public int wearableTwoIndex;
+        public PlayerSlot(int weaponIndex, int wearableOneIndex, int wearableTwoIndex){
+            this.weaponIndex = weaponIndex;
+            this.wearableOneIndex = wearableOneIndex;
+            this.wearableTwoIndex = wearableTwoIndex;
+        }
+
+        public bool IsWeaponInUse(PlayerStock playerStock, int weaponIndex){
+            return weaponIndex >= 0 && weaponIndex < playerStock.weaponStock.Count && weaponIndex != this.weaponIndex;
+        }
+
+        public bool IsWearableInUse(PlayerStock playerStock, int wearableIndex){
+            return wearableIndex >= 0 && wearableIndex < playerStock.wearableStock.Count && 
+                (wearableIndex == this.wearableOneIndex || wearableIndex == this.wearableTwoIndex);
+        }
+    };
 
     [Serializable]
     public struct PlayerStock{
@@ -91,6 +113,9 @@ public class PlayerRuntimeData
         for(int i = 0; i < (int)ItemData.KeyItem.Count; ++i){
             playerStock.Pick(new ItemData.KeyItemRuntimeData((ItemData.KeyItem)i));
         }
+
+        // use default weapon and none wearables
+        playerSlot = new PlayerSlot(0, 0, 1);
     }
 
     [Serializable]
@@ -102,9 +127,10 @@ public class PlayerRuntimeData
         public int lastLittleSunID; 
         public string lastPosition;
         public PlayerStock playerStock;
+        public PlayerSlot playerSlot;
 
         public PlayerRuntimeSaveData(float currentHitPoints, float currentStunPoints, float currentDecayPoints,
-                 SceneCode currentSceneCode, int lastLittleSunID, Vector2 lastPosition, PlayerStock playerStock){
+                 SceneCode currentSceneCode, int lastLittleSunID, Vector2 lastPosition, PlayerStock playerStock, PlayerSlot playerSlot){
             this.currentHitPoints = currentHitPoints;
             this.currentStunPoints = currentStunPoints;
             this.currentDecayPoints = currentDecayPoints;
@@ -113,12 +139,13 @@ public class PlayerRuntimeData
             string strLastPos = lastPosition.ToString();
             this.lastPosition = strLastPos.Substring(1, strLastPos.Length-2);
             this.playerStock = playerStock;
+            this.playerSlot = playerSlot;
             // Debug.Log(this.lastPosition);
         }
     };
 
     public PlayerRuntimeSaveData GetPlayerRuntimeSaveData(){
-        return new PlayerRuntimeSaveData(currentHitPoints, currentStunPoints, currentDecayPoints, currentSceneCode, lastLittleSunID, lastPosition, playerStock);
+        return new PlayerRuntimeSaveData(currentHitPoints, currentStunPoints, currentDecayPoints, currentSceneCode, lastLittleSunID, lastPosition, playerStock, playerSlot);
     }
 
     public void SetPlayerRuntimeSaveData(PlayerRuntimeSaveData playerRuntimeSaveData){
@@ -130,6 +157,7 @@ public class PlayerRuntimeData
         string[] lastPos = playerRuntimeSaveData.lastPosition.Split(',');
         lastPosition = new Vector2(float.Parse(lastPos[0]), float.Parse(lastPos[1]));
         playerStock = playerRuntimeSaveData.playerStock;
+        playerSlot = playerRuntimeSaveData.playerSlot;
         // Debug.Log(playerRuntimeSaveData.lastPosition);
         isLoaded = true;
     }
