@@ -9,7 +9,7 @@ public class BasicCameraShake : MonoBehaviour
     }
 
     /// <Summary>
-    /// Fade in/out using linear interpolation
+    /// Fade in/out using linear interpolation.
     /// </Summary>
     IEnumerator shakeCameraVertically(float duration, float range, float speed, float fadeInTime=0f, float fadeOutTime=0f){
         float startTime = Time.time;
@@ -30,7 +30,9 @@ public class BasicCameraShake : MonoBehaviour
                 multiplier *= (duration-currentTime)/fadeOutTime;
             }
             float currentRange = range * multiplier;
-            Vector3 targetPos = new Vector3(transform.position.x, oldPosition.y + (isUp?Random.Range(0, currentRange):Random.Range(-currentRange, 0)), transform.position.z);
+            Vector3 targetPos = new Vector3(transform.position.x, 
+                oldPosition.y + (isUp?Random.Range(0, currentRange):Random.Range(-currentRange, 0)), 
+                transform.position.z);
             transform.position = Vector3.Lerp(transform.position, targetPos, speed);
             yield return new WaitForEndOfFrame();
             isUp = !isUp;

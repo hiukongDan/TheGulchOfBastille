@@ -20,6 +20,9 @@ public class UIMainState : UIState
             buttonGroup.DisableButton((int)Selection.Load);
             // Debug.Log("disable");
         }
+        else{
+            buttonGroup.EnableButton((int)Selection.Load);
+        }
     }
 
     public override void Exit()
