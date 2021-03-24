@@ -60,6 +60,9 @@ public override void LogicUpdate()
             else if(player.ladderState.HasValidLadder()){
                 stateMachine.SwitchState(player.ladderState);
             }
+            else if(player.GetInteractable() != null){
+                player.GetInteractable().OnInteraction();
+            }
             else
             {
                 player.InputHandler.ResetIsInteraction();
