@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// [ExecuteInEditMode]
+///[ExecuteInEditMode]
 public class CascadeLayer : MonoBehaviour
 {
     public float LayerSpeedRelativeToCameraX = 1f;
@@ -13,7 +13,6 @@ public class CascadeLayer : MonoBehaviour
     private Vector3 lastCamPos;
     private Vector3 deltaCamPos;
 	
-
     void Start()
     {
         lastCamPos = Camera.main.transform.position;
@@ -24,10 +23,11 @@ public class CascadeLayer : MonoBehaviour
 
     void Update()
     {
-        deltaCamPos = Camera.main.transform.position - lastCamPos;
-        lastCamPos = Camera.main.transform.position;
-        
-        transform.position = new Vector3(transform.position.x + LayerSpeedRelativeToCameraX * deltaCamPos.x,
-            transform.position.y + LayerSpeedRelativeToCameraY * deltaCamPos.y, transform.position.z);
-    }
+		deltaCamPos = Camera.main.transform.position - lastCamPos;
+		lastCamPos = Camera.main.transform.position;
+	
+		transform.position = new Vector3(transform.position.x + LayerSpeedRelativeToCameraX * deltaCamPos.x,
+			transform.position.y + LayerSpeedRelativeToCameraY * deltaCamPos.y, transform.position.z);
+	}
+
 }
