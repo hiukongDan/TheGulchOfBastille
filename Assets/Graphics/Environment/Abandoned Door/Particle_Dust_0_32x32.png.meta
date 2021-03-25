@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -3656788291170695529
     second: Particle_Dust_0_32x32_2
+  - first:
+      213: 2386428932933131532
+    second: Particle_Dust_0_32x32_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -104,7 +107,7 @@ TextureImporter:
         width: 3
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -125,7 +128,7 @@ TextureImporter:
         width: 2
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +149,7 @@ TextureImporter:
         width: 2
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,6 +157,27 @@ TextureImporter:
       bones: []
       spriteID: 79686f57c6a704dc0800000000000000
       internalID: -3656788291170695529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Dust_0_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 14
+        width: 2
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d913d787c4e1120800000000000000
+      internalID: 2386428932933131532
       vertices: []
       indices: 
       edges: []
