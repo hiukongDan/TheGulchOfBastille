@@ -24,24 +24,29 @@ namespace Gulch
             switch (data.spriteEffectType)
             {
                 case SpriteEffectType.Blink:
-                    StartCoroutine(DoBlink(data.go, MatBlink));
+                    StartCoroutine(DoBlink(data.go, MatBlink, data.spriteEffectDuration));
                     break;
                 case SpriteEffectType.BlinkDark:
-                    StartCoroutine(DoBlink(data.go, MatBinkDark));
+                    StartCoroutine(DoBlink(data.go, MatBinkDark, data.spriteEffectDuration));
                     break;
                 default:
                     break;
             }
         }
 
-        IEnumerator DoBlink(GameObject go, Material blinkMat)
+        IEnumerator DoBlink(GameObject go, Material blinkMat, float duration)
         {
             var sp = go.GetComponent<SpriteRenderer>();
             var matOld = sp.material;
             
-            sp.material = blinkMat;
-
-            yield return new WaitForSeconds(BlinkDuration);
+            while(duration >= 0){
+                sp.material = blinkMat;
+                yield return new WaitForSeconds(BlinkDuration/2);
+                sp.material = matOld;
+                yield return new WaitForSeconds(BlinkDuration/2);
+                duration -= BlinkDuration;
+            }
+            
 
             sp.material = matOld;
         }

@@ -14,6 +14,7 @@ public class PlayerWakeupState : PlayerState
     {
         base.Enter();
         ResetControlVariables();
+        player.InputHandler.ResetAll();
     }
 
     public override void Exit()

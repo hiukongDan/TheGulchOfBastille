@@ -351,7 +351,7 @@ public class Player : MonoBehaviour
                 stateMachine.SwitchState(takeDamageState);
             }
 
-            Gulch.GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(gameObject, Gulch.SpriteEffectType.Blink));
+            Gulch.GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(gameObject, Gulch.SpriteEffectType.Blink, playerData.GD_damageImmuneTime));
         }
     }
 
@@ -454,8 +454,8 @@ public class Player : MonoBehaviour
     public void Flip()
     {
         facingDirection *= -1;
-        // transform.Rotate(0f, 180f, 0f);
-        Sr.flipX = !Sr.flipX;
+        transform.Rotate(0f, 180f, 0f);
+        // Sr.flipX = !Sr.flipX;
     }
 
     /// <Summary>

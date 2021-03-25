@@ -141,6 +141,7 @@ public class GoyeCombat1 : Entity
     private void OnEnable(){
         if(isStarted){
             if(GetComponent<EnemySaveData>().IsAlive()){
+                Reset();
                 SceneReset();
             }
             else{

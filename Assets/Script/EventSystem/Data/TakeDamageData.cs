@@ -7,10 +7,12 @@ namespace Gulch
     {
         public GameObject go;
         public SpriteEffectType spriteEffectType;
-        public TakeDamageData(GameObject go, SpriteEffectType spriteEffectType) : base(EventType.TakeDamage)
+        public float spriteEffectDuration;
+        public TakeDamageData(GameObject go, SpriteEffectType spriteEffectType, float spriteEffectDuration=0.1f) : base(EventType.TakeDamage)
         {
             this.go = go;
             this.spriteEffectType = spriteEffectType;
+            this.spriteEffectDuration = spriteEffectDuration;
         }
     }
 }

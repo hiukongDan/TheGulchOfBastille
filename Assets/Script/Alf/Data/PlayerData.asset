@@ -15,7 +15,7 @@ MonoBehaviour:
   GD_groundCheckDistance: 0.136
   GD_wallCheckDistance: 0.3
   GD_ladderEndCheckRadius: 0.05
-  GD_damageImmuneTime: 0.5
+  GD_damageImmuneTime: 0.2
   GD_whatIsGround:
     serializedVersion: 2
     m_Bits: 256

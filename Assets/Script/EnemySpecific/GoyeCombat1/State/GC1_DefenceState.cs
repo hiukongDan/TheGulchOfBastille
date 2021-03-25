@@ -64,12 +64,17 @@ public class GC1_DefenceState : DefenceState
         enemy.FaceToPlayer(false);
 
         DoChecks();
-
-        if (detectPlayerInMeleeRange)
+        
+        if (defenceTimer < 0)
+        {
+            enemy.anim.SetBool("isDefence", false);
+            isCounterAttack = false;
+        }
+        else if (detectPlayerInMeleeRange)
         {
             if(enemy.refPlayer.stateMachine.currentState == enemy.refPlayer.attackState)
             {
-                CounterAttack();
+                stateMachine.SwitchState(enemy.parryState);
             }
             else if (enemy.meleeAttackState.CanAction())
             {
@@ -79,6 +84,9 @@ public class GC1_DefenceState : DefenceState
             {
                 SetIsDefenceForward(false);
             }
+        }
+        else{
+            SetIsDefenceForward(true);
         }
         /*
         else if(detectPlayerInMaxAgro && !detectPlayerInMinAgro)
@@ -93,16 +101,7 @@ public class GC1_DefenceState : DefenceState
             }
         }
         */
-        else if (defenceTimer < 0)
-        {
-            enemy.anim.SetBool("isDefence", false);
-            isCounterAttack = false;
-        }
-    }
 
-    public void CounterAttack()
-    {
-        stateMachine.SwitchState(enemy.parryState);
     }
 
     public override void PhysicsUpdate()
