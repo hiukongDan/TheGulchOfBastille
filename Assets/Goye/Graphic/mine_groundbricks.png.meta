@@ -1,0 +1,6938 @@
+fileFormatVersion: 2
+guid: 42f90df726cdf3245b863aafc86911bf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6553184614511972866
+    second: mine_groundbricks_0
+  - first:
+      213: 3041663030730370091
+    second: mine_groundbricks_1
+  - first:
+      213: -1363811062576788279
+    second: mine_groundbricks_2
+  - first:
+      213: 6295608976129385460
+    second: mine_groundbricks_3
+  - first:
+      213: -2065492758279889361
+    second: mine_groundbricks_4
+  - first:
+      213: 620918683552045873
+    second: mine_groundbricks_5
+  - first:
+      213: 3737598393688498848
+    second: mine_groundbricks_6
+  - first:
+      213: 2575490815388803631
+    second: mine_groundbricks_7
+  - first:
+      213: 7385669723522762817
+    second: mine_groundbricks_8
+  - first:
+      213: 7658271707989843869
+    second: mine_groundbricks_9
+  - first:
+      213: -9118630241832898893
+    second: mine_groundbricks_10
+  - first:
+      213: 8729913255694640719
+    second: mine_groundbricks_11
+  - first:
+      213: 2867146770683296261
+    second: mine_groundbricks_12
+  - first:
+      213: 140121941321637152
+    second: mine_groundbricks_13
+  - first:
+      213: -7344865172486140227
+    second: mine_groundbricks_14
+  - first:
+      213: 1620497441984802702
+    second: mine_groundbricks_15
+  - first:
+      213: -4130410508009082991
+    second: mine_groundbricks_16
+  - first:
+      213: -1468428785344839301
+    second: mine_groundbricks_17
+  - first:
+      213: 2883845555285250513
+    second: mine_groundbricks_18
+  - first:
+      213: -8134900157848581733
+    second: mine_groundbricks_19
+  - first:
+      213: -7472504001970051379
+    second: mine_groundbricks_20
+  - first:
+      213: 3453493733090537087
+    second: mine_groundbricks_21
+  - first:
+      213: 800199447575258515
+    second: mine_groundbricks_22
+  - first:
+      213: -5317556946425989753
+    second: mine_groundbricks_23
+  - first:
+      213: 3706700483904004954
+    second: mine_groundbricks_24
+  - first:
+      213: -2375174973852585390
+    second: mine_groundbricks_25
+  - first:
+      213: -3359391056322770552
+    second: mine_groundbricks_26
+  - first:
+      213: 7937264377641837285
+    second: mine_groundbricks_27
+  - first:
+      213: 6416367156867161961
+    second: mine_groundbricks_28
+  - first:
+      213: 1871511544067153633
+    second: mine_groundbricks_29
+  - first:
+      213: -8310539412386163946
+    second: mine_groundbricks_30
+  - first:
+      213: 7849672330129046672
+    second: mine_groundbricks_31
+  - first:
+      213: 6116089693202734803
+    second: mine_groundbricks_32
+  - first:
+      213: -8508158140377941095
+    second: mine_groundbricks_33
+  - first:
+      213: 2566031500095339063
+    second: mine_groundbricks_34
+  - first:
+      213: 919838721793044801
+    second: mine_groundbricks_35
+  - first:
+      213: 142432439735937944
+    second: mine_groundbricks_36
+  - first:
+      213: 3125803367802595164
+    second: mine_groundbricks_37
+  - first:
+      213: 2098166157346490234
+    second: mine_groundbricks_38
+  - first:
+      213: 785817439823521701
+    second: mine_groundbricks_39
+  - first:
+      213: -5591691162318584072
+    second: mine_groundbricks_40
+  - first:
+      213: -6959263859073915860
+    second: mine_groundbricks_41
+  - first:
+      213: 7145852489209118249
+    second: mine_groundbricks_42
+  - first:
+      213: -481580250956294091
+    second: mine_groundbricks_43
+  - first:
+      213: -1466862635401581021
+    second: mine_groundbricks_44
+  - first:
+      213: -8930727411563621053
+    second: mine_groundbricks_45
+  - first:
+      213: 3508953060592689983
+    second: mine_groundbricks_46
+  - first:
+      213: -4380935978794956323
+    second: mine_groundbricks_47
+  - first:
+      213: 912047052069412592
+    second: mine_groundbricks_48
+  - first:
+      213: -6035959606461684409
+    second: mine_groundbricks_49
+  - first:
+      213: 1376088164305801841
+    second: mine_groundbricks_50
+  - first:
+      213: -6453388404417768016
+    second: mine_groundbricks_51
+  - first:
+      213: -8691383073999876946
+    second: mine_groundbricks_52
+  - first:
+      213: -1632224675477517257
+    second: mine_groundbricks_53
+  - first:
+      213: 6735168073793412946
+    second: mine_groundbricks_54
+  - first:
+      213: 2180525171199792314
+    second: mine_groundbricks_55
+  - first:
+      213: -4445217334520925229
+    second: mine_groundbricks_56
+  - first:
+      213: 8870313074462666394
+    second: mine_groundbricks_57
+  - first:
+      213: 3404212280973802976
+    second: mine_groundbricks_58
+  - first:
+      213: 4593665976448098716
+    second: mine_groundbricks_59
+  - first:
+      213: -3180543798210247347
+    second: mine_groundbricks_60
+  - first:
+      213: -3095431076037721898
+    second: mine_groundbricks_61
+  - first:
+      213: -3802282314086658310
+    second: mine_groundbricks_62
+  - first:
+      213: -1462099580548379233
+    second: mine_groundbricks_63
+  - first:
+      213: -4723488887615794688
+    second: mine_groundbricks_64
+  - first:
+      213: 5368656173454513176
+    second: mine_groundbricks_65
+  - first:
+      213: 2909208026880156184
+    second: mine_groundbricks_66
+  - first:
+      213: -5681078307472553494
+    second: mine_groundbricks_67
+  - first:
+      213: -766747292862660469
+    second: mine_groundbricks_68
+  - first:
+      213: -7662623836560693343
+    second: mine_groundbricks_69
+  - first:
+      213: 5124332451569730827
+    second: mine_groundbricks_70
+  - first:
+      213: 5689928171369229126
+    second: mine_groundbricks_71
+  - first:
+      213: -4124276503988837839
+    second: mine_groundbricks_72
+  - first:
+      213: -8412137722531078511
+    second: mine_groundbricks_73
+  - first:
+      213: -7619863160789352923
+    second: mine_groundbricks_74
+  - first:
+      213: 1586817058623868143
+    second: mine_groundbricks_75
+  - first:
+      213: -9049796053995611283
+    second: mine_groundbricks_76
+  - first:
+      213: 9195969226567422668
+    second: mine_groundbricks_77
+  - first:
+      213: 2328310101346645377
+    second: mine_groundbricks_78
+  - first:
+      213: 3882854679893188725
+    second: mine_groundbricks_79
+  - first:
+      213: 1441334117919344104
+    second: mine_groundbricks_80
+  - first:
+      213: 305868744955303185
+    second: mine_groundbricks_81
+  - first:
+      213: 4149672712786534004
+    second: mine_groundbricks_82
+  - first:
+      213: 144879916460648047
+    second: mine_groundbricks_83
+  - first:
+      213: -3113867024654415063
+    second: mine_groundbricks_84
+  - first:
+      213: 19163109266929838
+    second: mine_groundbricks_85
+  - first:
+      213: -6359751025947444305
+    second: mine_groundbricks_86
+  - first:
+      213: -536848582035307060
+    second: mine_groundbricks_87
+  - first:
+      213: 8583862912842637822
+    second: mine_groundbricks_88
+  - first:
+      213: -868912736178602333
+    second: mine_groundbricks_89
+  - first:
+      213: -4303164055335281994
+    second: mine_groundbricks_90
+  - first:
+      213: 4420507971241897106
+    second: mine_groundbricks_91
+  - first:
+      213: 2459288466332954710
+    second: mine_groundbricks_92
+  - first:
+      213: 5005261513711542041
+    second: mine_groundbricks_93
+  - first:
+      213: -3587323998637497908
+    second: mine_groundbricks_94
+  - first:
+      213: 4844107430350524154
+    second: mine_groundbricks_95
+  - first:
+      213: -5238801126136731214
+    second: mine_groundbricks_96
+  - first:
+      213: 6103777418791755516
+    second: mine_groundbricks_97
+  - first:
+      213: 6124021033523956667
+    second: mine_groundbricks_98
+  - first:
+      213: -3156108746202297344
+    second: mine_groundbricks_99
+  - first:
+      213: 7335238035277685137
+    second: mine_groundbricks_100
+  - first:
+      213: -5867474705116576623
+    second: mine_groundbricks_101
+  - first:
+      213: 6129795846508302661
+    second: mine_groundbricks_102
+  - first:
+      213: 7438508986133354902
+    second: mine_groundbricks_103
+  - first:
+      213: -554457016785133448
+    second: mine_groundbricks_104
+  - first:
+      213: 2582624306052818696
+    second: mine_groundbricks_105
+  - first:
+      213: 4792442136304003372
+    second: mine_groundbricks_106
+  - first:
+      213: 4983838638732678846
+    second: mine_groundbricks_107
+  - first:
+      213: -2506205932650254133
+    second: mine_groundbricks_108
+  - first:
+      213: 828610865024498182
+    second: mine_groundbricks_109
+  - first:
+      213: 8667931507206817058
+    second: mine_groundbricks_110
+  - first:
+      213: 3575078285141944064
+    second: mine_groundbricks_111
+  - first:
+      213: -3507167339459243959
+    second: mine_groundbricks_112
+  - first:
+      213: -2354144089996683874
+    second: mine_groundbricks_113
+  - first:
+      213: -3878492524710003705
+    second: mine_groundbricks_114
+  - first:
+      213: -5867870621825944432
+    second: mine_groundbricks_115
+  - first:
+      213: -7295023599097523630
+    second: mine_groundbricks_116
+  - first:
+      213: -6494560651732321400
+    second: mine_groundbricks_117
+  - first:
+      213: -4061780372172262003
+    second: mine_groundbricks_118
+  - first:
+      213: 7132560529599296468
+    second: mine_groundbricks_119
+  - first:
+      213: -3639877202952848478
+    second: mine_groundbricks_120
+  - first:
+      213: -8814983431407935769
+    second: mine_groundbricks_121
+  - first:
+      213: 416514121093355175
+    second: mine_groundbricks_122
+  - first:
+      213: -7984803529275340766
+    second: mine_groundbricks_123
+  - first:
+      213: 7942051400324462621
+    second: mine_groundbricks_124
+  - first:
+      213: -6506367129226495163
+    second: mine_groundbricks_125
+  - first:
+      213: -8388653574506207098
+    second: mine_groundbricks_126
+  - first:
+      213: -3195980531188973764
+    second: mine_groundbricks_127
+  - first:
+      213: 626666300677681896
+    second: mine_groundbricks_128
+  - first:
+      213: -4784474356632997161
+    second: mine_groundbricks_129
+  - first:
+      213: -7500977555938191704
+    second: mine_groundbricks_130
+  - first:
+      213: -3893388696821760278
+    second: mine_groundbricks_131
+  - first:
+      213: -4828208147002404561
+    second: mine_groundbricks_132
+  - first:
+      213: 1188374335301464617
+    second: mine_groundbricks_133
+  - first:
+      213: 9142965120008881516
+    second: mine_groundbricks_134
+  - first:
+      213: 9178892029228834241
+    second: mine_groundbricks_135
+  - first:
+      213: 909983774638159316
+    second: mine_groundbricks_136
+  - first:
+      213: -719558837898866557
+    second: mine_groundbricks_137
+  - first:
+      213: -9005899062196097869
+    second: mine_groundbricks_138
+  - first:
+      213: 5270452708097936964
+    second: mine_groundbricks_139
+  - first:
+      213: 6027177770652704663
+    second: mine_groundbricks_140
+  - first:
+      213: -8715529458191303583
+    second: mine_groundbricks_141
+  - first:
+      213: 5214061003785605958
+    second: mine_groundbricks_142
+  - first:
+      213: -5081427018346722352
+    second: mine_groundbricks_143
+  - first:
+      213: -3511987139622107052
+    second: mine_groundbricks_144
+  - first:
+      213: -7133686672052318548
+    second: mine_groundbricks_145
+  - first:
+      213: -8680922670946817981
+    second: mine_groundbricks_146
+  - first:
+      213: -867325284284409644
+    second: mine_groundbricks_147
+  - first:
+      213: 5866321605194091796
+    second: mine_groundbricks_148
+  - first:
+      213: -8581940114623887467
+    second: mine_groundbricks_149
+  - first:
+      213: 513352100351634869
+    second: mine_groundbricks_150
+  - first:
+      213: 4893665457071759666
+    second: mine_groundbricks_151
+  - first:
+      213: 5948258449494133800
+    second: mine_groundbricks_152
+  - first:
+      213: 5785234461854318528
+    second: mine_groundbricks_153
+  - first:
+      213: -2080287179208613163
+    second: mine_groundbricks_154
+  - first:
+      213: 2714726933590069689
+    second: mine_groundbricks_155
+  - first:
+      213: 3902366784732321663
+    second: mine_groundbricks_156
+  - first:
+      213: 9210597699753994559
+    second: mine_groundbricks_157
+  - first:
+      213: 2007920989460561296
+    second: mine_groundbricks_158
+  - first:
+      213: 4472526751704069552
+    second: mine_groundbricks_159
+  - first:
+      213: -4636839941507439449
+    second: mine_groundbricks_160
+  - first:
+      213: 978912118702156051
+    second: mine_groundbricks_161
+  - first:
+      213: 7490552183201270264
+    second: mine_groundbricks_162
+  - first:
+      213: -584909923749285062
+    second: mine_groundbricks_163
+  - first:
+      213: 2224643041460820133
+    second: mine_groundbricks_164
+  - first:
+      213: 7459154566715456809
+    second: mine_groundbricks_165
+  - first:
+      213: 3242282720061502462
+    second: mine_groundbricks_166
+  - first:
+      213: -321260349590737554
+    second: mine_groundbricks_167
+  - first:
+      213: -1125442531665885175
+    second: mine_groundbricks_168
+  - first:
+      213: -4414701029233864164
+    second: mine_groundbricks_169
+  - first:
+      213: -6922721041172905532
+    second: mine_groundbricks_170
+  - first:
+      213: 6902269753776418799
+    second: mine_groundbricks_171
+  - first:
+      213: -8563449674106807808
+    second: mine_groundbricks_172
+  - first:
+      213: 6729038923959414821
+    second: mine_groundbricks_173
+  - first:
+      213: -7830390381952678406
+    second: mine_groundbricks_174
+  - first:
+      213: 3550820390457564795
+    second: mine_groundbricks_175
+  - first:
+      213: -1184799312457723942
+    second: mine_groundbricks_176
+  - first:
+      213: 1841490073370911227
+    second: mine_groundbricks_177
+  - first:
+      213: 2220130305504150431
+    second: mine_groundbricks_178
+  - first:
+      213: 4773436537847315989
+    second: mine_groundbricks_179
+  - first:
+      213: -5365198650578309521
+    second: mine_groundbricks_180
+  - first:
+      213: -7170997608897738378
+    second: mine_groundbricks_181
+  - first:
+      213: 5397832430506753786
+    second: mine_groundbricks_182
+  - first:
+      213: -8601412263202541479
+    second: mine_groundbricks_183
+  - first:
+      213: -271798988537021243
+    second: mine_groundbricks_184
+  - first:
+      213: -5416866155525643796
+    second: mine_groundbricks_185
+  - first:
+      213: -6383833822307700097
+    second: mine_groundbricks_186
+  - first:
+      213: 5827950154809994843
+    second: mine_groundbricks_187
+  - first:
+      213: 3795921652375279991
+    second: mine_groundbricks_188
+  - first:
+      213: 6255535817348640132
+    second: mine_groundbricks_189
+  - first:
+      213: -7716805014282098520
+    second: mine_groundbricks_190
+  - first:
+      213: 8884909793834947639
+    second: mine_groundbricks_191
+  - first:
+      213: -5263241707204223002
+    second: mine_groundbricks_192
+  - first:
+      213: 8000956971800061742
+    second: mine_groundbricks_193
+  - first:
+      213: 774123988860061951
+    second: mine_groundbricks_194
+  - first:
+      213: 8596387519746492056
+    second: mine_groundbricks_195
+  - first:
+      213: 2642973764736885012
+    second: mine_groundbricks_196
+  - first:
+      213: -2629670243141168110
+    second: mine_groundbricks_197
+  - first:
+      213: -1163194127582982509
+    second: mine_groundbricks_198
+  - first:
+      213: -3785151052373856350
+    second: mine_groundbricks_199
+  - first:
+      213: 7939690310223779998
+    second: mine_groundbricks_200
+  - first:
+      213: -5724843181371863842
+    second: mine_groundbricks_201
+  - first:
+      213: -4629347624093022414
+    second: mine_groundbricks_202
+  - first:
+      213: 7384110970517322535
+    second: mine_groundbricks_203
+  - first:
+      213: -5322240806988688682
+    second: mine_groundbricks_204
+  - first:
+      213: -8823610704453778480
+    second: mine_groundbricks_205
+  - first:
+      213: 683334385914559243
+    second: mine_groundbricks_206
+  - first:
+      213: -4946107421444299170
+    second: mine_groundbricks_207
+  - first:
+      213: 7829278582066250941
+    second: mine_groundbricks_208
+  - first:
+      213: 2231156795184348358
+    second: mine_groundbricks_209
+  - first:
+      213: 6647744909968593982
+    second: mine_groundbricks_210
+  - first:
+      213: -3244256239354889906
+    second: mine_groundbricks_211
+  - first:
+      213: 6063065528773345995
+    second: mine_groundbricks_212
+  - first:
+      213: 4751870132395971749
+    second: mine_groundbricks_213
+  - first:
+      213: -7262618851027017193
+    second: mine_groundbricks_214
+  - first:
+      213: 5833388338550200278
+    second: mine_groundbricks_215
+  - first:
+      213: 1572691842559953944
+    second: mine_groundbricks_216
+  - first:
+      213: 1316827878079232610
+    second: mine_groundbricks_217
+  - first:
+      213: 8075127490533641039
+    second: mine_groundbricks_218
+  - first:
+      213: -5513262887918152858
+    second: mine_groundbricks_219
+  - first:
+      213: -4798213257628901951
+    second: mine_groundbricks_220
+  - first:
+      213: 3359745062244502922
+    second: mine_groundbricks_221
+  - first:
+      213: 3826659330710630171
+    second: mine_groundbricks_222
+  - first:
+      213: -1584670454824298993
+    second: mine_groundbricks_223
+  - first:
+      213: -4467000936167673651
+    second: mine_groundbricks_224
+  - first:
+      213: -2980055142779146042
+    second: mine_groundbricks_225
+  - first:
+      213: -5401507873667333941
+    second: mine_groundbricks_226
+  - first:
+      213: 1338077149422773569
+    second: mine_groundbricks_227
+  - first:
+      213: 8657808164614334886
+    second: mine_groundbricks_228
+  - first:
+      213: -510725796645160586
+    second: mine_groundbricks_229
+  - first:
+      213: 1299142688906205566
+    second: mine_groundbricks_230
+  - first:
+      213: -5131083267607981905
+    second: mine_groundbricks_231
+  - first:
+      213: 1236525793415063290
+    second: mine_groundbricks_232
+  - first:
+      213: 7262210447343227414
+    second: mine_groundbricks_233
+  - first:
+      213: -349679867802575323
+    second: mine_groundbricks_234
+  - first:
+      213: 5467568166363507637
+    second: mine_groundbricks_235
+  - first:
+      213: 7226172830137901903
+    second: mine_groundbricks_236
+  - first:
+      213: -6398616481169508092
+    second: mine_groundbricks_237
+  - first:
+      213: 1614828202373449837
+    second: mine_groundbricks_238
+  - first:
+      213: -5706710733995590863
+    second: mine_groundbricks_239
+  - first:
+      213: 7596157120526640101
+    second: mine_groundbricks_240
+  - first:
+      213: 5979127044703575330
+    second: mine_groundbricks_241
+  - first:
+      213: 8769375045813285703
+    second: mine_groundbricks_242
+  - first:
+      213: -6508392262442183330
+    second: mine_groundbricks_243
+  - first:
+      213: 3278391656598709653
+    second: mine_groundbricks_244
+  - first:
+      213: 7229587563075086824
+    second: mine_groundbricks_245
+  - first:
+      213: 3028702879003593448
+    second: mine_groundbricks_0
+  - first:
+      213: -7941122928737571855
+    second: mine_groundbricks_1
+  - first:
+      213: -8111536646561766875
+    second: mine_groundbricks_2
+  - first:
+      213: -1940415303691561345
+    second: mine_groundbricks_3
+  - first:
+      213: -2710904052495993581
+    second: mine_groundbricks_4
+  - first:
+      213: 6420478088936146653
+    second: mine_groundbricks_5
+  - first:
+      213: -7963437503853293099
+    second: mine_groundbricks_6
+  - first:
+      213: 2112932806981364269
+    second: mine_groundbricks_7
+  - first:
+      213: -6969823907918417038
+    second: mine_groundbricks_8
+  - first:
+      213: 6623687333526955801
+    second: mine_groundbricks_9
+  - first:
+      213: 8995602029342665797
+    second: mine_groundbricks_10
+  - first:
+      213: 3772735215185297073
+    second: mine_groundbricks_11
+  - first:
+      213: -4869479694439047547
+    second: mine_groundbricks_12
+  - first:
+      213: 1231446846811644730
+    second: mine_groundbricks_13
+  - first:
+      213: -7697934068688703260
+    second: mine_groundbricks_14
+  - first:
+      213: 7916028405102808172
+    second: mine_groundbricks_15
+  - first:
+      213: 8282358521835048626
+    second: mine_groundbricks_16
+  - first:
+      213: -2887692454509945471
+    second: mine_groundbricks_17
+  - first:
+      213: -8344119941813085711
+    second: mine_groundbricks_22
+  - first:
+      213: -6482999446908952908
+    second: mine_groundbricks_23
+  - first:
+      213: 8613188700183050565
+    second: mine_groundbricks_24
+  - first:
+      213: 6293583502328185060
+    second: mine_groundbricks_25
+  - first:
+      213: 4887430392962852156
+    second: mine_groundbricks_26
+  - first:
+      213: -7957421493925324220
+    second: mine_groundbricks_27
+  - first:
+      213: 4271451729375542446
+    second: mine_groundbricks_28
+  - first:
+      213: -5364671522537774582
+    second: mine_groundbricks_29
+  - first:
+      213: -5460869917975500862
+    second: mine_groundbricks_30
+  - first:
+      213: 6117959592009775348
+    second: mine_groundbricks_31
+  - first:
+      213: 5614303862244495147
+    second: mine_groundbricks_32
+  - first:
+      213: 7336579146666751009
+    second: mine_groundbricks_33
+  - first:
+      213: -3252241199162789399
+    second: mine_groundbricks_34
+  - first:
+      213: 1021914929590571582
+    second: mine_groundbricks_35
+  - first:
+      213: 1231537799916662442
+    second: mine_groundbricks_36
+  - first:
+      213: -8060578640674430833
+    second: mine_groundbricks_37
+  - first:
+      213: 6297102402025431073
+    second: mine_groundbricks_38
+  - first:
+      213: -4579542879069618274
+    second: mine_groundbricks_39
+  - first:
+      213: 2869993639556580532
+    second: mine_groundbricks_44
+  - first:
+      213: -293105791226338648
+    second: mine_groundbricks_45
+  - first:
+      213: -2661641375091873884
+    second: mine_groundbricks_46
+  - first:
+      213: 331416516818410618
+    second: mine_groundbricks_47
+  - first:
+      213: -3140759643933426428
+    second: mine_groundbricks_48
+  - first:
+      213: 6501570035212098695
+    second: mine_groundbricks_49
+  - first:
+      213: -8593585936590385988
+    second: mine_groundbricks_50
+  - first:
+      213: -67232341115321988
+    second: mine_groundbricks_51
+  - first:
+      213: -737106938226087090
+    second: mine_groundbricks_52
+  - first:
+      213: -889857519440168058
+    second: mine_groundbricks_53
+  - first:
+      213: 2725357559078552096
+    second: mine_groundbricks_54
+  - first:
+      213: -4789758343830760096
+    second: mine_groundbricks_55
+  - first:
+      213: 6430033723782571786
+    second: mine_groundbricks_56
+  - first:
+      213: -6768946176752919943
+    second: mine_groundbricks_57
+  - first:
+      213: -6433316546381321663
+    second: mine_groundbricks_58
+  - first:
+      213: 7255852839625018451
+    second: mine_groundbricks_59
+  - first:
+      213: 6568100374421436487
+    second: mine_groundbricks_60
+  - first:
+      213: 4903804175325892850
+    second: mine_groundbricks_61
+  - first:
+      213: 986341270731931126
+    second: mine_groundbricks_66
+  - first:
+      213: 7031153036527883430
+    second: mine_groundbricks_67
+  - first:
+      213: -5000619545393761715
+    second: mine_groundbricks_68
+  - first:
+      213: -8960482215465277231
+    second: mine_groundbricks_69
+  - first:
+      213: -3638826157007857265
+    second: mine_groundbricks_70
+  - first:
+      213: -4924107125660016994
+    second: mine_groundbricks_71
+  - first:
+      213: -2418187663568946194
+    second: mine_groundbricks_72
+  - first:
+      213: 5203241977743965504
+    second: mine_groundbricks_73
+  - first:
+      213: 7577204581634703428
+    second: mine_groundbricks_74
+  - first:
+      213: -8863524285553808213
+    second: mine_groundbricks_75
+  - first:
+      213: 8228779770892607538
+    second: mine_groundbricks_76
+  - first:
+      213: -5877702987402520390
+    second: mine_groundbricks_77
+  - first:
+      213: -2331626978680458449
+    second: mine_groundbricks_78
+  - first:
+      213: 4186683728455589088
+    second: mine_groundbricks_79
+  - first:
+      213: -4239968206077164140
+    second: mine_groundbricks_80
+  - first:
+      213: -3426344592067611100
+    second: mine_groundbricks_81
+  - first:
+      213: 9126187065214988997
+    second: mine_groundbricks_82
+  - first:
+      213: 5336643938315780207
+    second: mine_groundbricks_83
+  - first:
+      213: -6010712159484148491
+    second: mine_groundbricks_88
+  - first:
+      213: 6261489856186638662
+    second: mine_groundbricks_89
+  - first:
+      213: -8157740003201114917
+    second: mine_groundbricks_90
+  - first:
+      213: 344258419714519186
+    second: mine_groundbricks_91
+  - first:
+      213: 5843857113160395068
+    second: mine_groundbricks_92
+  - first:
+      213: -6451256895944763355
+    second: mine_groundbricks_93
+  - first:
+      213: -8891078594133467357
+    second: mine_groundbricks_94
+  - first:
+      213: 4249646634092959920
+    second: mine_groundbricks_95
+  - first:
+      213: -1254161604559311001
+    second: mine_groundbricks_96
+  - first:
+      213: 2387705094092510991
+    second: mine_groundbricks_97
+  - first:
+      213: 4257942427212208408
+    second: mine_groundbricks_98
+  - first:
+      213: 2667339034531091571
+    second: mine_groundbricks_99
+  - first:
+      213: -8690694834311100792
+    second: mine_groundbricks_100
+  - first:
+      213: 7555390708156470713
+    second: mine_groundbricks_101
+  - first:
+      213: -6734743590740375720
+    second: mine_groundbricks_102
+  - first:
+      213: -4075041064260408302
+    second: mine_groundbricks_103
+  - first:
+      213: 3785700584280590939
+    second: mine_groundbricks_104
+  - first:
+      213: 3061496773164675989
+    second: mine_groundbricks_105
+  - first:
+      213: -5223355657072245706
+    second: mine_groundbricks_107
+  - first:
+      213: 32700745188812439
+    second: mine_groundbricks_108
+  - first:
+      213: -2731476656663726864
+    second: mine_groundbricks_109
+  - first:
+      213: 6359882458698411
+    second: mine_groundbricks_110
+  - first:
+      213: 5485941272770873731
+    second: mine_groundbricks_111
+  - first:
+      213: -6331176444169557530
+    second: mine_groundbricks_112
+  - first:
+      213: 6675614994455050035
+    second: mine_groundbricks_113
+  - first:
+      213: -790506869233133922
+    second: mine_groundbricks_114
+  - first:
+      213: 4054360348948222827
+    second: mine_groundbricks_115
+  - first:
+      213: -5798452141988487531
+    second: mine_groundbricks_116
+  - first:
+      213: -4762941171294328812
+    second: mine_groundbricks_117
+  - first:
+      213: -4742491278090596664
+    second: mine_groundbricks_118
+  - first:
+      213: -7895354480114418104
+    second: mine_groundbricks_119
+  - first:
+      213: 2468344779348594920
+    second: mine_groundbricks_120
+  - first:
+      213: 389044778501961479
+    second: mine_groundbricks_121
+  - first:
+      213: 414844806679441698
+    second: mine_groundbricks_122
+  - first:
+      213: 2824138613426402926
+    second: mine_groundbricks_123
+  - first:
+      213: -4016016021692160020
+    second: mine_groundbricks_124
+  - first:
+      213: 6276271155929707177
+    second: mine_groundbricks_125
+  - first:
+      213: 7778617793510573526
+    second: mine_groundbricks_126
+  - first:
+      213: 6327279779104570243
+    second: mine_groundbricks_127
+  - first:
+      213: 6992184236076162891
+    second: mine_groundbricks_128
+  - first:
+      213: 5782228250686869097
+    second: mine_groundbricks_129
+  - first:
+      213: -8313895883825649956
+    second: mine_groundbricks_130
+  - first:
+      213: -8479225310255894715
+    second: mine_groundbricks_131
+  - first:
+      213: -8411703575244145146
+    second: mine_groundbricks_132
+  - first:
+      213: -7283603227890416047
+    second: mine_groundbricks_133
+  - first:
+      213: -2095467263125404933
+    second: mine_groundbricks_134
+  - first:
+      213: -2664395777473135968
+    second: mine_groundbricks_135
+  - first:
+      213: -146003703513356247
+    second: mine_groundbricks_136
+  - first:
+      213: 4746468535293526045
+    second: mine_groundbricks_137
+  - first:
+      213: 6875027137473834121
+    second: mine_groundbricks_138
+  - first:
+      213: 3494378437448214945
+    second: mine_groundbricks_139
+  - first:
+      213: 2399358278069870138
+    second: mine_groundbricks_140
+  - first:
+      213: -1444832133924555775
+    second: mine_groundbricks_141
+  - first:
+      213: -5538058543922460857
+    second: mine_groundbricks_142
+  - first:
+      213: -6944425550544442227
+    second: mine_groundbricks_147
+  - first:
+      213: -5192128454024210816
+    second: mine_groundbricks_148
+  - first:
+      213: -3208245507523499384
+    second: mine_groundbricks_149
+  - first:
+      213: -1015023155763682441
+    second: mine_groundbricks_150
+  - first:
+      213: 3248405262001388521
+    second: mine_groundbricks_151
+  - first:
+      213: -7578473558040370702
+    second: mine_groundbricks_152
+  - first:
+      213: 2137635568827341906
+    second: mine_groundbricks_153
+  - first:
+      213: -4049649230482680700
+    second: mine_groundbricks_154
+  - first:
+      213: 944357672114461226
+    second: mine_groundbricks_155
+  - first:
+      213: 6361444884915431134
+    second: mine_groundbricks_156
+  - first:
+      213: 6186621385564678975
+    second: mine_groundbricks_157
+  - first:
+      213: 5895776641927342674
+    second: mine_groundbricks_158
+  - first:
+      213: 8449403810673931430
+    second: mine_groundbricks_159
+  - first:
+      213: -6682412580635037337
+    second: mine_groundbricks_160
+  - first:
+      213: -432679302375418840
+    second: mine_groundbricks_161
+  - first:
+      213: 5708616541913308270
+    second: mine_groundbricks_162
+  - first:
+      213: 7678578671210523584
+    second: mine_groundbricks_163
+  - first:
+      213: 8578150376507696935
+    second: mine_groundbricks_164
+  - first:
+      213: -5363321572250154512
+    second: mine_groundbricks_169
+  - first:
+      213: 1840741144349830683
+    second: mine_groundbricks_170
+  - first:
+      213: -6150402096118394043
+    second: mine_groundbricks_171
+  - first:
+      213: -2511817007159403715
+    second: mine_groundbricks_172
+  - first:
+      213: 4293140969131456592
+    second: mine_groundbricks_173
+  - first:
+      213: -1678087767801767005
+    second: mine_groundbricks_174
+  - first:
+      213: 2806150616966135
+    second: mine_groundbricks_175
+  - first:
+      213: -6076361747519271396
+    second: mine_groundbricks_176
+  - first:
+      213: -6507671358766563903
+    second: mine_groundbricks_177
+  - first:
+      213: -3249271027449949804
+    second: mine_groundbricks_178
+  - first:
+      213: -6335472492405004518
+    second: mine_groundbricks_179
+  - first:
+      213: 159565862155641517
+    second: mine_groundbricks_180
+  - first:
+      213: 531053934079664443
+    second: mine_groundbricks_181
+  - first:
+      213: 4316502665588941888
+    second: mine_groundbricks_182
+  - first:
+      213: 4174850197612788612
+    second: mine_groundbricks_183
+  - first:
+      213: 8561358824023001306
+    second: mine_groundbricks_184
+  - first:
+      213: -6675487652167712264
+    second: mine_groundbricks_185
+  - first:
+      213: 4581231952468635198
+    second: mine_groundbricks_186
+  - first:
+      213: 176853486771198933
+    second: mine_groundbricks_191
+  - first:
+      213: 4831925321861236189
+    second: mine_groundbricks_192
+  - first:
+      213: 2928346399918519400
+    second: mine_groundbricks_193
+  - first:
+      213: 7340222174874586535
+    second: mine_groundbricks_194
+  - first:
+      213: -1491553496347102548
+    second: mine_groundbricks_195
+  - first:
+      213: -6511904624423227733
+    second: mine_groundbricks_196
+  - first:
+      213: 1257715030200371441
+    second: mine_groundbricks_197
+  - first:
+      213: 5385064566545887700
+    second: mine_groundbricks_198
+  - first:
+      213: 1779475530750522030
+    second: mine_groundbricks_199
+  - first:
+      213: -4015026955805694306
+    second: mine_groundbricks_200
+  - first:
+      213: 8298989290995408122
+    second: mine_groundbricks_201
+  - first:
+      213: -3438691929406479334
+    second: mine_groundbricks_202
+  - first:
+      213: -6555336579922710267
+    second: mine_groundbricks_203
+  - first:
+      213: 2726635369604718745
+    second: mine_groundbricks_204
+  - first:
+      213: 5007440823590740330
+    second: mine_groundbricks_205
+  - first:
+      213: -520054752638702591
+    second: mine_groundbricks_206
+  - first:
+      213: -5160628750158814748
+    second: mine_groundbricks_207
+  - first:
+      213: 9111479007875398766
+    second: mine_groundbricks_208
+  - first:
+      213: 8016769224052880713
+    second: mine_groundbricks_210
+  - first:
+      213: -7502717904820768683
+    second: mine_groundbricks_211
+  - first:
+      213: -2818117154005136434
+    second: mine_groundbricks_212
+  - first:
+      213: 3533622449586436661
+    second: mine_groundbricks_213
+  - first:
+      213: -1944054715100383489
+    second: mine_groundbricks_214
+  - first:
+      213: -3767550914392807683
+    second: mine_groundbricks_215
+  - first:
+      213: 2113933604917448786
+    second: mine_groundbricks_216
+  - first:
+      213: -5551904056605772437
+    second: mine_groundbricks_217
+  - first:
+      213: 7608333031426242798
+    second: mine_groundbricks_218
+  - first:
+      213: 2550390283316049966
+    second: mine_groundbricks_219
+  - first:
+      213: -2465401113271912245
+    second: mine_groundbricks_220
+  - first:
+      213: -2706646247213141877
+    second: mine_groundbricks_221
+  - first:
+      213: -2515263465937888264
+    second: mine_groundbricks_222
+  - first:
+      213: -8127210131581220236
+    second: mine_groundbricks_223
+  - first:
+      213: -3685858491724473030
+    second: mine_groundbricks_224
+  - first:
+      213: -4934765245062954707
+    second: mine_groundbricks_225
+  - first:
+      213: -296169681872087409
+    second: mine_groundbricks_226
+  - first:
+      213: -1428060620581941550
+    second: mine_groundbricks_227
+  - first:
+      213: -1294496556830317247
+    second: mine_groundbricks_228
+  - first:
+      213: -9039877427530690634
+    second: mine_groundbricks_229
+  - first:
+      213: 518695199108544028
+    second: mine_groundbricks_230
+  - first:
+      213: 1665769396835083124
+    second: mine_groundbricks_231
+  - first:
+      213: -8429216834431316088
+    second: mine_groundbricks_232
+  - first:
+      213: -6850614605621564283
+    second: mine_groundbricks_233
+  - first:
+      213: 4317018878073668580
+    second: mine_groundbricks_234
+  - first:
+      213: 5618238861648564543
+    second: mine_groundbricks_235
+  - first:
+      213: 3355374285363530117
+    second: mine_groundbricks_236
+  - first:
+      213: -6061263711322093863
+    second: mine_groundbricks_237
+  - first:
+      213: 7245872005907344486
+    second: mine_groundbricks_238
+  - first:
+      213: -6340416711774456942
+    second: mine_groundbricks_239
+  - first:
+      213: 8881932671559225371
+    second: mine_groundbricks_240
+  - first:
+      213: 5857124030570994669
+    second: mine_groundbricks_241
+  - first:
+      213: -4136842426095639980
+    second: mine_groundbricks_242
+  - first:
+      213: -2961617545857898556
+    second: mine_groundbricks_243
+  - first:
+      213: 539837675902667357
+    second: mine_groundbricks_244
+  - first:
+      213: 2513127266914767156
+    second: mine_groundbricks_245
+  - first:
+      213: 7106666580422833938
+    second: mine_groundbricks_40
+  - first:
+      213: 4951045575359858475
+    second: mine_groundbricks_41
+  - first:
+      213: -9113413082579880336
+    second: mine_groundbricks_42
+  - first:
+      213: 5987246577129098607
+    second: mine_groundbricks_43
+  - first:
+      213: 901262018126668285
+    second: mine_groundbricks_62
+  - first:
+      213: 4605477504154022283
+    second: mine_groundbricks_63
+  - first:
+      213: -4398646712949112171
+    second: mine_groundbricks_64
+  - first:
+      213: 7623298872904467412
+    second: mine_groundbricks_65
+  - first:
+      213: -8693075641994793775
+    second: mine_groundbricks_84
+  - first:
+      213: 2691265911225629615
+    second: mine_groundbricks_85
+  - first:
+      213: 964505518058588670
+    second: mine_groundbricks_86
+  - first:
+      213: -7378293970142742571
+    second: mine_groundbricks_87
+  - first:
+      213: -6666417352498292725
+    second: mine_groundbricks_106
+  - first:
+      213: -418117406871394349
+    second: mine_groundbricks_143
+  - first:
+      213: -7624445185228530933
+    second: mine_groundbricks_144
+  - first:
+      213: 9105151846865167683
+    second: mine_groundbricks_145
+  - first:
+      213: -7998481611897636432
+    second: mine_groundbricks_146
+  - first:
+      213: -6256697751166319351
+    second: mine_groundbricks_165
+  - first:
+      213: -3386251499319679041
+    second: mine_groundbricks_166
+  - first:
+      213: 6035614954786180735
+    second: mine_groundbricks_167
+  - first:
+      213: -955932319004958275
+    second: mine_groundbricks_168
+  - first:
+      213: 2352631967404632588
+    second: mine_groundbricks_187
+  - first:
+      213: -973619924522395112
+    second: mine_groundbricks_188
+  - first:
+      213: -6907737020578667218
+    second: mine_groundbricks_189
+  - first:
+      213: -5184617398267051397
+    second: mine_groundbricks_190
+  - first:
+      213: 7230585444881316007
+    second: mine_groundbricks_209
+  - first:
+      213: -3508704796196899018
+    second: mine_groundbricks_18
+  - first:
+      213: 401557803402290710
+    second: mine_groundbricks_19
+  - first:
+      213: 5372521436773556929
+    second: mine_groundbricks_20
+  - first:
+      213: 310724475450118967
+    second: mine_groundbricks_21
+  - first:
+      213: 9201250069435090506
+    second: mine_groundbricks_246
+  - first:
+      213: 8220251038140317638
+    second: mine_groundbricks_247
+  - first:
+      213: 136607325750918602
+    second: mine_groundbricks_248
+  - first:
+      213: 881653402785492031
+    second: mine_groundbricks_249
+  - first:
+      213: 4111732717692328037
+    second: mine_groundbricks_250
+  - first:
+      213: -4529362403566868216
+    second: mine_groundbricks_251
+  - first:
+      213: 647092956270512458
+    second: mine_groundbricks_252
+  - first:
+      213: 3800807929278661284
+    second: mine_groundbricks_253
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mine_groundbricks_36
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaeaf73aa1d471110800000000000000
+      internalID: 1231537799916662442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_37
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80ef7ede62132090800000000000000
+      internalID: -8060578640674430833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_38
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1202cfa654dc36750800000000000000
+      internalID: 6297102402025431073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_39
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9fb263d3023270c0800000000000000
+      internalID: -4579542879069618274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b48661620444d720800000000000000
+      internalID: 2869993639556580532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_45
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a22858f5ddaeebf0800000000000000
+      internalID: -293105791226338648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_46
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7aa267543ff0bd0800000000000000
+      internalID: -2661641375091873884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_47
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c98ade09d699400800000000000000
+      internalID: 331416516818410618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_48
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d377a8eb7c964d0800000000000000
+      internalID: -3140759643933426428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c142f00873a3a50800000000000000
+      internalID: 6501570035212098695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbcccb61f137db880800000000000000
+      internalID: -8593585936590385988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_51
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71476eba84211ff0800000000000000
+      internalID: -67232341115321988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bee81252545c5f0800000000000000
+      internalID: -737106938226087090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_53
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68bfe0dfc4796a3f0800000000000000
+      internalID: -889857519440168058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_54
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0228dcaa24a62d520800000000000000
+      internalID: 2725357559078552096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_55
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065110cd92c578db0800000000000000
+      internalID: -4789758343830760096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_56
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07a7df9a911c3950800000000000000
+      internalID: 6430033723782571786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_57
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a57eec05fdf02a0800000000000000
+      internalID: -6768946176752919943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_58
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a6c4dafa448b6a0800000000000000
+      internalID: -6433316546381321663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ccb58e6b7f1b460800000000000000
+      internalID: 7255852839625018451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_60
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748ff72cd74962b50800000000000000
+      internalID: 6568100374421436487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_61
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0906e7aefcd0440800000000000000
+      internalID: 4903804175325892850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdb84de82030bd00800000000000000
+      internalID: 986341270731931126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_67
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a457af1f6ca39160800000000000000
+      internalID: 7031153036527883430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_68
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42fde3940b3a9ab0800000000000000
+      internalID: -5000619545393761715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_69
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8acf256e8f5a380800000000000000
+      internalID: -8960482215465277231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_70
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f899528b3ea408dc0800000000000000
+      internalID: -3638826157007857265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_71
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e901388ae0aabb0800000000000000
+      internalID: -4924107125660016994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_72
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebbdb0d12fd07ed0800000000000000
+      internalID: -2418187663568946194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_73
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d74d3c201a53840800000000000000
+      internalID: 5203241977743965504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_74
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4408cc6db63a72960800000000000000
+      internalID: 7577204581634703428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_75
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac648d8f9f6ef480800000000000000
+      internalID: -8863524285553808213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_76
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23069fa8a9f723270800000000000000
+      internalID: 8228779770892607538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_77
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8de9c36443e6ea0800000000000000
+      internalID: -5877702987402520390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_78
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23b80bcd9564afd0800000000000000
+      internalID: -2331626978680458449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_79
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ecd0854ba61a1a30800000000000000
+      internalID: 4186683728455589088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_80
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49502d1816b9825c0800000000000000
+      internalID: -4239968206077164140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_81
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426babf3fbd2370d0800000000000000
+      internalID: -3426344592067611100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_82
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c277ef78cab6ae70800000000000000
+      internalID: 9126187065214988997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_83
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60cd0c13619f0a40800000000000000
+      internalID: 5336643938315780207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f483d61329a59ca0800000000000000
+      internalID: -6010712159484148491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_89
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64167b279d745e650800000000000000
+      internalID: 6261489856186638662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_90
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc143b40b2e9ce80800000000000000
+      internalID: -8157740003201114917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_91
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2907502753d07c400800000000000000
+      internalID: 344258419714519186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_92
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39a014151d891150800000000000000
+      internalID: 5843857113160395068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_93
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5285c6a88088876a0800000000000000
+      internalID: -6451256895944763355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_94
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f5896202b8c9480800000000000000
+      internalID: -8891078594133467357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_95
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b89b0e1917c9fa30800000000000000
+      internalID: 4249646634092959920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_96
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76fee4d5aa2589ee0800000000000000
+      internalID: -1254161604559311001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_97
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0756c9e125d22120800000000000000
+      internalID: 2387705094092510991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_98
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8195c08f310471b30800000000000000
+      internalID: 4257942427212208408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_99
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37452c048ba440520800000000000000
+      internalID: 2667339034531091571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_100
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886809de713746780800000000000000
+      internalID: -8690694834311100792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_101
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b514f2a1d32ad860800000000000000
+      internalID: 7555390708156470713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_102
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857c49ce2626982a0800000000000000
+      internalID: -6734743590740375720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_103
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ce0a71ebb8277c0800000000000000
+      internalID: -4075041064260408302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_104
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a8808bf92898430800000000000000
+      internalID: 3785700584280590939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_105
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5933c7d381f9c7a20800000000000000
+      internalID: 3061496773164675989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_107
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6348ea454b9e287b0800000000000000
+      internalID: -5223355657072245706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_108
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796aedc872d247000800000000000000
+      internalID: 32700745188812439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_109
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f47947e378d71ad0800000000000000
+      internalID: -2731476656663726864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_110
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba293c68748961000800000000000000
+      internalID: 6359882458698411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_111
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3898926958af12c40800000000000000
+      internalID: 5485941272770873731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_112
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9e3fa61942328a0800000000000000
+      internalID: -6331176444169557530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_113
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337b3c1f77c84ac50800000000000000
+      internalID: 6675614994455050035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_114
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e965ad2d03e8705f0800000000000000
+      internalID: -790506869233133922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_115
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63dc76a14bf34830800000000000000
+      internalID: 4054360348948222827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_116
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e5ca59f72c78fa0800000000000000
+      internalID: -5798452141988487531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_117
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4182be66d32a6edb0800000000000000
+      internalID: -4762941171294328812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_118
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce85033f494f2eb0800000000000000
+      internalID: -4742491278090596664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_119
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ebdf48ee01e6290800000000000000
+      internalID: -7895354480114418104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_120
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0534cbf72514220800000000000000
+      internalID: 2468344779348594920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_121
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70774503a2a266500800000000000000
+      internalID: 389044778501961479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_122
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2213b0b5723d1c500800000000000000
+      internalID: 414844806679441698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_123
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66beb12b1b513720800000000000000
+      internalID: 2824138613426402926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_124
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7e2ceb4be3448c0800000000000000
+      internalID: -4016016021692160020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_125
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2783bfc5bc91750800000000000000
+      internalID: 6276271155929707177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_126
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d50bb99ba333fb60800000000000000
+      internalID: 7778617793510573526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_127
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b3a0c8f630fc750800000000000000
+      internalID: 6327279779104570243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_128
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fd76b348a390160800000000000000
+      internalID: 6992184236076162891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_129
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e4b6c55f99e3050800000000000000
+      internalID: 5782228250686869097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_130
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd66df81ebb1f9c80800000000000000
+      internalID: -8313895883825649956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_131
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f22b3518db35a80800000000000000
+      internalID: -8479225310255894715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_132
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e70b95a20a34b80800000000000000
+      internalID: -8411703575244145146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_133
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15604b454717bea90800000000000000
+      internalID: -7283603227890416047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_134
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf243fe50a76be2e0800000000000000
+      internalID: -2095467263125404933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_135
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aab9ae282a260bd0800000000000000
+      internalID: -2664395777473135968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_136
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928e13cb76a49fdf0800000000000000
+      internalID: -146003703513356247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_137
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d104db72cf7ded140800000000000000
+      internalID: 4746468535293526045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_138
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c6c4e81c0096f50800000000000000
+      internalID: 6875027137473834121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_139
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9a2e2cca68e7030800000000000000
+      internalID: 3494378437448214945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_140
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e5f3d34ab3c4120800000000000000
+      internalID: 2399358278069870138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_141
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1047b5944dce2fbe0800000000000000
+      internalID: -1444832133924555775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_142
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7474f20a81dd423b0800000000000000
+      internalID: -5538058543922460857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_147
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ce6a241c170af90800000000000000
+      internalID: -6944425550544442227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_148
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08650bd1eaad1f7b0800000000000000
+      internalID: -5192128454024210816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_149
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88aa1db75b50a73d0800000000000000
+      internalID: -3208245507523499384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_150
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773e8e151d9e9e1f0800000000000000
+      internalID: -1015023155763682441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_151
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb3a100067a41d20800000000000000
+      internalID: 3248405262001388521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_152
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f12051937ad3d690800000000000000
+      internalID: -7578473558040370702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_153
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c913369386aad10800000000000000
+      internalID: 2137635568827341906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_154
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48455281b71ccc7c0800000000000000
+      internalID: -4049649230482680700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_155
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a1c43ac480b1d00800000000000000
+      internalID: 944357672114461226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_156
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed62c9f1b64684850800000000000000
+      internalID: 6361444884915431134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_157
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bea6e3f5b4bd550800000000000000
+      internalID: 6186621385564678975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_158
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25aef116e9102d150800000000000000
+      internalID: 5895776641927342674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_159
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a43d0bbfff424570800000000000000
+      internalID: 8449403810673931430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_160
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761b5a0b92d4343a0800000000000000
+      internalID: -6682412580635037337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_161
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824df388770def9f0800000000000000
+      internalID: -432679302375418840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_162
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c59a3df74193f40800000000000000
+      internalID: 5708616541913308270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_163
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbe46d5e9acf8a60800000000000000
+      internalID: 7678578671210523584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_164
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727ef958156bb0770800000000000000
+      internalID: 8578150376507696935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_169
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f907d53277a195b0800000000000000
+      internalID: -5363321572250154512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_170
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1eea607150ab8910800000000000000
+      internalID: 1840741144349830683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_171
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5439b0b31e165aaa0800000000000000
+      internalID: -6150402096118394043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_172
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b9a7b7dbb342dd0800000000000000
+      internalID: -2511817007159403715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_173
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058b1c327fc449b30800000000000000
+      internalID: 4293140969131456592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_174
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab5f3ae01c36b8e0800000000000000
+      internalID: -1678087767801767005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_175
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3e5badd28f90000800000000000000
+      internalID: 2806150616966135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_176
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e87504f2d6caba0800000000000000
+      internalID: -6076361747519271396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_177
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd3cb9d06b10b5a0800000000000000
+      internalID: -6507671358766563903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_178
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49190e5473548e2d0800000000000000
+      internalID: -3249271027449949804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_179
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17e0fdb551e318a0800000000000000
+      internalID: -6335472492405004518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_180
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2e0146e44e63200800000000000000
+      internalID: 159565862155641517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_181
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3164694dbeae5700800000000000000
+      internalID: 531053934079664443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_182
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044a476fd4c47eb30800000000000000
+      internalID: 4316502665588941888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_183
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bfd2ba22c00f930800000000000000
+      internalID: 4174850197612788612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_184
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad80c8c8d7e00d670800000000000000
+      internalID: 8561358824023001306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_185
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1890e3957eb53a0800000000000000
+      internalID: -6675487652167712264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_186
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3eef88303ec39f30800000000000000
+      internalID: 4581231952468635198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_191
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db59482f4f447200800000000000000
+      internalID: 176853486771198933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_192
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd501c6ca727e0340800000000000000
+      internalID: 4831925321861236189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_193
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864ff62298393a820800000000000000
+      internalID: 2928346399918519400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_194
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad48d98d25bdd560800000000000000
+      internalID: 7340222174874586535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_195
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca23db66fffec4be0800000000000000
+      internalID: -1491553496347102548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_196
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baea702ee3111a5a0800000000000000
+      internalID: -6511904624423227733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_197
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f843c3082d447110800000000000000
+      internalID: 1257715030200371441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_198
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1b28521b79bba40800000000000000
+      internalID: 5385064566545887700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_199
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea272e03197f1b810800000000000000
+      internalID: 1779475530750522030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_200
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9665979142c748c0800000000000000
+      internalID: -4015026955805694306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_201
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc5d8c4aceeb2370800000000000000
+      internalID: 8298989290995408122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_202
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1469bfb8ef4740d0800000000000000
+      internalID: -3438691929406479334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_203
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501359abc14c605a0800000000000000
+      internalID: -6555336579922710267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_204
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9902e4d1c64f6d520800000000000000
+      internalID: 2726635369604718745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_205
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a616ae306e00e7540800000000000000
+      internalID: 5007440823590740330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_206
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c673535f468c8f0800000000000000
+      internalID: -520054752638702591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_207
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1ad117e73c168b0800000000000000
+      internalID: -5160628750158814748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_208
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c77da02e9727e70800000000000000
+      internalID: 9111479007875398766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_210
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945b4f57229414f60800000000000000
+      internalID: 8016769224052880713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_211
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550f13111ddf0e790800000000000000
+      internalID: -7502717904820768683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_212
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecbc614216904e8d0800000000000000
+      internalID: -2818117154005136434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_213
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53af1fd55e2f90130800000000000000
+      internalID: 3533622449586436661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_214
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6b48269845505e0800000000000000
+      internalID: -1944054715100383489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_215
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df62b6a9768f6bbc0800000000000000
+      internalID: -3767550914392807683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_216
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2509ddfd963365d10800000000000000
+      internalID: 2113933604917448786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_217
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6576fefcaca3f2b0800000000000000
+      internalID: -5551904056605772437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_218
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee83807d49a369960800000000000000
+      internalID: 7608333031426242798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_219
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2839ab337ec46320800000000000000
+      internalID: 2550390283316049966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_220
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8339eefb229cdd0800000000000000
+      internalID: -2465401113271912245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_221
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80773e149f007ad0800000000000000
+      internalID: -2706646247213141877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_222
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb1144443df71dd0800000000000000
+      internalID: -2515263465937888264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_223
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a4524f179563f80800000000000000
+      internalID: -8127210131581220236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_224
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dd764fa3339dcc0800000000000000
+      internalID: -3685858491724473030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_225
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d214416b721348bb0800000000000000
+      internalID: -4934765245062954707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_226
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8616c65e3bc3ebf0800000000000000
+      internalID: -296169681872087409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_227
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de4d788e628e2ce0800000000000000
+      internalID: -1428060620581941550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_228
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145a9277d36090ee0800000000000000
+      internalID: -1294496556830317247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_229
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf06feff57eb8280800000000000000
+      internalID: -9039877427530690634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_230
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16b0911986c23700800000000000000
+      internalID: 518695199108544028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_231
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4736218d0700e1710800000000000000
+      internalID: 1665769396835083124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_232
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f8af0f2f7650b80800000000000000
+      internalID: -8429216834431316088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_233
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ce2d2ff4abde0a0800000000000000
+      internalID: -6850614605621564283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_234
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e38c3c0cc129eb30800000000000000
+      internalID: 4317018878073668580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_235
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f319bdb5a7ef7fd40800000000000000
+      internalID: 5618238861648564543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_236
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589c29f822fa09e20800000000000000
+      internalID: 3355374285363530117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_237
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d64eacb4c012eba0800000000000000
+      internalID: -6061263711322093863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_238
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ced08f2328e8460800000000000000
+      internalID: 7245872005907344486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_239
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293bbb6f7905208a0800000000000000
+      internalID: -6340416711774456942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_240
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10593fc4b6f24b70800000000000000
+      internalID: 8881932671559225371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_241
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb969ff54fa84150800000000000000
+      internalID: 5857124030570994669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_242
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452edcc3bbbf696c0800000000000000
+      internalID: -4136842426095639980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_243
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7639a888836e6d0800000000000000
+      internalID: -2961617545857898556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_244
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a0d8c8183ed7700800000000000000
+      internalID: 539837675902667357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_245
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4319dc32feb60e220800000000000000
+      internalID: 2513127266914767156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_40
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2173e372a93ff9260800000000000000
+      internalID: 7106666580422833938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_41
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27081218b5a5b440800000000000000
+      internalID: 4951045575359858475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_42
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076bd691617a68180800000000000000
+      internalID: -9113413082579880336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_43
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d04744a09f61350800000000000000
+      internalID: 5987246577129098607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_62
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1edf7c70de18c00800000000000000
+      internalID: 901262018126668285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_63
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b813720a361f9ef30800000000000000
+      internalID: 4605477504154022283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_64
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5928a3e9e1ed4f2c0800000000000000
+      internalID: -4398646712949112171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_65
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d34b185fe56bc960800000000000000
+      internalID: 7623298872904467412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_84
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcac41f2cdfb5780800000000000000
+      internalID: -8693075641994793775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_85
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fabb8ba561c495520800000000000000
+      internalID: 2691265911225629615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_86
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef949c398ac926d00800000000000000
+      internalID: 964505518058588670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_87
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d73c3dd9b80b9990800000000000000
+      internalID: -7378293970142742571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_106
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08d6d3fcb02c73a0800000000000000
+      internalID: -6666417352498292725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_143
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7e5090f6c823af0800000000000000
+      internalID: -418117406871394349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_144
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b14050087803690800000000000000
+      internalID: -7624445185228530933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_145
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345e3621d5ffb5e70800000000000000
+      internalID: 9105151846865167683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_146
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9f85c0a5faff090800000000000000
+      internalID: -7998481611897636432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_165
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9050fb27b8ebb29a0800000000000000
+      internalID: -6256697751166319351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_166
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7aae6d33e9101d0800000000000000
+      internalID: -3386251499319679041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_167
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ec015c2dfc2c350800000000000000
+      internalID: 6035614954786180735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_168
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1e460ee98dbb2f0800000000000000
+      internalID: -955932319004958275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_187
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0aa1604f4a36a020800000000000000
+      internalID: 2352631967404632588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_188
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a999c46d10d72f0800000000000000
+      internalID: -973619924522395112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_189
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25e79e47c9c220a0800000000000000
+      internalID: -6907737020578667218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_190
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b728bff02f98c08b0800000000000000
+      internalID: -5184617398267051397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_209
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8b2402723385460800000000000000
+      internalID: 7230585444881316007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea4631c83d180a20800000000000000
+      internalID: 3028702879003593448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb23ea25c67bc190800000000000000
+      internalID: -7941122928737571855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5226f1f85680e6f80800000000000000
+      internalID: -8111536646561766875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f769bb2ef824215e0800000000000000
+      internalID: -1940415303691561345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3153fc2902fe06ad0800000000000000
+      internalID: -2710904052495993581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6c7330ece1a1950800000000000000
+      internalID: 6420478088936146653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d11dc748cf2c7190800000000000000
+      internalID: -7963437503853293099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2aa4627135a25d10800000000000000
+      internalID: 2112932806981364269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2737f7d5516364f90800000000000000
+      internalID: -6969823907918417038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917e02a39801ceb50800000000000000
+      internalID: 6623687333526955801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ca0cb826cc6dc70800000000000000
+      internalID: 8995602029342665797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bef9bc70b27b5430800000000000000
+      internalID: 3772735215185297073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e9bfb74022c6cb0800000000000000
+      internalID: -4869479694439047547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33abf7f16af61110800000000000000
+      internalID: 1231446846811644730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0be6bffb17b2590800000000000000
+      internalID: -7697934068688703260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c0e0eb4e16bdd60800000000000000
+      internalID: 7916028405102808172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be486c9139d0f270800000000000000
+      internalID: 8282358521835048626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ddb54230bdce7d0800000000000000
+      internalID: -2887692454509945471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63779f8e3939e4fc0800000000000000
+      internalID: -3508704796196899018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6166494d1be929500800000000000000
+      internalID: 401557803402290710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c22f0b28c70f8a40800000000000000
+      internalID: 5372521436773556929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733593e934aef4400800000000000000
+      internalID: 310724475450118967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f95af83f1bb33c80800000000000000
+      internalID: -8344119941813085711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be10f7f952c706a0800000000000000
+      internalID: -6482999446908952908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549b1d9fc71388770800000000000000
+      internalID: 8613188700183050565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_25
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0c78cb9dc475750800000000000000
+      internalID: 6293583502328185060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35aff43c04a3d340800000000000000
+      internalID: 4887430392962852156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_27
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ad58ebf4f819190800000000000000
+      internalID: -7957421493925324220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac38ac77be374b30800000000000000
+      internalID: 4271451729375542446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_29
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a026b7a6cabdc85b0800000000000000
+      internalID: -5364671522537774582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_30
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c724761eb71734b0800000000000000
+      internalID: -5460869917975500862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_31
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8bfe7a5db57e450800000000000000
+      internalID: 6117959592009775348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2fcf2aed930aed40800000000000000
+      internalID: 5614303862244495147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_33
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1243c9fecd3c0d560800000000000000
+      internalID: 7336579146666751009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1f2084cd7bdd2d0800000000000000
+      internalID: -3252241199162789399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_35
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e321ae0d6329e2e00800000000000000
+      internalID: 1021914929590571582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_246
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a468736103861bf70800000000000000
+      internalID: 9201250069435090506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_247
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfb3e434c2341270800000000000000
+      internalID: 8220251038140317638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_248
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd791593a355e100800000000000000
+      internalID: 136607325750918602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_249
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c2b0049134c3c00800000000000000
+      internalID: 881653402785492031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_250
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56817613f1fcf0930800000000000000
+      internalID: 4111732717692328037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_251
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809236c34e87421c0800000000000000
+      internalID: -4529362403566868216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_252
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4949238d9feaf800800000000000000
+      internalID: 647092956270512458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_groundbricks_253
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a284249cae2fb430800000000000000
+      internalID: 3800807929278661284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
