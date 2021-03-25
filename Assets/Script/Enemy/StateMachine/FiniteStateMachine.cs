@@ -33,14 +33,14 @@ public class FiniteStateMachine
 
     public void LogicUpdate()
     {
-        currentState.LogicUpdate();
+        currentState?.LogicUpdate();
 
         stateCooldownTimer?.UpdateTimer();
     }
 
     public void PhysicsUpdate()
     {
-        currentState.PhysicsUpdate();
+        currentState?.PhysicsUpdate();
     }
 
 }

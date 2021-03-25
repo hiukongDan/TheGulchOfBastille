@@ -37,6 +37,8 @@ public class GoyeCombat1 : Entity
     public MeleeAttackStateData chargeStateData;
     #endregion
 
+    private bool isStarted = false;
+
     protected override void Damage(CombatData combatData)
     {
         if (!isDanmageable)
@@ -132,29 +134,25 @@ public class GoyeCombat1 : Entity
 
         // set rigidbody to static
         gc1_ota.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
+        isStarted = true;
     }
 
-    protected void OnEnable(){
-        Gulch.GameEventListener.Instance.OnPlayerDeadHandler += OnPlayerDead;
-
-        if(!GetComponent<EnemySaveData>().IsAlive()){
-            Destroy(gameObject);
+    private void OnEnable(){
+        if(isStarted){
+            SceneReset();
         }
     }
 
-    protected void OnDisable() {
-        Gulch.GameEventListener.Instance.OnPlayerDeadHandler -= OnPlayerDead;
-    }
-
-    protected void OnPlayerDead(){
-        // Restore goye combat
-        Reset();
-        stateMachine.stateCooldownTimer.ResetTimer();
+    protected void SceneReset(){
+        stateCooldownTimer.ResetTimer();
         gc1_ota.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         Vector3 initPos = transform.Find("Combat Field/Init Position").position;
-        transform.position = initPos;
-        stateMachine.Initialize(battleBeginState);
+        aliveGO.transform.position = initPos;
+        stateMachine.SwitchState(battleBeginState);
+        FaceTo(aliveGO.transform.position + Vector3.right);
     }
+
 
     protected override void Update()
     {

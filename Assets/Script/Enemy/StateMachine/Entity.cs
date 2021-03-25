@@ -72,7 +72,7 @@ public class Entity : MonoBehaviour
         objectToAlive = aliveGO.GetComponent<ObjectToAlive>();
 
         facingDirection = 1;
-        
+
         Reset();
 
         InitEntity();
@@ -85,9 +85,6 @@ public class Entity : MonoBehaviour
         isDead = false;
         isStunned = false;
         isDanmageable = true;
-
-        // face to right
-        FaceTo(transform.position + Vector3.right);
     }
 
     protected virtual void InitEntity()

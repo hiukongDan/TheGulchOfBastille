@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         InitializePlayerStateMachine();
-        stateMachine.InitializeState(idleState);
+        stateMachine.InitializeState(wakeupState);
 
         InitializePlayerStatus();
     }

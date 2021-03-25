@@ -50,15 +50,16 @@ public class GameManager : MonoBehaviour
         player.ResetPlayerStatus();
         LoadSceneCode(sceneCode);
         player.SetPosition(position);
-
+        
         yield return new WaitForEndOfFrame();
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
         Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
 
         yield return new WaitForSeconds(DarkWaitDuration);
-        player.stateMachine.SwitchState(player.wakeupState);
+        player.stateMachine.InitializeState(player.wakeupState);
         
         yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
+        
     }
 
     void OnEnable(){

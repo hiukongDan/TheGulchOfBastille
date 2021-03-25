@@ -12,7 +12,6 @@ public class GC1_BattleBeginState : State
     public GC1_BattleBeginState(FiniteStateMachine stateMachine, Entity entity, string animName, GoyeCombat1 enemy) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
-        isBattleBegin = false;
     }
 
     public override void DoChecks()
@@ -24,6 +23,7 @@ public class GC1_BattleBeginState : State
     {
         enemy.gc1_ota.battleBeginState = this;
         enemy.anim.SetBool("isBattleBegin", false);
+        isBattleBegin = false;
         base.Enter();
     }
 

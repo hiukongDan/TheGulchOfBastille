@@ -10,7 +10,6 @@ public class GameSaver : MonoBehaviour
     public enum SaveSlot{
         First, Second, Third, SlotNum
     }
-
     private static string saveDirectory;
 
     Dictionary<int, SaveSlotMeta> saveSlotMetas;

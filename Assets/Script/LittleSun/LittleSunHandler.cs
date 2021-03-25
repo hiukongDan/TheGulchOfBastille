@@ -13,15 +13,13 @@ public class LittleSunHandler : MonoBehaviour
     void Awake()
     {
         littleSunData = GetComponent<LittleSunData>();
-    }
-
-    void Start()
-    {
         InfoSignAnim = transform.Find("InfoSign Parent").GetComponentInChildren<Animator>();
         LittleSunAnim = transform.Find("Alive").GetComponent<Animator>();
         BloodAnim = transform.Find("Blood").GetComponent<Animator>();
+    }
 
-        InitLittleSunState();
+    void OnEnable() {
+        InitLittleSunState();    
     }
 
     private void InitLittleSunState()
