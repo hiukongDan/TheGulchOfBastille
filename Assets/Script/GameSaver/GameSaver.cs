@@ -121,6 +121,8 @@ public class GameSaver : MonoBehaviour
                 player.playerAbilityData.SetPlayerAbility(ability);
                 var runtimeData = (PlayerRuntimeData.PlayerRuntimeSaveData)bf.Deserialize(fs);
                 player.playerRuntimeData.SetPlayerRuntimeSaveData(runtimeData);
+                var miscData = (MiscData)bf.Deserialize(fs);
+                player.miscData = miscData;
                 var enemyAliveRevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
                 EnemySaveData.EnemyAliveRevivable = enemyAliveRevivable;
                 var enemyAliveUnrevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
@@ -157,6 +159,7 @@ public class GameSaver : MonoBehaviour
                 bf.Serialize(fs, player.playerData.GetPlayerSaveData());
                 bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
                 bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());
+                bf.Serialize(fs, player.miscData);
                 bf.Serialize(fs, EnemySaveData.EnemyAliveRevivable);
                 bf.Serialize(fs, EnemySaveData.EnemyAliveUnrevivable);
 

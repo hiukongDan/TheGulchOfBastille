@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
     public bool isDead { get; private set; }
     public bool isStunned { get; private set; }
     public PlayerRuntimeData playerRuntimeData = new PlayerRuntimeData();
+    public MiscData miscData = new MiscData();
     #endregion
 
 
@@ -473,6 +474,10 @@ public class Player : MonoBehaviour
     private LittleSunHandler littleSunHandler;
     public void SetLittleSunHandler(LittleSunHandler littleSunHandler) => this.littleSunHandler = littleSunHandler;
     public LittleSunHandler GetLittleSunHandler() => littleSunHandler;
+
+    private IInteractable interactable;
+    public void SetInteractable(IInteractable interactable) => this.interactable = interactable;
+    public IInteractable GetInteractable() => this.interactable;
     #endregion
 
     #region EVENT

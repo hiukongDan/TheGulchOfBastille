@@ -33,6 +33,8 @@ public class BasicFollower : MonoBehaviour
 
     public bool isDebug = true;
 
+    public bool IsCameraFollowing = true;
+
     public SceneCode sceneCode;
 
     void Awake()
@@ -80,15 +82,21 @@ public class BasicFollower : MonoBehaviour
     }
 
     public void ClampCamera(Vector2 pos){
-            workspace.x = Mathf.Clamp(pos.x, cameraClamp.xMin, cameraClamp.xMax);
-            workspace.y = Mathf.Clamp(pos.y, cameraClamp.yMin, cameraClamp.yMax);
-            workspace.z = defaultCamZ;
+        workspace.x = Mathf.Clamp(pos.x, cameraClamp.xMin, cameraClamp.xMax);
+        workspace.y = Mathf.Clamp(pos.y, cameraClamp.yMin, cameraClamp.yMax);
+        workspace.z = defaultCamZ;
 
-            cam.transform.position = workspace;
+        cam.transform.position = workspace;
     }
 
     void LateUpdate()
     {
+        if(IsCameraFollowing){
+            doCameraFollowing();
+        }
+    }
+
+    void doCameraFollowing(){
         float offsetX = transform.position.x - following.position.x;
         float offsetY = transform.position.y - following.position.y;
         if (Mathf.Abs(offsetX) > startFollowingDistanceX || Mathf.Abs(offsetY) > startFollowingDistanceY)
