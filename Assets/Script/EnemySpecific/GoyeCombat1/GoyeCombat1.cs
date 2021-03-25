@@ -135,11 +135,26 @@ public class GoyeCombat1 : Entity
     }
 
     protected void OnEnable(){
+        Gulch.GameEventListener.Instance.OnPlayerDeadHandler += OnPlayerDead;
+
         if(!GetComponent<EnemySaveData>().IsAlive()){
             Destroy(gameObject);
         }
     }
 
+    protected void OnDisable() {
+        Gulch.GameEventListener.Instance.OnPlayerDeadHandler -= OnPlayerDead;
+    }
+
+    protected void OnPlayerDead(){
+        // Restore goye combat
+        Reset();
+        stateMachine.stateCooldownTimer.ResetTimer();
+        gc1_ota.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        Vector3 initPos = transform.Find("Combat Field/Init Position").position;
+        transform.position = initPos;
+        stateMachine.Initialize(battleBeginState);
+    }
 
     protected override void Update()
     {

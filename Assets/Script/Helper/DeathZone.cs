@@ -7,11 +7,9 @@ public class DeathZone : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-
         if (collision.collider.tag == "Player")
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().ReloadGame();
+            GameObject.Find("GameManager").GetComponent<GameManager>().ReloadScene();
         }
         else
         {

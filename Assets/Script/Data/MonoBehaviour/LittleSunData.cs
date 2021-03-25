@@ -8,7 +8,12 @@ public class LittleSunData:MonoBehaviour
     public static Dictionary<int, bool> LittleSuns = new Dictionary<int, bool>();
 
     public int LittleSunID;
-    public SceneCode currentScene;
+    public SceneCode sceneCode;
+
+    public Transform TeleportPoint{get; private set;}
+    void Awake(){
+        TeleportPoint = transform.Find("TeleportPoint");
+    }
 
     public LittleSunData()
     {

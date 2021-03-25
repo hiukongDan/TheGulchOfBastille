@@ -55,7 +55,6 @@ public class GC1_BattleBeginState : State
         enemy.anim.SetBool("isBattleBegin", true);
         yield return new WaitUntil(() => isBattleBegin);
 
-
         // set player position
         // play ui fade in
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
@@ -64,6 +63,7 @@ public class GC1_BattleBeginState : State
         enemy.refPlayer.SetPosition(playerPos);
         // set goye position
         enemy.objectToAlive.transform.position = goyePos;
+        enemy.FaceToPlayer();
         // play ui fade out
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
 

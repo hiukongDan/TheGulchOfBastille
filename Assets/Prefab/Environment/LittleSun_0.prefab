@@ -443,7 +443,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090244102923268328}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 26.57, y: 0.409, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -451,6 +451,7 @@ Transform:
   - {fileID: 2090244102406653711}
   - {fileID: 2090244102367678667}
   - {fileID: 2090244102584562602}
+  - {fileID: 4056891970908155205}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -466,9 +467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b543b98d59f133459afd67adc3d5c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoSignAnim: {fileID: 0}
-  LittleSunAnim: {fileID: 0}
-  BloodAnim: {fileID: 0}
 --- !u!114 &2090244102923268331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,3 +480,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LittleSunID: 0
+  currentScene: 5
+--- !u!1 &5998785948427963510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4056891970908155205}
+  m_Layer: 0
+  m_Name: TeleportPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4056891970908155205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998785948427963510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.156, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2090244102923268329}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

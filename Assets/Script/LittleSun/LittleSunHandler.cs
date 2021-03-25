@@ -8,7 +8,7 @@ public class LittleSunHandler : MonoBehaviour
     public Animator LittleSunAnim{get; private set;}
     public Animator BloodAnim{get; private set;}
 
-    private LittleSunData littleSunData;
+    public LittleSunData littleSunData{get; private set;}
 
     void Awake()
     {
@@ -38,6 +38,7 @@ public class LittleSunHandler : MonoBehaviour
 
     public void OnLittleSunInteraction()
     {
+        FindObjectOfType<Player>().playerRuntimeData.lastLittleSunID = littleSunData.LittleSunID;
         if (!littleSunData.IsActive())
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().playerCinemaMovement.LightLittleSun(this);

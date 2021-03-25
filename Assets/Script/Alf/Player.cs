@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public PlayerDashState dashState { get; private set; }
     public PlayerCinemaState cinemaState { get; private set; }
     public PlayerLadderState ladderState{get; private set;}
+    public PlayerWakeupState wakeupState{get; private set;}
 
     // TODO: REMOVE STUN STATE
     public PlayerStunState stunState { get; private set; }
@@ -282,6 +283,10 @@ public class Player : MonoBehaviour
         inAirState?.CompleteLanding();
     }
 
+    public void CompleteWakeup(){
+        wakeupState?.CompleteWakeup();
+    }
+
     #endregion
 
     #region MESSAGE FUNCTIONS
@@ -376,6 +381,7 @@ public class Player : MonoBehaviour
         converseState = new PlayerConverseState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
         cinemaState = new PlayerCinemaState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
         ladderState = new PlayerLadderState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
+        wakeupState = new PlayerWakeupState(stateMachine, this, AlfAnimationHash.WAKEUP_SITUP_0, playerData);
 
         InitializePlayerCooldownTimer();
     }
@@ -401,6 +407,21 @@ public class Player : MonoBehaviour
             UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
         }
     }
+
+    public void ResetPlayerStatus(){
+        isDead = false;
+        isStunned = false;
+
+        playerRuntimeData.currentDecayPoints = playerData.PD_maxDecayPoint;
+        playerRuntimeData.currentHitPoints = playerData.PD_maxHitPoint;
+        playerRuntimeData.currentStunPoints = playerData.PD_maxStunPoint;
+
+        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+
+        ResetGrounded();
+    }
+
     public void ResetGrounded(){
         InputHandler.ResetIsJump();
         jumpState.ResetJumpAmountLeft();

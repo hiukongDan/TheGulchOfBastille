@@ -66,6 +66,7 @@ public class PlayerDeadState : PlayerState
 
     public void CompleteDead()
     {
-        GM?.ReloadGame();
+        Gulch.GameEventListener.Instance.OnPlayerDead();
+        GM?.ReloadScene();
     }
 }

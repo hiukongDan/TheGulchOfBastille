@@ -34,4 +34,10 @@ public class StateCooldownTimer
             state.UpdateTimer();
         }
     }
+
+    public virtual void ResetTimer(){
+        foreach(State state in states){
+            state.ResetTimer();
+        }
+    }
 }

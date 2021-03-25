@@ -120,7 +120,7 @@ public class PlayerState
 
     public virtual void UpdateTimer()
     {
-
+        
     }
 
     public virtual bool CanAction()
@@ -138,5 +138,3 @@ public class PlayerState
         public virtual void CompleteAction() 
      */
 }
-
-// TODO: A timer system

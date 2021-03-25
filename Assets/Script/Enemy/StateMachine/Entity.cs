@@ -69,10 +69,16 @@ public class Entity : MonoBehaviour
 
         stateMachine = new FiniteStateMachine(this);
 
-        facingDirection = 1;
-
         objectToAlive = aliveGO.GetComponent<ObjectToAlive>();
 
+        facingDirection = 1;
+        
+        Reset();
+
+        InitEntity();
+    }
+
+    protected virtual void Reset(){
         currentHealth = entityData.maxHealth;
         currentStunResistance = entityData.stunResistance;
 
@@ -80,7 +86,8 @@ public class Entity : MonoBehaviour
         isStunned = false;
         isDanmageable = true;
 
-        InitEntity();
+        // face to right
+        FaceTo(transform.position + Vector3.right);
     }
 
     protected virtual void InitEntity()
