@@ -9566,7 +9566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5456660865040052494
 Transform:
   m_ObjectHideFlags: 0
@@ -14543,6 +14543,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goye
       objectReference: {fileID: 0}
+    - target: {fileID: 4619342066519949082, guid: 81ef73516fa85b344a1b8edbc80b4d09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ef73516fa85b344a1b8edbc80b4d09, type: 3}
 --- !u!4 &1601209951 stripped
@@ -14867,6 +14872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Belial
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201932125026933073, guid: b2f48e46a8299e3419419dff056f98e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6201932125026933074, guid: b2f48e46a8299e3419419dff056f98e6,
         type: 3}
