@@ -8,6 +8,7 @@ public class LittleSunData:MonoBehaviour
     public static Dictionary<int, bool> LittleSuns = new Dictionary<int, bool>();
 
     public int LittleSunID;
+    public SceneCode currentScene;
 
     public LittleSunData()
     {

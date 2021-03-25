@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public SceneCode currentSceneCode{get; private set;}
     public GameSaver gameSaver{get; private set;}
     public float elapsedSeconds{get; private set;}
+    private Coroutine demonCoroutine;
 #endregion
 
     public void ReloadGame()
@@ -41,12 +42,15 @@ public class GameManager : MonoBehaviour
 
         currentSceneCode = SceneCode.Gulch_Main;
 
-        StartCoroutine(DemonRandomSceneCode());
+        demonCoroutine = StartCoroutine(DemonRandomSceneCode());
         elapsedSeconds = 0.0f;
         // DemonSceneCode(demonScenes[Mathf.FloorToInt(Random.Range(0, demonScenes.Length))]);
     }
 
-    public void StartGame() => StartCoroutine(StartGame(gameSaver.isNewGame));
+    public void StartGame(){
+        StopCoroutine(demonCoroutine);
+        StartCoroutine(StartGame(gameSaver.isNewGame));
+    }
 
     public void LoadSceneCode(){
         LoadSceneCode(currentSceneCode);
@@ -82,14 +86,19 @@ public class GameManager : MonoBehaviour
     }
 
     public void ExitGame(){
+        StartCoroutine(exitGame());
+    }
+
+    private IEnumerator exitGame(){
         gameSaver.SaveAll();
-        player.gameObject.SetActive(false);
-
-        ExitSceneCode(currentSceneCode);
-        LoadSceneCode(SceneCode.Gulch_SunTower);
-
+        Time.timeScale = 1f;
+        yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
+        demonCoroutine = StartCoroutine(DemonRandomSceneCode());
         uiHandler.uiFSM.InitStateMachine(uiHandler.uiMainState);
-        
+        player.gameObject.SetActive(false);
+        float darkWaitDuration = 1f;
+        yield return new WaitForSeconds(darkWaitDuration);
+        yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
     }
 
     public bool CanPlayerAction()
@@ -102,11 +111,10 @@ public class GameManager : MonoBehaviour
         return true;
     }
     IEnumerator StartGame(bool isNewGame){
-        StopAllCoroutines();
+        yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
         ResetAllSceneCode();
 
         // uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.dark);
-
         if(isNewGame){
             player.gameObject.SetActive(true);
             var startTrans = GameObject.Find("/Scenes").transform.Find("Gulch_Main/GameStartPoint");
@@ -122,9 +130,10 @@ public class GameManager : MonoBehaviour
             elapsedSeconds = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedSeconds;
         }
 
+        LoadSceneCode();
+        yield return new WaitForEndOfFrame();
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
         Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
-        LoadSceneCode();
         
         uiHandler.StartGame();
 

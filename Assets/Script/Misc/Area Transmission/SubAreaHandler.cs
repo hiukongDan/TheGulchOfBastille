@@ -14,5 +14,6 @@ public class SubAreaHandler : MonoBehaviour
     public void OnPerformAction()
     {
         AreaTransmissionHandler.Instance.OnPerformAreaTransmission(this);
+        
     }
 }

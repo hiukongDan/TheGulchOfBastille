@@ -39,6 +39,10 @@ public class Reflection : MonoBehaviour
         isEnabled = reflectionSource.gameObject.activeSelf;
     }
 
+    void OnDisable() {
+        sr.sprite = null;    
+    }
+
     void Update() {
         if(srSource && isEnabled){
             sr.sprite = srSource.sprite;

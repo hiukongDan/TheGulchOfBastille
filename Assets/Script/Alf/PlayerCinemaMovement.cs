@@ -75,7 +75,8 @@ public class PlayerCinemaMovement : MonoBehaviour
             // Open Door
             Animator doorAnim = door.GetComponent<Animator>();
             door.Open();
-            yield return new WaitForSeconds(2 * doorAnim.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(doorAnim.GetCurrentAnimatorStateInfo(0).length);
         }
         // Play Transition UI Effect
         // float time = gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.start);
@@ -103,6 +104,10 @@ public class PlayerCinemaMovement : MonoBehaviour
         //yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY);
         
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.end));
+
+        // set sub area handler to null
+
+        player.SetSubAreaHandler(null);
 
         player.stateMachine.SwitchState(player.idleState);
     }

@@ -75,6 +75,8 @@ public class ItemData
         public ConsumableRuntimeData(Consumable consumable, int count){
             this.consumable = consumable;
             this.count = count;
+
+            Enum.GetValues(typeof(Weapon)).Cast<int>()
         }
     };
 

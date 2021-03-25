@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LittleSunHandler : MonoBehaviour
 {
-    public Animator InfoSignAnim;
-    public Animator LittleSunAnim;
-    public Animator BloodAnim;
+    public Animator InfoSignAnim{get; private set;}
+    public Animator LittleSunAnim{get; private set;}
+    public Animator BloodAnim{get; private set;}
 
     private LittleSunData littleSunData;
 
