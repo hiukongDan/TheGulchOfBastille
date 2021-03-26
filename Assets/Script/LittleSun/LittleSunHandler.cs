@@ -45,6 +45,10 @@ public class LittleSunHandler : MonoBehaviour
         else
         {
             // Do Other interaction like leveling up or something
+            // reset player status and quit this littleSunState
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            player.ResetPlayerStatus();
+            player.stateMachine.SwitchState(player.wakeupState);
         }
     }
 

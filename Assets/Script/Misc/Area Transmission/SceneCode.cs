@@ -9,5 +9,6 @@
     Gulch_Tunnel,
     Gulch_Goye,
     Abandoned_Door,
+    Mine_Entrance,
     Count,
 };

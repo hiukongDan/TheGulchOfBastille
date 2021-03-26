@@ -13,6 +13,7 @@ public class PlayerWakeupState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.SetVelocity(Vector2.zero);
         ResetControlVariables();
         player.InputHandler.ResetAll();
     }
@@ -20,6 +21,7 @@ public class PlayerWakeupState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        player.InputHandler.ResetAll();
     }
 
     public override void LogicUpdate()

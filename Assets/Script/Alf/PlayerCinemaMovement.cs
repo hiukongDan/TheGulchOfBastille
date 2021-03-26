@@ -28,6 +28,7 @@ public class PlayerCinemaMovement : MonoBehaviour
 
     IEnumerator lightLittleSun(LittleSunHandler littleSunHandler)
     {
+        player.playerRuntimeData.lastLittleSunID = littleSunHandler.littleSunData.LittleSunID;
         float playerLittleSunOffset = 0.25f;
         Vector2 littleSunPos = littleSunHandler.transform.position;
         Vector2 targetPos = new Vector2(littleSunPos.x + playerLittleSunOffset, littleSunPos.y);
