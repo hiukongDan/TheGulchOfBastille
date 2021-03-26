@@ -14,6 +14,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public bool isParry { get; private set; }
     public bool isParryCanceled { get; private set; }
+    public bool isPause{get; private set;}
 
     public bool isRoll { get; private set; }
     public bool isRollCanceled { get; private set; }
@@ -124,6 +125,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             case InputActionPhase.Started:
                 GameObject.Find("GameManager")?.GetComponent<GameManager>()?.uiHandler.OnPause();
+                isPause = true;
                 break;
         }
     }
@@ -160,6 +162,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void ResetIsRoll() => isRoll = false;
     public void ResetIsInteraction() => isInteraction = false;
+    public void ResetIsPause() => isPause = false;
 
     public void ResetAll()
     {
@@ -168,6 +171,7 @@ public class PlayerInputHandler : MonoBehaviour
         ResetIsParry();
         ResetIsRoll();
         ResetIsInteraction();
+        ResetIsPause();
     }
 
     

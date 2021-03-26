@@ -40,6 +40,10 @@ public class UIHandler : MonoBehaviour
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    void OnEnable() {
+        
+    }
+
     void Start()
     {
         uiFSM.InitStateMachine(uiMainState);
@@ -73,7 +77,8 @@ public class UIHandler : MonoBehaviour
     /// This is a callback function for input of pause action or return action
     /// </summary>
     public void OnPause(){
-        if(uiFSM.PeekState() == uiPlayState){
+        Player player = GameObject.Find("Player")?.GetComponent<Player>();    
+        if(uiFSM.PeekState() == uiPlayState && player.stateMachine.currentState != player.converseState){
             uiFSM.PushState(uiPauseState);
         }
         else if(uiFSM.Count() > 1){

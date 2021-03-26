@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe53d10822e9104a8026bfdbb4b90a7, type: 3}
+  m_Name: belial_church_greetings_C0
+  m_EditorClassIdentifier: 
+  conversations:
+  - My name is Belial, you probably hear me from Master Fran in the Sun Tower.
+  - Its a pleasure to meet you.
+  - 'Here, take this key, it should be one aid in your up coming path. '
+  - If you ever be infected by the death, I will always be here.
+  selections: []
+  nextConversation: {fileID: 0}

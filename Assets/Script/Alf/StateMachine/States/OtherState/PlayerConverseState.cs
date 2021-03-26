@@ -15,6 +15,7 @@ public class PlayerConverseState : PlayerState
         base.Enter();
         player.SetVelocityX(0f);
         isInteraction = false;
+        isPause = false;
         player.InputHandler.ResetIsInteraction();
 
         if (detectShouldFlip())
@@ -59,6 +60,11 @@ public class PlayerConverseState : PlayerState
             player.GetNPCEventHandler()?.OnNPCInteraction();
             player.InputHandler.ResetIsInteraction();
         }
+        else if(isPause){
+            player.GetNPCEventHandler()?.OnNPCEndInteraction();
+            player.InputHandler.ResetIsPause();
+        }
+        
 
         if(normMovementInput.y != 0 && selectionTimer < 0)
         {
@@ -69,6 +75,7 @@ public class PlayerConverseState : PlayerState
         {
             selectionTimer -= Time.deltaTime;
         }
+
     }
 
     public override void PhysicsUpdate()

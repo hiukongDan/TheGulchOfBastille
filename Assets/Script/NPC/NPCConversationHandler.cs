@@ -11,7 +11,7 @@ public class NPCConversationHandler : MonoBehaviour
     public Animator DialogueBoxAnim;
 
     public NPCConversation npcConversation;
-    private NPCConversation npcConversationOld;
+    public NPCConversation npcConversationRandom;
 
     public float letterPerLine = 15f;
     public float pixelPerUnit = 32f;
@@ -57,8 +57,6 @@ public class NPCConversationHandler : MonoBehaviour
         nextSentence = new Queue<char>();
         wordObject = new List<CharInfoWrapper>();
         npcSelections = new List<NPCSelection>();
-
-        npcConversationOld = npcConversation;
     }
 
     void OnEnable(){
@@ -296,7 +294,7 @@ public class NPCConversationHandler : MonoBehaviour
 
         selectionBox.gameObject.SetActive(false);
 
-        npcConversation = npcConversationOld;
+        // npcConversation = npcConversationRandom;
     }
 
     public void OnExitInteractionArea()
@@ -312,8 +310,13 @@ public class NPCConversationHandler : MonoBehaviour
         DialogueBoxAnim.Play(DialogueBoxAnimHash.IDLE);
         initBox();
 
-        if (npcConversation == null)
-            npcConversation = npcConversationOld;
+        if (npcConversation == null){
+            nextSentence = new Queue<char>("...");
+            resetTotalTime();
+            _currentConverseStatus = ConversationStatus.CONVERSE;
+            
+            // npcConversation = npcConversationRandom;
+        }
 
         if(npcConversation != null)
         {
@@ -336,6 +339,8 @@ public class NPCConversationHandler : MonoBehaviour
         InfoSignAnim.Play(InfoSignAnimHash.INTRO);
 
         OP.DestroyGameObject();
+
+        _currentConverseStatus = ConversationStatus.EMPTY;
 
         // Change conversation default to next conversation if presented
         if(npcConversation != null && npcConversation.nextConversation != null)
@@ -363,7 +368,6 @@ public class NPCConversationHandler : MonoBehaviour
         }
     }
     // --------------------------------------------------
-
 
     public void OnInteraction()
     {
@@ -537,7 +541,7 @@ public class NPCConversationHandler : MonoBehaviour
     {
         if(npcConversation != null)
         {
-            this.npcConversation = this.npcConversationOld = npcConversation;
+            this.npcConversation = npcConversation;
         }
     }
 
