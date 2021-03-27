@@ -22,7 +22,7 @@ public class UilosDisplay : MonoBehaviour
 
     void OnUilosAmountChange(float value){
         pFontText.SetText(parseNum(((int)value).ToString()));
-        Debug.Log("recieve");
+        // Debug.Log("recieve");
     }
 
     private string parseNum(string num){

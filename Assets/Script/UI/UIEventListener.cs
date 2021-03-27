@@ -36,13 +36,12 @@ public class UIEventListener
     public void OnHpChange(float current, float total)
     {
         hpChangeHandler?.Invoke(current, total);
-        Debug.Log("hp");
+        //Debug.Log("hp");
     }
 
     public void OnDpChange(float current, float total)
     {
         dpChangeHandler?.Invoke(current, total);
-        Debug.Log("dp");
     }
 
     public void OnFullscreenSwitch(){
@@ -51,7 +50,6 @@ public class UIEventListener
 
     public void OnUilosChange(float value){
         uilosChangeHandler.Invoke(value);
-        Debug.Log("uilos");
     }
 
     // public void OnPauseMenu()

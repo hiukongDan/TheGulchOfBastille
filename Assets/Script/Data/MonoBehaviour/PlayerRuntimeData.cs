@@ -150,6 +150,7 @@ public class PlayerRuntimeData
 
     public PlayerRuntimeSaveData GetPlayerRuntimeSaveData(){
         isLoaded = false;
+        //Debug.Log(currentDecayPoints);
         return new PlayerRuntimeSaveData(currentHitPoints, currentStunPoints, currentDecayPoints, currentUilos, currentSceneCode, lastLittleSunID, lastPosition, playerStock, playerSlot);
     }
 

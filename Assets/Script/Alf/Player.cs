@@ -403,13 +403,13 @@ public class Player : MonoBehaviour
         facingDirection = FACE_RIGHT;
         isDead = false;
         isStunned = false;
+    }
 
-        if(playerRuntimeData.isLoaded){
-            transform.position = playerRuntimeData.lastPosition;
-            UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
-            UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
-            UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
-        }
+    public void InitializeRuntimeData(){
+        transform.position = playerRuntimeData.lastPosition;
+        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+        UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
     }
 
     public void InitSaveData(){
@@ -429,12 +429,10 @@ public class Player : MonoBehaviour
         isDead = false;
         isStunned = false;
 
-        playerRuntimeData.currentDecayPoints = playerData.PD_maxDecayPoint;
         playerRuntimeData.currentHitPoints = playerData.PD_maxHitPoint;
         playerRuntimeData.currentStunPoints = playerData.PD_maxStunPoint;
 
         UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
-        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
 
         ResetGrounded();

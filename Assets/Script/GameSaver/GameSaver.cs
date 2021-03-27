@@ -28,7 +28,7 @@ public class GameSaver : MonoBehaviour
     };
 
     public SaveSlot currentSaveSlot = SaveSlot.First;
-    public float autoSaveInterval = 600f;
+    // public float autoSaveInterval = 600f;
 
     public bool isNewGame = true;
 
@@ -185,10 +185,10 @@ public class GameSaver : MonoBehaviour
         return HasValidSaving(SaveSlot.First) || HasValidSaving(SaveSlot.Second) || HasValidSaving(SaveSlot.Third);
     }
 
-    public void AutoSave(){
-        Invoke("AutoSave", autoSaveInterval);
-        SaveAll();
-    }
+    // public void AutoSave(){
+    //     Invoke("AutoSave", autoSaveInterval);
+    //     SaveAll();
+    // }
 
     public SaveSlotMeta GetSaveSlotMeta(SaveSlot saveSlot){
         return SaveSlotMetas[(int)saveSlot];

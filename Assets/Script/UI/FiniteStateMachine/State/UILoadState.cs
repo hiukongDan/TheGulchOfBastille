@@ -82,21 +82,30 @@ public class UILoadState : UIState
     }
 
     public override void OnClick(UIStateEventData eventData){
+        uiHandler.GM.gameSaver.isNewGame = false;
         switch((Selection)eventData.index){
             case Selection.First:
             uiHandler.GM.gameSaver.currentSaveSlot = GameSaver.SaveSlot.First;
+            if(uiHandler.GM.gameSaver.HasValidSaving(GameSaver.SaveSlot.First)){
+                uiHandler.GM.gameSaver.isNewGame = true;
+            }
             break;
             case Selection.Second:
             uiHandler.GM.gameSaver.currentSaveSlot = GameSaver.SaveSlot.Second;
+            if(uiHandler.GM.gameSaver.HasValidSaving(GameSaver.SaveSlot.Second)){
+                uiHandler.GM.gameSaver.isNewGame = true;
+            }
             break;
             case Selection.Third:
             uiHandler.GM.gameSaver.currentSaveSlot = GameSaver.SaveSlot.Third;
+            if(uiHandler.GM.gameSaver.HasValidSaving(GameSaver.SaveSlot.Third)){
+                uiHandler.GM.gameSaver.isNewGame = true;
+            }
             break;
             default:
             break;
         }
 
-        uiHandler.GM.gameSaver.isNewGame = false;
         uiHandler.GM.StartGame();
     }
 }

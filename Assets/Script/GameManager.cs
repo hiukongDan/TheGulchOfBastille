@@ -162,7 +162,6 @@ public class GameManager : MonoBehaviour
         }
 
         LoadSceneCode();
-        yield return new WaitForEndOfFrame();
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
         Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
         
@@ -171,8 +170,7 @@ public class GameManager : MonoBehaviour
         player.InputHandler.ResetAll();
 
         yield return new WaitForEndOfFrame();
-        player.InitializePlayerStatus();
-        Debug.Log("initialized");
+        player.InitializeRuntimeData();
         yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
     }
 
