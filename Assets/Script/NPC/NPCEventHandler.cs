@@ -11,6 +11,8 @@ public class NPCEventHandler : MonoBehaviour
 
     private NPC npc;
 
+    public bool IsInteraction{get; private set;}
+
     public delegate void SelectionHandler(int direction);
 
     void Awake()
@@ -19,19 +21,21 @@ public class NPCEventHandler : MonoBehaviour
         NPCEnterInteraction += npcEnterInteractionHandler;
 
         npc = GetComponentInParent<NPC>();
+        IsInteraction = false;
     }
 
     #region HANDLER
     private void npcIntearctionHandler()
     {
         NPCInteraction -= npcIntearctionHandler;
+        NPCInteraction += npc.npcConversationHandler.OnInteraction;
 
         npc.npcConversationHandler.OnBeginInteraction();
 
-        NPCInteraction += npc.npcConversationHandler.OnInteraction;
-
         NPCEndInteraction += npc.npcConversationHandler.OnEndInteraction;
         NPCEndInteraction += npcEndInteractionHandler;
+
+        IsInteraction = true;
     }
 
     private void npcEndInteractionHandler()
@@ -46,6 +50,8 @@ public class NPCEventHandler : MonoBehaviour
 
         var player = GameObject.Find("Player").GetComponent<Player>();
         player.stateMachine.SwitchState(player.idleState);
+
+        IsInteraction = false;
     }
 
     private void npcEnterInteractionHandler()

@@ -7,6 +7,7 @@ public class GoyeCombat1 : Entity
     #region REFERENCES
     public Player refPlayer {get; private set; }
     public GC1_ObjectToAlive gc1_ota { get; private set; }
+    public NPC npc;
     #endregion
 
     #region STATE
@@ -100,6 +101,7 @@ public class GoyeCombat1 : Entity
         base.Awake();
         /* --------- ASIGN REFERENCEs HERE --------------*/
         refPlayer = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
+        npc = GetComponentInChildren<NPC>();
     }
 
     protected override void Start()
@@ -157,8 +159,8 @@ public class GoyeCombat1 : Entity
         aliveGO.transform.position = initPos;
         stateMachine.SwitchState(battleBeginState);
         FaceTo(aliveGO.transform.position + Vector3.right);
+        npc.gameObject.SetActive(true);
     }
-
 
     protected override void Update()
     {

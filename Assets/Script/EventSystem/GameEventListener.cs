@@ -22,10 +22,9 @@ namespace Gulch
         }
 
         public delegate void TakeDamageHandler(TakeDamageData data);
-        public delegate void PlayerDeadHandler();
 
         public event TakeDamageHandler OnTakeDamageHandler;
-        public event PlayerDeadHandler OnPlayerDeadHandler;
+        public event Action OnPlayerDeadHandler;
 
         public void OnTakeDamage(TakeDamageData data)
         {

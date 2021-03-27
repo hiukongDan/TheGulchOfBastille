@@ -47,10 +47,32 @@ public class GC1_BattleBeginState : State
     public IEnumerator BattleBegin()
     {
         // set playerCanMove false: use converseState
-        enemy.refPlayer.stateMachine.SwitchState(enemy.refPlayer.cinemaState);
-
+        enemy.refPlayer.stateMachine.SwitchState(enemy.refPlayer.converseState);
+        enemy.refPlayer.FaceTo(enemy.aliveGO.transform.position);
+        // enemy.npc.npcConversationHandler.gameObject.SetActive(true);
+        // enemy.npc.npcConversationHandler.InfoSignAnim.gameObject.SetActive(false);
+        // enemy.npc.npcConversationHandler.selectionBox.gameObject.SetActive(false);
+        // start conversation
         yield return new WaitForSeconds(battleBeginDelay);
 
+        NPCEventHandler npcEventHandler = enemy.npc.GetComponentInChildren<NPCEventHandler>();
+        enemy.refPlayer.SetNPCEventHandler(npcEventHandler);
+        enemy.npc.npcConversationHandler.gameObject.SetActive(true);
+        npcEventHandler.OnNPCInteraction();
+
+        yield return new WaitForEndOfFrame();
+        enemy.npc.npcConversationHandler.ResetTotalTime();
+
+        //npcEventHandler.OnNPCInteraction();
+
+        yield return new WaitWhile(() => npcEventHandler.IsInteraction);
+
+        enemy.npc.gameObject.SetActive(false);
+        enemy.refPlayer.stateMachine.SwitchState(enemy.refPlayer.cinemaState);
+        enemy.refPlayer.SetNPCEventHandler(null);
+        // end conversation
+
+        // yield return new WaitForSeconds(battleBeginDelay);
         var gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         enemy.anim.SetBool("isBattleBegin", true);
         yield return new WaitUntil(() => isBattleBegin);

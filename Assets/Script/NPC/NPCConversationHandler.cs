@@ -21,7 +21,7 @@ public class NPCConversationHandler : MonoBehaviour
     private Player player;
 
     private Transform charOrigin;
-    private Transform selectionBox;
+    public Transform selectionBox{get; private set;}
 
     private PFontLoader pFontLoader;
 
@@ -68,6 +68,8 @@ public class NPCConversationHandler : MonoBehaviour
         if(npcConversations.Count() > 0){
             npcConversation = npcConversations[currentConversationIndex];
         }
+
+        _currentConverseStatus = ConversationStatus.EMPTY;
     }
 
     void OnDisable() {
@@ -221,12 +223,14 @@ public class NPCConversationHandler : MonoBehaviour
             else
             {
                 _currentConverseStatus = ConversationStatus.EMPTY;
-                resetTotalTime();
+                ResetTotalTime();
             }
             return;
         }
 
         int count = (int)(totalTime) - recycleObject.Count;
+        //Debug.Log(count);
+
         for (int i = 0; i < count; i++)
         {
             if (!digestNextLetter())
@@ -238,7 +242,7 @@ public class NPCConversationHandler : MonoBehaviour
                 else
                 {
                     _currentConverseStatus = ConversationStatus.EMPTY;
-                    resetTotalTime();
+                    ResetTotalTime();
                 }
                 break;
             }
@@ -290,7 +294,7 @@ public class NPCConversationHandler : MonoBehaviour
         OnInteraction();
     }
 
-    private void resetTotalTime() => totalTime = 0f;
+    public void ResetTotalTime() => totalTime = 0f;
 
     // ---- DELEGATE HANDLER -----------------------------------
     public void OnEnterInteractionArea()
@@ -315,13 +319,9 @@ public class NPCConversationHandler : MonoBehaviour
         DialogueBoxAnim.Play(DialogueBoxAnimHash.IDLE);
         initBox();
 
-        if (npcConversation == null){
-            nextSentence = new Queue<char>("...");
-            resetTotalTime();
-            _currentConverseStatus = ConversationStatus.CONVERSE;
-            
-            // npcConversation = npcConversationRandom;
-        }
+        selectionBox.gameObject.SetActive(false);
+
+        ResetTotalTime();
 
         if(npcConversation != null)
         {
@@ -332,13 +332,12 @@ public class NPCConversationHandler : MonoBehaviour
                 npcConversation.ResetIndex();
                 getNextSentence();
             }
-
-            resetTotalTime();
             _currentConverseStatus = ConversationStatus.CONVERSE;
         }
         else
-        {
-            OnEndInteraction();
+        { 
+            nextSentence = new Queue<char>("...");
+            _currentConverseStatus = ConversationStatus.CONVERSE;
         }
     }
 
@@ -435,7 +434,7 @@ public class NPCConversationHandler : MonoBehaviour
         }
 
         // reset total time
-        resetTotalTime();
+        ResetTotalTime();
 
         // clear collections
         recycleObject.Clear();
