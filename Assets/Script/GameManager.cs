@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
     public void StartGame(){
         StopCoroutine(demonCoroutine);
         StartCoroutine(StartGame(gameSaver.isNewGame));
+        //player.SubscribeEvent();
     }
 
     public void LoadSceneCode(){
@@ -118,6 +119,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitGame(){
         StartCoroutine(exitGame());
+        //player.UnsubscribeEvent();
     }
 
     private IEnumerator exitGame(){
@@ -167,6 +169,10 @@ public class GameManager : MonoBehaviour
         uiHandler.StartGame();
 
         player.InputHandler.ResetAll();
+
+        yield return new WaitForEndOfFrame();
+        player.InitializePlayerStatus();
+        Debug.Log("initialized");
         yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
     }
 

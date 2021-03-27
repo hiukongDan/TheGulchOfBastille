@@ -34,6 +34,7 @@ namespace Gulch
         public void OnPlayerDead(){
             OnPlayerDeadHandler?.Invoke();
         }
+
     }
 
 }

@@ -8,11 +8,13 @@ public class Player : MonoBehaviour
      */
 
     #region ENUM
+
     public enum AC_TYPE{
         NORMAL, ROOT_MOTION,
     };
 
     #endregion
+
     #region REFERENCES
     private GameManager GM;
     #endregion
@@ -406,6 +408,7 @@ public class Player : MonoBehaviour
             transform.position = playerRuntimeData.lastPosition;
             UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
             UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+            UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
         }
     }
 
@@ -432,6 +435,7 @@ public class Player : MonoBehaviour
 
         UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
         UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+        UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
 
         ResetGrounded();
     }
@@ -495,6 +499,12 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    // public void UpdateTimer(){
+    //     if(uilosAquireTimer >= 0f){
+    //         uilosAquireTimer -= Time.deltaTime;
+    //     }
+    // }
     #endregion
 
     #region INTERFACE
@@ -521,6 +531,13 @@ public class Player : MonoBehaviour
     public void OnEndConversation()
     {
         EndConversation?.Invoke();
+    }
+
+    // private float uilosAquireTimer = 0;
+    // public float uilosAquireTimerMax = 2f;
+    public void OnAquireUilos(int amount){
+        playerRuntimeData.currentUilos += amount;
+        UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
     }
     #endregion
 
