@@ -57,17 +57,7 @@ public class NPCConversationHandler : MonoBehaviour
     }
 
     void OnEnable(){
-        if(player && player.miscData.conversationIndex.ContainsKey(GetHashCode())){
-            currentConversationIndex = player.miscData.conversationIndex[GetHashCode()];
-        }
-        else if(player){
-            currentConversationIndex = 0;
-            player.miscData.conversationIndex.Add(GetHashCode(), 0);
-        }
-
-        if(npcConversations.Count() > 0){
-            npcConversation = npcConversations[currentConversationIndex];
-        }
+        
 
         _currentConverseStatus = ConversationStatus.EMPTY;
     }
@@ -313,6 +303,17 @@ public class NPCConversationHandler : MonoBehaviour
 
     public void OnBeginInteraction()
     {
+        if(player && player.miscData.conversationIndex.ContainsKey(GetHashCode())){
+            currentConversationIndex = player.miscData.conversationIndex[GetHashCode()];
+        }
+        else if(player){
+            currentConversationIndex = 0;
+            player.miscData.conversationIndex.Add(GetHashCode(), 0);
+        }
+        if(npcConversations.Count() > 0){
+            npcConversation = npcConversations[currentConversationIndex];
+        }
+
         npc.npcEventHandler.NPCSelection += DialogueSelectionHandler;
 
         InfoSignAnim?.Play(InfoSignAnimHash.EMPTY);
@@ -363,7 +364,6 @@ public class NPCConversationHandler : MonoBehaviour
             else{
                 player.miscData.conversationIndex.Add(GetHashCode(), currentConversationIndex);
             }
-            SetConversation(npcConversation);
         }
 
         npc.npcEventHandler.NPCSelection -= DialogueSelectionHandler;

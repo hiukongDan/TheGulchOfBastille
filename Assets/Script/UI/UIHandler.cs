@@ -87,6 +87,7 @@ public class UIHandler : MonoBehaviour
 
     private bool isPausePrerequisition(){
         Player player = GameObject.Find("Player")?.GetComponent<Player>();   
-        return player.stateMachine.currentState != player.converseState && player.stateMachine.currentState != player.littleSunState;
+        return player.stateMachine.currentState != player.converseState && player.stateMachine.currentState != player.littleSunState &&
+            player.stateMachine.currentState != player.cinemaState;
     }
 }

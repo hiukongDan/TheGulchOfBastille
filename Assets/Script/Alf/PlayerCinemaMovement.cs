@@ -64,7 +64,7 @@ public class PlayerCinemaMovement : MonoBehaviour
         player.stateMachine.SwitchState(player.idleState);
 
         littleSunHandler.InfoSignAnim.Play(InfoSignAnimHash.INTRO);
-
+        player.lightingLittleSunToken = false;
     }
     IEnumerator transitToScene(SubAreaHandler subAreaHandler)
     {

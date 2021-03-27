@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLittleSunState : PlayerState
 {
-    private float timerMax = 0.2f;
+    private float timerMax = 0.1f;
     private float currentTimer = 0.0f;
     private GameManager gameManager;
     public PlayerLittleSunState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
@@ -20,7 +20,7 @@ public class PlayerLittleSunState : PlayerState
         player.InputHandler.ResetAll();
         player.ResetPlayerStatus();
 
-        currentTimer = timerMax;
+        currentTimer = -1f;
 
         player.GetLittleSunHandler()?.littleSunMenu.Activate();
         player.GetLittleSunHandler()?.littleSunMenu.ResetMenu();
