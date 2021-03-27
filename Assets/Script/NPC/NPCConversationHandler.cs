@@ -6,18 +6,15 @@ using UnityEngine;
 public class NPCConversationHandler : MonoBehaviour
 {
     public PFontInfo pFontInfo;
-
     public Animator InfoSignAnim;
     public Animator DialogueBoxAnim;
-
-    public NPCConversation npcConversation;
-    public NPCConversation npcConversationRandom;
-
+    public List<NPCConversation> npcConversations;
+    private NPCConversation npcConversation;
+    private int currentConversationIndex = 0;
     public float letterPerLine = 15f;
     public float pixelPerUnit = 32f;
     public Vector2 borderInPixel = new Vector2(2, 2);
     public Vector2 marginInPixel = new Vector2(1, 1);
-
     public float textSpeed = 4f;
     
     private NPC npc;
@@ -60,7 +57,17 @@ public class NPCConversationHandler : MonoBehaviour
     }
 
     void OnEnable(){
-        
+        if(player && player.miscData.conversationIndex.ContainsKey(GetHashCode())){
+            currentConversationIndex = player.miscData.conversationIndex[GetHashCode()];
+        }
+        else if(player){
+            currentConversationIndex = 0;
+            player.miscData.conversationIndex.Add(GetHashCode(), 0);
+        }
+
+        if(npcConversations.Count() > 0){
+            npcConversation = npcConversations[currentConversationIndex];
+        }
     }
 
     void OnDisable() {
@@ -97,8 +104,6 @@ public class NPCConversationHandler : MonoBehaviour
     }
 
     // --------------------------------------------------------------------------------
-
-
 
     // ----- SELECTION BOX ------------------------------------------------------------
     private bool initSelectionBox()
@@ -290,7 +295,7 @@ public class NPCConversationHandler : MonoBehaviour
     // ---- DELEGATE HANDLER -----------------------------------
     public void OnEnterInteractionArea()
     {
-        InfoSignAnim.Play(InfoSignAnimHash.INTRO);
+        InfoSignAnim?.Play(InfoSignAnimHash.INTRO);
 
         selectionBox.gameObject.SetActive(false);
 
@@ -299,14 +304,14 @@ public class NPCConversationHandler : MonoBehaviour
 
     public void OnExitInteractionArea()
     {
-        InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
+        InfoSignAnim?.Play(InfoSignAnimHash.OUTRO);
     }
 
     public void OnBeginInteraction()
     {
         npc.npcEventHandler.NPCSelection += DialogueSelectionHandler;
 
-        InfoSignAnim.Play(InfoSignAnimHash.EMPTY);
+        InfoSignAnim?.Play(InfoSignAnimHash.EMPTY);
         DialogueBoxAnim.Play(DialogueBoxAnimHash.IDLE);
         initBox();
 
@@ -320,10 +325,15 @@ public class NPCConversationHandler : MonoBehaviour
 
         if(npcConversation != null)
         {
-            npcConversation.ResetIndex();
-            getNextSentence();
-            resetTotalTime();
+            if(npcConversation.isRandomConversation){
+                nextSentence = new Queue<char>(npcConversation.GetRandomSentence());
+            }
+            else{
+                npcConversation.ResetIndex();
+                getNextSentence();
+            }
 
+            resetTotalTime();
             _currentConverseStatus = ConversationStatus.CONVERSE;
         }
         else
@@ -336,16 +346,25 @@ public class NPCConversationHandler : MonoBehaviour
     {
         cleanUpBox();
         DialogueBoxAnim.Play(DialogueBoxAnimHash.EMPTY);
-        InfoSignAnim.Play(InfoSignAnimHash.INTRO);
+        InfoSignAnim?.Play(InfoSignAnimHash.INTRO);
 
         OP.DestroyGameObject();
 
         _currentConverseStatus = ConversationStatus.EMPTY;
 
         // Change conversation default to next conversation if presented
-        if(npcConversation != null && npcConversation.nextConversation != null)
+        if(npcConversation != null && currentConversationIndex + 1 < npcConversations.Count())
         {
-            SetConversation(npcConversation.nextConversation);
+            currentConversationIndex++;
+            SetConversation(npcConversations[currentConversationIndex]);
+
+            if(player.miscData.conversationIndex.ContainsKey(GetHashCode())){
+                player.miscData.conversationIndex[GetHashCode()] = currentConversationIndex;
+            }
+            else{
+                player.miscData.conversationIndex.Add(GetHashCode(), currentConversationIndex);
+            }
+            SetConversation(npcConversation);
         }
 
         npc.npcEventHandler.NPCSelection -= DialogueSelectionHandler;
@@ -455,7 +474,6 @@ public class NPCConversationHandler : MonoBehaviour
 
         return ciw;
     }
-
 
     private Vector2 getNextPos(Vector2 prevPos, PFontLoader.CharInfo ci)
     {

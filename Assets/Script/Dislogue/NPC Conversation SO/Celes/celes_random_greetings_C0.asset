@@ -19,3 +19,4 @@ MonoBehaviour:
     just like you.
   selections: []
   nextConversation: {fileID: 0}
+  isRandomConversation: 1

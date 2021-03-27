@@ -10,10 +10,15 @@ public class NPCConversation : ScriptableObject
     public string[] conversations;
     public NPCSelection[] selections;
     public NPCConversation nextConversation;
+    public bool isRandomConversation = false;
 
     private int index;
     public void ResetIndex() => index = 0;
-    public bool HasNext() => index < conversations.Length;
+    public bool HasNext() => index < conversations.Length && !isRandomConversation;
+
+    public List<char> GetRandomSentence(){
+        return conversations[Mathf.FloorToInt(Random.value * conversations.Count())].ToList<char>();
+    }
     public List<char> GetNextSentence()
     {
         return conversations[index++].ToList();

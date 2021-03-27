@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fe53d10822e9104a8026bfdbb4b90a7, type: 3}
-  m_Name: fran_random_greetings_C0
+  m_Name: goye_combat_begin_C0
   m_EditorClassIdentifier: 
   conversations:
-  - Dont push too hard Alf, take it slow.
-  - You are our hope.
+  - 'This path is dangerous, '
+  - 'if you really want to proceed your adventure, '
+  - there is only one way.
+  - Prove you are worthy.
   selections: []
   nextConversation: {fileID: 0}
-  isRandomConversation: 1
+  isRandomConversation: 0

@@ -60,12 +60,11 @@ public class PlayerConverseState : PlayerState
             player.GetNPCEventHandler()?.OnNPCInteraction();
             player.InputHandler.ResetIsInteraction();
         }
-        else if(isPause){
-            player.GetNPCEventHandler()?.OnNPCEndInteraction();
-            player.InputHandler.ResetIsPause();
-        }
+        // else if(isPause){
+        //     player.GetNPCEventHandler()?.OnNPCEndInteraction();
+        //     player.InputHandler.ResetIsPause();
+        // }
         
-
         if(normMovementInput.y != 0 && selectionTimer < 0)
         {
             player.GetNPCEventHandler()?.OnNPCSelection((int)normMovementInput.y);

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: belial_church_greetings_C0
   m_EditorClassIdentifier: 
   conversations:
-  - My name is Belial, you probably hear me from Master Fran in the Sun Tower.
+  - My name is Belial, you probably have heard me from Master Fran in the Sun Tower.
   - Its a pleasure to meet you.
-  - 'Here, take this key, it should be one aid in your up coming path. '
+  - Here, take this key, it should be one aid in your up coming journey.
   - If you ever be infected by the death, I will always be here.
   selections: []
   nextConversation: {fileID: 0}
+  isRandomConversation: 0

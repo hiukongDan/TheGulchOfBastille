@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
         player.stateMachine.InitializeState(player.wakeupState);
         
         yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
-        
     }
 
     void OnEnable(){
@@ -151,6 +150,7 @@ public class GameManager : MonoBehaviour
                 player.SetPosition(DefaultStartPoint.position);
             }
             currentSceneCode = DefaultStartScene;
+            player.InitSaveData();
         }
         else{
             player.gameObject.SetActive(true);

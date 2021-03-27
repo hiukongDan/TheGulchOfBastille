@@ -80,7 +80,6 @@ public class Player : MonoBehaviour
     public MiscData miscData = new MiscData();
     #endregion
 
-
     #region TIMERS
     public float damageImmuneTimer;
     #endregion
@@ -406,6 +405,19 @@ public class Player : MonoBehaviour
             UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
             UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
         }
+    }
+
+    public void InitSaveData(){
+        if(miscData == null){
+            miscData = new MiscData();
+        }
+        
+        if(playerRuntimeData == null){
+            playerRuntimeData = new PlayerRuntimeData();
+        }
+
+        miscData.Init();
+        playerRuntimeData.InitPlayerRuntimeData(playerData);
     }
 
     public void ResetPlayerStatus(){
