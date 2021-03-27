@@ -8,6 +8,7 @@ public class PlayerRuntimeData
     public float currentHitPoints;
     public float currentStunPoints;
     public float currentDecayPoints;
+    public float currentUilos;
     public SceneCode currentSceneCode;
     public int lastLittleSunID;
     public Vector2 lastPosition;
@@ -85,6 +86,7 @@ public class PlayerRuntimeData
         currentHitPoints = playerData.PD_maxHitPoint;
         currentStunPoints = playerData.PD_maxStunPoint;
         currentDecayPoints = 0f;
+        currentUilos = 0f;
         currentSceneCode = SceneCode.Gulch_Main;
         lastLittleSunID = -1;
         playerStock = new PlayerStock(new List<ItemData.WeaponRuntimeData>(), new List<ItemData.WearableRuntimeData>(), 
@@ -123,17 +125,19 @@ public class PlayerRuntimeData
         public float currentHitPoints;
         public float currentStunPoints;
         public float currentDecayPoints;
+        public float currentUilos;
         public int currentSceneCode;
         public int lastLittleSunID; 
         public string lastPosition;
         public PlayerStock playerStock;
         public PlayerSlot playerSlot;
 
-        public PlayerRuntimeSaveData(float currentHitPoints, float currentStunPoints, float currentDecayPoints,
+        public PlayerRuntimeSaveData(float currentHitPoints, float currentStunPoints, float currentDecayPoints, float currentUilos,
                  SceneCode currentSceneCode, int lastLittleSunID, Vector2 lastPosition, PlayerStock playerStock, PlayerSlot playerSlot){
             this.currentHitPoints = currentHitPoints;
             this.currentStunPoints = currentStunPoints;
             this.currentDecayPoints = currentDecayPoints;
+            this.currentUilos = currentUilos;
             this.currentSceneCode = (int)currentSceneCode;
             this.lastLittleSunID = lastLittleSunID;
             string strLastPos = lastPosition.ToString();
@@ -145,13 +149,15 @@ public class PlayerRuntimeData
     };
 
     public PlayerRuntimeSaveData GetPlayerRuntimeSaveData(){
-        return new PlayerRuntimeSaveData(currentHitPoints, currentStunPoints, currentDecayPoints, currentSceneCode, lastLittleSunID, lastPosition, playerStock, playerSlot);
+        isLoaded = false;
+        return new PlayerRuntimeSaveData(currentHitPoints, currentStunPoints, currentDecayPoints, currentUilos, currentSceneCode, lastLittleSunID, lastPosition, playerStock, playerSlot);
     }
 
     public void SetPlayerRuntimeSaveData(PlayerRuntimeSaveData playerRuntimeSaveData){
         currentHitPoints = playerRuntimeSaveData.currentHitPoints;
         currentStunPoints = playerRuntimeSaveData.currentStunPoints;
         currentDecayPoints = playerRuntimeSaveData.currentStunPoints;
+        currentUilos = playerRuntimeSaveData.currentUilos;
         currentSceneCode = (SceneCode)playerRuntimeSaveData.currentSceneCode;
         lastLittleSunID = playerRuntimeSaveData.lastLittleSunID;
         string[] lastPos = playerRuntimeSaveData.lastPosition.Split(',');

@@ -9,12 +9,14 @@ public class PlayerLittleSunState : PlayerState
     private GameManager gameManager;
     public PlayerLittleSunState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
 
     public override void Enter()
     {
         base.Enter();
+        gameManager = GameObject.Find("GameManager")?.GetComponent<GameManager>();
+        
         player.SetVelocity(Vector2.zero);
         ResetControlVariables();
         player.InputHandler.ResetAll();
