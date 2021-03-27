@@ -34,8 +34,6 @@ public class PlayerCinemaMovement : MonoBehaviour
         Vector2 targetPos = new Vector2(littleSunPos.x + playerLittleSunOffset, littleSunPos.y);
         // the same hack here as the combat freeze of Goye
         player.stateMachine.SwitchState(player.cinemaState);
-
-        littleSunHandler.InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
         // yield return new WaitUntil(player at target pos);
         if(Mathf.Abs(player.transform.position.x - targetPos.x) >= 1/32f)
         {

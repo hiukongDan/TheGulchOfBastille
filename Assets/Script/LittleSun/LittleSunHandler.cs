@@ -9,13 +9,19 @@ public class LittleSunHandler : MonoBehaviour
     public Animator BloodAnim{get; private set;}
 
     public LittleSunData littleSunData{get; private set;}
+    public LittleSunMenu littleSunMenu{get; private set;}
+
+    private bool isTeleported = false;
 
     void Awake()
     {
         littleSunData = GetComponent<LittleSunData>();
+        littleSunMenu = GetComponentInChildren<LittleSunMenu>();
         InfoSignAnim = transform.Find("InfoSign Parent").GetComponentInChildren<Animator>();
         LittleSunAnim = transform.Find("Alive").GetComponent<Animator>();
         BloodAnim = transform.Find("Blood").GetComponent<Animator>();
+
+        // Debug.Log(littleSunMenu.name);
     }
 
     void OnEnable() {
@@ -37,6 +43,8 @@ public class LittleSunHandler : MonoBehaviour
     public void OnLittleSunInteraction()
     {
         FindObjectOfType<Player>().playerRuntimeData.lastLittleSunID = littleSunData.LittleSunID;
+
+        InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
         if (!littleSunData.IsActive())
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().playerCinemaMovement.LightLittleSun(this);
@@ -44,12 +52,20 @@ public class LittleSunHandler : MonoBehaviour
         }
         else
         {
-            // Do Other interaction like leveling up or something
-            // reset player status and quit this littleSunState
             Player player = GameObject.Find("Player").GetComponent<Player>();
-            player.ResetPlayerStatus();
-            player.stateMachine.SwitchState(player.wakeupState);
+            player.stateMachine.SwitchState(player.littleSunState);
+            // transfer control authority to littleSunState
         }
+    }
+
+    public void OnLittleSunTravel(){
+        LittleSunData data = littleSunMenu.GetCurrentSelectedLittleSun();
+        Player player = GameObject.Find("Player").GetComponent<Player>();
+        player.playerRuntimeData.lastLittleSunID = data.LittleSunID;
+        player.SetLittleSunHandler(null);
+        littleSunMenu.Deactivate();
+        GameObject.Find("GameManager").GetComponent<GameManager>().ReloadScene();
+        isTeleported = true;
     }
 
     public void PlayerEnterTrigerArea(Player player, bool isEnter)
@@ -58,11 +74,12 @@ public class LittleSunHandler : MonoBehaviour
         {
             player?.SetLittleSunHandler(this);
             InfoSignAnim.Play(InfoSignAnimHash.INTRO);
+            isTeleported = false;
         }
         else
         {
             player?.SetLittleSunHandler(null);
-            if(InfoSignAnim.GetCurrentAnimatorStateInfo(0).shortNameHash != InfoSignAnimHash.EMPTY)
+            if(!isTeleported && InfoSignAnim.GetCurrentAnimatorStateInfo(0).shortNameHash != InfoSignAnimHash.EMPTY)
             {
                 InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
             }

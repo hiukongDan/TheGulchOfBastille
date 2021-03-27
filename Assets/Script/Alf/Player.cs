@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     public PlayerStunState stunState { get; private set; }
     public PlayerTakeDamageState takeDamageState { get; private set; }
     public PlayerConverseState converseState { get; private set; }
+    public PlayerLittleSunState littleSunState{get; private set;}
 
     public D_PlayerStateMachine playerData;
     public D_PlayerAbility playerAbilityData;
@@ -381,6 +382,7 @@ public class Player : MonoBehaviour
         cinemaState = new PlayerCinemaState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
         ladderState = new PlayerLadderState(stateMachine, this, AlfAnimationHash.IDLE_0, playerData);
         wakeupState = new PlayerWakeupState(stateMachine, this, AlfAnimationHash.WAKEUP_SITUP_0, playerData);
+        littleSunState = new PlayerLittleSunState(stateMachine, this, AlfAnimationHash.LITTLESUN_SIT_0, playerData);
 
         InitializePlayerCooldownTimer();
     }

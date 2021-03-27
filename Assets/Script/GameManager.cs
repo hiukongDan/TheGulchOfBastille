@@ -203,6 +203,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public List<LittleSunData> GetLitLittleSun(){
+        List<LittleSunData> res = new List<LittleSunData>();
+        foreach(var data in LittleSuns){
+            if(data.IsActive()){
+                res.Add(data);
+            }
+        }
+        return res;
+    }
+
     void Update(){
         if(CanPlayerAction()){
             elapsedSeconds += Time.deltaTime;

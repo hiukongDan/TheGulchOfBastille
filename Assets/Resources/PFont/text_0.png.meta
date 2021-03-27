@@ -158,7 +158,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
@@ -1060,6 +1060,27 @@ TextureImporter:
       bones: []
       spriteID: 9df76aa53ee83f3d0800000000000000
       internalID: -3174036205236486183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text_0_40
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 2
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce497c1366baa0b50800000000000000
+      internalID: 6560244262628725996
       vertices: []
       indices: 
       edges: []

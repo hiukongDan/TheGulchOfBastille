@@ -77,12 +77,16 @@ public class UIHandler : MonoBehaviour
     /// This is a callback function for input of pause action or return action
     /// </summary>
     public void OnPause(){
-        Player player = GameObject.Find("Player")?.GetComponent<Player>();    
-        if(uiFSM.PeekState() == uiPlayState && player.stateMachine.currentState != player.converseState){
+        if(uiFSM.PeekState() == uiPlayState && isPausePrerequisition()){
             uiFSM.PushState(uiPauseState);
         }
         else if(uiFSM.Count() > 1){
             uiFSM.PopState();
         }
+    }
+
+    private bool isPausePrerequisition(){
+        Player player = GameObject.Find("Player")?.GetComponent<Player>();   
+        return player.stateMachine.currentState != player.converseState && player.stateMachine.currentState != player.littleSunState;
     }
 }

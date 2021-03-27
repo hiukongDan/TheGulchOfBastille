@@ -30,4 +30,5 @@ public class AlfAnimationHash
     public static int LADDER_SLIDE_0 = Animator.StringToHash("alf_ladder_slide_0");
     public static int WAKEUP_SITUP_0 = Animator.StringToHash("alf_wakeup_situp_0");
     public static int WAKEUP_STANDUP_0 = Animator.StringToHash("alf_wakeup_standup_0");
+    public static int LITTLESUN_SIT_0 = Animator.StringToHash("alf_littlesun_sit_0");
 }
