@@ -257,6 +257,36 @@ TextureImporter:
   - first:
       213: 6902649455281216622
     second: mine_details_84
+  - first:
+      213: 6780185682604264012
+    second: mine_details_85
+  - first:
+      213: 8817602572264951166
+    second: mine_details_86
+  - first:
+      213: 7366746663726257766
+    second: mine_details_87
+  - first:
+      213: 3363125540017143920
+    second: mine_details_88
+  - first:
+      213: -6029866773830569306
+    second: mine_details_89
+  - first:
+      213: 4279088094882691704
+    second: mine_details_90
+  - first:
+      213: 8786245155594492528
+    second: mine_details_91
+  - first:
+      213: 3711653170011995478
+    second: mine_details_92
+  - first:
+      213: 979985279836701906
+    second: mine_details_93
+  - first:
+      213: -7211474001347975600
+    second: mine_details_94
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2101,6 +2131,237 @@ TextureImporter:
       bones: []
       spriteID: 4f1c8590ba5ad1b50800000000000000
       internalID: 6565585985790853620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_70
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 318
+        width: 14
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ca2519dcfdb5a50800000000000000
+      internalID: 6511043760293587970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_85
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 318
+        width: 25
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a01d294fe081e50800000000000000
+      internalID: 6780185682604264012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_86
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 84
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d4c6262da6e5a70800000000000000
+      internalID: 8817602572264951166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_87
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 108
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66692b95f01fb3660800000000000000
+      internalID: 7366746663726257766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_88
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 132
+        width: 38
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07004cb2cd83cae20800000000000000
+      internalID: 3363125540017143920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_89
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 156
+        width: 46
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a2f5e6ed1c915ca0800000000000000
+      internalID: -6029866773830569306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_90
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 180
+        width: 54
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87af51263ff526b30800000000000000
+      internalID: 4279088094882691704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_91
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 204
+        width: 62
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ad4b0ea630fe970800000000000000
+      internalID: 8786245155594492528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_92
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 228
+        width: 70
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d740894e0728330800000000000000
+      internalID: 3711653170011995478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_93
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 252
+        width: 78
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d447c97b6b999d00800000000000000
+      internalID: 979985279836701906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine_details_94
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 276
+        width: 86
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05660b29a92bbeb90800000000000000
+      internalID: -7211474001347975600
       vertices: []
       indices: 
       edges: []
