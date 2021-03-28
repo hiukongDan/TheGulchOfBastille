@@ -91,7 +91,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 166, y: 166}
+  m_SizeDelta: {x: 156, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3257471321686734361
 CanvasRenderer:
@@ -120,8 +120,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8743542106936396461, guid: f7e248ebc3a172c4d93367e8b52619ce,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65a01931aac7a53469c89827f5b108a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -143,6 +142,7 @@ GameObject:
   - component: {fileID: 3257471322363404958}
   - component: {fileID: 3257471322363404953}
   - component: {fileID: 3257471322363404952}
+  - component: {fileID: 1656461548}
   m_Layer: 0
   m_Name: btn_save
   m_TagString: Untagged
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
@@ -250,6 +250,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1656461548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257471322363404954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b261b096ce4a86146b49174a3b36e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3257471322886034722
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +274,7 @@ GameObject:
   - component: {fileID: 3257471322886034726}
   - component: {fileID: 3257471322886034721}
   - component: {fileID: 3257471322886034720}
+  - component: {fileID: 1915704539}
   m_Layer: 0
   m_Name: btn_exit
   m_TagString: Untagged
@@ -347,7 +360,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
@@ -369,6 +382,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1915704539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257471322886034722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b261b096ce4a86146b49174a3b36e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3257471323112824151
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +419,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3257471323112824151}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -430,9 +455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
-  m_RaycastTarget: 1
-  m_Maskable: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_RaycastTarget: 0
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -458,6 +483,7 @@ GameObject:
   - component: {fileID: 3257471323184076202}
   - component: {fileID: 3257471323184076213}
   - component: {fileID: 3257471323184076212}
+  - component: {fileID: 390838382}
   m_Layer: 0
   m_Name: btn_inventory
   m_TagString: Untagged
@@ -543,7 +569,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
@@ -565,6 +591,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &390838382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257471323184076214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b261b096ce4a86146b49174a3b36e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3257471323491616070
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +615,7 @@ GameObject:
   - component: {fileID: 3257471323491616122}
   - component: {fileID: 3257471323491616069}
   - component: {fileID: 3257471323491616068}
+  - component: {fileID: 2133442079}
   m_Layer: 0
   m_Name: btn_options
   m_TagString: Untagged
@@ -662,7 +701,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
@@ -684,6 +723,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2133442079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257471323491616070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b261b096ce4a86146b49174a3b36e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3257471323589424472
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +822,7 @@ GameObject:
   - component: {fileID: 3257471323681116380}
   - component: {fileID: 3257471323681116383}
   - component: {fileID: 3257471323681116382}
+  - component: {fileID: 1632587960}
   m_Layer: 0
   m_Name: btn_equipment
   m_TagString: Untagged
@@ -856,7 +908,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
@@ -878,3 +930,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1632587960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257471323681116376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b261b096ce4a86146b49174a3b36e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

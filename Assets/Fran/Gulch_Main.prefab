@@ -14201,6 +14201,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.272
       objectReference: {fileID: 0}
+    - target: {fileID: 8133226613383145523, guid: e82311b4d7319604682747b853bdd5c9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.46
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e82311b4d7319604682747b853bdd5c9, type: 3}
 --- !u!4 &1715815109 stripped
@@ -14563,6 +14568,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 278309382}
     m_Modifications:
+    - target: {fileID: 9046257028722305465, guid: 47312d58312ee3a4fa38a20ccd7cc035,
+        type: 3}
+      propertyPath: npcConversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046257028722305465, guid: 47312d58312ee3a4fa38a20ccd7cc035,
+        type: 3}
+      propertyPath: npcConversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac587ee072e0704eb38ecf036146028,
+        type: 2}
     - target: {fileID: 9046257029158986293, guid: 47312d58312ee3a4fa38a20ccd7cc035,
         type: 3}
       propertyPath: m_Name
@@ -14718,6 +14734,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 278309382}
     m_Modifications:
+    - target: {fileID: 7606533799524071930, guid: 39f99228fb9716d47bc6e36d20136126,
+        type: 3}
+      propertyPath: npcConversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606533799524071930, guid: 39f99228fb9716d47bc6e36d20136126,
+        type: 3}
+      propertyPath: npcConversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9edba4effc7c53142b47365dc9269362,
+        type: 2}
     - target: {fileID: 7606533801100653173, guid: 39f99228fb9716d47bc6e36d20136126,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14933,6 +14960,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6201932126739829469, guid: b2f48e46a8299e3419419dff056f98e6,
+        type: 3}
+      propertyPath: npcConversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201932126739829469, guid: b2f48e46a8299e3419419dff056f98e6,
+        type: 3}
+      propertyPath: npcConversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f625b4b254993d46b385ffb7c4e16d2,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f48e46a8299e3419419dff056f98e6, type: 3}
 --- !u!4 &4243730513280744402 stripped

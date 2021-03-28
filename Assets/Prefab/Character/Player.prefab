@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566542462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.178, z: 0}
+  m_LocalPosition: {x: 0, y: -0.0625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9202549583387772988}
@@ -112,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9202549583387772988
 Transform:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9202549583387772991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -328,7 +328,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.027467877}
+  m_Offset: {x: 0, y: -0.029460058}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -339,7 +339,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27, y: 0.66493577}
+  m_Size: {x: 0.27989578, y: 0.65958273}
   m_EdgeRadius: 0
 --- !u!212 &9202549583387772989
 SpriteRenderer:
@@ -380,8 +380,7 @@ SpriteRenderer:
   m_SortingLayerID: 1555364541
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5688575899509060094, guid: 25c83ecd596f0404f923521bb5375b91,
-    type: 3}
+  m_Sprite: {fileID: 640927383900620034, guid: 992990c306cfa494a972816b069085f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -404,7 +403,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3c11d06ad45558a4a92b76d6c58e4a12, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -432,10 +431,11 @@ MonoBehaviour:
   wallCheck: {fileID: 505577554}
   hitbox: {fileID: 9202549584051426707}
   LadderEndCheck: {fileID: 1566542463}
-  currentHitPoints: 0
-  currentStunPoints: 0
-  currentDecayPoints: 0
+  miscData:
+    isAbandonedDoorOpen: 0
   damageImmuneTimer: 0
+  FACE_LEFT: -1
+  FACE_RIGHT: 1
   lightingLittleSunToken: 0
 --- !u!1 &9202549584051426706
 GameObject:
