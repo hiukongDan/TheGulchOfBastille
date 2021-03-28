@@ -8,8 +8,6 @@ public class KeyItemLoot : Loot
     public override void OnPickUpLoot(Player player)
     {
         base.OnPickUpLoot(player);
-        player.playerRuntimeData.playerStock.Pick(new ItemData.KeyItemRuntimeData(keyItem));
-        string info = "Pick up " + string.Join(" ", keyItem.ToString().Split('_'));
-        UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(info));
+        OnPickUpLoot(player, keyItem);
     }
 }

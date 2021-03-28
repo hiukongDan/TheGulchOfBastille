@@ -87,4 +87,28 @@ public class Loot: MonoBehaviour{
         lootDict.Clear();
     }
 
+    public static void OnPickUpLoot(Player player, ItemData.Weapon weapon, int level){
+        player.playerRuntimeData.playerStock.Pick(new ItemData.WeaponRuntimeData(weapon, level));
+        string info = "Pick up " + string.Join(" ", weapon.ToString().Split('_')) + (level>0?" level "+level:"");
+        UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(info));
+    }
+    public static void OnPickUpLoot(Player player, ItemData.Wearable wearable){
+        player.playerRuntimeData.playerStock.Pick(new ItemData.WearableRuntimeData(wearable));
+        string info = "Pick up " + string.Join(" ", wearable.ToString().Split('_'));
+        UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(info));
+    }
+    public static void OnPickUpLoot(Player player, ItemData.Consumable consumable, int amount){
+        player.playerRuntimeData.playerStock.Pick(new ItemData.ConsumableRuntimeData(consumable, amount));
+        string info = "Pick up " + string.Join(" ", consumable.ToString().Split('_') + " Amount " + amount);
+        UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(info));
+    }
+
+    public static void OnPickUpLoot(Player player, ItemData.KeyItem keyItem){
+        player.playerRuntimeData.playerStock.Pick(new ItemData.KeyItemRuntimeData(keyItem));
+        string info = "Pick up " + string.Join(" ", keyItem.ToString().Split('_'));
+        UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(info));
+    }
+
+
+
 }

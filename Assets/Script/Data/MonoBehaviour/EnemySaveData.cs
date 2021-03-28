@@ -38,6 +38,8 @@ public class EnemySaveData : MonoBehaviour
         {
             dict.Add(hashCode, isAlive);
         }
+
+        // Debug.Log(dict[hashCode]);
     }
 
     public bool IsAlive()

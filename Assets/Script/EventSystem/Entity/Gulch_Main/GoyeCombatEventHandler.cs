@@ -23,7 +23,8 @@ public class GoyeCombatEventHandler : EntityEventHandler
     public override void OnDead()
     {
         GoyeCombat1 goye = transform.parent.GetComponent<GoyeCombat1>();
-        Destroy(goye.transform.Find("Combat Field").gameObject);
+        // Destroy(goye.transform.Find("Combat Field").gameObject);
+        goye.transform.Find("Combat Field").gameObject.SetActive(false);
         Camera.main.GetComponent<BasicFollower>().RestoreCameraFollowing();
         goye.GetComponent<EnemySaveData>().Save(false);
         Invoke("ResetDialogue", 1f);

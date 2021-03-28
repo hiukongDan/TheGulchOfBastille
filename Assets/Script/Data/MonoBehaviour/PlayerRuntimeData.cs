@@ -61,11 +61,54 @@ public class PlayerRuntimeData
         }
 
         public void Pick(ItemData.ConsumableRuntimeData consumable){
+            int itemCount = this.consumableStock.Count;
+            for(int i = 0; i < itemCount; ++i){
+                if(this.consumableStock[i].consumable == consumable.consumable && this.consumableStock[i].count + consumable.count <= 99){
+                    this.consumableStock[i] = new ItemData.ConsumableRuntimeData(consumable.consumable, this.consumableStock[i].count + consumable.count);
+                    return;
+                }
+            }
             consumableStock.Add(consumable);
         }
 
         public void Pick(ItemData.KeyItemRuntimeData keyItem){
             keyItemStock.Add(keyItem);
+        }
+
+        public bool Contains(ItemData.Weapon target){
+            foreach(ItemData.WeaponRuntimeData item in this.weaponStock){
+                if(item.weapon == target){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool Contains(ItemData.Wearable target){
+            foreach(ItemData.WearableRuntimeData item in this.wearableStock){
+                if(item.wearable == target){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool Contains(ItemData.Consumable target){
+            foreach(ItemData.ConsumableRuntimeData item in this.consumableStock){
+                if(item.consumable == target){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool Contains(ItemData.KeyItem target){
+            foreach(ItemData.KeyItemRuntimeData item in this.keyItemStock){
+                if(item.keyItem == target){
+                    return true;
+                }
+            }
+            return false;
         }
     };
 
@@ -86,7 +129,7 @@ public class PlayerRuntimeData
         currentHitPoints = playerData.PD_maxHitPoint;
         currentStunPoints = playerData.PD_maxStunPoint;
         currentDecayPoints = 0f;
-        currentUilos = 0f;
+        currentUilos = 0;
         currentSceneCode = SceneCode.Gulch_Main;
         lastLittleSunID = -1;
         playerStock = new PlayerStock(new List<ItemData.WeaponRuntimeData>(), new List<ItemData.WearableRuntimeData>(), 

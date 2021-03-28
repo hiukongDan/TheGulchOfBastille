@@ -23,7 +23,7 @@ public static class SceneCodeDisplayName{
         {(int)SceneCode.Gulch_Church_Altar, "Church Altar"},
         {(int)SceneCode.Gulch_SunTower, "Sun Tower"},
         {(int)SceneCode.Gulch_Tunnel, "mine Tunnel"},
-        {(int)SceneCode.Gulch_Goye, "goye s prey"},
+        {(int)SceneCode.Gulch_Goye, "prey of goye"},
         {(int)SceneCode.Abandoned_Door, "Abandoned Door"},
         {(int)SceneCode.Mine_Entrance, "Mine Entrance"},
     };

@@ -6,12 +6,13 @@ public enum UIEffect
 {
     // Naming Rule: PreNode_SubNode
     Transition_CrossFade,
+    Transition_CrossFadeWhite,
 };
 
 public enum UIEffectAnimationClip
 {
     // aliases in animator tab
-    start, end, empty, dark,
+    start, end, empty, dark, white,
 };
 
 public class UIEffectHandler : MonoBehaviour

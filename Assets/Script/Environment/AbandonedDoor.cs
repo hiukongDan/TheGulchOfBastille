@@ -49,9 +49,16 @@ public class AbandonedDoor : MonoBehaviour, IInteractable
 
 
     public void OnInteraction(){
-        infoSign?.GetComponentInChildren<Animator>().Play(InfoSignAnimHash.OUTRO);
-        StartCoroutine(OpenAbandonedDoor());
-        player.SetInteractable(null);
+        if(player.playerRuntimeData.playerStock.Contains(ItemData.KeyItem.Abandoned_Door_Key)){
+            infoSign?.GetComponentInChildren<Animator>().Play(InfoSignAnimHash.OUTRO);
+            StartCoroutine(OpenAbandonedDoor());
+            player.SetInteractable(null);
+        }
+        else{
+            UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData("The Door closed firmly"));
+            player.InputHandler.ResetAll();
+        }
+
     }
 
     public void EnterInteractionArea(){

@@ -9,7 +9,7 @@ public class NPCConversationHandler : MonoBehaviour
     public Animator InfoSignAnim;
     public Animator DialogueBoxAnim;
     public List<NPCConversation> npcConversations;
-    private NPCConversation npcConversation;
+    protected NPCConversation npcConversation;
     private int currentConversationIndex = 0;
     public float letterPerLine = 15f;
     public float pixelPerUnit = 32f;
@@ -17,8 +17,9 @@ public class NPCConversationHandler : MonoBehaviour
     public Vector2 marginInPixel = new Vector2(1, 1);
     public float textSpeed = 4f;
     
-    private NPC npc;
-    private Player player;
+    protected NPC npc;
+    protected Player player;
+    protected GameManager gameManager;
 
     private Transform charOrigin;
     public Transform selectionBox{get; private set;}
@@ -30,13 +31,13 @@ public class NPCConversationHandler : MonoBehaviour
 
     private ObjectPool OP;
 
-    private Queue<char> nextSentence;
+    protected Queue<char> nextSentence;
     private List<NPCSelection> npcSelections;
 
     private float totalTime;
     private Vector2 lastPos;
     private Vector2 selectionBoxSize;
-    private int currentSelection;
+    protected int currentSelection;
 
     private List<GameObject> recycleObject;
     private List<CharInfoWrapper> wordObject;
@@ -45,6 +46,7 @@ public class NPCConversationHandler : MonoBehaviour
     {
         npc = GetComponentInParent<NPC>();
         player = GameObject.Find("Player").GetComponent<Player>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         pFontLoader = new PFontLoader(pFontInfo);
         OP = new ObjectPool();
         charOrigin = DialogueBoxAnim.gameObject.transform.GetChild(0);
@@ -185,7 +187,7 @@ public class NPCConversationHandler : MonoBehaviour
 
     private ConversationStatus _currentConverseStatus = ConversationStatus.EMPTY;
 
-    void Update() 
+    void Update()
     {
         switch (_currentConverseStatus)
         {
@@ -267,7 +269,7 @@ public class NPCConversationHandler : MonoBehaviour
         }
     }
 
-    private void confirmSelection()
+    protected virtual void confirmSelection()
     {
         if (_currentConverseStatus != ConversationStatus.SELECTION)
             return;
@@ -301,7 +303,7 @@ public class NPCConversationHandler : MonoBehaviour
         InfoSignAnim?.Play(InfoSignAnimHash.OUTRO);
     }
 
-    public void OnBeginInteraction()
+    public virtual void OnBeginInteraction()
     {
         if(player && player.miscData.conversationIndex.ContainsKey(GetHashCode())){
             currentConversationIndex = player.miscData.conversationIndex[GetHashCode()];
@@ -333,18 +335,19 @@ public class NPCConversationHandler : MonoBehaviour
                 npcConversation.ResetIndex();
                 getNextSentence();
             }
-            _currentConverseStatus = ConversationStatus.CONVERSE;
         }
         else
         { 
             nextSentence = new Queue<char>("...");
-            _currentConverseStatus = ConversationStatus.CONVERSE;
+            
         }
+        _currentConverseStatus = ConversationStatus.CONVERSE;
     }
 
-    public void OnEndInteraction()
+    public virtual void OnEndInteraction()
     {
         cleanUpBox();
+        selectionBox.gameObject.SetActive(false);
         DialogueBoxAnim.Play(DialogueBoxAnimHash.EMPTY);
         InfoSignAnim?.Play(InfoSignAnimHash.INTRO);
 
@@ -441,7 +444,7 @@ public class NPCConversationHandler : MonoBehaviour
         wordObject.Clear();
     }
 
-    private void getNextSentence() => nextSentence = new Queue<char>(npcConversation.GetNextSentence());
+    protected void getNextSentence() => nextSentence = new Queue<char>(npcConversation.GetNextSentence());
 
     // dialgoue box
     private CharInfoWrapper ShowLetter(char ch, Vector2 lastPos, Transform charOrigin)

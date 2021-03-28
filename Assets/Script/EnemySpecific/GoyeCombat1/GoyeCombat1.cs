@@ -8,6 +8,7 @@ public class GoyeCombat1 : Entity
     public Player refPlayer {get; private set; }
     public GC1_ObjectToAlive gc1_ota { get; private set; }
     public NPC npc;
+    private Transform combatField;
     #endregion
 
     #region STATE
@@ -102,6 +103,7 @@ public class GoyeCombat1 : Entity
         /* --------- ASIGN REFERENCEs HERE --------------*/
         refPlayer = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
         npc = GetComponentInChildren<NPC>();
+        combatField = transform.Find("Combat Field");
     }
 
     protected override void Start()
@@ -145,9 +147,14 @@ public class GoyeCombat1 : Entity
             if(GetComponent<EnemySaveData>().IsAlive()){
                 Reset();
                 SceneReset();
+                aliveGO.SetActive(true);
+                combatField.gameObject.SetActive(true);
+                npc.gameObject.SetActive(true);
             }
             else{
-                Destroy(gameObject);
+                aliveGO.SetActive(false);
+                combatField.gameObject.SetActive(false);
+                npc.gameObject.SetActive(false);
             }
         }
     }

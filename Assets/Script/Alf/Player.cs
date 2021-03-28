@@ -433,6 +433,7 @@ public class Player : MonoBehaviour
         playerRuntimeData.currentStunPoints = playerData.PD_maxStunPoint;
 
         UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
 
         ResetGrounded();
