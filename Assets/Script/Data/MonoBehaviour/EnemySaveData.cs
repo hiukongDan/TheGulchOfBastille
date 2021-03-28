@@ -53,7 +53,7 @@ public class EnemySaveData : MonoBehaviour
         return ret;
     }
 
-    public void Initialize()
+    public static void Initialize()
     {
         EnemyAliveRevivable.Clear();
         EnemyAliveUnrevivable.Clear();

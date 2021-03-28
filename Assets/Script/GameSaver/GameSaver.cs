@@ -126,6 +126,8 @@ public class GameSaver : MonoBehaviour
                 EnemySaveData.EnemyAliveRevivable = enemyAliveRevivable;
                 var enemyAliveUnrevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
                 EnemySaveData.EnemyAliveUnrevivable = enemyAliveUnrevivable;
+                var lootDict = (Dictionary<int, bool>)bf.Deserialize(fs);
+                Loot.lootDict = lootDict;
             }
             catch (FileNotFoundException ex)
             {
@@ -161,6 +163,7 @@ public class GameSaver : MonoBehaviour
                 bf.Serialize(fs, player.miscData);
                 bf.Serialize(fs, EnemySaveData.EnemyAliveRevivable);
                 bf.Serialize(fs, EnemySaveData.EnemyAliveUnrevivable);
+                bf.Serialize(fs, Loot.lootDict);
 
                 fs.Close();
             }

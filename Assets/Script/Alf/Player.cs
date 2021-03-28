@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
 
         InputHandler = GetComponent<PlayerInputHandler>();
 
-        playerRuntimeData.InitPlayerRuntimeData(playerData);
+        // playerRuntimeData.InitPlayerRuntimeData(playerData);
     }
 
     void Start()
@@ -521,6 +521,9 @@ public class Player : MonoBehaviour
     private IInteractable interactable;
     public void SetInteractable(IInteractable interactable) => this.interactable = interactable;
     public IInteractable GetInteractable() => this.interactable;
+    private Loot loot;
+    public void SetLootHandler(Loot loot) => this.loot = loot;
+    public Loot GetLootHandler() => this.loot;
     #endregion
 
     #region EVENT

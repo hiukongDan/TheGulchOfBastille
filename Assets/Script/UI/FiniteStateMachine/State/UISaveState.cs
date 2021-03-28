@@ -46,10 +46,11 @@ public class UISaveState : UIState
             
             if(gameSaver.HasValidSaving((GameSaver.SaveSlot)i)){
                 GameSaver.SaveSlotMeta meta = gameSaver.GetSaveSlotMeta((GameSaver.SaveSlot)i);
-                string sceneCodeName = ((SceneCode)(meta.SceneCode)).ToString();
-                string[] words = sceneCodeName.Split('_');
-                string res = words[0] + " " + words[1];
+                // string sceneCodeName = ((SceneCode)(meta.SceneCode)).ToString();
+                // string[] words = sceneCodeName.Split('_');
+                // string res = words[0] + " " + words[1];
                 // string res = sceneCodeName.Split('_')[0];
+                string res = SceneCodeDisplayName.names[(int)meta.SceneCode];
                 float hours = meta.elapsedSeconds / 3600;
                 float minutes = meta.elapsedSeconds / 60 % 60;
                 res += " " + (int)hours + "H " + (int)minutes + "M";

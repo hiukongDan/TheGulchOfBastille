@@ -46,6 +46,7 @@ public class ItemData
         Double_Jump_Stone,
         Wall_Jump_Stone,
         Royal_Pass,
+        Abandoned_Door_Key,
         Count,
     };
 
@@ -85,8 +86,6 @@ public class ItemData
             this.keyItem = keyItem;
         }
     };
-
-    
 
 public static Dictionary<int , string> WeaponDescription = new Dictionary<int, string>(){
     {(int)Weapon.Iron_Sword, "A slightly rusty\n sword, maintaining\n basic functionality."},
@@ -130,6 +129,7 @@ public static Dictionary<int, string> KeyItemDescription = new Dictionary<int, s
     {(int)KeyItem.Double_Jump_Stone, "a powerful stone carved\n with shape, can be\n used in the Sun Tower."},
     {(int)KeyItem.Wall_Jump_Stone, "a powerful stone carved\n with shape, can be\n used in the Sun Tower."},
     {(int)KeyItem.Royal_Pass, "Used to open the\n gate protected by\n the dragon"},
+    {(int)KeyItem.Abandoned_Door_Key, "An ancient key\n to the gate isolating the Gulch\n from the outside"},
 };
 
 public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, WeaponData>(){

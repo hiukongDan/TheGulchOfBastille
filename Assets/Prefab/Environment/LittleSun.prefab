@@ -810,8 +810,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1555364541
-  m_SortingLayer: 6
+  m_SortingLayerID: 612694419
+  m_SortingLayer: 9
   m_SortingOrder: 1
   m_Sprite: {fileID: -2990332966905508278, guid: 577026e97a683cf4b86838d1805ff046,
     type: 3}
@@ -1002,8 +1002,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1555364541
-  m_SortingLayer: 6
+  m_SortingLayerID: 612694419
+  m_SortingLayer: 9
   m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 8710344748435541812}
   - component: {fileID: 8710344748435541813}
   m_Layer: 0
-  m_Name: LittleSun_3
+  m_Name: LittleSun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

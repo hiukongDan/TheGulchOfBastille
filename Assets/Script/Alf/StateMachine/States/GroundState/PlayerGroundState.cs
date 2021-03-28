@@ -64,6 +64,9 @@ public override void LogicUpdate()
             else if(player.GetInteractable() != null){
                 player.GetInteractable().OnInteraction();
             }
+            else if(player.GetLootHandler() != null){
+                player.GetLootHandler().OnPickUpLoot(player);
+            }
             else
             {
                 player.InputHandler.ResetIsInteraction();

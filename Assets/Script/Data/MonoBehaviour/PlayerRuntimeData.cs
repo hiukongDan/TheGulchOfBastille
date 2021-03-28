@@ -5,13 +5,13 @@ using System;
 
 public class PlayerRuntimeData
 {
-    public float currentHitPoints;
-    public float currentStunPoints;
-    public float currentDecayPoints;
-    public float currentUilos;
+    public float currentHitPoints = 0;
+    public float currentStunPoints = 0;
+    public float currentDecayPoints = 0;
+    public float currentUilos = 0;
     public SceneCode currentSceneCode;
-    public int lastLittleSunID;
-    public Vector2 lastPosition;
+    public int lastLittleSunID = -1;
+    public Vector2 lastPosition = Vector2.zero;
     public bool isLoaded = false;
     public PlayerStock playerStock;
     public PlayerSlot playerSlot;
@@ -79,7 +79,7 @@ public class PlayerRuntimeData
             this.weapon = weapon;
             this.wearableSlotOne = wearableOne;
             this.wearableSlotTwo = wearableTwo;
-        }        
+        }
     };
     
     public void InitPlayerRuntimeData(D_PlayerStateMachine playerData){
@@ -92,32 +92,33 @@ public class PlayerRuntimeData
         playerStock = new PlayerStock(new List<ItemData.WeaponRuntimeData>(), new List<ItemData.WearableRuntimeData>(), 
             new List<ItemData.ConsumableRuntimeData>(), new List<ItemData.KeyItemRuntimeData>());
 
-        for(int i = 0; i < (int)ItemData.Weapon.Count; ++i){
-            playerStock.Pick(new ItemData.WeaponRuntimeData((ItemData.Weapon)i, i%3));
-        }
+        // for(int i = 0; i < (int)ItemData.Weapon.Count; ++i){
+        //     playerStock.Pick(new ItemData.WeaponRuntimeData((ItemData.Weapon)i, i%3));
+        // }
 
-        for(int i = 0; i < (int)ItemData.Wearable.Count; ++i){
-            playerStock.Pick(new ItemData.WearableRuntimeData((ItemData.Wearable)i));
-        }
+        // for(int i = 0; i < (int)ItemData.Wearable.Count; ++i){
+        //     playerStock.Pick(new ItemData.WearableRuntimeData((ItemData.Wearable)i));
+        // }
 
-        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
-            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
-        }
+        // for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+        //     playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
+        // }
 
-        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
-            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
-        }
+        // for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+        //     playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
+        // }
 
-        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
-            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
-        }
+        // for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+        //     playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
+        // }
 
-        for(int i = 0; i < (int)ItemData.KeyItem.Count; ++i){
-            playerStock.Pick(new ItemData.KeyItemRuntimeData((ItemData.KeyItem)i));
-        }
+        // for(int i = 0; i < (int)ItemData.KeyItem.Count; ++i){
+        //     playerStock.Pick(new ItemData.KeyItemRuntimeData((ItemData.KeyItem)i));
+        // }
 
         // use default weapon and none wearables
-        playerSlot = new PlayerSlot(0, 0, 1);
+        playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Iron_Sword, 0));
+        playerSlot = new PlayerSlot(0, -1,-1);
     }
 
     [Serializable]
@@ -156,8 +157,8 @@ public class PlayerRuntimeData
 
     public void SetPlayerRuntimeSaveData(PlayerRuntimeSaveData playerRuntimeSaveData){
         currentHitPoints = playerRuntimeSaveData.currentHitPoints;
+        currentDecayPoints = playerRuntimeSaveData.currentDecayPoints;
         currentStunPoints = playerRuntimeSaveData.currentStunPoints;
-        currentDecayPoints = playerRuntimeSaveData.currentStunPoints;
         currentUilos = playerRuntimeSaveData.currentUilos;
         currentSceneCode = (SceneCode)playerRuntimeSaveData.currentSceneCode;
         lastLittleSunID = playerRuntimeSaveData.lastLittleSunID;

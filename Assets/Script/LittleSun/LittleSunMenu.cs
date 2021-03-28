@@ -92,12 +92,7 @@ public class LittleSunMenu : MonoBehaviour
     }
 
     public string ParseSceneCode(SceneCode sceneCode){
-        string res = "";
-        string[] words = sceneCode.ToString().Split('_');
-        for(int i = 0; i < words.Length && i < 2; ++i){
-            res += words[i] + " ";
-        }
-        return res.Trim();
+        return SceneCodeDisplayName.names[(int)sceneCode];
     }
     
 }

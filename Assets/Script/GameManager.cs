@@ -98,6 +98,8 @@ public class GameManager : MonoBehaviour
         sceneGO?.SetActive(true);
 
         Camera.main.GetComponent<BasicFollower>().cameraClamp = sceneGO.GetComponent<SceneCodeUtil>().CameraClamp;
+        
+        UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(SceneCodeDisplayName.names[(int)sceneCode]));
     }
 
     public void LoadSceneCode(SceneCode sceneCode){
@@ -153,6 +155,8 @@ public class GameManager : MonoBehaviour
             }
             currentSceneCode = DefaultStartScene;
             player.InitSaveData();
+            EnemySaveData.Initialize();
+            Loot.Initialize();
         }
         else{
             player.gameObject.SetActive(true);
