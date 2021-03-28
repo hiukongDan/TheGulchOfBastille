@@ -61,4 +61,11 @@ public class EnemySaveData : MonoBehaviour
         EnemyAliveUnrevivable.Clear();
     }
 
+    public static void ResetRevivableEnemy(){
+        List<int> keys = new List<int>(EnemyAliveRevivable.Keys);
+        foreach(int key in keys){
+            EnemyAliveRevivable[key] = true;
+        }
+    }
+
 }

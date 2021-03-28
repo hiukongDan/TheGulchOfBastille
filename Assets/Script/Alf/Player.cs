@@ -317,7 +317,7 @@ public class Player : MonoBehaviour
         {
             damageImmuneTimer = Time.time;
 
-            playerRuntimeData.currentHitPoints -= combatData.damage;
+            playerRuntimeData.currentHitPoints -= calculateEnemyDamage(combatData.damage);
             UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
 
             int dir = (combatData.position.x - transform.position.x > 0 ? -1 : 1);
@@ -553,4 +553,17 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    #region  CALCULATION
+    public int CalculatePlayerDamage(){
+        ItemData.WeaponRuntimeData weaponData = playerRuntimeData.playerStock.weaponStock[playerRuntimeData.playerSlot.weaponIndex];
+        int weaponDamage = ItemData.weaponData[(int)weaponData.weapon].Attack[weaponData.level];
+        int res = (int)((playerData.MAS_damageAmount + weaponDamage) * (1 + playerRuntimeData.currentDecayPoints / playerData.PD_maxDecayPoint));
+        return res;
+    }
+
+    private int calculateEnemyDamage(float rawDamage){
+        int res = (int)(rawDamage * (1 + playerRuntimeData.currentDecayPoints / playerData.PD_maxDecayPoint));
+        return res;
+    }
+    #endregion
 }

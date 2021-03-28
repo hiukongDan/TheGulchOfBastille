@@ -53,10 +53,25 @@ public class LittleSunHandler : MonoBehaviour
         else
         {
             Player player = GameObject.Find("Player").GetComponent<Player>();
+            //StartCoroutine(refreshScene(player));
             player.stateMachine.SwitchState(player.littleSunState);
             // transfer control authority to littleSunState
         }
     }
+
+    // protected IEnumerator refreshScene(Player player){
+    //     // player.playerRuntimeData.lastLittleSunID = littleSunData.LittleSunID;
+    //     // EnemySaveData.ResetRevivableEnemy();
+    //     // player.stateMachine.SwitchState(player.cinemaState);
+    //     // GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    //     // yield return new WaitForSeconds(gameManager.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFadeWhite, UIEffectAnimationClip.start));
+
+    //     // gameManager.LoadSceneCode(player.playerRuntimeData.currentSceneCode);
+
+    //     // yield return new WaitForSeconds(gameManager.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFadeWhite, UIEffectAnimationClip.end));
+    //     // player.stateMachine.SwitchState(player.littleSunState);
+    //     // yield return null;
+    // }
 
     public void OnLittleSunTravel(){
         LittleSunData data = littleSunMenu.GetCurrentSelectedLittleSun();
@@ -65,6 +80,7 @@ public class LittleSunHandler : MonoBehaviour
         player.SetLittleSunHandler(null);
         littleSunMenu.Deactivate();
         GameObject.Find("GameManager").GetComponent<GameManager>().ReloadScene();
+        EnemySaveData.ResetRevivableEnemy();
         isTeleported = true;
     }
 

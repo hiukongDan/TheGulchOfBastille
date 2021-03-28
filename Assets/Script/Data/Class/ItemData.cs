@@ -145,10 +145,10 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
 };
 
     public struct WeaponData{
-        int[] Attack;
-        bool IsMelee;
-        bool IsRange;
-        bool CanParry;
+        public int[] Attack;
+        public bool IsMelee;
+        public bool IsRange;
+        public bool CanParry;
         public WeaponData(int[] attack, bool isMelee, bool isRange, bool canParry){
             this.Attack = attack;
             this.IsMelee = isMelee;

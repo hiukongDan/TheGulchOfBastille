@@ -57,6 +57,7 @@ public class SlowMutant1 : Entity
         else if (isDead)
         {
             entityEventHandler?.OnDead();
+            base.OnDead();
             stateMachine.SwitchState(deadState);
         }
         else if (isStunned || combatData.isParryDamage)
@@ -80,6 +81,14 @@ public class SlowMutant1 : Entity
 
         // Invoke
         GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(aliveGO, Gulch.SpriteEffectType.Blink));
+    }
+
+    public override void InitEntity()
+    {
+        base.InitEntity();
+        if(aliveGO.activeSelf && stateMachine != null){
+            stateMachine.SwitchState(idleState);
+        }
     }
 
     protected override void OnDrawGizmos()

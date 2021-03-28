@@ -16,7 +16,8 @@ public class Entity : MonoBehaviour
         hitbox,
         damageBox,
         meleeAttackCheck,
-        detectCenter;
+        detectCenter,
+        initPosition;
 
     public Vector2 DamageBoxSize
     {
@@ -74,8 +75,6 @@ public class Entity : MonoBehaviour
         facingDirection = 1;
 
         Reset();
-
-        InitEntity();
     }
 
     protected virtual void Reset(){
@@ -87,12 +86,22 @@ public class Entity : MonoBehaviour
         isDanmageable = true;
     }
 
-    protected virtual void InitEntity()
+    protected virtual void OnEnable() {
+        InitEntity();
+    }
+
+    public virtual void InitEntity()
     {
         if (!GetComponent<EnemySaveData>().IsAlive())
         {
-            Destroy(gameObject);
+            aliveGO.SetActive(false);
         }
+        else{
+            aliveGO.SetActive(true);
+            Reset();
+        }
+
+        aliveGO.transform.position = initPosition.transform.position;
     }
 
     protected virtual void Update()
@@ -211,6 +220,13 @@ public class Entity : MonoBehaviour
     {
         isDanmageable = newIsDamageable;
         return isDanmageable;
+    }
+
+    protected virtual void OnDead(){
+        UilosGroup uilosGroup = GetComponent<UilosGroup>();
+        if(uilosGroup){
+            uilosGroup.OnGenerateUilos(aliveGO.transform.position);
+        }
     }
 
     protected virtual void OnDrawGizmos()

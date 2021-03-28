@@ -140,22 +140,28 @@ public class GoyeCombat1 : Entity
         gc1_ota.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
         isStarted = true;
+        InitGameObjectStatus();
     }
 
-    private void OnEnable(){
+    protected override void OnEnable(){
         if(isStarted){
-            if(GetComponent<EnemySaveData>().IsAlive()){
-                Reset();
-                SceneReset();
-                aliveGO.SetActive(true);
-                combatField.gameObject.SetActive(true);
-                npc.gameObject.SetActive(true);
-            }
-            else{
-                aliveGO.SetActive(false);
-                combatField.gameObject.SetActive(false);
-                npc.gameObject.SetActive(false);
-            }
+            InitGameObjectStatus();
+       }
+    }
+
+    protected void InitGameObjectStatus(){
+        if(GetComponent<EnemySaveData>().IsAlive()){
+            Reset();
+            SceneReset();
+            aliveGO.SetActive(true);
+            combatField.gameObject.SetActive(true);
+            npc.gameObject.SetActive(true);
+        }
+        else{
+            aliveGO.SetActive(false);
+            combatField.gameObject.SetActive(false);
+            npc.gameObject.SetActive(false);
+
         }
     }
 

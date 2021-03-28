@@ -25,6 +25,7 @@ public class PlayerCinemaMovement : MonoBehaviour
 
     public void LightLittleSun(LittleSunHandler littleSunHandler) => StartCoroutine(lightLittleSun(littleSunHandler));
     public void TransitToScene(SubAreaHandler subAreaHandler) => StartCoroutine(transitToScene(subAreaHandler));
+    public void TransitToBelial() => StartCoroutine(transitToBelial());
 
     IEnumerator lightLittleSun(LittleSunHandler littleSunHandler)
     {
@@ -109,6 +110,23 @@ public class PlayerCinemaMovement : MonoBehaviour
         player.SetSubAreaHandler(null);
 
         player.stateMachine.SwitchState(player.idleState);
+    }
+
+    IEnumerator transitToBelial(){
+        yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
+        // activate belial scene
+        Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
+
+        player.stateMachine.InitializeState(player.cinemaState);
+        gm.LoadSceneCode(SceneCode.Gulch_Church_Altar);
+        yield return new WaitForEndOfFrame();
+        // setplayer position
+        Transform targetPos = GameObject.Find("/Scenes/"+SceneCode.Gulch_Church_Altar.ToString()+"/Belial/PlayerTransferPosition").transform;
+        player.transform.position = targetPos.position;
+        yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
+        player.GetNPCEventHandler().OnNPCInteraction();
+        player.stateMachine.SwitchState(player.converseState);
+        yield return new WaitForEndOfFrame();
     }
     #endregion
 }

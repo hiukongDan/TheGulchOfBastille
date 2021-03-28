@@ -33,6 +33,21 @@ public class PlayerLittleSunState : PlayerState
         base.Exit();
         player.InputHandler.ResetAll();
         player.GetLittleSunHandler()?.littleSunMenu.Deactivate();
+        EnemySaveData.ResetRevivableEnemy();
+        refreshEnemy();
+    }
+
+    protected void refreshEnemy(){
+        Transform enemy = GameObject.Find("/Scenes/" + player.playerRuntimeData.currentSceneCode.ToString() + "/Enemies").transform;
+        if(enemy == null){
+            return;
+        }
+
+        int count = enemy.childCount;
+        for(int i = 0; i < count; ++i){
+            Entity entity = enemy.GetChild(i).GetComponent<Entity>();
+            entity.InitEntity();
+        }
     }
 
     public override void LogicUpdate()

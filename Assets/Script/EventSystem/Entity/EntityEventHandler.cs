@@ -6,6 +6,6 @@ public class EntityEventHandler : MonoBehaviour
 {
     public virtual void OnDead()
     {
-
+        
     }
 }

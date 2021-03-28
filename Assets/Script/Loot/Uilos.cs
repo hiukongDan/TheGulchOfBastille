@@ -11,7 +11,7 @@ public class Uilos : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         oldGravity = rb.gravityScale;
         rb.gravityScale = 2.5f;
-        rb.velocity = new Vector2(Random.Range(-0.4f, 0.4f), 10f);
+        rb.velocity = new Vector2(Random.Range(-0.4f, 0.4f), Random.Range(8f, 12f));
     }
 
     void Update()

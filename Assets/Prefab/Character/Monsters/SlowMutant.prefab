@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 2802960883396197312}
   - component: {fileID: 2802960883396197317}
   - component: {fileID: 455593746766382679}
+  - component: {fileID: 7832076475081218013}
   m_Layer: 0
   m_Name: SlowMutant
   m_TagString: Untagged
@@ -60,6 +61,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2802960884028774270}
+  - {fileID: 5581127808016402261}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,6 +84,7 @@ MonoBehaviour:
   damageBox: {fileID: 2802960883707168186}
   meleeAttackCheck: {fileID: 2802960883555146464}
   detectCenter: {fileID: 0}
+  initPosition: {fileID: 5581127808016402261}
   entityData: {fileID: 11400000, guid: 557a80eb383b5374da0a30687eb5f4b6, type: 2}
   aliveGO: {fileID: 2802960884028774257}
   objectToAlive: {fileID: 2802960884028774267}
@@ -114,6 +117,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRevivable: 1
   defaultAlive: 1
+--- !u!114 &7832076475081218013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2802960883396197316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e4f5df7a799604b8f165d99bc45239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConstant: 0
+  uilosCount: 10
+  uilosCountRange: {x: 5, y: 10}
+  uilosPref: {fileID: 7196177436542473252, guid: f134b31ebdcd6e5449eeb085efd4e478,
+    type: 3}
 --- !u!1 &2802960883555146467
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,15 +304,16 @@ SpriteRenderer:
   m_SortingLayerID: 2087037385
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -7149593867480159554, guid: 715a68961a7471346bfcd1bc6a6a46b1,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.5, y: 1}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &2802960884028774268
@@ -334,7 +355,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1.5, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -432,5 +453,35 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2802960884028774270}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4505067345078394332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5581127808016402261}
+  m_Layer: 10
+  m_Name: InitPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5581127808016402261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4505067345078394332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2802960883396197312}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

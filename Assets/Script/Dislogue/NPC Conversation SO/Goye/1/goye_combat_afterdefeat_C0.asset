@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fe53d10822e9104a8026bfdbb4b90a7, type: 3}
-  m_Name: goye_combat_random_C0
+  m_Name: goye_combat_afterdefeat_C0
   m_EditorClassIdentifier: 
   conversations:
   - If its about the abandoned gate to the east, I think you should find Master Belial
@@ -19,4 +19,4 @@ MonoBehaviour:
   - Its a dangerous way, I believe you can do it.
   selections: []
   nextConversation: {fileID: 0}
-  isRandomConversation: 1
+  isRandomConversation: 0

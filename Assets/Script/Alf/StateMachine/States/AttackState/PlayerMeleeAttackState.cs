@@ -19,7 +19,7 @@ public class PlayerMeleeAttackState : PlayerAttackState
     public override void Enter()
     {
         base.Enter();
-        combatData.damage = data.MAS_damageAmount;
+        combatData.damage = player.CalculatePlayerDamage();
         combatData.stunDamage = data.MAS_stunAmount;
         combatData.knockbackDir = data.MAS_knockbackDirection;
         combatData.knockbackImpulse = data.MAS_knockbackImpulse;

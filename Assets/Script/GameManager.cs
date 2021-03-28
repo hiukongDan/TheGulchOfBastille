@@ -150,13 +150,15 @@ public class GameManager : MonoBehaviour
         // uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.dark);
         if(isNewGame){
             player.gameObject.SetActive(true);
-            if(DefaultStartPoint){
-                player.SetPosition(DefaultStartPoint.position);
-            }
             currentSceneCode = DefaultStartScene;
             player.InitSaveData();
             EnemySaveData.Initialize();
             Loot.Initialize();
+
+            if(DefaultStartPoint){
+                player.SetPosition(DefaultStartPoint.position);
+                player.playerRuntimeData.lastPosition = DefaultStartPoint.position;
+            }
         }
         else{
             player.gameObject.SetActive(true);
@@ -166,15 +168,15 @@ public class GameManager : MonoBehaviour
         }
 
         LoadSceneCode();
-        Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
-        Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
-        
         uiHandler.StartGame();
 
         player.InputHandler.ResetAll();
 
         yield return new WaitForEndOfFrame();
         player.InitializeRuntimeData();
+
+        Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
+        Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);
         yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
     }
 
