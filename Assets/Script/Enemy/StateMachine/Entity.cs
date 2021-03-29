@@ -8,7 +8,10 @@ public class Entity : MonoBehaviour
     protected StateCooldownTimer stateCooldownTimer;
 
     public int facingDirection { get; private set; }
-
+    public enum FacingDirection{
+        LEFT, RIGHT,
+    }
+    public FacingDirection startFacingDirection;
     public Transform
         wallCheck,
         edgeCheck,
@@ -84,6 +87,21 @@ public class Entity : MonoBehaviour
         isDead = false;
         isStunned = false;
         isDanmageable = true;
+
+        switch(startFacingDirection){
+            case FacingDirection.LEFT:
+                if(facingDirection == 1){
+                    Flip();
+                }
+                break;
+            case FacingDirection.RIGHT:
+                if(facingDirection == -1){
+                    Flip();
+                }
+                break;
+            default:
+            break;
+        }
     }
 
     protected virtual void OnEnable() {

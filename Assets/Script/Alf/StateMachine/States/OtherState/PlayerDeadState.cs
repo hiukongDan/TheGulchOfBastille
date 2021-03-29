@@ -68,6 +68,7 @@ public class PlayerDeadState : PlayerState
     {
         Gulch.GameEventListener.Instance.OnPlayerDead();
         player.playerRuntimeData.currentDecayPoints++;
+        EnemySaveData.ResetRevivableEnemy();
         if(player.playerRuntimeData.currentDecayPoints >= player.playerData.PD_maxDecayPoint){
             GameObject.Find("GameManager").GetComponent<GameManager>().playerCinemaMovement.TransitToBelial();
         }
