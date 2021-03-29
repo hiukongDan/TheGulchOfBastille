@@ -17,7 +17,7 @@ public class LittleSunMenu : MonoBehaviour
     private List<LittleSunData> litLittleSun;
 
     void Awake(){
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager")?.GetComponent<GameManager>();
 
         if(entries == null){
             entries = new List<Transform>();
