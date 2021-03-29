@@ -44,16 +44,16 @@ public class Uilos : MonoBehaviour
         Destroy(gameObject);    
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" && isChanged)
         {
             //collision.gameObject.SendMessage("Uilos", 1);
             Player player = GameObject.Find("Player").GetComponent<Player>();
             if(player.playerRuntimeData.playerSlot.IsWearableEquiped(player.playerRuntimeData.playerStock, ItemData.Wearable.Drawf_Ring)){
                 perUilosWorth = 2;
             }
-            collision.gameObject.GetComponent<Player>().OnAquireUilos(perUilosWorth);
+            other.gameObject.GetComponent<Player>().OnAquireUilos(perUilosWorth);
             Destroy(gameObject);
         }
     }

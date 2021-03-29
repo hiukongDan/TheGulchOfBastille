@@ -69,13 +69,27 @@ public class PlayerLadderState : PlayerState
                 player.Anim.applyRootMotion = true;
             }
             else if (isJumpOff){
-                workspace.Set(0, -data.LS_jumpOffSpeed);
-                player.SetVelocity(workspace);
+                if(isJump){
+                    isJumpOff = false;
+                    player.SetVelocityY(0);
+                    player.Anim.applyRootMotion = true;
+                    player.Anim.Play(AlfAnimationHash.LADDER_CLIMB_0);
+
+                    player.InputHandler.ResetIsJump();
+                    isJump = false;
+                }
+                else{
+                    workspace.Set(0, -data.LS_jumpOffSpeed);
+                    player.SetVelocity(workspace);
+                }
             }
             else if(isJump){
                 isJumpOff = true;
                 player.Anim.applyRootMotion = false;
                 player.Anim.Play(AlfAnimationHash.LADDER_SLIDE_0);
+
+                player.InputHandler.ResetIsJump();
+                isJump = false;
             }
             else{
                 player.Anim.SetFloat("ladderClimbDirection", normMovementInput.y);
