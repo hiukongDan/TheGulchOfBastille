@@ -7,6 +7,8 @@ public class UISaveState : UIState
     private ButtonGroup buttonGroup;
     private List<Transform> positions;
     private List<Transform> emptys;
+    protected float timer = -1f;
+    protected float timerMax = 0.1f;
     private enum Selection{
         First, Second, Third,
     };
@@ -70,7 +72,10 @@ public class UISaveState : UIState
     }
 
     public override void Update(){
-
+        base.Update();
+        if(timer >= 0){
+            timer -= Time.unscaledDeltaTime;
+        }
     }
 
     public override void OnInteraction(){
@@ -81,6 +86,13 @@ public class UISaveState : UIState
     }
 
     public override void OnClick(UIStateEventData eventData){
+        if(timer >= 0){
+            return;
+        }
+        else{
+            timer = timerMax;
+        }
+
         switch((Selection)eventData.index){
             case Selection.First:
             uiHandler.GM.gameSaver.currentSaveSlot = GameSaver.SaveSlot.First;

@@ -38,7 +38,7 @@ public class PlayerLittleSunState : PlayerState
     }
 
     protected void refreshEnemy(){
-        Transform enemy = GameObject.Find("/Scenes/" + player.playerRuntimeData.currentSceneCode.ToString() + "/Enemies").transform;
+        Transform enemy = GameObject.Find("/Scenes/" + player.playerRuntimeData.currentSceneCode.ToString() + "/Enemies")?.transform;
         if(enemy == null){
             return;
         }

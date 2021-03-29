@@ -32,7 +32,7 @@ public class LeverDoor : LeverResult
             animator.Play(AnimationHash.LeverDoorAnimationHash.CLOSE);
         }
 
-        Debug.Log("Animator");
+        // Debug.Log("Animator");
     }
 
     public override void OnTriggeredEventDone(){

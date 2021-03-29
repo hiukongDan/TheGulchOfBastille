@@ -20,4 +20,27 @@ public class MiscData
         conversationIndex.Clear();
         gateOpened.Clear();
     }
+
+    public void SetMiscData(Dictionary<int, int> conversationIndex, Dictionary<int, bool> gateOpened){
+        if(this.conversationIndex == null){
+            this.conversationIndex = new Dictionary<int, int>();
+        }
+        else{
+            this.conversationIndex.Clear();
+        }
+        foreach(KeyValuePair<int, int> item in conversationIndex){
+            this.conversationIndex.Add(item.Key, item.Value);
+        }
+
+        if(this.gateOpened == null){
+            this.gateOpened = new Dictionary<int, bool>();
+        }
+        else{
+            this.gateOpened.Clear();
+        }
+        foreach(KeyValuePair<int, bool> item in gateOpened){
+            this.gateOpened.Add(item.Key, item.Value);
+        }
+
+    }
 }

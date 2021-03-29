@@ -36,12 +36,16 @@ public class LadderPart : MonoBehaviour
         float height = sr.size.y;
         switch(ladderPart){
             case Part.TOP:
-                transform.position = new Vector2(transform.position.x, 
-                ladder.transform.position.y+height/2+bc2d.size.y/2);
+                //transform.position = new Vector2(transform.position.x, 
+                //ladder.transform.position.y+height/2+bc2d.size.y/2);
+                transform.position = new Vector2(transform.position.x,
+                ladder.transform.position.y+height+bc2d.size.y/2);
             break;
             case Part.BUTTOM:
-                transform.position = new Vector2(transform.position.x, 
-                ladder.transform.position.y-height/2+bc2d.size.y/2);
+                // transform.position = new Vector2(transform.position.x, 
+                // ladder.transform.position.y-height/2+bc2d.size.y/2);
+                transform.position = new Vector2(transform.position.x,
+                ladder.transform.position.y+bc2d.size.y/2);
             break;
             default:
             break;

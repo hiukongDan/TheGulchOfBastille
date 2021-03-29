@@ -154,6 +154,7 @@ public class GameManager : MonoBehaviour
             player.InitSaveData();
             EnemySaveData.Initialize();
             Loot.Initialize();
+            LittleSunData.Initialize();
 
             if(DefaultStartPoint){
                 player.SetPosition(DefaultStartPoint.position);
@@ -164,17 +165,21 @@ public class GameManager : MonoBehaviour
             player.gameObject.SetActive(true);
             yield return new WaitForEndOfFrame();
             gameSaver.LoadAll();
+            yield return new WaitUntil(() => gameSaver.IsLoaded());
+            yield return new WaitForEndOfFrame();
             // yield return new WaitForSeconds(5f);
             currentSceneCode = player.playerRuntimeData.currentSceneCode;
             elapsedSeconds = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedSeconds;
         }
-
-        LoadSceneCode();
         uiHandler.StartGame();
 
         player.InputHandler.ResetAll();
 
         player.InitializeRuntimeData();
+
+        LoadSceneCode();
+
+        player.stateMachine.SwitchState(player.wakeupState);
 
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
         Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);

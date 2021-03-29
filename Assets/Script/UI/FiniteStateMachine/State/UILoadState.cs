@@ -7,6 +7,8 @@ public class UILoadState : UIState
     private ButtonGroup buttonGroup;
     private List<Transform> positions;
     private List<Transform> emptys;
+    protected float timer = -1f;
+    protected float timerMax = 0.1f;
     private enum Selection{
         First, Second, Third,
     };
@@ -73,6 +75,10 @@ public class UILoadState : UIState
     public override void Update()
     {
         base.Update();
+
+        if(timer >= 0){
+            timer -= Time.unscaledDeltaTime;
+        }
     }
 
     public override void OnInteraction(){
@@ -83,6 +89,13 @@ public class UILoadState : UIState
     }
 
     public override void OnClick(UIStateEventData eventData){
+        if(timer >= 0){
+            return;
+        }
+        else{
+            timer = timerMax;
+        }
+
         uiHandler.GM.gameSaver.isNewGame = false;
         switch((Selection)eventData.index){
             case Selection.First:

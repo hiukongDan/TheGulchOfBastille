@@ -30,8 +30,10 @@ public class State
     public virtual void Enter()
     {
         //entity.anim.SetBool(animBoolName, true);
-        entity.anim.Play(animName);
-        startTime = Time.time;
+        if(entity.anim.gameObject.activeInHierarchy){
+            entity.anim.Play(animName);
+            startTime = Time.time;
+        }
     }
 
     public virtual void Exit()

@@ -20,7 +20,7 @@ public class Uilos : MonoBehaviour
     {
         if(!isChanged && rb.velocity.y <= 0f)
         {
-            // rb.gravityScale = oldGravity;
+            rb.gravityScale = oldGravity;
             isChanged = true;
         }
     }
@@ -33,9 +33,6 @@ public class Uilos : MonoBehaviour
                 Vector2 direction = (player.transform.position - transform.position).normalized;
                 rb.AddForce(direction * new Vector2(Random.Range(forceTowardsPlayer.x/2, forceTowardsPlayer.x), 
                     Random.Range(forceTowardsPlayer.y/2, forceTowardsPlayer.y)), ForceMode2D.Force);
-            }
-            else{
-                rb.gravityScale = uilosFalldownGravityScale;
             }
         }
     }

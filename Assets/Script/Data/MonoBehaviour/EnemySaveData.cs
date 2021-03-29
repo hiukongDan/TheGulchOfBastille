@@ -68,4 +68,21 @@ public class EnemySaveData : MonoBehaviour
         }
     }
 
+    public static void SetEnemyData(Dictionary<int, bool> enemyAliveRevivable, Dictionary<int, bool> enemyAliveUnrevivable){
+        if(EnemySaveData.EnemyAliveRevivable == null){
+            EnemySaveData.EnemyAliveRevivable = new Dictionary<int, bool>();
+        }
+        if(EnemySaveData.EnemyAliveUnrevivable == null){
+            EnemySaveData.EnemyAliveUnrevivable = new Dictionary<int, bool>();
+        }
+        Initialize();
+
+        foreach(KeyValuePair<int, bool> item in enemyAliveRevivable){
+            EnemySaveData.EnemyAliveRevivable.Add(item.Key, item.Value);
+        }
+        foreach(KeyValuePair<int, bool> item in enemyAliveUnrevivable){
+            EnemySaveData.EnemyAliveUnrevivable.Add(item.Key, item.Value);
+        }
+    }
+
 }

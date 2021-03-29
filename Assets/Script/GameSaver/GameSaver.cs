@@ -8,6 +8,7 @@ public class GameSaver : MonoBehaviour
 {
     public Player player;
     private GameManager gm;
+    private bool isLoaded;
     public enum SaveSlot{
         First, Second, Third, SlotNum
     }
@@ -109,11 +110,12 @@ public class GameSaver : MonoBehaviour
         {
             try
             {
+                isLoaded = false;
                 fs = new FileStream(path, FileMode.Open);
                 BinaryFormatter bf = new BinaryFormatter();
 
                 var littleSuns = (Dictionary<int, bool>)bf.Deserialize(fs);
-                LittleSunData.LittleSuns = littleSuns;
+                LittleSunData.SetLittleSunData(littleSuns);
                 var playerSaveData = (D_PlayerStateMachine.PlayerSaveData)bf.Deserialize(fs);
                 var ability = (D_PlayerAbility.PlayerAbility)bf.Deserialize(fs);
                 Player player = GameObject.Find("Player").GetComponent<Player>();
@@ -122,13 +124,15 @@ public class GameSaver : MonoBehaviour
                 var runtimeData = (PlayerRuntimeData.PlayerRuntimeSaveData)bf.Deserialize(fs);
                 player.playerRuntimeData.SetPlayerRuntimeSaveData(runtimeData);
                 var miscData = (MiscData)bf.Deserialize(fs);
-                player.miscData = miscData;
+                player.miscData.SetMiscData(miscData.conversationIndex, miscData.gateOpened);
                 var enemyAliveRevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
-                EnemySaveData.EnemyAliveRevivable = enemyAliveRevivable;
                 var enemyAliveUnrevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
-                EnemySaveData.EnemyAliveUnrevivable = enemyAliveUnrevivable;
+                EnemySaveData.SetEnemyData(enemyAliveRevivable, enemyAliveUnrevivable);
                 var lootDict = (Dictionary<int, bool>)bf.Deserialize(fs);
-                Loot.lootDict = lootDict;
+                Loot.SetLootData(lootDict);
+
+                isLoaded = true;
+                //Debug.Log(lootDict);
             }
             catch (FileNotFoundException ex)
             {
@@ -137,6 +141,7 @@ public class GameSaver : MonoBehaviour
             finally
             {
                 fs?.Close();
+                isLoaded = true;
             }
         }
     }
@@ -189,6 +194,8 @@ public class GameSaver : MonoBehaviour
     public bool HasValidSaving(){
         return HasValidSaving(SaveSlot.First) || HasValidSaving(SaveSlot.Second) || HasValidSaving(SaveSlot.Third);
     }
+
+    public bool IsLoaded() => this.isLoaded;
 
     // public void AutoSave(){
     //     Invoke("AutoSave", autoSaveInterval);

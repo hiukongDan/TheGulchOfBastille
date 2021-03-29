@@ -31,5 +31,26 @@ public class LittleSunData : MonoBehaviour
             LittleSuns[LittleSunID] = true;
         }
     }
+
+    public static void Initialize(){
+        if(LittleSunData.LittleSuns == null){
+            LittleSuns = new Dictionary<int, bool>();
+        }
+        else{
+            LittleSuns.Clear();
+        }
+    }
+
+    public static void SetLittleSunData(Dictionary<int, bool> littleSuns){
+        if(LittleSunData.LittleSuns == null){
+            LittleSuns = new Dictionary<int, bool>();
+        }
+        else{
+            LittleSuns.Clear();
+        }
+        foreach(KeyValuePair<int, bool> item in littleSuns){
+            LittleSuns.Add(item.Key, item.Value);
+        }
+    }
     
 }

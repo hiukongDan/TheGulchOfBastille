@@ -109,6 +109,19 @@ public class Loot: MonoBehaviour{
         UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(info));
     }
 
+    public static void SetLootData(Dictionary<int, bool> lootDict){
+        if(Loot.lootDict == null){
+            Loot.lootDict = new Dictionary<int, bool>();
+        }
+        else{
+            Loot.lootDict.Clear();
+        }
+
+        foreach(KeyValuePair<int, bool> item in lootDict){
+            Loot.lootDict.Add(item.Key, item.Value);
+        }
+    }
+
 
 
 }

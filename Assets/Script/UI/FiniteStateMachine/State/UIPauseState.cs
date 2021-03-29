@@ -5,6 +5,8 @@ using UnityEngine;
 public class UIPauseState : UIState
 {
     private ButtonGroup buttonGroup;
+    protected float timer = -1f;
+    protected float timerMax = 0.1f;
     private enum Selection{
         Save, Equipment, Inventory, Options, Exit,
     };
@@ -29,6 +31,9 @@ public class UIPauseState : UIState
     public override void Update()
     {
         base.Update();
+        if(timer >= 0){
+            timer -= Time.unscaledDeltaTime;
+        }
     }
 
     public override void OnInteraction()
@@ -40,6 +45,13 @@ public class UIPauseState : UIState
     }
 
     public override void OnClick(UIStateEventData eventData){
+        if(timer >= 0){
+            return;
+        }
+        else{
+            timer = timerMax;
+        }
+        
         switch((Selection)eventData.index){
             case Selection.Save:
                 uiHandler.uiFSM.PushState(uiHandler.uiSaveState);
