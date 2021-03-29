@@ -20,7 +20,6 @@ public class AbandonedDoor : MonoBehaviour, IInteractable
     private GameObject infoSign;
 
     private bool isInited = false;
-
     private Player player;
 
     void Awake(){
@@ -31,8 +30,15 @@ public class AbandonedDoor : MonoBehaviour, IInteractable
     }
 
     void OnEnable() {
-        player = GameObject.Find("/Player")?.GetComponentInChildren<Player>();
-        if(player && player.miscData.isAbandonedDoorOpen && !isInited){
+        player = GameObject.Find("Player").GetComponent<Player>();
+        if(player == null){
+            return;
+        }
+        
+        if(!player.miscData.gateOpened.ContainsKey(GetHashCode())){
+            player.miscData.gateOpened.Add(GetHashCode(), false);
+        }
+        if(player.miscData.gateOpened[GetHashCode()] && !isInited){
             InitOpenedDoor();
         }
     }
@@ -89,7 +95,12 @@ public class AbandonedDoor : MonoBehaviour, IInteractable
         */
 
         player.stateMachine.SwitchState(player.cinemaState);
-        player.miscData.isAbandonedDoorOpen = true;
+        if(player.miscData.gateOpened.ContainsKey(GetHashCode())){
+            player.miscData.gateOpened[GetHashCode()] = true;
+        }
+        else{
+            player.miscData.gateOpened.Add(GetHashCode(), true);
+        }
 
         ivy.GetComponent<SpriteRenderer>().sprite = ivy_1;
         player.FaceTo(alive.transform.position);

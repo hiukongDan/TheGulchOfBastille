@@ -2,16 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverDoor : MonoBehaviour, IGulchTriggerResult
+public class LeverDoor : LeverResult
 {
-    public IGulchTrigger trigger;
-
-    public void OnTriggered(){
-
+    protected Animator animator;
+    protected void Awake(){
+        animator = GetComponent<Animator>();
+    }
+    protected override void OnEnable(){
+        base.OnEnable();
     }
 
-    public void OnTriggeredEventDone(){
-        trigger.OnTriggerRefresh();
+    public override void OnInitLeverResult(bool isOpen)
+    {
+        base.OnInitLeverResult(isOpen);
+        if(isOpen){
+            animator.Play(AnimationHash.LeverDoorAnimationHash.STAY_OPEN);
+        }
+        else{
+            animator.Play(AnimationHash.LeverDoorAnimationHash.STAY_CLOSE);
+        }
+    }
+
+    public override void OnTriggered(){
+        base.OnTriggered();
+        if(isOpened){
+            animator.Play(AnimationHash.LeverDoorAnimationHash.OPEN);
+        }
+        else{
+            animator.Play(AnimationHash.LeverDoorAnimationHash.CLOSE);
+        }
+    }
+
+    public override void OnTriggeredEventDone(){
+        lever.OnTriggerRefresh();
     }
 
 }

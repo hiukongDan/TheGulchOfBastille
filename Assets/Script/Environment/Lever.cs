@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour, IGulchTrigger
 {
-    public bool isOn = false;
-    public IGulchTriggerResult triggerResult;
+    public LeverResult leverResult;
     protected Animator anim;
     protected bool isTriggerActive;
+    protected bool isOpened;
     void Awake(){
         anim = GetComponentInChildren<Animator>();
     }
@@ -16,27 +16,31 @@ public class Lever : MonoBehaviour, IGulchTrigger
         isTriggerActive = true;
     }
 
-    public void OnLeverOn(){
-        anim.Play("lever_on_0");
+    public void OnLeverInit(bool isOpen){
+        if(isOpen){
+            anim.Play(AnimationHash.LeverAnimationHash.STAY_ON);
+        }
+        else{
+            anim.Play(AnimationHash.LeverAnimationHash.STAY_OFF);
+        }
+        isOpened = isOpen;
     }
 
-    public void OnLeverOff(){
-        anim.Play("lever_off_0");
+    public void OnLeverInteraction(bool isOpen){
+        if(isOpen){
+            anim.Play(AnimationHash.LeverAnimationHash.ON);
+        }
+        else{
+            anim.Play(AnimationHash.LeverAnimationHash.OFF);
+        }
+        isOpened = isOpen;
     }
 
     public void Damage(CombatData combatData){
         if(combatData.from.tag == "Player" && isTriggerActive){
-            if(isOn){
-                OnLeverOff();
-            }
-            else{
-                OnLeverOn();
-            }
-
-            triggerResult.OnTriggered();
-
+            OnLeverInteraction(!isOpened);
+            leverResult.OnTriggered();
             isTriggerActive = false;
-            isOn = !isOn;
         }
     }
 
