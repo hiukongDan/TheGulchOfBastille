@@ -162,7 +162,9 @@ public class GameManager : MonoBehaviour
         }
         else{
             player.gameObject.SetActive(true);
+            yield return new WaitForEndOfFrame();
             gameSaver.LoadAll();
+            // yield return new WaitForSeconds(5f);
             currentSceneCode = player.playerRuntimeData.currentSceneCode;
             elapsedSeconds = gameSaver.GetSaveSlotMeta(gameSaver.currentSaveSlot).elapsedSeconds;
         }
@@ -172,7 +174,6 @@ public class GameManager : MonoBehaviour
 
         player.InputHandler.ResetAll();
 
-        yield return new WaitForEndOfFrame();
         player.InitializeRuntimeData();
 
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);

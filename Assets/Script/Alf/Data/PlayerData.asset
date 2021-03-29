@@ -61,7 +61,7 @@ MonoBehaviour:
   PS_damage: 1
   PS_coolDownTimer: 0.2
   SS_stunDurationTime: 0.3
-  RS_rollSpeed: 4
+  RS_rollSpeed: 3
   RS_CoolDownTimer: 0.2
   CS_selectionTimer: 0.2
   LS_climbSpeed: 1

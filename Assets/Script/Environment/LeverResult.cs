@@ -15,7 +15,7 @@ public class LeverResult : MonoBehaviour, IGulchTriggerResult
 
     protected virtual void OnEnable() {
         player = GameObject.Find("Player").GetComponent<Player>();
-        if(isNeedSaving && !isInited){
+        if(player && isNeedSaving && !isInited){
             if(!player.miscData.gateOpened.ContainsKey(GetHashCode())){
             player.miscData.gateOpened.Add(GetHashCode(), defaultIsOpen);
             }
@@ -42,6 +42,7 @@ public class LeverResult : MonoBehaviour, IGulchTriggerResult
     public virtual void OnTriggered(){
         isOpened = !isOpened;
         if(isNeedSaving){
+            Player player = GameObject.Find("Player").GetComponent<Player>();
             if(!player.miscData.gateOpened.ContainsKey(GetHashCode())){
                 player.miscData.gateOpened.Add(GetHashCode(), isOpened);
             }

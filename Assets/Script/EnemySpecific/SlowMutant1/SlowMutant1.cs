@@ -43,7 +43,7 @@ public class SlowMutant1 : Entity
         inAirState = new SM1_InAirState(stateMachine, this, "inAir", inAirStateData, this);
         takeDamageState = new SM1_TakeDamageState(stateMachine, this, "takeDamage", takeDamageStateData, this);
 
-        stateMachine.Initialize(walkState);
+        InitEntity();
     }
 
     protected override void Damage(CombatData combatData)

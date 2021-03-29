@@ -68,7 +68,7 @@ public class D_PlayerStateMachine : ScriptableObject
     public float SS_stunDurationTime = 0.3f;
 
     [Header("Roll State")]
-    public float RS_rollSpeed = 4f;
+    public float RS_rollSpeed = 3f;
     public float RS_CoolDownTimer = 1f;
 
     [Header("Converse State")]

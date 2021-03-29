@@ -35,6 +35,12 @@ public class PlayerRuntimeData
             return wearableIndex >= 0 && wearableIndex < playerStock.wearableStock.Count && 
                 (wearableIndex == this.wearableOneIndex || wearableIndex == this.wearableTwoIndex);
         }
+
+        
+        public bool IsWearableEquiped(PlayerStock playerStock, ItemData.Wearable wearable){
+            return (wearableOneIndex >= 0 && wearableOneIndex < playerStock.wearableStock.Count && wearable == playerStock.wearableStock[wearableOneIndex].wearable) ||
+                (wearableTwoIndex >= 0 && wearableTwoIndex < playerStock.wearableStock.Count && wearable == playerStock.wearableStock[wearableTwoIndex].wearable);
+        }
     };
 
     [Serializable]

@@ -31,6 +31,8 @@ public class LeverDoor : LeverResult
         else{
             animator.Play(AnimationHash.LeverDoorAnimationHash.CLOSE);
         }
+
+        Debug.Log("Animator");
     }
 
     public override void OnTriggeredEventDone(){

@@ -26,7 +26,7 @@ public class FiniteStateMachine
 
     public void SwitchState(State newState)
     {
-        currentState.Exit();
+        currentState?.Exit();
         currentState = newState;
         newState.Enter();
     }

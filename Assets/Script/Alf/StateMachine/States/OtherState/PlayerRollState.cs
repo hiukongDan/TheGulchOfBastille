@@ -29,7 +29,12 @@ public class PlayerRollState : PlayerState
         base.LogicUpdate();
         player.InputHandler.ResetIsParry();
 
-        player.SetVelocityX(player.facingDirection * data.RS_rollSpeed);
+        if(player.playerRuntimeData.playerSlot.IsWearableEquiped(player.playerRuntimeData.playerStock, ItemData.Wearable.Goye_Ring)){
+            player.SetVelocityX(player.facingDirection * data.RS_rollSpeed * 1.5f);
+        }
+        else{
+            player.SetVelocityX(player.facingDirection * data.RS_rollSpeed);
+        }
     }
 
     public override void PhysicsUpdate()

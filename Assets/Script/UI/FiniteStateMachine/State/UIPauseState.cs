@@ -23,6 +23,7 @@ public class UIPauseState : UIState
     {
         base.Exit();
         Time.timeScale = 1;
+        uiHandler.GM.player.InputHandler.ResetAll();
     }
 
     public override void Update()

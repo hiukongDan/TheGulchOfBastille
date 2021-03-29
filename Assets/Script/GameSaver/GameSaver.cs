@@ -6,6 +6,7 @@ using System;
 
 public class GameSaver : MonoBehaviour
 {
+    public Player player;
     private GameManager gm;
     public enum SaveSlot{
         First, Second, Third, SlotNum
@@ -159,6 +160,7 @@ public class GameSaver : MonoBehaviour
                 //Player player = GameObject.Find("Player").GetComponent<Player>();
                 bf.Serialize(fs, player.playerData.GetPlayerSaveData());
                 bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
+                player.SaveToPlayerRuntimeData();
                 bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());
                 bf.Serialize(fs, player.miscData);
                 bf.Serialize(fs, EnemySaveData.EnemyAliveRevivable);

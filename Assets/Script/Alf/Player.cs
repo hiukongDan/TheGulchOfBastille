@@ -138,8 +138,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         stateMachine.PhysicsUpdate();
-
-        playerRuntimeData.lastPosition = transform.position;
     }
 
     void OnAnimatorMove(){
@@ -423,6 +421,10 @@ public class Player : MonoBehaviour
 
         miscData.Init();
         playerRuntimeData.InitPlayerRuntimeData(playerData);
+    }
+
+    public void SaveToPlayerRuntimeData(){
+        playerRuntimeData.lastPosition = transform.position;
     }
 
     public void ResetPlayerStatus(){
