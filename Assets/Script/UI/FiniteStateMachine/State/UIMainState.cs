@@ -23,11 +23,15 @@ public class UIMainState : UIState
         else{
             buttonGroup.EnableButton((int)Selection.Load);
         }
+
+        // play bgm
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        // stop bgm
     }
 
     public override void OnInteraction()

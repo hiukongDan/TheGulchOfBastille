@@ -11,6 +11,7 @@ public enum SceneCode
     Gulch_Goye,
     Abandoned_Door,
     Mine_Entrance,
+    Lower_Mine,
     Count,
 };
 
@@ -26,6 +27,7 @@ public static class SceneCodeDisplayName{
         {(int)SceneCode.Gulch_Goye, "prey of goye"},
         {(int)SceneCode.Abandoned_Door, "Abandoned Door"},
         {(int)SceneCode.Mine_Entrance, "Mine Entrance"},
+        {(int)SceneCode.Lower_Mine, "Lower Mine"},
     };
 };
 

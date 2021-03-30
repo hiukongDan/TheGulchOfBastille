@@ -57,7 +57,7 @@ public class UIInventoryState : UIState
             OnClickTab((int)currentTab);
         }
         
-        OnClickView(selectedViewIndex);
+        OnClickView(selectedViewIndex, true);
 
         normMoveInputTimer = -1f;
     }
@@ -102,7 +102,7 @@ public class UIInventoryState : UIState
     }
     public override void OnInteraction()
     {
-        
+        OnClickView(selectedViewIndex);
     }
 
     public override void OnDirectionMove(UIState.Direction direction){
@@ -202,10 +202,13 @@ public class UIInventoryState : UIState
                 break;
         }
 
-        OnClickView(selectedViewIndex);
+        OnClickView(selectedViewIndex, true);
     }
 
-    protected void OnClickView(int index){
+    protected void OnClickView(int index, bool isInit = false){
+        if(!isInit && selectedViewIndex == index){
+            Debug.Log("click the same item");
+        }
         if(selectedViewIndex != index){
             selectedViewIndex = index;
         }
