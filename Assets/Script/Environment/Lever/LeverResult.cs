@@ -16,16 +16,20 @@ public class LeverResult : MonoBehaviour, IGulchTriggerResult
     protected virtual void OnEnable() {
         player = GameObject.Find("Player").GetComponent<Player>();
         if(player && isNeedSaving && !isInited){
-            if(!player.miscData.gateOpened.ContainsKey(GetHashCode())){
-            player.miscData.gateOpened.Add(GetHashCode(), defaultIsOpen);
+            if(!MiscData.gateOpened.ContainsKey(GetHashCode())){
+            MiscData.gateOpened.Add(GetHashCode(), defaultIsOpen);
             }
             if(!isInited){
-                OnInitLever(player.miscData.gateOpened[GetHashCode()]);
+                OnInitLever(MiscData.gateOpened[GetHashCode()]);
             }
         }
         else if(!isInited){
             OnInitLever(defaultIsOpen);
         }
+    }
+
+    protected virtual void OnDisable(){
+        isInited = false;
     }
 
     public virtual void OnInitLever(bool isOpen){
@@ -43,11 +47,11 @@ public class LeverResult : MonoBehaviour, IGulchTriggerResult
         isOpened = !isOpened;
         if(isNeedSaving){
             Player player = GameObject.Find("Player").GetComponent<Player>();
-            if(!player.miscData.gateOpened.ContainsKey(GetHashCode())){
-                player.miscData.gateOpened.Add(GetHashCode(), isOpened);
+            if(!MiscData.gateOpened.ContainsKey(GetHashCode())){
+                MiscData.gateOpened.Add(GetHashCode(), isOpened);
             }
             else{
-                player.miscData.gateOpened[GetHashCode()] = isOpened;
+                MiscData.gateOpened[GetHashCode()] = isOpened;
             }
         }
 
