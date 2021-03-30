@@ -11,6 +11,10 @@ public class MinecartDebris : MonoBehaviour
     public Player player;
 
     void OnEnable() {
+        if(!isDebris){
+            return;
+        }
+        
         if(!MiscData.gateOpened.ContainsKey(GetInstanceID())){
             MiscData.gateOpened.Add(GetInstanceID(), false);
         }

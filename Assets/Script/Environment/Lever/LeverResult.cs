@@ -28,6 +28,10 @@ public class LeverResult : MonoBehaviour, IGulchTriggerResult
         }
     }
 
+    protected virtual void OnDisable(){
+        isInited = false;
+    }
+
     public virtual void OnInitLever(bool isOpen){
         lever.OnLeverInit(isOpen);
         OnInitLeverResult(isOpen);
