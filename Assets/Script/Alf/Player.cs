@@ -115,6 +115,10 @@ public class Player : MonoBehaviour
         // playerRuntimeData.InitPlayerRuntimeData(playerData);
     }
 
+    void OnEnable() {
+        UIEventListener.Instance.dpChangeHandler += OnDpChange;
+    }
+
     void Start()
     {
         InitializePlayerStateMachine();
@@ -149,7 +153,7 @@ public class Player : MonoBehaviour
         
     }
     void OnDisable() {
-        
+        UIEventListener.Instance.dpChangeHandler -= OnDpChange;
     }
 
     void OnDestroy() {
@@ -554,6 +558,13 @@ public class Player : MonoBehaviour
         playerRuntimeData.currentUilos += amount;
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
     }
+
+    public void OnDpChange(float current, float total){
+        float value = Mathf.Clamp01((total-current)/total);
+        Color color = new Color(value, value, value);
+        GetComponent<SpriteRenderer>().color = color;
+    }
+    
     #endregion
 
     #region AUXILIARY FUNCTIONS
