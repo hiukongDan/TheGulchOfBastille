@@ -17,4 +17,9 @@ public class AnimationHash
         public static int STAY_ON = Animator.StringToHash("stayOn");
         public static int STAY_OFF = Animator.StringToHash("stayOff");
     }
+
+    public static class DebrisAnimationHash{
+        public static int Debris_Unbreak = Animator.StringToHash("debris_idle_0");
+        public static int Debris_Break = Animator.StringToHash("debris_break_0");
+    }
 }
