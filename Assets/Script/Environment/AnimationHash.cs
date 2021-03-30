@@ -23,4 +23,11 @@ public class AnimationHash
         public static int Debris_Break = Animator.StringToHash("debris_break_0");
         public static int Debris_Broken = Animator.StringToHash("debris_broken_0");
     }
+
+    public static class MechanicLiftHash{
+        public static int Stay_Up = Animator.StringToHash("mechanic_lift_stay_up_0");
+        public static int Stay_Down = Animator.StringToHash("mechanic_lift_stay_down_0");
+        public static int Go_Up = Animator.StringToHash("mechanic_lift_go_up_0");
+        public static int Go_Down = Animator.StringToHash("mechanic_lift_go_down_0");
+    }
 }
