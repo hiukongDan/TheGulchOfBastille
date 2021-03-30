@@ -22,8 +22,20 @@ public class SME1_StoneRecoverTrigger : MonoBehaviour
             {
                 isAwake = true;
                 transform.parent.GetComponent<SlowMutantEliteEventHandler>().OnStoneRecover();
-                Destroy(gameObject);
+                GetComponent<Collider2D>().enabled = false;
             }
         }
+    }
+
+    void OnEnable() {
+        Gulch.GameEventListener.Instance.OnPlayerDeadHandler += OnPlayerDead;
+    }
+
+    void OnDisable() {
+        Gulch.GameEventListener.Instance.OnPlayerDeadHandler -= OnPlayerDead;
+    }
+
+    protected void OnPlayerDead(){
+        GetComponent<Collider2D>().enabled = true;
     }
 }
