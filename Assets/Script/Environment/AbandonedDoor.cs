@@ -35,10 +35,10 @@ public class AbandonedDoor : MonoBehaviour, IInteractable
             return;
         }
         
-        if(!MiscData.gateOpened.ContainsKey(GetInstanceID())){
-            MiscData.gateOpened.Add(GetInstanceID(), false);
+        if(!MiscData.gateOpened.ContainsKey(GetComponent<GulchGUID>().ID)){
+            MiscData.gateOpened.Add(GetComponent<GulchGUID>().ID, false);
         }
-        if(MiscData.gateOpened[GetInstanceID()] && !isInited){
+        if(MiscData.gateOpened[GetComponent<GulchGUID>().ID] && !isInited){
             InitOpenedDoor();
         }
     }
@@ -95,11 +95,11 @@ public class AbandonedDoor : MonoBehaviour, IInteractable
         */
 
         player.stateMachine.SwitchState(player.cinemaState);
-        if(MiscData.gateOpened.ContainsKey(GetInstanceID())){
-            MiscData.gateOpened[GetInstanceID()] = true;
+        if(MiscData.gateOpened.ContainsKey(GetComponent<GulchGUID>().ID)){
+            MiscData.gateOpened[GetComponent<GulchGUID>().ID] = true;
         }
         else{
-            MiscData.gateOpened.Add(GetInstanceID(), true);
+            MiscData.gateOpened.Add(GetComponent<GulchGUID>().ID, true);
         }
 
         ivy.GetComponent<SpriteRenderer>().sprite = ivy_1;

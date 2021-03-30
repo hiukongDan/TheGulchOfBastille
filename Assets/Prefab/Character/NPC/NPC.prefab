@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4243730512420650758}
   - component: {fileID: 4243730512420650759}
+  - component: {fileID: 774422421750765486}
   m_Layer: 0
   m_Name: Conversation
   m_TagString: Untagged
@@ -174,12 +175,25 @@ MonoBehaviour:
   pFontInfo: {fileID: 11400000, guid: 01f573a0e4c89ed49b9b3ace3f658d9e, type: 2}
   InfoSignAnim: {fileID: 4243730513307092827}
   DialogueBoxAnim: {fileID: 4243730512937720531}
-  npcConversation: {fileID: 11400000, guid: 0ffc481fe5102c647b8496eefac31447, type: 2}
+  npcConversations: []
   letterPerLine: 20
   pixelPerUnit: 32
   borderInPixel: {x: 2, y: 2}
   marginInPixel: {x: 1, y: 1}
   textSpeed: 10
+--- !u!114 &774422421750765486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243730512420650761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc2ae5b38821534493df67ad12f11da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &4243730512937720533
 GameObject:
   m_ObjectHideFlags: 0

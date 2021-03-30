@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6192960311386005371}
   - component: {fileID: 6192960311386005372}
   - component: {fileID: 6192960311386005373}
+  - component: {fileID: 2988752500554978198}
   m_Layer: 15
-  m_Name: Claymore
+  m_Name: Loot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,6 +74,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: 1
   level: 0
+--- !u!114 &2988752500554978198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192960311386005370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc2ae5b38821534493df67ad12f11da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &6192960311615506511
 GameObject:
   m_ObjectHideFlags: 0

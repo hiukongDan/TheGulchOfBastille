@@ -5,7 +5,7 @@ using System;
 
 public class Loot: MonoBehaviour{
     // key: loot hash code, value: isValid
-    public static Dictionary<int, bool> lootDict = new Dictionary<int, bool>();
+    public static Dictionary<string, bool> lootDict = new Dictionary<string, bool>();
     protected Transform alive;
     protected Animator infoAnim;
     protected Animator indicatorAnim;
@@ -44,11 +44,11 @@ public class Loot: MonoBehaviour{
     }
 
     public virtual void OnPickUpLoot(Player player){
-        if(Loot.lootDict.ContainsKey(GetInstanceID())){
-            Loot.lootDict[GetInstanceID()] = false;
+        if(Loot.lootDict.ContainsKey(GetComponent<GulchGUID>().ID)){
+            Loot.lootDict[GetComponent<GulchGUID>().ID] = false;
         }
         else{
-            Loot.lootDict.Add(GetInstanceID(), false);
+            Loot.lootDict.Add(GetComponent<GulchGUID>().ID, false);
         }
         alive.gameObject.SetActive(false);
         player.SetLootHandler(null);
@@ -75,11 +75,11 @@ public class Loot: MonoBehaviour{
     }
 
     protected bool isValid(){
-        if(Loot.lootDict.ContainsKey(GetInstanceID())){
-            return Loot.lootDict[GetInstanceID()];
+        if(Loot.lootDict.ContainsKey(GetComponent<GulchGUID>().ID)){
+            return Loot.lootDict[GetComponent<GulchGUID>().ID];
         }   
         else{
-            Loot.lootDict.Add(GetInstanceID(), true);
+            Loot.lootDict.Add(GetComponent<GulchGUID>().ID, true);
         }
         return true;
     }
@@ -112,8 +112,8 @@ public class Loot: MonoBehaviour{
 
     [Serializable]
     public struct LootRuntimeSaveData{
-        public Dictionary<int, bool> lootDict;
-        public LootRuntimeSaveData(Dictionary<int, bool> lootDict){
+        public Dictionary<string, bool> lootDict;
+        public LootRuntimeSaveData(Dictionary<string, bool> lootDict){
             this.lootDict = lootDict;
         }
     }

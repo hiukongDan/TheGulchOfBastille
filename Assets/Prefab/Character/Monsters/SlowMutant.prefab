@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 2802960883396197317}
   - component: {fileID: 455593746766382679}
   - component: {fileID: 7832076475081218013}
+  - component: {fileID: 4038907949010997237}
   m_Layer: 0
   m_Name: SlowMutant
   m_TagString: Untagged
@@ -135,6 +136,19 @@ MonoBehaviour:
   uilosCountRange: {x: 5, y: 10}
   uilosPref: {fileID: 7196177436542473252, guid: f134b31ebdcd6e5449eeb085efd4e478,
     type: 3}
+--- !u!114 &4038907949010997237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2802960883396197316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc2ae5b38821534493df67ad12f11da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &2802960883555146467
 GameObject:
   m_ObjectHideFlags: 0

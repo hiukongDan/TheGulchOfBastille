@@ -45,6 +45,10 @@ public class NPCBelial : NPCConversationHandler
             Loot.OnPickUpLoot(player, ItemData.KeyItem.Abandoned_Door_Key);
         }
 
+        if(npcConversation == decayCompulsiveConversation || npcConversation == decayOptionConversation){
+            currentConversationIndex = npcConversations.Count - 1;
+        }
+
         base.OnEndInteraction();
     }
 

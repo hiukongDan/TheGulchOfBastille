@@ -10,7 +10,7 @@ public class NPCConversationHandler : MonoBehaviour
     public Animator DialogueBoxAnim;
     public List<NPCConversation> npcConversations;
     protected NPCConversation npcConversation;
-    private int currentConversationIndex = 0;
+    protected int currentConversationIndex = 0;
     public float letterPerLine = 15f;
     public float pixelPerUnit = 32f;
     public Vector2 borderInPixel = new Vector2(2, 2);
@@ -305,12 +305,12 @@ public class NPCConversationHandler : MonoBehaviour
 
     public virtual void OnBeginInteraction()
     {
-        if(player && MiscData.conversationIndex.ContainsKey(GetInstanceID())){
-            currentConversationIndex = MiscData.conversationIndex[GetInstanceID()];
+        if(player && MiscData.conversationIndex.ContainsKey(GetComponent<GulchGUID>().ID)){
+            currentConversationIndex = MiscData.conversationIndex[GetComponent<GulchGUID>().ID];
         }
         else if(player){
             currentConversationIndex = 0;
-            MiscData.conversationIndex.Add(GetInstanceID(), 0);
+            MiscData.conversationIndex.Add(GetComponent<GulchGUID>().ID, 0);
         }
         if(npcConversations.Count() > 0){
             npcConversation = npcConversations[currentConversationIndex];
@@ -361,11 +361,11 @@ public class NPCConversationHandler : MonoBehaviour
             currentConversationIndex++;
             SetConversation(npcConversations[currentConversationIndex]);
 
-            if(MiscData.conversationIndex.ContainsKey(GetInstanceID())){
-                MiscData.conversationIndex[GetInstanceID()] = currentConversationIndex;
+            if(MiscData.conversationIndex.ContainsKey(GetComponent<GulchGUID>().ID)){
+                MiscData.conversationIndex[GetComponent<GulchGUID>().ID] = currentConversationIndex;
             }
             else{
-                MiscData.conversationIndex.Add(GetInstanceID(), currentConversationIndex);
+                MiscData.conversationIndex.Add(GetComponent<GulchGUID>().ID, currentConversationIndex);
             }
         }
 

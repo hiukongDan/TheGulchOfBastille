@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 7503000387757753602}
   - component: {fileID: 7503000387757753605}
   - component: {fileID: 7503000387757753604}
+  - component: {fileID: 6328156292566019707}
   m_Layer: 0
   m_Name: SlowMutantElite
   m_TagString: Untagged
@@ -166,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e9d86986fc74146b6defc0fc12d264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startFacingDirection: 0
   wallCheck: {fileID: 7503000388872119306}
   edgeCheck: {fileID: 7503000388950134438}
   groundCheck: {fileID: 7503000387719788862}
@@ -173,6 +175,7 @@ MonoBehaviour:
   damageBox: {fileID: 7503000388866641839}
   meleeAttackCheck: {fileID: 7503000388042521235}
   detectCenter: {fileID: 7503000387502596730}
+  initPosition: {fileID: 0}
   entityData: {fileID: 11400000, guid: 93567552dc7bc35468ba11ba28077bee, type: 2}
   aliveGO: {fileID: 7503000388636146321}
   objectToAlive: {fileID: 7503000388636146326}
@@ -218,6 +221,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRevivable: 0
   defaultAlive: 1
+--- !u!114 &6328156292566019707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503000387757753600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc2ae5b38821534493df67ad12f11da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &7503000387865050467
 GameObject:
   m_ObjectHideFlags: 0

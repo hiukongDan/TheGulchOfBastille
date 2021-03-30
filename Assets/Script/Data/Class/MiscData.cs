@@ -8,59 +8,59 @@ public class MiscData
     /// key: NPCConversationHandler.GetInstanceID()
     /// value: index of the conversation
     /// </Summary>
-    public static Dictionary<int, int> conversationIndex = new Dictionary<int, int>();
+    public static Dictionary<string, int> conversationIndex = new Dictionary<string, int>();
 
     /// <Summary>
     /// key: Gate instanceID
     /// value: isGateOpened
     /// </Summary>
-    public static Dictionary<int, bool> gateOpened = new Dictionary<int, bool>();
+    public static Dictionary<string, bool> gateOpened = new Dictionary<string, bool>();
 
     public void Init(){
         conversationIndex.Clear();
         gateOpened.Clear();
     }
 
-    public void SetMiscData(Dictionary<int, int> conversationIndex, Dictionary<int, bool> gateOpened){
+    public void SetMiscData(Dictionary<string, int> conversationIndex, Dictionary<string, bool> gateOpened){
         if(conversationIndex == null){
-            conversationIndex = new Dictionary<int, int>();
+            conversationIndex = new Dictionary<string, int>();
         }
         else{
             conversationIndex.Clear();
         }
-        foreach(KeyValuePair<int, int> item in conversationIndex){
+        foreach(KeyValuePair<string, int> item in conversationIndex){
             conversationIndex.Add(item.Key, item.Value);
         }
 
         if(gateOpened == null){
-            gateOpened = new Dictionary<int, bool>();
+            gateOpened = new Dictionary<string, bool>();
         }
         else{
             gateOpened.Clear();
         }
-        foreach(KeyValuePair<int, bool> item in gateOpened){
+        foreach(KeyValuePair<string, bool> item in gateOpened){
             gateOpened.Add(item.Key, item.Value);
         }
     }
 
     [Serializable]
     public struct MiscSaveData{
-        public List<int> conversationIndexKey;
+        public List<string> conversationIndexKey;
         public List<int> conversatioinIndexValue;
-        public List<int> gateOpenedKey;
+        public List<string> gateOpenedKey;
         public List<bool> gateOpenedValue;
 
-        public MiscSaveData(Dictionary<int, int> conversationIndex, Dictionary<int, bool> gateOpened){
-            conversationIndexKey = new List<int>();
+        public MiscSaveData(Dictionary<string, int> conversationIndex, Dictionary<string, bool> gateOpened){
+            conversationIndexKey = new List<string>();
             conversatioinIndexValue = new List<int>();
-            foreach(KeyValuePair<int, int> item in conversationIndex){
+            foreach(KeyValuePair<string, int> item in conversationIndex){
                 conversationIndexKey.Add(item.Key);
                 conversatioinIndexValue.Add(item.Value);
             }
             
-            gateOpenedKey = new List<int>();
+            gateOpenedKey = new List<string>();
             gateOpenedValue = new List<bool>();
-            foreach(KeyValuePair<int, bool> item in gateOpened){
+            foreach(KeyValuePair<string, bool> item in gateOpened){
                 gateOpenedKey.Add(item.Key);
                 gateOpenedValue.Add(item.Value);
             }

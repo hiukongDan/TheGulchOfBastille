@@ -15,11 +15,11 @@ public class MinecartDebris : MonoBehaviour
             return;
         }
         
-        if(!MiscData.gateOpened.ContainsKey(GetInstanceID())){
-            MiscData.gateOpened.Add(GetInstanceID(), false);
+        if(!MiscData.gateOpened.ContainsKey(GetComponent<GulchGUID>().ID)){
+            MiscData.gateOpened.Add(GetComponent<GulchGUID>().ID, false);
         }
 
-        if(MiscData.gateOpened[GetInstanceID()]){
+        if(MiscData.gateOpened[GetComponent<GulchGUID>().ID]){
             GetComponent<Collider2D>().enabled = false;
             GetComponentInChildren<Animator>()?.Play(AnimationHash.DebrisAnimationHash.Debris_Broken);
         }
@@ -37,11 +37,11 @@ public class MinecartDebris : MonoBehaviour
             if(isDebris){
                 GetComponent<Collider2D>().enabled = false;
                 GetComponentInChildren<Animator>()?.Play(AnimationHash.DebrisAnimationHash.Debris_Break);
-                if(!MiscData.gateOpened.ContainsKey(GetInstanceID())){
-                    MiscData.gateOpened.Add(GetInstanceID(), true);
+                if(!MiscData.gateOpened.ContainsKey(GetComponent<GulchGUID>().ID)){
+                    MiscData.gateOpened.Add(GetComponent<GulchGUID>().ID, true);
                 }
                 else{
-                    MiscData.gateOpened[GetInstanceID()] = true;
+                    MiscData.gateOpened[GetComponent<GulchGUID>().ID] = true;
                 }
             }
 

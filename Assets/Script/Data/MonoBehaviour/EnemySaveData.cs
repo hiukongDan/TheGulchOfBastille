@@ -6,15 +6,15 @@ using System;
 //[CreateAssetMenu(fileName ="newEnemySaveData", menuName ="Data/EnemyData/SaveData")]
 public class EnemySaveData : MonoBehaviour
 {
-    public static Dictionary<int, bool> EnemyAliveRevivable = new Dictionary<int, bool>();
-    public static Dictionary<int, bool> EnemyAliveUnrevivable = new Dictionary<int, bool>();
+    public static Dictionary<string, bool> EnemyAliveRevivable = new Dictionary<string, bool>();
+    public static Dictionary<string, bool> EnemyAliveUnrevivable = new Dictionary<string, bool>();
 
     public bool isRevivable = true;
     public bool defaultAlive = true;
 
-    private Dictionary<int, bool> getDict()
+    private Dictionary<string, bool> getDict()
     {
-        Dictionary<int, bool> dict;
+        Dictionary<string, bool> dict;
         if (isRevivable)
         {
             dict = EnemyAliveRevivable;
@@ -28,7 +28,7 @@ public class EnemySaveData : MonoBehaviour
 
     public void Save(bool isAlive)
     {
-        int id = GetInstanceID();
+        string id = GetComponent<GulchGUID>().ID;
 
         var dict = getDict();
         if (dict.ContainsKey(id))
@@ -45,7 +45,7 @@ public class EnemySaveData : MonoBehaviour
 
     public bool IsAlive()
     {
-        int id = GetInstanceID();
+        string id = GetComponent<GulchGUID>().ID;
         bool ret = defaultAlive;
         var dict = getDict();
         if (dict.ContainsKey(id))
@@ -63,18 +63,18 @@ public class EnemySaveData : MonoBehaviour
     }
 
     public static void ResetRevivableEnemy(){
-        List<int> keys = new List<int>(EnemyAliveRevivable.Keys);
-        foreach(int key in keys){
+        List<string> keys = new List<string>(EnemyAliveRevivable.Keys);
+        foreach(string key in keys){
             EnemyAliveRevivable[key] = true;
         }
     }
 
     [Serializable]
     public struct EnemyRuntimeSaveData{
-        public Dictionary<int, bool> enemyAliveRevivable;
-        public Dictionary<int, bool> enemyAliveUnrevivable;
+        public Dictionary<string, bool> enemyAliveRevivable;
+        public Dictionary<string, bool> enemyAliveUnrevivable;
 
-        public EnemyRuntimeSaveData(Dictionary<int, bool> enemyAliveRevivable, Dictionary<int, bool> enemyAliveUnrevivable){
+        public EnemyRuntimeSaveData(Dictionary<string, bool> enemyAliveRevivable, Dictionary<string, bool> enemyAliveUnrevivable){
             this.enemyAliveRevivable = enemyAliveRevivable;
             this.enemyAliveUnrevivable = enemyAliveUnrevivable;
         }
