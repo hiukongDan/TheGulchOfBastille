@@ -31,11 +31,11 @@ public class GoyeCombatEventHandler : EntityEventHandler
     }
 
     public void OnPlayerDead(){
-        if(goyeCombat.refPlayer.miscData.conversationIndex.ContainsKey(goyeCombat.npc.npcConversationHandler.GetHashCode())){
-            goyeCombat.refPlayer.miscData.conversationIndex[goyeCombat.npc.npcConversationHandler.GetHashCode()] = 0;
+        if(MiscData.conversationIndex.ContainsKey(goyeCombat.npc.npcConversationHandler.GetHashCode())){
+            MiscData.conversationIndex[goyeCombat.npc.npcConversationHandler.GetHashCode()] = 0;
         }
         else{
-            goyeCombat.refPlayer.miscData.conversationIndex.Add(goyeCombat.npc.npcConversationHandler.GetHashCode(),0);
+            MiscData.conversationIndex.Add(goyeCombat.npc.npcConversationHandler.GetHashCode(),0);
         }
     }
 

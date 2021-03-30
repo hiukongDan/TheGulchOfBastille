@@ -21,5 +21,6 @@ public class AnimationHash
     public static class DebrisAnimationHash{
         public static int Debris_Unbreak = Animator.StringToHash("debris_idle_0");
         public static int Debris_Break = Animator.StringToHash("debris_break_0");
+        public static int Debris_Broken = Animator.StringToHash("debris_broken_0");
     }
 }
