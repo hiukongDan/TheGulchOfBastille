@@ -30,10 +30,12 @@ public class SME1_WalkState : WalkState
     {
         base.LogicUpdate();
         DoChecks();
-/*        if (isEdgeDetected || isWallDetected)
+
+        if(isEdgeDetected || isWallDetected)
         {
             stateMachine.SwitchState(enemy.flipState);
-        }*/
+        }
+
         if (detectPlayerInMaxAgro && enemy.detectPlayerState.CanAction())
         {
             //enemy.detectPlayerState.SetPlayerDetectedTrans(detectPlayerTrans);

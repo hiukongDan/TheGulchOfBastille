@@ -589,5 +589,6 @@ public class Player : MonoBehaviour
         int res = (int)(rawDamage * (1 + playerRuntimeData.currentDecayPoints / playerData.PD_maxDecayPoint));
         return res;
     }
+
     #endregion
 }
