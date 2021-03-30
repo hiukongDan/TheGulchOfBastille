@@ -123,13 +123,12 @@ public class GameSaver : MonoBehaviour
                 player.playerAbilityData.SetPlayerAbility(ability);
                 var runtimeData = (PlayerRuntimeData.PlayerRuntimeSaveData)bf.Deserialize(fs);
                 player.playerRuntimeData.SetPlayerRuntimeSaveData(runtimeData);
-                var miscData = (MiscData)bf.Deserialize(fs);
-                player.miscData.SetMiscData(miscData.conversationIndex, miscData.gateOpened);
-                var enemyAliveRevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
-                var enemyAliveUnrevivable = (Dictionary<int, bool>)bf.Deserialize(fs);
-                EnemySaveData.SetEnemyData(enemyAliveRevivable, enemyAliveUnrevivable);
-                var lootDict = (Dictionary<int, bool>)bf.Deserialize(fs);
-                Loot.SetLootData(lootDict);
+                var miscSaveData = (MiscData.MiscSaveData)bf.Deserialize(fs);
+                player.miscData.SetMiscSaveData(miscSaveData);
+                var enemyRuntimeSaveData = (EnemySaveData.EnemyRuntimeSaveData)bf.Deserialize(fs);
+                EnemySaveData.SetEnemyRuntimeSaveData(enemyRuntimeSaveData);
+                var lootRuntimeSaveData = (Loot.LootRuntimeSaveData)bf.Deserialize(fs);
+                Loot.SetLootRuntimeSaveData(lootRuntimeSaveData);
 
                 isLoaded = true;
                 //Debug.Log(lootDict);
@@ -154,30 +153,31 @@ public class GameSaver : MonoBehaviour
     }
 
     public void Save(SaveSlot saveSlot){
+        FileStream fs = null;
         try
         {
-            using(FileStream fs = new FileStream(saveDirectory + "/" + saveSlot.ToString() + ".tgb", FileMode.OpenOrCreate))
-            {
-                BinaryFormatter bf = new BinaryFormatter();
+            fs = new FileStream(saveDirectory + "/" + saveSlot.ToString() + ".tgb", FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
 
-                bf.Serialize(fs, LittleSunData.LittleSuns);
-                Player player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
-                //Player player = GameObject.Find("Player").GetComponent<Player>();
-                bf.Serialize(fs, player.playerData.GetPlayerSaveData());
-                bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
-                player.SaveToPlayerRuntimeData();
-                bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());
-                bf.Serialize(fs, player.miscData);
-                bf.Serialize(fs, EnemySaveData.EnemyAliveRevivable);
-                bf.Serialize(fs, EnemySaveData.EnemyAliveUnrevivable);
-                bf.Serialize(fs, Loot.lootDict);
+            bf.Serialize(fs, LittleSunData.LittleSuns);
+            Player player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
+            //Player player = GameObject.Find("Player").GetComponent<Player>();
+            bf.Serialize(fs, player.playerData.GetPlayerSaveData());
+            bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
+            player.SaveToPlayerRuntimeData();
+            bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());
+            bf.Serialize(fs, player.miscData.GetMiscSaveData());
+            bf.Serialize(fs, EnemySaveData.GetEnemyRuntimeSaveData());
+            bf.Serialize(fs, Loot.GetLootRuntimeSaveData());
 
-                fs.Close();
-            }
+            fs.Close();
         }
         catch(FileNotFoundException ex)
         {
             Debug.Log("On GameSaver::Save, " + ex.StackTrace);
+        }
+        finally{
+            fs?.Close();
         }
     }
 
@@ -204,5 +204,18 @@ public class GameSaver : MonoBehaviour
 
     public SaveSlotMeta GetSaveSlotMeta(SaveSlot saveSlot){
         return SaveSlotMetas[(int)saveSlot];
+    }
+
+    [Serializable]
+    public struct GameSaveData{
+        
+    }
+
+    public void SaveJsonData(string path, GameSaveData gameSaveData){
+
+    }
+
+    public void LoadJsonData(string path){
+
     }
 }

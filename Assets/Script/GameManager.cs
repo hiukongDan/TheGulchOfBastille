@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour
 
         LoadSceneCode();
 
-        player.stateMachine.SwitchState(player.wakeupState);
+        player.stateMachine.InitializeState(player.wakeupState);
 
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
         Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(player.transform);

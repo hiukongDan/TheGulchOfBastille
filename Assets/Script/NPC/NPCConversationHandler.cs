@@ -305,12 +305,12 @@ public class NPCConversationHandler : MonoBehaviour
 
     public virtual void OnBeginInteraction()
     {
-        if(player && player.miscData.conversationIndex.ContainsKey(GetHashCode())){
-            currentConversationIndex = player.miscData.conversationIndex[GetHashCode()];
+        if(player && player.miscData.conversationIndex.ContainsKey(GetInstanceID())){
+            currentConversationIndex = player.miscData.conversationIndex[GetInstanceID()];
         }
         else if(player){
             currentConversationIndex = 0;
-            player.miscData.conversationIndex.Add(GetHashCode(), 0);
+            player.miscData.conversationIndex.Add(GetInstanceID(), 0);
         }
         if(npcConversations.Count() > 0){
             npcConversation = npcConversations[currentConversationIndex];
@@ -361,11 +361,11 @@ public class NPCConversationHandler : MonoBehaviour
             currentConversationIndex++;
             SetConversation(npcConversations[currentConversationIndex]);
 
-            if(player.miscData.conversationIndex.ContainsKey(GetHashCode())){
-                player.miscData.conversationIndex[GetHashCode()] = currentConversationIndex;
+            if(player.miscData.conversationIndex.ContainsKey(GetInstanceID())){
+                player.miscData.conversationIndex[GetInstanceID()] = currentConversationIndex;
             }
             else{
-                player.miscData.conversationIndex.Add(GetHashCode(), currentConversationIndex);
+                player.miscData.conversationIndex.Add(GetInstanceID(), currentConversationIndex);
             }
         }
 

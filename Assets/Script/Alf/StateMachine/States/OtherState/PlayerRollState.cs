@@ -30,7 +30,7 @@ public class PlayerRollState : PlayerState
         player.InputHandler.ResetIsParry();
 
         if(player.playerRuntimeData.playerSlot.IsWearableEquiped(player.playerRuntimeData.playerStock, ItemData.Wearable.Goye_Ring)){
-            player.SetVelocityX(player.facingDirection * data.RS_rollSpeed * 1.5f);
+            player.SetVelocityX(player.facingDirection * data.RS_rollSpeed * ItemData.WearableItemBuffData.Goye_Ring_rollSpeedMultiplier);
         }
         else{
             player.SetVelocityX(player.facingDirection * data.RS_rollSpeed);

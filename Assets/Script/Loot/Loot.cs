@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Loot: MonoBehaviour{
     // key: loot hash code, value: isValid
@@ -43,11 +44,11 @@ public class Loot: MonoBehaviour{
     }
 
     public virtual void OnPickUpLoot(Player player){
-        if(Loot.lootDict.ContainsKey(GetHashCode())){
-            Loot.lootDict[GetHashCode()] = false;
+        if(Loot.lootDict.ContainsKey(GetInstanceID())){
+            Loot.lootDict[GetInstanceID()] = false;
         }
         else{
-            Loot.lootDict.Add(GetHashCode(), false);
+            Loot.lootDict.Add(GetInstanceID(), false);
         }
         alive.gameObject.SetActive(false);
         player.SetLootHandler(null);
@@ -74,11 +75,11 @@ public class Loot: MonoBehaviour{
     }
 
     protected bool isValid(){
-        if(Loot.lootDict.ContainsKey(GetHashCode())){
-            return Loot.lootDict[GetHashCode()];
+        if(Loot.lootDict.ContainsKey(GetInstanceID())){
+            return Loot.lootDict[GetInstanceID()];
         }   
         else{
-            Loot.lootDict.Add(GetHashCode(), true);
+            Loot.lootDict.Add(GetInstanceID(), true);
         }
         return true;
     }
@@ -99,7 +100,7 @@ public class Loot: MonoBehaviour{
     }
     public static void OnPickUpLoot(Player player, ItemData.Consumable consumable, int amount){
         player.playerRuntimeData.playerStock.Pick(new ItemData.ConsumableRuntimeData(consumable, amount));
-        string info = "Pick up " + string.Join(" ", consumable.ToString().Split('_') + " Amount " + amount);
+        string info = "Pick up " + amount + " " + string.Join(" ", consumable.ToString().Split('_'));
         UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(info));
     }
 
@@ -109,17 +110,19 @@ public class Loot: MonoBehaviour{
         UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData(info));
     }
 
-    public static void SetLootData(Dictionary<int, bool> lootDict){
-        if(Loot.lootDict == null){
-            Loot.lootDict = new Dictionary<int, bool>();
+    [Serializable]
+    public struct LootRuntimeSaveData{
+        public Dictionary<int, bool> lootDict;
+        public LootRuntimeSaveData(Dictionary<int, bool> lootDict){
+            this.lootDict = lootDict;
         }
-        else{
-            Loot.lootDict.Clear();
-        }
+    }
 
-        foreach(KeyValuePair<int, bool> item in lootDict){
-            Loot.lootDict.Add(item.Key, item.Value);
-        }
+    public static LootRuntimeSaveData GetLootRuntimeSaveData(){
+        return new LootRuntimeSaveData(Loot.lootDict);
+    }
+    public static void SetLootRuntimeSaveData(LootRuntimeSaveData lootRuntimeSaveData){
+        Loot.lootDict = lootRuntimeSaveData.lootDict;
     }
 
 

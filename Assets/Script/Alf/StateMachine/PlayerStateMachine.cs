@@ -21,7 +21,7 @@ public class PlayerStateMachine
     public void InitializeState(PlayerState startingState)
     {
         currentState = startingState;
-        startingState.Enter();
+        startingState?.Enter();
     }
 
     public void LogicUpdate()

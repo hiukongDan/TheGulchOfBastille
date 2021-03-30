@@ -12,7 +12,7 @@ public class UIPlayState : UIState
     public override void Enter()
     {
         base.Enter();
-
+        uiHandler.GM.player.UpdateUI();
     }
 
     public override void Exit()

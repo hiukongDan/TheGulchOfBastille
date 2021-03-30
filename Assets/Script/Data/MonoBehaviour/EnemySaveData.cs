@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 //[CreateAssetMenu(fileName ="newEnemySaveData", menuName ="Data/EnemyData/SaveData")]
 public class EnemySaveData : MonoBehaviour
@@ -27,16 +28,16 @@ public class EnemySaveData : MonoBehaviour
 
     public void Save(bool isAlive)
     {
-        int hashCode = GetHashCode();
+        int id = GetInstanceID();
 
         var dict = getDict();
-        if (dict.ContainsKey(hashCode))
+        if (dict.ContainsKey(id))
         {
-            dict[hashCode] = isAlive;
+            dict[id] = isAlive;
         }
         else
         {
-            dict.Add(hashCode, isAlive);
+            dict.Add(id, isAlive);
         }
 
         // Debug.Log(dict[hashCode]);
@@ -44,13 +45,13 @@ public class EnemySaveData : MonoBehaviour
 
     public bool IsAlive()
     {
-        int hashCode = GetHashCode();
+        int id = GetInstanceID();
         bool ret = defaultAlive;
         var dict = getDict();
-        if (dict.ContainsKey(hashCode))
+        if (dict.ContainsKey(id))
         {
             //Debug.Log("contains key" + hashCode);
-            ret = dict[hashCode];
+            ret = dict[id];
         }
         return ret;
     }
@@ -68,21 +69,24 @@ public class EnemySaveData : MonoBehaviour
         }
     }
 
-    public static void SetEnemyData(Dictionary<int, bool> enemyAliveRevivable, Dictionary<int, bool> enemyAliveUnrevivable){
-        if(EnemySaveData.EnemyAliveRevivable == null){
-            EnemySaveData.EnemyAliveRevivable = new Dictionary<int, bool>();
-        }
-        if(EnemySaveData.EnemyAliveUnrevivable == null){
-            EnemySaveData.EnemyAliveUnrevivable = new Dictionary<int, bool>();
-        }
-        Initialize();
+    [Serializable]
+    public struct EnemyRuntimeSaveData{
+        public Dictionary<int, bool> enemyAliveRevivable;
+        public Dictionary<int, bool> enemyAliveUnrevivable;
 
-        foreach(KeyValuePair<int, bool> item in enemyAliveRevivable){
-            EnemySaveData.EnemyAliveRevivable.Add(item.Key, item.Value);
+        public EnemyRuntimeSaveData(Dictionary<int, bool> enemyAliveRevivable, Dictionary<int, bool> enemyAliveUnrevivable){
+            this.enemyAliveRevivable = enemyAliveRevivable;
+            this.enemyAliveUnrevivable = enemyAliveUnrevivable;
         }
-        foreach(KeyValuePair<int, bool> item in enemyAliveUnrevivable){
-            EnemySaveData.EnemyAliveUnrevivable.Add(item.Key, item.Value);
-        }
+    };
+
+    public static EnemyRuntimeSaveData GetEnemyRuntimeSaveData(){
+        return new EnemyRuntimeSaveData(EnemyAliveRevivable, EnemyAliveUnrevivable);
+    }
+
+    public static void SetEnemyRuntimeSaveData(EnemyRuntimeSaveData enemyRuntimeSaveData){
+        EnemyAliveRevivable = enemyRuntimeSaveData.enemyAliveRevivable;
+        EnemyAliveUnrevivable = enemyRuntimeSaveData.enemyAliveUnrevivable;
     }
 
 }

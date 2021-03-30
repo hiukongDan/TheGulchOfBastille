@@ -27,6 +27,8 @@ public class PlayerCinemaMovement : MonoBehaviour
     public void TransitToScene(SubAreaHandler subAreaHandler) => StartCoroutine(transitToScene(subAreaHandler));
     public void TransitToBelial() => StartCoroutine(transitToBelial());
 
+    public void UseBelialsMagicCompass() => StartCoroutine(useBelialsMagicCompass());
+
     IEnumerator lightLittleSun(LittleSunHandler littleSunHandler)
     {
         player.playerRuntimeData.lastLittleSunID = littleSunHandler.littleSunData.LittleSunID;
@@ -127,6 +129,11 @@ public class PlayerCinemaMovement : MonoBehaviour
         player.GetNPCEventHandler().OnNPCInteraction();
         player.stateMachine.SwitchState(player.converseState);
         yield return new WaitForEndOfFrame();
+    }
+
+    IEnumerator useBelialsMagicCompass(){
+        gm.ReloadScene();
+        yield return null;
     }
     #endregion
 }

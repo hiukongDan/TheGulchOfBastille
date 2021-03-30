@@ -316,7 +316,7 @@ public class Player : MonoBehaviour
             damageImmuneTimer = Time.time;
 
             playerRuntimeData.currentHitPoints -= calculateEnemyDamage(combatData.damage);
-            UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+            UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, GetCalculatedCurrentMaxHitpoint());
 
             int dir = (combatData.position.x - transform.position.x > 0 ? -1 : 1);
             workspace.Set(dir * combatData.knockbackDir.x * combatData.knockbackImpulse, combatData.knockbackDir.y * combatData.knockbackImpulse);
@@ -353,6 +353,13 @@ public class Player : MonoBehaviour
 
             Gulch.GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(gameObject, Gulch.SpriteEffectType.Blink, playerData.GD_damageImmuneTime));
         }
+    }
+
+    public float GetCalculatedCurrentMaxHitpoint(){
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Amber_Ring)){
+            return playerData.PD_maxHitPoint + ItemData.WearableItemBuffData.Amber_Ring_additionalHp;
+        }
+        return playerData.PD_maxHitPoint;
     }
 
     public void ValidAttack()
@@ -405,7 +412,11 @@ public class Player : MonoBehaviour
 
     public void InitializeRuntimeData(){
         transform.position = playerRuntimeData.lastPosition;
-        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+        UpdateUI();
+    }
+
+    public void UpdateUI(){
+        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, GetCalculatedCurrentMaxHitpoint());
         UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
     }
@@ -431,10 +442,10 @@ public class Player : MonoBehaviour
         isDead = false;
         isStunned = false;
 
-        playerRuntimeData.currentHitPoints = playerData.PD_maxHitPoint;
+        playerRuntimeData.currentHitPoints = GetCalculatedCurrentMaxHitpoint();
         playerRuntimeData.currentStunPoints = playerData.PD_maxStunPoint;
 
-        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, GetCalculatedCurrentMaxHitpoint());
         UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
 

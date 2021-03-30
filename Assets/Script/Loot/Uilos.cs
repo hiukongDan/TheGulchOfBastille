@@ -7,7 +7,6 @@ public class Uilos : MonoBehaviour
     private bool isChanged = false;
     public int perUilosWorth = 1;
     public float uilosFalldownGravityScale = 2.5f;
-    public Vector2 forceTowardsPlayer = new Vector2(1,0.5f);
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,8 +30,9 @@ public class Uilos : MonoBehaviour
             if(player.playerRuntimeData.playerSlot.IsWearableEquiped(player.playerRuntimeData.playerStock, ItemData.Wearable.Fools_Gold_Pendant)){
                 rb.gravityScale = 0;
                 Vector2 direction = (player.transform.position - transform.position).normalized;
-                rb.AddForce(direction * new Vector2(Random.Range(forceTowardsPlayer.x/2, forceTowardsPlayer.x), 
-                    Random.Range(forceTowardsPlayer.y/2, forceTowardsPlayer.y)), ForceMode2D.Force);
+                Vector2 force = ItemData.WearableItemBuffData.Drawf_Ring_forceTowardsPlayer;
+                rb.AddForce(direction * new Vector2(Random.Range(force.x/2, force.x), 
+                    Random.Range(force.y/2, force.y)), ForceMode2D.Force);
             }
         }
     }
@@ -48,7 +48,7 @@ public class Uilos : MonoBehaviour
             //collision.gameObject.SendMessage("Uilos", 1);
             Player player = GameObject.Find("Player").GetComponent<Player>();
             if(player.playerRuntimeData.playerSlot.IsWearableEquiped(player.playerRuntimeData.playerStock, ItemData.Wearable.Drawf_Ring)){
-                perUilosWorth = 2;
+                perUilosWorth = (int)ItemData.WearableItemBuffData.Fools_Gold_Pendant_uilosWorth;
             }
             other.gameObject.GetComponent<Player>().OnAquireUilos(perUilosWorth);
             Destroy(gameObject);

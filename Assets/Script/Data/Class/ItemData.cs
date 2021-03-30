@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine;
 
 public class ItemData
 {
@@ -192,4 +193,11 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
             this.DP = dp;
         }
     };
+
+    public class WearableItemBuffData{
+        public static Vector2 Drawf_Ring_forceTowardsPlayer = new Vector2(1f, 0.5f);
+        public static float Goye_Ring_rollSpeedMultiplier = 1.5f;
+        public static float Fools_Gold_Pendant_uilosWorth = 2f;
+        public static float Amber_Ring_additionalHp = 10f;
+    }
 }
