@@ -11,7 +11,6 @@ public class LeverDoor : LeverResult
     protected override void OnEnable(){
         base.OnEnable();
     }
-
     public override void OnInitLeverResult(bool isOpen)
     {
         base.OnInitLeverResult(isOpen);

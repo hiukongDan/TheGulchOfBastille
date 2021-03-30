@@ -40,10 +40,6 @@ public class UIHandler : MonoBehaviour
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    void OnEnable() {
-        
-    }
-
     void Start()
     {
         uiFSM.InitStateMachine(uiMainState);

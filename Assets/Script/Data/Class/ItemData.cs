@@ -159,16 +159,16 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
     };
 
     public static PlayerLevelUpData[] playerLevelUpData = {
-        new PlayerLevelUpData(1,60,5,20),
-        new PlayerLevelUpData(2,70,7,25),
-        new PlayerLevelUpData(3,80,9,30),
-        new PlayerLevelUpData(4,90,11,35),
-        new PlayerLevelUpData(5,100,13,40),
-        new PlayerLevelUpData(6,105, 15, 43),
-        new PlayerLevelUpData(7, 110, 17, 46),
-        new PlayerLevelUpData(8,115, 18, 48),
-        new PlayerLevelUpData(9, 120, 19, 49),
-        new PlayerLevelUpData(10, 125, 20, 50),
+        new PlayerLevelUpData(1,60,5,7),
+        new PlayerLevelUpData(2,70,7,8),
+        new PlayerLevelUpData(3,80,9,9),
+        new PlayerLevelUpData(4,90,11,10),
+        new PlayerLevelUpData(5,100,13,11),
+        new PlayerLevelUpData(6,105, 15, 12),
+        new PlayerLevelUpData(7, 110, 17, 13),
+        new PlayerLevelUpData(8,115, 18, 14),
+        new PlayerLevelUpData(9, 120, 19, 15),
+        new PlayerLevelUpData(10, 125, 20, 16),
     };
 
     public struct PlayerLevelUpData{
