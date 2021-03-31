@@ -137,6 +137,11 @@ public class Player : MonoBehaviour
         else{
             stateMachine.LogicUpdate();
         }
+
+        if(playerRuntimeData.currentHitPoints == 0){
+            isDead = true;
+            stateMachine.SwitchState(deadState);
+        }
     }
 
     void FixedUpdate()
