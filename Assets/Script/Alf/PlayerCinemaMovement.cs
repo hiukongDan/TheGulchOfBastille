@@ -92,11 +92,16 @@ public class PlayerCinemaMovement : MonoBehaviour
         // move player to new position
         yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY/2);
 
+
+        door?.Close();
+        yield return new WaitForEndOfFrame();
+        gm.LoadSceneCode(subAreaHandler.transitionSceneCode);
+
+        player.SetVelocityY(0);
+
         if(subAreaHandler.targetSceneInitPos != null){
             player.transform.position = subAreaHandler.targetSceneInitPos.position;
         }
-        door?.Close();
-        gm.LoadSceneCode(subAreaHandler.transitionSceneCode);
         Camera.main.GetComponent<BasicFollower>().ClampCamera(player.transform.position);
 
         player.ResetGrounded();
