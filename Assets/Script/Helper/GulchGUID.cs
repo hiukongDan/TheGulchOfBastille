@@ -17,7 +17,7 @@ public class GulchGUID : MonoBehaviour
         get{
             if(id == ""){
                 id = System.Guid.NewGuid().ToString();
-                //PrefabUtility.RecordPrefabInstancePropertyModifications(this);
+                PrefabUtility.RecordPrefabInstancePropertyModifications(this);
             }
             return id;
         }
@@ -26,7 +26,7 @@ public class GulchGUID : MonoBehaviour
     void Awake(){
         if(id == ""){
             id = System.Guid.NewGuid().ToString();
-            //PrefabUtility.RecordPrefabInstancePropertyModifications(this);
+            PrefabUtility.RecordPrefabInstancePropertyModifications(this);
         }
     }
 }
