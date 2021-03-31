@@ -16,6 +16,12 @@ public class UIMainState : UIState
     public override void Enter()
     {
         base.Enter();
+
+        AudioSource audioSource = parentNode.transform.parent.Find("MainMenu BGM").GetComponent<AudioSource>();
+        if(!audioSource.isPlaying){
+            audioSource.Play();
+        }
+
         if(!uiHandler.GM.gameSaver.HasValidSaving()){
             buttonGroup.DisableButton((int)Selection.Load);
             // Debug.Log("disable");
