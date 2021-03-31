@@ -52,7 +52,6 @@ public override void LogicUpdate()
             {
                 player.GetNPCEventHandler().OnNPCInteraction();
                 stateMachine.SwitchState(player.converseState);
-                // Debug.Log("called");
             }
             else if(player.GetLittleSunHandler() != null)
             {

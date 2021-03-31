@@ -199,5 +199,13 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
         public static float Goye_Ring_rollSpeedMultiplier = 1.5f;
         public static float Fools_Gold_Pendant_uilosWorth = 2f;
         public static float Amber_Ring_additionalHp = 10f;
+        public static float Magic_Pendant_attackMultiplier = 1.05f;
+        public static float Coldblue_Ring_attackReductionMultiplier = 0.9f;
+        public static float Sunstone_Ring_decayReducedMultiplier = 0.95f;
+        public static float Sunstone_Ring_hitpointIncreaseMultiplier = 1.05f;
+        public static float Moonstone_Ring_decayIncreasedMultiplier = 1.05f;
+        public  static float Moonstone_Ring_hitpointReducedMultiplier=  0.95f;
+        public static float Sun_Protection_Stone_decayPointNotIncreasedRate = 0.3f;
+
     }
 }

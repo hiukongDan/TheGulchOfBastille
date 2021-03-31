@@ -110,7 +110,12 @@ public override void Exit()
     }
 
     //public override bool CheckEndAttack() => !isMeleeAttack;
-    public override void ResetTimer() => attackCooldownTimer = data.MAS_attackCooldownTimer;
+    public override void ResetTimer(){
+        attackCooldownTimer = data.MAS_attackCooldownTimer;
+        if(player.playerRuntimeData.playerSlot.IsWearableEquiped(player.playerRuntimeData.playerStock, ItemData.Wearable.Coldblue_Ring)){
+            attackCooldownTimer *= ItemData.WearableItemBuffData.Coldblue_Ring_attackReductionMultiplier;
+        }
+    }
     public override bool CanAction() => attackCooldownTimer < 0;
 
     public override void UpdateTimer()

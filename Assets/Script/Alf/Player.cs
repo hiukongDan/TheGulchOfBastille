@@ -366,9 +366,9 @@ public class Player : MonoBehaviour
 
     public float GetCalculatedCurrentMaxHitpoint(){
         if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Amber_Ring)){
-            return playerData.PD_maxHitPoint + ItemData.WearableItemBuffData.Amber_Ring_additionalHp;
+            return CalculatePlayerMaxHitPoint() + ItemData.WearableItemBuffData.Amber_Ring_additionalHp;
         }
-        return playerData.PD_maxHitPoint;
+        return CalculatePlayerMaxHitPoint();
     }
 
     public void ValidAttack()
@@ -426,7 +426,7 @@ public class Player : MonoBehaviour
 
     public void UpdateUI(){
         UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, GetCalculatedCurrentMaxHitpoint());
-        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, CalculatePlayerMaxDecayPoint());
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
     }
 
@@ -455,7 +455,7 @@ public class Player : MonoBehaviour
         playerRuntimeData.currentStunPoints = playerData.PD_maxStunPoint;
 
         UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, GetCalculatedCurrentMaxHitpoint());
-        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, CalculatePlayerMaxDecayPoint());
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
 
         ResetGrounded();
@@ -586,12 +586,39 @@ public class Player : MonoBehaviour
     public int CalculatePlayerDamage(){
         ItemData.WeaponRuntimeData weaponData = playerRuntimeData.playerStock.weaponStock[playerRuntimeData.playerSlot.weaponIndex];
         int weaponDamage = ItemData.weaponData[(int)weaponData.weapon].Attack[weaponData.level];
-        int res = (int)((playerData.MAS_damageAmount + weaponDamage) * (1 + playerRuntimeData.currentDecayPoints / playerData.PD_maxDecayPoint));
+        int res = (int)((playerData.MAS_damageAmount + weaponDamage) * (1 + playerRuntimeData.currentDecayPoints / CalculatePlayerMaxDecayPoint()));
+
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Magic_Pendant)){
+            res = (int)(res * ItemData.WearableItemBuffData.Magic_Pendant_attackMultiplier);
+        }
+        return res;
+    }
+
+    public float CalculatePlayerMaxHitPoint(){
+        float res = playerData.PD_maxHitPoint;
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Moonstone_Ring)){
+            res *= ItemData.WearableItemBuffData.Moonstone_Ring_hitpointReducedMultiplier;
+        }
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Sunstone_Ring)){
+            res *= ItemData.WearableItemBuffData.Sunstone_Ring_hitpointIncreaseMultiplier;
+        }
+
+        return res;
+    }
+
+    public float CalculatePlayerMaxDecayPoint(){
+        float res = playerData.PD_maxDecayPoint;
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Sunstone_Ring)){
+            res *= ItemData.WearableItemBuffData.Sunstone_Ring_decayReducedMultiplier;
+        }
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Moonstone_Ring)){
+            res *= ItemData.WearableItemBuffData.Moonstone_Ring_decayIncreasedMultiplier;
+        }
         return res;
     }
 
     private int calculateEnemyDamage(float rawDamage){
-        int res = (int)(rawDamage * (1 + playerRuntimeData.currentDecayPoints / playerData.PD_maxDecayPoint));
+        int res = (int)(rawDamage * (1 + playerRuntimeData.currentDecayPoints / CalculatePlayerMaxDecayPoint()));
         return res;
     }
 
