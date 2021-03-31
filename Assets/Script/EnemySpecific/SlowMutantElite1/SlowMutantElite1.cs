@@ -54,6 +54,18 @@ public class SlowMutantElite1 : Entity
         InitSnakeHead();
     }
 
+    public override void InitEntity()
+    {
+        base.InitEntity();
+        isAwake = false;
+        InitSnakeHead();
+        var ota = ((SME1_ObjectToAlive)objectToAlive);
+        ota.ResetHeadPosition();
+        stateMachine?.Initialize(stoneState);
+        currentStage = 0;
+        Reset();
+    }
+
     private void InitSnakeHead()
     {
         SnakeHeads = new List<SME1_SnakeHead>();
@@ -66,12 +78,18 @@ public class SlowMutantElite1 : Entity
         SnakeHeads[1].index = 1;
         SnakeHeads[2].index = 2;
         SnakeHeads[3].index = 3;
+
+        foreach(SME1_SnakeHead snakeHead in SnakeHeads){
+            snakeHead.Hide();
+            snakeHead.GetComponent<SpriteRenderer>().sprite = null;
+        }
     }
 
     protected override void Start()
     {
         base.Start();
         SetInitialFacingDirection(-1);
+        Reset();
 
         stoneState = new SME1_StoneState(stateMachine, this, "stone", this);
         recoverState = new SME1_RecoverState(stateMachine, this, "recover", this);
@@ -126,6 +144,7 @@ public class SlowMutantElite1 : Entity
             {
                 Flip();
             }
+            OnDead();
             stateMachine.SwitchState(deadState);
             return;
         }

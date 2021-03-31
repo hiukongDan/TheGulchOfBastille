@@ -35,8 +35,7 @@ public class SME1_WalkState : WalkState
         {
             stateMachine.SwitchState(enemy.flipState);
         }
-
-        if (detectPlayerInMaxAgro && enemy.detectPlayerState.CanAction())
+        else if(detectPlayerInMaxAgro && enemy.detectPlayerState.CanAction())
         {
             //enemy.detectPlayerState.SetPlayerDetectedTrans(detectPlayerTrans);
             stateMachine.SwitchState(enemy.detectPlayerState);

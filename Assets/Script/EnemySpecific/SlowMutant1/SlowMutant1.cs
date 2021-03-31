@@ -57,7 +57,7 @@ public class SlowMutant1 : Entity
         else if (isDead)
         {
             entityEventHandler?.OnDead();
-            base.OnDead();
+            OnDead();
             stateMachine.SwitchState(deadState);
         }
         else if (isStunned || combatData.isParryDamage)

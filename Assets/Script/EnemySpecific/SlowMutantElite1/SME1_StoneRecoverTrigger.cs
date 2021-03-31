@@ -6,13 +6,12 @@ public class SME1_StoneRecoverTrigger : MonoBehaviour
     private bool isAwake;
     void Start()
     {
-        slowMutantElite = transform.parent.parent.GetComponent<SlowMutantElite1>();
-        isAwake = slowMutantElite.isAwake;
+        
 
-        if (isAwake)
-        {
-            Destroy(gameObject);
-        }
+        // if (isAwake)
+        // {
+        //     Destroy(gameObject);
+        // }
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -29,6 +28,9 @@ public class SME1_StoneRecoverTrigger : MonoBehaviour
 
     void OnEnable() {
         Gulch.GameEventListener.Instance.OnPlayerDeadHandler += OnPlayerDead;
+
+        slowMutantElite = transform.parent.parent.GetComponent<SlowMutantElite1>();
+        isAwake = slowMutantElite.isAwake;
     }
 
     void OnDisable() {
@@ -37,5 +39,6 @@ public class SME1_StoneRecoverTrigger : MonoBehaviour
 
     protected void OnPlayerDead(){
         GetComponent<Collider2D>().enabled = true;
+        
     }
 }
