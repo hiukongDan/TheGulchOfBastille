@@ -8,6 +8,8 @@ namespace Gulch
         public float BlinkDuration = 0.1f;
         public Material MatBlink;
         public Material MatBinkDark;
+        public Material MatNeon;
+        public Material MatNormal;
 
         void OnEnable()
         {

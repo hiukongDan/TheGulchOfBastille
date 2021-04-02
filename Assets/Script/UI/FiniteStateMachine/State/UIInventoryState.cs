@@ -30,7 +30,6 @@ public class UIInventoryState : UIState
         Transform description = parentNode.transform.Find("Description");
         title = description.Find("Title").GetComponent<PFontText>();
         content = description.Find("Content").GetComponent<PFontText>();
-        
     }
 
     public override void Enter()
@@ -58,7 +57,6 @@ public class UIInventoryState : UIState
         }
         
         OnClickView(selectedViewIndex, true);
-
         normMoveInputTimer = -1f;
     }
 
@@ -98,8 +96,8 @@ public class UIInventoryState : UIState
                 normMoveInputTimer = normMoveInputTimerMax;
             }
         }
-        
     }
+
     public override void OnInteraction()
     {
         OnClickView(selectedViewIndex);
@@ -208,6 +206,10 @@ public class UIInventoryState : UIState
     protected void OnClickView(int index, bool isInit = false){
         if(!isInit && selectedViewIndex == index){
             Debug.Log("click the same item");
+            if(currentTab == TabSelection.Consumable){
+                Debug.Log("Use consumable item");
+                UseCurrentSelectedConsumable();
+            }
         }
         if(selectedViewIndex != index){
             selectedViewIndex = index;
@@ -233,6 +235,10 @@ public class UIInventoryState : UIState
             default:
                 break;
         }
+    }
+
+    protected void UseCurrentSelectedConsumable(){
+
     }
 
     protected void DisplayWeapon(){

@@ -34,6 +34,11 @@ public class UIFiniteStateMachine
         newState.Enter();
     }
 
+    public void PushCascadeState(UIState newState){
+        uiStateStack.Push(newState);
+        newState.Enter();
+    }
+
     public UIState PopState()
     {
         if (uiStateStack.Count == 0)

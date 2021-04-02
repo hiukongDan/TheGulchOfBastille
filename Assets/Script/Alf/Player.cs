@@ -569,6 +569,60 @@ public class Player : MonoBehaviour
         Color color = new Color(value, value, value);
         GetComponent<SpriteRenderer>().color = color;
     }
+
+    public void OnDpIncrease(float amount){
+        playerRuntimeData.currentDecayPoints = Mathf.Clamp(
+                playerRuntimeData.currentDecayPoints + amount,
+                0,
+                playerData.PD_maxDecayPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+    }
+
+    public void OnHpIncrease(float amount){
+        playerRuntimeData.currentHitPoints = Mathf.Clamp(
+                    playerRuntimeData.currentHitPoints + amount,
+                    0,
+                    playerData.PD_maxHitPoint);
+        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+    }
+
+
+    /// <Summary>
+    /// everything about using items and the consequences go here.
+    /// </Summary>
+    public void OnUseItem(ItemData.Consumable item, int amount=1){
+            switch(item){
+                case ItemData.Consumable.Uilos_Candy:
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Candy_hpIncreasedRate*playerData.PD_maxHitPoint);
+                break;
+                case ItemData.Consumable.Uilos_Potion:
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Potion_hpIncreasedRate*playerData.PD_maxHitPoint);
+                break;
+                case ItemData.Consumable.Uilos_Cake:
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Potion_hpIncreasedRate*playerData.PD_maxHitPoint);
+                break;
+                case ItemData.Consumable.Uilos_Pedal:
+                OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Pedal_uilosAmount);
+                break;
+                case ItemData.Consumable.Uilos_Flower:
+                OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Flower_uilosAmount);
+                break;
+                case ItemData.Consumable.Uilos_Stick:
+                OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Stick_uilosAmount);
+                break;
+                case ItemData.Consumable.Uilos_Bunch:
+                OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Bunch_uilosAmount);
+                break;
+                case ItemData.Consumable.Holy_Sun_Water:
+                OnDpIncrease(-amount * ItemData.ConsumableItemData.Holy_Sun_Water_decayDecreasedRateFromMax * playerData.PD_maxDecayPoint);
+                break;
+                case ItemData.Consumable.Neon_Potion:
+                GM.playerCinemaMovement.UseNeonPotion();
+                break;
+                default:
+                break;
+            }
+        }
     
     #endregion
 

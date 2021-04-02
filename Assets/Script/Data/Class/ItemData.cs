@@ -208,4 +208,17 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
         public static float Sun_Protection_Stone_decayPointNotIncreasedRate = 0.3f;
 
     }
+
+    public class ConsumableItemData{
+        public static float Uilos_Candy_hpIncreasedRate = 0.2f;
+        public static float Uilos_Potion_hpIncreasedRate = 0.5f;
+        public static float Uilos_Cake_hpIncreasedRate = 1f;
+        public static float Uilos_Pedal_uilosAmount = 50f;
+        public static float Uilos_Flower_uilosAmount = 200f;
+        public static float Uilos_Stick_uilosAmount = 500f;
+        public static float Uilos_Bunch_uilosAmount = 1000f;
+        public static float Holy_Sun_Water_decayDecreasedRateFromMax = .2f;
+        public static float Neon_Potion_durationSeconds = 60f;
+        public static float Neon_Potion_velocityMultiplier = 1.2f;
+    }
 }

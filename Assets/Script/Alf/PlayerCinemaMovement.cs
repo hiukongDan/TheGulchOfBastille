@@ -26,6 +26,7 @@ public class PlayerCinemaMovement : MonoBehaviour
     public void LightLittleSun(LittleSunHandler littleSunHandler) => StartCoroutine(lightLittleSun(littleSunHandler));
     public void TransitToScene(SubAreaHandler subAreaHandler) => StartCoroutine(transitToScene(subAreaHandler));
     public void TransitToBelial() => StartCoroutine(transitToBelial());
+    public Coroutine UseNeonPotion() => StartCoroutine(useNeonPotion());
 
     public void UseBelialsMagicCompass() => StartCoroutine(useBelialsMagicCompass());
 
@@ -139,6 +140,12 @@ public class PlayerCinemaMovement : MonoBehaviour
     IEnumerator useBelialsMagicCompass(){
         gm.ReloadScene();
         yield return null;
+    }
+
+    IEnumerator useNeonPotion(){
+        // player.Sr.material = ;
+        yield return new WaitForSeconds(ItemData.ConsumableItemData.Neon_Potion_durationSeconds);
+        // player.Sr.material = ;
     }
     #endregion
 }
