@@ -31,9 +31,19 @@ namespace Gulch
                 case SpriteEffectType.BlinkDark:
                     StartCoroutine(DoBlink(data.go, MatBinkDark, data.spriteEffectDuration));
                     break;
+                case SpriteEffectType.NeonColor:
+                    StartCoroutine(DoBlink(data.go, MatNeon, data.spriteEffectDuration));
+                    break;
                 default:
                     break;
             }
+        }
+
+        IEnumerator SwapMat(GameObject go, Material swapMat, float duration){
+            var sp = go.GetComponent<SpriteRenderer>();
+            sp.material = swapMat;
+            yield return new WaitForSeconds(duration);
+            sp.material = MatNormal;
         }
 
         IEnumerator DoBlink(GameObject go, Material blinkMat, float duration)
@@ -49,7 +59,6 @@ namespace Gulch
                 duration -= BlinkDuration;
             }
             
-
             sp.material = matOld;
         }
 
