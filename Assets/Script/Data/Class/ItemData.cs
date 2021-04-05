@@ -122,7 +122,7 @@ public static Dictionary<int, string> ConsumableDescription = new Dictionary<int
     {(int)Consumable.Uilos_Flower, "Gain large amount\n of uilos."},
     {(int)Consumable.Uilos_Stick, "Gain great amout\n of uilos."},
     {(int)Consumable.Uilos_Bunch, "Gain huge amount\n of uilos"},
-    {(int)Consumable.Neon_Potion, "Increase speed but\n alter Alf color randomly."},
+    {(int)Consumable.Neon_Potion, "Randomize speed and\n alter color of Alf."},
 };
 
 public static Dictionary<int, string> KeyItemDescription = new Dictionary<int, string>(){

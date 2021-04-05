@@ -22,9 +22,11 @@ namespace Gulch
         }
 
         public delegate void TakeDamageHandler(TakeDamageData data);
+        public delegate void SpriteEffectHandler(TakeDamageData data);
 
         public event TakeDamageHandler OnTakeDamageHandler;
         public event Action OnPlayerDeadHandler;
+        public event SpriteEffectHandler OnSpriteEffectHandler;
 
         public void OnTakeDamage(TakeDamageData data)
         {
@@ -33,6 +35,12 @@ namespace Gulch
 
         public void OnPlayerDead(){
             OnPlayerDeadHandler?.Invoke();
+        }
+
+
+        // TODO: chang ethis datatype to a dedicated one
+        public void OnSpriteEffect(TakeDamageData data){
+            OnSpriteEffectHandler?.Invoke(data);
         }
 
     }

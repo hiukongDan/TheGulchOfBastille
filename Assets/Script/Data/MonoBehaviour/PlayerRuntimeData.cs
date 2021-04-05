@@ -5,6 +5,7 @@ using System;
 
 public class PlayerRuntimeData
 {
+    public static int _ConsumableMaxStack = 99;
     public float currentHitPoints = 0;
     public float currentStunPoints = 0;
     public float currentDecayPoints = 0;
@@ -15,6 +16,7 @@ public class PlayerRuntimeData
     public bool isLoaded = false;
     public PlayerStock playerStock;
     public PlayerSlot playerSlot;
+    
 
     [Serializable]
     public struct PlayerSlot{
@@ -68,13 +70,18 @@ public class PlayerRuntimeData
 
         public void Pick(ItemData.ConsumableRuntimeData consumable){
             int itemCount = this.consumableStock.Count;
-            for(int i = 0; i < itemCount; ++i){
-                if(this.consumableStock[i].consumable == consumable.consumable && this.consumableStock[i].count + consumable.count <= 99){
-                    this.consumableStock[i] = new ItemData.ConsumableRuntimeData(consumable.consumable, this.consumableStock[i].count + consumable.count);
-                    return;
+            int itemToAdd = consumable.count;
+            for(int i = 0; i < itemCount && itemToAdd <= 0; ++i){
+                if(this.consumableStock[i].consumable == consumable.consumable){
+                    // this.consumableStock[i] = new ItemData.ConsumableRuntimeData(consumable.consumable, this.consumableStock[i].count + consumable.count);
+                    int tmp = Mathf.Min(_ConsumableMaxStack - this.consumableStock[i].count, itemToAdd);
+                    this.consumableStock[i] = new ItemData.ConsumableRuntimeData(consumableStock[i].consumable, consumableStock[i].count + tmp);
+                    itemToAdd -= tmp;
                 }
             }
-            consumableStock.Add(consumable);
+            if(itemToAdd > 0){
+                consumableStock.Add(new ItemData.ConsumableRuntimeData(consumable.consumable, itemToAdd));
+            }
         }
 
         public void Pick(ItemData.KeyItemRuntimeData keyItem){
@@ -118,7 +125,7 @@ public class PlayerRuntimeData
         }
 
         public void UseConsumable(int index, int amount){
-            if(index <= 0 || index >= consumableStock.Count || consumableStock[index].count < amount){
+            if(index < 0 || index >= consumableStock.Count || consumableStock[index].count < amount){
                 return;
             }
             
@@ -158,29 +165,29 @@ public class PlayerRuntimeData
         playerStock = new PlayerStock(new List<ItemData.WeaponRuntimeData>(), new List<ItemData.WearableRuntimeData>(), 
             new List<ItemData.ConsumableRuntimeData>(), new List<ItemData.KeyItemRuntimeData>());
 
-        for(int i = 0; i < (int)ItemData.Weapon.Count; ++i){
-            playerStock.Pick(new ItemData.WeaponRuntimeData((ItemData.Weapon)i, i%3));
-        }
+        // for(int i = 0; i < (int)ItemData.Weapon.Count; ++i){
+        //     playerStock.Pick(new ItemData.WeaponRuntimeData((ItemData.Weapon)i, i%3));
+        // }
 
-        for(int i = 0; i < (int)ItemData.Wearable.Count; ++i){
-            playerStock.Pick(new ItemData.WearableRuntimeData((ItemData.Wearable)i));
-        }
+        // for(int i = 0; i < (int)ItemData.Wearable.Count; ++i){
+        //     playerStock.Pick(new ItemData.WearableRuntimeData((ItemData.Wearable)i));
+        // }
 
-        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
-            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
-        }
+        // for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+        //     playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
+        // }
 
-        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
-            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
-        }
+        // for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+        //     playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
+        // }
 
-        for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
-            playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
-        }
+        // for(int i = 0; i < (int)ItemData.Consumable.Count; ++i){
+        //     playerStock.Pick(new ItemData.ConsumableRuntimeData((ItemData.Consumable)i, i*10%99 + 1));
+        // }
 
-        for(int i = 0; i < (int)ItemData.KeyItem.Count; ++i){
-            playerStock.Pick(new ItemData.KeyItemRuntimeData((ItemData.KeyItem)i));
-        }
+        // for(int i = 0; i < (int)ItemData.KeyItem.Count; ++i){
+        //     playerStock.Pick(new ItemData.KeyItemRuntimeData((ItemData.KeyItem)i));
+        // }
 
         // use default weapon and none wearables
         playerStock.Pick(new ItemData.WeaponRuntimeData(ItemData.Weapon.Iron_Sword, 0));

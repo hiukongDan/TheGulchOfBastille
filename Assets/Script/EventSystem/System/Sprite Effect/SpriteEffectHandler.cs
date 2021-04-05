@@ -14,8 +14,13 @@ namespace Gulch
         void OnEnable()
         {
             GameEventListener.Instance.OnTakeDamageHandler += this.OnTakeDamageHandler;
+            GameEventListener.Instance.OnSpriteEffectHandler += this.OnTakeDamageHandler;
         }
-
+        void OnDisable()
+        {
+            GameEventListener.Instance.OnTakeDamageHandler -= this.OnTakeDamageHandler;
+            GameEventListener.Instance.OnSpriteEffectHandler -= this.OnTakeDamageHandler;
+        }
         void OnTakeDamageHandler(TakeDamageData data)
         {
             if(data.go == null)
@@ -32,7 +37,7 @@ namespace Gulch
                     StartCoroutine(DoBlink(data.go, MatBinkDark, data.spriteEffectDuration));
                     break;
                 case SpriteEffectType.NeonColor:
-                    StartCoroutine(DoBlink(data.go, MatNeon, data.spriteEffectDuration));
+                    StartCoroutine(SwapMat(data.go, MatNeon, data.spriteEffectDuration));
                     break;
                 default:
                     break;
@@ -62,9 +67,6 @@ namespace Gulch
             sp.material = matOld;
         }
 
-        void OnDisable()
-        {
-            GameEventListener.Instance.OnTakeDamageHandler -= this.OnTakeDamageHandler;
-        }
+
     }
 }

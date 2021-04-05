@@ -144,7 +144,13 @@ public class PlayerCinemaMovement : MonoBehaviour
 
     IEnumerator useNeonPotion(){
         // player.Sr.material = ;
+        Gulch.GameEventListener.Instance.OnSpriteEffect(new Gulch.TakeDamageData(
+            player.gameObject, Gulch.SpriteEffectType.NeonColor, ItemData.ConsumableItemData.Neon_Potion_durationSeconds));
+        // set player speed to use neonPotion speed
+        player.walkState.SetNeonPotion(true);
         yield return new WaitForSeconds(ItemData.ConsumableItemData.Neon_Potion_durationSeconds);
+        player.walkState.SetNeonPotion(false);
+        // set player speed to normal
         // player.Sr.material = ;
     }
     #endregion

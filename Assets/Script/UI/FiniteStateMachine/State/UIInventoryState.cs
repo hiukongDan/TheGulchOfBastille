@@ -209,6 +209,7 @@ public class UIInventoryState : UIState
             if(currentTab == TabSelection.Consumable){
                 Debug.Log("Use consumable item");
                 UseCurrentSelectedConsumable();
+                DisplayConsumable();
             }
         }
         if(selectedViewIndex != index){
@@ -238,7 +239,9 @@ public class UIInventoryState : UIState
     }
 
     protected void UseCurrentSelectedConsumable(){
-
+        int index = selectedViewIndex + currentViewPage * viewGroup.views.Count;
+        int count = 1;
+        uiHandler.GM.player.playerRuntimeData.playerStock.UseConsumable(index, count);
     }
 
     protected void DisplayWeapon(){

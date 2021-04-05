@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerWalkState : PlayerGroundState
 {
-
+    protected bool isNeonPotion = false;
     public PlayerWalkState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
 
@@ -48,6 +48,9 @@ public class PlayerWalkState : PlayerGroundState
             else if (isGrounded && normMovementInput.x != 0)
             {
                 workspace.Set(normMovementInput.x * data.WS_walkSpeed, 0f);
+                if(isNeonPotion){
+                    workspace *= ItemData.ConsumableItemData.Neon_Potion_velocityMultiplier;
+                }
                 player.SetVelocity(workspace);
             }
             else if (!isGrounded)
@@ -56,6 +59,8 @@ public class PlayerWalkState : PlayerGroundState
             }
         }
     }
+
+    public void SetNeonPotion(bool value) => isNeonPotion = value;
 
     public override void PhysicsUpdate()
     {
