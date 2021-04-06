@@ -86,11 +86,15 @@ public class GameSaver : MonoBehaviour
         meta.elapsedSeconds = gm.elapsedSeconds;
         UpdateMeta(currentSaveSlot, meta);
         try{
-            using(FileStream fs = new FileStream(saveDirectory + "/meta.tgb", FileMode.OpenOrCreate)){
-                var bf = new BinaryFormatter();
-                bf.Serialize(fs, saveSlotMetas);
+            // using(FileStream fs = new FileStream(saveDirectory + "/meta.tgb", FileMode.OpenOrCreate)){
+            //     var bf = new BinaryFormatter();
+            //     bf.Serialize(fs, saveSlotMetas);
 
-                fs.Close();
+            //     fs.Close();
+            // }
+            using(StreamWriter sw = new StreamWriter(saveDirectory + "/meta_tgb.json")){
+                sw.Write(JsonUtility.ToJson(saveSlotMetas));
+                sw.Close();
             }
         }
         catch(FileNotFoundException ex){
@@ -104,42 +108,65 @@ public class GameSaver : MonoBehaviour
     }
     
     public void Load(SaveSlot saveSlot){
-        FileStream fs = null;
-        string path = saveDirectory + "/" + saveSlot.ToString() + ".tgb";
-        if (File.Exists(path))
-        {
-            try
-            {
+        // FileStream fs = null;
+        // string path = saveDirectory + "/" + saveSlot.ToString() + ".tgb";
+        // if (File.Exists(path))
+        // {
+        //     try
+        //     {
+        //         isLoaded = false;
+        //         fs = new FileStream(path, FileMode.Open);
+        //         BinaryFormatter bf = new BinaryFormatter();
+
+        //         var littleSuns = (Dictionary<int, bool>)bf.Deserialize(fs);
+        //         LittleSunData.SetLittleSunData(littleSuns);
+        //         var playerSaveData = (D_PlayerStateMachine.PlayerSaveData)bf.Deserialize(fs);
+        //         var ability = (D_PlayerAbility.PlayerAbility)bf.Deserialize(fs);
+        //         Player player = GameObject.Find("Player").GetComponent<Player>();
+        //         player.playerData.SetPlayerSaveData(playerSaveData);
+        //         player.playerAbilityData.SetPlayerAbility(ability);
+        //         var runtimeData = (PlayerRuntimeData.PlayerRuntimeSaveData)bf.Deserialize(fs);
+        //         player.playerRuntimeData.SetPlayerRuntimeSaveData(runtimeData);
+        //         var miscSaveData = (MiscData.MiscSaveData)bf.Deserialize(fs);
+        //         player.miscData.SetMiscSaveData(miscSaveData);
+        //         var enemyRuntimeSaveData = (EnemySaveData.EnemyRuntimeSaveData)bf.Deserialize(fs);
+        //         EnemySaveData.SetEnemyRuntimeSaveData(enemyRuntimeSaveData);
+        //         var lootRuntimeSaveData = (Loot.LootRuntimeSaveData)bf.Deserialize(fs);
+        //         Loot.SetLootRuntimeSaveData(lootRuntimeSaveData);
+        //     }
+        //     catch (FileNotFoundException ex)
+        //     {
+        //         Debug.Log("On GameSaver::Load, " + ex.StackTrace);
+        //     }
+        //     finally
+        //     {
+        //         fs?.Close();
+        //         isLoaded = true;
+        //     }
+        // }
+
+        string path = saveDirectory + "/" + saveSlot.ToString() + ".json";
+        if(File.Exists(path)){
+            try{
                 isLoaded = false;
-                fs = new FileStream(path, FileMode.Open);
-                BinaryFormatter bf = new BinaryFormatter();
+                StreamReader streamReader = File.OpenText(path);
+                GameJsonSaveData gameJsonSaveData = JsonUtility.FromJson<GameJsonSaveData>(streamReader.ReadToEnd());
 
-                var littleSuns = (Dictionary<int, bool>)bf.Deserialize(fs);
-                LittleSunData.SetLittleSunData(littleSuns);
-                var playerSaveData = (D_PlayerStateMachine.PlayerSaveData)bf.Deserialize(fs);
-                var ability = (D_PlayerAbility.PlayerAbility)bf.Deserialize(fs);
+                LittleSunData.SetLittleSunData(gameJsonSaveData.littleSunData);
                 Player player = GameObject.Find("Player").GetComponent<Player>();
-                player.playerData.SetPlayerSaveData(playerSaveData);
-                player.playerAbilityData.SetPlayerAbility(ability);
-                var runtimeData = (PlayerRuntimeData.PlayerRuntimeSaveData)bf.Deserialize(fs);
-                player.playerRuntimeData.SetPlayerRuntimeSaveData(runtimeData);
-                var miscSaveData = (MiscData.MiscSaveData)bf.Deserialize(fs);
-                player.miscData.SetMiscSaveData(miscSaveData);
-                var enemyRuntimeSaveData = (EnemySaveData.EnemyRuntimeSaveData)bf.Deserialize(fs);
-                EnemySaveData.SetEnemyRuntimeSaveData(enemyRuntimeSaveData);
-                var lootRuntimeSaveData = (Loot.LootRuntimeSaveData)bf.Deserialize(fs);
-                Loot.SetLootRuntimeSaveData(lootRuntimeSaveData);
+                player.playerData.SetPlayerSaveData(gameJsonSaveData.playerSaveData);
+                player.playerAbilityData.SetPlayerAbility(gameJsonSaveData.playerAbility);
+                player.playerRuntimeData.SetPlayerRuntimeSaveData(gameJsonSaveData.playerRuntimeSaveData);
+                player.miscData.SetMiscSaveData(gameJsonSaveData.miscSaveData);
+                EnemySaveData.SetEnemyRuntimeSaveData(gameJsonSaveData.enemyRuntimeSaveData);
+                Loot.SetLootRuntimeSaveData(gameJsonSaveData.lootRuntimeSaveData);
 
-                isLoaded = true;
-                //Debug.Log(lootDict);
+                streamReader.Close();
             }
-            catch (FileNotFoundException ex)
-            {
-                Debug.Log("On GameSaver::Load, " + ex.StackTrace);
+            catch(Exception ex){
+                Debug.Log(ex.StackTrace);
             }
-            finally
-            {
-                fs?.Close();
+            finally{
                 isLoaded = true;
             }
         }
@@ -153,31 +180,53 @@ public class GameSaver : MonoBehaviour
     }
 
     public void Save(SaveSlot saveSlot){
-        FileStream fs = null;
-        try
-        {
-            fs = new FileStream(saveDirectory + "/" + saveSlot.ToString() + ".tgb", FileMode.Create);
-            BinaryFormatter bf = new BinaryFormatter();
+        // FileStream fs = null;
+        // try
+        // {
+        //     fs = new FileStream(saveDirectory + "/" + saveSlot.ToString() + ".tgb", FileMode.Create);
+        //     BinaryFormatter bf = new BinaryFormatter();
 
-            bf.Serialize(fs, LittleSunData.LittleSuns);
+        //     bf.Serialize(fs, LittleSunData.LittleSuns);
+        //     Player player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
+        //     //Player player = GameObject.Find("Player").GetComponent<Player>();
+        //     bf.Serialize(fs, player.playerData.GetPlayerSaveData());
+        //     bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
+        //     player.SaveToPlayerRuntimeData();
+        //     bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());
+        //     bf.Serialize(fs, player.miscData.GetMiscSaveData());
+        //     bf.Serialize(fs, EnemySaveData.GetEnemyRuntimeSaveData());
+        //     bf.Serialize(fs, Loot.GetLootRuntimeSaveData());
+
+        //     fs.Close();
+        // }
+        // catch(FileNotFoundException ex)
+        // {
+        //     Debug.Log("On GameSaver::Save, " + ex.StackTrace);
+        // }
+        // finally{
+        //     fs?.Close();
+        // }
+
+        StreamWriter streamWriter = null;
+        try{
+            streamWriter = File.CreateText(saveDirectory + "/" + saveSlot.ToString() + ".json");
+            GameJsonSaveData gameJsonSaveData;
+            gameJsonSaveData.littleSunData = LittleSunData.LittleSuns;
             Player player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
-            //Player player = GameObject.Find("Player").GetComponent<Player>();
-            bf.Serialize(fs, player.playerData.GetPlayerSaveData());
-            bf.Serialize(fs, player.playerAbilityData.GetPlayerAbility());
+            gameJsonSaveData.playerSaveData = player.playerData.GetPlayerSaveData();
+            gameJsonSaveData.playerAbility = player.playerAbilityData.GetPlayerAbility();
             player.SaveToPlayerRuntimeData();
-            bf.Serialize(fs, player.playerRuntimeData.GetPlayerRuntimeSaveData());
-            bf.Serialize(fs, player.miscData.GetMiscSaveData());
-            bf.Serialize(fs, EnemySaveData.GetEnemyRuntimeSaveData());
-            bf.Serialize(fs, Loot.GetLootRuntimeSaveData());
+            gameJsonSaveData.playerRuntimeSaveData = player.playerRuntimeData.GetPlayerRuntimeSaveData();
+            gameJsonSaveData.miscSaveData = player.miscData.GetMiscSaveData();
+            gameJsonSaveData.enemyRuntimeSaveData = EnemySaveData.GetEnemyRuntimeSaveData();
+            gameJsonSaveData.lootRuntimeSaveData = Loot.GetLootRuntimeSaveData();
 
-            fs.Close();
+            streamWriter.Write(JsonUtility.ToJson(gameJsonSaveData));
+
+            streamWriter.Close();
         }
-        catch(FileNotFoundException ex)
-        {
-            Debug.Log("On GameSaver::Save, " + ex.StackTrace);
-        }
-        finally{
-            fs?.Close();
+        catch(Exception ex){
+            Debug.Log(ex.StackTrace);
         }
     }
 
@@ -187,7 +236,8 @@ public class GameSaver : MonoBehaviour
     }
 
     public bool HasValidSaving(SaveSlot slot){
-        string path = saveDirectory + "/" + slot.ToString() + ".tgb";
+        // string path = saveDirectory + "/" + slot.ToString() + ".tgb";
+        string path = saveDirectory + "/" + slot.ToString() + ".json";
         return File.Exists(path);
     }
 
@@ -207,15 +257,14 @@ public class GameSaver : MonoBehaviour
     }
 
     [Serializable]
-    public struct GameSaveData{
-        
+    public struct GameJsonSaveData{
+        public Dictionary<int, bool> littleSunData;
+        public D_PlayerStateMachine.PlayerSaveData playerSaveData;
+        public D_PlayerAbility.PlayerAbility playerAbility;
+        public PlayerRuntimeData.PlayerRuntimeSaveData playerRuntimeSaveData;
+        public MiscData.MiscSaveData miscSaveData;
+        public EnemySaveData.EnemyRuntimeSaveData enemyRuntimeSaveData;
+        public Loot.LootRuntimeSaveData lootRuntimeSaveData;
     }
 
-    public void SaveJsonData(string path, GameSaveData gameSaveData){
-
-    }
-
-    public void LoadJsonData(string path){
-
-    }
 }

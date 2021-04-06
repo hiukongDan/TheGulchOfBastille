@@ -99,7 +99,6 @@ public class PlayerInAirState : PlayerState
 
             player.InputHandler.ResetIsRoll();
         }
-
     }
 
     public override void PhysicsUpdate()

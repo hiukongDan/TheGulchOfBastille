@@ -8,7 +8,8 @@ public class PlayerTakeDamageState : PlayerState
 
     public PlayerTakeDamageState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
-
+        // SetTakeDamageTime()
+        SetTakeDamageTime(data.TDS_takeDamageDuration);
     }
 
     public override void Enter()
@@ -35,6 +36,7 @@ public class PlayerTakeDamageState : PlayerState
         else if (isGrounded && currentVelocity.y < 0.01f)
         {
             player.SetVelocityX(0f);
+            player.ResetGrounded();
         }
 
     }
