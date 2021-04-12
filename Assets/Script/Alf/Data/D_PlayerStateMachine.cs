@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "newPlayerStateMachineData", menuName = "Data/Player/State Machine Data")]
 public class D_PlayerStateMachine : ScriptableObject
@@ -15,9 +16,27 @@ public class D_PlayerStateMachine : ScriptableObject
     public LayerMask GD_whatIsLadder;
 
     [Header("Player Data")]
-    public float PD_maxHitPoint = 100f;
-    public float PD_maxStunPoint = 5f;
-    public float PD_maxDecayPoint = 20f;
+    public int GD_playerLevel = 1; // initial level is 1
+    public void Levelup(){
+        if(ItemData.playerLevelUpData.Length > GD_playerLevel){
+            GD_playerLevel++;
+        }
+    }
+    public float PD_maxHitPoint{
+        get{
+            return ItemData.playerLevelUpData[GD_playerLevel].HP;
+        }
+    }
+    public float PD_maxStunPoint{
+        get{
+            return ItemData.playerLevelUpData[GD_playerLevel].StunP;
+        }
+    }
+    public float PD_maxDecayPoint{
+        get{
+            return ItemData.playerLevelUpData[GD_playerLevel].DP;
+        }
+    }
 
     [Header("Ground State")]
     public float GS_coyoteTime = 0.2f;
@@ -49,7 +68,11 @@ public class D_PlayerStateMachine : ScriptableObject
 
     [Header("MeleeAttack State")]
     public float MAS_hitboxRadius = 0.5f;
-    public float MAS_damageAmount = 10f;
+    public float MAS_damageAmount{
+        get{
+            return ItemData.playerLevelUpData[GD_playerLevel].AP;
+        }
+    }
     public float MAS_stunAmount = 1f;
     public Vector2 MAS_knockbackDirection = new Vector2(1, 1);
     public float MAS_knockbackImpulse = 4f;
@@ -83,33 +106,24 @@ public class D_PlayerStateMachine : ScriptableObject
 
     [Serializable]
     public struct PlayerSaveData{
-        public float PD_maxHitPoint;
-        public float PD_maxStunPoint;
-        public float PD_maxDecayPoint;
-        public float MAS_damageAmount;
+        public int GD_playerLevel;
         public float MAS_stunAmount;
         public float PS_damage;
 
-        public PlayerSaveData(float PD_maxHitPoint, float PD_maxStunPoint, float PD_maxDecayPoint, float MAS_damageAmount, float MAS_stunAmount, float PS_damage){
-            this.PD_maxHitPoint = PD_maxHitPoint;
-            this.PD_maxStunPoint = PD_maxStunPoint;
-            this.PD_maxDecayPoint = PD_maxDecayPoint;
-            this.MAS_damageAmount = MAS_damageAmount;
+        public PlayerSaveData(int GD_playerLevel, float MAS_stunAmount, float PS_damage){
+            this.GD_playerLevel = GD_playerLevel;
             this.MAS_stunAmount = MAS_stunAmount;
             this.PS_damage = PS_damage;
         }
     };
 
     public void SetPlayerSaveData(PlayerSaveData playerSaveData){
-            this.PD_maxHitPoint = playerSaveData.PD_maxHitPoint;
-            this.PD_maxStunPoint = playerSaveData.PD_maxStunPoint;
-            this.PD_maxDecayPoint = playerSaveData.PD_maxDecayPoint;
-            this.MAS_damageAmount = playerSaveData.MAS_damageAmount;
+            this.GD_playerLevel = playerSaveData.GD_playerLevel;
             this.MAS_stunAmount = playerSaveData.MAS_stunAmount;
             this.PS_damage = playerSaveData.PS_damage;
     }
 
     public PlayerSaveData GetPlayerSaveData(){
-        return new PlayerSaveData(PD_maxHitPoint, PD_maxStunPoint, PD_maxDecayPoint, MAS_damageAmount, MAS_stunAmount, PS_damage);
+        return new PlayerSaveData(GD_playerLevel, MAS_stunAmount, PS_damage);
     }
 }

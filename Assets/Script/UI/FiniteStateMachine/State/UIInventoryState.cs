@@ -205,9 +205,9 @@ public class UIInventoryState : UIState
 
     protected void OnClickView(int index, bool isInit = false){
         if(!isInit && selectedViewIndex == index){
-            Debug.Log("click the same item");
+            // Debug.Log("click the same item");
             if(currentTab == TabSelection.Consumable){
-                Debug.Log("Use consumable item");
+                // Debug.Log("Use consumable item");
                 UseCurrentSelectedConsumable();
                 DisplayConsumable();
             }

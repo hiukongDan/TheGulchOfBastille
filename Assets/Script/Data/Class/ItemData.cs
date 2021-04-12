@@ -159,16 +159,17 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
     };
 
     public static PlayerLevelUpData[] playerLevelUpData = {
-        new PlayerLevelUpData(1,60,5,7),
-        new PlayerLevelUpData(2,70,7,8),
-        new PlayerLevelUpData(3,80,9,9),
-        new PlayerLevelUpData(4,90,11,10),
-        new PlayerLevelUpData(5,100,13,11),
-        new PlayerLevelUpData(6,105, 15, 12),
-        new PlayerLevelUpData(7, 110, 17, 13),
-        new PlayerLevelUpData(8,115, 18, 14),
-        new PlayerLevelUpData(9, 120, 19, 15),
-        new PlayerLevelUpData(10, 125, 20, 16),
+        //new PlayerLevelUpData(0,50,  3, 6, 5),
+        new PlayerLevelUpData(1,60,  5, 7, 5),
+        new PlayerLevelUpData(2,70,  7, 8, 5),
+        new PlayerLevelUpData(3,80,  9, 9, 5),
+        new PlayerLevelUpData(4,90,  11,10,6),
+        new PlayerLevelUpData(5,100, 13,11,7),
+        new PlayerLevelUpData(6,105, 15,12,8),
+        new PlayerLevelUpData(7,110, 17,13,9),
+        new PlayerLevelUpData(8,115, 18,14,10),
+        new PlayerLevelUpData(9,120, 19,15,10),
+        new PlayerLevelUpData(10,125,20,16,10),
     };
 
     public struct PlayerLevelUpData{
@@ -180,17 +181,22 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
         /// <Summary>
         /// Attack point
         /// </Summary>
-        int AP;
+        public int AP;
         /// <Summary>
         /// Decay point
         /// </Summary>
-        int DP;
+        public int DP;
+        /// <Summary>
+        /// Stun point
+        /// </Summary>
+        public int StunP;
 
-        public PlayerLevelUpData(int level, int hp, int ap, int dp){
+        public PlayerLevelUpData(int level, int hp, int ap, int dp, int stunP){
             this.level = level;
             this.HP = hp;
             this.AP = ap;
             this.DP = dp;
+            this.StunP = stunP;
         }
     };
 
