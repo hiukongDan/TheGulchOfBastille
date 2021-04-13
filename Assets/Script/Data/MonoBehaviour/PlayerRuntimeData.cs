@@ -243,4 +243,12 @@ public class PlayerRuntimeData
         isLoaded = true;
     }
 
+
+    #region HELPER FUNCTIONS
+    public ItemData.WeaponRuntimeData GetCurrentWeaponInfo(){
+        return playerStock.weaponStock[playerSlot.weaponIndex];
+    }
+
+    #endregion
+
 }

@@ -135,6 +135,13 @@ public class PlayerState
 
     }
 
+    /// <Summary>
+    /// Call from outside, to change animation clip according to current weapon
+    /// </Summary>
+    public virtual void SetAnimationCodeFromWeapon(){
+
+    }
+
     /* TODO:
      * FOR ANIMATION CALLBACKS
         public virtual void CompleteAction() 

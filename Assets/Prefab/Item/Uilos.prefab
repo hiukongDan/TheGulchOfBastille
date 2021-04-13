@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6707720214589921555}
   - component: {fileID: 9137818884975148787}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,5 +202,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perUilosWorth: 1
-  uilosFalldownGravityScale: 2.5
-  forceTowardsPlayer: {x: 1, y: 0.5}
+  uilosFalldownGravityScale: 1

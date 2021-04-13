@@ -105,7 +105,7 @@ public override void Exit()
         base.CompleteAttack();
 
         ResetTimer();
-        player.idleState.SetAnimationCode(AlfAnimationHash.IDLE_1);
+        
         stateMachine.SwitchState(player.idleState);
     }
 

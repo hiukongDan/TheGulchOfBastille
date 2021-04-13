@@ -3,9 +3,25 @@
 public class AlfAnimationHash
 {
     public static int IDLE_0 = Animator.StringToHash("alf_idle_0");
-    public static int IDLE_1 = Animator.StringToHash("alf_idle_1");
+    public static int IDLE_IRONSWORD = Animator.StringToHash("alf_idle_ironsword");
+    public static int IDLE_CLAYMORE = Animator.StringToHash("alf_idle_claymore");
+    public static int IDLE_DRAGONSLAYER = Animator.StringToHash("alf_idle_dragonSlayer");
+    public static int IDLE_WOODBOW = Animator.StringToHash("alf_idle_woodbow");
+    public static int IDLE_ELFBOW = Animator.StringToHash("alf_idle_elfbow");
+    public static int IDLE_LONGBOW = Animator.StringToHash("alf_idle_longbow");
+    public static int IDLE_APPRENTICE_STICK = Animator.StringToHash("alf_idle_apprenticeStick");
+    public static int IDLE_MASTER_STICK = Animator.StringToHash("alf_idle_masterStick");
+    public static int IDLE_SUNLIGHT_STICK = Animator.StringToHash("alf_idle_sunlightStick");
     public static int RUN_0  = Animator.StringToHash("alf_run_0");
-    public static int RUN_1  = Animator.StringToHash("alf_run_1");
+    public static int RUN_IRONSWORD  = Animator.StringToHash("alf_run_ironsword");
+    public static int RUN_CLAYMORE = Animator.StringToHash("alf_run_claymore");
+    public static int RUN_DRAGONSLAYER = Animator.StringToHash("alf_run_dragonSlayer");
+    public static int RUN_WOODBOW = Animator.StringToHash("alf_run_woodbow");
+    public static int RUN_ELFBOW = Animator.StringToHash("alf_run_elfbow");
+    public static int RUN_LONGBOW = Animator.StringToHash("alf_run_longbow");
+    public static int RUN_APPRENTICE_STICK = Animator.StringToHash("alf_run_apprenticeStick");
+    public static int RUN_MASTER_STICK = Animator.StringToHash("alf_run_masterStick");
+    public static int RUN_SUNLIGHT_STICK = Animator.StringToHash("alf_run_sunlighStick");
     public static int JUMP_0 = Animator.StringToHash("alf_jump_0");
     public static int LANDING_0 = Animator.StringToHash("alf_landing_0");
     public static int INAIR_0 = Animator.StringToHash("alf_inair_0");

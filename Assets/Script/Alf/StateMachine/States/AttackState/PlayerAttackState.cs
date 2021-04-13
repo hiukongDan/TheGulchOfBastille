@@ -42,8 +42,8 @@ public class PlayerAttackState : PlayerState
         base.Exit();
 
         player.InputHandler.ResetAll();
+        player.idleState.SetAnimationCodeFromWeapon();
     }
-
     public override void LogicUpdate()
     {
         base.LogicUpdate();
