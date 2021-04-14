@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: alf_bow_aim_elfbow
+  m_Name: alf_bow_charge_elfbow
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,29 +22,29 @@ AnimationClip:
     - time: 0
       value: {fileID: 3342487931527157567, guid: c7ffc8e2d78dab2499077f2f0f9a262d,
         type: 3}
-    - time: 0.25
+    - time: 0.16666667
       value: {fileID: -2109131838956301682, guid: c7ffc8e2d78dab2499077f2f0f9a262d,
         type: 3}
-    - time: 0.375
+    - time: 0.25
       value: {fileID: -894798385935096125, guid: c7ffc8e2d78dab2499077f2f0f9a262d,
         type: 3}
-    - time: 0.5
+    - time: 0.33333334
       value: {fileID: 3578948033815749917, guid: c7ffc8e2d78dab2499077f2f0f9a262d,
         type: 3}
-    - time: 0.625
+    - time: 0.41666666
       value: {fileID: 6382526069832579147, guid: c7ffc8e2d78dab2499077f2f0f9a262d,
         type: 3}
-    - time: 0.75
+    - time: 0.5
       value: {fileID: -3300622518435382599, guid: c7ffc8e2d78dab2499077f2f0f9a262d,
         type: 3}
-    - time: 0.875
+    - time: 0.5833333
       value: {fileID: 3617467946755841633, guid: c7ffc8e2d78dab2499077f2f0f9a262d,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 8
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -71,12 +71,12 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
