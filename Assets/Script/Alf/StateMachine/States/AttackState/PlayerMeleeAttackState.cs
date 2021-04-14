@@ -8,7 +8,6 @@ public class PlayerMeleeAttackState : PlayerAttackState
         private bool isFirstAttack;
         #endregion*/
 
-
     public float attackCooldownTimer;
 
     public PlayerMeleeAttackState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
@@ -18,6 +17,21 @@ public class PlayerMeleeAttackState : PlayerAttackState
 
     public override void Enter()
     {
+        switch(player.playerRuntimeData.GetCurrentWeaponInfo().weapon){
+            case ItemData.Weapon.Iron_Sword:
+                animCode = AlfAnimationHash.ATTACK_IRONSWORD;
+                break;
+            case ItemData.Weapon.Claymore:
+                animCode = AlfAnimationHash.ATTACK_CLAYMORE;
+                break;
+            case ItemData.Weapon.Dragon_Slayer_Sword:
+                animCode = AlfAnimationHash.ATTACK_DRAGONSLAYER;
+                break;
+            default:
+                animCode = AlfAnimationHash.ATTACK_IRONSWORD;
+                break;
+        }
+        
         base.Enter();
         combatData.damage = player.CalculatePlayerDamage();
         combatData.stunDamage = data.MAS_stunAmount;
@@ -28,6 +42,8 @@ public class PlayerMeleeAttackState : PlayerAttackState
         combatData.facingDirection = player.facingDirection;
 
         ConsumeAttackBuffer();
+
+
     }
 
 public override void Exit()

@@ -26,7 +26,9 @@ public class AlfAnimationHash
     public static int LANDING_0 = Animator.StringToHash("alf_landing_0");
     public static int INAIR_0 = Animator.StringToHash("alf_inair_0");
     public static int DEFENSE_0 = Animator.StringToHash("alf_defense_0");
-    public static int ATTACK_0 = Animator.StringToHash("alf_attack_0");
+    public static int ATTACK_IRONSWORD = Animator.StringToHash("alf_attack_ironSword");
+    public static int ATTACK_CLAYMORE = Animator.StringToHash("alf_attack_claymore");
+    public static int ATTACK_DRAGONSLAYER = Animator.StringToHash("alf_attack_dragonSlayer");
     public static int ROLL_0 = Animator.StringToHash("alf_roll_0");
     public static int DIE_0 = Animator.StringToHash("alf_die_0");
     public static int PARRY_0 = Animator.StringToHash("alf_parry_0");

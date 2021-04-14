@@ -71,9 +71,9 @@ public override void LogicUpdate()
                 player.InputHandler.ResetIsInteraction();
             }
         }
-        else if (isMeleeAttack && player.meleeAttackState.CanAction())
+        else if (isMeleeAttack && player.GetCurrentAttackState().CanAction())
         {
-            stateMachine.SwitchState(player.meleeAttackState);
+            stateMachine.SwitchState(player.GetCurrentAttackState());
         }
         else if (isParry && player.parryState.CanAction())
         {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerProjectileAttackState : PlayerAttackState
+public class PlayerMagicAttackState : PlayerAttackState
 {
     protected bool isAttackCanceled;
-    public PlayerProjectileAttackState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
+    public PlayerMagicAttackState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
 
     }
@@ -48,6 +48,12 @@ public class PlayerProjectileAttackState : PlayerAttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(isAttackCanceled){
+            Debug.Log("Perform Magic");
+            player.idleState.SetAnimationCodeFromWeapon();
+            player.stateMachine.SwitchState(player.idleState);
+        }
     }
 
     public override void PhysicsUpdate()

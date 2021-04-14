@@ -8,11 +8,9 @@ public class Player : MonoBehaviour
      */
 
     #region ENUM
-
     public enum AC_TYPE{
         NORMAL, ROOT_MOTION,
     };
-
     #endregion
 
     #region REFERENCES
@@ -32,6 +30,8 @@ public class Player : MonoBehaviour
     public PlayerInAirState inAirState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
     public PlayerMeleeAttackState meleeAttackState { get; private set; }
+    public PlayerBowAttackState bowAttackState{get; private set;}
+    public PlayerMagicAttackState magicAttackState{get; private set;}
     public PlayerParryState parryState { get; private set; }
     public PlayerRollState rollState { get; private set; }
     public PlayerDeadState deadState { get; private set; }
@@ -111,8 +111,6 @@ public class Player : MonoBehaviour
         Anim.runtimeAnimatorController = ACNormal;
 
         InputHandler = GetComponent<PlayerInputHandler>();
-
-        // playerRuntimeData.InitPlayerRuntimeData(playerData);
     }
 
     void OnEnable() {
@@ -386,7 +384,11 @@ public class Player : MonoBehaviour
         walkState = new PlayerWalkState(stateMachine, this, AlfAnimationHash.RUN_0, playerData);
         jumpState = new PlayerJumpState(stateMachine, this, AlfAnimationHash.JUMP_0, playerData);
         inAirState = new PlayerInAirState(stateMachine, this, AlfAnimationHash.INAIR_0, playerData);
-        meleeAttackState = new PlayerMeleeAttackState(stateMachine, this, AlfAnimationHash.ATTACK_0, playerData);
+        meleeAttackState = new PlayerMeleeAttackState(stateMachine, this, AlfAnimationHash.ATTACK_IRONSWORD, playerData);
+        // TODO: Animation clip
+        bowAttackState = new PlayerBowAttackState(stateMachine, this, AlfAnimationHash.IDLE_WOODBOW, playerData);
+        // TODO: Animation clip
+        magicAttackState = new PlayerMagicAttackState(stateMachine, this, AlfAnimationHash.IDLE_APPRENTICE_STICK, playerData);
         parryState = new PlayerParryState(stateMachine, this, AlfAnimationHash.PARRY_1, playerData);
         rollState = new PlayerRollState(stateMachine, this, AlfAnimationHash.ROLL_0, playerData);
         stunState = new PlayerStunState(stateMachine, this, AlfAnimationHash.STUN_0, playerData);
@@ -547,6 +549,7 @@ public class Player : MonoBehaviour
     private Loot loot;
     public void SetLootHandler(Loot loot) => this.loot = loot;
     public Loot GetLootHandler() => this.loot;
+    
     #endregion
 
     #region EVENT
@@ -624,6 +627,34 @@ public class Player : MonoBehaviour
             }
         }
     
+    #endregion
+
+    #region STATEMACHINE HELPER
+
+    public PlayerAttackState GetCurrentAttackState(){
+        PlayerAttackState attackState;
+        switch(playerRuntimeData.GetCurrentWeaponInfo().weapon){
+            case ItemData.Weapon.Iron_Sword:
+            case ItemData.Weapon.Claymore:
+            case ItemData.Weapon.Dragon_Slayer_Sword:
+                attackState = meleeAttackState;
+                break;
+            case ItemData.Weapon.Wood_Bow:
+            case ItemData.Weapon.Elf_Bow:
+            case ItemData.Weapon.Long_Bow:
+                attackState = bowAttackState;
+                break;
+            case ItemData.Weapon.Apprentice_Stick:
+            case ItemData.Weapon.Master_Stick:
+            case ItemData.Weapon.Sunlight_Stick:
+                attackState = magicAttackState;
+                break;
+            default:
+                attackState = meleeAttackState;
+                break;
+        }
+        return attackState;
+    }
     #endregion
 
     #region AUXILIARY FUNCTIONS
