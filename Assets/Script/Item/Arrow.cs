@@ -5,10 +5,10 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float ArrowVolocity = 30f;
+    public float ArrowVelocity = 30f;
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = transform.right * ArrowVolocity;
+        GetComponent<Rigidbody2D>().velocity = ArrowVelocity * transform.right;
     }
 
     // Update is called once per frame

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBowAttackState : PlayerAttackState
 {
     protected bool isAttackCanceled;
+    protected Vector2 mousePosition;
     public PlayerBowAttackState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
     {
 
@@ -50,9 +51,14 @@ public class PlayerBowAttackState : PlayerAttackState
         base.LogicUpdate();
 
         if(isAttackCanceled){
+            // shoot
             Debug.Log("Shoot");
             player.idleState.SetAnimationCodeFromWeapon();
             player.stateMachine.SwitchState(player.idleState);
+        }
+        else{
+            Vector2 pos = Camera.main.ScreenToWorldPoint(mousePosition);
+            Debug.Log(pos);
         }
     }
 
@@ -85,6 +91,7 @@ public class PlayerBowAttackState : PlayerAttackState
     {
         base.UpdateInputSubscription();
         isAttackCanceled = player.InputHandler.isMeleeAttackCanceled;
+        mousePosition = player.InputHandler.MousePosInput;
     }
 
     protected override void UpdatePhysicsStatusSubScription()
