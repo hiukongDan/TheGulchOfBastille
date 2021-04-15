@@ -408,6 +408,8 @@ public class Player : MonoBehaviour
     private void InitializePlayerCooldownTimer()
     {
         stateCooldownTimer.AddStateTimer(meleeAttackState);
+        stateCooldownTimer.AddStateTimer(bowAttackState);
+
         stateCooldownTimer.AddStateTimer(parryState);
         stateCooldownTimer.AddStateTimer(rollState);
 

@@ -197,7 +197,7 @@ public class Entity : MonoBehaviour
         if (isDead)
             return;
 
-        combatData.from.gameObject.SendMessage("ValidAttack");
+        combatData.from?.gameObject.SendMessage("ValidAttack");
         currentHealth -= combatData.damage;
 
         if(currentHealth <= 0 && !isDead)
@@ -239,6 +239,8 @@ public class Entity : MonoBehaviour
         isDanmageable = newIsDamageable;
         return isDanmageable;
     }
+
+    public bool IsDead() => isDead;
 
     protected virtual void OnDead(){
         UilosGroup uilosGroup = GetComponent<UilosGroup>();

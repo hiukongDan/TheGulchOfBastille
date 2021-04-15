@@ -42,8 +42,6 @@ public class PlayerMeleeAttackState : PlayerAttackState
         combatData.facingDirection = player.facingDirection;
 
         ConsumeAttackBuffer();
-
-
     }
 
 public override void Exit()

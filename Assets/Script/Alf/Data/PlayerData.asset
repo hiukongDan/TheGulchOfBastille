@@ -28,9 +28,7 @@ MonoBehaviour:
   GD_whatIsLadder:
     serializedVersion: 2
     m_Bits: 131072
-  PD_maxHitPoint: 60
-  PD_maxStunPoint: 5
-  PD_maxDecayPoint: 20
+  GD_playerLevel: 0
   GS_coyoteTime: 0.08
   WS_walkSpeed: 3
   IAS_jumpAmounts: 2
@@ -46,7 +44,6 @@ MonoBehaviour:
   JS_horizontalSpeed: 3
   JS_jumpCanceledMultiplier: 0.2
   MAS_hitboxRadius: 0.5
-  MAS_damageAmount: 10
   MAS_stunAmount: 1
   MAS_knockbackDirection: {x: 1, y: 1}
   MAS_knockbackImpulse: 7
@@ -54,6 +51,9 @@ MonoBehaviour:
   MAS_meleeAttackParticle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,
     type: 3}
   MAS_attackCooldownTimer: 0.2
+  BAS_arrowPrefab: {fileID: 3762449590338921448, guid: 88e1c1662c451af4294e88fbfe0ec9aa,
+    type: 3}
+  TDS_takeDamageDuration: 0.1
   PS_maxTime: 0.2
   PS_horizontalSpeed: 0.5
   PS_particle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,

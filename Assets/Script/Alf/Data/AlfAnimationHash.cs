@@ -51,13 +51,13 @@ public class AlfAnimationHash
     public static int LITTLESUN_SIT_0 = Animator.StringToHash("alf_littlesun_sit_0");
     public static int BOW_CHARGE_WOODBOW = Animator.StringToHash("alf_bow_charge_woodbow");
     public static int BOW_AIM_WOODBOW = Animator.StringToHash("alf_bow_aim_woodbow");
-    public static int BOW_SHOOT_WOODBOW = Animator.StringToHash("afl_bow_shoot_woodbow");
+    public static int BOW_SHOOT_WOODBOW = Animator.StringToHash("alf_bow_shoot_woodbow");
     public static int BOW_CHARGE_ELFBOW = Animator.StringToHash("alf_bow_charge_elfbow");
     public static int BOW_AIM_ELFBOW = Animator.StringToHash("alf_bow_aim_elfbow");
-    public static int BOW_SHOOT_ELFBOW = Animator.StringToHash("afl_bow_shoot_elfbow");
-    public static int BOW_CHARGE_LONGBOW = Animator.StringToHash("afl_bow_charge_longbow");
+    public static int BOW_SHOOT_ELFBOW = Animator.StringToHash("alf_bow_shoot_elfbow");
+    public static int BOW_CHARGE_LONGBOW = Animator.StringToHash("alf_bow_charge_longbow");
     public static int BOW_AIM_LONGBOW = Animator.StringToHash("alf_bow_aim_longbow");
-    public static int BOW_SHOOT_LONGBOW = Animator.StringToHash("afl_bow_shoot_longbow");
-    
+    public static int BOW_SHOOT_LONGBOW = Animator.StringToHash("alf_bow_shoot_longbow");
+    public static int BOW_END_SHOOT = Animator.StringToHash("alf_bow_end_shoot");
     
 }

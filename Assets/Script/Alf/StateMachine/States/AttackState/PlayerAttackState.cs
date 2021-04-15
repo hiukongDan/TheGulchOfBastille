@@ -123,5 +123,9 @@ public class PlayerAttackState : PlayerState
         return !isMeleeAttack;
     }
 
+    public virtual CombatData GetComabtData(){
+        return combatData;
+    }
+
     // TODO: PROJECTILES ATTACK
 }
