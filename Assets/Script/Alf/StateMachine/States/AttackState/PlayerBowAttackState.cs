@@ -137,7 +137,7 @@ public class PlayerBowAttackState : PlayerAttackState
         if(Mathf.Sign(dir.x) != player.facingDirection){
             player.Flip();
         }
-        if(MapRadiansFromDirection(dir) != -1){
+        if(MapRadiansFromDirection(dir) != -2){
             player.Anim.SetFloat("aim_radians", MapRadiansFromDirection(dir));
         }
     }
@@ -158,12 +158,12 @@ public class PlayerBowAttackState : PlayerAttackState
     }
 
     protected float MapRadiansFromDirection(Vector2 dir){
-        float ret = -1;
-        if(dir.y > 0.1 && dir.y < 0.9){
-            ret = Mathf.Tan(Mathf.Abs(dir.y/dir.x));
+        float ret = -2;
+        if(dir.y > -0.9 && dir.y < 0.9){
+            ret = Mathf.Atan2(dir.y, Mathf.Abs(dir.x));
         }
-        if(ret < 0){
-            ret = -1;
+        else{
+            ret = -2;
         }
         return ret;
     }

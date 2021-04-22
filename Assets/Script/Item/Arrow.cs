@@ -6,6 +6,7 @@ public class Arrow : MonoBehaviour
 {
     // Start is called before the first frame update
     public float ArrowVelocity = 30f;
+    public float DestroyDelay = 5f;
     public CombatData combatData;
 
     public void SetCombatData(CombatData combatData) => this.combatData = combatData;
@@ -17,7 +18,11 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Invoke("Destroy", DestroyDelay);
+    }
+
+    void Destroy(){
+        GameObject.Destroy(transform.parent.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
