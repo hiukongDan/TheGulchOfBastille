@@ -94,7 +94,7 @@ public class PlayerWalkState : PlayerGroundState
                 SetAnimationCode(AlfAnimationHash.RUN_MASTER_STICK);
                 break;
             case ItemData.Weapon.Sunlight_Stick:
-                SetAnimationCode(AlfAnimationHash.RUN_MASTER_STICK);
+                SetAnimationCode(AlfAnimationHash.RUN_SUNLIGHT_STICK);
                 break;
             default:
                 SetAnimationCode(AlfAnimationHash.RUN_0);

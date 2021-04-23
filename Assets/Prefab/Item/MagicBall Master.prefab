@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5011390272259169616, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.56
+      objectReference: {fileID: 0}
     - target: {fileID: 5011390272259169618, guid: 735a956cadb2f974aa9a73f8fec2d132,
         type: 3}
       propertyPath: m_Sprite
@@ -19,15 +24,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 75ff3485b77bbf3468611f1661788ec8,
         type: 2}
+    - target: {fileID: 5011390272259169628, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.562
+      objectReference: {fileID: 0}
     - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10.406
       objectReference: {fileID: 0}
     - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.063
       objectReference: {fileID: 0}
     - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
         type: 3}
@@ -78,6 +88,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MagicBall Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355564203334935687, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: flyingSpeed
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 735a956cadb2f974aa9a73f8fec2d132, type: 3}

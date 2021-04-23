@@ -8,19 +8,24 @@ public class MagicBall : MonoBehaviour
     public float destroyDelay = 10f;
     private Animator animator;
     private Rigidbody2D rb2d;
-    private bool isHit;
+    private bool isHit = false;
     private CombatData combatData;
+    private Vector2 direction;
 
     public void SetCombatData(CombatData combatData) => this.combatData = combatData;
+    public void SetDirection(Vector2 direction) => this.direction = direction;
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.Play(AnimationHash.MagicBall.Fly);
         
         rb2d = GetComponent<Rigidbody2D>();
-        isHit = false;
 
         Invoke("Destroy", destroyDelay);
+
+        rb2d.velocity = direction.normalized * flyingSpeed;
+
+        //Debug.Log("Generated magic ball");
     }
 
     void Update()
@@ -35,7 +40,13 @@ public class MagicBall : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(!isHit){
             isHit = true;
+            if(rb2d == null){
+                rb2d = GetComponent<Rigidbody2D>();
+            }
             rb2d.velocity = Vector2.zero;
+            rb2d.bodyType = RigidbodyType2D.Kinematic;
+            rb2d.GetComponentInChildren<CircleCollider2D>().enabled = false;
+            
             StartCoroutine(TriggerHitAnimation());
             if(other.gameObject.tag == "Enemy"){
                 other.gameObject.SendMessage("Damage", combatData);

@@ -79,5 +79,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagicBall Sunlight
       objectReference: {fileID: 0}
+    - target: {fileID: 8355564203334935687, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: flyingSpeed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 735a956cadb2f974aa9a73f8fec2d132, type: 3}

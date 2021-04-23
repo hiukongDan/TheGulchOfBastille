@@ -21,7 +21,7 @@ public class AlfAnimationHash
     public static int RUN_LONGBOW = Animator.StringToHash("alf_run_longbow");
     public static int RUN_APPRENTICE_STICK = Animator.StringToHash("alf_run_apprenticeStick");
     public static int RUN_MASTER_STICK = Animator.StringToHash("alf_run_masterStick");
-    public static int RUN_SUNLIGHT_STICK = Animator.StringToHash("alf_run_sunlighStick");
+    public static int RUN_SUNLIGHT_STICK = Animator.StringToHash("alf_run_sunlightStick");
     public static int JUMP_0 = Animator.StringToHash("alf_jump_0");
     public static int LANDING_0 = Animator.StringToHash("alf_landing_0");
     public static int INAIR_0 = Animator.StringToHash("alf_inair_0");

@@ -246,6 +246,7 @@ public class PlayerRuntimeData
 
     #region HELPER FUNCTIONS
     public ItemData.WeaponRuntimeData GetCurrentWeaponInfo(){
+        // Debug.Log("inquired : " + playerStock.weaponStock[playerSlot.weaponIndex].weapon.ToString());
         return playerStock.weaponStock[playerSlot.weaponIndex];
     }
 

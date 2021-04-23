@@ -90,7 +90,7 @@ public class PlayerIdleState : PlayerGroundState
                 SetAnimationCode(AlfAnimationHash.IDLE_MASTER_STICK);
                 break;
             case ItemData.Weapon.Sunlight_Stick:
-                SetAnimationCode(AlfAnimationHash.IDLE_MASTER_STICK);
+                SetAnimationCode(AlfAnimationHash.IDLE_SUNLIGHT_STICK);
                 break;
             default:
                 SetAnimationCode(AlfAnimationHash.IDLE_IRONSWORD);

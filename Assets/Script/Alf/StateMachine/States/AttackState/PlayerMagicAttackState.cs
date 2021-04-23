@@ -24,15 +24,19 @@ public class PlayerMagicAttackState : PlayerAttackState
     public override void CheckHitbox()
     {
         // TODO:  cast magic ball here
-        switch(player.playerRuntimeData.GetCurrentWeaponInfo().weapon){
+        ItemData.Weapon weapon = player.playerRuntimeData.GetCurrentWeaponInfo().weapon;
+        switch(weapon){
             case ItemData.Weapon.Apprentice_Stick:
                 ShootBall(data.MAS_apprenticeMagicBall);
+                //Debug.Log("apprentice");
                 break;
             case ItemData.Weapon.Master_Stick:
-                Debug.Log("Master stick attacking");
+                ShootBall(data.MAS_masterMagicBall);
+                //Debug.Log("master");
                 break;
             case ItemData.Weapon.Sunlight_Stick:
                 ShootBall(data.MAS_sunlightMagicBall);
+                // Debug.Log("sunlight");
                 break;
             default:
                 ShootBall(data.MAS_apprenticeMagicBall);
@@ -41,7 +45,10 @@ public class PlayerMagicAttackState : PlayerAttackState
     }
 
     protected void ShootBall(GameObject ballPref){
-
+        var ball = GameObject.Instantiate(ballPref, player.transform.position + new Vector3(0.5f, 0, 0), player.transform.rotation, player.transform.parent);
+        var magicBall = ball.GetComponentInChildren<MagicBall>();
+        magicBall.SetCombatData(combatData);
+        magicBall.SetDirection(direction);
     }
 
     public override void CompleteAttack()
@@ -86,16 +93,25 @@ public class PlayerMagicAttackState : PlayerAttackState
     }
 
     protected void RequireDirection(){
-        var dir = Camera.main.ScreenToWorldPoint(mousePosition) - player.transform.position;
-        direction = new Vector2(dir.x, dir.y).normalized;
+        Vector2 pos = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 dir = (pos - new Vector2(player.transform.position.x, player.transform.position.y)).normalized;
         if(normMovementInput != Vector2.zero){
-            direction = normMovementInput;
+            // if there is controller input
+            dir = normMovementInput;
         }
+        
+        if(Mathf.Sign(dir.x) != player.facingDirection){
+            player.Flip();
+        }
+        
+        direction = dir.normalized;
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        ResetControlVariables();
     }
 
     public override void LogicUpdate()
