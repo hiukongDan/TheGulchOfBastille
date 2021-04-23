@@ -385,9 +385,7 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpState(stateMachine, this, AlfAnimationHash.JUMP_0, playerData);
         inAirState = new PlayerInAirState(stateMachine, this, AlfAnimationHash.INAIR_0, playerData);
         meleeAttackState = new PlayerMeleeAttackState(stateMachine, this, AlfAnimationHash.ATTACK_IRONSWORD, playerData);
-        // TODO: Animation clip
         bowAttackState = new PlayerBowAttackState(stateMachine, this, AlfAnimationHash.IDLE_WOODBOW, playerData);
-        // TODO: Animation clip
         magicAttackState = new PlayerMagicAttackState(stateMachine, this, AlfAnimationHash.IDLE_APPRENTICE_STICK, playerData);
         parryState = new PlayerParryState(stateMachine, this, AlfAnimationHash.PARRY_1, playerData);
         rollState = new PlayerRollState(stateMachine, this, AlfAnimationHash.ROLL_0, playerData);
@@ -409,6 +407,7 @@ public class Player : MonoBehaviour
     {
         stateCooldownTimer.AddStateTimer(meleeAttackState);
         stateCooldownTimer.AddStateTimer(bowAttackState);
+        stateCooldownTimer.AddStateTimer(magicAttackState);
 
         stateCooldownTimer.AddStateTimer(parryState);
         stateCooldownTimer.AddStateTimer(rollState);

@@ -53,6 +53,12 @@ MonoBehaviour:
   MAS_attackCooldownTimer: 0.2
   BAS_arrowPrefab: {fileID: 3762449590338921448, guid: 88e1c1662c451af4294e88fbfe0ec9aa,
     type: 3}
+  MAS_apprenticeMagicBall: {fileID: 4094528072423566169, guid: 38b138d0e0412a443a4b4e281303d864,
+    type: 3}
+  MAS_masterMagicBall: {fileID: 3922627785778349893, guid: 7f99c51811946b847aef85fb36f82861,
+    type: 3}
+  MAS_sunlightMagicBall: {fileID: 1472438670724460501, guid: 0a3465710a9da3143940a04f81e990c0,
+    type: 3}
   TDS_takeDamageDuration: 0.1
   PS_maxTime: 0.2
   PS_horizontalSpeed: 0.5

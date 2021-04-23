@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5900612497054476352
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5011390272259169618, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6829118456794267343, guid: 1b42c215b2e927348b06a4a5b07d1259,
+        type: 3}
+    - target: {fileID: 5011390272259169619, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: a92088bbde452c140b320249fe780315,
+        type: 2}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392724, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011390272886392725, guid: 735a956cadb2f974aa9a73f8fec2d132,
+        type: 3}
+      propertyPath: m_Name
+      value: MagicBall Sunlight
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 735a956cadb2f974aa9a73f8fec2d132, type: 3}

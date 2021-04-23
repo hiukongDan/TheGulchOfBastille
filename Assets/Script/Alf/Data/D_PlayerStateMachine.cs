@@ -82,6 +82,10 @@ public class D_PlayerStateMachine : ScriptableObject
 
     [Header("BowAttack State")]
     public GameObject BAS_arrowPrefab;
+    [Header("MagicAttack State")]
+    public GameObject MAS_apprenticeMagicBall;
+    public GameObject MAS_masterMagicBall;
+    public GameObject MAS_sunlightMagicBall;
 
     [Header("Take Damage State")]
     public float TDS_takeDamageDuration = 0.1f;

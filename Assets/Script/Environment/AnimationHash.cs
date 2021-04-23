@@ -30,4 +30,9 @@ public class AnimationHash
         public static int Go_Up = Animator.StringToHash("mechanic_lift_go_up_0");
         public static int Go_Down = Animator.StringToHash("mechanic_lift_go_down_0");
     }
+
+    public static class MagicBall{
+        public static int Fly = Animator.StringToHash("magic_ball_fly");
+        public static int Hit = Animator.StringToHash("magic_ball_hit");
+    }
 }
