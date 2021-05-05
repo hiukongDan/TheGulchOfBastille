@@ -5,8 +5,8 @@
 Unity 2019
 
 ## Artists
-[Fran](https://github.com/FranMukuro)
-[Goye](https://github.com/CelesGoye)
+[Fran](https://github.com/FranMukuro)\
+[Goye](https://github.com/CelesGoye)\
 Grey
 
 ## Audio
