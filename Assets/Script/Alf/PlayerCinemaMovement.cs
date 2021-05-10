@@ -45,6 +45,7 @@ public class PlayerCinemaMovement : MonoBehaviour
             player.FaceTo(targetPos);
             // walk towards it
             player.Anim.Play(AlfAnimationHash.RUN_0);
+            yield return new WaitForEndOfFrame();
             player.SetVelocity(new Vector2(player.facingDirection * player.playerData.WS_walkSpeed / 5, 0));
 
             yield return new WaitUntil(() => Mathf.Abs(player.transform.position.x - targetPos.x) <= 1/32f);

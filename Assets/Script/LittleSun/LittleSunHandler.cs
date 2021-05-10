@@ -25,7 +25,7 @@ public class LittleSunHandler : MonoBehaviour
     }
 
     void OnEnable() {
-        InitLittleSunState();    
+        InitLittleSunState();
     }
 
     private void InitLittleSunState()
@@ -45,6 +45,7 @@ public class LittleSunHandler : MonoBehaviour
         FindObjectOfType<Player>().playerRuntimeData.lastLittleSunID = littleSunData.LittleSunID;
 
         InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
+
         if (!littleSunData.IsActive())
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().playerCinemaMovement.LightLittleSun(this);
