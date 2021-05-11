@@ -1,7 +1,70 @@
 fileFormatVersion: 2
 guid: 338c37bb24e435d488a4385c05639d51
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4449317605902110823
+    second: dwarf_platformer_1_0
+  - first:
+      213: 5420763567114323227
+    second: dwarf_platformer_1_1
+  - first:
+      213: -4969753095639297063
+    second: dwarf_platformer_1_2
+  - first:
+      213: -3286372805083217446
+    second: dwarf_platformer_1_3
+  - first:
+      213: -7069183946828592250
+    second: dwarf_platformer_1_4
+  - first:
+      213: -6292524280907063852
+    second: dwarf_platformer_1_5
+  - first:
+      213: 3411829495498882562
+    second: dwarf_platformer_1_6
+  - first:
+      213: 2666293667779517193
+    second: dwarf_platformer_1_7
+  - first:
+      213: -9019472752446898731
+    second: dwarf_platformer_1_8
+  - first:
+      213: -2444878395312341071
+    second: dwarf_platformer_1_9
+  - first:
+      213: -2170792136019384673
+    second: dwarf_platformer_1_10
+  - first:
+      213: -5880243203054391611
+    second: dwarf_platformer_1_11
+  - first:
+      213: 8028461363290068411
+    second: dwarf_platformer_1_12
+  - first:
+      213: -1630744356625636177
+    second: dwarf_platformer_1_13
+  - first:
+      213: -4301637461836990773
+    second: dwarf_platformer_1_14
+  - first:
+      213: -8445695321663885294
+    second: dwarf_platformer_1_15
+  - first:
+      213: -3742714522946603815
+    second: dwarf_platformer_1_16
+  - first:
+      213: 2103150821790192340
+    second: dwarf_platformer_1_17
+  - first:
+      213: -518780006666422463
+    second: dwarf_platformer_1_18
+  - first:
+      213: 6311030328792700319
+    second: dwarf_platformer_1_19
+  - first:
+      213: 88357267932156870
+    second: dwarf_platformer_1_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +103,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -85,7 +148,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: dwarf_platformer_1_0
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 81
+        width: 60
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760dfa00ac62fbd30800000000000000
+      internalID: 4449317605902110823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_1
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 67
+        width: 46
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b158a3d6ebb6a3b40800000000000000
+      internalID: 5420763567114323227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_2
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 97
+        width: 62
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d39501f3e3e70bb0800000000000000
+      internalID: -4969753095639297063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_3
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 123
+        width: 70
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1c28188557462d0800000000000000
+      internalID: -3286372805083217446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_4
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 238
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b436d87a635ed90800000000000000
+      internalID: -7069183946828592250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_5
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 102
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd930871867ca8a0800000000000000
+      internalID: -6292524280907063852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_6
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 109
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e396979d0495f20800000000000000
+      internalID: 3411829495498882562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_7
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 55
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b1fd6d6f3900520800000000000000
+      internalID: 2666293667779517193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_8
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 67
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd7611a15564d280800000000000000
+      internalID: -9019472752446898731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_9
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 88
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf71609d0c021ed0800000000000000
+      internalID: -2444878395312341071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_10
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 81
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f966a5bbd0ccfd1e0800000000000000
+      internalID: -2170792136019384673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_11
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 93
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cea90136fd256ea0800000000000000
+      internalID: -5880243203054391611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_12
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 90
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb55ad3c213da6f60800000000000000
+      internalID: 8028461363290068411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_13
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 66
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa42bdfc5ae6e59e0800000000000000
+      internalID: -1630744356625636177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_14
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 189
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc671bef4838d44c0800000000000000
+      internalID: -4301637461836990773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_15
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 152
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210bb072adcdaca80800000000000000
+      internalID: -8445695321663885294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_16
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 159
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4721c98f43f0cc0800000000000000
+      internalID: -3742714522946603815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_17
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 140
+        width: 55
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d210e98784ef2d10800000000000000
+      internalID: 2103150821790192340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 100
+        width: 76
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 147b212255cecc8f0800000000000000
+      internalID: -518780006666422463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_19
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 67
+        width: 72
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95d76295a8459750800000000000000
+      internalID: 6311030328792700319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_platformer_1_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2317
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c39b609778e93100800000000000000
+      internalID: 88357267932156870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

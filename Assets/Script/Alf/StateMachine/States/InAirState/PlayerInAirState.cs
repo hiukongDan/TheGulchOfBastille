@@ -55,7 +55,7 @@ public class PlayerInAirState : PlayerState
             stateMachine.SwitchState(player.dashState);
         }
         // WALL JUMP
-        else if (player.wallState.CanWallJump() && isWalled && isJump && !isGrounded)
+        else if (player.wallState.CanWallJump() && isWalled && isJump && !isGrounded && normMovementInput.x != 0)
         {
             stateMachine.SwitchState(player.wallState);
         }
