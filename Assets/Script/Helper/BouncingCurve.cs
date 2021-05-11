@@ -8,7 +8,7 @@ namespace Gulch{
 public abstract class BouncingCurve
 {
 	/*
-		The curve traverse from t=0 to t=duration.
+		The curve traverses from t=0 to t=duration.
 		and is manually adjusted in such convenience.
 	*/
 	protected Func<float, float> curveFunc;
@@ -30,7 +30,7 @@ public abstract class BouncingCurve
 	public virtual float GetFirstRoot(float value){
 		/*
 			Warning!
-			Not promising to be bug free codes here :)
+			Not promising to be bug free :)
 		*/
 		float ret = 0f;
 		foreach(KeyValuePair<float, float> kvp in partialValueTable){
