@@ -75,6 +75,7 @@ public class PlayerCinemaMovement : MonoBehaviour
     {
         Door door = subAreaHandler.gameObject.GetComponentInChildren<Door>();
         player.stateMachine.SwitchState(player.cinemaState);
+
         if(door != null){
             // Open Door
             Animator doorAnim = door.GetComponent<Animator>();
@@ -87,13 +88,11 @@ public class PlayerCinemaMovement : MonoBehaviour
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.start));
         // TODO:
         /* startEffect */
-        /* loading/enable scene prefab */
         /* endEffect */
         
         // Enable and Disable scenes
         // move player to new position
         yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY/2);
-
 
         door?.Close();
         yield return new WaitForEndOfFrame();

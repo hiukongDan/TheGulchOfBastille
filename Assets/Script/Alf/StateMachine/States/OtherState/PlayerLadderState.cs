@@ -63,6 +63,8 @@ public class PlayerLadderState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        isReachLadderEnd = player.CheckLadderEnd();
+
         if(isClimbing){
             if(isReachLadderEnd){
                 OnReachOneEnd();
@@ -95,11 +97,6 @@ public class PlayerLadderState : PlayerState
                 player.Anim.SetFloat("ladderClimbDirection", normMovementInput.y);
             }
         }
-    }
-
-    protected override void DoCheck()
-    {
-        isReachLadderEnd = player.CheckLadderEnd();
     }
 
 #region INTERFACE

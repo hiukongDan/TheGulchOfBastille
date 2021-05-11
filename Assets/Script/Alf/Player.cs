@@ -147,13 +147,13 @@ public class Player : MonoBehaviour
         stateMachine.PhysicsUpdate();
     }
 
-    /*
+    
     void OnAnimatorMove(){
         if(Anim.runtimeAnimatorController == ACRootmotion && Anim.applyRootMotion){
             Rb.velocity = Anim.deltaPosition / Time.deltaTime;
         }
     }
-    */
+    
     void OnApplicationQuit(){
         
     }
