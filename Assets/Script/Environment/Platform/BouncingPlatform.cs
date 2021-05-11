@@ -10,7 +10,8 @@ public class BouncingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isBouncingMovement = false;
+        //isBouncingMovement = false;
+		originPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -19,7 +20,8 @@ public class BouncingPlatform : MonoBehaviour
         
     }
 	
-	protected bool isBouncingMovement;
+	//protected bool isBouncingMovement;
+	protected Vector2 originPosition;
 
 	/*
     void OnCollisionEnter2D(Collision2D collision) {
@@ -33,16 +35,21 @@ public class BouncingPlatform : MonoBehaviour
 	*/
 	
 	void OnTriggerEnter2D(Collider2D other){
+		/*
 		if(!isBouncingMovement){
 			isBouncingMovement = true;
 			StartCoroutine(bounce());
 		}
+		*/
+		StartCoroutine(bounce());
 	}
+	
 
     IEnumerator bounce(){
 		var curve = new Gulch.BouncingCurve_Instance_A(distance, duration);
-		float time = 0f;
-		Vector2 originPosition = transform.position;
+		float currentOffset = transform.position.y - originPosition.y;
+		float time = curve.GetFirstRoot(currentOffset);
+		
 		while(!curve.IsEnd(time)){
 			time += Time.deltaTime;
 			transform.position = new Vector2(originPosition.x, 
@@ -50,6 +57,7 @@ public class BouncingPlatform : MonoBehaviour
 			yield return new WaitForEndOfFrame();
 		}
 		
-		isBouncingMovement = false;
+		// isBouncingMovement = false;
+		transform.position = originPosition;
     }
 }

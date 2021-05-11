@@ -13,6 +13,7 @@ public abstract class BouncingCurve
 	*/
 	protected Func<float, float> curveFunc;
 	protected float duration;
+	protected Dictionary<float, float> partialValueTable;
 	
     public BouncingCurve(float duration){
 		this.duration = duration;
@@ -26,7 +27,32 @@ public abstract class BouncingCurve
 		return curveFunc(t);
 	}
 	
+	public virtual float GetFirstRoot(float value){
+		/*
+			Warning!
+			Not promising to be bug free codes here :)
+		*/
+		float ret = 0f;
+		foreach(KeyValuePair<float, float> kvp in partialValueTable){
+			if(Gulch.Math.AlmostEqual(value, kvp.Value, 1f)){
+				ret = kvp.Key;
+				break;
+			}
+		}
+		for(; !Gulch.Math.AlmostEqual(value, GetValue(ret)); ret+=0.01f)
+			;
+		
+		return ret;
+	}
+	
 	public virtual bool IsEnd(float t) => t >= this.duration;
+	
+	protected virtual void calculatePartialValueTable(){
+		partialValueTable = new Dictionary<float, float>();
+		for(float x = 0f; x < this.duration; x += 1f){
+			partialValueTable.Add(x, GetValue(x));
+		}
+	}
 }
 
 public class BouncingCurve_Instance_A : BouncingCurve
@@ -36,8 +62,11 @@ public class BouncingCurve_Instance_A : BouncingCurve
 	    in desmos.com/calculator or some equivalent software 
 		to see the curve before using them
 	*/
+	
+	
 	public BouncingCurve_Instance_A(float k=2.5f, float b=9.0f) : base(b){
 		this.curveFunc = (t) => k/b/b/b * t * (t - b) * (t - b) * (t - b);
+		calculatePartialValueTable();
 	}
 	
 }
