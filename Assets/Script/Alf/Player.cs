@@ -177,6 +177,12 @@ public class Player : MonoBehaviour
     public bool CheckWalled(){
         return Physics2D.Raycast(wallCheck.position, transform.right, playerData.GD_wallCheckDistance, playerData.GD_whatIsGround);
     }
+	
+	public bool CheckSlope(){
+		RaycastHit2D ray = Physics2D.Raycast(groundCheck.position, -transform.up, playerData.GD_slopeCheckDistance, 
+						playerData.GD_whatIsGround | playerData.GD_whatIsPlatform | playerData.GD_whatIsDefault);
+		return Vector2.Angle(transform.up, ray.normal) * Mathf.Deg2Rad > 0.01f;
+	}
 
     public bool CheckLadderEnd(){
         return Physics2D.OverlapCircle(LadderEndCheck.position, playerData.GD_ladderEndCheckRadius, playerData.GD_whatIsLadder);

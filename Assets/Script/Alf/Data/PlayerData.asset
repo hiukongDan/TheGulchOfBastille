@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBaseData
   GD_groundCheckDistance: 0.136
+  GD_slopeCheckDistance: 0.5
   GD_wallCheckDistance: 0.3
   GD_ladderEndCheckRadius: 0.05
   GD_damageImmuneTime: 0.2
@@ -28,6 +29,9 @@ MonoBehaviour:
   GD_whatIsLadder:
     serializedVersion: 2
     m_Bits: 131072
+  GD_whatIsDefault:
+    serializedVersion: 2
+    m_Bits: 1
   GD_playerLevel: 0
   GS_coyoteTime: 0.08
   WS_walkSpeed: 3

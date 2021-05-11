@@ -92,13 +92,13 @@ public class PlayerInAirState : PlayerState
                 stateMachine.SwitchState(player.idleState);
             }
         }
-        else
+        else if(!isSlope)
         {
             workspace.Set(normMovementInput.x * player.playerData.JS_horizontalSpeed, currentVelocity.y);
             player.SetVelocity(workspace);
-
-            player.InputHandler.ResetIsRoll();
         }
+		
+		player.InputHandler.ResetIsRoll();
     }
 
     public override void PhysicsUpdate()

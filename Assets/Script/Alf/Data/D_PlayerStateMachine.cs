@@ -7,6 +7,7 @@ public class D_PlayerStateMachine : ScriptableObject
 {
     [Header("General Data")]
     public float GD_groundCheckDistance = 0.3f;
+	public float GD_slopeCheckDistance = 0.5f;
     public float GD_wallCheckDistance = 0.3f;
     public float GD_ladderEndCheckRadius = 0.1f;
     public float GD_damageImmuneTime = 0.5f;
@@ -14,6 +15,7 @@ public class D_PlayerStateMachine : ScriptableObject
     public LayerMask GD_whatIsPlatform;
     public LayerMask GD_whatIsEnemy;
     public LayerMask GD_whatIsLadder;
+	public LayerMask GD_whatIsDefault;
 
     [Header("Player Data")]
     public int GD_playerLevel = 1; // initial level is 1
