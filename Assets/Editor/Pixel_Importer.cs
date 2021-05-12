@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 using System.Text.RegularExpressions;
 
 public class Pixel_Importer : AssetPostprocessor
@@ -10,7 +11,7 @@ public class Pixel_Importer : AssetPostprocessor
     private float width, height;
     void OnPreprocessTexture(){
         if(assetPath.Contains(".png")){
-            Debug.Log("imported " + assetPath);
+            // Debug.Log("imported " + assetPath);
             TextureImporter textureImporter = (TextureImporter)assetImporter;
 
             textureImporter.filterMode = FilterMode.Point;
@@ -27,8 +28,6 @@ public class Pixel_Importer : AssetPostprocessor
                 this.width = float.Parse(groups[1].ToString());
                 this.height = float.Parse(groups[2].ToString());
                 this.isAtlas = true;
-
-                // Debug.Log("width: " + this.width + " height: " + this.height);
             }
             else{
                 this.isAtlas = false;
@@ -38,12 +37,8 @@ public class Pixel_Importer : AssetPostprocessor
 
     void OnPostprocessTexture(Texture2D texture){
         if(this.isAtlas){
-            Regex rg = new Regex(@"/([^/]+).png$");
-            Match match = rg.Match(assetPath);
-            string filename = "sprites";
-            if(match.Groups.Count > 0){
-                filename = match.Groups[1].ToString();
-            }
+            TextureImporter textureImporter = (TextureImporter)assetImporter;
+            string filename = Path.GetFileNameWithoutExtension(assetPath);
 
             // Debug.Log(filename);
             int col = Mathf.FloorToInt(texture.width / this.width);
@@ -61,19 +56,21 @@ public class Pixel_Importer : AssetPostprocessor
                 for (int j = 0; j<col; j++){
                     SpriteMetaData data = new SpriteMetaData();
                     data.rect = new Rect(j*this.width, i*this.height, this.width, this.height);
-                    data.name = filename + "_" + count;
-                    count++;
-
+                    data.name = filename + "_" + count++;
                     metaData.Add(data);
+                    //textureImporter.spritesheet[count-1] = data;
                 }
             }
-
-            TextureImporter textureImporter = (TextureImporter)assetImporter;
+            
             textureImporter.spritesheet = metaData.ToArray();
-
-            // Debug.Log("Notify: Imported " + filename);
-
             // Debug.Log(metaData.Count);
+
+            Debug.Log("Imported " + filename);
+            // Debug.Log(metaData.Count);
+
+            // credit - this fix comes from https://gist.github.com/janisgitendorfs/42bb76a8994f50a762dd24aac04e7b53
+            AssetDatabase.ForceReserializeAssets(new List<string>{assetPath});
+            AssetDatabase.ImportAsset(assetPath, ImportAssetOptions.ForceUpdate);
         }
 
     }

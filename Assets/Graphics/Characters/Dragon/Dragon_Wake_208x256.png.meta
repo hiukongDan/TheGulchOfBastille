@@ -3,21 +3,6 @@ guid: 2cfdaae46cc03e443a086b034c33be5f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3286163911610860551
-    second: sprite
-  - first:
-      213: 2467314271473265160
-    second: _0
-  - first:
-      213: 5813558963407066642
-    second: Assets/Graphics/Characters/Dragon/Dragon_Wake_208x256.png_0
-  - first:
-      213: -6798366192571894336
-    second: Graphics/Characters/Dragon/Dragon_Wake_208x256.png_0
-  - first:
-      213: 2817406828133608192
-    second: Graphics/Characters/Dragon/Dragon_Wake_208x256_0
-  - first:
       213: -5093340829605404927
     second: Dragon_Wake_208x256_0
   - first:
@@ -1004,7 +989,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
