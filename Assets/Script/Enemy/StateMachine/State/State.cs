@@ -20,6 +20,7 @@ public class State
 
     protected float startTime;
 
+    // TODO: why not using AnimationHash?
     public State(FiniteStateMachine stateMachine, Entity entity, string animName, State defaultNextState = null)
     {
         this.stateMachine = stateMachine;
