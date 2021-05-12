@@ -6,6 +6,8 @@ public class BouncingPlatform : MonoBehaviour
 {
 	public float distance = 1.2f;
 	public float duration = 4f;
+
+	protected Coroutine onlyTask;
 	
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,13 @@ public class BouncingPlatform : MonoBehaviour
 	
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
-			StartCoroutine(bounce());
+			if(onlyTask == null){
+				onlyTask = StartCoroutine(bounce());
+			}
+			else{
+				StopCoroutine(onlyTask);
+				onlyTask = StartCoroutine(bounce());
+			}
 		}
 	}
 

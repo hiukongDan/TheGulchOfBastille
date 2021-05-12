@@ -13,6 +13,7 @@ public enum SceneCode
     Mine_Entrance,
     Lower_Mine,
     Dwarf_Ruins,
+    Mine_Center,
     Count,
 };
 
@@ -29,6 +30,7 @@ public static class SceneCodeDisplayName{
         {(int)SceneCode.Abandoned_Door, "Abandoned Door"},
         {(int)SceneCode.Mine_Entrance, "Mine Entrance"},
         {(int)SceneCode.Lower_Mine, "Lower Mine"},
+        {(int)SceneCode.Mine_Center, "Mine Center"},
         {(int)SceneCode.Dwarf_Ruins, "Dwarf Ruins"},
     };
 };
