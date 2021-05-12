@@ -13,6 +13,7 @@ public class DragonCombat1 : Entity
 
     #region STATE
     public DC1_IdleState idleState;
+    public DC1_FlipState flipState;
     #endregion
 
     #region STATE_DATA
@@ -75,11 +76,11 @@ public class DragonCombat1 : Entity
     {
         base.Start();
 
-        dc1_ota = (DC1_ObjectToAlive)objectToAlive;
+        this.dc1_ota = (DC1_ObjectToAlive)objectToAlive;
 
         // the final parameter and be refered in the class body
         idleState = new DC1_IdleState(stateMachine, this, "idle_0", idleStateData, this);
-
+        flipState = new DC1_FlipState(stateMachine, this, "flip_0", this);
 
         stateMachine.Initialize(idleState);
     }
@@ -87,5 +88,10 @@ public class DragonCombat1 : Entity
     protected override void Update()
     {
         base.Update();
+    }
+
+    void OnAnimatorMove()
+    {
+        rb.velocity = anim.deltaPosition / Time.deltaTime;
     }
 }
