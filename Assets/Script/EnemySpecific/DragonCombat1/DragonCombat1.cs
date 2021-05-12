@@ -14,6 +14,8 @@ public class DragonCombat1 : Entity
     #region STATE
     public DC1_IdleState idleState;
     public DC1_FlipState flipState;
+    public DC1_TakeoffState takeoffState;
+    public DC1_FlyIdleState flyIdleState;
     #endregion
 
     #region STATE_DATA
@@ -35,6 +37,10 @@ public class DragonCombat1 : Entity
     protected override void Damage(CombatData combatData)
     {
         base.Damage(combatData);
+    }
+
+    public void FaceToPlayer(){
+        FaceTo(refPlayer.transform.position);
     }
 
     protected override bool FaceTo(Vector2 targetPos)
@@ -81,6 +87,8 @@ public class DragonCombat1 : Entity
         // the final parameter and be refered in the class body
         idleState = new DC1_IdleState(stateMachine, this, "idle_0", idleStateData, this);
         flipState = new DC1_FlipState(stateMachine, this, "flip_0", this);
+        takeoffState = new DC1_TakeoffState(stateMachine, this, "takeoff_0", this);
+        flyIdleState = new DC1_FlyIdleState(stateMachine, this, "fly_idle_0", this);
 
         stateMachine.Initialize(idleState);
     }

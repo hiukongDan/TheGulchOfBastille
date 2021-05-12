@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DC1_FlipState : FlipState
+public class DC1_TakeoffState : State
 {
     protected DragonCombat1 enemy;
-    protected State prevState;
-    public DC1_FlipState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy) : base(stateMachine, entity, animName)
+    public DC1_TakeoffState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
     }
@@ -17,22 +16,7 @@ public class DC1_FlipState : FlipState
 
     public override void Complete()
     {
-        base.Complete();
-    }
-
-    public void SetPrevState(State prevState) => this.prevState = prevState;
-    public override void CompleteFlip()
-    {
-        if(this.prevState == null)
-        {
-            stateMachine.SwitchState(enemy.idleState);
-        }
-        else
-        {
-            stateMachine.SwitchState(this.prevState);
-            // clear cache
-            this.prevState = null;
-        }
+        stateMachine.SwitchState(enemy.flyIdleState);
     }
 
     public override void DoChecks()
@@ -44,11 +28,13 @@ public class DC1_FlipState : FlipState
     public override void Enter()
     {
         base.Enter();
+        enemy.dc1_ota.takeoffState = this;
     }
 
     public override void Exit()
     {
         base.Exit();
+        enemy.dc1_ota.takeoffState = null;
     }
 
     public override void LogicUpdate()
@@ -63,7 +49,7 @@ public class DC1_FlipState : FlipState
 
     public override void ResetTimer()
     {
-        base.ResetTimer();
+
     }
 
     public override void UpdateTimer()
