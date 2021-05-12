@@ -157,7 +157,7 @@ public class Entity : MonoBehaviour
         return Physics2D.Raycast(meleeAttackCheck.position, new Vector2(facingDirection, 0), entityData.meleeAttackDistance, entityData.whatIsPlayer);
     }
 
-    public void Flip()
+    public virtual void Flip()
     {
         aliveGO.transform.Rotate(new Vector3(0, 180, 0));
         facingDirection *= -1;

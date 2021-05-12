@@ -44,8 +44,6 @@ public class DC1_FlyIdleState : State
     {
         base.LogicUpdate();
 
-        
-
         Vector2 playerDir = enemy.refPlayer.transform.position - enemy.aliveGO.transform.position;
 
         // if  player is above, fly to higher position

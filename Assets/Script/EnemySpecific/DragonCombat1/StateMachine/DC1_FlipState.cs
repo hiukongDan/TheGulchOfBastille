@@ -22,6 +22,7 @@ public class DC1_FlipState : FlipState
 
     public override void CompleteFlip()
     {
+        enemy.Flip();
         stateMachine.SwitchState(enemy.idleState);
     }
 
