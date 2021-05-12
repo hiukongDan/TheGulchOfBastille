@@ -27,9 +27,9 @@ public class DC1_IdleState : IdleState
     public override void DoChecks()
     {
         base.DoChecks();
-        float tolerence = 0.1f;
-        this.isPlayerInFront = enemy.facingDirection > 0 ? (enemy.refPlayer.transform.position.x > enemy.transform.position.x + tolerence) : 
-                                                        (enemy.refPlayer.transform.position.x < enemy.transform.position.x - tolerence);
+        float tolerence = 0.3f;
+        this.isPlayerInFront = enemy.facingDirection > 0 ? (enemy.refPlayer.transform.position.x > enemy.aliveGO.transform.position.x + tolerence) : 
+                                                        (enemy.refPlayer.transform.position.x < enemy.aliveGO.transform.position.x - tolerence);
     }
 
     public override void Enter()
@@ -47,6 +47,8 @@ public class DC1_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        DoChecks();
 
         if (!isPlayerInFront)
         {

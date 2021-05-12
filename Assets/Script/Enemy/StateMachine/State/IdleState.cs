@@ -51,6 +51,7 @@ public class IdleState : State
         flipAfterIdle = flip;
     }
 
+    /* Please Use This Function Explicitly */
     public override void DoChecks()
     {
         base.DoChecks();

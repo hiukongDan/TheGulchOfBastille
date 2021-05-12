@@ -8,4 +8,14 @@ public class DC1_ObjectToAlive : ObjectToAlive
     public void CompleteTakeoff(){
         takeoffState?.Complete();
     }
+
+    public DC1_DiveState diveState;
+    public void CompleteDive(){
+        diveState?.Complete();
+    }
+
+    public DC1_LandState landState;
+    public void CompleteLand(){
+        landState?.Complete();
+    }
 }

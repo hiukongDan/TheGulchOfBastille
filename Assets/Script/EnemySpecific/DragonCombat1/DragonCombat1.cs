@@ -16,6 +16,8 @@ public class DragonCombat1 : Entity
     public DC1_FlipState flipState;
     public DC1_TakeoffState takeoffState;
     public DC1_FlyIdleState flyIdleState;
+    public DC1_DiveState diveState;
+    public DC1_LandState landState;
     #endregion
 
     #region STATE_DATA
@@ -40,7 +42,10 @@ public class DragonCombat1 : Entity
     }
 
     public void FaceToPlayer(){
-        FaceTo(refPlayer.transform.position);
+        float tolerance = 0.3f;
+        if(Mathf.Abs(aliveGO.transform.position.x - refPlayer.transform.position.x) > tolerance){
+            FaceTo(refPlayer.transform.position);
+        }
     }
 
     protected override bool FaceTo(Vector2 targetPos)
@@ -89,6 +94,8 @@ public class DragonCombat1 : Entity
         flipState = new DC1_FlipState(stateMachine, this, "flip_0", this);
         takeoffState = new DC1_TakeoffState(stateMachine, this, "takeoff_0", this);
         flyIdleState = new DC1_FlyIdleState(stateMachine, this, "fly_idle_0", this);
+        diveState = new DC1_DiveState(stateMachine, this, "dive_0", this);
+        landState = new DC1_LandState(stateMachine, this, "land_0", this);
 
         stateMachine.Initialize(idleState);
     }
