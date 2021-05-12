@@ -76,7 +76,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -114,10 +114,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 734c3961c4a1a6fc0800000000000000
-      internalID: -3500956846228519881
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -135,10 +135,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b0f7b8761df0cd3f0800000000000000
-      internalID: -874806835556942069
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -156,10 +156,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 287bbceeaeb284080800000000000000
-      internalID: -9203057550502938750
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -177,10 +177,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9ac2d231ef68aa050800000000000000
-      internalID: 5812606694876589225
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7aca787b94d5f34b0800000000000000
-      internalID: -5458541652156633945
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
