@@ -1,0 +1,3 @@
+1111 511X
+dust fx starts at frame6
+(counting from 0)
