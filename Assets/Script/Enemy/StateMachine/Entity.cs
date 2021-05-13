@@ -159,7 +159,10 @@ public class Entity : MonoBehaviour
 
     public virtual void Flip()
     {
+        float before = aliveGO.transform.rotation.y;
         aliveGO.transform.Rotate(new Vector3(0, 180, 0));
+        float after = aliveGO.transform.rotation.y;
+        Debug.Log("Before: " + before + " After: " + after);
         facingDirection *= -1;
     }
 

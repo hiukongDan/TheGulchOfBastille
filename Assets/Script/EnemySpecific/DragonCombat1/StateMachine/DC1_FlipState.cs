@@ -22,7 +22,6 @@ public class DC1_FlipState : FlipState
 
     public override void CompleteFlip()
     {
-        enemy.Flip();
         stateMachine.SwitchState(enemy.idleState);
     }
 
@@ -35,11 +34,13 @@ public class DC1_FlipState : FlipState
     public override void Enter()
     {
         base.Enter();
+        enemy.anim.applyRootMotion = false;
     }
 
     public override void Exit()
     {
         base.Exit();
+        enemy.anim.applyRootMotion = true;
     }
 
     public override void LogicUpdate()

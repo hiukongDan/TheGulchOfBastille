@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,14 +29,12 @@ public class DC1_IdleState : IdleState
     public override void DoChecks()
     {
         base.DoChecks();
-        this.isPlayerInFront = enemy.facingDirection > 0 ? (enemy.refPlayer.transform.position.x > enemy.aliveGO.transform.position.x) : 
-                                                        (enemy.refPlayer.transform.position.x < enemy.aliveGO.transform.position.x);
+        this.isPlayerInFront = enemy.facingDirection * (enemy.refPlayer.transform.position.x - enemy.aliveGO.transform.position.x) > 0;
     }
 
     public override void Enter()
     {
         base.Enter();
-        isPlayerInFront = true;
         this.playerNearTimer = 0f;
     }
 
@@ -48,6 +46,9 @@ public class DC1_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if(Time.time < idleDurationTime + startTime){
+            return;
+        }
 
         DoChecks();
 
