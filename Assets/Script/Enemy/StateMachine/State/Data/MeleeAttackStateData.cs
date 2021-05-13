@@ -16,4 +16,14 @@ public class MeleeAttackStateData : ScriptableObject
 
     // attack + additional attack
     public int heideAttackTimes = 4;
+
+    public CombatData GetCombatData(){
+        CombatData combatData = new CombatData();
+        combatData.damage = damage;
+        combatData.stunDamage = stunDamage;
+        combatData.knockbackDir = knockbackDir;
+        combatData.knockbackImpulse = knockbackImpulse;
+
+        return combatData;
+    }
 }

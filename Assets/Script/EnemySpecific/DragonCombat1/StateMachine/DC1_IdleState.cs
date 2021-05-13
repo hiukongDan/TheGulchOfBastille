@@ -46,10 +46,6 @@ public class DC1_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if(Time.time < idleDurationTime + startTime){
-            return;
-        }
-
         DoChecks();
 
         if (!isPlayerInFront)
@@ -61,6 +57,9 @@ public class DC1_IdleState : IdleState
             if(this.playerNearTimer > playerNearTakeoffTriggerTime){
                 stateMachine.SwitchState(enemy.takeoffState);
             }
+        }
+        else if(idleDurationTime + startTime < Time.time){
+            stateMachine.SwitchState(enemy.takeoffState);
         }
     }
 

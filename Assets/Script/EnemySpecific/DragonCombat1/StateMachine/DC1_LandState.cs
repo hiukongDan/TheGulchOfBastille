@@ -6,7 +6,9 @@ public class DC1_LandState : State
 {
     protected DragonCombat1 enemy;
     private bool isLanding = false;
-    protected float flyUpSpeed = 2f;
+    private bool isHover = false;
+    protected float flyUpSpeed = 5f;
+    protected float landingSpeed = 2f;
     public DC1_LandState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
@@ -37,6 +39,7 @@ public class DC1_LandState : State
         enemy.anim.Play("fly_idle_0");
 
         isLanding = false;
+        isHover = true;
 
         enemy.dc1_ota.landState = this;
     }
@@ -54,19 +57,33 @@ public class DC1_LandState : State
 
         DoChecks();
 
-        float landingOffset = 0.87f;
-        Vector2 target = new Vector2(enemy.refPlayer.transform.position.x,
+        float hoverOffset = 2f;
+        float landingOffset = 0.85f;
+        Vector2 target = new Vector2(enemy.aliveGO.transform.position.x,
             enemy.refPlayer.transform.position.y + landingOffset);
+        Vector2 hoverTarget = new Vector2(enemy.aliveGO.transform.position.x,
+            enemy.refPlayer.transform.position.y + hoverOffset);
 
         //Debug.Log("isGroundDetected: " + isGroundDetected);
-        if(isGroundDetected && Gulch.Math.AlmostEqual(target.y, enemy.aliveGO.transform.position.y, 0.1f) && !isLanding){
+        if((isGroundDetected||isPlatformDetected) && Gulch.Math.AlmostEqual(target.y, enemy.aliveGO.transform.position.y, 0.01f) && !isLanding && !isHover){
             enemy.anim.Play("land_0");
             isLanding = true;
+        }
+        else if(isHover){
+            if(!Gulch.Math.AlmostEqual(hoverTarget.y, enemy.aliveGO.transform.position.y, 0.1f)){
+                Vector2 currentPos = enemy.aliveGO.transform.position;
+                enemy.aliveGO.transform.position = new Vector2(currentPos.x,
+                    Mathf.Lerp(currentPos.y, hoverTarget.y, Time.deltaTime * flyUpSpeed)
+                );
+            }
+            else{
+                isHover = false;
+            }
         }
         else if(!isLanding){   // find land => find space slightly above player
             Vector2 currentPos = enemy.aliveGO.transform.position;
             enemy.aliveGO.transform.position = new Vector2(currentPos.x,
-                Mathf.Lerp(currentPos.y, target.y, Time.deltaTime * flyUpSpeed)
+                Mathf.Lerp(currentPos.y, target.y, Time.deltaTime * landingSpeed)
             );
         }
 

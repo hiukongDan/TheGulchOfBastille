@@ -14,8 +14,19 @@ public class DC1_ObjectToAlive : ObjectToAlive
         diveState?.Complete();
     }
 
+    public void ApplyDiveDamage(){
+        diveState?.ApplyDamage();
+    }
+
     public DC1_LandState landState;
     public void CompleteLand(){
         landState?.Complete();
     }
+
+    public override void Flip()
+    {
+        flipState?.Complete();
+    }
+
+
 }

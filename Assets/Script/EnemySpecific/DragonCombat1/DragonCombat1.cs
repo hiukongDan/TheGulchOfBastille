@@ -22,6 +22,7 @@ public class DragonCombat1 : Entity
 
     #region STATE_DATA
     public IdleStateData idleStateData;
+    public MeleeAttackStateData diveAttackData;
     #endregion
 
     public override void InitEntity()
@@ -39,6 +40,8 @@ public class DragonCombat1 : Entity
     protected override void Damage(CombatData combatData)
     {
         base.Damage(combatData);
+
+        Gulch.GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(aliveGO, Gulch.SpriteEffectType.Blink));
     }
 
     public void FaceToPlayer(){
@@ -94,9 +97,13 @@ public class DragonCombat1 : Entity
         flipState = new DC1_FlipState(stateMachine, this, "flip_0", this);
         takeoffState = new DC1_TakeoffState(stateMachine, this, "takeoff_0", this);
         flyIdleState = new DC1_FlyIdleState(stateMachine, this, "fly_idle_0", this);
-        diveState = new DC1_DiveState(stateMachine, this, "dive_0", this);
+        diveState = new DC1_DiveState(stateMachine, this, "dive_0", this, diveAttackData);
         landState = new DC1_LandState(stateMachine, this, "land_0", this);
 
+        // stateMachine.Initialize(idleState);
+    }
+
+    public void Tmp_InitCombat(){
         stateMachine.Initialize(idleState);
     }
 

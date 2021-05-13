@@ -6,6 +6,7 @@ public class DC1_FlipState : FlipState
 {
     protected DragonCombat1 enemy;
     protected State prevState;
+    protected bool shouldFlip;
     public DC1_FlipState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
@@ -17,7 +18,7 @@ public class DC1_FlipState : FlipState
 
     public override void Complete()
     {
-        base.Complete();
+        shouldFlip = true;
     }
 
     public override void CompleteFlip()
@@ -34,18 +35,23 @@ public class DC1_FlipState : FlipState
     public override void Enter()
     {
         base.Enter();
-        enemy.anim.applyRootMotion = false;
+        //enemy.anim.applyRootMotion = false;
+        shouldFlip = false;
     }
 
     public override void Exit()
     {
         base.Exit();
-        enemy.anim.applyRootMotion = true;
+        //enemy.anim.applyRootMotion = true;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if(shouldFlip){
+            enemy.Flip();
+            shouldFlip = false;
+        }
     }
 
     public override void PhysicsUpdate()

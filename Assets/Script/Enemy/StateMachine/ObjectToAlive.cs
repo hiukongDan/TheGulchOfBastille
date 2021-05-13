@@ -27,7 +27,7 @@ public class ObjectToAlive : MonoBehaviour
         flipState?.CompleteFlip();
     }
 
-    public void Flip()
+    public virtual void Flip()
     {
         entity.Flip();
     }
