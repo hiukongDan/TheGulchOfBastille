@@ -6,6 +6,7 @@ public class DC1_DiveState : State
 {
     protected DragonCombat1 enemy;
     protected MeleeAttackStateData attackData;
+    private bool hasApplyDamage;
     public DC1_DiveState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy, MeleeAttackStateData attackData) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
@@ -47,6 +48,8 @@ public class DC1_DiveState : State
     {
         base.Enter();
         enemy.dc1_ota.diveState = this;
+
+        hasApplyDamage = false;
     }
 
     public override void Exit()
@@ -58,7 +61,10 @@ public class DC1_DiveState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
+        if(!hasApplyDamage && Gulch.Math.AlmostEqual(enemy.refPlayer.transform.position.y, enemy.aliveGO.transform.position.y, 0.3f)){
+            hasApplyDamage = true;
+            ApplyDamage();
+        }
     }
 
     public override void PhysicsUpdate()

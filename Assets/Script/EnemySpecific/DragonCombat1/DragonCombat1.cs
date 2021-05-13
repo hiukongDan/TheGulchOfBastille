@@ -7,6 +7,7 @@ public class DragonCombat1 : Entity
     #region REFERENCES
     public Player refPlayer { get; private set; }
     public DC1_ObjectToAlive dc1_ota { get; private set; }
+    public Transform combatTrigger;
     //public GC1_ObjectToAlive gc1_ota { get; private set; }
     //private Transform combatField;
     #endregion
@@ -28,6 +29,13 @@ public class DragonCombat1 : Entity
     public override void InitEntity()
     {
         base.InitEntity();
+        combatTrigger.gameObject.SetActive(true);
+        stateMachine?.ClearState();
+        anim?.Play("idle_0");
+        if(facingDirection < 0){
+            Flip();
+        }
+        aliveGO.transform.position = initPosition.position;
     }
 
     protected override void Awake()
