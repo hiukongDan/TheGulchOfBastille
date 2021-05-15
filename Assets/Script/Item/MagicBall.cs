@@ -24,6 +24,7 @@ public class MagicBall : MonoBehaviour
         Invoke("Destroy", destroyDelay);
 
         rb2d.velocity = direction.normalized * flyingSpeed;
+        // Debug.Log("magic ball: " + direction.normalized + " " + Time.time);
 
         //Debug.Log("Generated magic ball");
     }

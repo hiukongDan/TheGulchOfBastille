@@ -21,6 +21,7 @@ public class PlayerState
 
     #region INPUT SUBSCRIPTION
     protected Vector2 normMovementInput;
+    protected Vector2 normNavigationInput;
     protected bool isJumpCanceled;
     protected bool isJump;
     protected bool isParry;
@@ -85,6 +86,7 @@ public class PlayerState
     protected virtual void UpdateInputSubscription()
     {
         normMovementInput = player.InputHandler.NormMovementInput;
+        normNavigationInput = player.InputHandler.NormNavigationInput;
         isJump = player.InputHandler.isJump;
         isParry = player.InputHandler.isParry;
         isRoll = player.InputHandler.isRoll;

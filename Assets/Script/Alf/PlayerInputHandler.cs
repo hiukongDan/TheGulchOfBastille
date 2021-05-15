@@ -27,6 +27,9 @@ public class PlayerInputHandler : MonoBehaviour
     public float NormMovementX { get; private set; }
     public float NormMovementY { get; private set; }
 
+    public Vector2 RawNavigationInput{get; private set;}
+    public Vector2 NormNavigationInput{get; private set;}
+
     private Vector2 workspace;
     // private GameManager gameManager;
 
@@ -152,6 +155,16 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnMouseMove(InputAction.CallbackContext context)
     {
         MousePosInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnNavigation(InputAction.CallbackContext context){
+        RawNavigationInput = context.ReadValue<Vector2>();
+        workspace = RawNavigationInput * Vector2.right;
+        NormMovementX = workspace.normalized.x;
+        workspace = RawNavigationInput * Vector2.up;
+        NormMovementY = workspace.normalized.y;
+        workspace.Set(NormMovementX, NormMovementY);
+        NormNavigationInput = workspace;
     }
 
     public void ResetIsJump() => isJump = false;

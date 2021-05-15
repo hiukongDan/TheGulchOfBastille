@@ -21,6 +21,7 @@ public class PlayerMagicAttackState : PlayerAttackState
         return base.CheckEndAttack();
     }
 
+    // used by animation event
     public override void CheckHitbox()
     {
         // TODO:  cast magic ball here
@@ -95,9 +96,9 @@ public class PlayerMagicAttackState : PlayerAttackState
     protected void RequireDirection(){
         Vector2 pos = Camera.main.ScreenToWorldPoint(mousePosition);
         Vector2 dir = (pos - new Vector2(player.transform.position.x, player.transform.position.y)).normalized;
-        if(normMovementInput != Vector2.zero){
+        if(normNavigationInput != Vector2.zero){
             // if there is controller input
-            dir = normMovementInput;
+            dir = normNavigationInput;
         }
         
         if(Mathf.Sign(dir.x) != player.facingDirection){
