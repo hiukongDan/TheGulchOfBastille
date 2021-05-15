@@ -599,8 +599,8 @@ public class Player : MonoBehaviour
         playerRuntimeData.currentHitPoints = Mathf.Clamp(
                     playerRuntimeData.currentHitPoints + amount,
                     0,
-                    playerData.PD_maxHitPoint);
-        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, playerData.PD_maxHitPoint);
+                    CalculatePlayerMaxHitPoint());
+        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, CalculatePlayerMaxHitPoint());
     }
 
 
@@ -610,13 +610,13 @@ public class Player : MonoBehaviour
     public void OnUseItem(ItemData.Consumable item, int amount=1){
             switch(item){
                 case ItemData.Consumable.Uilos_Candy:
-                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Candy_hpIncreasedRate*playerData.PD_maxHitPoint);
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Candy_hpIncreasedRate*CalculatePlayerMaxHitPoint());
                 break;
                 case ItemData.Consumable.Uilos_Potion:
-                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Potion_hpIncreasedRate*playerData.PD_maxHitPoint);
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Potion_hpIncreasedRate*CalculatePlayerMaxHitPoint());
                 break;
                 case ItemData.Consumable.Uilos_Cake:
-                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Potion_hpIncreasedRate*playerData.PD_maxHitPoint);
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Potion_hpIncreasedRate*CalculatePlayerMaxHitPoint());
                 break;
                 case ItemData.Consumable.Uilos_Pedal:
                 OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Pedal_uilosAmount);
@@ -631,7 +631,7 @@ public class Player : MonoBehaviour
                 OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Bunch_uilosAmount);
                 break;
                 case ItemData.Consumable.Holy_Sun_Water:
-                OnDpIncrease(-amount * ItemData.ConsumableItemData.Holy_Sun_Water_decayDecreasedRateFromMax * playerData.PD_maxDecayPoint);
+                OnDpIncrease(-amount * ItemData.ConsumableItemData.Holy_Sun_Water_decayDecreasedRateFromMax*CalculatePlayerMaxDecayPoint());
                 break;
                 case ItemData.Consumable.Neon_Potion:
                 GM.playerCinemaMovement.UseNeonPotion();
