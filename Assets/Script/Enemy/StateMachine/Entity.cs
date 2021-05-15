@@ -6,6 +6,7 @@ public class Entity : MonoBehaviour
 {
     protected FiniteStateMachine stateMachine;
     protected StateCooldownTimer stateCooldownTimer;
+    protected Material defaultMaterial;
 
     public int facingDirection { get; private set; }
     public enum FacingDirection{
@@ -77,6 +78,8 @@ public class Entity : MonoBehaviour
 
         facingDirection = 1;
 
+        defaultMaterial = anim.GetComponent<SpriteRenderer>().material;
+
         Reset();
     }
 
@@ -87,6 +90,10 @@ public class Entity : MonoBehaviour
         isDead = false;
         isStunned = false;
         isDanmageable = true;
+
+        if(defaultMaterial != null){
+            anim.GetComponent<SpriteRenderer>().material = defaultMaterial;
+        }
 
         switch(startFacingDirection){
             case FacingDirection.LEFT:
