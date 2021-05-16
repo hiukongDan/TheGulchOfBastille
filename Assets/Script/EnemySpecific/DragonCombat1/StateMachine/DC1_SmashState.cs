@@ -6,11 +6,13 @@ public class DC1_SmashState : State
 {
     protected DragonCombat1 enemy;
     protected MeleeAttackStateData attackData;
+    protected GameObject smashDust;
     //private bool hasApplyDamage;
-    public DC1_SmashState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy, MeleeAttackStateData attackData) : base(stateMachine, entity, animName)
+    public DC1_SmashState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy, MeleeAttackStateData attackData, GameObject smashDust) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
         this.attackData = attackData;
+        this.smashDust = smashDust;
     }
     public override bool CanAction()
     {
@@ -35,6 +37,12 @@ public class DC1_SmashState : State
             {
                 collider.gameObject.SendMessage("Damage", combatData);
             }
+        }
+    }
+
+    public void ReleaseSmashDust(){
+        if(this.smashDust != null){
+            GameObject.Instantiate(this.smashDust, enemy.aliveGO.transform.position, enemy.aliveGO.transform.rotation, enemy.aliveGO.transform);
         }
     }
 

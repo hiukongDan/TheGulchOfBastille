@@ -36,5 +36,9 @@ public class DC1_ObjectToAlive : ObjectToAlive
         smashState?.ApplyDamage();
     }
 
+    public void ReleaseSmashDust(){
+        smashState?.ReleaseSmashDust();
+    }
+
 
 }
