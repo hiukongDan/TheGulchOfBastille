@@ -8,7 +8,7 @@ public class DC1_FlyIdleState : State
     protected State prevState;
     protected float flyUpSpeed = 1f;
     protected float distanceKeep = 2f;
-    protected float idleMaxTime = 5f;
+    protected float idleMaxTime = 1f;
     public DC1_FlyIdleState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;

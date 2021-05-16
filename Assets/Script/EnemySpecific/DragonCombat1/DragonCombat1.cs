@@ -19,11 +19,13 @@ public class DragonCombat1 : Entity
     public DC1_FlyIdleState flyIdleState;
     public DC1_DiveState diveState;
     public DC1_LandState landState;
+    public DC1_SmashState smashState;
     #endregion
 
     #region STATE_DATA
     public IdleStateData idleStateData;
     public MeleeAttackStateData diveAttackData;
+    public MeleeAttackStateData smashAttackData;
     #endregion
 
     public override void InitEntity()
@@ -107,6 +109,7 @@ public class DragonCombat1 : Entity
         flyIdleState = new DC1_FlyIdleState(stateMachine, this, "fly_idle_0", this);
         diveState = new DC1_DiveState(stateMachine, this, "dive_0", this, diveAttackData);
         landState = new DC1_LandState(stateMachine, this, "land_0", this);
+        smashState = new DC1_SmashState(stateMachine, this, "smash_0", this, smashAttackData);
 
         // stateMachine.Initialize(idleState);
     }

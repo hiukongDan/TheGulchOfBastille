@@ -28,5 +28,13 @@ public class DC1_ObjectToAlive : ObjectToAlive
         flipState?.Complete();
     }
 
+    public DC1_SmashState smashState;
+    public void CompleteSmash(){
+        smashState?.Complete();
+    }
+    public void ApplySmashDamage(){
+        smashState?.ApplyDamage();
+    }
+
 
 }

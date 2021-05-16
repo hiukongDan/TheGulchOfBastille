@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DC1_DiveState : State
+public class DC1_SmashState : State
 {
     protected DragonCombat1 enemy;
     protected MeleeAttackStateData attackData;
-    private bool hasApplyDamage;
-    public DC1_DiveState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy, MeleeAttackStateData attackData) : base(stateMachine, entity, animName)
+    //private bool hasApplyDamage;
+    public DC1_SmashState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy, MeleeAttackStateData attackData) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
         this.attackData = attackData;
@@ -20,7 +20,7 @@ public class DC1_DiveState : State
     public override void Complete()
     {
         base.Complete();
-        stateMachine.SwitchState(enemy.landState);
+        stateMachine.SwitchState(enemy.idleState);
     }
 
     public void ApplyDamage(){
@@ -47,24 +47,22 @@ public class DC1_DiveState : State
     public override void Enter()
     {
         base.Enter();
-        enemy.dc1_ota.diveState = this;
-
-        hasApplyDamage = false;
+        enemy.dc1_ota.smashState = this;
     }
 
     public override void Exit()
     {
         base.Exit();
-        enemy.dc1_ota.diveState = null;
+        enemy.dc1_ota.smashState = null;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if(!hasApplyDamage && Gulch.Math.AlmostEqual(enemy.refPlayer.transform.position.y, enemy.aliveGO.transform.position.y, 0.8f)){
-            hasApplyDamage = true;
-            ApplyDamage();
-        }
+        // if(!hasApplyDamage && Gulch.Math.AlmostEqual(enemy.refPlayer.transform.position.y, enemy.aliveGO.transform.position.y, 0.3f)){
+        //     hasApplyDamage = true;
+        //     ApplyDamage();
+        // }
     }
 
     public override void PhysicsUpdate()
@@ -81,5 +79,4 @@ public class DC1_DiveState : State
     {
         base.UpdateTimer();
     }
-
 }

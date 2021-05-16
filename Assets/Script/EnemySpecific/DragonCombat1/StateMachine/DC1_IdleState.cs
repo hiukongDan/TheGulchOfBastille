@@ -8,6 +8,7 @@ public class DC1_IdleState : IdleState
     protected bool isPlayerInFront;
     protected float playerNearTimer;
     protected float playerNearTakeoffTriggerTime = 0.5f;
+    protected float takeoffChance = 0.4f;
     public DC1_IdleState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, IdleStateData idleData, DragonCombat1 enemy) : base(stateMachine, entity, animBoolName, idleData)
     {
         this.enemy = enemy;
@@ -55,11 +56,20 @@ public class DC1_IdleState : IdleState
         else if(detectPlayerInMinAgro){
             this.playerNearTimer += Time.deltaTime;
             if(this.playerNearTimer > playerNearTakeoffTriggerTime){
-                stateMachine.SwitchState(enemy.takeoffState);
+                decideMeleeReaction();
             }
         }
         else if(idleDurationTime + startTime < Time.time){
             stateMachine.SwitchState(enemy.takeoffState);
+        }
+    }
+
+    protected void decideMeleeReaction(){
+        if(Random.value < takeoffChance){
+            stateMachine.SwitchState(enemy.takeoffState);
+        }
+        else{
+            stateMachine.SwitchState(enemy.smashState);
         }
     }
 
