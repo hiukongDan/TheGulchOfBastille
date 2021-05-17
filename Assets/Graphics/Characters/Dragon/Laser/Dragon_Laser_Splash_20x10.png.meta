@@ -26,6 +26,30 @@ TextureImporter:
   - first:
       213: -321803442020172810
     second: Dragon_Laser_Splash_20x10_7
+  - first:
+      213: -1006522134909507473
+    second: Dragon_Laser_Splash_20x10_0
+  - first:
+      213: 7647429453029945162
+    second: Dragon_Laser_Splash_20x10_1
+  - first:
+      213: 581289340409005581
+    second: Dragon_Laser_Splash_20x10_2
+  - first:
+      213: -5657922313784948345
+    second: Dragon_Laser_Splash_20x10_3
+  - first:
+      213: -6974865810609059460
+    second: Dragon_Laser_Splash_20x10_4
+  - first:
+      213: -3955741603753036732
+    second: Dragon_Laser_Splash_20x10_5
+  - first:
+      213: -3451801087132382083
+    second: Dragon_Laser_Splash_20x10_6
+  - first:
+      213: -3494173906009312480
+    second: Dragon_Laser_Splash_20x10_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -269,7 +293,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0a596acf56c507d48bf07b633cf0b43c
     internalID: 0
     vertices: []
     indices: 

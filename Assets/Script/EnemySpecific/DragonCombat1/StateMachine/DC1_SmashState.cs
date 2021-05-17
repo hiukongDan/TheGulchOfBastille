@@ -67,10 +67,6 @@ public class DC1_SmashState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        // if(!hasApplyDamage && Gulch.Math.AlmostEqual(enemy.refPlayer.transform.position.y, enemy.aliveGO.transform.position.y, 0.3f)){
-        //     hasApplyDamage = true;
-        //     ApplyDamage();
-        // }
     }
 
     public override void PhysicsUpdate()
