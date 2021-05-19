@@ -40,5 +40,20 @@ public class DC1_ObjectToAlive : ObjectToAlive
         smashState?.ReleaseSmashDust();
     }
 
+    public DC1_LaserPositionState laserPositionState;
+    public void CompleteLaserPosition(){
+        laserPositionState?.Complete();
+    }
+
+    public DC1_LaserState laserState;
+
+    public void CompletePrepareLaser(){
+        laserState?.CompletePrepareLaser();
+    }
+
+    public void CompleteLaser(){
+        laserState?.Complete();
+    }
+
 
 }

@@ -5,13 +5,8 @@ using UnityEngine;
 public class DC1_LaserPositionState : State
 {
     protected DragonCombat1 enemy;
-    private bool isLanding = false;
-    private bool isHover = false;
     protected float flyUpSpeed = 2f;
     protected float flyHorSpeed = 3f;
-    protected float landingSpeed = 2f;
-    protected float landingOffset = 0.85f;
-    private Vector2 landingPos;
     private Vector2 hoverPos;
     public DC1_LaserPositionState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy) : base(stateMachine, entity, animName)
     {
@@ -27,7 +22,7 @@ public class DC1_LaserPositionState : State
     {
         base.Complete();
         //stateMachine.SwitchState(enemy.laserState);
-        stateMachine.SwitchState(enemy.idleState);
+        stateMachine.SwitchState(enemy.laserState);
     }
 
     public override void DoChecks()
@@ -43,26 +38,22 @@ public class DC1_LaserPositionState : State
         // fly for landing
         enemy.anim.Play("fly_idle_0");
 
-        isLanding = false;
-        isHover = true;
-
         // Decide which position to land
         if(enemy.laserLandingPositions.Length > 0){
-            landingPos = enemy.laserLandingPositions[Mathf.FloorToInt(Random.value * enemy.laserLandingPositions.Length)].position;
-            hoverPos = new Vector2(landingPos.x, landingPos.y + landingOffset);
+            hoverPos = enemy.laserLandingPositions[Mathf.FloorToInt(Random.value * enemy.laserLandingPositions.Length)].position;
         }
         else{
             stateMachine.SwitchState(enemy.idleState);
         }
 
-        enemy.FaceTo(landingPos);
+        enemy.dc1_ota.laserPositionState = this;
     }
 
     public override void Exit()
     {
         base.Exit();
 
-        //enemy.dc1_ota.landState = null;
+        enemy.dc1_ota.laserPositionState = null;
     }
 
     public override void LogicUpdate()
@@ -71,29 +62,17 @@ public class DC1_LaserPositionState : State
 
         DoChecks();
 
+        enemy.FaceToPlayer();
+
         //Debug.Log("isGroundDetected: " + isGroundDetected);
-        if((isGroundDetected||isPlatformDetected) && Gulch.Math.AlmostEqual(enemy.aliveGO.transform.position.y, landingPos.y, 0.01f) && !isLanding && !isHover){
-            enemy.anim.Play("land_0");
-            isLanding = true;
-            Debug.Log("Landed");
+        if(Gulch.Math.AlmostEqual(enemy.aliveGO.transform.position.y, hoverPos.y, 0.1f)){
+            enemy.anim.Play("land_1");
         }
-        else if(isHover){
-            if(!Gulch.Math.AlmostEqual(hoverPos, enemy.aliveGO.transform.position, 0.1f)){
-                Vector2 currentPos = enemy.aliveGO.transform.position;
-                enemy.aliveGO.transform.position = new Vector2(
-                    Mathf.Lerp(currentPos.x, hoverPos.x, Time.deltaTime * flyHorSpeed),
-                    Mathf.Lerp(currentPos.y, hoverPos.y, Time.deltaTime * flyUpSpeed)
-                );
-            }
-            else{
-                isHover = false;
-                enemy.FaceToPlayer();
-            }
-        }
-        else if(!isLanding){   // find land => find space slightly above player
+        else{
             Vector2 currentPos = enemy.aliveGO.transform.position;
-            enemy.aliveGO.transform.position = new Vector2(currentPos.x,
-                Mathf.Lerp(currentPos.y, landingPos.y, Time.deltaTime * landingSpeed)
+            enemy.aliveGO.transform.position = new Vector2(
+                Mathf.Lerp(currentPos.x, hoverPos.x, Time.deltaTime * flyHorSpeed),
+                Mathf.Lerp(currentPos.y, hoverPos.y, Time.deltaTime * flyUpSpeed)
             );
         }
     }

@@ -14,6 +14,7 @@ public class DragonCombat1 : Entity
 
     #region TRANSFORM REFERENCES
     public Transform[] laserLandingPositions;
+    public DC1_Laser laser_obj;
     #endregion
 
     #region STATE
@@ -25,6 +26,7 @@ public class DragonCombat1 : Entity
     public DC1_LandState landState;
     public DC1_SmashState smashState;
     public DC1_LaserPositionState laserPositionState;
+    public DC1_LaserState laserState;
     #endregion
 
     #region STATE_DATA
@@ -44,6 +46,8 @@ public class DragonCombat1 : Entity
             Flip();
         }
         aliveGO.transform.position = initPosition.position;
+
+        laser_obj?.HideLaser();
     }
 
     protected override void Awake()
@@ -120,6 +124,7 @@ public class DragonCombat1 : Entity
         landState = new DC1_LandState(stateMachine, this, "land_0", this);
         smashState = new DC1_SmashState(stateMachine, this, "smash_0", this, smashAttackData, smashDustPref);
         laserPositionState = new DC1_LaserPositionState(stateMachine, this, "fly_idle_0", this);
+        laserState = new DC1_LaserState(stateMachine, this, "laser_0", this, laser_obj);
 
         // stateMachine.Initialize(idleState);
     }
