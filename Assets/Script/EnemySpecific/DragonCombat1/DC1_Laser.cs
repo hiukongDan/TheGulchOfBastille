@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class DC1_Laser : MonoBehaviour
 {
+    public GameObject beamDustPref;
+    public LayerMask whatIsGround;
+    public float groundDetectLength = 4f;
     private Animator animator;
+
+
 
     private void RequireAnimator(){
         if(animator == null){
@@ -24,5 +29,9 @@ public class DC1_Laser : MonoBehaviour
     }
     public void HideLaser(){
         gameObject.SetActive(false);
+    }
+
+    void Update() {
+        
     }
 }
