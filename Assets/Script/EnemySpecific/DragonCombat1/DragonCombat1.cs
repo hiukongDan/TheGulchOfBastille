@@ -12,6 +12,10 @@ public class DragonCombat1 : Entity
     //private Transform combatField;
     #endregion
 
+    #region TRANSFORM REFERENCES
+    public Transform[] laserLandingPositions;
+    #endregion
+
     #region STATE
     public DC1_IdleState idleState;
     public DC1_FlipState flipState;
@@ -20,6 +24,7 @@ public class DragonCombat1 : Entity
     public DC1_DiveState diveState;
     public DC1_LandState landState;
     public DC1_SmashState smashState;
+    public DC1_LaserPositionState laserPositionState;
     #endregion
 
     #region STATE_DATA
@@ -55,16 +60,19 @@ public class DragonCombat1 : Entity
         Gulch.GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(aliveGO, Gulch.SpriteEffectType.Blink));
     }
 
+    public void FaceTo(Vector2 targetPos){
+        faceTo(targetPos);
+    }
     public void FaceToPlayer(){
         float tolerance = 0.3f;
         if(Mathf.Abs(aliveGO.transform.position.x - refPlayer.transform.position.x) > tolerance){
-            FaceTo(refPlayer.transform.position);
+            faceTo(refPlayer.transform.position);
         }
     }
 
-    protected override bool FaceTo(Vector2 targetPos)
+    protected override bool faceTo(Vector2 targetPos)
     {
-        return base.FaceTo(targetPos);
+        return base.faceTo(targetPos);
     }
 
     protected override void FixedUpdate()
@@ -111,6 +119,7 @@ public class DragonCombat1 : Entity
         diveState = new DC1_DiveState(stateMachine, this, "dive_0", this, diveAttackData);
         landState = new DC1_LandState(stateMachine, this, "land_0", this);
         smashState = new DC1_SmashState(stateMachine, this, "smash_0", this, smashAttackData, smashDustPref);
+        laserPositionState = new DC1_LaserPositionState(stateMachine, this, "fly_idle_0", this);
 
         // stateMachine.Initialize(idleState);
     }

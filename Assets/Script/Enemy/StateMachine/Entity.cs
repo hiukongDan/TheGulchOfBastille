@@ -189,7 +189,7 @@ public class Entity : MonoBehaviour
     }
 
     // RETURN: true if actually flipped
-    protected virtual bool FaceTo(Vector2 targetPos)
+    protected virtual bool faceTo(Vector2 targetPos)
     {
         if (targetPos.x - aliveGO.transform.position.x > 0 != facingDirection > 0)
         {

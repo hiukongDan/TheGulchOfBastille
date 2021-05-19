@@ -22,6 +22,10 @@ public static class Math
 	public static bool AlmostLesser(float x, float y, float err=0.01f){
 		return x-err <= y;
 	}
+
+	public static bool AlmostEqual(Vector2 a, Vector2 b, float err=0.01f){
+		return AlmostEqual(a.x, b.x) && AlmostEqual(a.y, b.y);
+	}
 }
 
 };

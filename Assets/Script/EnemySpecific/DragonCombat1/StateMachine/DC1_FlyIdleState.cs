@@ -46,12 +46,6 @@ public class DC1_FlyIdleState : State
 
         Vector2 playerDir = enemy.refPlayer.transform.position - enemy.aliveGO.transform.position;
 
-        // if  player is above, fly to higher position
-        // if(Vector2.Angle(playerDir, Vector2.up) * Mathf.Deg2Rad < Mathf.PI/2){
-        //     Vector2 currentPos = enemy.transform.position;
-        //     enemy.transform.position = new Vector2(currentPos.x, Mathf.Lerp(currentPos.y, enemy.refPlayer.transform.y+distanceKeep, .5f));
-        // }
-
         /* I felt like the dragon is like a pet :) in these codes */
         Vector2 currentPos = enemy.aliveGO.transform.position;
 
@@ -72,11 +66,19 @@ public class DC1_FlyIdleState : State
 
 
         if(this.startTime + idleMaxTime < Time.time){
-            // dive
-            stateMachine.SwitchState(enemy.diveState);
+            // DEBUG CODE
+            stateMachine.SwitchState(enemy.laserPositionState);
+            /*
+            if(Random.value > 0.5f){
+                // dive
+                stateMachine.SwitchState(enemy.diveState);
+            }
+            else{
+                // or laser attack
+                stateMachine.SwitchState(enemy.laserPositionState);
+            }
+            */   
         }
-
-        //Debug.Log(playerDir);
     }
 
     public override void PhysicsUpdate()
