@@ -55,5 +55,11 @@ public class DC1_ObjectToAlive : ObjectToAlive
         laserState?.Complete();
     }
 
+    public DC1_DieState dieState;
+
+    public void CompleteDieLanding(){
+        dieState?.CompleteDieLanding();
+    }
+
 
 }

@@ -27,6 +27,7 @@ public class DragonCombat1 : Entity
     public DC1_SmashState smashState;
     public DC1_LaserPositionState laserPositionState;
     public DC1_LaserState laserState;
+    public DC1_DieState dieState;
     #endregion
 
     #region STATE_DATA
@@ -61,6 +62,13 @@ public class DragonCombat1 : Entity
     protected override void Damage(CombatData combatData)
     {
         base.Damage(combatData);
+
+        if(isDead && stateMachine.currentState == dieState){
+            return;
+        }
+        else if(isDead){
+            stateMachine.SwitchState(dieState);
+        }
 
         Gulch.GameEventListener.Instance.OnTakeDamage(new Gulch.TakeDamageData(aliveGO, Gulch.SpriteEffectType.Blink));
     }
@@ -126,6 +134,7 @@ public class DragonCombat1 : Entity
         smashState = new DC1_SmashState(stateMachine, this, "smash_0", this, smashAttackData, smashDustPref);
         laserPositionState = new DC1_LaserPositionState(stateMachine, this, "fly_idle_0", this);
         laserState = new DC1_LaserState(stateMachine, this, "laser_0", this, laser_obj, laserAttackData);
+        dieState = new DC1_DieState(stateMachine, this, "fly_idle_0", this);
 
         // stateMachine.Initialize(idleState);
     }

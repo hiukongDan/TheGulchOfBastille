@@ -49,7 +49,7 @@ public class DC1_FlyIdleState : State
         /* I felt like the dragon is like a pet :) in these codes */
         Vector2 currentPos = enemy.aliveGO.transform.position;
 
-        float hoverOffset = 1f;
+        float hoverOffset = 5f;
 
         // if(playerDir.magnitude < Mathf.Sqrt(distanceKeep*distanceKeep)){    // keep away from player
         //     enemy.aliveGO.transform.position = new Vector2(Mathf.Lerp(currentPos.x, 
