@@ -6,10 +6,13 @@ public class DC1_LaserState : State
 {
     protected DragonCombat1 enemy;
     protected DC1_Laser laser_obj;
-    public DC1_LaserState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy, DC1_Laser laser_obj) : base(stateMachine, entity, animName)
+    protected MeleeAttackStateData attackData;
+    public DC1_LaserState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy, DC1_Laser laser_obj, MeleeAttackStateData laserAttackData)
+         : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
         this.laser_obj = laser_obj;
+        this.attackData = laserAttackData;
     }
 
     public override bool CanAction()
@@ -40,6 +43,11 @@ public class DC1_LaserState : State
         base.Enter();
 
         enemy.dc1_ota.laserState = this;
+
+        CombatData combatData = this.attackData.GetCombatData();
+        combatData.from = enemy.aliveGO;
+
+        enemy.laser_obj?.SetCombatData(combatData);
     }
 
     public override void Exit()

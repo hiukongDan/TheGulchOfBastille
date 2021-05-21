@@ -64,12 +64,13 @@ public class DC1_FlyIdleState : State
                 currentPos.y);
         }
 
-
         if(this.startTime + idleMaxTime < Time.time){
-            // DEBUG CODE
-            stateMachine.SwitchState(enemy.laserPositionState);
-            /*
-            if(Random.value > 0.5f){
+            DecideFlyAttack();
+        }
+    }
+
+    void DecideFlyAttack(){
+        if(Random.value > 0.5f){
                 // dive
                 stateMachine.SwitchState(enemy.diveState);
             }
@@ -77,8 +78,6 @@ public class DC1_FlyIdleState : State
                 // or laser attack
                 stateMachine.SwitchState(enemy.laserPositionState);
             }
-            */   
-        }
     }
 
     public override void PhysicsUpdate()

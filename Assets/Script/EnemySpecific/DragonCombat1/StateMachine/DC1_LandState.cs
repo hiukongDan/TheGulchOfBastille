@@ -58,11 +58,11 @@ public class DC1_LandState : State
         DoChecks();
 
         float hoverOffset = 2f;
-        float landingOffset = 0.85f;
-        Vector2 target = new Vector2(enemy.initPosition.position.x,
-            enemy.refPlayer.transform.position.y + landingOffset);
+        //float landingOffset = 0.85f;
+        Vector2 target = new Vector2(enemy.aliveGO.transform.position.x,
+            enemy.initPosition.position.y);
         Vector2 hoverTarget = new Vector2(enemy.aliveGO.transform.position.x,
-            enemy.refPlayer.transform.position.y + hoverOffset);
+            enemy.initPosition.position.y + hoverOffset);
 
         //Debug.Log("isGroundDetected: " + isGroundDetected);
         if((isGroundDetected||isPlatformDetected) && Gulch.Math.AlmostEqual(target.y, enemy.aliveGO.transform.position.y, 0.01f) && !isLanding && !isHover){

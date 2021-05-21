@@ -33,6 +33,7 @@ public class DragonCombat1 : Entity
     public IdleStateData idleStateData;
     public MeleeAttackStateData diveAttackData;
     public MeleeAttackStateData smashAttackData;
+    public MeleeAttackStateData laserAttackData;
     public GameObject smashDustPref;
     #endregion
 
@@ -124,7 +125,7 @@ public class DragonCombat1 : Entity
         landState = new DC1_LandState(stateMachine, this, "land_0", this);
         smashState = new DC1_SmashState(stateMachine, this, "smash_0", this, smashAttackData, smashDustPref);
         laserPositionState = new DC1_LaserPositionState(stateMachine, this, "fly_idle_0", this);
-        laserState = new DC1_LaserState(stateMachine, this, "laser_0", this, laser_obj);
+        laserState = new DC1_LaserState(stateMachine, this, "laser_0", this, laser_obj, laserAttackData);
 
         // stateMachine.Initialize(idleState);
     }
