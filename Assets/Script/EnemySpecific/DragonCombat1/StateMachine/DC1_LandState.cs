@@ -58,11 +58,12 @@ public class DC1_LandState : State
         DoChecks();
 
         float hoverOffset = 2f;
-        //float landingOffset = 0.85f;
-        Vector2 target = new Vector2(enemy.aliveGO.transform.position.x,
-            enemy.initPosition.position.y);
-        Vector2 hoverTarget = new Vector2(enemy.aliveGO.transform.position.x,
-            enemy.initPosition.position.y + hoverOffset);
+        float landingOffset = 0.85f;
+        Transform targetTrans = enemy.refPlayer.transform;
+        Vector2 target = new Vector2(targetTrans.position.x,
+            targetTrans.position.y + landingOffset);
+        Vector2 hoverTarget = new Vector2(targetTrans.position.x,
+            targetTrans.position.y + hoverOffset);
 
         //Debug.Log("isGroundDetected: " + isGroundDetected);
         if((isGroundDetected||isPlatformDetected) && Gulch.Math.AlmostEqual(target.y, enemy.aliveGO.transform.position.y, 0.01f) && !isLanding && !isHover){
@@ -70,9 +71,9 @@ public class DC1_LandState : State
             isLanding = true;
         }
         else if(isHover){
-            if(!Gulch.Math.AlmostEqual(hoverTarget.y, enemy.aliveGO.transform.position.y, 0.1f)){
+            if(!Gulch.Math.AlmostEqual(hoverTarget, enemy.aliveGO.transform.position, 0.1f)){
                 Vector2 currentPos = enemy.aliveGO.transform.position;
-                enemy.aliveGO.transform.position = new Vector2(currentPos.x,
+                enemy.aliveGO.transform.position = new Vector2(Mathf.Lerp(currentPos.x, hoverTarget.x, Time.deltaTime * flyUpSpeed), 
                     Mathf.Lerp(currentPos.y, hoverTarget.y, Time.deltaTime * flyUpSpeed)
                 );
             }
@@ -86,7 +87,6 @@ public class DC1_LandState : State
                 Mathf.Lerp(currentPos.y, target.y, Time.deltaTime * landingSpeed)
             );
         }
-
     }
 
     public override void PhysicsUpdate()

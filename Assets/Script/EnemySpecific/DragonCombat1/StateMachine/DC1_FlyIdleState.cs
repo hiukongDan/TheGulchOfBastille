@@ -49,20 +49,28 @@ public class DC1_FlyIdleState : State
         /* I felt like the dragon is like a pet :) in these codes */
         Vector2 currentPos = enemy.aliveGO.transform.position;
 
-        if(playerDir.magnitude < Mathf.Sqrt(distanceKeep*distanceKeep)){    // keep away from player
-            enemy.aliveGO.transform.position = new Vector2(Mathf.Lerp(currentPos.x, 
-                enemy.refPlayer.transform.position.x+distanceKeep*(-enemy.facingDirection),
-                flyUpSpeed * Time.deltaTime), 
-                Mathf.Lerp(currentPos.y, 
-                enemy.refPlayer.transform.position.y+distanceKeep, flyUpSpeed * Time.deltaTime));
-        }
-        else{   // stay close to player above
-            enemy.FaceToPlayer();
-            enemy.aliveGO.transform.position = new Vector2(Mathf.Lerp(currentPos.x, 
-                enemy.refPlayer.transform.position.x,
-                flyUpSpeed * Time.deltaTime),
-                currentPos.y);
-        }
+        float hoverOffset = 1f;
+
+        // if(playerDir.magnitude < Mathf.Sqrt(distanceKeep*distanceKeep)){    // keep away from player
+        //     enemy.aliveGO.transform.position = new Vector2(Mathf.Lerp(currentPos.x, 
+        //         enemy.refPlayer.transform.position.x+distanceKeep*(-enemy.facingDirection),
+        //         flyUpSpeed * Time.deltaTime), 
+        //         Mathf.Lerp(currentPos.y,
+        //         enemy.refPlayer.transform.position.y+distanceKeep, flyUpSpeed * Time.deltaTime));
+        // }
+        // else{   // stay close to player above
+        //     enemy.FaceToPlayer();
+        //     enemy.aliveGO.transform.position = new Vector2(Mathf.Lerp(currentPos.x, 
+        //         enemy.refPlayer.transform.position.x + hoverOffset,
+        //         flyUpSpeed * Time.deltaTime),
+        //         currentPos.y);
+        // }
+
+        enemy.FaceToPlayer();
+        enemy.aliveGO.transform.position = new Vector2(Mathf.Lerp(currentPos.x, 
+            enemy.refPlayer.transform.position.x, flyUpSpeed * Time.deltaTime), 
+            Mathf.Lerp(currentPos.y, enemy.refPlayer.transform.position.x + hoverOffset,
+            flyUpSpeed * Time.deltaTime));
 
         if(this.startTime + idleMaxTime < Time.time){
             DecideFlyAttack();
