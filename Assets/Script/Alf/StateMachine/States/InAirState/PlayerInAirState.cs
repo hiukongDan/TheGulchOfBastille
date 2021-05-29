@@ -55,7 +55,7 @@ public class PlayerInAirState : PlayerState
             stateMachine.SwitchState(player.dashState);
         }
         // WALL JUMP
-        else if (player.wallState.CanWallJump() && isWalled && isJump && !isGrounded)
+        else if (player.wallState.CanWallJump() && isWalled && isJump && !isGrounded && normMovementInput.x != 0)
         {
             stateMachine.SwitchState(player.wallState);
         }
@@ -92,14 +92,13 @@ public class PlayerInAirState : PlayerState
                 stateMachine.SwitchState(player.idleState);
             }
         }
-        else
+        else if(!isSlope)
         {
             workspace.Set(normMovementInput.x * player.playerData.JS_horizontalSpeed, currentVelocity.y);
             player.SetVelocity(workspace);
-
-            player.InputHandler.ResetIsRoll();
         }
-
+		
+		player.InputHandler.ResetIsRoll();
     }
 
     public override void PhysicsUpdate()

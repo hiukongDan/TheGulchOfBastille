@@ -5,6 +5,7 @@ using System;
 
 public class PlayerRuntimeData
 {
+    public static int _ConsumableMaxStack = 99;
     public float currentHitPoints = 0;
     public float currentStunPoints = 0;
     public float currentDecayPoints = 0;
@@ -15,6 +16,7 @@ public class PlayerRuntimeData
     public bool isLoaded = false;
     public PlayerStock playerStock;
     public PlayerSlot playerSlot;
+    
 
     [Serializable]
     public struct PlayerSlot{
@@ -68,13 +70,18 @@ public class PlayerRuntimeData
 
         public void Pick(ItemData.ConsumableRuntimeData consumable){
             int itemCount = this.consumableStock.Count;
-            for(int i = 0; i < itemCount; ++i){
-                if(this.consumableStock[i].consumable == consumable.consumable && this.consumableStock[i].count + consumable.count <= 99){
-                    this.consumableStock[i] = new ItemData.ConsumableRuntimeData(consumable.consumable, this.consumableStock[i].count + consumable.count);
-                    return;
+            int itemToAdd = consumable.count;
+            for(int i = 0; i < itemCount && itemToAdd <= 0; ++i){
+                if(this.consumableStock[i].consumable == consumable.consumable){
+                    // this.consumableStock[i] = new ItemData.ConsumableRuntimeData(consumable.consumable, this.consumableStock[i].count + consumable.count);
+                    int tmp = Mathf.Min(_ConsumableMaxStack - this.consumableStock[i].count, itemToAdd);
+                    this.consumableStock[i] = new ItemData.ConsumableRuntimeData(consumableStock[i].consumable, consumableStock[i].count + tmp);
+                    itemToAdd -= tmp;
                 }
             }
-            consumableStock.Add(consumable);
+            if(itemToAdd > 0){
+                consumableStock.Add(new ItemData.ConsumableRuntimeData(consumable.consumable, itemToAdd));
+            }
         }
 
         public void Pick(ItemData.KeyItemRuntimeData keyItem){
@@ -115,6 +122,23 @@ public class PlayerRuntimeData
                 }
             }
             return false;
+        }
+
+        public void UseConsumable(int index, int amount){
+            if(index < 0 || index >= consumableStock.Count || consumableStock[index].count < amount){
+                return;
+            }
+            
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            player.OnUseItem(consumableStock[index].consumable, amount);
+            int remain = consumableStock[index].count - amount;
+            
+            if(remain <= 0){
+                consumableStock.RemoveAt(index);
+            }
+            else{
+                consumableStock[index] = new ItemData.ConsumableRuntimeData(consumableStock[index].consumable, remain);
+            }
         }
     };
 
@@ -218,5 +242,14 @@ public class PlayerRuntimeData
         // Debug.Log(playerRuntimeSaveData.lastPosition);
         isLoaded = true;
     }
+
+
+    #region HELPER FUNCTIONS
+    public ItemData.WeaponRuntimeData GetCurrentWeaponInfo(){
+        // Debug.Log("inquired : " + playerStock.weaponStock[playerSlot.weaponIndex].weapon.ToString());
+        return playerStock.weaponStock[playerSlot.weaponIndex];
+    }
+
+    #endregion
 
 }

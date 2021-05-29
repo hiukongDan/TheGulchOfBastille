@@ -8,7 +8,6 @@ public class PlayerMeleeAttackState : PlayerAttackState
         private bool isFirstAttack;
         #endregion*/
 
-
     public float attackCooldownTimer;
 
     public PlayerMeleeAttackState(PlayerStateMachine stateMachine, Player player, int animCode, D_PlayerStateMachine data) : base(stateMachine, player, animCode, data)
@@ -18,6 +17,21 @@ public class PlayerMeleeAttackState : PlayerAttackState
 
     public override void Enter()
     {
+        switch(player.playerRuntimeData.GetCurrentWeaponInfo().weapon){
+            case ItemData.Weapon.Iron_Sword:
+                animCode = AlfAnimationHash.ATTACK_IRONSWORD;
+                break;
+            case ItemData.Weapon.Claymore:
+                animCode = AlfAnimationHash.ATTACK_CLAYMORE;
+                break;
+            case ItemData.Weapon.Dragon_Slayer_Sword:
+                animCode = AlfAnimationHash.ATTACK_DRAGONSLAYER;
+                break;
+            default:
+                animCode = AlfAnimationHash.ATTACK_IRONSWORD;
+                break;
+        }
+        
         base.Enter();
         combatData.damage = player.CalculatePlayerDamage();
         combatData.stunDamage = data.MAS_stunAmount;
@@ -105,12 +119,17 @@ public override void Exit()
         base.CompleteAttack();
 
         ResetTimer();
-        player.idleState.SetAnimationCode(AlfAnimationHash.IDLE_1);
+        
         stateMachine.SwitchState(player.idleState);
     }
 
     //public override bool CheckEndAttack() => !isMeleeAttack;
-    public override void ResetTimer() => attackCooldownTimer = data.MAS_attackCooldownTimer;
+    public override void ResetTimer(){
+        attackCooldownTimer = data.MAS_attackCooldownTimer;
+        if(player.playerRuntimeData.playerSlot.IsWearableEquiped(player.playerRuntimeData.playerStock, ItemData.Wearable.Coldblue_Ring)){
+            attackCooldownTimer *= ItemData.WearableItemBuffData.Coldblue_Ring_attackReductionMultiplier;
+        }
+    }
     public override bool CanAction() => attackCooldownTimer < 0;
 
     public override void UpdateTimer()

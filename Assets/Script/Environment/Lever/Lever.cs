@@ -41,7 +41,7 @@ public class Lever : MonoBehaviour, IGulchTrigger
     }
 
     public void Damage(CombatData combatData){
-        if(combatData.from.tag == "Player" && isTriggerActive){
+        if(combatData.from != null && combatData.from.tag == "Player" && isTriggerActive){
             OnLeverInteraction(!isOpened);
             leverResult.OnTriggered();
             isTriggerActive = false;

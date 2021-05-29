@@ -6,6 +6,7 @@ public class Entity : MonoBehaviour
 {
     protected FiniteStateMachine stateMachine;
     protected StateCooldownTimer stateCooldownTimer;
+    protected Material defaultMaterial;
 
     public int facingDirection { get; private set; }
     public enum FacingDirection{
@@ -77,6 +78,8 @@ public class Entity : MonoBehaviour
 
         facingDirection = 1;
 
+        defaultMaterial = anim.GetComponent<SpriteRenderer>().material;
+
         Reset();
     }
 
@@ -87,6 +90,10 @@ public class Entity : MonoBehaviour
         isDead = false;
         isStunned = false;
         isDanmageable = true;
+
+        if(defaultMaterial != null){
+            anim.GetComponent<SpriteRenderer>().material = defaultMaterial;
+        }
 
         switch(startFacingDirection){
             case FacingDirection.LEFT:
@@ -157,7 +164,7 @@ public class Entity : MonoBehaviour
         return Physics2D.Raycast(meleeAttackCheck.position, new Vector2(facingDirection, 0), entityData.meleeAttackDistance, entityData.whatIsPlayer);
     }
 
-    public void Flip()
+    public virtual void Flip()
     {
         aliveGO.transform.Rotate(new Vector3(0, 180, 0));
         facingDirection *= -1;
@@ -182,7 +189,7 @@ public class Entity : MonoBehaviour
     }
 
     // RETURN: true if actually flipped
-    protected virtual bool FaceTo(Vector2 targetPos)
+    protected virtual bool faceTo(Vector2 targetPos)
     {
         if (targetPos.x - aliveGO.transform.position.x > 0 != facingDirection > 0)
         {
@@ -197,7 +204,7 @@ public class Entity : MonoBehaviour
         if (isDead)
             return;
 
-        combatData.from.gameObject.SendMessage("ValidAttack");
+        combatData.from?.gameObject.SendMessage("ValidAttack");
         currentHealth -= combatData.damage;
 
         if(currentHealth <= 0 && !isDead)
@@ -239,6 +246,8 @@ public class Entity : MonoBehaviour
         isDanmageable = newIsDamageable;
         return isDanmageable;
     }
+
+    public bool IsDead() => isDead;
 
     protected virtual void OnDead(){
         UilosGroup uilosGroup = GetComponent<UilosGroup>();

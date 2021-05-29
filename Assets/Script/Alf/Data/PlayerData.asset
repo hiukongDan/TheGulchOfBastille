@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBaseData
   GD_groundCheckDistance: 0.136
+  GD_slopeCheckDistance: 0.5
   GD_wallCheckDistance: 0.3
   GD_ladderEndCheckRadius: 0.05
   GD_damageImmuneTime: 0.2
@@ -28,9 +29,10 @@ MonoBehaviour:
   GD_whatIsLadder:
     serializedVersion: 2
     m_Bits: 131072
-  PD_maxHitPoint: 60
-  PD_maxStunPoint: 5
-  PD_maxDecayPoint: 20
+  GD_whatIsDefault:
+    serializedVersion: 2
+    m_Bits: 1
+  GD_playerLevel: 0
   GS_coyoteTime: 0.08
   WS_walkSpeed: 3
   IAS_jumpAmounts: 2
@@ -46,7 +48,6 @@ MonoBehaviour:
   JS_horizontalSpeed: 3
   JS_jumpCanceledMultiplier: 0.2
   MAS_hitboxRadius: 0.5
-  MAS_damageAmount: 10
   MAS_stunAmount: 1
   MAS_knockbackDirection: {x: 1, y: 1}
   MAS_knockbackImpulse: 7
@@ -54,6 +55,15 @@ MonoBehaviour:
   MAS_meleeAttackParticle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,
     type: 3}
   MAS_attackCooldownTimer: 0.2
+  BAS_arrowPrefab: {fileID: 3762449590338921448, guid: 88e1c1662c451af4294e88fbfe0ec9aa,
+    type: 3}
+  MAS_apprenticeMagicBall: {fileID: 4094528072423566169, guid: 38b138d0e0412a443a4b4e281303d864,
+    type: 3}
+  MAS_masterMagicBall: {fileID: 3922627785778349893, guid: 7f99c51811946b847aef85fb36f82861,
+    type: 3}
+  MAS_sunlightMagicBall: {fileID: 1472438670724460501, guid: 0a3465710a9da3143940a04f81e990c0,
+    type: 3}
+  TDS_takeDamageDuration: 0.1
   PS_maxTime: 0.2
   PS_horizontalSpeed: 0.5
   PS_particle: {fileID: 50932862449019402, guid: 6fd064fa6a7674c4aa8fde34af72c52d,

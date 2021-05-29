@@ -42,6 +42,7 @@ public class GameSaver : MonoBehaviour
     private void LoadMeta(){
         string path = saveDirectory + "/meta.tgb";
         FileStream fs = null;
+        // string path = saveDirectory + "/meta_tgb.json";
         if(File.Exists(path)){
             try{
                 fs = new FileStream(path, FileMode.Open);
@@ -56,6 +57,14 @@ public class GameSaver : MonoBehaviour
             finally{
                 fs?.Close();
             }
+            // try{
+            //     StreamReader sr = File.OpenText(path);
+            //     saveSlotMetas = JsonUtility.FromJson<Dictionary<int, SaveSlotMeta>>(sr.ReadToEnd());
+            //     sr.Close();
+            // }
+            // catch(Exception ex){
+            //     Debug.Log(ex.StackTrace);
+            // }
         }
         else{
             InitMeta();
@@ -86,12 +95,16 @@ public class GameSaver : MonoBehaviour
         meta.elapsedSeconds = gm.elapsedSeconds;
         UpdateMeta(currentSaveSlot, meta);
         try{
-            using(FileStream fs = new FileStream(saveDirectory + "/meta.tgb", FileMode.OpenOrCreate)){
+            using(FileStream fs = new FileStream(saveDirectory + "/meta.tgb", FileMode.Create)){
                 var bf = new BinaryFormatter();
                 bf.Serialize(fs, saveSlotMetas);
 
                 fs.Close();
             }
+            // using(StreamWriter sw = new StreamWriter(saveDirectory + "/meta_tgb.json")){
+            //     sw.Write(JsonUtility.ToJson(saveSlotMetas));
+            //     sw.Close();
+            // }
         }
         catch(FileNotFoundException ex){
             Debug.Log("On GameSaver::SaveMeta, " + ex.StackTrace);
@@ -129,9 +142,6 @@ public class GameSaver : MonoBehaviour
                 EnemySaveData.SetEnemyRuntimeSaveData(enemyRuntimeSaveData);
                 var lootRuntimeSaveData = (Loot.LootRuntimeSaveData)bf.Deserialize(fs);
                 Loot.SetLootRuntimeSaveData(lootRuntimeSaveData);
-
-                isLoaded = true;
-                //Debug.Log(lootDict);
             }
             catch (FileNotFoundException ex)
             {
@@ -143,6 +153,32 @@ public class GameSaver : MonoBehaviour
                 isLoaded = true;
             }
         }
+
+        // string path = saveDirectory + "/" + saveSlot.ToString() + ".json";
+        // if(File.Exists(path)){
+        //     try{
+        //         isLoaded = false;
+        //         StreamReader streamReader = File.OpenText(path);
+        //         GameJsonSaveData gameJsonSaveData = JsonUtility.FromJson<GameJsonSaveData>(streamReader.ReadToEnd());
+
+        //         LittleSunData.SetLittleSunData(gameJsonSaveData.littleSunData);
+        //         Player player = GameObject.Find("Player").GetComponent<Player>();
+        //         player.playerData.SetPlayerSaveData(gameJsonSaveData.playerSaveData);
+        //         player.playerAbilityData.SetPlayerAbility(gameJsonSaveData.playerAbility);
+        //         player.playerRuntimeData.SetPlayerRuntimeSaveData(gameJsonSaveData.playerRuntimeSaveData);
+        //         player.miscData.SetMiscSaveData(gameJsonSaveData.miscSaveData);
+        //         EnemySaveData.SetEnemyRuntimeSaveData(gameJsonSaveData.enemyRuntimeSaveData);
+        //         Loot.SetLootRuntimeSaveData(gameJsonSaveData.lootRuntimeSaveData);
+
+        //         streamReader.Close();
+        //     }
+        //     catch(Exception ex){
+        //         Debug.Log(ex.StackTrace);
+        //     }
+        //     finally{
+        //         isLoaded = true;
+        //     }
+        // }
     }
 
     /// <summary>
@@ -179,6 +215,28 @@ public class GameSaver : MonoBehaviour
         finally{
             fs?.Close();
         }
+
+        // StreamWriter streamWriter = null;
+        // try{
+        //     streamWriter = File.CreateText(saveDirectory + "/" + saveSlot.ToString() + ".json");
+        //     GameJsonSaveData gameJsonSaveData;
+        //     gameJsonSaveData.littleSunData = LittleSunData.LittleSuns;
+        //     Player player = GameObject.Find("/Player").transform.Find("Player").GetComponent<Player>();
+        //     gameJsonSaveData.playerSaveData = player.playerData.GetPlayerSaveData();
+        //     gameJsonSaveData.playerAbility = player.playerAbilityData.GetPlayerAbility();
+        //     player.SaveToPlayerRuntimeData();
+        //     gameJsonSaveData.playerRuntimeSaveData = player.playerRuntimeData.GetPlayerRuntimeSaveData();
+        //     gameJsonSaveData.miscSaveData = player.miscData.GetMiscSaveData();
+        //     gameJsonSaveData.enemyRuntimeSaveData = EnemySaveData.GetEnemyRuntimeSaveData();
+        //     gameJsonSaveData.lootRuntimeSaveData = Loot.GetLootRuntimeSaveData();
+
+        //     streamWriter.Write(JsonUtility.ToJson(gameJsonSaveData));
+
+        //     streamWriter.Close();
+        // }
+        // catch(Exception ex){
+        //     Debug.Log(ex.StackTrace);
+        // }
     }
 
     public void SaveAll(){
@@ -188,6 +246,7 @@ public class GameSaver : MonoBehaviour
 
     public bool HasValidSaving(SaveSlot slot){
         string path = saveDirectory + "/" + slot.ToString() + ".tgb";
+        // string path = saveDirectory + "/" + slot.ToString() + ".json";
         return File.Exists(path);
     }
 
@@ -206,16 +265,15 @@ public class GameSaver : MonoBehaviour
         return SaveSlotMetas[(int)saveSlot];
     }
 
-    [Serializable]
-    public struct GameSaveData{
-        
-    }
+    // [Serializable]
+    // public struct GameJsonSaveData{
+    //     public Dictionary<int, bool> littleSunData;
+    //     public D_PlayerStateMachine.PlayerSaveData playerSaveData;
+    //     public D_PlayerAbility.PlayerAbility playerAbility;
+    //     public PlayerRuntimeData.PlayerRuntimeSaveData playerRuntimeSaveData;
+    //     public MiscData.MiscSaveData miscSaveData;
+    //     public EnemySaveData.EnemyRuntimeSaveData enemyRuntimeSaveData;
+    //     public Loot.LootRuntimeSaveData lootRuntimeSaveData;
+    // }
 
-    public void SaveJsonData(string path, GameSaveData gameSaveData){
-
-    }
-
-    public void LoadJsonData(string path){
-
-    }
 }

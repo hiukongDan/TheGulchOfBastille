@@ -43,9 +43,9 @@ public class PlayerIdleState : PlayerGroundState
             }
             else if (normMovementInput.x != 0)
             {
-                if(animCode == AlfAnimationHash.IDLE_1)
+                if(animCode != AlfAnimationHash.IDLE_0)
                 {
-                    player.walkState.SetAnimationCode(AlfAnimationHash.RUN_1);
+                    player.walkState.SetAnimationCodeFromWeapon();
                 }
                 stateMachine.SwitchState(player.walkState);
             }
@@ -55,10 +55,46 @@ public class PlayerIdleState : PlayerGroundState
             }*/
         }
 
+        player.SetVelocityX(0);
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    public override void SetAnimationCodeFromWeapon(){
+        switch(player.playerRuntimeData.GetCurrentWeaponInfo().weapon){
+            case ItemData.Weapon.Iron_Sword:
+                SetAnimationCode(AlfAnimationHash.IDLE_IRONSWORD);
+                break;
+            case ItemData.Weapon.Claymore:
+                SetAnimationCode(AlfAnimationHash.IDLE_CLAYMORE);
+                break;
+            case ItemData.Weapon.Dragon_Slayer_Sword:
+                SetAnimationCode(AlfAnimationHash.IDLE_DRAGONSLAYER);
+                break;
+            case ItemData.Weapon.Wood_Bow:
+                SetAnimationCode(AlfAnimationHash.IDLE_WOODBOW);
+                break;
+            case ItemData.Weapon.Elf_Bow:
+                SetAnimationCode(AlfAnimationHash.IDLE_ELFBOW);
+                break;
+            case ItemData.Weapon.Long_Bow:
+                SetAnimationCode(AlfAnimationHash.IDLE_LONGBOW);
+                break;
+            case ItemData.Weapon.Apprentice_Stick:
+                SetAnimationCode(AlfAnimationHash.IDLE_APPRENTICE_STICK);
+                break;
+            case ItemData.Weapon.Master_Stick:
+                SetAnimationCode(AlfAnimationHash.IDLE_MASTER_STICK);
+                break;
+            case ItemData.Weapon.Sunlight_Stick:
+                SetAnimationCode(AlfAnimationHash.IDLE_SUNLIGHT_STICK);
+                break;
+            default:
+                SetAnimationCode(AlfAnimationHash.IDLE_IRONSWORD);
+                break;
+        }
     }
 }

@@ -53,7 +53,9 @@ public class GC1_MeleeAttackState : MeleeAttackState
         base.PhysicsUpdate();
     }
 
-    public override void ResetTimer() => cooldownTimer = data.cooldownTimer;
+    public override void ResetTimer(){
+        cooldownTimer = data.cooldownTimer;
+    }
 
     public override void UpdateTimer()
     {

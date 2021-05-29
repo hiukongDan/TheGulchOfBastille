@@ -9,6 +9,7 @@ public class PlayerLadderState : PlayerState
 
     private bool isJumpOff = false;
     private bool isClimbing = false;
+    private bool isStartClimbing = false;
 
     private bool isReachLadderEnd = false;
     private BoxCollider2D boxCollider2D;
@@ -36,6 +37,7 @@ public class PlayerLadderState : PlayerState
 
         isJumpOff = false;
         isClimbing = false;
+        isStartClimbing = true;
 
         if(ladder.GetLadderPart() == LadderPart.Part.TOP){
             player.Anim.Play(AlfAnimationHash.LADDER_TOP_START_0);
@@ -54,19 +56,20 @@ public class PlayerLadderState : PlayerState
 
         player.Rb.gravityScale = gravityOld;
 
-        isJumpOff = false;
-        isClimbing = false;
-
         player.InputHandler.ResetAll();
+
+        player.Bc.enabled = true;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        isReachLadderEnd = player.CheckLadderEnd();
+        player.Anim.SetFloat("ladderClimbDirection", 0);
+
         if(isClimbing){
             if(isReachLadderEnd){
                 OnReachOneEnd();
-                player.Anim.applyRootMotion = true;
             }
             else if (isJumpOff){
                 if(isJump){
@@ -95,11 +98,10 @@ public class PlayerLadderState : PlayerState
                 player.Anim.SetFloat("ladderClimbDirection", normMovementInput.y);
             }
         }
-    }
-
-    protected override void DoCheck()
-    {
-        isReachLadderEnd = player.CheckLadderEnd();
+        else if(!isStartClimbing && isReachLadderEnd){
+            stateMachine.SwitchState(player.inAirState);
+        }
+        
     }
 
 #region INTERFACE
@@ -108,6 +110,7 @@ public class PlayerLadderState : PlayerState
     public bool HasValidLadder() => this.ladder != null;
     private void OnReachOneEnd(){
         isClimbing = false;
+        player.Anim.applyRootMotion = true;
         // Play Reach One End Anim
         if(ladder.GetLadderPart() == LadderPart.Part.TOP){
             player.Anim.Play(AlfAnimationHash.LADDER_TOP_FINISH_0);
@@ -120,6 +123,7 @@ public class PlayerLadderState : PlayerState
     public void CompleteStartClimbLadder(){
         isClimbing = true;
         player.Bc.enabled = true;
+        isStartClimbing = false;
     } 
     public void CompleteClimbLadder(){
         player.Bc.enabled = true;

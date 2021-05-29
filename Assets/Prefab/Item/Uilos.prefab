@@ -202,5 +202,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perUilosWorth: 1
-  uilosFalldownGravityScale: 2.5
-  forceTowardsPlayer: {x: 1, y: 0.5}
+  uilosFalldownGravityScale: 1

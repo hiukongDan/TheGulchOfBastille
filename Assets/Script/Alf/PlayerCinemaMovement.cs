@@ -26,6 +26,7 @@ public class PlayerCinemaMovement : MonoBehaviour
     public void LightLittleSun(LittleSunHandler littleSunHandler) => StartCoroutine(lightLittleSun(littleSunHandler));
     public void TransitToScene(SubAreaHandler subAreaHandler) => StartCoroutine(transitToScene(subAreaHandler));
     public void TransitToBelial() => StartCoroutine(transitToBelial());
+    public Coroutine UseNeonPotion() => StartCoroutine(useNeonPotion());
 
     public void UseBelialsMagicCompass() => StartCoroutine(useBelialsMagicCompass());
 
@@ -44,6 +45,7 @@ public class PlayerCinemaMovement : MonoBehaviour
             player.FaceTo(targetPos);
             // walk towards it
             player.Anim.Play(AlfAnimationHash.RUN_0);
+            yield return new WaitForEndOfFrame();
             player.SetVelocity(new Vector2(player.facingDirection * player.playerData.WS_walkSpeed / 5, 0));
 
             yield return new WaitUntil(() => Mathf.Abs(player.transform.position.x - targetPos.x) <= 1/32f);
@@ -73,6 +75,7 @@ public class PlayerCinemaMovement : MonoBehaviour
     {
         Door door = subAreaHandler.gameObject.GetComponentInChildren<Door>();
         player.stateMachine.SwitchState(player.cinemaState);
+
         if(door != null){
             // Open Door
             Animator doorAnim = door.GetComponent<Animator>();
@@ -85,13 +88,11 @@ public class PlayerCinemaMovement : MonoBehaviour
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(subAreaHandler.uIEffect, UIEffectAnimationClip.start));
         // TODO:
         /* startEffect */
-        /* loading/enable scene prefab */
         /* endEffect */
         
         // Enable and Disable scenes
         // move player to new position
         yield return new WaitForSeconds(UIEffectData.CROSS_FADE_DELAY/2);
-
 
         door?.Close();
         yield return new WaitForEndOfFrame();
@@ -139,6 +140,18 @@ public class PlayerCinemaMovement : MonoBehaviour
     IEnumerator useBelialsMagicCompass(){
         gm.ReloadScene();
         yield return null;
+    }
+
+    IEnumerator useNeonPotion(){
+        // player.Sr.material = ;
+        Gulch.GameEventListener.Instance.OnSpriteEffect(new Gulch.TakeDamageData(
+            player.gameObject, Gulch.SpriteEffectType.NeonColor, ItemData.ConsumableItemData.Neon_Potion_durationSeconds));
+        // set player speed to use neonPotion speed
+        player.walkState.SetNeonPotion(true);
+        yield return new WaitForSeconds(ItemData.ConsumableItemData.Neon_Potion_durationSeconds);
+        player.walkState.SetNeonPotion(false);
+        // set player speed to normal
+        // player.Sr.material = ;
     }
     #endregion
 }

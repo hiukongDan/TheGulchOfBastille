@@ -42,8 +42,8 @@ public class PlayerAttackState : PlayerState
         base.Exit();
 
         player.InputHandler.ResetAll();
+        player.idleState.SetAnimationCodeFromWeapon();
     }
-
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -121,6 +121,10 @@ public class PlayerAttackState : PlayerState
     public virtual bool CheckEndAttack()
     {
         return !isMeleeAttack;
+    }
+
+    public virtual CombatData GetComabtData(){
+        return combatData;
     }
 
     // TODO: PROJECTILES ATTACK

@@ -34,7 +34,9 @@ public class SubAreaPlayerDetect : MonoBehaviour
             Player player = collider.gameObject.GetComponent<Player>();
             if(!subAreaHandler.IsTransitionAutomatically && player?.stateMachine.currentState != player?.cinemaState){
                 player.SetSubAreaHandler(null);
-                InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
+                if(InfoSignAnim.gameObject.activeInHierarchy){
+                    InfoSignAnim.Play(InfoSignAnimHash.OUTRO);
+                }
             }
         }
     }

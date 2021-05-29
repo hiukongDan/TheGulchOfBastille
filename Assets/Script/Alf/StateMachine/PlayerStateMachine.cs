@@ -41,5 +41,7 @@ public class PlayerStateMachine
         currentState.Exit();
         currentState = newState;
         newState.Enter();
+
+        //Debug.Log(newState.ToString());
     }
 }

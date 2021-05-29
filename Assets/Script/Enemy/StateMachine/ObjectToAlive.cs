@@ -24,13 +24,10 @@ public class ObjectToAlive : MonoBehaviour
 
     public void CompleteFlip()
     {
-        if (flipState != null)
-        {
-            flipState.CompleteFlip();
-        }
+        flipState?.CompleteFlip();
     }
 
-    public void Flip()
+    public virtual void Flip()
     {
         entity.Flip();
     }

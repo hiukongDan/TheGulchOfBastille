@@ -67,7 +67,15 @@ public class PlayerDeadState : PlayerState
     public void CompleteDead()
     {
         Gulch.GameEventListener.Instance.OnPlayerDead();
-        player.playerRuntimeData.currentDecayPoints++;
+        if(player.playerRuntimeData.playerSlot.IsWearableEquiped(player.playerRuntimeData.playerStock, ItemData.Wearable.Sun_Protection_Stone)){
+            if(Random.value > ItemData.WearableItemBuffData.Sun_Protection_Stone_decayPointNotIncreasedRate){
+                player.playerRuntimeData.currentDecayPoints++;
+            }
+        }
+        else{
+            player.playerRuntimeData.currentDecayPoints++;
+        }
+        
         EnemySaveData.ResetRevivableEnemy();
         if(player.playerRuntimeData.currentDecayPoints >= player.playerData.PD_maxDecayPoint){
             GameObject.Find("GameManager").GetComponent<GameManager>().playerCinemaMovement.TransitToBelial();

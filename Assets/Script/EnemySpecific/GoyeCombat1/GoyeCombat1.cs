@@ -171,7 +171,7 @@ public class GoyeCombat1 : Entity
         Vector3 initPos = transform.Find("Combat Field/Init Position").position;
         aliveGO.transform.position = initPos;
         stateMachine.SwitchState(battleBeginState);
-        FaceTo(aliveGO.transform.position + Vector3.right);
+        faceTo(aliveGO.transform.position + Vector3.right);
         npc.gameObject.SetActive(true);
     }
 
@@ -197,7 +197,7 @@ public class GoyeCombat1 : Entity
     {
         if (immediate || flipState.CanAction())
         {
-            if (FaceTo(refPlayer.transform.position))
+            if (faceTo(refPlayer.transform.position))
             {
                 flipState.ResetTimer();
             }

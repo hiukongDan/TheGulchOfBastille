@@ -43,4 +43,8 @@ public class FiniteStateMachine
         currentState?.PhysicsUpdate();
     }
 
+    public void ClearState(){
+        currentState = null;
+    }
+
 }

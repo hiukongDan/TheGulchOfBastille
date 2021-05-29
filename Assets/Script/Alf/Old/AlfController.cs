@@ -59,7 +59,7 @@ public class AlfController : MonoBehaviour
         {
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
-        else if (currentAnimationCode == AlfAnimationHash.IDLE_1)
+        else if (currentAnimationCode == AlfAnimationHash.IDLE_IRONSWORD)
         {
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
@@ -67,7 +67,7 @@ public class AlfController : MonoBehaviour
         {
             rb.velocity = new Vector2(runningSpeed * facingDirection, 0f);
         }
-        else if (currentAnimationCode == AlfAnimationHash.RUN_1)
+        else if (currentAnimationCode == AlfAnimationHash.RUN_IRONSWORD)
         {
             rb.velocity = new Vector2(runningSpeed * facingDirection, 0f);
         }
@@ -98,13 +98,13 @@ public class AlfController : MonoBehaviour
         {
             if (pressAttack && horizontal != 0)
             {
-                PlayAnimation(AlfAnimationHash.RUN_1);
+                PlayAnimation(AlfAnimationHash.RUN_IRONSWORD);
                 if (Mathf.Sign(horizontal) != facingDirection)
                     Flip();
             }
             else if(pressAttack)
             {
-                PlayAnimation(AlfAnimationHash.IDLE_1);
+                PlayAnimation(AlfAnimationHash.IDLE_IRONSWORD);
                 rb.velocity = new Vector2(0f, rb.velocity.y);
             }
             else if(horizontal != 0)

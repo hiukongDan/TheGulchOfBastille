@@ -137,8 +137,8 @@ public class UIEquipmentState : UIState
                 normMoveInputTimer = normMoveInputTimerMax;
             }
         }
-
     }
+
     public override void OnDirectionMove(UIState.Direction direction){
         int currentRow = currentSelection / selectionViews.Column;
         int currentColumn = currentSelection % selectionViews.Column;

@@ -122,7 +122,7 @@ public static Dictionary<int, string> ConsumableDescription = new Dictionary<int
     {(int)Consumable.Uilos_Flower, "Gain large amount\n of uilos."},
     {(int)Consumable.Uilos_Stick, "Gain great amout\n of uilos."},
     {(int)Consumable.Uilos_Bunch, "Gain huge amount\n of uilos"},
-    {(int)Consumable.Neon_Potion, "Increase speed but\n alter Alf color randomly."},
+    {(int)Consumable.Neon_Potion, "Randomize speed and\n alter color of Alf."},
 };
 
 public static Dictionary<int, string> KeyItemDescription = new Dictionary<int, string>(){
@@ -159,16 +159,17 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
     };
 
     public static PlayerLevelUpData[] playerLevelUpData = {
-        new PlayerLevelUpData(1,60,5,7),
-        new PlayerLevelUpData(2,70,7,8),
-        new PlayerLevelUpData(3,80,9,9),
-        new PlayerLevelUpData(4,90,11,10),
-        new PlayerLevelUpData(5,100,13,11),
-        new PlayerLevelUpData(6,105, 15, 12),
-        new PlayerLevelUpData(7, 110, 17, 13),
-        new PlayerLevelUpData(8,115, 18, 14),
-        new PlayerLevelUpData(9, 120, 19, 15),
-        new PlayerLevelUpData(10, 125, 20, 16),
+        //new PlayerLevelUpData(0,50,  3, 6, 5),
+        new PlayerLevelUpData(1,60,  5, 7, 5),
+        new PlayerLevelUpData(2,70,  7, 8, 5),
+        new PlayerLevelUpData(3,80,  9, 9, 5),
+        new PlayerLevelUpData(4,90,  11,10,6),
+        new PlayerLevelUpData(5,100, 13,11,7),
+        new PlayerLevelUpData(6,105, 15,12,8),
+        new PlayerLevelUpData(7,110, 17,13,9),
+        new PlayerLevelUpData(8,115, 18,14,10),
+        new PlayerLevelUpData(9,120, 19,15,10),
+        new PlayerLevelUpData(10,125,20,16,10),
     };
 
     public struct PlayerLevelUpData{
@@ -180,17 +181,22 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
         /// <Summary>
         /// Attack point
         /// </Summary>
-        int AP;
+        public int AP;
         /// <Summary>
         /// Decay point
         /// </Summary>
-        int DP;
+        public int DP;
+        /// <Summary>
+        /// Stun point
+        /// </Summary>
+        public int StunP;
 
-        public PlayerLevelUpData(int level, int hp, int ap, int dp){
+        public PlayerLevelUpData(int level, int hp, int ap, int dp, int stunP){
             this.level = level;
             this.HP = hp;
             this.AP = ap;
             this.DP = dp;
+            this.StunP = stunP;
         }
     };
 
@@ -199,5 +205,26 @@ public static Dictionary<int, WeaponData> weaponData = new Dictionary<int, Weapo
         public static float Goye_Ring_rollSpeedMultiplier = 1.5f;
         public static float Fools_Gold_Pendant_uilosWorth = 2f;
         public static float Amber_Ring_additionalHp = 10f;
+        public static float Magic_Pendant_attackMultiplier = 1.05f;
+        public static float Coldblue_Ring_attackReductionMultiplier = 0.9f;
+        public static float Sunstone_Ring_decayReducedMultiplier = 0.95f;
+        public static float Sunstone_Ring_hitpointIncreaseMultiplier = 1.05f;
+        public static float Moonstone_Ring_decayIncreasedMultiplier = 1.05f;
+        public  static float Moonstone_Ring_hitpointReducedMultiplier=  0.95f;
+        public static float Sun_Protection_Stone_decayPointNotIncreasedRate = 0.3f;
+
+    }
+
+    public class ConsumableItemData{
+        public static float Uilos_Candy_hpIncreasedRate = 0.2f;
+        public static float Uilos_Potion_hpIncreasedRate = 0.5f;
+        public static float Uilos_Cake_hpIncreasedRate = 1f;
+        public static float Uilos_Pedal_uilosAmount = 50f;
+        public static float Uilos_Flower_uilosAmount = 200f;
+        public static float Uilos_Stick_uilosAmount = 500f;
+        public static float Uilos_Bunch_uilosAmount = 1000f;
+        public static float Holy_Sun_Water_decayDecreasedRateFromMax = .2f;
+        public static float Neon_Potion_durationSeconds = 60f;
+        public static float Neon_Potion_velocityMultiplier = 1.2f;
     }
 }

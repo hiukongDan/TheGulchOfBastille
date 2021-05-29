@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
     }
 
     private IEnumerator exitGame(){
-        gameSaver.SaveAll();
+        // gameSaver.SaveAll();
         Time.timeScale = 1f;
         yield return new WaitForSeconds(uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
         demonCoroutine = StartCoroutine(DemonRandomSceneCode());

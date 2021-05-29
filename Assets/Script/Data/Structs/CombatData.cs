@@ -13,7 +13,6 @@ public struct CombatData
 
     public GameObject from;
     public int facingDirection;
-
     public bool isParryDamage;
 //    public bool isSimpleDamage;
 

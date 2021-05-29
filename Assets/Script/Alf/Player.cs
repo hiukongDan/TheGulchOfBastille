@@ -8,11 +8,9 @@ public class Player : MonoBehaviour
      */
 
     #region ENUM
-
     public enum AC_TYPE{
         NORMAL, ROOT_MOTION,
     };
-
     #endregion
 
     #region REFERENCES
@@ -32,6 +30,8 @@ public class Player : MonoBehaviour
     public PlayerInAirState inAirState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
     public PlayerMeleeAttackState meleeAttackState { get; private set; }
+    public PlayerBowAttackState bowAttackState{get; private set;}
+    public PlayerMagicAttackState magicAttackState{get; private set;}
     public PlayerParryState parryState { get; private set; }
     public PlayerRollState rollState { get; private set; }
     public PlayerDeadState deadState { get; private set; }
@@ -111,8 +111,6 @@ public class Player : MonoBehaviour
         Anim.runtimeAnimatorController = ACNormal;
 
         InputHandler = GetComponent<PlayerInputHandler>();
-
-        // playerRuntimeData.InitPlayerRuntimeData(playerData);
     }
 
     void OnEnable() {
@@ -137,6 +135,11 @@ public class Player : MonoBehaviour
         else{
             stateMachine.LogicUpdate();
         }
+
+        if(playerRuntimeData.currentHitPoints == 0){
+            isDead = true;
+            stateMachine.SwitchState(deadState);
+        }
     }
 
     void FixedUpdate()
@@ -144,11 +147,13 @@ public class Player : MonoBehaviour
         stateMachine.PhysicsUpdate();
     }
 
+    
     void OnAnimatorMove(){
         if(Anim.runtimeAnimatorController == ACRootmotion && Anim.applyRootMotion){
             Rb.velocity = Anim.deltaPosition / Time.deltaTime;
         }
     }
+    
     void OnApplicationQuit(){
         
     }
@@ -172,6 +177,17 @@ public class Player : MonoBehaviour
     public bool CheckWalled(){
         return Physics2D.Raycast(wallCheck.position, transform.right, playerData.GD_wallCheckDistance, playerData.GD_whatIsGround);
     }
+	
+	public bool CheckSlope(){
+		RaycastHit2D ray = Physics2D.Raycast(groundCheck.position, -transform.up, playerData.GD_slopeCheckDistance, 
+						playerData.GD_whatIsGround | playerData.GD_whatIsPlatform | playerData.GD_whatIsDefault);
+        bool res = Vector2.Angle(transform.up, ray.normal) * Mathf.Deg2Rad > 0.01f;
+
+        ray = Physics2D.Raycast(groundCheck.position, facingDirection*transform.right, playerData.GD_slopeCheckDistance,
+                        playerData.GD_whatIsGround | playerData.GD_whatIsPlatform | playerData.GD_whatIsDefault);
+        res |= Vector2.Angle(transform.up, ray.normal) * Mathf.Deg2Rad > 0.01f;
+		return res;
+	}
 
     public bool CheckLadderEnd(){
         return Physics2D.OverlapCircle(LadderEndCheck.position, playerData.GD_ladderEndCheckRadius, playerData.GD_whatIsLadder);
@@ -361,9 +377,9 @@ public class Player : MonoBehaviour
 
     public float GetCalculatedCurrentMaxHitpoint(){
         if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Amber_Ring)){
-            return playerData.PD_maxHitPoint + ItemData.WearableItemBuffData.Amber_Ring_additionalHp;
+            return CalculatePlayerMaxHitPoint() + ItemData.WearableItemBuffData.Amber_Ring_additionalHp;
         }
-        return playerData.PD_maxHitPoint;
+        return CalculatePlayerMaxHitPoint();
     }
 
     public void ValidAttack()
@@ -381,7 +397,9 @@ public class Player : MonoBehaviour
         walkState = new PlayerWalkState(stateMachine, this, AlfAnimationHash.RUN_0, playerData);
         jumpState = new PlayerJumpState(stateMachine, this, AlfAnimationHash.JUMP_0, playerData);
         inAirState = new PlayerInAirState(stateMachine, this, AlfAnimationHash.INAIR_0, playerData);
-        meleeAttackState = new PlayerMeleeAttackState(stateMachine, this, AlfAnimationHash.ATTACK_0, playerData);
+        meleeAttackState = new PlayerMeleeAttackState(stateMachine, this, AlfAnimationHash.ATTACK_IRONSWORD, playerData);
+        bowAttackState = new PlayerBowAttackState(stateMachine, this, AlfAnimationHash.IDLE_WOODBOW, playerData);
+        magicAttackState = new PlayerMagicAttackState(stateMachine, this, AlfAnimationHash.IDLE_APPRENTICE_STICK, playerData);
         parryState = new PlayerParryState(stateMachine, this, AlfAnimationHash.PARRY_1, playerData);
         rollState = new PlayerRollState(stateMachine, this, AlfAnimationHash.ROLL_0, playerData);
         stunState = new PlayerStunState(stateMachine, this, AlfAnimationHash.STUN_0, playerData);
@@ -401,6 +419,9 @@ public class Player : MonoBehaviour
     private void InitializePlayerCooldownTimer()
     {
         stateCooldownTimer.AddStateTimer(meleeAttackState);
+        stateCooldownTimer.AddStateTimer(bowAttackState);
+        stateCooldownTimer.AddStateTimer(magicAttackState);
+
         stateCooldownTimer.AddStateTimer(parryState);
         stateCooldownTimer.AddStateTimer(rollState);
 
@@ -421,7 +442,7 @@ public class Player : MonoBehaviour
 
     public void UpdateUI(){
         UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, GetCalculatedCurrentMaxHitpoint());
-        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, CalculatePlayerMaxDecayPoint());
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
     }
 
@@ -450,7 +471,7 @@ public class Player : MonoBehaviour
         playerRuntimeData.currentStunPoints = playerData.PD_maxStunPoint;
 
         UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, GetCalculatedCurrentMaxHitpoint());
-        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, CalculatePlayerMaxDecayPoint());
         UIEventListener.Instance.OnUilosChange(playerRuntimeData.currentUilos);
 
         ResetGrounded();
@@ -542,6 +563,7 @@ public class Player : MonoBehaviour
     private Loot loot;
     public void SetLootHandler(Loot loot) => this.loot = loot;
     public Loot GetLootHandler() => this.loot;
+    
     #endregion
 
     #region EVENT
@@ -564,7 +586,89 @@ public class Player : MonoBehaviour
         Color color = new Color(value, value, value);
         GetComponent<SpriteRenderer>().color = color;
     }
+
+    public void OnDpIncrease(float amount){
+        playerRuntimeData.currentDecayPoints = Mathf.Clamp(
+                playerRuntimeData.currentDecayPoints + amount,
+                0,
+                playerData.PD_maxDecayPoint);
+        UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+    }
+
+    public void OnHpIncrease(float amount){
+        playerRuntimeData.currentHitPoints = Mathf.Clamp(
+                    playerRuntimeData.currentHitPoints + amount,
+                    0,
+                    CalculatePlayerMaxHitPoint());
+        UIEventListener.Instance.OnHpChange(playerRuntimeData.currentHitPoints, CalculatePlayerMaxHitPoint());
+    }
+
+
+    /// <Summary>
+    /// everything about using items and the consequences go here.
+    /// </Summary>
+    public void OnUseItem(ItemData.Consumable item, int amount=1){
+            switch(item){
+                case ItemData.Consumable.Uilos_Candy:
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Candy_hpIncreasedRate*CalculatePlayerMaxHitPoint());
+                break;
+                case ItemData.Consumable.Uilos_Potion:
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Potion_hpIncreasedRate*CalculatePlayerMaxHitPoint());
+                break;
+                case ItemData.Consumable.Uilos_Cake:
+                OnHpIncrease(amount*ItemData.ConsumableItemData.Uilos_Potion_hpIncreasedRate*CalculatePlayerMaxHitPoint());
+                break;
+                case ItemData.Consumable.Uilos_Pedal:
+                OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Pedal_uilosAmount);
+                break;
+                case ItemData.Consumable.Uilos_Flower:
+                OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Flower_uilosAmount);
+                break;
+                case ItemData.Consumable.Uilos_Stick:
+                OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Stick_uilosAmount);
+                break;
+                case ItemData.Consumable.Uilos_Bunch:
+                OnAquireUilos(amount * (int)ItemData.ConsumableItemData.Uilos_Bunch_uilosAmount);
+                break;
+                case ItemData.Consumable.Holy_Sun_Water:
+                OnDpIncrease(-amount * ItemData.ConsumableItemData.Holy_Sun_Water_decayDecreasedRateFromMax*CalculatePlayerMaxDecayPoint());
+                break;
+                case ItemData.Consumable.Neon_Potion:
+                GM.playerCinemaMovement.UseNeonPotion();
+                break;
+                default:
+                break;
+            }
+        }
     
+    #endregion
+
+    #region STATEMACHINE HELPER
+
+    public PlayerAttackState GetCurrentAttackState(){
+        PlayerAttackState attackState;
+        switch(playerRuntimeData.GetCurrentWeaponInfo().weapon){
+            case ItemData.Weapon.Iron_Sword:
+            case ItemData.Weapon.Claymore:
+            case ItemData.Weapon.Dragon_Slayer_Sword:
+                attackState = meleeAttackState;
+                break;
+            case ItemData.Weapon.Wood_Bow:
+            case ItemData.Weapon.Elf_Bow:
+            case ItemData.Weapon.Long_Bow:
+                attackState = bowAttackState;
+                break;
+            case ItemData.Weapon.Apprentice_Stick:
+            case ItemData.Weapon.Master_Stick:
+            case ItemData.Weapon.Sunlight_Stick:
+                attackState = magicAttackState;
+                break;
+            default:
+                attackState = meleeAttackState;
+                break;
+        }
+        return attackState;
+    }
     #endregion
 
     #region AUXILIARY FUNCTIONS
@@ -581,12 +685,39 @@ public class Player : MonoBehaviour
     public int CalculatePlayerDamage(){
         ItemData.WeaponRuntimeData weaponData = playerRuntimeData.playerStock.weaponStock[playerRuntimeData.playerSlot.weaponIndex];
         int weaponDamage = ItemData.weaponData[(int)weaponData.weapon].Attack[weaponData.level];
-        int res = (int)((playerData.MAS_damageAmount + weaponDamage) * (1 + playerRuntimeData.currentDecayPoints / playerData.PD_maxDecayPoint));
+        int res = (int)((playerData.MAS_damageAmount + weaponDamage) * (1 + playerRuntimeData.currentDecayPoints / CalculatePlayerMaxDecayPoint()));
+
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Magic_Pendant)){
+            res = (int)(res * ItemData.WearableItemBuffData.Magic_Pendant_attackMultiplier);
+        }
+        return res;
+    }
+
+    public float CalculatePlayerMaxHitPoint(){
+        float res = playerData.PD_maxHitPoint;
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Moonstone_Ring)){
+            res *= ItemData.WearableItemBuffData.Moonstone_Ring_hitpointReducedMultiplier;
+        }
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Sunstone_Ring)){
+            res *= ItemData.WearableItemBuffData.Sunstone_Ring_hitpointIncreaseMultiplier;
+        }
+
+        return res;
+    }
+
+    public float CalculatePlayerMaxDecayPoint(){
+        float res = playerData.PD_maxDecayPoint;
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Sunstone_Ring)){
+            res *= ItemData.WearableItemBuffData.Sunstone_Ring_decayReducedMultiplier;
+        }
+        if(playerRuntimeData.playerSlot.IsWearableEquiped(playerRuntimeData.playerStock, ItemData.Wearable.Moonstone_Ring)){
+            res *= ItemData.WearableItemBuffData.Moonstone_Ring_decayIncreasedMultiplier;
+        }
         return res;
     }
 
     private int calculateEnemyDamage(float rawDamage){
-        int res = (int)(rawDamage * (1 + playerRuntimeData.currentDecayPoints / playerData.PD_maxDecayPoint));
+        int res = (int)(rawDamage * (1 + playerRuntimeData.currentDecayPoints / CalculatePlayerMaxDecayPoint()));
         return res;
     }
 
