@@ -112,7 +112,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -146,14 +146,14 @@ TextureImporter:
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: eacbf392ada83da50800000000000000
-      internalID: 6544727353099009198
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -167,14 +167,14 @@ TextureImporter:
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b5804163344e0cc50800000000000000
-      internalID: 6683592824339040347
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -188,14 +188,14 @@ TextureImporter:
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f7c8277b386fe3de0800000000000000
-      internalID: -1351371792585683841
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -209,14 +209,14 @@ TextureImporter:
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: aaed228bfb9b8f7c0800000000000000
-      internalID: -4037272832858464598
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -225,19 +225,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_4
       rect:
         serializedVersion: 2
-        x: 225
+        x: 180
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 63c8c6713f286b8e0800000000000000
-      internalID: -1678009830567277514
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -246,19 +246,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_5
       rect:
         serializedVersion: 2
-        x: 270
+        x: 225
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fca0845fb06ba20a0800000000000000
-      internalID: -6905506916143199537
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -267,19 +267,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_6
       rect:
         serializedVersion: 2
-        x: 315
+        x: 270
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1f5dd18e8332b7c20800000000000000
-      internalID: 3205194287123650033
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -288,19 +288,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_7
       rect:
         serializedVersion: 2
-        x: 360
+        x: 315
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7d7d0dda39680ff20800000000000000
-      internalID: 3454408883027630039
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -309,19 +309,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_8
       rect:
         serializedVersion: 2
-        x: 405
+        x: 360
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0cc2cc149f86a2fc0800000000000000
-      internalID: -3518884739076576064
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -330,19 +330,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_9
       rect:
         serializedVersion: 2
-        x: 450
+        x: 405
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2c4252453cc0752b0800000000000000
-      internalID: -5595989978914675518
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -351,19 +351,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_10
       rect:
         serializedVersion: 2
-        x: 495
+        x: 450
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: eb7f8ab393f328870800000000000000
-      internalID: 8683572546570352574
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -372,19 +372,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_11
       rect:
         serializedVersion: 2
-        x: 540
+        x: 495
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c4506858918818170800000000000000
-      internalID: 8178968041477244236
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -393,19 +393,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_12
       rect:
         serializedVersion: 2
-        x: 585
+        x: 540
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 801f874d7782b3f30800000000000000
-      internalID: 4556279943146303752
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -414,19 +414,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_13
       rect:
         serializedVersion: 2
-        x: 630
+        x: 585
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: be0753e918a5753d0800000000000000
-      internalID: -3218003895981346581
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -435,19 +435,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_14
       rect:
         serializedVersion: 2
-        x: 675
+        x: 630
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a6b657c8a4c8abda0800000000000000
-      internalID: -5928271707667862678
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -456,19 +456,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_15
       rect:
         serializedVersion: 2
-        x: 720
+        x: 675
         y: 0
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: addded22556dbcbc0800000000000000
-      internalID: -3761677402592322086
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -477,19 +477,19 @@ TextureImporter:
       name: LittleSun_Generate_0_45x45_16
       rect:
         serializedVersion: 2
-        x: 21
-        y: 9
-        width: 3
-        height: 3
+        x: 720
+        y: 0
+        width: 45
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ce23b4d0627d15530800000000000000
-      internalID: 3842088515555504876
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
