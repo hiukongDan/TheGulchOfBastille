@@ -20,4 +20,8 @@ Using sound effects from [freesound](https://freesound.org/)
 [Hiukong Dan](https://hiukong-dan.com)
 
 #### _Update Date_
-May 6, 2021
+June 3, 2021
+
+---
+_Team MAGA._
+_All rights reserved._
