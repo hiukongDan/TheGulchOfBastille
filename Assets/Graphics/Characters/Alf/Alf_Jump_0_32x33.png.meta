@@ -50,6 +50,30 @@ TextureImporter:
   - first:
       213: 8348015475099649680
     second: Alf_Jump_0_32x33_7
+  - first:
+      213: -564352566823032200
+    second: Alf_Jump_0_32x32_0
+  - first:
+      213: -923639967323708513
+    second: Alf_Jump_0_32x32_1
+  - first:
+      213: -931225348168518060
+    second: Alf_Jump_0_32x32_2
+  - first:
+      213: -8366398674537913190
+    second: Alf_Jump_0_32x32_3
+  - first:
+      213: -2457137267843897113
+    second: Alf_Jump_0_32x32_4
+  - first:
+      213: -1577692642222047041
+    second: Alf_Jump_0_32x32_5
+  - first:
+      213: 7416679468560391818
+    second: Alf_Jump_0_32x32_6
+  - first:
+      213: -4127236206014372035
+    second: Alf_Jump_0_32x32_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:

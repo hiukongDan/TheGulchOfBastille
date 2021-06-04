@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 6453567396535342660
     second: ElfCity2_4
+  - first:
+      213: -4642363516086748203
+    second: ElfCity2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,12 +108,12 @@ TextureImporter:
       name: ElfCity2_0
       rect:
         serializedVersion: 2
-        x: 34
+        x: 462
         y: 25
-        width: 1461
+        width: 1033
         height: 396
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,7 +134,7 @@ TextureImporter:
         width: 378
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +155,7 @@ TextureImporter:
         width: 116
         height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +176,7 @@ TextureImporter:
         width: 343
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,7 +197,7 @@ TextureImporter:
         width: 35
         height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,6 +205,27 @@ TextureImporter:
       bones: []
       spriteID: 446188cca5daf8950800000000000000
       internalID: 6453567396535342660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity2_5
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 23
+        width: 378
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db7a697af2039fb0800000000000000
+      internalID: -4642363516086748203
       vertices: []
       indices: 
       edges: []
