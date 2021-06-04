@@ -1,0 +1,2 @@
+(0-5)stage1: same frame rate with the lighting, and wiggle wiggle
+(6)stage2: wiggle wiggle
