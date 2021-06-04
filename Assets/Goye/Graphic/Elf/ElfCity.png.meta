@@ -1,0 +1,1568 @@
+fileFormatVersion: 2
+guid: b163ae89be3f7fc49b5dadfcb0f24b8d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 605689887177524680
+    second: ElfCity_0
+  - first:
+      213: -6954934048714272967
+    second: ElfCity_1
+  - first:
+      213: 5420578509015541021
+    second: ElfCity_2
+  - first:
+      213: 5142720625079917929
+    second: ElfCity_3
+  - first:
+      213: -5636939479031760751
+    second: ElfCity_4
+  - first:
+      213: 3810051518842499332
+    second: ElfCity_5
+  - first:
+      213: -8334447877151299710
+    second: ElfCity_6
+  - first:
+      213: 8013705552079335828
+    second: ElfCity_7
+  - first:
+      213: -5692952037178110854
+    second: ElfCity_8
+  - first:
+      213: 149029580499805696
+    second: ElfCity_9
+  - first:
+      213: -5860466409171541977
+    second: ElfCity_10
+  - first:
+      213: 1248061598439533417
+    second: ElfCity_11
+  - first:
+      213: -8279211734622095414
+    second: ElfCity_12
+  - first:
+      213: 2008657768984504914
+    second: ElfCity_13
+  - first:
+      213: 4695704554313468778
+    second: ElfCity_14
+  - first:
+      213: 3778884118430910110
+    second: ElfCity_15
+  - first:
+      213: 8207305885024374663
+    second: ElfCity_16
+  - first:
+      213: -3240045885207583043
+    second: ElfCity_17
+  - first:
+      213: -3971121510271072058
+    second: ElfCity_18
+  - first:
+      213: 7163888167004681197
+    second: ElfCity_19
+  - first:
+      213: 3373829575369597875
+    second: ElfCity_20
+  - first:
+      213: -6090499983530299227
+    second: ElfCity_21
+  - first:
+      213: 3706094499196086728
+    second: ElfCity_22
+  - first:
+      213: 3428879606709210323
+    second: ElfCity_23
+  - first:
+      213: -6637507711322865222
+    second: ElfCity_24
+  - first:
+      213: -2590438786434482331
+    second: ElfCity_25
+  - first:
+      213: -1433444477103997107
+    second: ElfCity_26
+  - first:
+      213: -7920502450954572758
+    second: ElfCity_27
+  - first:
+      213: -4228711598181843409
+    second: ElfCity_28
+  - first:
+      213: 6312306877999853348
+    second: ElfCity_29
+  - first:
+      213: 5824598601125307031
+    second: ElfCity_30
+  - first:
+      213: 1715888079096546689
+    second: ElfCity_31
+  - first:
+      213: -913671052143537137
+    second: ElfCity_32
+  - first:
+      213: -558077154738170129
+    second: ElfCity_33
+  - first:
+      213: 9154859576080475306
+    second: ElfCity_34
+  - first:
+      213: 2970626958478881022
+    second: ElfCity_35
+  - first:
+      213: -4644906721782786410
+    second: ElfCity_36
+  - first:
+      213: 8877613234566585230
+    second: ElfCity_37
+  - first:
+      213: 1994245501972199103
+    second: ElfCity_38
+  - first:
+      213: 6256925536832676173
+    second: ElfCity_39
+  - first:
+      213: -6067257285999055311
+    second: ElfCity_40
+  - first:
+      213: 765047300615037609
+    second: ElfCity_41
+  - first:
+      213: 7731985339340405503
+    second: ElfCity_42
+  - first:
+      213: -2992810985664352814
+    second: ElfCity_43
+  - first:
+      213: 2389940895475547741
+    second: ElfCity_44
+  - first:
+      213: 9097362385330428020
+    second: ElfCity_45
+  - first:
+      213: 8862390571131783896
+    second: ElfCity_46
+  - first:
+      213: -1307246527221150171
+    second: ElfCity_47
+  - first:
+      213: -7753111998801147185
+    second: ElfCity_48
+  - first:
+      213: 4712373587708525137
+    second: ElfCity_49
+  - first:
+      213: -6257426959423305192
+    second: ElfCity_50
+  - first:
+      213: 6452113983942812277
+    second: ElfCity_51
+  - first:
+      213: 5454961411073663917
+    second: ElfCity_52
+  - first:
+      213: 945905752013015420
+    second: ElfCity_53
+  - first:
+      213: 3580904738928691869
+    second: ElfCity_54
+  - first:
+      213: 3279338224277350247
+    second: ElfCity_55
+  - first:
+      213: -8306815688101148176
+    second: ElfCity_56
+  - first:
+      213: -2275928470123367516
+    second: ElfCity_57
+  - first:
+      213: 2062611171383980858
+    second: ElfCity_58
+  - first:
+      213: -1685472890534463399
+    second: ElfCity_59
+  - first:
+      213: -2506829180562791877
+    second: ElfCity_60
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ElfCity_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1141
+        width: 139
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c543494eb7d76800800000000000000
+      internalID: 605689887177524680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_1
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1126
+        width: 132
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fcd1ed45c1b7f90800000000000000
+      internalID: -6954934048714272967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_2
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1130
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15ecfa3f63c93b40800000000000000
+      internalID: 5420578509015541021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_3
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1226
+        width: 54
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d96f4492d9e5740800000000000000
+      internalID: 5142720625079917929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_4
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 1136
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198bfebd86195c1b0800000000000000
+      internalID: -5636939479031760751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_5
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1132
+        width: 160
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4017b8c7ba500e430800000000000000
+      internalID: 3810051518842499332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_6
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1148
+        width: 86
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287636340d7165c80800000000000000
+      internalID: -8334447877151299710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 884
+        width: 83
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491b34ebdb6663f60800000000000000
+      internalID: 8013705552079335828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_8
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 877
+        width: 405
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c89a4e8429ef0b0800000000000000
+      internalID: -5692952037178110854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_9
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 881
+        width: 56
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00667b62d95711200800000000000000
+      internalID: 149029580499805696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_10
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 861
+        width: 165
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720a837d9d07baea0800000000000000
+      internalID: -5860466409171541977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_11
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 867
+        width: 214
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b6bc84961025110800000000000000
+      internalID: 1248061598439533417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_12
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 981
+        width: 91
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7ba91eac45a1d80800000000000000
+      internalID: -8279211734622095414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_13
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 983
+        width: 170
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a66ab399f20eb10800000000000000
+      internalID: 2008657768984504914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_14
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 984
+        width: 85
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bc90ac96e7a2140800000000000000
+      internalID: 4695704554313468778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_15
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 916
+        width: 89
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e968076951b417430800000000000000
+      internalID: 3778884118430910110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_16
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 918
+        width: 80
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fc9dfd73536e170800000000000000
+      internalID: 8207305885024374663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_17
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 917
+        width: 241
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db66c341f6b0903d0800000000000000
+      internalID: -3240045885207583043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_18
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 917
+        width: 82
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8416cb60eb3e8c0800000000000000
+      internalID: -3971121510271072058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_19
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 635
+        width: 355
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de330fcf45e3b6360800000000000000
+      internalID: 7163888167004681197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_20
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 635
+        width: 223
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3ac9c9f1042de20800000000000000
+      internalID: 3373829575369597875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_21
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 617
+        width: 244
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a07729a8823a7ba0800000000000000
+      internalID: -6090499983530299227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_22
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 618
+        width: 83
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9ac90bf41be6330800000000000000
+      internalID: 3706094499196086728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_23
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 223
+        width: 1678
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dccb77d5d3d59f20800000000000000
+      internalID: 3428879606709210323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_24
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 26
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab14fa057e5d2e3a0800000000000000
+      internalID: -6637507711322865222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_25
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 25
+        width: 45
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fbd2206a9ec0cd0800000000000000
+      internalID: -2590438786434482331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_26
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 26
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f78f0c7d16b1ce0800000000000000
+      internalID: -1433444477103997107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_27
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 25
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ced384cf8b41290800000000000000
+      internalID: -7920502450954572758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_28
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 26
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2efbc4c4399055c0800000000000000
+      internalID: -4228711598181843409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_29
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 23
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42faf6859a1d99750800000000000000
+      internalID: 6312306877999853348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_30
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 26
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0.49999237, y: 0.47615814}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792af43519125d050800000000000000
+      internalID: 5824598601125307031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_31
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 26
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18580e4ed1f00d710800000000000000
+      internalID: 1715888079096546689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_32
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 26
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f045d67d40df153f0800000000000000
+      internalID: -913671052143537137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_33
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 26
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6129ad8cf4148f0800000000000000
+      internalID: -558077154738170129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_34
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 25
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa42cd8a7489c0f70800000000000000
+      internalID: 9154859576080475306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_35
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 25
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0355cca79c93920800000000000000
+      internalID: 2970626958478881022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_36
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 25
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696105142f9f98fb0800000000000000
+      internalID: -4644906721782786410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_37
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 24
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bd5a3833e933b70800000000000000
+      internalID: 8877613234566585230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_38
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 26
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb639f3d7bbfcab10800000000000000
+      internalID: 1994245501972199103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_39
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 26
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d416bf800a015d650800000000000000
+      internalID: 6256925536832676173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_40
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 25
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e2023e4a5cccba0800000000000000
+      internalID: -6067257285999055311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_41
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 24
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2e78d677efd9a00800000000000000
+      internalID: 765047300615037609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_42
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 25
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffab9e743b78d4b60800000000000000
+      internalID: 7731985339340405503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_43
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 24
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dde69fd3466776d0800000000000000
+      internalID: -2992810985664352814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_44
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 26
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ebffcf496ca2120800000000000000
+      internalID: 2389940895475547741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_45
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 25
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478de9ab3e2504e70800000000000000
+      internalID: 9097362385330428020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_46
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 25
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dac41df4498dfa70800000000000000
+      internalID: 8862390571131783896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_47
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 25
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ece17a53abbdde0800000000000000
+      internalID: -1307246527221150171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_48
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 25
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca83aff6b9676490800000000000000
+      internalID: -7753111998801147185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_49
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 24
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15abc409fc6b56140800000000000000
+      internalID: 4712373587708525137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_50
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 27
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a0f9b65572929a0800000000000000
+      internalID: -6257426959423305192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_51
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 27
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572ed3fcb738a8950800000000000000
+      internalID: 6452113983942812277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_52
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 1270
+        width: 39
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da36282708ae3bb40800000000000000
+      internalID: 5454961411073663917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_53
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 1136
+        width: 88
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c790cb31548802d00800000000000000
+      internalID: 945905752013015420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_54
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1192
+        width: 64
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a8b5a33ede1b130800000000000000
+      internalID: 3580904738928691869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_55
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 1131
+        width: 95
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76769648dbc828d20800000000000000
+      internalID: 3279338224277350247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_56
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 1135
+        width: 63
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9c610a42348bc80800000000000000
+      internalID: -8306815688101148176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_57
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 1066
+        width: 252
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a339146d174a60e0800000000000000
+      internalID: -2275928470123367516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_58
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1120
+        width: 187
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a333814aeeddf9c10800000000000000
+      internalID: 2062611171383980858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_59
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 1157
+        width: 159
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9587429065ffb98e0800000000000000
+      internalID: -1685472890534463399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfCity_60
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 619
+        width: 325
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32a8fb5424f53dd0800000000000000
+      internalID: -2506829180562791877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
