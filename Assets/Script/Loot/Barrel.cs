@@ -9,6 +9,8 @@ public class Barrel : MonoBehaviour
     // how many states the barrel has
     public int BrokenStateCount = 1;
     public int barrelTypeNo;
+    public ConsumableLoot loot;
+    public Vector2 LootAmountRange = new Vector2(1, 100);
     private float currentHp = 0;
     
     private Animator animator;
@@ -41,6 +43,7 @@ public class Barrel : MonoBehaviour
             animator.Play(getAnimString("die"));
             GetComponentInChildren<BoxCollider2D>().enabled = false;
             // TODO: spawn loots
+            SpawnLoot();
         }
         else{
             int index = BrokenStateCount - Mathf.CeilToInt(currentHp / (MaxHp / BrokenStateCount));
@@ -64,5 +67,17 @@ public class Barrel : MonoBehaviour
         }
         Debug.Log(res);
         return res;
+    }
+
+    void SpawnLoot(){
+        loot.amount = (int)Random.Range(LootAmountRange.x, LootAmountRange.y);
+        loot.consumable = (ItemData.Consumable)Mathf.FloorToInt(Random.Range(0, (float)ItemData.Consumable.Count));
+        loot.gameObject.SetActive(true);
+        overrideGUID();
+    }
+
+    void overrideGUID(){
+        
+        loot.GetComponent<GulchGUID>().ID = "";
     }
 }

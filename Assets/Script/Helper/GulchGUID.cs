@@ -21,6 +21,9 @@ public class GulchGUID : MonoBehaviour
             }
             return id;
         }
+        set{
+            id = value;
+        }
     }
     
     void Awake(){
