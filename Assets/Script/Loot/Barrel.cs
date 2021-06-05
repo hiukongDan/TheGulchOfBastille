@@ -5,19 +5,64 @@ using UnityEngine;
 public class Barrel : MonoBehaviour
 {
     public float MaxHp = 100;
+
+    // how many states the barrel has
+    public int BrokenStateCount = 1;
+    public int barrelTypeNo;
     private float currentHp = 0;
-    public List<Sprite> stateSprites;
-    private int currentState;
+    
+    private Animator animator;
+
+    void Awake() {
+        Reset();
+    }
 
     void Reset(){
-        MaxHp = currentHp;
+        currentHp = MaxHp;
+        animator = GetComponentInChildren<Animator>();
+        animator.Play(getAnimString("stand"));
     }
-    void Update()
-    {
-        
+    
+    void OnEnable() {
+        if(currentHp <= 0f){
+            animator = GetComponentInChildren<Animator>();
+            animator.Play(getAnimString("broke"));
+        }
     }
 
     void Damage(CombatData data){
+        if(currentHp <= 0f){
+            return;
+        }
 
+        animator = GetComponentInChildren<Animator>();
+        currentHp -= data.damage;
+        if(currentHp <= 0f){
+            animator.Play(getAnimString("die"));
+            GetComponentInChildren<BoxCollider2D>().enabled = false;
+            // TODO: spawn loots
+        }
+        else{
+            int index = BrokenStateCount - Mathf.CeilToInt(currentHp / (MaxHp / BrokenStateCount));
+            if(index >= BrokenStateCount){
+                index = BrokenStateCount - 1;
+            }
+            else if(index < 0){
+                index = 0;
+            }
+
+            animator.Play(getAnimString("hit", index));
+        }
+    }
+
+    string getAnimString(string action, int id = -1){
+        /* Animation Naming Rule: Barrel_<type No.>[_action][_action No.] */
+        string res = "barrel_" + barrelTypeNo;
+        res += "_" + action;
+        if(id != -1){
+            res += "_" + id;
+        }
+        Debug.Log(res);
+        return res;
     }
 }
