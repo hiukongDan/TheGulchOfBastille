@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 9a2fa4dd1bfb3384f955c469f2aabbe5
+guid: 221543034e93dd6498b8dae782101167
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6842438188673111697
-    second: Barrel_Hit_1_32x32_0
+      213: 570075312421090701
+    second: Barrel_Hit_2_amend_20x22_0
   - first:
-      213: 7277805878046243852
-    second: Barrel_Hit_1_32x32_1
+      213: -5977208049741050568
+    second: Barrel_Hit_2_amend_20x22_1
   - first:
-      213: 8898730797844625175
-    second: Barrel_Hit_1_32x32_2
+      213: 12812771916899914
+    second: Barrel_Hit_2_amend_20x22_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -96,64 +96,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Barrel_Hit_1_32x32_0
+      name: Barrel_Hit_2_amend_20x22_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.496905, y: 0.34}
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1969d61a74935fe50800000000000000
-      internalID: 6842438188673111697
+      spriteID: d85341ce97059e700800000000000000
+      internalID: 570075312421090701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barrel_Hit_1_32x32_1
+      name: Barrel_Hit_2_amend_20x22_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 20
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.34}
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0c3239f2e5fff460800000000000000
-      internalID: 7277805878046243852
+      spriteID: 83d449682f0bc0da0800000000000000
+      internalID: -5977208049741050568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barrel_Hit_1_32x32_2
+      name: Barrel_Hit_2_amend_20x22_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 40
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.34}
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7177b5d5384ae7b70800000000000000
-      internalID: 8898730797844625175
+      spriteID: a46e1bee5258d2000800000000000000
+      internalID: 12812771916899914
       vertices: []
       indices: 
       edges: []
