@@ -1,79 +1,25 @@
 fileFormatVersion: 2
-guid: 892db33ad0282004aa47d13ae9d8a33c
+guid: 39384f259faff664e81d1c73a11d21e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3791638776895669528
-    second: alf_jump_0_32x33_0
+      213: 6544611396356197691
+    second: ElfCity2_0
   - first:
-      213: 7073421658204744007
-    second: alf_jump_0_32x33_1
+      213: 6549400466983055800
+    second: ElfCity2_1
   - first:
-      213: -108162275959134377
-    second: alf_jump_0_32x33_2
+      213: -5192655093438180137
+    second: ElfCity2_2
   - first:
-      213: -4702177554186917528
-    second: alf_jump_0_32x33_3
+      213: -4386266159646073066
+    second: ElfCity2_3
   - first:
-      213: 7597759696429985999
-    second: alf_jump_0_32x33_4
+      213: 6453567396535342660
+    second: ElfCity2_4
   - first:
-      213: -1444216652850016716
-    second: alf_jump_0_32x33_5
-  - first:
-      213: 2006934140256881615
-    second: alf_jump_0_32x33_6
-  - first:
-      213: 1005348102724962959
-    second: alf_jump_0_32x33_7
-  - first:
-      213: 5906462707516028077
-    second: Alf_Jump_0_32x33_0
-  - first:
-      213: -8804367213861586656
-    second: Alf_Jump_0_32x33_1
-  - first:
-      213: -9124251402735562535
-    second: Alf_Jump_0_32x33_2
-  - first:
-      213: 8224584173034431433
-    second: Alf_Jump_0_32x33_3
-  - first:
-      213: 491092938906354998
-    second: Alf_Jump_0_32x33_4
-  - first:
-      213: -6504748094229063342
-    second: Alf_Jump_0_32x33_5
-  - first:
-      213: 1278031782265827196
-    second: Alf_Jump_0_32x33_6
-  - first:
-      213: 8348015475099649680
-    second: Alf_Jump_0_32x33_7
-  - first:
-      213: -564352566823032200
-    second: Alf_Jump_0_32x32_0
-  - first:
-      213: -923639967323708513
-    second: Alf_Jump_0_32x32_1
-  - first:
-      213: -931225348168518060
-    second: Alf_Jump_0_32x32_2
-  - first:
-      213: -8366398674537913190
-    second: Alf_Jump_0_32x32_3
-  - first:
-      213: -2457137267843897113
-    second: Alf_Jump_0_32x32_4
-  - first:
-      213: -1577692642222047041
-    second: Alf_Jump_0_32x32_5
-  - first:
-      213: 7416679468560391818
-    second: Alf_Jump_0_32x32_6
-  - first:
-      213: -4127236206014372035
-    second: Alf_Jump_0_32x32_7
+      213: -4642363516086748203
+    second: ElfCity2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,7 +91,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -159,118 +105,118 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Alf_Jump_0_32x33_0
+      name: ElfCity2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 462
+        y: 25
+        width: 1033
+        height: 396
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da4b598e988f7f150800000000000000
-      internalID: 5906462707516028077
+      spriteID: b3dc8c0e36123da50800000000000000
+      internalID: 6544611396356197691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x33_1
+      name: ElfCity2_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 591
+        y: 438
+        width: 378
+        height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0293fa1aaaa90d580800000000000000
-      internalID: -8804367213861586656
+      spriteID: 8b17d46460524ea50800000000000000
+      internalID: 6549400466983055800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x33_2
+      name: ElfCity2_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 1000
+        y: 443
+        width: 116
+        height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d0569a01b5206180800000000000000
-      internalID: -9124251402735562535
+      spriteID: 7d49e7254bbffe7b0800000000000000
+      internalID: -5192655093438180137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x33_3
+      name: ElfCity2_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
+        x: 1144
+        y: 434
+        width: 343
+        height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c3640bcab7932270800000000000000
-      internalID: 8224584173034431433
+      spriteID: 61f9affca2ad023c0800000000000000
+      internalID: -4386266159646073066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x33_4
+      name: ElfCity2_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
+        x: 1497
+        y: 437
+        width: 35
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 635473f0d66b0d600800000000000000
-      internalID: 491092938906354998
+      spriteID: 446188cca5daf8950800000000000000
+      internalID: 6453567396535342660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alf_Jump_0_32x33_5
+      name: ElfCity2_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
+        x: 28
+        y: 23
+        width: 378
+        height: 199
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,50 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 259d31a621e7ab5a0800000000000000
-      internalID: -6504748094229063342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alf_Jump_0_32x33_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7f2d99722b7cb110800000000000000
-      internalID: 1278031782265827196
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alf_Jump_0_32x33_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09647cc48db1ad370800000000000000
-      internalID: 8348015475099649680
+      spriteID: 5db7a697af2039fb0800000000000000
+      internalID: -4642363516086748203
       vertices: []
       indices: 
       edges: []
