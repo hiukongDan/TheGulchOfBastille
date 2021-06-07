@@ -65,7 +65,6 @@ public class Barrel : MonoBehaviour
         if(id != -1){
             res += "_" + id;
         }
-        Debug.Log(res);
         return res;
     }
 
