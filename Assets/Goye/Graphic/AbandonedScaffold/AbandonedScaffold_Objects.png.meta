@@ -1,0 +1,608 @@
+fileFormatVersion: 2
+guid: da44111251c6d0244aa1c5e4911dd837
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4941658175613150474
+    second: AbandonedScaffold_Objects_0
+  - first:
+      213: -4185076066500713538
+    second: AbandonedScaffold_Objects_1
+  - first:
+      213: -3067153784413903417
+    second: AbandonedScaffold_Objects_2
+  - first:
+      213: 6702041256387961005
+    second: AbandonedScaffold_Objects_3
+  - first:
+      213: -9009523918287395777
+    second: AbandonedScaffold_Objects_4
+  - first:
+      213: -8568857507405929442
+    second: AbandonedScaffold_Objects_5
+  - first:
+      213: 1480802955905750186
+    second: AbandonedScaffold_Objects_6
+  - first:
+      213: 4210404640397481427
+    second: AbandonedScaffold_Objects_7
+  - first:
+      213: 1208836287079587791
+    second: AbandonedScaffold_Objects_8
+  - first:
+      213: 4953480408391402285
+    second: AbandonedScaffold_Objects_9
+  - first:
+      213: -989507667673604936
+    second: AbandonedScaffold_Objects_10
+  - first:
+      213: 453408444489010170
+    second: AbandonedScaffold_Objects_11
+  - first:
+      213: -8946192707511635664
+    second: AbandonedScaffold_Objects_12
+  - first:
+      213: -1119337106489341257
+    second: AbandonedScaffold_Objects_13
+  - first:
+      213: 8284033422259270822
+    second: AbandonedScaffold_Objects_14
+  - first:
+      213: -552918674703489888
+    second: AbandonedScaffold_Objects_15
+  - first:
+      213: 6290309334938100241
+    second: AbandonedScaffold_Objects_16
+  - first:
+      213: -2354527505326913983
+    second: AbandonedScaffold_Objects_17
+  - first:
+      213: 5790112005670896309
+    second: AbandonedScaffold_Objects_18
+  - first:
+      213: 3593652233197871496
+    second: AbandonedScaffold_Objects_19
+  - first:
+      213: 4725096604376589648
+    second: AbandonedScaffold_Objects_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05a3debdeb449440800000000000000
+      internalID: 4941658175613150474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 392
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb36c32bd7f9be5c0800000000000000
+      internalID: -4185076066500713538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 128
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5a38032e74f65d0800000000000000
+      internalID: -3067153784413903417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 165
+        width: 19
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da06405830f620d50800000000000000
+      internalID: 6702041256387961005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 230
+        width: 51
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3428171bbdb7f280800000000000000
+      internalID: -9009523918287395777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_5
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 175
+        width: 40
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14612c2f7d451980800000000000000
+      internalID: -8568857507405929442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_6
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 168
+        width: 28
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa45c19517edc8410800000000000000
+      internalID: 1480802955905750186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 157
+        width: 28
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d55c8776bc5e6a30800000000000000
+      internalID: 4210404640397481427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 148
+        width: 48
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf1bfac236a6c010800000000000000
+      internalID: 1208836287079587791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_9
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 147
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23c600df2c4eb440800000000000000
+      internalID: 4953480408391402285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_10
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 156
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc1ac5d4009442f0800000000000000
+      internalID: -989507667673604936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 182
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb0ee7f394da4600800000000000000
+      internalID: 453408444489010170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 108
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0313498a12db8d380800000000000000
+      internalID: -8946192707511635664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 122
+        width: 156
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba0ac705d05770f0800000000000000
+      internalID: -1119337106489341257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_14
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 122
+        width: 156
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a43a31c18cc6f270800000000000000
+      internalID: 8284033422259270822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 113
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a46e941563a358f0800000000000000
+      internalID: -552918674703489888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_16
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1122f4c330bab4750800000000000000
+      internalID: 6290309334938100241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_17
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1464a1f65b9035fd0800000000000000
+      internalID: -2354527505326913983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_18
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 63
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b20dbb113c9a5050800000000000000
+      internalID: 5790112005670896309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_19
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 0
+        width: 51
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8816c068aa73fd130800000000000000
+      internalID: 3593652233197871496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbandonedScaffold_Objects_20
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 0
+        width: 159
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0556549b35ae29140800000000000000
+      internalID: 4725096604376589648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
