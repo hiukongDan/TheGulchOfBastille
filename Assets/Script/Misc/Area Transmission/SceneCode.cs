@@ -16,6 +16,7 @@ public enum SceneCode
     Mine_Center,
     Elf_Ruins,
     Elf_City,
+    Old_Scaffold,
     Count,
 };
 
@@ -36,6 +37,7 @@ public static class SceneCodeDisplayName{
         {(int)SceneCode.Dwarf_Ruins, "Dwarf Ruins"},
         {(int)SceneCode.Elf_Ruins, "Elf Ruins"},
         {(int)SceneCode.Elf_City, "Elf City"},
+        {(int)SceneCode.Old_Scaffold, "Old Scaffold"},
     };
 };
 
