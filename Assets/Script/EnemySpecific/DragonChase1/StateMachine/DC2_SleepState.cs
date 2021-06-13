@@ -14,11 +14,13 @@ public class DC2_SleepState : State
     public override void Enter()
     {
         base.Enter();
+        enemy.dc2_ota.sleepState = this;
     }
 
     public override void Exit()
     {
         base.Exit();
+        enemy.dc2_ota.sleepState = null;
     }
 
     public override void LogicUpdate()
@@ -49,12 +51,6 @@ public class DC2_SleepState : State
     public override void ResetTimer()
     {
         base.ResetTimer();
-    }
-
-    public void Wake()
-    {
-        entity.anim.Play("wake_0");
-        enemy.refPlayer.stateMachine.SwitchState(enemy.refPlayer.cinemaState);
     }
 
     public override void Complete()

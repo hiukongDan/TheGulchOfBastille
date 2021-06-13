@@ -50,7 +50,6 @@ public class DC2_FlyState : State
         base.ResetTimer();
     }
 
-
     // Complete this state, usually used for setting control boolean
     public override void Complete()
     {

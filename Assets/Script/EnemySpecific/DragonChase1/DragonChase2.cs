@@ -104,7 +104,7 @@ public class DragonChase2 : Entity
     }
 
     public void Tmp_InitCombat(){
-        sleepState.Wake();
+        StartCoroutine(onWakeup());
     }
 
     protected override void Update()
@@ -115,5 +115,21 @@ public class DragonChase2 : Entity
     void OnAnimatorMove()
     {
         rb.velocity = anim.deltaPosition / Time.deltaTime;
+    }
+
+    IEnumerator onWakeup(){
+        refPlayer = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
+        Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(aliveGO.transform);
+        anim.Play("wake_0");
+        refPlayer.stateMachine.SwitchState(refPlayer.cinemaState);
+        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+        GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
+
+        yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
+        // stateMachine.SwitchState(chaseState);
+        Camera.main.GetComponent<BasicFollower>().RestoreCameraFollowing();
+        refPlayer.stateMachine.SwitchState(refPlayer.idleState);
     }
 }

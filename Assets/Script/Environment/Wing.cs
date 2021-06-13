@@ -23,7 +23,6 @@ public class Wing : MonoBehaviour
         int value = (int)(Random.value * 3);
         value = Mathf.Clamp(value, 0, 3);
         string animStr = "wing_idle_" + value;
-        Debug.Log(animStr);
         GetComponent<Animator>()?.Play(animStr);
     }
 
