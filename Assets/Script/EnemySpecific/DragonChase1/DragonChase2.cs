@@ -18,8 +18,14 @@ public class DragonChase2 : Entity
 
     #region STATE
     public DC2_SleepState sleepState;
+    public DC2_TakeoffState takeoffState;
+    public DC2_FlyIdleState flyIdleState;
+    public DC2_DiveState diveState;
     #endregion
 
+    #region STATE DATA
+    public MeleeAttackStateData diveAttackStateData;
+    #endregion
 
     public override void InitEntity()
     {
@@ -99,6 +105,9 @@ public class DragonChase2 : Entity
         this.dc2_ota = (DC2_ObjectToAlive)objectToAlive;
 
         this.sleepState = new DC2_SleepState(stateMachine, this, "sleep_0", this);
+        this.takeoffState = new DC2_TakeoffState(stateMachine, this, "takeoff_0", this);
+        this.flyIdleState = new DC2_FlyIdleState(stateMachine, this, "fly_idle_0", this);
+        this.diveState = new DC2_DiveState(stateMachine, this, "dive_0", this, diveAttackStateData);
 
         stateMachine.Initialize(sleepState);
     }
@@ -120,15 +129,21 @@ public class DragonChase2 : Entity
     IEnumerator onWakeup(){
         refPlayer = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
         Camera.main.GetComponent<BasicFollower>().UpdateCameraFollowing(aliveGO.transform);
+        
+        // play wake up animation
         anim.Play("wake_0");
         refPlayer.stateMachine.SwitchState(refPlayer.cinemaState);
         yield return new WaitForSeconds(0.1f);
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
+        // begin chasing
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.start));
-
+        aliveGO.transform.position = waypoints[0].position;
+        anim.Play("idle_0");
         yield return new WaitForSeconds(gm.uiHandler.uiEffectHandler.OnPlayUIEffect(UIEffect.Transition_CrossFade, UIEffectAnimationClip.end));
-        // stateMachine.SwitchState(chaseState);
+
+        stateMachine.SwitchState(this.takeoffState);
         Camera.main.GetComponent<BasicFollower>().RestoreCameraFollowing();
         refPlayer.stateMachine.SwitchState(refPlayer.idleState);
     }

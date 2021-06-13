@@ -61,5 +61,4 @@ public class DC1_ObjectToAlive : ObjectToAlive
         dieState?.CompleteDieLanding();
     }
 
-
 }

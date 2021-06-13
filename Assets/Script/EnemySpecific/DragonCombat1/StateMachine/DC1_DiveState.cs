@@ -6,7 +6,7 @@ public class DC1_DiveState : State
 {
     protected DragonCombat1 enemy;
     protected MeleeAttackStateData attackData;
-    private bool hasApplyDamage;
+    protected bool hasApplyDamage;
     public DC1_DiveState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonCombat1 enemy, MeleeAttackStateData attackData) : base(stateMachine, entity, animName)
     {
         this.enemy = enemy;
@@ -23,12 +23,12 @@ public class DC1_DiveState : State
         stateMachine.SwitchState(enemy.landState);
     }
 
-    public void ApplyDamage(){
+    public virtual void ApplyDamage(){
         CombatData combatData = attackData.GetCombatData();
-        combatData.from = enemy.aliveGO;
-        combatData.position = enemy.aliveGO.transform.position;
+        combatData.from = entity.aliveGO;
+        combatData.position = entity.aliveGO.transform.position;
 
-        Collider2D[] others = Physics2D.OverlapBoxAll(enemy.damageBox.position, enemy.DamageBoxSize, attackData.whatIsPlayer);
+        Collider2D[] others = Physics2D.OverlapBoxAll(entity.damageBox.position, entity.DamageBoxSize, attackData.whatIsPlayer);
         foreach (Collider2D collider in others)
         {
             if (collider.gameObject.tag == "Player")

@@ -69,7 +69,7 @@ public class DC1_FlyIdleState : State
         enemy.FaceToPlayer();
         enemy.aliveGO.transform.position = new Vector2(Mathf.Lerp(currentPos.x, 
             enemy.refPlayer.transform.position.x, flyUpSpeed * Time.deltaTime), 
-            Mathf.Lerp(currentPos.y, enemy.refPlayer.transform.position.x + hoverOffset,
+            Mathf.Lerp(currentPos.y, enemy.refPlayer.transform.position.y + hoverOffset,
             flyUpSpeed * Time.deltaTime));
 
         if(this.startTime + idleMaxTime < Time.time){

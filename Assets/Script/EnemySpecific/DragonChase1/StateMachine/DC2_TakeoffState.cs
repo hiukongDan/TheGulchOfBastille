@@ -2,27 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DC2_FlyState : State
+public class DC2_TakeoffState : DC1_TakeoffState
 {
-    public DC2_FlyState(FiniteStateMachine stateMachine, Entity entity, string animName)
-    :base(stateMachine, entity, animName)
+    protected DragonChase2 dragon;
+    public DC2_TakeoffState(FiniteStateMachine stateMachine, Entity entity, string animName, DragonChase2 enemy)
+    :base(stateMachine, entity, animName, null)
     {
-        
+        this.dragon = enemy;
     }
 
     public override void Enter()
     {
-        base.Enter();
+        if(entity.anim.gameObject.activeInHierarchy){
+            entity.anim.Play(animName);
+            startTime = Time.time;
+        }
+
+        dragon.dc2_ota.takeoffState = this;
     }
 
     public override void Exit()
     {
-        base.Exit();
+        dragon.dc2_ota.takeoffState = null;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        // enemy.refPlayer.transform.position
     }
 
     public override void PhysicsUpdate()
@@ -50,10 +57,9 @@ public class DC2_FlyState : State
         base.ResetTimer();
     }
 
-    // Complete this state, usually used for setting control boolean
     public override void Complete()
     {
-        base.Complete();
+        stateMachine.SwitchState(dragon.flyIdleState);
     }
     
 }
