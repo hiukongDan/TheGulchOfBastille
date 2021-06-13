@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Should also place Default Start Point to corresponding position")]
     public SceneCode DefaultStartScene = SceneCode.Gulch_SunTower;
+    public SceneCode PrevSceneCode = SceneCode.Gulch_Main;
     public Transform DefaultStartPoint;
     public List<LittleSunData> LittleSuns;
 
@@ -103,7 +104,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void LoadSceneCode(SceneCode sceneCode){
+        PrevSceneCode = currentSceneCode;
         ExitSceneCode(currentSceneCode);
+
         EnterSceneCode(sceneCode);
         currentSceneCode = sceneCode;
 

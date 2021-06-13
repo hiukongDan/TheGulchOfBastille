@@ -32,7 +32,7 @@ public class DragonChase2 : Entity
         base.InitEntity();
         combatTrigger.gameObject.SetActive(true);
         stateMachine?.ClearState();
-        anim?.Play("idle_0");
+        anim?.Play("sleep_0");
         if(facingDirection < 0){
             Flip();
         }
@@ -146,5 +146,9 @@ public class DragonChase2 : Entity
         stateMachine.SwitchState(this.takeoffState);
         Camera.main.GetComponent<BasicFollower>().RestoreCameraFollowing();
         refPlayer.stateMachine.SwitchState(refPlayer.idleState);
+    }
+
+    public void OnDeleteDragon(){
+        GetComponent<EnemySaveData>().Save(false);
     }
 }

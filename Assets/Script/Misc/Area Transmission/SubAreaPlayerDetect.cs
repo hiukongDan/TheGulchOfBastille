@@ -23,7 +23,6 @@ public class SubAreaPlayerDetect : MonoBehaviour
                 collider.gameObject.GetComponent<Player>()?.SetSubAreaHandler(subAreaHandler);
                 InfoSignAnim.Play(InfoSignAnimHash.INTRO);
             }
-
         }
     }
 

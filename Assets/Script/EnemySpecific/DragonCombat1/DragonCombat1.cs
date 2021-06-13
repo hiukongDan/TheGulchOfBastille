@@ -40,7 +40,20 @@ public class DragonCombat1 : Entity
 
     public override void InitEntity()
     {
-        base.InitEntity();
+        Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().PrevSceneCode);
+        if (!GetComponent<EnemySaveData>().IsAlive() ||
+            GameObject.Find("GameManager").GetComponent<GameManager>().PrevSceneCode != SceneCode.Old_Scaffold)
+        {
+            aliveGO.SetActive(false);
+        }
+        else{
+            aliveGO.SetActive(true);
+            Reset();
+        }
+
+        aliveGO.transform.position = initPosition.transform.position;
+        //base.InitEntity();
+        
         combatTrigger.gameObject.SetActive(true);
         stateMachine?.ClearState();
         anim?.Play("idle_0");
