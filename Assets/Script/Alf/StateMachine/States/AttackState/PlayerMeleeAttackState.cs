@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerMeleeAttackState : PlayerAttackState
 {
-    /*    #region CONTROL VARIABLES
-        private bool isFirstAttack;
-        #endregion*/
+    private bool isFirstAttack = false;
 
     public float attackCooldownTimer;
 
@@ -42,6 +40,8 @@ public class PlayerMeleeAttackState : PlayerAttackState
         combatData.facingDirection = player.facingDirection;
 
         ConsumeAttackBuffer();
+
+        isFirstAttack = true;
     }
 
 public override void Exit()
@@ -100,18 +100,37 @@ public override void Exit()
     {
         base.CheckHitbox();
         Collider2D[] colliders = Physics2D.OverlapCircleAll(hitbox.position, data.MAS_hitboxRadius, data.GD_whatIsEnemy);
+        bool hasEnemy = false;
         foreach (Collider2D collider in colliders)
         {
             if (collider.gameObject.tag == "Enemy")
             {
                 combatData.position = player.transform.position;                
                 collider.gameObject.SendMessage("Damage", combatData);
+                hasEnemy = true;
             }
         }
+
+        postAttackSound(hasEnemy);
         // consuming MeleeAttack buffer
         // player.InputHandler.ResetIsMeleeAttack();
 
         //isFirstAttack = !isFirstAttack;
+    }
+
+    void postAttackSound(bool hasEnemy){
+        if(hasEnemy){
+            AkSoundEngine.PostEvent("ALF_Sword_Enemy_Hit", player.GM.gameObject);
+        }
+        else{
+            if(isFirstAttack){
+                isFirstAttack = false;
+                AkSoundEngine.PostEvent("ALF_Sword_Empty_Stage1", player.GM.gameObject);
+            }
+            else{
+                AkSoundEngine.PostEvent("ALF_Sword_Empty_Stage2", player.GM.gameObject);
+            }
+        }
     }
 
     public override void CompleteAttack()

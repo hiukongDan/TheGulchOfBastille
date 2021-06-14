@@ -17,10 +17,12 @@ public class UIMainState : UIState
     {
         base.Enter();
 
-        AudioSource audioSource = parentNode.transform.parent.Find("MainMenu BGM").GetComponent<AudioSource>();
-        if(!audioSource.isPlaying){
-            audioSource.Play();
-        }
+        //AudioSource audioSource = parentNode.transform.parent.Find("MainMenu BGM").GetComponent<AudioSource>();
+        // if(!audioSource.isPlaying){
+        //     audioSource.Play();
+        // }
+
+        AkSoundEngine.PostEvent("Play_Music", uiHandler.GM.gameObject);
 
         if(!uiHandler.GM.gameSaver.HasValidSaving()){
             buttonGroup.DisableButton((int)Selection.Load);

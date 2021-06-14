@@ -810,6 +810,10 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585783592999851115
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /TheGulchOfBastile
+  - /TheGulchOfBastile/Switches
+  - /TheGulchOfBastile/Switches/Default Work Unit
+  - /TheGulchOfBastile/Switches/Default Work Unit/Scenes
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

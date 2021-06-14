@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region REFERENCES
-    private GameManager GM;
+    public GameManager GM;
     #endregion
 
     #region MISC VARIABLES
@@ -593,6 +593,7 @@ public class Player : MonoBehaviour
                 0,
                 playerData.PD_maxDecayPoint);
         UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
+        AkSoundEngine.SetRTPCValue("Blacken", playerRuntimeData.currentDecayPoints, GM.gameObject);
     }
 
     public void OnHpIncrease(float amount){

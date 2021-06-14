@@ -1,9 +1,14 @@
-<?xml version='1.0'?>
-<WwiseSettings>
-    <CreateWwiseGlobal>true</CreateWwiseGlobal>
-    <CreateWwiseListener>true</CreateWwiseListener>
-    <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
-    <WwiseProjectPath>../../../Desktop/wwise_tGoB/TheGulchOfBastile.wproj</WwiseProjectPath>
-    <WwiseInstallationPathWindows>D:\Program Files (x86)\Audiokinetic\Wwise 2019.2.11.7512</WwiseInstallationPathWindows>
-    <WwiseInstallationPathMac></WwiseInstallationPathMac>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WwiseSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CopySoundBanksAsPreBuildStep>true</CopySoundBanksAsPreBuildStep>
+  <CreatedPicker>true</CreatedPicker>
+  <CreateWwiseGlobal>true</CreateWwiseGlobal>
+  <CreateWwiseListener>false</CreateWwiseListener>
+  <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
+  <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
+  <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
+  <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
+  <WwiseInstallationPathMac />
+  <WwiseInstallationPathWindows>D:\Program Files (x86)\Audiokinetic\Wwise 2019.2.11.7512</WwiseInstallationPathWindows>
+  <WwiseProjectPath>../../../Desktop/wwise_tGoB/TheGulchOfBastile.wproj</WwiseProjectPath>
 </WwiseSettings>

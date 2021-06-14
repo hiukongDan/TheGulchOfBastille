@@ -156,6 +156,8 @@ public class GoyeCombat1 : Entity
             aliveGO.SetActive(true);
             combatField.gameObject.SetActive(true);
             npc.gameObject.SetActive(true);
+
+            AkSoundEngine.PostEvent("SetSwitch_GOYE", GameObject.Find("GameManager"));
         }
         else{
             aliveGO.SetActive(false);

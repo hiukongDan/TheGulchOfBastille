@@ -28,6 +28,12 @@ public class GC1_MeleeAttackState : MeleeAttackState
     public override void DoMeleeAttack()
     {
         base.DoMeleeAttack();
+        if(isTargetHitted){
+            AkSoundEngine.PostEvent("GOYE_Sword_Hit", GameObject.Find("GameManager"));
+        }   
+        else{
+            AkSoundEngine.PostEvent("GOYE_Sword_Empty", GameObject.Find("GameManager"));
+        }
     }
 
     public override void Enter()

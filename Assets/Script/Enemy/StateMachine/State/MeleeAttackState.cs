@@ -12,6 +12,8 @@ public class MeleeAttackState : State
     protected Transform hitBoxPoint;
 
     protected CombatData combatData;
+
+    protected bool isTargetHitted;
     public MeleeAttackState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, MeleeAttackStateData stateData, Transform hitBoxPoint):base(stateMachine, entity, animBoolName)
     {
         data = stateData;
@@ -60,12 +62,14 @@ public class MeleeAttackState : State
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(hitBoxPoint.position, data.attackRadius, data.whatIsPlayer);
 
+        isTargetHitted = false;
         foreach (Collider2D collider in colliders)
         {
             if (collider.gameObject.tag == "Player")
             {
                 combatData.position = entity.aliveGO.transform.position;
                 collider.gameObject.SendMessage("Damage", combatData);
+                isTargetHitted = true;
             }
         }
 
