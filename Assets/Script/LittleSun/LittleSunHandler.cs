@@ -58,6 +58,9 @@ public class LittleSunHandler : MonoBehaviour
             player.stateMachine.SwitchState(player.littleSunState);
             // transfer control authority to littleSunState
         }
+
+        // save whenever interaction happends
+        GameObject.Find("GameManager").GetComponent<GameManager>().gameSaver.SaveAll();
     }
 
     // protected IEnumerator refreshScene(Player player){
