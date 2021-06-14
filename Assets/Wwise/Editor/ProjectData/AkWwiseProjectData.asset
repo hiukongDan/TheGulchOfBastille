@@ -812,8 +812,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TheGulchOfBastile
-  - /TheGulchOfBastile/Switches
-  - /TheGulchOfBastile/Switches/Default Work Unit
-  - /TheGulchOfBastile/Switches/Default Work Unit/Scenes
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

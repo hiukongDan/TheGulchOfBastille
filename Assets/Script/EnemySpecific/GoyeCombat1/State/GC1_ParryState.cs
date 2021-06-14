@@ -58,6 +58,8 @@ public class GC1_ParryState : ParryState
     public override void DoParry()
     {
         enemy.refPlayer.SendMessage("Damage", cbData);
+
+        AkSoundEngine.PostEvent("ALF_Sword_Flick", GameObject.Find("GameManager"));
     }
 
     public override void Complete()

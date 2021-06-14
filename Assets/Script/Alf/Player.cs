@@ -329,6 +329,8 @@ public class Player : MonoBehaviour
                 var particle = Instantiate(playerData.PS_particle, hitbox.position, playerData.PS_particle.transform.rotation);
                 particle.gameObject.transform.Rotate(0, 0, UnityEngine.Random.Range(0, 360));
                 particle.GetComponent<Animator>().Play("3");
+
+                AkSoundEngine.PostEvent("ALF_Sword_Flick", GM.gameObject);
             }
         }
         else if(Time.time > damageImmuneTimer + playerData.GD_damageImmuneTime)

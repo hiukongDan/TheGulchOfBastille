@@ -39,6 +39,11 @@ public class Arrow : MonoBehaviour
             if(other.gameObject.GetComponentInParent<Entity>() != null && !other.gameObject.GetComponentInParent<Entity>().IsDead()){
                 GameObject.Destroy(transform.parent.gameObject);
             }
+
+            AkSoundEngine.PostEvent("ALF_Arrow_Enemy_Hit", GameObject.Find("GameManager"));
+        }
+        else{
+            AkSoundEngine.PostEvent("ALF_Arrow_Stone_Hit", GameObject.Find("GameManager"));
         }
     }
     

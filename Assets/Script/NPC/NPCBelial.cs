@@ -55,7 +55,7 @@ public class NPCBelial : NPCConversationHandler
     protected IEnumerator CleansePlayer(){
         // Uilos Required: currentUilos * (currentDecayPoint / currentDecayPointMax)
         player.stateMachine.SwitchState(player.cinemaState);
-        int uilosSpent = Mathf.CeilToInt(player.playerRuntimeData.currentUilos * (player.playerRuntimeData.currentDecayPoints / player.playerData.PD_maxDecayPoint));
+        int uilosSpent = Mathf.CeilToInt(player.playerRuntimeData.currentUilos * (player.playerRuntimeData.currentDecayPoints / player.playerData.PD_maxDecayPoint) / 2);
         player.OnAquireUilos(-uilosSpent);
         player.playerRuntimeData.currentDecayPoints = 0f;
 
