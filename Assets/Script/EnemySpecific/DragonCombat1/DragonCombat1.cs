@@ -40,7 +40,7 @@ public class DragonCombat1 : Entity
 
     public override void InitEntity()
     {
-        Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().PrevSceneCode);
+        // Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().PrevSceneCode);
         if (!GetComponent<EnemySaveData>().IsAlive() ||
             GameObject.Find("GameManager").GetComponent<GameManager>().PrevSceneCode != SceneCode.Old_Scaffold)
         {
