@@ -1,0 +1,815 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7993a7202448c844598a3fd6fdf73ae7, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 1424201a5354b34899604feb1d3464fd
+    GuidInternal: 
+    m_lastTime: -8585783592998115758
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: a2fa79e1d5a6fc449fa0230aaf17136b
+    GuidInternal: 
+    m_lastTime: -8585779952375410561
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus
+    - name: MUSIC
+      guid: 9b4c9e451fd8fe4599154505775cfdbd
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: MUSIC
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\MUSIC
+    - name: REV
+      guid: 95849bbc8418914d91f0b6fda7de173a
+      id: 980603520
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: REV
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\REV
+    - name: SFX
+      guid: f58cfae3e3c0fc478d44e1969595ac08
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: SFX
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\SFX
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 7dec9955189e5f4c960c12e08fe88b5c
+    GuidInternal: 
+    m_lastTime: -8585779951429932558
+    List:
+    - name: Sound
+      guid: f79cbe7f2655d941959b9c25d2cff614
+      id: 623086306
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Sound
+        ObjectType: 7
+      Path: Default Work Unit\Sound
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 7886673c53649f4390ae474dd7ac5872
+    GuidInternal: 
+    m_lastTime: -8585780000755784219
+    List:
+    - name: ALF
+      guid: 09c52c85d4886945b4f7a1c630d19305
+      id: 1100754020
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      Path: Default Work Unit\SFX\ALF
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Arrow_Bowing
+      guid: 91c24e92523e154e913bba7a1013fb04
+      id: 3053823785
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Arrow_Bowing
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Arrow_Bowing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Arrow_Enemy_Hit
+      guid: f88aa35b9f777b4b8791e356073b0ff1
+      id: 1064715909
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Arrow_Enemy_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Arrow_Enemy_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Arrow_Metal_Hit
+      guid: 53fa1c1cb252e24097cc943e486e0db2
+      id: 1775254216
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Arrow_Metal_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Arrow_Metal_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Arrow_Shoot
+      guid: 5e2f2fc319795d4d8df2fed791557366
+      id: 3721266070
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Arrow_Shoot
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Arrow_Shoot
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Arrow_Stone_Hit
+      guid: 37373fd2c957ff40a88e4b385d74cc61
+      id: 2434507722
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Arrow_Stone_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Arrow_Stone_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Arrow_Wood_Hit
+      guid: 05a55ed408cbe649ab8fa442b25e811c
+      id: 4136537508
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Arrow_Wood_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Arrow_Wood_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Sword_Empty_Stage1
+      guid: 5ad9216d8987f24eb4aba32cfe95cb7a
+      id: 960545920
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Sword_Empty_Stage1
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Sword_Empty_Stage1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Sword_Empty_Stage2
+      guid: 819826461db19949894ab75cc7da7ed0
+      id: 960545923
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Sword_Empty_Stage2
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Sword_Empty_Stage2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Sword_Enemy_Hit
+      guid: 2fc33a4d6649e347a5344550dc0522bb
+      id: 938422237
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Sword_Enemy_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Sword_Enemy_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Sword_Flick
+      guid: 983279b01fdb9a4ba1075a2b67cad9b0
+      id: 4219774094
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Sword_Flick
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Sword_Flick
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Sword_Metal_Hit
+      guid: e19797e37bb1aa42a8d85e5c371e2634
+      id: 1271834064
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Sword_Metal_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Sword_Metal_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Sword_Stone_Hit
+      guid: 4e6558fe5c4070419f5d45a330ab52b0
+      id: 2142602354
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Sword_Stone_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Sword_Stone_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ALF_Sword_Wood_Hit
+      guid: c5c9ca24213548468e3250a67aca51fc
+      id: 3937076828
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: ALF
+        ObjectType: 4
+      - ElementName: ALF_Sword_Wood_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\ALF\ALF_Sword_Wood_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: DRAGON
+      guid: 5bb04f95e52a5741b5f922054151ad6a
+      id: 2297136520
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: DRAGON
+        ObjectType: 4
+      Path: Default Work Unit\SFX\DRAGON
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: DRAGON_DIE
+      guid: 780e67c22108aa419c294e626518bbb3
+      id: 1541504395
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: DRAGON
+        ObjectType: 4
+      - ElementName: DRAGON_DIE
+        ObjectType: 3
+      Path: Default Work Unit\SFX\DRAGON\DRAGON_DIE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: DRAGON_FLY
+      guid: 6d875107f1af264988254cf82083d113
+      id: 1558679510
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: DRAGON
+        ObjectType: 4
+      - ElementName: DRAGON_FLY
+        ObjectType: 3
+      Path: Default Work Unit\SFX\DRAGON\DRAGON_FLY
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: DRAGON_LAZER
+      guid: 1b21c144408e4346860b4dfce0b48b79
+      id: 2902416025
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: DRAGON
+        ObjectType: 4
+      - ElementName: DRAGON_LAZER
+        ObjectType: 3
+      Path: Default Work Unit\SFX\DRAGON\DRAGON_LAZER
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: DRAGON_Scream
+      guid: 05fcc73f2d8ec34096fe57482f24d2cd
+      id: 1288572596
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: DRAGON
+        ObjectType: 4
+      - ElementName: DRAGON_Scream
+        ObjectType: 3
+      Path: Default Work Unit\SFX\DRAGON\DRAGON_Scream
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: DRAGON_Strike
+      guid: a573d85ad1841f4a86a4e102f887d4bd
+      id: 484680661
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: DRAGON
+        ObjectType: 4
+      - ElementName: DRAGON_Strike
+        ObjectType: 3
+      Path: Default Work Unit\SFX\DRAGON\DRAGON_Strike
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GOYE
+      guid: db0abab36bd46545abe973b3f7f8d7f4
+      id: 970630097
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: GOYE
+        ObjectType: 4
+      Path: Default Work Unit\SFX\GOYE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GOYE_Sword_Empty
+      guid: 55fdd101888f5b45b689d4aaceec85d2
+      id: 1781384201
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: GOYE
+        ObjectType: 4
+      - ElementName: GOYE_Sword_Empty
+        ObjectType: 3
+      Path: Default Work Unit\SFX\GOYE\GOYE_Sword_Empty
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GOYE_Sword_Hit
+      guid: 0eb109d56763c64eaadf04a18492fa82
+      id: 2119076909
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: GOYE
+        ObjectType: 4
+      - ElementName: GOYE_Sword_Hit
+        ObjectType: 3
+      Path: Default Work Unit\SFX\GOYE\GOYE_Sword_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music
+      guid: aefdc884b789f2489a82b4bf49333449
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      Path: Default Work Unit\Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Music
+      guid: 6607e2fa101267429aa57ade24363247
+      id: 2932040671
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Play_Music
+        ObjectType: 3
+      Path: Default Work Unit\Music\Play_Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetState
+      guid: 7849c8b601399e429267a0b1a8760acb
+      id: 293623666
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetState
+        ObjectType: 4
+      Path: Default Work Unit\Music\SetState
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetState_Mine_battle
+      guid: d8e974443e797a46a9a933dce94a456c
+      id: 1530526141
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetState
+        ObjectType: 4
+      - ElementName: SetState_Mine_battle
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetState\SetState_Mine_battle
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetState_Mine_intense
+      guid: 1e2b4740afde1c49be4bcebdad96935b
+      id: 648348447
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetState
+        ObjectType: 4
+      - ElementName: SetState_Mine_intense
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetState\SetState_Mine_intense
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetState_Mine_normal
+      guid: 0fc34a291351df4885f6b5688fc9ed1b
+      id: 563067894
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetState
+        ObjectType: 4
+      - ElementName: SetState_Mine_normal
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetState\SetState_Mine_normal
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetSwitch
+      guid: a865ec8a3a95c34d99a8f6f985661def
+      id: 921191147
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetSwitch
+        ObjectType: 4
+      Path: Default Work Unit\Music\SetSwitch
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetSwitch_DRAGON
+      guid: 7520dd195f44ff478ad810ad1b6dfad3
+      id: 4226283007
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetSwitch
+        ObjectType: 4
+      - ElementName: SetSwitch_DRAGON
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetSwitch\SetSwitch_DRAGON
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetSwitch_ElvesForest
+      guid: b5999b0bf7f3d243bb1af7d68c010afa
+      id: 3895932086
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetSwitch
+        ObjectType: 4
+      - ElementName: SetSwitch_ElvesForest
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetSwitch\SetSwitch_ElvesForest
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetSwitch_GOYE
+      guid: 1fb2c585b6cd7b44a78ccffca4c4737c
+      id: 527954246
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetSwitch
+        ObjectType: 4
+      - ElementName: SetSwitch_GOYE
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetSwitch\SetSwitch_GOYE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetSwitch_Mine
+      guid: 5fdc3963cbed44448d29d054d6472e64
+      id: 2298163003
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetSwitch
+        ObjectType: 4
+      - ElementName: SetSwitch_Mine
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetSwitch\SetSwitch_Mine
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetSwitch_Theme
+      guid: 2c4c2ecd08f3f546b9a5d12c13b5d918
+      id: 3508414601
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetSwitch
+        ObjectType: 4
+      - ElementName: SetSwitch_Theme
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetSwitch\SetSwitch_Theme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SetSwitch_Village
+      guid: d2a396bb1d5c0f4f899fb05dea982cb3
+      id: 2881705962
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: SetSwitch
+        ObjectType: 4
+      - ElementName: SetSwitch_Village
+        ObjectType: 3
+      Path: Default Work Unit\Music\SetSwitch\SetSwitch_Village
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SFX
+      guid: 274576624445a24082e589b14ffa323f
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      Path: Default Work Unit\SFX
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 7760cbe1b157584091a5383cb030ee5a
+    GuidInternal: 
+    m_lastTime: -8585779995317478514
+    List:
+    - name: Blacken
+      guid: 2a580d3c6f39144c8e5f2b9dffcc39d7
+      id: 3774684695
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Blacken
+        ObjectType: 13
+      Path: Default Work Unit\Blacken
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 3aca0f7eee6b9a4c8fa59925ec2c7df2
+    GuidInternal: 
+    m_lastTime: -8585779995317399060
+    List:
+    - name: Mine
+      guid: 5835d16b82ca054ead404a7ea7438c99
+      id: 2609527548
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Mine
+        ObjectType: 9
+      Path: Default Work Unit\Mine
+      values:
+      - name: battle
+        guid: 6effeae79fcf4044ac5caea5904f0c4c
+        id: 2937832959
+        PathAndIcons:
+        - ElementName: battle
+          ObjectType: 8
+      - name: battle_boss
+        guid: e8d33326fadc704d81781207ae41b7d3
+        id: 2038059229
+        PathAndIcons:
+        - ElementName: battle_boss
+          ObjectType: 8
+      - name: None
+        guid: 5d688936ce60f240baca0b04ec4bca10
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: normal
+        guid: e67bf815dcf81f4a8798693b3c62e70c
+        id: 1160234136
+        PathAndIcons:
+        - ElementName: normal
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 080bf21c391b5948b7cf23e6f4a1e1f8
+    GuidInternal: 
+    m_lastTime: -8585780104353024248
+    List:
+    - name: Scenes
+      guid: c67157098c41504fb58b1ecb8340553f
+      id: 1544306542
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scenes
+        ObjectType: 11
+      Path: Default Work Unit\Scenes
+      values:
+      - name: Dragon
+        guid: 40abc87cdbf1184b9dc4c163d62646aa
+        id: 2297136520
+        PathAndIcons:
+        - ElementName: Dragon
+          ObjectType: 10
+      - name: ElvesForest
+        guid: ab6d39ee14f0474198c78d720d96b631
+        id: 561468847
+        PathAndIcons:
+        - ElementName: ElvesForest
+          ObjectType: 10
+      - name: Goye
+        guid: 33a6d52cb7b42d48858ac39295934c7d
+        id: 970630097
+        PathAndIcons:
+        - ElementName: Goye
+          ObjectType: 10
+      - name: Mine
+        guid: 9fbc62afa755924b8defb762a3c35619
+        id: 2609527548
+        PathAndIcons:
+        - ElementName: Mine
+          ObjectType: 10
+      - name: Theme
+        guid: 8a9e0b06d2a1de4d9e4c423b1541fd9b
+        id: 1319017392
+        PathAndIcons:
+        - ElementName: Theme
+          ObjectType: 10
+      - name: village
+        guid: 984a4b2735253949a558f86135fda075
+        id: 3945572659
+        PathAndIcons:
+        - ElementName: village
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: b64d49cd12ea2c4889db6b25448dc871
+    GuidInternal: 
+    m_lastTime: -8585783592999851115
+    List: []
+  ExpandedItems: []
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 

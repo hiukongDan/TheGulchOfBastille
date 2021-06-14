@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<WwiseSettings>
+    <CreateWwiseGlobal>true</CreateWwiseGlobal>
+    <CreateWwiseListener>true</CreateWwiseListener>
+    <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
+    <WwiseProjectPath>../../../Desktop/wwise_tGoB/TheGulchOfBastile.wproj</WwiseProjectPath>
+    <WwiseInstallationPathWindows>D:\Program Files (x86)\Audiokinetic\Wwise 2019.2.11.7512</WwiseInstallationPathWindows>
+    <WwiseInstallationPathMac></WwiseInstallationPathMac>
+</WwiseSettings>
