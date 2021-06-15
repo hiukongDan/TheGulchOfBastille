@@ -585,7 +585,7 @@ public class Player : MonoBehaviour
 
     public void OnDpChange(float current, float total){
         float value = Mathf.Clamp01((total-current)/total);
-        Color color = new Color(value, value, value);
+        Color color = new Color(value+0.1f, value+0.1f, value+0.1f);
         GetComponent<SpriteRenderer>().color = color;
     }
 
@@ -595,7 +595,7 @@ public class Player : MonoBehaviour
                 0,
                 playerData.PD_maxDecayPoint);
         UIEventListener.Instance.OnDpChange(playerRuntimeData.currentDecayPoints, playerData.PD_maxDecayPoint);
-        AkSoundEngine.SetRTPCValue("Blacken", playerRuntimeData.currentDecayPoints, GM.gameObject);
+        AkSoundEngine.SetRTPCValue("Blacken", 100*(playerRuntimeData.currentDecayPoints / playerData.PD_maxDecayPoint), GM.gameObject);
     }
 
     public void OnHpIncrease(float amount){
