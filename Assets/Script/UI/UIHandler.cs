@@ -48,8 +48,8 @@ public class UIHandler : MonoBehaviour
     public void StartGame(){
         uiFSM.InitStateMachine(uiPlayState);
         
-        AudioSource audioSource = uiMainGO.transform.parent.Find("MainMenu BGM").GetComponent<AudioSource>();
-        audioSource.Stop();
+        // AudioSource audioSource = uiMainGO.transform.parent.Find("MainMenu BGM").GetComponent<AudioSource>();
+        // audioSource.Stop();
     }
 
     void Update()

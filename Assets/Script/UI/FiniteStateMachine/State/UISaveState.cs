@@ -112,7 +112,10 @@ public class UISaveState : UIState
             uiHandler.GM.StartGame();
         }
         else{
-            uiHandler.GM.gameSaver.SaveAll();
+            // uiHandler.GM.gameSaver.SaveAll();
+            UIEventListener.Instance.OnInfomationChange(
+                    new UIEventListener.InfomationChangeData("Game not save, use little sun to save you game")
+            );
             uiHandler.uiFSM.PopState();
         }
 

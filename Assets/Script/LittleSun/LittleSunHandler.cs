@@ -61,6 +61,7 @@ public class LittleSunHandler : MonoBehaviour
 
         // save whenever interaction happends
         GameObject.Find("GameManager").GetComponent<GameManager>().gameSaver.SaveAll();
+        UIEventListener.Instance.OnInfomationChange(new UIEventListener.InfomationChangeData("Game Saved"));
     }
 
     // protected IEnumerator refreshScene(Player player){

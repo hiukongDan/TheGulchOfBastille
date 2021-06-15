@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce9474d0c1b6e94bad532dfac530513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
+  MaxHp: 1
   BrokenStateCount: 1
   barrelTypeNo: 0
   loot: {fileID: 4459310050475851230}
