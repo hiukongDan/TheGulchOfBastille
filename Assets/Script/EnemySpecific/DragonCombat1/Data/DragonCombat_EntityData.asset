@@ -27,7 +27,7 @@ MonoBehaviour:
   whatIsPlatform:
     serializedVersion: 2
     m_Bits: 4096
-  damage: 50
+  damage: 10
   stunDamage: 1
   damageBoxWidth: 2
   damageBoxHeight: 1
