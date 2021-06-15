@@ -16,7 +16,7 @@ public class PlayerLadderState : PlayerState
     public PlayerLadderState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data):
         base(stateMachine, player, defaultAnimCode, data)
     {
-
+        
     }
 
     public override void Enter()

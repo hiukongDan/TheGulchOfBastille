@@ -6,7 +6,7 @@ public class PlayerCinemaState : PlayerState
 {
     public PlayerCinemaState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
-
+        SetCanBePaused(false);
     }
 
     public override bool CanAction()

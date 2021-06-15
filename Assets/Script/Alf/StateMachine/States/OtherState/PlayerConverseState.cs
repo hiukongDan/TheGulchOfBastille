@@ -8,7 +8,7 @@ public class PlayerConverseState : PlayerState
     private float selectionTimer;
     public PlayerConverseState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
-
+        SetCanBePaused(false);
     }
     public override void Enter()
     {

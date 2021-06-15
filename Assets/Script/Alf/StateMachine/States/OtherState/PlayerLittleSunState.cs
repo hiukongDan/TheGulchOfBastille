@@ -9,7 +9,7 @@ public class PlayerLittleSunState : PlayerState
     private GameManager gameManager;
     public PlayerLittleSunState(PlayerStateMachine stateMachine, Player player, int defaultAnimCode, D_PlayerStateMachine data) : base(stateMachine, player, defaultAnimCode, data)
     {
-        
+        SetCanBePaused(false);
     }
 
     public override void Enter()

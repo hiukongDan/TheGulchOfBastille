@@ -18,6 +18,8 @@ public class PlayerState
     protected D_PlayerStateMachine data;
 
     protected Vector2 workspace;
+    protected bool canBePaused;
+    protected bool canBePausedDefault = true;
 
     #region INPUT SUBSCRIPTION
     protected Vector2 normMovementInput;
@@ -48,6 +50,7 @@ public class PlayerState
         this.player = player;
         this.animCodeDefault = this.animCode = defaultAnimCode;
         this.data = data;
+        this.canBePaused = canBePausedDefault;
     }
 
     public virtual void Enter()
@@ -132,6 +135,13 @@ public class PlayerState
     public virtual bool CanAction()
     {
         return true;
+    }
+
+    public virtual bool SetCanBePaused(bool canBePaused){
+        return this.canBePaused = canBePaused;
+    }
+    public virtual bool CanBePaused(){
+        return this.canBePaused;
     }
 
     public virtual void ResetTimer()
