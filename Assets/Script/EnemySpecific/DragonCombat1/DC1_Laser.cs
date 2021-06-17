@@ -17,6 +17,8 @@ public class DC1_Laser : MonoBehaviour
     private float lastDustInstatiateTime;
     private float dustSpawnInterval = 0.02f;
 
+    private bool isBeingHit = false;
+
     public void SetCombatData(CombatData combatData) => this.combatData = combatData;
 
     private void RequireAnimator(){
@@ -33,6 +35,7 @@ public class DC1_Laser : MonoBehaviour
     public void InitiateLaser(){
         RequireAnimator();
         animator.Play("laser_initiating");
+        isBeingHit = false;
     }
 
     public void ShowLaser(){
@@ -44,7 +47,10 @@ public class DC1_Laser : MonoBehaviour
 
     void Update() {
         CheckGroundHit();
-        CheckPlayerHit();
+
+        if(!isBeingHit){
+            CheckPlayerHit();
+        }
     }
 
     void CheckGroundHit(){
@@ -78,6 +84,7 @@ public class DC1_Laser : MonoBehaviour
                                                    whatIsPlayer);
         if(collider != null){
             collider.gameObject.SendMessage("Damage", combatData);
+            isBeingHit = true;
         }
     }
 }

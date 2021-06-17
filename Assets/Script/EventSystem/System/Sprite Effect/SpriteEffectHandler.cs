@@ -55,6 +55,9 @@ namespace Gulch
         {
             var sp = go.GetComponent<SpriteRenderer>();
             var matOld = sp.material;
+            if(sp.material.shader == blinkMat.shader){
+                matOld = MatNormal;
+            }
             
             while(duration >= 0){
                 sp.material = blinkMat;

@@ -29,14 +29,24 @@ public class DragonChase2 : Entity
 
     public override void InitEntity()
     {
-        base.InitEntity();
-        combatTrigger.gameObject.SetActive(true);
+        if (!GetComponent<EnemySaveData>().IsAlive())
+        {
+            aliveGO.SetActive(false);
+            combatTrigger.gameObject.SetActive(false);
+        }
+        else{
+            aliveGO.SetActive(true);
+            Reset();
+            combatTrigger.gameObject.SetActive(true);
+        }
+
+        aliveGO.transform.position = initPosition.transform.position;
+        
         stateMachine?.ClearState();
         anim?.Play("sleep_0");
         if(facingDirection < 0){
             Flip();
         }
-        aliveGO.transform.position = initPosition.position;
 
         laser_obj?.HideLaser();
     }

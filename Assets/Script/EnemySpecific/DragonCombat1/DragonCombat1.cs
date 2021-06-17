@@ -7,6 +7,7 @@ public class DragonCombat1 : Entity
     #region REFERENCES
     public Player refPlayer { get; private set; }
     public DC1_ObjectToAlive dc1_ota { get; private set; }
+    public DragonChase2 dragonChase;
     public Transform combatTrigger;
     //public GC1_ObjectToAlive gc1_ota { get; private set; }
     //private Transform combatField;
@@ -41,8 +42,7 @@ public class DragonCombat1 : Entity
     public override void InitEntity()
     {
         // Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().PrevSceneCode);
-        if (!GetComponent<EnemySaveData>().IsAlive() ||
-            GameObject.Find("GameManager").GetComponent<GameManager>().PrevSceneCode != SceneCode.Old_Scaffold)
+        if (!GetComponent<EnemySaveData>().IsAlive() || dragonChase.GetComponent<EnemySaveData>().IsAlive())
         {
             aliveGO.SetActive(false);
         }

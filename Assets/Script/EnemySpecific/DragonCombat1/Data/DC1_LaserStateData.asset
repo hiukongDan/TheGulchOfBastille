@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c86423bfd31724e9d29ed7471d3f31, type: 3}
   m_Name: DC1_LaserStateData
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 10
   stunDamage: 1
   knockbackDir: {x: 1, y: 1}
   knockbackImpulse: 5

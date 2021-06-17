@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour
 {
     protected FiniteStateMachine stateMachine;
     protected StateCooldownTimer stateCooldownTimer;
-    protected Material defaultMaterial;
+    public Material defaultMaterial;
 
     public int facingDirection { get; private set; }
     public enum FacingDirection{
@@ -78,7 +78,13 @@ public class Entity : MonoBehaviour
 
         facingDirection = 1;
 
-        defaultMaterial = anim.GetComponent<SpriteRenderer>().material;
+        if(defaultMaterial == null){
+            defaultMaterial = new Material(Shader.Find("Sprites/Default"));
+        }
+        // if(defaultMaterial){
+        //     Debug.Log("find material failed");
+        //     defaultMaterial = GetComponent<SpriteRenderer>().material;
+        // }
 
         Reset();
     }
