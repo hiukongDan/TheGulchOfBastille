@@ -74,3 +74,4 @@ crashlytics-build.properties
 *.zip
 *.rar
 *.7z
+wwise_tGoB/*
