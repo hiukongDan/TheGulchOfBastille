@@ -13,8 +13,11 @@ Grey
 
 #### _OST_
 Fran
+Yuna
+Polyref
 #### _SFX_
-Using sound effects from [freesound](https://freesound.org/)
+Yuna
+Polyref
 
 ## Programming
 [Hiukong Dan](https://hiukong-dan.com)
