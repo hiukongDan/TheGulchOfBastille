@@ -12,12 +12,12 @@ Grey
 ## Audio
 
 #### _OST_
-Fran
-Yuna
-Polyref
+Fran\
+Yuna\
+Polytef
 #### _SFX_
-Yuna
-Polyref
+Yuna\
+Polytef
 
 ## Programming
 [Hiukong Dan](https://hiukong-dan.com)
